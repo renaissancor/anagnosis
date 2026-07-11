@@ -1,4 +1,4 @@
-# Ethnicity in CRIF
+# Ethnicity in Anagnosis
 
 ## What Ethnicity Is (and Isn't)
 

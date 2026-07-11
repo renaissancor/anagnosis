@@ -1,6 +1,6 @@
 # Code Generation & Automation Tools
 
-This directory contains Node.js scripts for generating and maintaining CRIF data structures from markdown source files.
+This directory contains Node.js scripts for generating and maintaining Anagnosis data structures from CSV source files.
 
 ## Scripts Overview
 

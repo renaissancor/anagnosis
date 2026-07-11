@@ -1,4 +1,4 @@
-# Religion in CRIF
+# Religion in Anagnosis
 
 ## Role of Religion
 

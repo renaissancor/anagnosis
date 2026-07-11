@@ -1,4 +1,4 @@
-# CivRegime Architecture
+# Anagnosis Architecture
 
 ## Core Principle: CSV as Source of Truth
 
@@ -10,20 +10,20 @@
 
 ```
 CSV files (csvs/)              ← source of truth for flat data
-  ├── polity.csv                  428 polities
-  ├── polity_territory.csv        939 territory links
-  ├── successions.csv             1,995 edges
-  ├── territories.csv             53 territories
-  ├── ethnicity.csv               276 nodes
-  ├── languages.csv               691 nodes
-  ├── religions.csv               255 nodes
-  ├── civilizations.csv                  2 civilizations
-  └── figures.csv                 285 figures
+  ├── polity.csv                  527 polities
+  ├── polity_territory.csv        509 territory links
+  ├── polity_succession.csv       1,991 edges
+  ├── territory.csv               54 territories
+  ├── ethnicity.csv               269 nodes
+  ├── language.csv                695 nodes
+  ├── religion.csv                264 nodes
+  ├── civilization.csv            2 civilizations (provisional stubs)
+  └── figure.csv                  285 figures
 
 JSON files (data/history/)     ← source of truth for nested data
-  └── {region}/{country}.json     66 history panels, ~4,300 cells
+  └── {region}/{country}.json     61 history panels, ~4,300 cells
 
-DuckDB (civregime.db)          ← query engine, loads from both
+DuckDB (anagnosis.db)          ← query engine, loads from both
   └── 24 tables (see docs/model/erd.sql)
 
 JSON files (data/)             ← generated output for frontend
@@ -122,7 +122,7 @@ Phase 5 of the roadmap will normalize panels into DuckDB tables (`history_panels
 
 ```
 ┌─────────────────────────────────────────┐
-│  DuckDB (civregime.db)                  │
+│  DuckDB (anagnosis.db)                  │
 │  24 tables (see docs/model/erd.sql)     │
 │  Loaded from CSVs + history JSONs       │
 │  ├── Taxonomy: ethnicities, languages,  │
@@ -141,8 +141,8 @@ Phase 5 of the roadmap will normalize panels into DuckDB tables (`history_panels
 
 | Tier | Table | Count | Example |
 |------|-------|-------|---------|
-| **Civilization** | `civilization` | ~20 | Roman Civilization, French Civilization |
-| **Polity** | `polity` | 428 | Roman Republic, Kingdom of France |
+| **Civilization** | `civilization` | 2 (provisional stubs; deferred) | Roman Civilization, French Civilization |
+| **Polity** | `polity` | 527 | Roman Republic, Kingdom of France |
 
 - **Civilization** = political continuity across polity changes (Roman Republic → Roman Empire (Pagan) → Roman Empire (Christian) → Byzantine Empire all share `roman_civilization`)
 - **Polity** = a political entity; splits into a new polity when religion/language/ethnicity flips
@@ -155,7 +155,7 @@ Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty`, n
 Roman Republic → Roman Empire (Pagan) → Roman Empire (Christian) → Byzantine Empire
 ```
 
-Polity successions today: 1,995 edges in `csvs/successions.csv`.
+Polity successions today: 1,991 edges in `csvs/polity_succession.csv`.
 
 ---
 

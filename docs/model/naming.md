@@ -26,7 +26,7 @@ One entity can appear with different labels across panels:
 
 ## ID Formats by Entity Type
 
-### States (`civilizations` table)
+### Civilizations (`civilization` table)
 
 Pattern: `{name}_civilization`
 
@@ -37,7 +37,10 @@ chinese_civilization
 persian_civilization
 ```
 
-States are political continuity groupings. Few in number (~20–30).
+Civilizations are political-continuity groupings. **Currently only 2 provisional
+stubs exist** — civilization is a *deferred, derived projection*, not a curated tier
+(see [`civilization.md`](./civilization.md)). These ID conventions apply if/when it
+earns curated rows.
 
 ### Polities (`polities` table)
 

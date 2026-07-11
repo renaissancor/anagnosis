@@ -1,11 +1,18 @@
-# CivRegime Documentation
+# Anagnosis Documentation
+
+Anagnosis makes the flow of civilizational history legible: it models how political
+power passes from one **polity** to the next across territory and time. The running
+app is **CSV-first** — `csvs/*.csv` are the source of truth, generators emit `data/`
+JSON, and an Express server serves it. (A DuckDB analytical layer is *planned* and
+not in the running path; see the roadmap below.)
 
 ## Start Here
 
 | Doc | Purpose |
 |-----|---------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | System architecture and data flow |
-| [TODO.md](TODO.md) | 9-phase RDBMS migration roadmap (Phase 3 in progress) |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | System architecture and data flow (CSV → JSON → server) |
+| [model/data-model.md](model/data-model.md) | The property-graph model and succession matrix — read first |
+| [TODO.md](TODO.md) | Roadmap (incl. the *planned* DuckDB migration — Phase 3 stage) |
 
 ## Domain Model (`model/`)
 
@@ -31,7 +38,7 @@ Guides for the CSV-to-JSON-to-DuckDB data pipeline.
 | Doc | Purpose |
 |-----|---------|
 | [csv_workflow.md](migration/csv_workflow.md) | Editing CSVs and regenerating JSON |
-| [merge_map.md](migration/merge_map.md) | Panel label to entity ID resolution |
+| [merge_map.md](migration/merge_map.md) | Panel label → entity ID resolution (consolidated; iran/china/italy gold-standard) |
 | [missing_polities.md](migration/missing_polities.md) | Polities to be added |
 
 ## Frontend (`frontend/`)
