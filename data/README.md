@@ -1,6 +1,6 @@
 # Data Structure & Loading Pipeline
 
-This directory contains all structured data for the CivRegime Inheritance Framework. It includes both hand-curated polity/succession data and auto-generated taxonomies (languages, religions, ethnicities).
+This directory contains all structured data for the Anagnosis Inheritance Framework. It includes both hand-curated polity/succession data and auto-generated taxonomies (languages, religions, ethnicities).
 
 ## Directory Organization
 

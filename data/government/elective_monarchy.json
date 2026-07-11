@@ -1,8 +1,0 @@
-{
-  "id": "elective_monarchy",
-  "name": "Elective Monarchy",
-  "finer_type": "palace_forum",
-  "weber_legitimacy": "traditional",
-  "description": "Monarch chosen by designated electors (e.g., HRE, Poland-Lithuania)",
-  "polity_count": 2
-}

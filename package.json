@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
+    "prestart": "npm run make:all",
     "start": "node server.js",
+    "pretest": "npm run make:all",
     "validate": "node scripts/validate.js",
     "make:polities": "node code/makejson/polities.js",
     "make:successions": "node code/makejson/successions.js",

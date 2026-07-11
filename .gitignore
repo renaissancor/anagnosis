@@ -53,6 +53,13 @@ $RECYCLE.BIN/
 *.db
 *.db.wal
 
+# ── Generated data outputs (regenerate with `npm run make:all`) ───────────────
+# data/ is generated from csvs/*.csv (the source of truth). Only the two
+# hand-authored files below are tracked.
+data/*
+!data/index.js
+!data/README.md
+
 # ── Misc ──────────────────────────────────────────────────────────────────────
 *.orig
 *.bak
