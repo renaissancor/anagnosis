@@ -70,7 +70,6 @@ function buildPolity(row, figuresByPolity) {
     name: row.name,
   };
 
-  if (row.civilization_id)              polity.civilization_id        = row.civilization_id;
   if (row.id_ruling_ethnicity)   polity.ruling_ethnicity = row.id_ruling_ethnicity;
   if (row.id_ruling_language)    polity.cultural_language = row.id_ruling_language;
 
@@ -85,8 +84,8 @@ function buildPolity(row, figuresByPolity) {
   const territories = parsePipe(row.territories);
   if (territories.length) polity.territories = territories;
 
-  polity.start = parseInt2(row.start);
-  polity.end   = parseInt2(row.end);
+  polity.start = parseInt2(row.start_year);
+  polity.end   = parseInt2(row.end_year);
 
   const policies = parsePipe(row.policies);
   if (policies.length) polity.policies = policies;

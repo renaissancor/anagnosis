@@ -37,7 +37,6 @@ app.get('/api/polity', (req, res) => {
     government: r.ideology?.government || null,
     ideology: r.ideology || null,
     territories: r.territories || [],
-    civilization_id: r.civilization_id || null,
   }));
   res.json(list);
 });
@@ -211,7 +210,7 @@ app.get('/api/db', (req, res) => res.json(db));
 // ── Start ────────────────────────────────────────────────────
 
 app.listen(PORT, () => {
-  console.log(`CivRegime → http://localhost:${PORT}`);
+  console.log(`Anagnosis → http://localhost:${PORT}`);
   console.log(`  Polities:    ${db.polities?.length || 0}`);
   console.log(`  Successions: ${db.successions?.length || 0}`);
   console.log(`  Territories: ${db.territories?.length || 0}`);

@@ -5,7 +5,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "C:/Users/steph/WebstormProjects/CivRegime"
+        "C:/Users/steph/WebstormProjects/Anagnosis"
       ]
     },
     "git": {
@@ -14,7 +14,7 @@
         "-y",
         "@modelcontextprotocol/server-git",
         "--repository",
-        "C:/Users/steph/WebstormProjects/CivRegime"
+        "C:/Users/steph/WebstormProjects/Anagnosis"
       ]
     },
     "sequential-thinking": {

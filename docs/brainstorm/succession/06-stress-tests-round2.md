@@ -10,7 +10,7 @@ UAR (Egypt+Syria 1958) claimed to embody **"the Arab nation"**; Israel claims **
 
 ## B. No successor — `carthage`
 
-Rome conquered Carthage's territory (a real edge), but its people were destroyed and Punic identity went **extinct**. In an edge model that's *no outgoing edge* on people/institution — but CivRegime is **deliberately sparse**, so absence already means "uncurated." Extinction and ignorance become indistinguishable.
+Rome conquered Carthage's territory (a real edge), but its people were destroyed and Punic identity went **extinct**. In an edge model that's *no outgoing edge* on people/institution — but Anagnosis is **deliberately sparse**, so absence already means "uncurated." Extinction and ignorance become indistinguishable.
 
 → **Finding B (new structure):** extinction must be recorded **positively, per-axis** — a `terminus` marker ("this axis had no heir; it ends here"). It's per-axis: Carthage's *territory* succeeds (Rome) while its *people* terminate. The model supports partial extinction once termination is statable.
 

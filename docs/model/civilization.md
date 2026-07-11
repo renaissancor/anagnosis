@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-Civilization is **not** a hand-curated tier and **not** the load-bearing structure of CivRegime. It will eventually be a **derived projection over the completed polity graph, parameterized by perspective** — computed, not authored. Until the graph is complete, `civilization.csv` stays a thin provisional stub and `polity.civilization_id` is a sparse, non-authoritative tag.
+Civilization is **not** a hand-curated tier and **not** the load-bearing structure of Anagnosis. It will eventually be a **derived projection over the completed polity graph, parameterized by perspective** — computed, not authored. Until the graph is complete, `civilization.csv` stays a thin provisional stub and `polity.civilization_id` is a sparse, non-authoritative tag.
 
 ---
 
@@ -48,8 +48,9 @@ There is no single "true" civilization map — there are as many as there are le
 
 ## Current data state (provisional — do not treat as authoritative)
 
-- `civilization.csv` holds **2 stub rows** (`roman_civilization`, `ottoman_civilization`) whose `description` encodes a now-rejected institutional-continuity reading. They are placeholders, not a definition.
-- `polity.civilization_id` is **sparsely populated** and **not** the defining backbone of the schema. Do not backfill it as if it were.
+- **There is no `civilization.csv` and no `civilization` table.** The former 2 stub rows (`roman_civilization`, `ottoman_civilization`) encoded a now-rejected institutional-continuity reading and were removed (2026-07-11), along with the generator, the DB table, and the `polity.civilization_id` column (which was empty in all 527 rows).
+- `polity` no longer carries a `civilization_id`. Because civilization is not single-valued over polities (a polity can hold several at once), it will **never** return as a single FK column; when it is defined, it will be a computed projection, not an authored tag.
+- `polity_succession.same_civilization` still exists (uniformly `0`) and is intentionally left for the succession redesign to resolve with the rest of the similarity vector — see `docs/brainstorm/succession/`.
 
 ## When civilization may earn definition
 

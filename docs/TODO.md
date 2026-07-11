@@ -1,8 +1,8 @@
-# CivRegime TODO — RDBMS Migration Roadmap
+# Anagnosis TODO — RDBMS Migration Roadmap
 
 ## Phase 1: Schema & Foundation ✅ (done)
 - [x] Design two-tier ERD (Civilization → Polity), with Dynasty as cross-cutting tag
-- [x] Create DuckDB schema (`civregime.db`) — 24 tables
+- [x] Create DuckDB schema (`anagnosis.db`) — 24 tables
 - [x] Auto-link 637 panel labels to existing polity IDs
 - [x] Document ERD (`docs/model/erd.sql`, `docs/model/erd.md`)
 

@@ -27,28 +27,16 @@ cachedFetch('/api/polity').then(polities => {
 function renderPolityList() {
   const sidebar = document.getElementById('polity-list');
 
-  const grouped = {};
-  politiesData.forEach(polity => {
-    const state = polity.civilization_id || 'Ungrouped';
-    if (!grouped[state]) grouped[state] = [];
-    grouped[state].push(polity);
-  });
-
   let html = '';
-  Object.entries(grouped).forEach(([state, polities]) => {
-    if (state !== 'Ungrouped') {
-      html += `<div class="state-label">${state}</div>`;
-    }
-    polities.sort((a, b) => (a.start || 0) - (b.start || 0));
-    polities.forEach(polity => {
-      const dateRange = formatDateRange(polity.start, polity.end);
-      html += `
-        <div class="polity-item" data-polity-id="${polity.id}" title="${polity.name}">
-          ${polity.name}
-          <span style="color: #4a5568; font-size: 10px; display: block;">${dateRange}</span>
-        </div>
-      `;
-    });
+  const polities = [...politiesData].sort((a, b) => (a.start || 0) - (b.start || 0));
+  polities.forEach(polity => {
+    const dateRange = formatDateRange(polity.start, polity.end);
+    html += `
+      <div class="polity-item" data-polity-id="${polity.id}" title="${polity.name}">
+        ${polity.name}
+        <span style="color: #4a5568; font-size: 10px; display: block;">${dateRange}</span>
+      </div>
+    `;
   });
 
   sidebar.innerHTML = html || '<div style="padding: 16px; color: #4a5568;">No polities loaded</div>';

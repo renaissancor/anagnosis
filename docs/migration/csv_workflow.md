@@ -1,6 +1,6 @@
 # CSV Workflow Guide
 
-This guide explains how to edit data in CivRegime using the CSV system and regenerate JSON outputs.
+This guide explains how to edit data in Anagnosis using the CSV system and regenerate JSON outputs.
 
 ## Quick Start
 

@@ -1,7 +1,7 @@
 -- ============================================================
--- Load CSVs into CivRegime DuckDB (v3 — singular table names)
--- Requires: duckdb civregime.db ".read docs/erd_nofk.sql" first
--- Usage:    duckdb civregime.db ".read scripts/load_csvs.sql"
+-- Load CSVs into Anagnosis DuckDB (v3 — singular table names)
+-- Requires: duckdb anagnosis.db ".read docs/erd_nofk.sql" first
+-- Usage:    duckdb anagnosis.db ".read scripts/load_csvs.sql"
 -- ============================================================
 
 -- Clear existing data (children before parents)
@@ -18,12 +18,6 @@ DELETE FROM religion;
 DELETE FROM language;
 DELETE FROM ethnicity;
 DELETE FROM territory;
-DELETE FROM civilization;
-
--- ─── STATE ────────────────────────────────────────────────
-INSERT INTO civilization (id, name, description)
-SELECT id, name, description
-FROM read_csv('csvs/civilization.csv', auto_detect=true);
 
 -- ─── TERRITORY ────────────────────────────────────────────
 INSERT INTO territory (id, name)
@@ -112,10 +106,9 @@ WITH RECURSIVE tree AS (
 UPDATE religion SET depth = tree.depth FROM tree WHERE religion.id = tree.id;
 
 -- ─── POLITY (from polity.csv) ─────────────────────────────
-INSERT INTO polity (id, name, civilization_id, ruling_ethnicity, cultural_language,
+INSERT INTO polity (id, name, ruling_ethnicity, cultural_language,
                     religion, government, start_year, end_year, note)
 SELECT id, name,
-       NULLIF(civilization_id, ''),
        NULLIF(id_ruling_ethnicity, ''),
        NULLIF(id_ruling_language, ''),
        NULLIF(id_ruling_religion, ''),

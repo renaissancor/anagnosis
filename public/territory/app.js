@@ -1,7 +1,7 @@
 /* ── State Timeline ─────────────────────────────────────────────
    Shows polities as vertical bars on a time axis, colored by
    ethnicity, with succession arrows connecting them.
-   Sidebar groups by territory (until civilization_id is populated).
+   Sidebar groups by territory.
    ─────────────────────────────────────────────────────────────── */
 
 const ETHNICITY_PALETTE = [

@@ -6,7 +6,7 @@
 
 ## Thesis
 
-Succession — *inheritance between polities* — is the **load-bearing spine of CivRegime**, not the civilization tier ([civilization is deferred](../../model/civilization.md)). The current succession model is too thin to carry that weight, and it's the wrong *kind* of thing (derived similarity, not curated judgment). This directory specs the replacement.
+Succession — *inheritance between polities* — is the **load-bearing spine of Anagnosis**, not the civilization tier ([civilization is deferred](../../model/civilization.md)). The current succession model is too thin to carry that weight, and it's the wrong *kind* of thing (derived similarity, not curated judgment). This directory specs the replacement.
 
 ## The one-sentence redesign
 

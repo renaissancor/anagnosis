@@ -1,10 +1,11 @@
 -- ============================================================
--- CivRegime ERD v3 — Active Tables Only
+-- Anagnosis ERD v3 — Active Tables Only
 -- ============================================================
 -- Singular table names. No FK enforcement (data has gaps).
 --
 -- Hierarchy:
---   Civilization    → political continuity (e.g., Roman Civilization, Chinese Civilization)
+--   Civilization → nominal top tier — DEFERRED, not an authored table.
+--                  A future computed projection over the graph (see docs/model/civilization.md).
 --   Polity   → political entity (e.g., Roman Empire, Tang Dynasty)
 --
 -- Future tables (create when data is ready):
@@ -64,16 +65,9 @@ CREATE TABLE religion (
 
 -- ─── POLITICAL HIERARCHY ────────────────────────────────────
 
-CREATE TABLE civilization (
-    id          TEXT PRIMARY KEY,
-    name        TEXT NOT NULL,
-    description TEXT
-);
-
 CREATE TABLE polity (
     id                TEXT PRIMARY KEY,
     name              TEXT NOT NULL,
-    civilization_id          TEXT,
     ruling_ethnicity  TEXT,
     cultural_language TEXT,
     religion          TEXT,
@@ -138,7 +132,6 @@ CREATE TABLE figure (
 
 -- ─── INDEXES ────────────────────────────────────────────────
 
-CREATE INDEX idx_polity_civilization ON polity(civilization_id);
 CREATE INDEX idx_polity_years ON polity(start_year, end_year);
 CREATE INDEX idx_polity_succession_from ON polity_succession(from_polity_id);
 CREATE INDEX idx_polity_succession_to ON polity_succession(to_polity_id);

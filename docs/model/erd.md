@@ -1,37 +1,30 @@
-# CivRegime ERD
+# Anagnosis ERD
 
 ## Two-Tier Political Hierarchy
 
 ```
-Civilization (political continuity)          e.g. "Roman Civilization", "French Civilization"
+Civilization (nominal top tier — DEFERRED)   a future computed projection, not an authored table
   └─ Polity (political entity)        e.g. Roman Republic, Kingdom of France
 ```
+
+> Civilization has **no table**: it is intentionally not curated as an entity. See [`civilization.md`](./civilization.md). Polity is the top *authored* tier.
 
 Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty` — a dynasty can span multiple polities (House of Bourbon → Old Regime + Bourbon Restoration), and a polity can have multiple dynasties over its lifetime.
 
 ## Active Tables
 
 ```
-                ┌─────────────┐
-                │    civilization    │
-                ├─────────────┤
-                │ PK id       │
-                │    name     │
-                │    descr.   │
-                └──────┬──────┘
-                       │ 1
-                       ▼ N
 ┌──────────────┐   ┌──────────────────────────────────────┐   ┌──────────────┐
 │  ethnicity   │   │              polity                   │   │  government  │
 ├──────────────┤   ├──────────────────────────────────────┤   ├──────────────┤
 │ PK id        │◄──│ PK id                                 │──►│ PK id        │
-│ FK parent_id │   │ FK civilization_id                           │   │    name      │
-│    name      │   │ FK ruling_ethnicity                   │   │    finer_type│
-│    depth     │   │ FK cultural_language                   │   └──────────────┘
-│    ...       │   │ FK religion                           │
-└──────────────┘   │ FK government                         │   ┌──────────────┐
-                   │    name, note                         │   │  language    │
-┌──────────────┐   │    start_year, end_year               │   ├──────────────┤
+│ FK parent_id │   │ FK ruling_ethnicity                   │   │    name      │
+│    name      │   │ FK cultural_language                  │   │    finer_type│
+│    depth     │   │ FK religion                           │   └──────────────┘
+│    ...       │   │ FK government                         │
+└──────────────┘   │    name, note                         │   ┌──────────────┐
+                   │    start_year, end_year               │   │  language    │
+┌──────────────┐   │                                       │   ├──────────────┤
 │   religion   │   └───┬───────┬───────┬──────────┬────────┘   │ PK id        │
 ├──────────────┤       │       │       │          │            │ FK parent_id │
 │ PK id        │◄──────┘       │       │          │            └──────────────┘
@@ -71,8 +64,7 @@ Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty` �
 | | language | 691 | csvs/language.csv |
 | | religion | 255 | csvs/religion.csv |
 | | government | 26 | csvs/government.csv |
-| **Political T1** | civilization | ~20 | csvs/civilization.csv |
-| **Political T2** | polity | 428 | csvs/polity.csv |
+| **Political** | polity | 428 | csvs/polity.csv |
 | | polity_territory | 939 | csvs/polity_territory.csv |
 | | polity_policy | 26 | from polity.csv |
 | | polity_succession | 1,995 | csvs/successions.csv |
@@ -90,12 +82,6 @@ Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty` �
 ## Example Queries
 
 ```sql
--- All polities under a single civilization, in chronological order
-SELECT p.id, p.name, p.start_year, p.end_year
-FROM polity p
-WHERE p.civilization_id = 'roman_civilization'
-ORDER BY p.start_year;
-
 -- Dynasties of a polity (which families ruled when)
 SELECT d.name AS dynasty, pd.start_year, pd.end_year
 FROM polity_dynasty pd

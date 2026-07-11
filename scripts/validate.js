@@ -1,5 +1,5 @@
 /**
- * CivRegime data validator.
+ * Anagnosis data validator.
  * Run: node scripts/validate.js
  *
  * Checks:
@@ -84,8 +84,10 @@ if (!missingFields) ok('all required fields present');
 console.log('\n── Date validity ────────────────────────────────────────');
 let badDates = 0;
 for (const r of db.polities) {
-  if (r.start != null && r.end != null && r.start >= r.end) {
-    err(`polity "${r.id}": start (${r.start}) >= end (${r.end})`);
+  // Same-year polities (start == end) are valid: many ephemeral states (e.g.
+  // California Republic 1846) began and ended within one year. Only start > end is wrong.
+  if (r.start != null && r.end != null && r.start > r.end) {
+    err(`polity "${r.id}": start (${r.start}) > end (${r.end})`);
     badDates++;
   }
 }
