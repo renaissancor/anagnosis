@@ -32,7 +32,18 @@ Auxiliary entities: `ethnicity`, `language`, `religion`, `territory`, `figure`, 
 3. **Every CSV must have a generator.** A CSV that no `code/makejson/*.js` consumes is dead data.
 4. **Workflow:** edit a CSV row → run the generator → project state updates. Reviews are CSV diffs; JSON diffs are generated noise.
 
-> **Note (2026-06-18):** the three taxonomies are now CSV-sourced. `docs/tree/{language,ethnicity,religion}.md` are **no longer wired into generation** — they are human-readable reference only and may lag the CSVs. `scripts/json_to_csv.js` and `scripts/rebuild-languages.js` are stale/dead (wrong direction or hardcoded data) — do not run them. There are **no** source-of-truth filesystem trees; the earlier `data/{languages,religions,territories}/` (plural) FS-tree model was never implemented.
+## The pipeline (default loop — memorize this)
+
+**Canonical record: `docs/PIPELINE.md`.** The default after ANY CSV edit:
+
+```bash
+npm run make:all   # csvs/*.csv → data/**/*.json via code/makejson/*.js
+npm test           # scripts/validate.js — FK integrity; red = broken build
+```
+
+`data/` is untracked; a fresh clone regenerates it (`prestart`/`pretest` run `make:all`). Scripts under `scripts/` other than `validate.js` are one-shot curation tools, **not** part of the pipeline — never run them as build steps.
+
+> **Note (2026-06-18):** the three taxonomies are now CSV-sourced. `docs/tree/{language,ethnicity,religion}.md` are **no longer wired into generation** — they are human-readable reference only and may lag the CSVs. The dead scripts `scripts/json_to_csv.js` and `scripts/rebuild-languages.js` were deleted (2026-08-21). There are **no** source-of-truth filesystem trees; the earlier `data/{languages,religions,territories}/` (plural) FS-tree model was never implemented.
 
 ## Docs architecture
 
@@ -41,6 +52,7 @@ For any data-model question, **read `docs/model/<concept>.md` first.** That dire
 ```
 docs/
 ├── ARCHITECTURE.md          ← top-level project architecture
+├── PIPELINE.md              ← CANONICAL pipeline record (build graph, generators, validation)
 ├── README.md                ← docs entry point
 ├── TODO.md                  ← open tasks
 ├── model/                   ← schema docs (one file per concept) — CANONICAL
@@ -86,9 +98,9 @@ docs/
 
 Entity tables earn rows by inbound foreign keys, not historical fame. A row belongs in `city`, `figure`, etc. only when something else in the dataset points to it. No decorative reference rows. When seeding, walk the *references* first and back-fill entities. Canonical statement: `docs/model/city.md` *Scope Discipline*.
 
-## Active migration
+## Migration status
 
-`state` → `civilization` rename is **largely done in the working tree** but uncommitted (~198 modified files as of 2026-05-02). If you see `state_id` / `state.csv` / `data/states.json` references that conflict with `civilization_*` equivalents, treat them as in-flight artifacts to be cleaned up, not design conflicts.
+The `state` → `civilization` rename is **committed** (see `d9f10da`, 2026). Any remaining `state_id` / `state.csv` / `states.csv` references in docs or scripts are stale leftovers to be cleaned up on sight, not design conflicts.
 
 ## What this project is *not*
 

@@ -123,7 +123,6 @@ Key patterns to resolve:
 | `scripts/normalize_labels.js` | Normalize labels, resolve to entity IDs, deduplicate |
 | `scripts/dedup_and_link.js` | Deduplicate + write `polity` fields back into JSONs |
 | `scripts/find_overlaps.js` | Find temporal/spatial overlaps for dedup review |
-| `scripts/json_to_csv.js` | Convert JSON data files to CSVs |
 | `scripts/validate.js` | Validate data integrity |
 
 ## API Routes Reference
