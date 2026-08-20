@@ -25,3 +25,6 @@ tribal_confederation,Tribal Confederation,nobility,traditional,"Alliance of trib
 confederation,Confederation,forum,rational_legal,"Loose union of sovereign entities; central authority limited by member consent"
 colonial_administration,Colonial Administration,foreign,rational_legal,"Territory administered by foreign imperial power; no indigenous sovereignty"
 puppet_state,Puppet State,foreign,traditional,"Nominal sovereignty; de facto controlled by external power"
+province,Province,foreign,traditional,"Dependent territory administered by governors appointed from an external imperial center (exarchates, themes, viceroyalties)"
+fascist,Fascist State,palace_forum,charismatic,"Single-party dictatorship built on leader cult and mass mobilization; corporatist institutions subordinate to the leader"
+city_state_league,City-State League,forum,traditional,"Loose league of independent city-states sharing culture and cult without a central sovereign (Magna Graecia, Phoenician colonies)"
