@@ -8,15 +8,13 @@
  *   3. Required fields present on every polity
  *   4. Date validity (start < end where both exist)
  *   5. Succession integrity (both ends exist, no self-loops)
- *   6. Succession type is a known value
+ *   6. (retired) letter-type check — edges carry evidence columns, not A/B/C/D types
  *   7. Region integrity (territory FK resolves, period polity FKs resolve)
  */
 
 const fs   = require('fs');
 const path = require('path');
 const db   = require('../data');
-
-const VALID_SUCCESSION_TYPES = new Set(['A', 'A-', 'B', 'C', 'D']);
 
 let errors   = 0;
 let warnings = 0;
@@ -141,10 +139,9 @@ for (const s of db.successions) {
     err(`succession to "${s.to}": polity not found`);
     badSuccessions++;
   }
-  if (s.type && !VALID_SUCCESSION_TYPES.has(s.type)) {
-    err(`succession "${s.from}" → "${s.to}": unknown type "${s.type}"`);
-    badSuccessions++;
-  }
+  // Note: no `type` field check — the v1 A/A-/B/C/D letter model is retired.
+  // Edges carry evidence columns; see docs/brainstorm/succession/ for the
+  // per-axis inheritance redesign.
 }
 
 if (!badSuccessions) ok('all successions valid');

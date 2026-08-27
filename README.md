@@ -23,17 +23,11 @@ Polity = Ethnicity (who rules) × Territory (where) × Ideology (why) × Time (w
 
 ### Why it's "legible" — succession is typed
 
-Each transition between polities is **typed by what the two share** — same people? same land? — and scored for continuity. That typing is what turns a pile of dates into a *readable flow*.
+Each transition between polities carries an **evidence vector** — did the successor hold the predecessor's territory? share its ethnicity, language, religion? how long was the gap? — and a continuity **strength**. That typing is what turns a pile of dates into a *readable flow*.
 
-| Type | Name | Same people | Same land | Legitimacy |
-|---|---|:---:|:---:|---|
-| **A** | Direct lineage | ✅ | ✅ | Orthodox — the gold standard |
-| **A-** | Direct, ideology gap | ✅ | ✅ | Weakened — same people & land, ideology changed |
-| **B** | Cultural migration | ✅ | ❌ | Successor — the people moved |
-| **C** | Locus inheritance | ❌ | ✅ | Claimant — conquered the land |
-| **D** | Arbitrary jump | ❌ | ❌ | **Ahistorical** — the thing 4X games wrongly allow |
+The floor of the model is the edge that shares **neither people nor land**: an *ahistorical jump* — the thing 4X games wrongly allow. This framework exists to make "Tang Dynasty → Ottoman Empire" *legibly wrong*.
 
-The last row is the whole point: this framework exists to make "Tang Dynasty → Ottoman Empire" *legibly wrong*.
+> **Model status:** the v1 letter grid (A/A-/B/C/D) is retired. Its ratified replacement — succession as **per-axis inheritance claims** (topology × mode, multi-parent, perspectival recognition) — is specced in [`docs/brainstorm/succession/`](docs/brainstorm/succession/README.md) and will land as curated tables. Until then, edges carry the derived evidence columns in `csvs/polity_succession.csv`.
 
 ---
 

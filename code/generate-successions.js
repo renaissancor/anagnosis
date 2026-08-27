@@ -15,13 +15,13 @@
  *   6. STATE:      Same civilization_id (political continuity)
  *   7. TEMPORAL:   How close in time (gap years)
  *
- * Classification:
- *   A  — Strong continuity (territory + ethnicity + continuous)
- *   A- — Continuity with break (territory + ethnicity + gap, OR territory + language/religion)
- *   B  — Ethnic/cultural migration (same ethnicity/language, different territory)
- *   C  — Conquest / locus inheritance (same territory, different culture)
+ * STATUS (2026-06-21 redesign): the A/A-/B/C/D letter classification is
+ * RETIRED — no type column is emitted or stored. Per the redesign
+ * (docs/brainstorm/succession/), this script is demoted to an EVIDENCE /
+ * CANDIDATE SUGGESTER: it derives the evidence columns above; the curated
+ * per-axis inheritance_claim layer is authored by humans, not this script.
  *
- * Output: csvs/successions.csv (rich columns)
+ * Output: csvs/polity_succession.csv (evidence columns)
  */
 
 const fs = require('fs');
