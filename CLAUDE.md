@@ -58,6 +58,7 @@ docs/
 ├── model/                   ← schema docs (one file per concept) — CANONICAL
 │   ├── data-model.md        ← read first for the graph model
 │   ├── civilization.md      ← top tier — deliberately DEFERRED; a perspective-projection over the graph, not a curated entity
+│   ├── editorial-policy.md  ← how content is added & verified (dates, sources, two-pass review)
 │   ├── erd.md               ← visual ERD with FK relationships
 │   ├── erd.sql              ← DDL with FKs
 │   ├── erd_nofk.sql         ← DDL without FKs (ingest variant)

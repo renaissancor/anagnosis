@@ -21,6 +21,7 @@ Schema definitions, entity semantics, and naming conventions.
 | Doc | Purpose |
 |-----|---------|
 | [data-model.md](model/data-model.md) | Property graph model and edge types |
+| [editorial-policy.md](model/editorial-policy.md) | How content is added and verified — dates, sources, stubs, two-pass review |
 | [erd.md](model/erd.md) | Visual ERD diagram, table summary, example queries |
 | [erd.sql](model/erd.sql) | Full DDL schema (24 tables, Polity model) |
 | [naming.md](model/naming.md) | Entity ID naming conventions and collision resolution |
