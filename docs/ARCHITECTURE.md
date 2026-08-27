@@ -17,7 +17,7 @@ CSV files (csvs/)              ← source of truth for flat data
   ├── ethnicity.csv               269 nodes
   ├── language.csv                695 nodes
   ├── religion.csv                264 nodes
-  ├── civilization.csv            2 civilizations (provisional stubs)
+  ├── (civilization.csv)          deferred — polity.civilization_id column exists; no civilization table yet
   └── figure.csv                  285 figures
 
 JSON files (data/history/)     ← source of truth for nested data
@@ -97,8 +97,8 @@ npm run validate    # check data integrity (npm test)
 
 Individual generators in `code/makejson/`:
 - `polities.js` — csvs/polity.csv → data/polity/*.json
-- `successions.js` — csvs/successions.csv → data/succession/all.json
-- `territories.js` — csvs/territories.csv → data/territory/*.json
+- `successions.js` — csvs/polity_succession.csv → data/succession/all.json
+- `territories.js` — csvs/territory.csv → data/territory/*.json
 - `ethnicities.js`, `languages.js`, `religions.js` — tree CSVs → directory trees
 
 ---
@@ -162,27 +162,27 @@ Polity successions today: 1,991 edges in `csvs/polity_succession.csv`.
 ## Foreign Key Reference Map
 
 ```
-polity.ruling_ethnicity  → ethnicities.id
-polity.cultural_language → languages.id
-polity.religion          → religions.id
-polity.government        → ideologies.id
-polity.civilization_id          → civilizations.id
+polity.id_ruling_ethnicity → ethnicity.id
+polity.id_ruling_language  → language.id
+polity.id_ruling_religion  → religion.id
+polity.government          → government.id
+polity.civilization_id     → civilization.id   (civilization table deferred)
 
-history_cell.polity_id   → polities.id
-history_cell.culture_id  → cultures.id
-history_cell.column_id   → history_columns.id
+history_cell.polity_id     → polity.id
+history_cell.column_id     → history_columns.id
 
-polity_succession.from/to → polities.id
+polity_succession.from_polity_id / to_polity_id → polity.id
 
-figure.polity_id         → polities.id
+figure.polity_id           → polity.id
 
-polity_territory.polity_id    → polities.id
-polity_territory.territory_id → territories.id
+polity_territory.polity_id    → polity.id
+polity_territory.territory_id → territory.id
 
-polity_dynasty.polity_id  → polities.id
-polity_dynasty.dynasty_id → dynasties.id
+polity_dynasty.polity_id   → polity.id
+polity_dynasty.dynasty_id  → dynasty.id
 
-province.territory_id    → territories.id
+city_name.city_id          → city.id
+city_succession.from_city_id / to_city_id → city.id
 ```
 
 ---

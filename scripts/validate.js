@@ -342,6 +342,91 @@ for (const r of db.polities) {
 }
 if (!badGov) ok(`all polity government refs resolve (${govSet.size} government types)`);
 
+// ── 13. CSV source lint ──────────────────────────────────────────────────────
+// Lints csvs/*.csv directly (pre-generation), so a bad row fails even if a
+// generator silently drops or rewrites it.
+
+console.log('\n── CSV source lint ──────────────────────────────────────');
+let badCsv = 0;
+
+// Minimal RFC-4180 parser: quoted fields, escaped quotes, no embedded newlines.
+function parseCsvLine(line) {
+  const out = [];
+  let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (inQ) {
+      if (c === '"') {
+        if (line[i + 1] === '"') { cur += '"'; i++; }
+        else inQ = false;
+      } else cur += c;
+    } else if (c === '"') inQ = true;
+    else if (c === ',') { out.push(cur); cur = ''; }
+    else cur += c;
+  }
+  out.push(cur);
+  return out;
+}
+
+// IDs must be lowercase and whitespace-free. Existing data legitimately uses
+// unicode letters and apostrophes (goktürk_khaganate, k'iche'), so we reject
+// only clear mistakes: whitespace, ASCII uppercase, quotes, commas, semicolons.
+const BAD_ID = /[\sA-Z",;]/;
+
+const YEAR_COLS = {
+  'polity.csv': ['start_year', 'end_year'],
+  'city.csv':   ['founding_year', 'abandonment_year'],
+};
+const CURRENT_YEAR = new Date().getFullYear();
+
+const csvDir = path.join(__dirname, '..', 'csvs');
+for (const file of fs.readdirSync(csvDir).filter(f => f.endsWith('.csv'))) {
+  const lines = fs.readFileSync(path.join(csvDir, file), 'utf8').trim().split(/\r?\n/);
+  const header = parseCsvLine(lines[0]);
+  const idIdx = header.indexOf('id');
+  const seen = new Set();
+
+  for (let n = 1; n < lines.length; n++) {
+    const row = parseCsvLine(lines[n]);
+    const ctx = `${file}:${n + 1}`;
+
+    if (row.length !== header.length) {
+      err(`${ctx}: ${row.length} fields, expected ${header.length} — unquoted comma or broken row`);
+      badCsv++;
+      continue;
+    }
+
+    // ID format + duplicates (entity tables only; junction tables have no id col)
+    if (idIdx !== -1) {
+      const id = row[idIdx];
+      if (!id)               { err(`${ctx}: empty id`); badCsv++; }
+      else if (BAD_ID.test(id)) { err(`${ctx}: malformed id "${id}" (whitespace/uppercase/quote)`); badCsv++; }
+      if (id && seen.has(id)) { err(`${ctx}: duplicate id "${id}" in source CSV`); badCsv++; }
+      seen.add(id);
+    }
+
+    // Year sanity
+    for (const col of (YEAR_COLS[file] || [])) {
+      const i = header.indexOf(col);
+      if (i === -1 || row[i] === '') continue;
+      const y = Number(row[i]);
+      if (!Number.isInteger(y) || y < -10000 || y > CURRENT_YEAR + 1) {
+        err(`${ctx}: ${col} "${row[i]}" is not a sane integer year`);
+        badCsv++;
+      }
+    }
+    const [sc, ec] = YEAR_COLS[file] || [];
+    if (sc) {
+      const s = row[header.indexOf(sc)], e = row[header.indexOf(ec)];
+      if (s !== '' && e !== '' && Number(s) > Number(e)) {
+        err(`${ctx}: ${sc} (${s}) > ${ec} (${e})`);
+        badCsv++;
+      }
+    }
+  }
+}
+if (!badCsv) ok('all source CSVs pass lint');
+
 // ── Summary ───────────────────────────────────────────────────────────────────
 
 console.log('\n─────────────────────────────────────────────────────────');
@@ -350,6 +435,25 @@ console.log(`Languages: ${db.languages.length}  |  Religions: ${db.religions.len
 console.log(`Dynasties: ${(db.dynasties||[]).length}  |  Governments: ${(db.governments||[]).length}`);
 console.log(`History panels: ${panelCount}  |  Panel cells: ${cellCount}`);
 console.log('');
+
+// ── Warning ratchet ───────────────────────────────────────────────────────────
+// Warnings are curation debt (e.g. missing ideology fields). They may shrink,
+// never grow. Baseline is checked in; refresh it with:
+//   node scripts/validate.js --update-baseline
+
+const baselineFile = path.join(__dirname, 'warning-baseline.json');
+const baseline = fs.existsSync(baselineFile)
+  ? JSON.parse(fs.readFileSync(baselineFile, 'utf8')).warnings
+  : null;
+
+if (process.argv.includes('--update-baseline')) {
+  fs.writeFileSync(baselineFile, JSON.stringify({ warnings }, null, 2) + '\n');
+  console.log(`Warning baseline updated: ${baseline ?? 'none'} → ${warnings}\n`);
+} else if (baseline !== null && warnings > baseline) {
+  err(`warning count grew: ${warnings} > baseline ${baseline} — fix the new gaps (or, if deliberate, run: node scripts/validate.js --update-baseline)`);
+} else if (baseline !== null && warnings < baseline) {
+  console.log(`Warnings below baseline (${warnings} < ${baseline}) — lock it in: node scripts/validate.js --update-baseline\n`);
+}
 
 if (errors > 0) {
   console.error(`FAILED: ${errors} error(s), ${warnings} warning(s)\n`);
