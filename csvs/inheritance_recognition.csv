@@ -2,3 +2,6 @@ claim_id,observer_id,observer_type,degree,note
 ottoman_from_abbasid,safavid_empire,polity,rejected,Shia Safavids rejected Ottoman caliphal authority outright
 ottoman_from_abbasid,mamluk_sultanate,polity,rejected,Held the Cairo Abbasid line the Ottomans took the title from
 ottoman_from_byzantine,tsardom_russia,polity,rejected,Third Rome doctrine claimed the Byzantine inheritance for Moscow
+hre_from_western_roman,byzantine_empire,polity,rejected,Zweikaiserproblem — the eastern court rejected any western imperial claim
+latin_from_byzantine,byzantine_empire,polity,rejected,The Nicaean court-in-exile rejected the Latin claim and retook Constantinople 1261
+russia_from_byzantine,ottoman_empire,polity,rejected,The Ottoman sultan claimed Kayser-i Rum for himself

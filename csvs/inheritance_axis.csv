@@ -9,3 +9,22 @@ turkey_from_ottoman,political_legitimacy,repudiated,5,Popular sovereignty replac
 turkey_from_ottoman,title,repudiated,5,Caliphate abolished 1924
 turkey_from_ottoman,legal_tradition,repudiated,4,Mecelle/sharia replaced by Swiss-derived civil code 1926
 turkey_from_ottoman,court_language,transformed,3,Script reform 1928; Ottoman Turkish purged toward vernacular
+byzantine_from_roman,political_legitimacy,affirmed,5,Unbroken imperial office; no founding rupture claimed
+byzantine_from_roman,title,affirmed,5,Basileus ton Rhomaion — Emperor of the Romans throughout
+byzantine_from_roman,legal_tradition,affirmed,5,Roman law culminating in the Justinian codification
+byzantine_from_roman,name_symbols,affirmed,5,Self-designation Rhomaioi; the state never called itself Byzantine
+byzantine_from_roman,court_language,transformed,3,Latin to Greek as court language under Heraclius
+hre_from_western_roman,title,affirmed,4,Imperator Romanorum revived after a 486-year vacancy
+hre_from_western_roman,political_legitimacy,affirmed,2,Papal coronation grounding a constructed Roman continuity
+hre_from_western_roman,name_symbols,affirmed,3,Roman imperial iconography and the Roman name itself
+seljuk_rum_from_seljuk,dynasty,affirmed,5,Cadet branch of the Seljuk house
+seljuk_rum_from_seljuk,ruling_ethnicity,affirmed,5,Oghuz Turkic ruling people
+seljuk_rum_from_seljuk,administrative_apparatus,affirmed,3,Persianate chancery practice carried into Anatolia
+seljuk_rum_from_seljuk,title,affirmed,3,Sultan; styled Sultan of Rum
+latin_from_byzantine,title,affirmed,3,Emperor of Romania claimed by Baldwin of Flanders
+latin_from_byzantine,political_legitimacy,transformed,2,Latin Catholic emperor over an Orthodox imperial office
+latin_from_byzantine,state_religion,repudiated,4,Latin rite imposed over Orthodox hierarchy
+russia_from_byzantine,title,affirmed,3,Tsar derives from Caesar; imperial style claimed
+russia_from_byzantine,political_legitimacy,affirmed,3,Third Rome doctrine; guardianship of Orthodoxy after 1453
+russia_from_byzantine,state_religion,affirmed,5,Orthodox Christianity as the core inherited identity
+russia_from_byzantine,name_symbols,affirmed,4,Double-headed eagle adopted from the Palaiologoi

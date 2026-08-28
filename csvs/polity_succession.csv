@@ -95,7 +95,7 @@ zhou_dynasty,Zhou Dynasty,han_dynasty,Han Dynasty,same,8,yangtze|yellow_river,2,
 han_dynasty,Han Dynasty,western_jin,Western Jin Dynasty,same,8,yangtze|yellow_river,2,1,0,1,0,0,45,stub
 eastern_wu,Eastern Wu,eastern_jin,Eastern Jin Dynasty,same,8,yangtze,1,1,0,1,1,0,37,stub
 cao_wei,Cao Wei,shu_han,Shu Han,same,8,yellow_river,1,1,0,1,1,0,-44,stub
-roman_empire,Roman Empire,byzantine_empire,Byzantine Empire,contraction,7,anatolia|balkans|egypt|levant|north_africa,5,0,0,0,0,0,0,stub
+roman_empire,Roman Empire,byzantine_empire,Byzantine Empire,contraction,7,anatolia|balkans|egypt|levant|north_africa,5,0,0,0,0,0,0,wp:Byzantine_Empire
 goktürk_khaganate,Göktürk Khaganate,uyghur_khaganate,Uyghur Khaganate,contraction,7,central_asian_steppe|mongolian_plateau,2,1,0,0,0,0,0,stub
 macedonian_empire,Macedonian Empire (Alexander),ptolemaic_egypt,Ptolemaic Kingdom,contraction,7,egypt|levant,2,1,0,0,1,0,18,stub
 gupta_empire,Gupta Empire,kamarupa_kingdom,Kamarupa Kingdom,contraction,7,ganges_plain,1,1,0,1,1,0,-200,stub
@@ -119,7 +119,7 @@ almoravid_dynasty,Almoravid Dynasty,marinid_dynasty,Marinid Dynasty,contraction,
 western_jin,Western Jin Dynasty,southern_dynasties,Southern Dynasties,contraction,7,yangtze,1,1,0,1,1,0,104,stub
 umayyad_caliphate,Umayyad Caliphate,al_andalus,Al-Andalus,contraction,7,,0,1,0,1,1,0,-39,stub
 ghaznavid_empire,Ghaznavid Empire,khwarazmian_empire,Khwarazmian Empire,contraction,7,,0,1,0,1,1,0,14,stub
-seljuk_rum,Sultanate of Rum,ottoman_empire,Ottoman Empire,expansion,7,anatolia,1,1,0,0,1,0,-8,stub
+seljuk_rum,Sultanate of Rum,ottoman_empire,Ottoman Empire,expansion,7,anatolia,1,1,0,0,1,0,-8,wp:Osman_I
 nanda_empire,Nanda Empire,maurya_empire,Maurya Empire,expansion,7,ganges_plain,1,1,0,0,1,0,0,stub
 kamarupa_kingdom,Kamarupa Kingdom,pratihara_dynasty,Pratihara Dynasty,expansion,7,ganges_plain,1,1,0,1,1,0,-410,stub
 malwa_sultanate,Malwa Sultanate,mughal_empire,Mughal Empire,expansion,7,ganges_plain,1,1,0,1,0,0,-36,stub
@@ -1063,7 +1063,7 @@ confederate_states,Confederate States of America,hawaii_republic,Republic of Haw
 dominion_of_canada,Dominion of Canada,british_military_administration,British Military Administration,unknown,3,,0,0,0,1,0,0,-39,stub
 hawaii_republic,Republic of Hawaiʻi,british_military_administration,British Military Administration,unknown,3,,0,0,0,1,0,0,45,stub
 british_military_administration,British Military Administration,canada,Canada,unknown,3,,0,0,0,1,0,0,31,stub
-byzantine_empire,Byzantine Empire,latin_empire,Latin Empire,contraction,2,anatolia|balkans,2,0,0,0,0,0,-249,stub
+byzantine_empire,Byzantine Empire,latin_empire,Latin Empire,contraction,2,anatolia|balkans,2,0,0,0,0,0,-249,wp:Latin_Empire
 abbasid_caliphate,Abbasid Caliphate,ajuran_sultanate,Ajuran Sultanate,contraction,2,arabia,1,0,0,0,0,0,42,stub
 byzantine_empire,Byzantine Empire,first_bulgarian_empire,First Bulgarian Empire,contraction,2,balkans,1,0,0,0,1,0,-772,stub
 byzantine_empire,Byzantine Empire,second_bulgarian_empire,Second Bulgarian Empire,contraction,2,balkans,1,0,0,0,1,0,-268,stub
@@ -1318,7 +1318,7 @@ ghaznavid_empire,Ghaznavid Empire,jalayirid_sultanate,Jalayirid Sultanate,displa
 ghaznavid_empire,Ghaznavid Empire,madurai_sultanate,Madurai Sultanate,displacement,2,,0,0,0,1,0,0,149,stub
 ghaznavid_empire,Ghaznavid Empire,malwa_sultanate,Malwa Sultanate,displacement,2,,0,0,0,1,0,0,206,stub
 ghaznavid_empire,Ghaznavid Empire,jaunpur_sultanate,Jaunpur Sultanate,displacement,2,,0,0,0,1,0,0,208,stub
-seljuk_empire,Seljuk Empire,seljuk_rum,Sultanate of Rum,displacement,2,,0,0,0,1,0,0,-117,stub
+seljuk_empire,Seljuk Empire,seljuk_rum,Sultanate of Rum,displacement,2,,0,0,0,1,0,0,-117,wp:Sultanate_of_Rum
 seljuk_empire,Seljuk Empire,madurai_sultanate,Madurai Sultanate,displacement,2,,0,0,0,1,0,0,141,stub
 seljuk_empire,Seljuk Empire,malwa_sultanate,Malwa Sultanate,displacement,2,,0,0,0,1,0,0,198,stub
 seljuk_empire,Seljuk Empire,jaunpur_sultanate,Jaunpur Sultanate,displacement,2,,0,0,0,1,0,0,200,stub
@@ -1398,7 +1398,7 @@ teutonic_order,Teutonic Order (Monastic State),habsburg_monarchy,Habsburg Monarc
 kalmar_union,Kalmar Union,habsburg_monarchy,Habsburg Monarchy,displacement,2,,0,0,0,1,0,0,-85,stub
 kalmar_union,Kalmar Union,kingdom_of_prussia,Kingdom of Prussia,displacement,2,,0,0,0,1,0,0,178,stub
 kingdom_of_great_britain,Kingdom of Great Britain,british_raj,British Raj,displacement,2,,0,0,0,1,0,0,57,stub
-byzantine_empire,Byzantine Empire,ottoman_empire,Ottoman Empire,expansion,2,anatolia|balkans,2,0,0,0,0,0,-154,stub
+byzantine_empire,Byzantine Empire,ottoman_empire,Ottoman Empire,expansion,2,anatolia|balkans,2,0,0,0,0,0,-154,wp:Fall_of_Constantinople
 croatian_kingdom,Croatian Kingdom,latin_empire,Latin Empire,expansion,2,balkans,1,0,0,0,1,0,102,stub
 kingdom_of_bohemia,Kingdom of Bohemia,holy_roman_empire,Holy Roman Empire,expansion,2,bohemia,1,0,0,0,1,0,-564,stub
 kingdom_of_bohemia,Kingdom of Bohemia,habsburg_monarchy,Habsburg Monarchy,expansion,2,bohemia,1,0,0,0,1,0,-88,stub
