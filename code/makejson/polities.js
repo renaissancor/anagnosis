@@ -91,6 +91,7 @@ function buildPolity(row, figuresByPolity) {
   if (policies.length) polity.policies = policies;
 
   if (row.note) polity.note = row.note;
+  if (row.provenance) polity.provenance = row.provenance;
 
   const figures = figuresByPolity ? (figuresByPolity.get(row.id) || []) : [];
   if (figures.length) polity.figures = figures;

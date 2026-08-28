@@ -424,6 +424,28 @@ for (const file of fs.readdirSync(csvDir).filter(f => f.endsWith('.csv'))) {
 }
 if (!badCsv) ok('all source CSVs pass lint');
 
+// ── 13b. Provenance tags ─────────────────────────────────────────────────────
+// Every polity row and succession edge carries a provenance tag
+// (docs/model/editorial-policy.md §3). Malformed = error; stub/legacy counts
+// feed the plausibility ratchet — promotion shrinks them, they never grow.
+
+console.log('\n── Provenance tags ──────────────────────────────────────');
+const PROV_RE = /^(wp|wd|panel|ref):.+|^(stub|legacy)$/;
+let badProv = 0;
+let unpromotedPolities = 0, unpromotedEdges = 0;
+
+for (const r of db.polities) {
+  if (!r.provenance)               { err(`polity "${r.id}": missing provenance tag`); badProv++; }
+  else if (!PROV_RE.test(r.provenance)) { err(`polity "${r.id}": malformed provenance "${r.provenance}"`); badProv++; }
+  else if (r.provenance === 'stub' || r.provenance === 'legacy') unpromotedPolities++;
+}
+for (const s of db.successions) {
+  if (!s.provenance)               { err(`succession ${s.from}→${s.to}: missing provenance tag`); badProv++; }
+  else if (!PROV_RE.test(s.provenance)) { err(`succession ${s.from}→${s.to}: malformed provenance "${s.provenance}"`); badProv++; }
+  else if (s.provenance === 'stub' || s.provenance === 'legacy') unpromotedEdges++;
+}
+if (!badProv) ok(`all provenance tags well-formed (unpromoted: ${unpromotedPolities} polities, ${unpromotedEdges} edges)`);
+
 // ── 14. Plausibility metrics ─────────────────────────────────────────────────
 // Machine checks prove coherence, not truth — but wrong history tends to be
 // INCOHERENT, so these flag where errors concentrate. Each metric is ratcheted
@@ -467,6 +489,9 @@ for (const p of db.polities) {
 }
 
 const plausCounts = Object.fromEntries(Object.entries(plaus).map(([k, v]) => [k, v.length]));
+// Provenance promotion progress — count-only metrics (the CSVs are the detail list)
+plausCounts.unpromoted_polities = unpromotedPolities;
+plausCounts.unpromoted_edges    = unpromotedEdges;
 for (const [k, v] of Object.entries(plausCounts)) {
   console.log(`  ·  ${k}: ${v}`);
 }

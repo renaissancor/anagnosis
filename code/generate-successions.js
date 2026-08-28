@@ -21,7 +21,8 @@
  * CANDIDATE SUGGESTER: it derives the evidence columns above; the curated
  * per-axis inheritance_claim layer is authored by humans, not this script.
  *
- * Output: csvs/polity_succession.csv (evidence columns)
+ * Output: csvs/derived/succession_candidates.csv (proposed edges + evidence
+ * columns, for curation into csvs/polity_succession.csv — NEVER writes there)
  */
 
 const fs = require('fs');
@@ -401,7 +402,7 @@ edges.forEach(e => {
   ].join(','));
 });
 
-const csvPath = path.join(__dirname, '../csvs/polity_succession.csv');
+const csvPath = path.join(__dirname, '../csvs/derived/succession_candidates.csv');
 fs.writeFileSync(csvPath, csvLines.join('\n'), 'utf8');
 
 // ── Stats ───────────────────────────────────────────────────────────────────

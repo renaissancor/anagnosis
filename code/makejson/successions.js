@@ -63,6 +63,7 @@ function buildSuccession(row) {
     same_religion:           parseBool(row.same_religion),
     same_civilization:              parseBool(row.same_civilization),
     temporal_gap_years:      parseInt2(row.temporal_gap_years),
+    provenance:              row.provenance || null,
   };
 }
 

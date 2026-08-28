@@ -28,8 +28,9 @@ Divergence from Wikipedia is allowed but must be deliberate — carried by a
 
 ## 3. Provenance: every row carries its receipt
 
-Rows in claim-bearing CSVs (`polity`, `polity_succession`, `figure`,
-`dynasty`) get a `source` tag (column pending — see TODO):
+Rows in claim-bearing CSVs carry a **`provenance`** column (live in `polity.csv`
+and `polity_succession.csv`; `figure`/`dynasty` pending). Named `provenance`,
+not `source`, because `inheritance_claim` already has `source_id`/`source_type`:
 
 | Tag | Meaning |
 |---|---|
@@ -71,7 +72,8 @@ finishable afternoon; "verify the dataset" is not.
 
 ## 7. Plausibility metrics are the error map
 
-`npm test` computes ratcheted metrics (warning-baseline.json): `d_shaped_edges`
+`npm test` computes ratcheted metrics (warning-baseline.json): `unpromoted_polities` /
+`unpromoted_edges` (rows still tagged stub/legacy), `d_shaped_edges`
 (no shared people AND no shared land — the ahistorical jump this project
 exists to forbid), `gap_over_200` (revival claims need a note),
 `start_inversions` (edge likely reversed), `long_lived_polities` (probably a
