@@ -66,7 +66,8 @@ docs/
 │   ├── ethnicity.md
 │   ├── religion.md
 │   ├── ideology.md
-│   ├── succession.md
+│   ├── inheritance.md       ← curated succession layer (per-axis claims) — LIVE
+│   ├── succession.md        ← legacy derived layer (evidence)
 │   ├── naming.md
 │   ├── polity_dynasty.md
 │   └── city.md              ← place-not-polis identity, FK-driven scoping

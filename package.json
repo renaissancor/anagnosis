@@ -1,7 +1,7 @@
 {
   "name": "anagnosis",
   "version": "1.0.0",
-  "description": "Anagnosis models the continuity and legitimacy of political succession across world history. Unlike 4X games that allow arbitrary 'evolution' (e.g. Tang Dynasty to Ottoman Empire), it types each succession by what the successor inherits from its predecessor — ruling people (software) and territory (hardware) — across ethnicity, territory, ideology, and time.",
+  "description": "Anagnosis models the continuity and legitimacy of political succession across world history. Unlike 4X games that allow arbitrary 'evolution' (e.g. Tang Dynasty to Ottoman Empire), it types each succession by what the successor inherits from its predecessor \u2014 ruling people (software) and territory (hardware) \u2014 across ethnicity, territory, ideology, and time.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -19,8 +19,9 @@
     "make:religions": "node code/makejson/religions.js",
     "make:dynasties": "node code/makejson/dynasties.js",
     "make:governments": "node code/makejson/governments.js",
-    "make:all": "node code/makejson/ethnicities.js && node code/makejson/languages.js && node code/makejson/religions.js && node code/makejson/territories.js && node code/makejson/polities.js && node code/makejson/successions.js && node code/makejson/dynasties.js && node code/makejson/governments.js",
-    "test": "node scripts/validate.js"
+    "make:all": "node code/makejson/ethnicities.js && node code/makejson/languages.js && node code/makejson/religions.js && node code/makejson/territories.js && node code/makejson/polities.js && node code/makejson/successions.js && node code/makejson/dynasties.js && node code/makejson/governments.js && node code/makejson/inheritance.js",
+    "test": "node scripts/validate.js",
+    "make:inheritance": "node code/makejson/inheritance.js"
   },
   "keywords": [],
   "author": "",

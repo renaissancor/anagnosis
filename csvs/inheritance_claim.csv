@@ -1,0 +1,5 @@
+id,heir_polity_id,source_id,source_type,source_temporal_status,topology,mechanism,legitimacy_mode,exclusivity,temporal_gap_years,provenance,note
+ottoman_from_byzantine,ottoman_empire,byzantine_empire,polity,prior,absorption,conquest,organic,exclusive,0,wp:Fall_of_Constantinople,Conquest of Constantinople 1453; Mehmed II styled Kayser-i Rum
+ottoman_from_abbasid,ottoman_empire,abbasid_caliphate,polity,prior,continuation,title_transfer,claimed,exclusive,0,wp:Ottoman_Caliphate,Selim I took the caliphal title from the Cairo Abbasid line after 1517
+ottoman_from_seljuk_rum,ottoman_empire,seljuk_rum,polity,prior,continuation,transformation,organic,shared,0,wp:Sultanate_of_Rum,Anatolian beylik emerging from Seljuk collapse; people and apparatus carried over
+turkey_from_ottoman,republic_of_turkey,ottoman_empire,polity,prior,continuation,transformation,organic,exclusive,0,wp:History_of_the_Republic_of_Turkey,Kemalist republic on the Anatolian core; sultanate abolished 1922; caliphate 1924

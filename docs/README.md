@@ -25,7 +25,8 @@ Schema definitions, entity semantics, and naming conventions.
 | [erd.md](model/erd.md) | Visual ERD diagram, table summary, example queries |
 | [erd.sql](model/erd.sql) | Full DDL schema (24 tables, Polity model) |
 | [naming.md](model/naming.md) | Entity ID naming conventions and collision resolution |
-| [succession.md](model/succession.md) | Succession type logic (A/A-/B/C/D) and edge cases |
+| [inheritance.md](model/inheritance.md) | **The curated succession layer** — per-axis claims, recognition, terminus |
+| [succession.md](model/succession.md) | Legacy derived similarity layer (evidence columns) |
 | [dynasty.md](model/dynasty.md) | Dynasty entity and lineage modeling |
 | [polity_dynasty.md](model/polity_dynasty.md) | Polity-dynasty junction table |
 | [ideology.md](model/ideology.md) | Ideology vs policy distinction; government form = ideology |

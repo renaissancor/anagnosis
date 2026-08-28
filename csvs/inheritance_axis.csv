@@ -1,0 +1,11 @@
+claim_id,axis,stance,strength,note
+ottoman_from_byzantine,title,affirmed,3,Kayser-i Rum — claim to the Roman imperial title
+ottoman_from_byzantine,name_symbols,transformed,2,Constantinople kept as capital and imperial stage
+ottoman_from_abbasid,title,affirmed,5,The caliphate itself
+ottoman_from_abbasid,political_legitimacy,affirmed,4,Leadership of Sunni Islam grounding Ottoman legitimacy
+ottoman_from_seljuk_rum,administrative_apparatus,affirmed,3,Persianate-Seljuk administrative practice
+ottoman_from_seljuk_rum,ruling_ethnicity,affirmed,4,Oghuz Turkic ruling people carried over
+turkey_from_ottoman,political_legitimacy,repudiated,5,Popular sovereignty replacing dynastic-religious legitimacy
+turkey_from_ottoman,title,repudiated,5,Caliphate abolished 1924
+turkey_from_ottoman,legal_tradition,repudiated,4,Mecelle/sharia replaced by Swiss-derived civil code 1926
+turkey_from_ottoman,court_language,transformed,3,Script reform 1928; Ottoman Turkish purged toward vernacular

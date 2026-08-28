@@ -424,6 +424,72 @@ for (const file of fs.readdirSync(csvDir).filter(f => f.endsWith('.csv'))) {
 }
 if (!badCsv) ok('all source CSVs pass lint');
 
+// ── 13a. Inheritance layer ───────────────────────────────────────────────────
+// The curated per-axis inheritance layer (docs/model/inheritance.md).
+// Enum vocabularies are canonical per docs/brainstorm/succession/02 & 09.
+
+console.log('\n── Inheritance layer ────────────────────────────────────');
+const INH = {
+  source_type:            new Set(['polity', 'ethnicity', 'religion', 'civilization', 'stateless_people']),
+  source_temporal_status: new Set(['prior', 'ongoing', 'abstract']),
+  topology:               new Set(['continuation', 'fission', 'fusion', 'secession', 'absorption']),
+  mechanism:              new Set(['transformation', 'conquest', 'partition', 'collapse', 'unification',
+                                   'personal_union', 'secession', 'dissolution', 'revival', 'translatio',
+                                   'title_transfer', 'colonial_independence']),
+  legitimacy_mode:        new Set(['organic', 'claimed', 'fictive']),
+  exclusivity:            new Set(['exclusive', 'shared']),
+  axis:                   new Set(['territory', 'ruling_ethnicity', 'state_religion', 'court_language',
+                                   'dynasty', 'administrative_apparatus', 'legal_tradition', 'name_symbols',
+                                   'political_legitimacy', 'title', 'diplomatic_personality']),
+  stance:                 new Set(['affirmed', 'repudiated', 'transformed', 'neutral']),
+  degree:                 new Set(['recognized', 'partial', 'rejected']),
+  observer_type:          new Set(['polity', 'institution']),
+};
+const SOURCE_SETS = { polity: sets.polities, ethnicity: sets.ethnicities, religion: sets.religions };
+
+let badInh = 0;
+const inhFile = path.join(__dirname, '..', 'data', 'inheritance', 'claims.json');
+const termFile = path.join(__dirname, '..', 'data', 'inheritance', 'terminus.json');
+const inhClaims = fs.existsSync(inhFile) ? JSON.parse(fs.readFileSync(inhFile, 'utf8')) : [];
+const inhTerminus = fs.existsSync(termFile) ? JSON.parse(fs.readFileSync(termFile, 'utf8')) : [];
+
+const claimIds = new Set();
+function inhErr(msg) { err(msg); badInh++; }
+
+for (const c of inhClaims) {
+  const ctx = `inheritance_claim "${c.id}"`;
+  if (claimIds.has(c.id)) inhErr(`${ctx}: duplicate id`);
+  claimIds.add(c.id);
+  if (!sets.polities.has(c.heir_polity_id)) inhErr(`${ctx}: heir_polity_id "${c.heir_polity_id}" not found`);
+  if (!INH.source_type.has(c.source_type))  inhErr(`${ctx}: bad source_type "${c.source_type}"`);
+  else if (SOURCE_SETS[c.source_type] && !SOURCE_SETS[c.source_type].has(c.source_id)) {
+    inhErr(`${ctx}: source_id "${c.source_id}" not found in ${c.source_type}`);
+  }
+  for (const [f, allowed] of [['source_temporal_status', INH.source_temporal_status],
+                              ['topology', INH.topology], ['mechanism', INH.mechanism],
+                              ['legitimacy_mode', INH.legitimacy_mode], ['exclusivity', INH.exclusivity]]) {
+    if (!allowed.has(c[f])) inhErr(`${ctx}: bad ${f} "${c[f]}"`);
+  }
+  if (!c.provenance) inhErr(`${ctx}: missing provenance — curated claims always carry a receipt`);
+  for (const a of (c.axes || [])) {
+    if (!INH.axis.has(a.axis))                inhErr(`${ctx} axis: unknown axis "${a.axis}"`);
+    if (a.stance && !INH.stance.has(a.stance)) inhErr(`${ctx} axis "${a.axis}": bad stance "${a.stance}"`);
+    if (a.strength != null && (a.strength < 1 || a.strength > 5)) inhErr(`${ctx} axis "${a.axis}": strength ${a.strength} out of 1–5`);
+  }
+  for (const r of (c.recognition || [])) {
+    if (!INH.degree.has(r.degree))               inhErr(`${ctx} recognition: bad degree "${r.degree}"`);
+    if (!INH.observer_type.has(r.observer_type)) inhErr(`${ctx} recognition: bad observer_type "${r.observer_type}"`);
+    else if (r.observer_type === 'polity' && !sets.polities.has(r.observer_id)) {
+      inhErr(`${ctx} recognition: observer polity "${r.observer_id}" not found`);
+    }
+  }
+}
+for (const t of inhTerminus) {
+  if (!sets.polities.has(t.polity_id)) inhErr(`axis_terminus: polity "${t.polity_id}" not found`);
+  if (!INH.axis.has(t.axis))           inhErr(`axis_terminus "${t.polity_id}": unknown axis "${t.axis}"`);
+}
+if (!badInh) ok(`inheritance layer valid (${inhClaims.length} claims, ${inhTerminus.length} terminus records)`);
+
 // ── 13b. Provenance tags ─────────────────────────────────────────────────────
 // Every polity row and succession edge carries a provenance tag
 // (docs/model/editorial-policy.md §3). Malformed = error; stub/legacy counts
