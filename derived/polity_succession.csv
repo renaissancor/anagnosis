@@ -644,6 +644,7 @@ kalmar_union,Kalmar Union,denmark_norway,Denmark-Norway,same,6,scandinavia,1,1,0
 han_dynasty,Han Dynasty,eastern_han,Eastern Han (东汉),same,6,yangtze|yellow_river,2,1,0,0,1,-195
 eastern_han,Eastern Han (东汉),western_jin,Western Jin Dynasty,same,6,yangtze|yellow_river,2,1,0,0,0,45
 eastern_jin,Eastern Jin Dynasty,liu_song,Liu Song (刘宋),same,6,yangtze,1,1,0,0,0,0
+xia,Xia Dynasty (夏),shang_dynasty,Shang Dynasty,same,6,yellow_river,1,1,0,0,0,0
 cao_wei,Cao Wei,northern_dynasties,Northern Dynasties,same,6,yellow_river,1,1,0,1,0,121
 shu_han,Shu Han,northern_dynasties,Northern Dynasties,same,6,yellow_river,1,1,0,1,0,123
 later_liang,Later Liang / Northern Liang,later_zhou,Later Zhou (后周),same,6,yellow_river,1,1,0,0,1,28
@@ -2084,7 +2085,6 @@ sikh_empire,Sikh Empire,jammu_kashmir,Jammu & Kashmir,same,3,punjab,1,0,0,0,0,-3
 kingdom_of_sweden,Kingdom of Sweden,kingdom_of_denmark,Kingdom of Denmark,same,3,scandinavia,1,0,0,0,0,0
 kingdom_of_sweden,Kingdom of Sweden,kingdom_of_norway,Kingdom of Norway,same,3,scandinavia,1,0,0,0,0,0
 kingdom_of_denmark,Kingdom of Denmark,kingdom_of_norway,Kingdom of Norway,same,3,scandinavia,1,0,0,0,0,0
-xia,Xia Dynasty (夏),shang_dynasty,Shang Dynasty,same,3,yellow_river,1,0,0,0,0,0
 tang_dynasty,Tang Dynasty,liao_dynasty,Liao Dynasty (Khitan),same,3,yellow_river,1,0,0,0,0,0
 zapotec,Zapotec (Monte Albán),postclassic_maya,Postclassic Maya (Mayapan; K'iche'),same,3,mesoamerica,1,0,0,0,0,0
 zapotec,Zapotec (Monte Albán),toltec_empire,Toltec Empire,same,3,mesoamerica,1,0,0,0,0,0
@@ -2134,6 +2134,8 @@ countyduchy_of_savoy,County and Duchy of Savoy,italian_republic,Italian Republic
 republic_of_florence,Republic of Florence,kingdom_of_the_two_sicilies,Kingdom of the Two Sicilies,same,3,,0,1,0,0,0,284
 duchy_of_milan,Duchy of Milan,cisalpine,Cisalpine / Italian Republic,same,3,,0,1,0,0,0,262
 duchy_of_milan,Duchy of Milan,kingdom_of_the_two_sicilies,Kingdom of the Two Sicilies,same,3,,0,1,0,0,0,281
+proto_elamite,Proto-Elamite,marhashi_kingdom,Marhashi Kingdom,same,3,,0,1,0,0,0,200
+proto_elamite,Proto-Elamite,anshan_kingdom,Anshan Kingdom,same,3,,0,1,0,0,0,300
 muhallabid_governors,Muhallabid governors,zirid_dynasty,Zirid Dynasty,same,3,,0,0,0,1,1,179
 shun,Shun Dynasty (顺),kingdom_of_tungning,Kingdom of Tungning (东宁),unknown,3,,0,0,0,1,0,18
 achaemenid_empire,Achaemenid Empire,lysimachus,Lysimachus,contraction,2,anatolia,1,0,0,0,0,24
@@ -3347,7 +3349,6 @@ novgorod_republic,Novgorod Republic,grand_duchy_moscow,Grand Duchy of Moscow,sam
 novgorod_republic,Novgorod Republic,tsardom_russia,Tsardom of Russia,same,2,kievan_rus,1,0,0,0,1,69
 galicia_volhynia,Principality of Galicia-Volhynia,grand_duchy_moscow,Grand Duchy of Moscow,same,2,kievan_rus,1,0,0,0,1,-66
 joseon,Joseon Dynasty,japanese_korea,Japanese-Occupied Korea,same,2,korean_peninsula,1,0,0,0,0,13
-jin_jurchen,Jin Dynasty (Jurchen),jin_dynasty,Jin Dynasty,same,2,manchuria|yellow_river,2,0,0,0,0,-119
 akkadian_empire,Akkadian Empire,gutian_dynasty,Gutian dynasty,same,2,mesopotamia,1,0,0,0,0,13
 ur_iii,Third Dynasty of Ur (Neo-Sumerian),old_babylonian,Old Babylonian Empire,same,2,mesopotamia,1,0,0,0,1,110
 hamdanid_emirate,Hamdanid Emirate,buyid_dynasty,Buyid Dynasty,same,2,mesopotamia,1,0,0,0,1,-70
@@ -3363,8 +3364,8 @@ kazan_khanate,Kazan Khanate,crimean_khanate,Crimean Khanate,same,2,pontic_steppe
 samanid_empire,Samanid Empire,kara_khanid_khanate,Kara-Khanid Khanate,same,2,transoxiana,1,0,0,0,1,-159
 song_dynasty,Song Dynasty,northern_song,Northern Song Dynasty,same,2,yangtze|yellow_river,2,0,0,0,0,-319
 former_qin,Former Qin (前秦),western_wei,Western Wei / Northern Zhou tributary,same,2,yellow_river,1,0,0,0,1,141
-northern_song,Northern Song Dynasty,jin_jurchen,Jin Dynasty (Jurchen),same,2,yellow_river,1,0,0,0,0,-12
 northern_song,Northern Song Dynasty,jin_dynasty,Jin Dynasty,same,2,yellow_river,1,0,0,0,0,-12
+northern_song,Northern Song Dynasty,jin_jurchen,Jin Dynasty (Jurchen),same,2,yellow_river,1,0,0,0,0,-12
 portuguese_brazil,Portuguese Brazil,viceroyalty_of_peru,Viceroyalty of Peru,same,2,amazonia,1,0,0,0,1,-280
 viceroyalty_of_peru,Viceroyalty of Peru,republic_of_brazil,Federative Republic of Brazil,same,2,amazonia,1,0,0,0,1,65
 tiwanaku,Tiwanaku,muisca_confederation,Muisca Confederation,same,2,andes,1,0,0,0,1,-400
@@ -3618,7 +3619,7 @@ byzantine_empire,Byzantine Empire,idrisid_dynasty,Idrisid Dynasty,contraction,1,
 byzantine_empire,Byzantine Empire,aghlabid_dynasty,Aghlabid Dynasty,contraction,1,north_africa,1,0,0,0,0,-653
 ottoman_empire,Ottoman Empire,saadian_dynasty,Saadian Dynasty,contraction,1,north_africa,1,0,0,0,0,-373
 ottoman_empire,Ottoman Empire,alawite_dynasty,Alawite Dynasty (Morocco),contraction,1,north_africa,1,0,0,0,0,-291
-old_kingdom_egypt,Old Kingdom Egypt,punt,Punt (Egyptian trading land,contraction,1,nubia,1,0,0,0,0,-319
+old_kingdom_egypt,Old Kingdom Egypt,punt,Punt (Egyptian trading land),contraction,1,nubia,1,0,0,0,0,-319
 golden_horde,Golden Horde,kazan_khanate,Kazan Khanate,contraction,1,pontic_steppe,1,0,0,0,0,-64
 golden_horde,Golden Horde,crimean_khanate,Crimean Khanate,contraction,1,pontic_steppe,1,0,0,0,0,-61
 golden_horde,Golden Horde,cossack_hetmanate,Cossack Hetmanate,contraction,1,pontic_steppe,1,0,0,0,0,147
@@ -3859,8 +3860,8 @@ vandal_kingdom,Vandal Kingdom of North Africa,byzantine_empire,Byzantine Empire,
 vandal_kingdom,Vandal Kingdom of North Africa,umayyad_caliphate,Umayyad Caliphate,expansion,1,north_africa,1,0,0,0,0,128
 hafsid_dynasty,Hafsid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-275
 marinid_dynasty,Marinid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-166
-punt,Punt (Egyptian trading land,egyptian_new_kingdom,Egyptian New Kingdom,expansion,1,nubia,1,0,0,0,0,-550
-punt,Punt (Egyptian trading land,new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-550
+punt,Punt (Egyptian trading land),egyptian_new_kingdom,Egyptian New Kingdom,expansion,1,nubia,1,0,0,0,0,-550
+punt,Punt (Egyptian trading land),new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-550
 beja,Beja / Habesha coastal lords,egyptian_new_kingdom,Egyptian New Kingdom,expansion,1,nubia,1,0,0,0,0,-3050
 beja,Beja / Habesha coastal lords,new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-3050
 solomonic_dynasty,Ethiopian Empire (Solomonic),muhammad_ali_dynasty,Muhammad Ali dynasty,expansion,1,nubia,1,0,0,0,0,-169
@@ -4128,6 +4129,7 @@ phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),kingdom_of_israel
 phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),kingdom_of_judah,Kingdom of Judah,same,1,levant,1,0,0,0,0,-598
 goguryeo,Goguryeo,shiwei,Shiwei,same,1,manchuria,1,0,0,0,0,-280
 shiwei,Shiwei,balhae,Balhae (Bohai),same,1,manchuria,1,0,0,0,0,-209
+jin_jurchen,Jin Dynasty (Jurchen),jin_dynasty,Jin Dynasty,same,1,manchuria,1,0,0,0,0,-119
 buyid_dynasty,Buyid Dynasty,zangid_atabegate,Zangid Atabegate,same,1,mesopotamia,1,0,0,0,0,65
 buyid_dynasty,Buyid Dynasty,zengid_dynasty,Zengid Dynasty,same,1,mesopotamia,1,0,0,0,0,65
 rouran_khaganate,Rouran Khaganate,shiwei,Shiwei,same,1,mongolian_plateau,1,0,0,0,0,-167
@@ -4137,7 +4139,7 @@ berber,Berber / Mauretania,carthage,Carthage (Phoenician City-State),same,1,nort
 carthage,Carthage (Phoenician City-State),mauretania_kingdom,Mauretania Kingdom,same,1,north_africa,1,0,0,0,0,-139
 carthage,Carthage (Phoenician City-State),numidia,Kingdom of Numidia,same,1,north_africa,1,0,0,0,0,-56
 western_roman_empire,Western Roman Empire,byzantine_empire,Byzantine Empire,same,1,north_africa,1,0,0,0,0,-81
-punt,Punt (Egyptian trading land,beja,Beja / Habesha coastal lords,same,1,nubia,1,0,0,0,0,-1000
+punt,Punt (Egyptian trading land),beja,Beja / Habesha coastal lords,same,1,nubia,1,0,0,0,0,-1000
 beja,Beja / Habesha coastal lords,meroitic_kingdom,Kingdom of Meroe (Meroitic Kingdom),same,1,nubia,1,0,0,0,0,-2156
 beja,Beja / Habesha coastal lords,aksumite_kingdom,Aksumite Kingdom,same,1,nubia,1,0,0,0,0,-1400
 beja,Beja / Habesha coastal lords,makuria_kingdom,Kingdom of Makuria,same,1,nubia,1,0,0,0,0,-1160
@@ -4178,8 +4180,8 @@ cao_wei,Cao Wei,former_qin,Former Qin (前秦),same,1,yellow_river,1,0,0,0,0,86
 shu_han,Shu Han,former_qin,Former Qin (前秦),same,1,yellow_river,1,0,0,0,0,88
 liao_dynasty,Liao Dynasty (Khitan),song_dynasty,Song Dynasty,same,1,yellow_river,1,0,0,0,0,-165
 liao_dynasty,Liao Dynasty (Khitan),northern_song,Northern Song Dynasty,same,1,yellow_river,1,0,0,0,0,-165
-song_dynasty,Song Dynasty,jin_jurchen,Jin Dynasty (Jurchen),same,1,yellow_river,1,0,0,0,0,-164
 song_dynasty,Song Dynasty,jin_dynasty,Jin Dynasty,same,1,yellow_river,1,0,0,0,0,-164
+song_dynasty,Song Dynasty,jin_jurchen,Jin Dynasty (Jurchen),same,1,yellow_river,1,0,0,0,0,-164
 zapotec,Zapotec (Monte Albán),maya_city_states,Maya City-States (Tikal; Calakmul),same,1,mesoamerica,1,0,0,0,0,-650
 teotihuacan,Teotihuacan,maya_city_states,Maya City-States (Tikal; Calakmul),same,1,mesoamerica,1,0,0,0,0,-300
 postclassic_maya,Postclassic Maya (Mayapan; K'iche'),toltec_empire,Toltec Empire,same,1,mesoamerica,1,0,0,0,0,-624

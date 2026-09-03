@@ -157,6 +157,37 @@ CREATE TABLE figure (
 );
 
 
+-- ─── CITY ───────────────────────────────────────────────────
+
+CREATE TABLE city (
+    id               TEXT PRIMARY KEY,
+    name             TEXT NOT NULL,
+    lat              DOUBLE,
+    lon              DOUBLE,
+    founding_year    INTEGER,
+    abandonment_year INTEGER,
+    region           TEXT,
+    modern_country   TEXT,
+    note             TEXT
+);
+
+CREATE TABLE city_name (
+    city_id    TEXT NOT NULL,
+    name       TEXT NOT NULL,
+    language   TEXT,
+    start_year INTEGER,
+    end_year   INTEGER,
+    note       TEXT
+);
+
+CREATE TABLE city_succession (
+    from_city_id    TEXT NOT NULL,
+    to_city_id      TEXT NOT NULL,
+    succession_type TEXT,
+    year            INTEGER,
+    note            TEXT
+);
+
 -- ─── INDEXES ────────────────────────────────────────────────
 
 CREATE INDEX idx_polity_years ON polity(start_year, end_year);

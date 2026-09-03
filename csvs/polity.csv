@@ -3,9 +3,9 @@ sumerian_city_states,Sumerian City-States (Ur; Uruk; Lagash),sumerian,sumerian,m
 berber,Berber / Mauretania,berber_amazigh_cluster,berber,,tribal_confederation,-3000,-200,,
 elam,Kingdom of Elam,persian,elamite,ancient_near_eastern_religion,monarchy,-2700,-539,,"One of the oldest civilisations in Iran, centred on Susa. Rivalled Mesopotamian powers for millennia. The ziggurat of Chogha Zanbil (c.1250 BCE) is a UNESCO World Heritage Site. Elamite sacked Babylon and captured the Code of Hammurabi. Absorbed into the Achaemenid Empire."
 old_kingdom_egypt,Old Kingdom Egypt,egyptian,old_egyptian,egyptian_religion,divine_monarchy,-2686,-2181,,
-punt,Punt (Egyptian trading land,,,,monarchy,-2500,-1000,,
+punt,Punt (Egyptian trading land),cushitic_cluster,,,monarchy,-2500,-1000,,Location disputed (Horn of Africa / Red Sea coast); Cushitic cluster is a placeholder
 akkadian_empire,Akkadian Empire,akkadian,akkadian,mesopotamian_religion,imperial_monarchy,-2334,-2154,,
-gutian_dynasty,Gutian dynasty,,,,monarchy,-2141,-2050,,
+gutian_dynasty,Gutian dynasty,gutian,,,monarchy,-2141,-2050,,
 ur_iii,Third Dynasty of Ur (Neo-Sumerian),sumerian,sumerian,mesopotamian_religion,divine_monarchy,-2112,-2004,,
 beja,Beja / Habesha coastal lords,beja,,,tribal_confederation,-2000,1500,,
 old_babylonian,Old Babylonian Empire,babylonian,akkadian,mesopotamian_religion,imperial_monarchy,-1894,-1595,,
@@ -33,7 +33,7 @@ roman_kingdom,Roman Kingdom,roman,latin,roman_paganism,monarchy,-753,-509,,
 dahae,Dahae,central_asian_steppe_bloc,,,tribal_confederation,-700,-200,,
 donghu,Donghu,central_asian_steppe_bloc,,,tribal_confederation,-700,-209,,
 scythian,Scythian / Sarmatian steppe fringe,scythian,,scythian_religion,tribal_confederation,-700,-200,,
-median_kingdom,Median Kingdom,median,median_lang,zoroastrianism,feudal_monarchy,-678,-550,,
+median_kingdom,Median Kingdom,median,median,zoroastrianism,feudal_monarchy,-678,-550,,
 meroitic_kingdom,Kingdom of Meroe (Meroitic Kingdom),cushitic_cluster,old_egyptian,egyptian_religion,divine_monarchy,-656,350,,"After the Kushite 25th Dynasty was expelled from Egypt by the Assyrians (-656), Nubian power retreated south to Meroe on the Nile. Meroe developed a distinct civilisation with its own undeciphered script (Meroitic), iron smelting industry, and distinctive pyramid style (steeper than Egyptian). Ruled by queen-regents (Kandakes) alongside or instead of kings. Fell to the Aksumite kingdom of Ethiopia around 350 CE."
 neo_babylonian,Neo-Babylonian (Chaldean) Empire,babylonian,akkadian,mesopotamian_religion,imperial_monarchy,-626,-539,,Nebuchadnezzar II; Chaldean dynasty deliberately revived ancient Babylonian identity
 celts,Celts,celtic_peoples,,celtic_paganism,tribal_confederation,-600,-200,,
@@ -187,7 +187,7 @@ toltec_empire,Toltec Empire,aztec,classical_nahuatl,aztec_religion,imperial_mona
 zagwe_dynasty,Zagwe Dynasty,cushitic_cluster,ge'ez_classical_ethiopic,ethiopian_tewahido_church,monarchy,900,1270,,"Ethiopian dynasty ruling from Roha (now Lalibela). King Lalibela commissioned the eleven rock-hewn churches of Lalibela — carved from solid volcanic rock, they are among the most remarkable architectural achievements in Africa. Overthrown by the Solomonic restoration."
 five_dynasties,Five Dynasties (North China),han_chinese,middle_chinese,chinese_folk_religion,,907,960,,
 later_liang,Later Liang / Northern Liang,han_chinese,old_chinese,buddhism,chinese_imperial,907,923,,
-liao_dynasty,Liao Dynasty (Khitan),khitan,khitan_lang,buddhism,imperial_monarchy,907,1125,,"Dual administration: Khitan customs for nomads, Chinese Confucian system for Han subjects; Buddhism served as a bridge between nomadic and sedentary cultures"
+liao_dynasty,Liao Dynasty (Khitan),khitan,khitan,buddhism,imperial_monarchy,907,1125,,"Dual administration: Khitan customs for nomads, Chinese Confucian system for Han subjects; Buddhism served as a bridge between nomadic and sedentary cultures"
 ten_kingdoms,Ten Kingdoms (South China),han_chinese,middle_chinese,neo_confucianism,,907,979,,
 fatimid_caliphate,Fatimid Caliphate,semitic_cluster,classical_arabic,ismaili_shia,imamate,909,1171,,
 goryeo,Goryeo Dynasty,korean,middle_korean,buddhism,absolute_monarchy,918,1392,,"Founded by Wang Geon; successfully resisted multiple Mongol (Yuan) invasions, eventually becoming a vassal-son-in-law state of the Yuan. Known for the Tripitaka Koreana and Goryeo celadon."
@@ -390,7 +390,7 @@ japanese_korea,Japanese-Occupied Korea,japanese_cluster,japanese,state_shinto,co
 republic_of_china,Republic of China,han_chinese,modern_chinese_group,chinese_folk_religion,democratic_republic,1912,,,"Succeeded the Qing Dynasty after the 1911 Revolution. Sun Yat-sen's Three Principles (Nationalism, Democracy, People's Livelihood). The ROC ruled mainland China through the warlord era, Northern Expedition (1928), Nanjing Decade of limited modernisation, Japanese War (1937–1945), and Civil War. In 1949 the Communists drove the Nationalist government to Taiwan, where the ROC continues to govern."
 czechoslovakia,Czechoslovakia,czech,czech,catholic,democratic_republic,1918,1993,prague_spring,Created from the Habsburg collapse at Versailles — the most successful democratic state in interwar Central Europe. Munich Agreement (1938) forced it to cede the Sudetenland to Hitler; fully occupied 1939. Liberated 1945; Communist coup 1948. The Prague Spring (1968) — Alexander Dubček's 'socialism with a human face' — was crushed by Soviet tanks. Velvet Revolution (1989) ended communism peacefully. Velvet Divorce (1993) split into Czech Republic and Slovakia.
 second_polish_republic,Second Polish Republic,polish,polish,roman_catholicism,democratic_republic,1918,1939,,
-transcaucasian_democratic_federative_republic,Transcaucasian Democratic Federative Republic,,,,democratic_republic,1918,1918,,
+transcaucasian_democratic_federative_republic,Transcaucasian Democratic Federative Republic,caucasian_peoples,,,democratic_republic,1918,1918,,Multi-ethnic (Georgian; Armenian; Azerbaijani) — ruling ethnicity set to the Caucasian cluster as a placeholder
 turkestan_assr,Turkestan ASSR,turkic_cluster,,,communist_state,1918,1924,,
 weimar_republic,Weimar Republic,german,german,protestant,democratic_republic,1918,1933,article_48,"Germany's first democracy, proclaimed on November 9, 1918 as the Kaiser abdicated. Named after Weimar where the constitution was drafted. The republic faced hyperinflation (1923), the Great Depression (1929), political violence from left and right, and structural constitutional weaknesses (Article 48 emergency powers). Despite cultural brilliance (Bauhaus, Expressionism, cabaret), it was too fragile to survive the economic catastrophe. Hitler was appointed Chancellor on January 30, 1933."
 kingdom_of_iraq,Kingdom of Iraq,arab,classical_arabic,sunni,constitutional_monarchy,1921,1958,,"Created by Britain from three Ottoman vilayets (Mosul, Baghdad, Basra) under League of Nations Mandate. Faisal I (son of Sharif Hussein) installed as king. Iraq gained nominal independence in 1932 (first Arab state to join the League of Nations) while British advisors and air bases remained. The 1948 Arab–Israeli War and 1958 military coup ended the Hashemite monarchy."
@@ -443,24 +443,24 @@ zengid_dynasty,Zengid Dynasty,turkic_cluster,classical_arabic,sunni,emirate,1127
 ziyarid_dynasty,Ziyarid Dynasty,persian,new_persian_farsi,shia,emirate,930,1090,,Daylamite dynasty ruling Tabaristan/Gorgan; cultural Persian renaissance patrons
 anshan_kingdom,Anshan Kingdom,elamite,elamite,,city_state,-2400,-550,,Elamite highland kingdom; one of the two capitals of Elam alongside Susa
 kassite_babylon,Kassite Babylon,kassite,akkadian,mesopotamian_religion,monarchy,-1600,-1155,,Kassite dynasty ruling Babylon; Middle Babylonian period
-lullubi_kingdom,Lullubi Kingdom,,,,tribal_confederation,-2300,-1200,,Highland kingdom in the Zagros mountains; attested in Akkadian and Kassite sources
-mannai_kingdom,Mannai Kingdom,,,,monarchy,-850,-616,,Iron Age kingdom in the Lake Urmia basin; absorbed by Medes
+lullubi_kingdom,Lullubi Kingdom,lullubi,,,tribal_confederation,-2300,-1200,,Highland kingdom in the Zagros mountains; attested in Akkadian and Kassite sources
+mannai_kingdom,Mannai Kingdom,mannaean,,,monarchy,-850,-616,,Iron Age kingdom in the Lake Urmia basin; absorbed by Medes
 marhashi_kingdom,Marhashi Kingdom,elamite,elamite,,monarchy,-2500,-2000,,Bronze Age kingdom in southeastern Iran; rival of Akkad and Elam
-proto_elamite,Proto-Elamite,,,,city_state,-3100,-2700,,Proto-urban civilization of southwestern Iran; earliest writing system in Iran
+proto_elamite,Proto-Elamite,elamite,,,city_state,-3100,-2700,,Proto-urban civilization of southwestern Iran; earliest writing system in Iran
 kidarite_kingdom,Kidarite Kingdom,turkic_cluster,,buddhism,monarchy,320,467,,Hunnic kingdom in Bactria and Gandhara; precursor to the Hephthalites
 azerbaijan_peoples_government,Azerbaijan Peoples Government,azerbaijani,azerbaijani,,communist_state,1945,1946,,Soviet-backed separatist state in Iranian Azerbaijan; collapsed after Soviet withdrawal
 mahabad_republic,Mahabad Republic,kurdish,kurdish,sunni,republic,1946,1946,,Soviet-backed Kurdish republic; collapsed same year as Azerbaijan Peoples Government
-kalat_khanate,Kalat Khanate,baloch,balochi,sunni,khanate,1666,1955,,Baloch khanate centered on Kalat; partial sovereignty under Persian/British suzerainty
+kalat_khanate,Kalat Khanate,baloch,baluchi_baloch,sunni,khanate,1666,1955,,Baloch khanate centered on Kalat; partial sovereignty under Persian/British suzerainty
 hormuz_kingdom,Hormuz Kingdom,persian,new_persian_farsi,sunni,monarchy,1300,1622,,Persian Gulf kingdom controlling Strait of Hormuz; ended by Safavid-English expulsion of Portuguese
-xia,Xia Dynasty (夏),,,,monarchy,-2070,-1600,,Semi-legendary first Chinese dynasty; attested in Zhou-era texts; possible archaeological correlate in Erlitou culture
+xia,Xia Dynasty (夏),han_chinese,,,monarchy,-2070,-1600,,Semi-legendary first Chinese dynasty; attested in Zhou-era texts; possible archaeological correlate in Erlitou culture
 western_zhou,Western Zhou (西周),han_chinese,old_chinese,chinese_folk_religion,feudal_monarchy,-1046,-771,,Founded after the Zhou conquest of Shang; classic feudal system (fengjian); capital at Haojing
 eastern_zhou,Eastern Zhou (东周),han_chinese,old_chinese,chinese_folk_religion,feudal_monarchy,-770,-256,,Continuation of Zhou after move to Luoyang; encompasses Spring and Autumn and Warring States periods
-ba_shu,Ba and Shu (巴·蜀),,,,monarchy,-1200,-316,,Two southwestern states in modern Sichuan; culturally distinct from Zhou heartland; conquered by Qin in 316 BCE
+ba_shu,Ba and Shu (巴·蜀),ba_shu_peoples,,,monarchy,-1200,-316,,Two southwestern states in modern Sichuan; culturally distinct from Zhou heartland; conquered by Qin in 316 BCE
 xin,Xin Dynasty (新),han_chinese,old_chinese,confucianism,imperial_monarchy,9,23,,Wang Mang's usurpation between Western and Eastern Han; radical land and currency reforms; collapsed in red Eyebrows rebellion
 xuan_han,Xuan Han (玄汉),han_chinese,old_chinese,confucianism,imperial_monarchy,23,25,,Gengshi Emperor's short-lived Han restoration between Xin and Eastern Han
 eastern_han,Eastern Han (东汉),han_chinese,middle_chinese,confucianism,imperial_monarchy,25,220,,Later Han; restored by Emperor Guangwu; capital moved to Luoyang; ended with warlord fragmentation into Three Kingdoms
 shun,Shun Dynasty (顺),han_chinese,classical_chinese_literary,confucianism,imperial_monarchy,1644,1644,,Li Zicheng's rebel dynasty that captured Beijing and ended the Ming; crushed by Qing-Wu Sangui alliance within the year
-former_qin,Former Qin (前秦),,classical_chinese_literary,buddhism,imperial_monarchy,351,394,,Di-ruled state that briefly reunified northern China under Fu Jian; shattered at the Battle of Fei River (383)
+former_qin,Former Qin (前秦),di_people,classical_chinese_literary,buddhism,imperial_monarchy,351,394,,Di-ruled state that briefly reunified northern China under Fu Jian; shattered at the Battle of Fei River (383)
 liu_song,Liu Song (刘宋),han_chinese,middle_chinese,buddhism,imperial_monarchy,420,479,,First of the Southern Dynasties; founded by Liu Yu after Eastern Jin; cultural flourishing
 southern_qi,Southern Qi (南齐),han_chinese,middle_chinese,buddhism,imperial_monarchy,479,502,,Short-lived second Southern Dynasty; overthrown by Liang's founding emperor
 liang,Liang Dynasty (梁),han_chinese,middle_chinese,buddhism,imperial_monarchy,502,557,,Third Southern Dynasty; reign of Emperor Wu of Liang marked Buddhist patronage; ended by Hou Jing rebellion
@@ -522,7 +522,7 @@ giudicati_torres,Giudicato of Torres,italian,sardinian,catholic,feudal_monarchy,
 aragonese_sardinia,Aragonese Sardinia,catalan,catalan,catholic,province,1323,1718,,Crown of Aragon (then Spanish) rule of Sardinia until cession to Savoy
 pisan_county_of_cagliari,Pisan County of Cagliari,italian,italian,catholic,feudal_monarchy,1258,1323,,Pisan-controlled southern Sardinian county until Aragonese conquest
 cisalpine,Cisalpine / Italian Republic,italian,italian,catholic,republic,1797,1805,,Napoleonic client republic in northern Italy preceding Kingdom of Italy
-italian_social_republic,Italian Social Republic,italian,italian,catholic,fascist,1943,1945,,Axis-aligned rump state (RSI) in northern Italy under Mussolini after Allied landings
-fascist_italy,Fascist Italy,italian,italian,roman_catholicism,fascist,1922,1943,,Mussolini-era Italian kingdom under the National Fascist Party
+italian_social_republic,Italian Social Republic,italian,italian,catholic,fascist_state,1943,1945,,Axis-aligned rump state (RSI) in northern Italy under Mussolini after Allied landings
+fascist_italy,Fascist Italy,italian,italian,roman_catholicism,fascist_state,1922,1943,,Mussolini-era Italian kingdom under the National Fascist Party
 italian_republic,Italian Republic,italian,italian,roman_catholicism,republic,1946,,,Post-war Italian parliamentary republic succeeding the Kingdom of Italy
 aragonese_kingdom_of_naples,Aragonese Kingdom of Naples,catalan,catalan,catholic,feudal_monarchy,1442,1503,,Aragonese (Trastámara) rule of Naples under Alfonso V and successors until French conquest

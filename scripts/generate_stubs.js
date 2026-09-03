@@ -22,26 +22,9 @@ const STUBS_OUT    = path.join(BASE, 'derived', 'polity_stubs.csv');
 
 // ─── CSV PARSING ──────────────────────────────────────────
 
-// Minimal RFC4180-ish parser (handles quoted fields, double-quote escapes).
+const csv = require('../code/lib/csv');
 function parseCSV(text) {
-  const rows = [];
-  let row = [], cur = '', inQ = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQ) {
-      if (c === '"' && text[i + 1] === '"') { cur += '"'; i++; }
-      else if (c === '"') inQ = false;
-      else cur += c;
-    } else {
-      if (c === '"') inQ = true;
-      else if (c === ',') { row.push(cur); cur = ''; }
-      else if (c === '\n') { row.push(cur); rows.push(row); row = []; cur = ''; }
-      else if (c === '\r') { /* skip */ }
-      else cur += c;
-    }
-  }
-  if (cur.length || row.length) { row.push(cur); rows.push(row); }
-  return rows.filter(r => r.length > 1 || (r.length === 1 && r[0] !== ''));
+  return csv.parseRows(text).filter(r => r.length > 1 || (r.length === 1 && r[0] !== ''));
 }
 
 function escapeCSV(val) {

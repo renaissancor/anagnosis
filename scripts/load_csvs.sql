@@ -5,6 +5,9 @@
 -- ============================================================
 
 -- Clear existing data (children before parents)
+DELETE FROM city_succession;
+DELETE FROM city_name;
+DELETE FROM city;
 DELETE FROM polity_succession_territory;
 DELETE FROM polity_succession;
 DELETE FROM polity_policy;
@@ -204,3 +207,20 @@ FROM (
     SELECT *, ROW_NUMBER() OVER (PARTITION BY figure_id ORDER BY polity_id) AS rn
     FROM read_csv('csvs/figure.csv', auto_detect=true)
 ) WHERE rn = 1;
+
+-- ─── CITY (from city.csv, city_name.csv, city_succession.csv) ─
+INSERT INTO city (id, name, lat, lon, founding_year, abandonment_year, region, modern_country, note)
+SELECT id, name, TRY_CAST(lat AS DOUBLE), TRY_CAST(lon AS DOUBLE),
+       TRY_CAST(founding_year AS INTEGER), TRY_CAST(abandonment_year AS INTEGER),
+       NULLIF(region, ''), NULLIF(modern_country, ''), NULLIF(note, '')
+FROM read_csv('csvs/city.csv', auto_detect=true, all_varchar=true);
+
+INSERT INTO city_name (city_id, name, language, start_year, end_year, note)
+SELECT city_id, name, NULLIF(language, ''),
+       TRY_CAST(start_year AS INTEGER), TRY_CAST(end_year AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/city_name.csv', auto_detect=true, all_varchar=true);
+
+INSERT INTO city_succession (from_city_id, to_city_id, succession_type, year, note)
+SELECT from_city_id, to_city_id, NULLIF(succession_type, ''),
+       TRY_CAST(year AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/city_succession.csv', auto_detect=true, all_varchar=true);
