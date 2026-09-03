@@ -1,16 +1,17 @@
 # Anagnosis Documentation
 
 Anagnosis makes the flow of civilizational history legible: it models how political
-power passes from one **polity** to the next across territory and time. The running
-app is **CSV-first** — `csvs/*.csv` are the source of truth, generators emit `data/`
-JSON, and an Express server serves it. (A DuckDB analytical layer is *planned* and
-not in the running path; see the roadmap below.)
+power passes from one **polity** to the next across territory and time. The data is
+organised in four layers — authored (`csvs/`, `panels/`), derived (`derived/`),
+built (`data/`, `anagnosis.db`), served (`server.js`) — each with exactly one
+writer. **Read [ARCHITECTURE.md](ARCHITECTURE.md) first**; it is the layer contract
+every other doc defers to.
 
 ## Start Here
 
 | Doc | Purpose |
 |-----|---------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | System architecture and data flow (CSV → JSON → server) |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | **The layer contract** — where data lives, who writes it, how it flows |
 | [model/data-model.md](model/data-model.md) | The property-graph model and succession matrix — read first |
 | [TODO.md](TODO.md) | Roadmap (incl. the *planned* DuckDB migration — Phase 3 stage) |
 
@@ -22,7 +23,7 @@ Schema definitions, entity semantics, and naming conventions.
 |-----|---------|
 | [data-model.md](model/data-model.md) | Property graph model and edge types |
 | [erd.md](model/erd.md) | Visual ERD diagram, table summary, example queries |
-| [erd.sql](model/erd.sql) | Full DDL schema (24 tables, Polity model) |
+| [erd.sql](model/erd.sql) | Full DDL schema (16 tables; `erd_nofk.sql` is the ingest variant used by `make:db`) |
 | [naming.md](model/naming.md) | Entity ID naming conventions and collision resolution |
 | [succession.md](model/succession.md) | Succession type logic (A/A-/B/C/D) and edge cases |
 | [dynasty.md](model/dynasty.md) | Dynasty entity and lineage modeling |
@@ -33,11 +34,11 @@ Schema definitions, entity semantics, and naming conventions.
 
 ## Migration & Data Pipeline (`migration/`)
 
-Guides for the CSV-to-JSON-to-DuckDB data pipeline.
+Guides for editing the authored layer and regenerating everything downstream.
 
 | Doc | Purpose |
 |-----|---------|
-| [csv_workflow.md](migration/csv_workflow.md) | Editing CSVs and regenerating JSON |
+| [csv_workflow.md](migration/csv_workflow.md) | Editing CSVs / panels, running the validator, regenerating `derived/` and `data/` |
 | [merge_map.md](migration/merge_map.md) | Panel label → entity ID resolution (consolidated; iran/china/italy gold-standard) |
 | [missing_polities.md](migration/missing_polities.md) | Polities to be added |
 

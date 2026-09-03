@@ -1,3 +1,5 @@
+> **Stale layout note (2026-09-03):** the `data/…` file-tree paths below describe a pre-CSV design. Hierarchy now lives only in the `parent_id` column of `csvs/religion.csv`; `data/` is generated. The curation intent still applies.
+
 This document defines the organization of the world's religious traditions. Agent AIso must iterate through the hierarchy below and ensure that a corresponding JSON file exists at each specified path, maintaining metadata consistency across the tree.
 
 # TODO/religion.md

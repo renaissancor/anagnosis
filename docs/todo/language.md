@@ -1,3 +1,5 @@
+> **Stale layout note (2026-09-03):** the `data/…` file-tree paths below describe a pre-CSV design. Hierarchy now lives only in the `parent_id` column of `csvs/language.csv`; `data/` is generated. The curation intent still applies.
+
 To ensure **Agent AIso** can accurately recreate and organize your JSON database, I have synthesized the current repository status with international standards (ISO 639-3, Glottolog, and UNESCO). 
 
 Following your instruction, I will provide the instruction files **one by one**, starting with the language tree. Please save the following content as `TODO/language.md`.

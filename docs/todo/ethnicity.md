@@ -1,3 +1,5 @@
+> **Stale layout note (2026-09-03):** the `data/…` file-tree paths below describe a pre-CSV design. Hierarchy now lives only in the `parent_id` column of `csvs/ethnicity.csv`; `data/` is generated. The curation intent still applies.
+
 This document defines the organization of global ethnic groups. Agent AIso must iterate through the hierarchy below to ensure that every ethnic group is represented by a JSON file at the correct path, linked to its corresponding language and territory metadata.
 
 # TODO/ethnicity.md

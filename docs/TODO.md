@@ -2,13 +2,13 @@
 
 ## Phase 1: Schema & Foundation ✅ (done)
 - [x] Design two-tier ERD (Civilization → Polity), with Dynasty as cross-cutting tag
-- [x] Create DuckDB schema (`anagnosis.db`) — 24 tables
+- [x] Create DuckDB schema (`anagnosis.db`) — now 16 tables, rebuilt by `npm run make:db`
 - [x] Auto-link 637 panel labels to existing polity IDs
 - [x] Document ERD (`docs/model/erd.sql`, `docs/model/erd.md`)
 
 ## Phase 2: Migrate Existing Data → DuckDB ✅ (done)
 - [x] **P2.1** Migrate taxonomy trees (ethnicity → 256, languages → 691, religions → 256)
-- [x] **P2.2** ~~Migrate ideologies~~ — deferred (still in `data/ideologies.json`, 30 records; load when schema stabilizes)
+- [x] **P2.2** ~~Migrate ideologies~~ — superseded — government forms now live in `csvs/government.csv` (29 rows) and load into DuckDB
 - [x] **P2.3** Migrate territories (39 loaded) — provinces/GeoJSON deferred
 - [x] **P2.4** Load 268 polity records into `polities` table (from `polity.csv`)
 - [x] **P2.5** Migrate successions (1,243 → `polity_succession`) + 1,099 shared territory links
@@ -25,13 +25,13 @@
 - [ ] Ideologies (30) not yet in DuckDB
 
 ## Phase 3: Extract & Link Panel Entities ← CURRENT
-Extracted 4,572 labels from 61 history panels. Analysis complete. Now need manual curation before bulk-writing.
+Extracted 4,572 labels from the history panels (now in `panels/`). Analysis complete. Now need manual curation before bulk-writing.
 
 ### Phase 3 Analysis (done)
-- [x] **P3.1** Extract all labels from 61 panel JSONs → `csvs/panel_labels.csv` (`scripts/extract_labels.js`)
+- [x] **P3.1** Extract all labels from 61 panel JSONs → `derived/panel_labels.csv` (`scripts/extract_labels.js`)
 - [x] **P3.2** Categorize labels: 1,451 linked, 1,064 polity, 475 dynasty, 355 people, 369 event, 126 culture, 732 unclassified
-- [x] **P3.3** Normalize & deduplicate labels → `csvs/canonical_entities.csv` (`scripts/normalize_labels.js`)
-- [x] **P3.4** Identify temporal/spatial overlaps → `csvs/overlap_candidates.csv`, `csvs/timeline_sorted.csv` (`scripts/find_overlaps.js`)
+- [x] **P3.3** Normalize & deduplicate labels → `derived/canonical_entities.csv` (`scripts/normalize_labels.js`)
+- [x] **P3.4** Identify temporal/spatial overlaps → `derived/overlap_candidates.csv` (`scripts/find_overlaps.js`)
 - [x] **P3.5** Document naming architecture → `docs/model/naming.md`
 
 ### Phase 3 Curation (todo — manual + scripted)
@@ -116,15 +116,19 @@ Key patterns to resolve:
 
 ## Scripts Reference
 
-| Script | Purpose |
-|--------|---------|
-| `scripts/load_csvs.sql` | Load all CSVs into DuckDB (idempotent) |
-| `scripts/extract_labels.js` | Extract & categorize labels from panel JSONs |
-| `scripts/normalize_labels.js` | Normalize labels, resolve to entity IDs, deduplicate |
-| `scripts/dedup_and_link.js` | Deduplicate + write `polity` fields back into JSONs |
-| `scripts/find_overlaps.js` | Find temporal/spatial overlaps for dedup review |
-| `scripts/json_to_csv.js` | Convert JSON data files to CSVs |
-| `scripts/validate.js` | Validate data integrity |
+| Script | Layer | Purpose |
+|--------|-------|---------|
+| `scripts/validate.js` (`npm test`) | 1→ | Validate `csvs/`, `derived/`, `panels/` directly (schema, keys, FKs, dates, trees, edges) |
+| `code/generate-successions.js` (`make:succession-edges`) | 1→2 | Compute `derived/polity_succession.csv` |
+| `code/makejson/*.js` (`make:all`) | 1+2→3 | Generate `data/` |
+| `scripts/load_csvs.sql` (`make:db`) | 1+2→3 | Rebuild `anagnosis.db` |
+| `scripts/extract_labels.js` | 1→2 | Extract & categorize labels from `panels/` → `derived/panel_labels.csv` |
+| `scripts/normalize_labels.js` | 2→2 | Labels → entity ids (`derived/panel_entities.csv`, `panel_labels_linked.csv`) |
+| `scripts/dedup_and_link.js` | 2→1 | Deduplicate → `derived/canonical_entities.csv`; write resolved `polity` FKs back into `panels/` |
+| `scripts/find_overlaps.js` | 1→2 | Temporal/spatial overlap review list → `derived/overlap_candidates.csv` |
+| `scripts/generate_stubs.js` | 2→2 | Draft polity rows → `derived/polity_stubs.csv` (a human promotes them into `csvs/polity.csv`) |
+| `scripts/extract_missing_polities.js` | 1→ | List panel polity ids absent from `polity.csv` |
+| `scripts/archive/` | — | One-shot migrations from earlier architectures; not runnable against the current layout |
 
 ## API Routes Reference
 
@@ -144,5 +148,5 @@ Key patterns to resolve:
 | `docs/model/naming.md` | Entity ID naming conventions and collision resolution |
 | `docs/model/ideology.md` | Ideology vs policy distinction; government form = ideology |
 | `docs/model/data-model.md` | Property graph model, edge types |
-| `docs/model/erd.sql` | Full DDL schema (24 tables) |
+| `docs/model/erd.sql` | Full DDL schema (16 tables) |
 | `docs/model/erd.md` | Visual ERD and example queries |

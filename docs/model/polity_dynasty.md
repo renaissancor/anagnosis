@@ -82,5 +82,5 @@ kingdom_of_england,tudor,1485,1603
 |---|---|
 | `csvs/polity.csv` | Parent entity (the polity being ruled) |
 | `csvs/dynasty.csv` | Parent entity (the ruling dynasty) |
-| `csvs/polity_succession.csv` | Succession edges — dynasties add a genealogical dimension |
+| `derived/polity_succession.csv` | Succession edges (computed) — dynasties add a genealogical dimension |
 | `csvs/polity_territory.csv` | Analogous junction: polity × territory × time |

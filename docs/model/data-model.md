@@ -1,20 +1,23 @@
 # Data Model Overview
 
-In this file, **Polity** = the top-level political entity (dir: `data/polity/`). The future dynasty-tier **Polity** is defined in [`erd.md`](./erd.md).
-
 The entire project is a **property graph** — multiple node types connected by typed edges.
 
 ## Node Types
 
-| Location | Node Type | What it represents |
+Authored in `csvs/` (see [`../ARCHITECTURE.md`](../ARCHITECTURE.md) for the layer contract); the generated JSON under `data/` is one view of the same graph.
+
+| Source of truth | Node Type | What it represents |
 |---|---|---|
-| `data/territories/{region}/{id}.json` | Territory | A macro geographic zone. Accumulates rulers over time. Each file contains metadata + `periods[]` of historical control. |
-| `data/languages/` (directory tree) | Language | A language in a phylogenetic tree. Parent derived from filesystem path. |
-| `data/religions/` (directory tree) | Religion | A religion or religious branch in a taxonomy tree. Parent derived from filesystem path. |
-| `data/ideologies.json` | Ideology | A government form or state philosophy. Kept as a single flat file. |
-| `data/ethnicity/` (flat directory) | Ethnicity | A people defined by language, origin, and ancestry. |
-| `data/polity/` (flat directory, subdirs supported) | Polity | A specific political entity at the intersection of Ethnicity × Territory × Ideology × Time. |
-| `data/successions/` (flat directory) | Succession | A directed edge between two Polities, typed A/A-/B/C/D. |
+| `csvs/territory.csv` + `polity_territory.csv` | Territory | A macro geographic zone. Accumulates rulers over time via the junction table. |
+| `csvs/language.csv` (`parent_id` tree) | Language | A language in a phylogenetic tree. |
+| `csvs/religion.csv` (`parent_id` tree) | Religion | A religion or branch in a taxonomy tree. |
+| `csvs/ethnicity.csv` (`parent_id` tree) | Ethnicity | A people defined by language, origin, and ancestry. |
+| `csvs/government.csv` (flat) | Government | A government form — the institutional half of ideology. |
+| `csvs/polity.csv` | Polity | A political entity at the intersection of Ethnicity × Territory × Ideology × Time. |
+| `csvs/dynasty.csv` + `polity_dynasty.csv` | Dynasty | A ruling house; a cross-cutting tag on polities, not a tier. |
+| `csvs/figure.csv` | Figure | A key person, FK → polity. |
+| `csvs/city*.csv` | City | Place-not-polis identity (see `city.md`). |
+| `derived/polity_succession.csv` (computed) | Succession | A directed edge between two Polities, scored by what they share. |
 
 ## Edge Types
 
@@ -72,6 +75,6 @@ The model makes the following pattern visible:
 - **Safavid** (Persian ruling + **Persian** court, Shia ideology)
 - **Mughal** (Turkic ruling + **Persian** court)
 
-Persian culture survived six conquests by completely different ethnic groups because it filled a functional role: the **Persianate bureaucracy** (see `ideologies.json`) was the most advanced administrative system available in the region, and every conqueror eventually adopted it.
+Persian culture survived six conquests by completely different ethnic groups because it filled a functional role: the **Persianate bureaucracy** (a `policies` value on polities; government forms are in `csvs/government.csv`) was the most advanced administrative system available in the region, and every conqueror eventually adopted it.
 
 The `cultural_language` field on polities makes this thread visible across the graph.

@@ -67,7 +67,7 @@ Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty` â€
 | **Political** | polity | 428 | csvs/polity.csv |
 | | polity_territory | 939 | csvs/polity_territory.csv |
 | | polity_policy | 26 | from polity.csv |
-| | polity_succession | 1,995 | csvs/successions.csv |
+| | polity_succession | 4,229 (computed) | derived/polity_succession.csv |
 | | polity_succession_territory | ~5,000 | embedded |
 | **Dynasty** | dynasty | 192 | csvs/dynasty.csv |
 | | polity_dynasty | ~400 | csvs/polity_dynasty.csv |
