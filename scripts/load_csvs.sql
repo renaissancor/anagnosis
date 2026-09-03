@@ -1,6 +1,6 @@
 -- ============================================================
 -- Load CSVs into Anagnosis DuckDB (v3 — singular table names)
--- Requires: duckdb anagnosis.db ".read docs/erd_nofk.sql" first
+-- Requires: duckdb anagnosis.db ".read docs/model/erd_nofk.sql" first (or run `npm run make:db`)
 -- Usage:    duckdb anagnosis.db ".read scripts/load_csvs.sql"
 -- ============================================================
 
@@ -131,23 +131,6 @@ FROM (
     FROM read_csv('csvs/polity_territory.csv', auto_detect=true)
 ) WHERE rn = 1;
 
--- Gap-fill from polity.csv territories column
-WITH polity_terr AS (
-    SELECT id AS polity_id,
-           unnest(string_split(territories, '|')) AS territory_id,
-           TRY_CAST(start_year AS INTEGER) AS start_year,
-           TRY_CAST(end_year AS INTEGER) AS end_year
-    FROM read_csv('csvs/polity.csv', auto_detect=true)
-    WHERE territories IS NOT NULL AND territories != ''
-)
-INSERT INTO polity_territory (polity_id, territory_id, start_year, end_year)
-SELECT pt.polity_id, pt.territory_id, pt.start_year, pt.end_year
-FROM polity_terr pt
-WHERE NOT EXISTS (
-    SELECT 1 FROM polity_territory existing
-    WHERE existing.polity_id = pt.polity_id AND existing.territory_id = pt.territory_id
-);
-
 -- ─── POLITY_POLICY ────────────────────────────────────────
 INSERT INTO polity_policy (polity_id, policy)
 SELECT id, unnest(string_split(policies, '|'))
@@ -167,17 +150,16 @@ SELECT
     CAST(related_ethnicity AS BOOLEAN) AS related_ethnicity,
     CAST(same_language AS BOOLEAN)     AS same_language,
     CAST(same_religion AS BOOLEAN)     AS same_religion,
-    CAST(same_civilization AS BOOLEAN)        AS same_civilization,
     shared_territories
-FROM read_csv('csvs/polity_succession.csv', auto_detect=true);
+FROM read_csv('derived/polity_succession.csv', auto_detect=true);
 
 INSERT INTO polity_succession
     (id, from_polity_id, to_polity_id, territorial_direction, strength,
      temporal_gap_years, same_ethnicity, related_ethnicity,
-     same_language, same_religion, same_civilization)
+     same_language, same_religion)
 SELECT id, from_polity_id, to_polity_id, territorial_direction, strength,
        temporal_gap_years, same_ethnicity, related_ethnicity,
-       same_language, same_religion, same_civilization
+       same_language, same_religion
 FROM _succ;
 
 -- ─── POLITY_SUCCESSION_TERRITORY ──────────────────────────

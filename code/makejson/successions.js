@@ -1,88 +1,49 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+/**
+ * derived/polity_succession.csv → data/succession/all.json
+ *
+ * The input is a computed file written by code/generate-successions.js
+ * (run `npm run make:succession-edges` first, or `npm run make:all`).
+ */
+
+const fs   = require('fs');
 const path = require('path');
+const csv  = require('../lib/csv');
 
-const CSV_FILE = path.join(__dirname, '../../csvs/polity_succession.csv');
-const OUT_FILE = path.join(__dirname, '../../data/succession/all.json');
-
-function parseCSV(content) {
-  const lines = content.split('\n').filter(l => l.trim());
-  const headers = parseCSVLine(lines[0]);
-  return lines.slice(1).map(line => {
-    const values = parseCSVLine(line);
-    const row = {};
-    headers.forEach((h, i) => { row[h] = values[i] ?? ''; });
-    return row;
-  });
-}
-
-function parseCSVLine(line) {
-  const result = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      inQuotes = !inQuotes;
-    } else if (ch === ',' && !inQuotes) {
-      result.push(current.trim());
-      current = '';
-    } else {
-      current += ch;
-    }
-  }
-  result.push(current.trim());
-  return result;
-}
-
-function parseBool(value) {
-  return value === '1' || value === 'true';
-}
-
-function parseInt2(value) {
-  const n = parseInt(value, 10);
-  return isNaN(n) ? null : n;
-}
-
-function parsePipe(value) {
-  return value ? value.split('|').map(s => s.trim()).filter(Boolean) : [];
-}
+const ROOT     = path.join(__dirname, '../..');
+const CSV_FILE = path.join(ROOT, 'derived/polity_succession.csv');
+const OUT_FILE = path.join(ROOT, 'data/succession/all.json');
 
 function buildSuccession(row) {
   return {
-    from:                    row.from_polity_id,
-    to:                      row.to_polity_id,
-    territorial_direction:   row.territorial_direction || 'unknown',
-    strength:                parseInt2(row.strength),
-    shared_territories:      parsePipe(row.shared_territories),
-    shared_territory_count:  parseInt2(row.shared_territory_count),
-    same_ethnicity:          parseBool(row.same_ethnicity),
-    related_ethnicity:       parseBool(row.related_ethnicity),
-    same_language:           parseBool(row.same_language),
-    same_religion:           parseBool(row.same_religion),
-    same_civilization:              parseBool(row.same_civilization),
-    temporal_gap_years:      parseInt2(row.temporal_gap_years),
+    from:                   row.from_polity_id,
+    to:                     row.to_polity_id,
+    territorial_direction:  row.territorial_direction || 'unknown',
+    strength:               csv.toInt(row.strength),
+    shared_territories:     csv.splitPipe(row.shared_territories),
+    shared_territory_count: csv.toInt(row.shared_territory_count),
+    same_ethnicity:         csv.toBool(row.same_ethnicity),
+    related_ethnicity:      csv.toBool(row.related_ethnicity),
+    same_language:          csv.toBool(row.same_language),
+    same_religion:          csv.toBool(row.same_religion),
+    temporal_gap_years:     csv.toInt(row.temporal_gap_years),
   };
 }
 
 function main() {
   console.log(`Reading CSV: ${CSV_FILE}`);
-
   if (!fs.existsSync(CSV_FILE)) {
-    console.error('Error: successions.csv not found');
+    console.error('Error: derived/polity_succession.csv not found — run `npm run make:succession-edges` first');
     process.exit(1);
   }
 
-  const content = fs.readFileSync(CSV_FILE, 'utf-8');
-  const rows = parseCSV(content).filter(r => r.from_polity_id && r.to_polity_id);
-  const successions = rows.map(buildSuccession);
+  const successions = csv.readFile(CSV_FILE)
+    .filter(r => r.from_polity_id && r.to_polity_id)
+    .map(buildSuccession);
 
-  const outDir = path.dirname(OUT_FILE);
-  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-
+  fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify(successions, null, 2) + '\n');
-
   console.log(`✓ Written ${successions.length} successions → ${OUT_FILE}`);
 }
 

@@ -4,7 +4,7 @@
 // overlaps within panels. Sorted by start year.
 //
 // Usage: node scripts/find_overlaps.js
-// Output: csvs/derived/overlap_candidates.csv
+// Output: derived/overlap_candidates.csv
 // ============================================================
 
 const fs = require('fs');
@@ -12,7 +12,7 @@ const path = require('path');
 
 const BASE = path.join(__dirname, '..');
 const HISTORY_DIR = path.join(BASE, 'panels');
-const OUT_FILE = path.join(BASE, 'csvs', 'derived', 'overlap_candidates.csv');
+const OUT_FILE = path.join(BASE, 'derived', 'overlap_candidates.csv');
 
 // Load existing polity IDs
 const polityCSV = fs.readFileSync(path.join(BASE, 'csvs', 'polity.csv'), 'utf8');

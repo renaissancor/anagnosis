@@ -104,7 +104,6 @@ CREATE TABLE polity_succession (
     related_ethnicity     BOOLEAN,
     same_language         BOOLEAN,
     same_religion         BOOLEAN,
-    same_civilization            BOOLEAN,
     UNIQUE (from_polity_id, to_polity_id)
 );
 

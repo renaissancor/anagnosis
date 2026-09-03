@@ -6,7 +6,7 @@
 // Usage: node scripts/dedup_and_link.js [--dry-run]
 //
 // Outputs:
-//   csvs/derived/canonical_entities.csv  — deduplicated entity list
+//   derived/canonical_entities.csv  — deduplicated entity list
 //   panels/**/*.json               — updated with polity fields
 // ============================================================
 
@@ -16,7 +16,7 @@ const path = require('path');
 const DRY_RUN = process.argv.includes('--dry-run');
 const BASE = path.join(__dirname, '..');
 const HISTORY_DIR = path.join(BASE, 'panels');
-const ENTITIES_OUT = path.join(BASE, 'csvs', 'derived', 'canonical_entities.csv');
+const ENTITIES_OUT = path.join(BASE, 'derived', 'canonical_entities.csv');
 
 // ─── LOAD EXISTING POLITIES ──────────────────────────────
 

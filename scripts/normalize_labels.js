@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // ============================================================
 // Normalize panel labels into entity IDs following naming.md
-// Input:  csvs/derived/panel_labels.csv
-// Output: csvs/derived/panel_entities.csv         (deduplicated entity list)
-//         csvs/derived/panel_labels_linked.csv    (labels → entity IDs)
+// Input:  derived/panel_labels.csv
+// Output: derived/panel_entities.csv         (deduplicated entity list)
+//         derived/panel_labels_linked.csv    (labels → entity IDs)
 // Usage:  node scripts/normalize_labels.js
 // ============================================================
 
@@ -11,9 +11,9 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = path.join(__dirname, '..');
-const LABELS_FILE = path.join(BASE, 'csvs', 'derived', 'panel_labels.csv');
-const ENTITIES_OUT = path.join(BASE, 'csvs', 'derived', 'panel_entities.csv');
-const LINKED_OUT = path.join(BASE, 'csvs', 'derived', 'panel_labels_linked.csv');
+const LABELS_FILE = path.join(BASE, 'derived', 'panel_labels.csv');
+const ENTITIES_OUT = path.join(BASE, 'derived', 'panel_entities.csv');
+const LINKED_OUT = path.join(BASE, 'derived', 'panel_labels_linked.csv');
 
 // Load existing polity IDs
 const polityCSV = fs.readFileSync(path.join(BASE, 'csvs', 'polity.csv'), 'utf8');
