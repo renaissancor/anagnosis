@@ -163,7 +163,7 @@ app.get('/api/dynasty/:id', (req, res) => {
 
 // ── API: History panels ──────────────────────────────────────
 
-const HISTORY_DIR = path.join(__dirname, 'data', 'history');
+const HISTORY_DIR = path.join(__dirname, 'panels');
 
 app.get('/api/panel', (req, res) => {
   const panels = [];

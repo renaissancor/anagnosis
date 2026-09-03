@@ -269,7 +269,7 @@ function walkPanels(dir) {
   return panels;
 }
 
-const historyDir = path.join(__dirname, '..', 'data', 'history');
+const historyDir = path.join(__dirname, '..', 'panels');
 const panels = walkPanels(historyDir);
 panelCount = panels.length;
 

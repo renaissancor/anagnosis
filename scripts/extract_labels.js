@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const HISTORY_DIR = path.join(__dirname, '..', 'data', 'history');
+const HISTORY_DIR = path.join(__dirname, '..', 'panels');
 const OUT_FILE = path.join(__dirname, '..', 'csvs', 'derived', 'panel_labels.csv');
 
 // Load existing polity IDs for matching

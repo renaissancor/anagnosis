@@ -7,7 +7,7 @@
 //
 // Outputs:
 //   csvs/derived/canonical_entities.csv  — deduplicated entity list
-//   data/history/**/*.json               — updated with polity fields
+//   panels/**/*.json               — updated with polity fields
 // ============================================================
 
 const fs = require('fs');
@@ -15,7 +15,7 @@ const path = require('path');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const BASE = path.join(__dirname, '..');
-const HISTORY_DIR = path.join(BASE, 'data', 'history');
+const HISTORY_DIR = path.join(BASE, 'panels');
 const ENTITIES_OUT = path.join(BASE, 'csvs', 'derived', 'canonical_entities.csv');
 
 // ─── LOAD EXISTING POLITIES ──────────────────────────────

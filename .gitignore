@@ -54,7 +54,8 @@ $RECYCLE.BIN/
 *.db.wal
 
 # ── Generated data outputs (regenerate with `npm run make:all`) ───────────────
-# data/ is generated from csvs/*.csv (the source of truth). Only the two
+# data/ is generated from csvs/*.csv (the source of truth). Hand-curated history
+# panels live in panels/ (tracked). Only the two
 # hand-authored files below are tracked.
 data/*
 !data/index.js

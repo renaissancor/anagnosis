@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = path.join(__dirname, '..');
-const HISTORY_DIR = path.join(BASE, 'data', 'history');
+const HISTORY_DIR = path.join(BASE, 'panels');
 const OUT_FILE = path.join(BASE, 'csvs', 'derived', 'overlap_candidates.csv');
 
 // Load existing polity IDs

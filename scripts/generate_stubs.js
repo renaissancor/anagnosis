@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = path.join(__dirname, '..');
-const HISTORY_DIR = path.join(BASE, 'data', 'history');
+const HISTORY_DIR = path.join(BASE, 'panels');
 const ENTITIES_IN  = path.join(BASE, 'csvs', 'derived', 'canonical_entities.csv');
 const POLITY_IN    = path.join(BASE, 'csvs', 'polity.csv');
 const TERRITORY_IN = path.join(BASE, 'csvs', 'territory.csv');
