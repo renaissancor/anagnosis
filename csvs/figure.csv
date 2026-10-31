@@ -51,9 +51,9 @@ satavahana_empire,gautamiputra_satakarni,Gautamiputra Satakarni,ruler,78/102,Gre
 qin_dynasty,qin_shi_huang,Qin Shi Huang,founder,-259/-210,First Emperor of unified China; built the Great Wall and Terracotta Army; his title Huangdi was used by every subsequent emperor
 qin_dynasty,li_si,Li Si,administrator,-280/-208,Grand Councillor; architect of Qin Legalism and the first unified Chinese bureaucracy
 xiongnu,modu_chanyu,Modu Chanyu,founder,-234/-174,United the steppe tribes; template for all subsequent steppe empires
-han_dynasty,liu_bang,Liu Bang (Emperor Gaozu),founder,-256/-195,Rose from peasant to emperor; the Han ethnic identity is named after his dynasty
-han_dynasty,emperor_wu_han,Emperor Wu of Han,ruler,-157/-87,Established Confucianism as state ideology; opened the Silk Road
-han_dynasty,sima_qian,Sima Qian,cultural,-145/-86,Father of Chinese historiography; his Records of the Grand Historian defined the writing of Chinese history for 2000 years
+western_han,liu_bang,Liu Bang (Emperor Gaozu),founder,-256/-195,Rose from peasant to emperor; the Han ethnic identity is named after his dynasty
+western_han,emperor_wu_han,Emperor Wu of Han,ruler,-157/-87,Established Confucianism as state ideology; opened the Silk Road
+western_han,sima_qian,Sima Qian,cultural,-145/-86,Father of Chinese historiography; his Records of the Grand Historian defined the writing of Chinese history for 2000 years
 kingdom_of_armenia,tigranes_ii,Tigranes II the Great,ruler,-140/-55,"Created the largest Armenian empire; titled King of Kings; briefly controlled Syria, Mesopotamia, and Pontus; defeated by Pompey but retained core Armenia"
 kingdom_of_armenia,gregory_illuminator,Gregory the Illuminator,cultural,257/331,Converted King Tiridates III to Christianity (301 CE); Armenia became the first Christian nation; founded the Armenian Apostolic Church; patron saint of Armenia
 kingdom_of_armenia,mesrop_mashtots,Mesrop Mashtots,cultural,362/440,Created the Armenian alphabet (~405 CE) specifically to translate the Bible; simultaneously invented the Georgian and Caucasian Albanian alphabets
@@ -66,7 +66,7 @@ roman_empire,constantine_i,Constantine I,reformer,272/337,Legalized Christianity
 sassanid_empire,ardashir_i,Ardashir I,founder,180/242,Overthrew the Parthians; revived Persian and Zoroastrian identity
 sassanid_empire,shapur_i,Shapur I,ruler,215/272,Captured Roman Emperor Valerian — the only Roman emperor taken prisoner by a foreign enemy
 sassanid_empire,khosrow_i,Khosrow I (Anushirvan),ruler,501/579,The ideal Persian king; reformed taxation; translated Greek philosophy into Pahlavi
-yamato_period,prince_shotoku,Prince Shotoku,ruler,574/622,Authored the Seventeen-Article Constitution and promoted Buddhism.
+yamato_kingdom,prince_shotoku,Prince Shotoku,ruler,574/622,Authored the Seventeen-Article Constitution and promoted Buddhism.
 gupta_empire,samudragupta,Samudragupta,ruler,335/380,Military genius and poet; the Napoleon and Augustus of India
 gupta_empire,aryabhata,Aryabhata,cultural,476/550,Calculated pi; proposed a heliocentric model; developed zero as a number
 hunnic_empire,attila,Attila,ruler,406/453,Scourge of God; defeated Roman and Germanic armies; received tribute from both Eastern and Western Rome; his death at a wedding feast collapsed the empire overnight
@@ -85,8 +85,8 @@ carolingian_empire,charlemagne,Charlemagne (Karl der Große),ruler,747/814,The g
 carolingian_empire,louis_pious,Louis the Pious,ruler,778/840,Charlemagne's heir; pious but ineffective at holding the empire together against his sons' civil wars; his death triggered the Treaty of Verdun partition
 ostrogothic_kingdom,theodoric_great,Theodoric the Great,founder,454/526,Conquered Italy by killing Odoacer at a peace banquet (493); ruled the most sophisticated post-Roman Germanic state; his court at Ravenna preserved Roman learning; the closest thing to a 'barbarian king who was also a Roman statesman'
 ostrogothic_kingdom,boethius,Boethius,cultural,477/524,Roman senator and philosopher at Theodoric's court; wrote the Consolation of Philosophy while awaiting execution; the most widely read book in medieval Europe after the Bible
-goktürk_khaganate,bumin_qaghan,Bumin Qaghan,founder,/552,First use of the title Khagan; founded the first explicitly Turkic empire
-goktürk_khaganate,bilge_qaghan,Bilge Qaghan,ruler,683/734,Documented in the Orkhon inscriptions — the oldest known Turkic texts
+first_turkic_khaganate,bumin_qaghan,Bumin Qaghan,founder,/552,First use of the title Khagan; founded the first explicitly Turkic empire
+second_turkic_khaganate,bilge_qaghan,Bilge Qaghan,ruler,683/734,Documented in the Orkhon inscriptions — the oldest known Turkic texts
 lombard_kingdom,alboin,Alboin,founder,?/572,Led the Lombard invasion of Italy (568); conquered the Po Valley; established the kingdom with Pavia as capital; assassinated by his wife Rosamund (he had made a drinking cup from her father's skull)
 lombard_kingdom,liutprand_lombard,Liutprand,ruler,690/744,"Greatest Lombard king; expanded territory, reformed laws, patronised the church; his campaigns against Rome prompted the papacy to seek Frankish protection — ultimately leading to the Carolingian conquest"
 avar_khaganate,bayan_i,Bayan I,founder,/602,First great Avar Khagan; defeated the Frankish kingdom; established Avar dominance over the middle Danube basin

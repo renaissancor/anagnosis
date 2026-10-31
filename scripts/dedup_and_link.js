@@ -112,7 +112,12 @@ const SYNONYM_MAP = new Map([
   ['lullubi', 'lullubi_kingdom'],
   ['mannai', 'mannai_kingdom'],
   ['marhashi', 'marhashi_kingdom'],
-  ['kidarite', 'kidarite_kingdom'],
+  ['kidarite', 'kidarites'],
+  ['kidarite_kingdom', 'kidarites'],
+  ['yamato_period', 'yamato_kingdom'],
+  ['nara_period', 'ritsuryo_japan'],
+  ['heian_period', 'ritsuryo_japan'],
+  ['northern_court', 'ashikaga_shogunate'],
   ['kar_kiya_dynasty', 'karkiya_dynasty'],
   ['ildeguzids', 'eldiguzid_dynasty'],
   ['eldiguzids', 'eldiguzid_dynasty'],
@@ -174,6 +179,8 @@ const SYNONYM_MAP = new Map([
 // key = label text, value = { wrong, correct }
 const BUG_FIXES = new Map([
   ['Dabuyid Dynasty', { wrong: 'buyid_dynasty', correct: 'dabuyid_dynasty' }],
+  ['Tarkhan dynasty (Sindh)', { wrong: 'han_dynasty', correct: 'tarkhan_dynasty' }],
+  ['Later Han — Giao Châu (Jiaozhou)', { wrong: 'later_han', correct: 'eastern_han' }],
 ]);
 
 // ─── STRIP LIST ───────────────────────────────────────────

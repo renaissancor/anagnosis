@@ -365,8 +365,8 @@
           "stack": [
             {
               "label": "Kidarite / Chionite",
-              "note": "c.320–467 CE",
-              "polity": "kidarite_kingdom"
+              "note": "c.360–467 CE",
+              "polity": "kidarites"
             },
             {
               "label": "Hephthalites",
@@ -376,7 +376,7 @@
             {
               "label": "Göktürk Khaganate",
               "note": "557–651 CE",
-              "polity": "goktürk_khaganate"
+              "polity": "first_turkic_khaganate"
             }
           ],
           "span": 2

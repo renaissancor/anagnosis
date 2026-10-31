@@ -34,7 +34,7 @@ const PANELS  = path.join(ROOT, 'panels');
 // ── Expected schemas (authored layer) ─────────────────────────────────────────
 
 const SCHEMA = {
-  'polity':            ['id', 'name', 'id_ruling_ethnicity', 'id_ruling_language', 'id_ruling_religion', 'government', 'start_year', 'end_year', 'policies', 'note'],
+  'polity':            ['id', 'name', 'id_ruling_ethnicity', 'id_ruling_language', 'id_ruling_religion', 'government', 'start_year', 'end_year', 'policies', 'note', 'start_basis', 'end_basis'],
   'polity_territory':  ['territory_id', 'polity_id', 'start_year', 'end_year'],
   'polity_dynasty':    ['polity_id', 'dynasty_id', 'start_year', 'end_year'],
   'territory':         ['id', 'name'],
@@ -53,6 +53,9 @@ const SCHEMA = {
 
 // Free-text columns where commas are prose, not list separators.
 const PROSE_COLUMNS = new Set(['note', 'description', 'significance', 'name', 'citation']);
+
+// Empty means the date has not been assessed yet. See docs/model/polity.md.
+const DATE_BASIS = new Set(['', 'recorded', 'estimated', 'first_attested']);
 
 // ── Reporting ─────────────────────────────────────────────────────────────────
 
@@ -157,6 +160,7 @@ for (const r of T.polity) {
   if (r.start_year !== '' && s === null) err('non-integer year', `polity ${r.id}.start_year = "${r.start_year}"`);
   if (r.end_year !== '' && e === null)   err('non-integer year', `polity ${r.id}.end_year = "${r.end_year}"`);
   if (s !== null && e !== null && s > e) err('start after end', `polity ${r.id}: ${s} > ${e}`);
+  for (const col of ['start_basis', 'end_basis']) if (!DATE_BASIS.has(r[col])) err('polity date basis invalid', `${r.id}.${col} = "${r[col]}"`);
 }
 for (const name of ['polity_territory', 'polity_dynasty']) {
   for (const r of T[name]) {

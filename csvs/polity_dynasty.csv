@@ -46,7 +46,6 @@ egyptian_new_kingdom,new_kingdom_royal,-1550,-1077
 elam,elamite_royal,-2700,-539
 empire_of_japan,imperial_yamato,1868,1947
 fatimid_caliphate,fatimid,909,1171
-feudal_japan,imperial_yamato,1185,1868
 first_bulgarian_empire,borjigin,681,1018
 first_turkic_khaganate,ashina,552,603
 french_first_empire,bourbon,1804,1815
@@ -59,7 +58,6 @@ german_empire,hohenzollern,1871,1918
 ghaznavid_empire,ghaznavid,977,1186
 ghorid_dynasty,ghorid,879,1215
 goguryeo,go_goguryeo,-37,668
-goktürk_khaganate,ashina,552,744
 golden_horde,borjigin,1227,1502
 goryeo,wang_goryeo,918,1392
 grand_duchy_of_lithuania,gediminas,1316,1569
@@ -71,7 +69,6 @@ gutian_dynasty,gutian,-2141,-2050
 habsburg_monarchy,habsburg,1526,1804
 hafsid_dynasty,hafsid,1229,1574
 hamdanid_emirate,hamdanid,890,1004
-han_dynasty,han_liu,-206,220
 harsha_empire,harsha_pushyabhuti,606,647
 hasmonean_dynasty,hasmonean,-164,-37
 hephthalites,hunnic,440,670
@@ -253,14 +250,13 @@ vandal_kingdom,vandal_royal,435,534
 vijayanagara_empire,chalukya,1336,1646
 visigothic_kingdom,visigothic_royal,418,721
 western_chalukya,western_chalukya,973,1189
-western_han,han_liu,-202,-9
+western_han,han_liu,-202,9
 western_roman_empire,roman_julio_claudian,395,476
 western_wei,xiongnu_royal,535,557
 western_xia,western_xia_royal,1038,1227
 xiongnu,xiongnu_royal,-209,-48
 xueyantuo,ashina,628,646
 yadava_dynasty,yadava,1187,1317
-yamato_period,imperial_yamato,250,710
 yarkand_khanate,borjigin,1514,1705
 yuan_dynasty,borjigin,1271,1368
 zagwe_dynasty,zagwe,900,1270
@@ -269,3 +265,13 @@ zangid_atabegate,zangid,1127,1250
 zhou_dynasty,zhou_ji,-1046,-256
 zirid_dynasty,zirid,972,1148
 ziyadid_dynasty,ziyadid,818,1018
+xuan_han,han_liu,23,25
+eastern_han,han_liu,25,220
+yamato_kingdom,imperial_yamato,250,701
+ritsuryo_japan,imperial_yamato,701,1185
+kamakura_shogunate,imperial_yamato,1185,1333
+kenmu_government,imperial_yamato,1333,1336
+ashikaga_shogunate,imperial_yamato,1336,1573
+southern_court,imperial_yamato,1336,1392
+oda_toyotomi_government,imperial_yamato,1573,1603
+tokugawa_shogunate,imperial_yamato,1603,1868

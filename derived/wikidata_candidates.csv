@@ -60,7 +60,6 @@ parthian_empire,Parthian Empire (Arsacid),Parthian Empire,-247,224,Q1986139,Part
 satavahana_empire,Satavahana Empire,Satavahana Empire,-230,220,Q5257,Satavahana dynasty,Indian dynasty (2nd century BCE–Early 3rd century CE),-230,220,0,0,high,1
 qin_dynasty,Qin Dynasty,Qin Dynasty,-221,-206,Q7183,Qin dynasty,dynasty that ruled in China from 221 to 206 BC,-221,-206,0,0,high,5
 xiongnu,Xiongnu Confederation,Xiongnu Confederation,-209,93,Q16259603,Suibu,one of the ruling clans of the ancient Xiongnu confederation,,,,,undated,3
-han_dynasty,Han Dynasty,Han Dynasty,-206,220,Q7209,Han dynasty,imperial dynasty in China from 202 BC to 220 AD,-206,220,0,0,high,7
 numidia,Kingdom of Numidia,Kingdom of Numidia,-202,-46,Q102679,Kingdom of Numidia,Amazigh (Berber) kingdom in North Africa (202 BC - 40 AD),-202,-46,0,0,high,1
 western_han,Western Han,Western Han,-202,9,Q1072949,Western Han,the first half of the Han dynasty of imperial China,-202,9,0,0,high,7
 germanic_tribes,Germanic tribes,Germanic tribes,-200,500,Q22633,Germanic people,Indo-European ethnolinguistic group,,,,,undated,1
@@ -80,7 +79,7 @@ roman_empire,Roman Empire,Roman Empire,-27,395,Q2277,Roman Empire,period of Anci
 indo_parthian_kingdom,Indo-Parthian Kingdom,Indo-Parthian Kingdom,-19,226,Q1255614,Indo-Parthian kingdom,historic kingdom (AD 19-226),-19,226,0,0,high,2
 baekje,Baekje,Baekje,-18,660,Q28428,Baekje,ancient kingdom in southwestern Korea (18 BCE – 660 CE),-18,660,0,0,high,7
 kushan_empire,Kushan Empire,Kushan Empire,30,375,Q25979,Kushan Empire,empire in Central and South Asia (30–375 AD),30,375,0,0,high,2
-goguryeo,Goguryeo,Goguryeo,37,668,Q28370,Goguryeo,"one of the Three Kingdoms of Korea (37 BC–668 AD), along with Baekje and Silla",-37,668,-74,0,medium,7
+goguryeo,Goguryeo,Goguryeo,-37,668,Q28370,Goguryeo,"one of the Three Kingdoms of Korea (37 BC–668 AD), along with Baekje and Silla",-37,668,0,0,high,7
 funan,Funan (Óc Eo,Funan (Óc Eo,50,550,Q125912311,Memory of Oc Eo ancient city and Funan Kingdom in light of recent archaeological discoveries,scientific article published in 2023,,,,,undated,1
 xianbei,Xianbei,Xianbei,93,234,Q4783395,Xianbei state,Nomadic North Asian state (c. 93-236),93,236,0,2,high,7
 aksumite_kingdom,Aksumite Kingdom,Aksumite Kingdom,100,940,Q139377,Kingdom of Aksum,trading nation in the area of Eritrea and Northern Ethiopia,-400,960,-500,20,medium,5
@@ -93,7 +92,13 @@ sassanid_empire,Sassanid Empire,Sassanid Empire,224,651,Q83891,Sasanian Empire,l
 kushano_sasanian_kingdom,Kushano-Sasanian Kingdom,Kushano-Sasanian Kingdom,230,365,Q1661685,Indo-Sassanids,Branch of Sasanian Persians ruling Bactria (c.230–c.365),,,,,undated,1
 maya_city_states,Maya City-States (Tikal; Calakmul),Maya City-States,250,900,Q213232,Uxmal,Pre-Columbian Maya city in Yucatan,,,,,undated,3
 vakataka_dynasty,Vakataka Dynasty,Vakataka Dynasty,250,500,Q1501306,Vakataka empire,early 1st-millennium Indian dynasty,250,500,0,0,high,7
-yamato_period,Yamato Period,Yamato Period,250,710,Q633881,Yamato period,period of Japanese history,,,,,undated,1
+yamato_kingdom,Yamato Kingdom,Yamato Kingdom,250,701,,,,,,,,none,0
+ritsuryo_japan,Ritsuryō Japan (律令国家),Ritsuryō Japan,701,1185,Q1059892,Taihō Code,"administrative reorganization enacted in 703 in Japan, at the end of the Asuka period. It was historically one of the Ritsuryō-sei. It was compiled at the direction of Prince Osakabe, Fujiwara no Fuhito and Awata no Mahito.",701,,0,,medium,7
+kamakura_shogunate,Kamakura Shogunate,Kamakura Shogunate,1185,1333,Q236205,Kamakura period,period of Japanese history,1185,1333,0,0,high,3
+kenmu_government,Kenmu Government,Kenmu Government,1333,1336,,,,,,,,none,0
+ashikaga_shogunate,Ashikaga Shogunate,Ashikaga Shogunate,1336,1573,Q1154406,Ashikaga shogunate,feudal military government of Japan (1336–1573),1336,1573,0,0,high,1
+southern_court,Southern Court (南朝),Southern Court,1336,1392,Q3001082,Southern Court,set of four emperors (Emperor Go-Daigo and his line) whose claims to sovereignty during the Nanboku-chō period spanning from 1336 through 1392 were usurped by the Northern Court,1337,1392,1,0,high,3
+oda_toyotomi_government,Oda-Toyotomi Government (織豊政権),Oda-Toyotomi Government,1573,1603,Q10789447,Category:Daimyo of the Oda-Toyotomi government,Wikimedia category,,,,,undated,1
 palmyrene_empire,Palmyrene Empire,Palmyrene Empire,260,273,Q877875,Palmyrene Empire,breakaway state from the Roman Empire (270–273),270,273,10,0,high,1
 western_jin,Western Jin Dynasty,Western Jin Dynasty,265,316,Q1145470,Western Jin dynasty,First part of the Jin dynasty (266-316).,265,316,0,0,high,1
 pallava_dynasty,Pallava Dynasty,Pallava Dynasty,275,897,Q466803,Pallava dynasty,Indian dynasty between the 3rd and 9th centuries CE,275,897,0,0,high,1
@@ -125,7 +130,6 @@ western_wei,Western Wei / Northern Zhou tributary,Western Wei,535,557,Q1143164,W
 chalukya_dynasty,Chalukya Dynasty (Badami),Chalukya Dynasty,543,757,Q1395011,Chalukya dynasty,classical Indian dynasty (543–753),543,753,0,-4,high,1
 tiwanaku,Tiwanaku,Tiwanaku,550,1000,Q61750,Tiwanaku,archaeological site in Bolivia,400,900,-150,-100,conflict,7
 first_turkic_khaganate,First Türkic Empire,First Türkic Empire,552,603,,,,,,,,none,0
-goktürk_khaganate,Göktürk Khaganate,Göktürk Khaganate,552,744,Q15146034,First Turkic Khaganate,khaganate established by the Ashina clan of the Göktürks in medieval Inner Asia,551,603,-1,-141,medium,1
 avar_khaganate,Avar Khaganate,Avar Khaganate,568,804,Q28411,Avar Khaganate,organized nomadic confederacy in the Central Europe,562,823,-6,19,high,2
 lombard_kingdom,Kingdom of the Lombards,Kingdom of the Lombards,568,774,Q854415,Kingdom of the Lombards,"Germanic successor state to the Western Roman Empire established by the Lombards, a Germanic people, on the Italian Peninsula (568–774)",568,774,0,0,high,1
 sui_dynasty,Sui Dynasty,Sui Dynasty,581,618,Q7405,Sui dynasty,dynasty that ruled over China from 581 to 618,581,618,0,0,high,2
@@ -148,7 +152,6 @@ republic_of_venice,Venice,Venice,697,1797,Q4948,Republic of Venice,"former state
 balhae,Balhae (Bohai),Balhae,698,926,Q28322,Balhae,ancient kingdom in Asia (698–926),698,926,0,0,high,7
 turgesh_khaganate,Turgesh Khaganate,Turgesh Khaganate,699,766,Q137218111,Türgesh Khaganate,,,,,,undated,1
 kanem_empire,Kanem Empire / Daju,Kanem Empire,700,1380,Q1537016,Kanem Empire,former African empire,700,1376,0,-4,high,1
-nara_period,Nara Period,Nara Period,710,794,Q189178,Nara period,historical medieval period of Japan from CE 710 to 794,710,794,0,0,high,2
 al_andalus,Al-Andalus,Al-Andalus,711,1492,Q123559,al-Andalus,"Muslim-ruled territories of the Iberian Peninsula (711–1492), encompassing various Islamic states; at its greatest extent occupied most of the peninsula before shrinking through the Reconquista to the Emirate of Granada",711,1492,0,0,high,7
 pratihara_dynasty,Pratihara Dynasty,Pratihara Dynasty,730,1036,Q5324,Gurjara-Pratihara,dynasty that ruled northern India from 6th to 11th century,800,1036,70,0,medium,7
 uyghur_khaganate,Uyghur Khaganate,Uyghur Khaganate,744,840,Q831218,Uyghur Khaganate,former country,744,840,0,0,high,1
@@ -158,7 +161,6 @@ rashtrakuta_dynasty,Rashtrakuta Dynasty,Rashtrakuta Dynasty,753,982,Q856691,Rash
 muhallabid_governors,Muhallabid governors,Muhallabid governors,771,793,Q17257848,Al-Fadl ibn Rawh ibn Hatim al-Muhallabi,member of the Muhallabid family and a provincial governor for the Abbasid Caliphate,,,,,undated,1
 rustamid_dynasty,Rustamid Dynasty,Rustamid Dynasty,776,909,Q940123,Rustamid dynasty,Ibadi ruling house in Maghreb,767,909,-9,0,high,1
 idrisid_dynasty,Idrisid Dynasty,Idrisid Dynasty,788,974,Q431575,Idrisid dynasty,Arab Muslim dynasty that ruled parts of present-day Morocco and parts of western Algeria,788,974,0,0,high,1
-heian_period,Heian Period,Heian Period,794,1185,Q193292,Heian period,"last major division of classical Japanese history (794 to 1185), named after the capital city of Heian-kyō, or modern Kyōto",794,1185,0,0,high,4
 aghlabid_dynasty,Aghlabid Dynasty,Aghlabid Dynasty,800,909,Q207600,Aghlabids,dynasty,800,909,0,0,high,1
 mississippian_culture,Mississippian Culture,Mississippian Culture,800,1600,Q1052095,Mississippian culture,"mound-building Native American culture in Midwestern, Eastern, and Southeastern United States",800,1600,0,0,high,4
 khmer_empire,Khmer Empire,Khmer Empire,802,1431,Q201705,Khmer Empire,802–1431 empire in Southeast Asia,802,1431,0,0,high,2
@@ -174,6 +176,7 @@ pechenegs,Pechenegs,Pechenegs,860,1091,Q181752,Pechenegs,extinct Turkic people,8
 saffarid_dynasty,Saffarid Dynasty,Saffarid Dynasty,861,1003,Q45310,Saffarid dynasty,"Iranian dynasty ruling Sistan, Khorasan and Central Iran (861–1003)",861,1003,0,0,high,1
 tulunid_dynasty,Tulunid Dynasty,Tulunid Dynasty,868,905,Q726798,Tulunids,Independent Egyptian Emirate,868,905,0,0,high,7
 kingdom_of_norway,Kingdom of Norway,Kingdom of Norway,872,1380,Q2196956,Kingdom of Norway,former Kingdom from 872 to 1397,872,1397,0,17,high,6
+modern_norway,Norway,Norway,1905,,Q20,Norway,country in Northern Europe,1905,,0,,medium,7
 kievan_rus,Kievan Rus,Kievan Rus,882,1240,Q1108445,Kievan Rus',former federation of East Slavic tribes,882,1240,0,0,high,6
 bagratid_armenia,Bagratid Armenia,Bagratid Armenia,885,1064,Q2622868,Bagratid Armenia,Armenian state ruled by the Bagratuni dynasty (885–1045),884,1045,-1,-19,high,1
 sajid_dynasty,Sajid dynasty,Sajid dynasty,889,929,Q3432153,Sajids,Iranian Muslim dynasty ruling of Azerbaijan and Aran (889–929),889,929,0,0,high,1
@@ -228,7 +231,6 @@ ghorid_dynasty,Ghorid Sultanate,Ghorid Sultanate,1148,1215,Q199443,Ghurid dynast
 angevin_empire,Angevin Empire,Angevin Empire,1154,1204,Q538677,Angevin Empire,former collection of states in north-western Europe during the High Middle Ages,1154,1242,0,38,medium,1
 crown_of_aragon,Crown of Aragon,Crown of Aragon,1164,1716,Q204920,Crown of Aragon,composite monarchy which existed between 1162–1716,1162,1715,-2,-1,high,3
 ayyubid_sultanate,Ayyubid Sultanate,Ayyubid Sultanate,1171,1260,Q63135869,Ayyubid Sultanate,state governed by the Ayyubid dynasty in the 12th and 13th centuries,1171,1250,0,-10,high,2
-feudal_japan,Feudal Japan,Feudal Japan,1185,1603,Q3092690,feudal Japan,"historical period of Japan since the Kamakura period (1185) until the abolition of the han system during the Meiji restoration (1871), otherwise until the Edo period (1603)",,,,,undated,1
 second_bulgarian_empire,Second Bulgarian Empire,Second Bulgarian Empire,1185,1396,Q420759,Second Bulgarian Empire,Medieval Bulgarian state (1185–1396),1185,1396,0,0,high,1
 serbian_empire,Serbian Empire (Nemanjić Dynasty),Serbian Empire,1190,1389,Q1406298,Serbian Empire,1346–1371 empire in the Balkan Peninsula,1346,1371,156,-18,medium,2
 galicia_volhynia,Principality of Galicia-Volhynia,Principality of Galicia-Volhynia,1199,1349,Q239502,Kingdom of Galicia–Volhynia,kingdom in Central Europe,1199,1349,0,0,high,1
@@ -310,7 +312,7 @@ polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,Polish-Lithuanian 
 principality_of_transylvania,Principality of Transylvania,Principality of Transylvania,1570,1711,Q655621,Principality of Transylvania,semi-independent principality in Eastern Europe between 1570 and 1711,1570,1711,0,0,high,3
 creek_confederacy,Creek Confederacy (Muscogee),Creek Confederacy,1600,1832,Q5455012,Fishing Creek Confederacy,"alleged military uprising in Columbia County, Pennsylvania",,,,,undated,4
 darfur_sultanate,Darfur Sultanate,Darfur Sultanate,1603,1916,Q1474791,Sultanate of Darfur,former country,1603,1874,0,-42,medium,6
-tokugawa_shogunate,Tokugawa Shogunate (Edo Period),Tokugawa Shogunate,1603,1868,Q184963,Edo period,"period of Japanese history from 1600 to 1868, during the rule of the Tokugawa shogunate",1603,1868,0,0,high,5
+tokugawa_shogunate,Tokugawa Shogunate,Tokugawa Shogunate,1603,1868,Q184963,Edo period,"period of Japanese history from 1600 to 1868, during the rule of the Tokugawa shogunate",1603,1868,0,0,high,5
 jamestown_colony,Jamestown Colony,Jamestown Colony,1607,1624,Q323813,Jamestown,fort and town established in the Virginia Colony,1607,,0,,medium,1
 thirteen_colonies,Thirteen Colonies,Thirteen Colonies,1607,1776,Q179997,Thirteen Colonies,group of 13 North American colonies of Great Britain from the founding of Georgia until American Independence (1732–1776),1607,1776,0,0,high,4
 plymouth_colony,Plymouth Colony,Plymouth Colony,1620,1691,Q126195,Plymouth Colony,17th century English possession in North America,1620,1691,0,0,high,2
@@ -320,7 +322,7 @@ alawite_dynasty,Alawite Dynasty (Morocco),Alawite Dynasty,1631,,Q1129036,'Alawi 
 dzungar_khanate,Dzungar Khanate,Dzungar Khanate,1634,1755,Q1923401,Dzungar Khanate,"Oirat Mongolian Khanate based in Dzungaria from 1634–1758, referred as the Last great Nomadic empire",1634,1758,0,3,high,1
 french_caribbean,French Caribbean,French Caribbean,1635,,Q5501709,French Caribbean,,,,,,undated,5
 khoshut_khanate,Khoshut Khanate,Khoshut Khanate,1642,1717,Q10921634,Khoshut Khanate,Tibetan kingdom from 1642-1717,1650,1724,8,7,high,1
-qing_dynasty,Qing Dynasty (Manchu),Qing Dynasty,1644,1912,Q8733,Qing dynasty,Manchu-led dynasty of China (1644–1912),1636,1912,-8,0,high,7
+qing_dynasty,Qing Dynasty (Manchu),Qing Dynasty,1636,1912,Q8733,Qing dynasty,Manchu-led dynasty of China (1644–1912),1636,1912,0,0,high,7
 cossack_hetmanate,Cossack Hetmanate,Cossack Hetmanate,1649,1764,Q212439,Cossack Hetmanate,1649–1764 Cossack state in Ukraine,1648,1764,-1,0,high,1
 rupert_land,Rupert's Land (Hudson's Bay Company),Rupert's Land,1670,1870,Q738395,Rupert's Land,territory in British North America,1670,1870,0,0,high,7
 maratha_empire,Maratha Empire,Maratha Empire,1674,1818,Q83618,Maratha Empire,1674–1818 empire in the Indian subcontinent,1674,1818,0,0,high,1
@@ -442,7 +444,6 @@ lullubi_kingdom,Lullubi Kingdom,Lullubi Kingdom,-2300,-1200,Q65084166,Satuni,kin
 mannai_kingdom,Mannai Kingdom,Mannai Kingdom,-850,-616,Q552328,Mannaea,former country,-1000,-800,-150,-184,conflict,2
 marhashi_kingdom,Marhashi Kingdom,Marhashi Kingdom,-2500,-2000,Q492046,Marhasi,Kingdom mentioned in Sumerian sources,,,,,undated,1
 proto_elamite,Proto-Elamite,Proto-Elamite,-3100,-2700,Q1196237,Proto-Elamite period,pre-Iranian civilization from ca. 3400 BC to 2500 BC,-3100,-2700,0,0,high,4
-kidarite_kingdom,Kidarite Kingdom,Kidarite Kingdom,320,467,,,,,,,,none,0
 azerbaijan_peoples_government,Azerbaijan Peoples Government,Azerbaijan Peoples Government,1945,1946,Q2305337,Azerbaijan People's Government,unrecognized self-declared secessionist state puppeted by the Soviet Union in northwestern Iran,1945,1946,0,0,high,7
 mahabad_republic,Mahabad Republic,Mahabad Republic,1946,1946,Q332232,Republic of Mahabad,1946 unrecognised Kurdish state in Iran,1946,1946,0,0,high,5
 kalat_khanate,Kalat Khanate,Kalat Khanate,1666,1955,Q139948,Khanate of Kalat,state in Balochistan,1638,1955,-28,0,medium,1

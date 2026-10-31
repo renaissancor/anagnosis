@@ -81,7 +81,7 @@
             {
               "label": "Han dynasty — Giao Chỉ (Jiaozhou)",
               "note": "111 BCE–40 CE",
-              "polity": "han_dynasty"
+              "polity": "western_han"
             },
             {
               "label": "Trưng Sisters revolt",
@@ -90,7 +90,7 @@
             {
               "label": "Later Han — Giao Châu (Jiaozhou)",
               "note": "43–220 CE",
-              "polity": "later_han"
+              "polity": "eastern_han"
             }
           ],
           "span": 1

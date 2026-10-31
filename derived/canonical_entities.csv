@@ -22,12 +22,12 @@ safavid_empire,existing_polity,Safavid dynasty (Herat — major Safavid city),8,
 avar_khaganate,existing_polity,Avar Khaganate,8,bosnia|croatia|czech_slovakia|hungary|romania|serbia|slovenia|switzerland_austria,Avar Khaganate | Avar Khaganate · South Slavic migration | Avar Khaganate (overlordship) | Avar Khaganate (Carpathian core) | Avar Khaganate (declining) · Vlachs | Lombard Kingdom → Avar Khaganate | Avar Khaganate (eastern frontier raids)
 macedonian_empire,existing_polity,Alexander the Great (Alexandria in Aria),7,afghanistan|turkmenistan|uzbekistan|egypt|iraq|levant|iran,Alexander the Great (Alexandria in Aria) | Alexander — Alexandria Arachosia (Kandahar) | Alexander — Alexandria-on-the-Oxus (Balkh) | Alexander — Paropamisadae / Alexandria sub Caucaso | Alexander the Great · Seleucid | Argead dynasty — Alexander the Great · Diadochi | Macedonian Empire (Alexander) | Alexander / Diadochi | Macedonian / Diadochi
 kushan_empire,existing_polity,Kushan Empire (origins here — Yuezhi chiefs),7,afghanistan|turkmenistan|uzbekistan|tibet|iran|india|pakistan,Kushan Empire (origins here — Yuezhi chiefs) | Kushan Empire | Kushan Empire (Bactrian heartland) | Kushan Empire (frontier influence) | Kushan / Saka | Kushan Empire (Mathura second capital) | Kushan Empire — Gandhara Buddhist art flourishes
+kidarites,existing_polity,Kidarites / Alchon Huns (Aria),7,afghanistan|turkmenistan|uzbekistan|xinjiang|iran|india|pakistan,Kidarites / Alchon Huns (Aria) | Kidarites · Alchon Huns (Zabulistan) | Kidarites | Kidarites / Alchon Huns | Kidarites / Xionites | Kidarites · Alchon Huns | Kidarite / Chionite | Kidarites (Hunnic)
 tahirid_dynasty,existing_polity,Tahirid dynasty,7,afghanistan|turkmenistan|uzbekistan|arabia|yemen|iran|pakistan,Tahirid dynasty | Tahirid Dynasty | Tahirid dynasty (nominal)
 western_roman_empire,existing_polity,Western Roman Empire — decline,7,bosnia|france|germany|hungary|italy|low_countries|switzerland_austria,Western Roman Empire — decline | Western Roman Empire | Western Roman Empire (Rhineland) | Western Roman Empire (declining)
 ayyubid_sultanate,existing_polity,Ayyubid Sultanate,7,arabia|egypt|iraq|levant|yemen|libya|sudan,Ayyubid Sultanate | Ayyubid suzerainty | Ayyubid Sultanate — Saladin; Crusader Wars | Ayyubid (Jazira) | Ayyubid | Ayyubid dynasty (Saladin's brother — conquers Yemen) | Ayyubid (partial) | Ayyubid → Mamluk dynasty (N. Sudan)
 fatimid_caliphate,existing_polity,Fatimid Caliphate,7,arabia|egypt|levant|morocco|algeria|libya|tunisia,Fatimid Caliphate | Fatimid Caliphate — Cairo founded (969); Islamic Golden Age | Fatimid (nominal) | Fatimid suzerainty | Fatimid Caliphate (al-Mahdiyya)
 parthian_empire,existing_polity,Parthian Empire (Aria satrapy),6,afghanistan|turkmenistan|arabia|azerbaijan|iraq|iran,Parthian Empire (Aria satrapy) | Parthian Empire (Aria) | Parthian Empire (Arsacid dynasty — from Nisa) | Parthian Empire | Parthian suzerainty | Parthian Empire (Ctesiphon)
-kidarites,existing_polity,Kidarites / Alchon Huns (Aria),6,afghanistan|turkmenistan|uzbekistan|xinjiang|india|pakistan,Kidarites / Alchon Huns (Aria) | Kidarites · Alchon Huns (Zabulistan) | Kidarites | Kidarites / Alchon Huns | Kidarites / Xionites | Kidarites · Alchon Huns | Kidarites (Hunnic)
 hephthalites,existing_polity,Hephthalites,6,afghanistan|kazakhstan|turkmenistan|uzbekistan|xinjiang|iran,Hephthalites | Hephthalites (eastern branch) | Hephthalites (eastern wing)
 tang_dynasty,existing_polity,Tang Dynasty / Anxi Protectorate (nominal),6,afghanistan|xinjiang|china|manchuria|mongolia|vietnam,"Tang Dynasty / Anxi Protectorate (nominal) | Tang tributary (Duolu/Nushibi Turks) | Tang Dynasty — Anxi Protectorate (安西都護府, garrison: Kashgar) | Tang Dynasty — Anxi Protectorate | Tang Dynasty (唐) | Tang | Tang — declining | Tang → regional Mohe chiefs | Tang (唐) | Tang dynasty (唐) | Tang dynasty — Giao Châu (An Nam đô hộ phủ)"
 ghaznavid_empire,existing_polity,Ghaznavid dynasty,6,afghanistan|turkmenistan|uzbekistan|iran|india|pakistan,Ghaznavid dynasty | Ghaznavid dynasty (capital: Ghazni near here) | Ghaznavid dynasty (Ghazni capital) | Ghaznavid / Ghorid | Ghaznavid Empire | Ghaznavid / Ghurid | Ghaznavid Empire — Mahmud's 17 raids | Ghaznavid Empire — Mahmud's 17 raids into India
@@ -42,6 +42,7 @@ carolingian_empire,existing_polity,Frankish Kingdom — Merovingian dynasty,6,fr
 neo_assyrian_empire,existing_polity,Neo-Assyrian Empire,6,anatolia|arabia|egypt|iraq|levant|iran,Neo-Assyrian Empire | Assyrian Empire | Neo-Assyrian conquest
 greco_bactrian_kingdom,existing_polity,Greco-Bactrian Kingdom (influence),5,afghanistan|turkmenistan|uzbekistan|iran|pakistan,Greco-Bactrian Kingdom (influence) | Greco-Bactrian Kingdom | Greco-Bactrian Kingdom (center — Bactra) | Greco-Bactrian Kingdom (Gandhara)
 kushano_sasanian_kingdom,existing_polity,Kushano-Sasanian Kingdom (south),5,afghanistan|turkmenistan|uzbekistan|india|pakistan,Kushano-Sasanian Kingdom (south) | Kushano-Sasanian Kingdom | Kushano-Sasanian / Sassanid | Kushano-Sasanian (western frontier)
+first_turkic_khaganate,existing_polity,First Türkic Empire (Tokharistan),5,afghanistan|kazakhstan|china|mongolia|iran,First Türkic Empire (Tokharistan) | First Türkic Empire | Göktürk Khaganate (Western wing) | Göktürk Khaganate | Rouran → Göktürk Khaganate (突厥) | Göktürk Khaganate (Eastern · Western) | First Turkic Khaganate (突厥)
 ghorid_dynasty,existing_polity,Ghorid dynasty,5,afghanistan|turkmenistan|iran|india|pakistan,Ghorid dynasty | Ghorid dynasty (Balkh capital at times) | Ghurid Sultanate | Ghorid Sultanate — Muhammad of Ghor | Ghorid Sultanate — Muhammad of Ghor conquers Punjab
 khwarazmian_empire,existing_polity,Khwarazmian Empire,5,afghanistan|turkmenistan|uzbekistan|xinjiang|iran,Khwarazmian Empire | Khwarazmian Empire (Anushteginid) | Khwarazmian Empire (Anushteginid — capital: Urgench) | Khwarazmian Empire (brief)
 yuezhi,existing_polity,Yuezhi (before westward migration),5,kazakhstan|turkmenistan|uzbekistan|xinjiang|mongolia,Yuezhi (before westward migration) | Yuezhi (Da Yuezhi) | Yuezhi (before westward migration 176 BCE) | Yuezhi (月氏)
@@ -64,7 +65,6 @@ samanid_empire,existing_polity,Samanid dynasty,4,afghanistan|turkmenistan|uzbeki
 durrani_empire,existing_polity,Durrani Empire (Ahmad Shah — Afghan unification),4,afghanistan|iran|india|pakistan,Durrani Empire (Ahmad Shah — Afghan unification) | Durrani Empire (original Durrani capital) | Durrani Empire | Durrani Empire (capital moved to Kabul 1776) | Durrani Empire (Punjab raids · Battle of Panipat 1761) | Durrani Empire — Punjab as Afghan territory | Durrani Empire — Kashmir
 hunnic_empire,existing_polity,Hunnic Empire,4,kazakhstan|hungary|romania|ukraine,Hunnic Empire | Hunnic Empire (capital near Tisza) | Hunnic Empire → Goths/Sarmatians | Hunnic Empire · Alans · Free Dacians remnants | Hunnic Empire → Slavic migration | Sarmatians (Alans) → Hunnic Empire
 rouran_khaganate,existing_polity,Rouran Khaganate (suzerainty),4,kazakhstan|xinjiang|china|mongolia,Rouran Khaganate (suzerainty) | Rouran Khaganate | Rouran Khaganate (柔然)
-goktürk_khaganate,existing_polity,Göktürk Khaganate (Western wing),4,kazakhstan|china|russia|iran,Göktürk Khaganate (Western wing) | Göktürk Khaganate | Rouran → Göktürk Khaganate (突厥) | Göktürk Khaganate (Eastern · Western) | Indigenous peoples · Göktürk Khaganate influence
 khazar_khaganate,existing_polity,Khazar Khaganate,4,kazakhstan|russia|ukraine|georgia,Khazar Khaganate | Khazar Khaganate (south steppe) | Khazar Khaganate (partly) | Khazar Khaganate · Byzantine Chersonesus | Khazar Khaganate — raids
 uyghur_khaganate,existing_polity,Uyghur Khaganate (suzerainty),4,kazakhstan|xinjiang|china|mongolia,Uyghur Khaganate (suzerainty) | Uyghur Khaganate | Uyghur Khaganate (Orkhon heartland / reach here) | Uyghur Khaganate (回鹘) | Uyghur Khaganate (回鶻)
 kara_khanid_khanate,existing_polity,Kara-Khanid Khanate (Zhetysu),4,kazakhstan|turkmenistan|uzbekistan|xinjiang,Kara-Khanid Khanate (Zhetysu) | Kara-Khanid (eastern fringe) | Kara-Khanid Khanate | Kara-Khanid Khanate (first Islamic Turkic state — Kashgar capital) | Kara-Khanid Khanate (eastern wing) | Kara-Khanid (northern fringe)
@@ -97,7 +97,7 @@ pechenegs,existing_polity,Pechenegs (origin here → move west),3,kazakhstan|rom
 turkestan_assr,existing_polity,Turkestan ASSR,3,kazakhstan|turkmenistan|uzbekistan,Turkestan ASSR | Turkestan ASSR (Semirechye) | Turkestan ASSR (Fergana Oblast) | Turkestan ASSR (Fergana)
 tibetan_empire,existing_polity,Tibetan Empire (吐蕃) occupation,3,xinjiang|china|tibet,Tibetan Empire (吐蕃) occupation | Tibetan Empire | Tibetan Empire (吐蕃) | Tibetan Empire — Songtsen Gampo · Trisong Detsen | Tibetan Empire (periphery)
 republic_of_china,existing_polity,Republic of China — Xinjiang Province,3,xinjiang|china|mongolia,Republic of China — Xinjiang Province | Republic of China (中华民国) | Republic of China (中华民国) — Taiwan | Republic of China
-han_dynasty,existing_polity,Han — Western Regions Protectorate (西域都护),3,china|pakistan|vietnam,Han — Western Regions Protectorate (西域都护) | Tarkhan dynasty (Sindh) | Han dynasty — Giao Chỉ (Jiaozhou)
+western_han,existing_polity,Western Han (西汉/前汉),3,china|manchuria|vietnam,Western Han (西汉/前汉) | Han — Western Regions Protectorate (西域都护) | Western Han | Han dynasty — Giao Chỉ (Jiaozhou)
 liao_dynasty,existing_polity,Liao Dynasty (辽/契丹),3,china|manchuria|mongolia,Liao Dynasty (辽/契丹) | Liao Dynasty (辽) | Liao — Khitan Empire | Liao dynasty (遼)
 western_xia,existing_polity,Western Xia (西夏),3,china|mongolia|tibet,Western Xia (西夏) | Western Xia (Tangut Empire)
 jin_dynasty,existing_polity,Jin Dynasty (金),3,china|manchuria|mongolia,Jin Dynasty (金) | Jin — Jurchen Empire | Jin dynasty (金)
@@ -132,7 +132,6 @@ aghlabid_dynasty,existing_polity,Aghlabid dynasty,3,algeria|libya|tunisia,Aghlab
 banu_ghaniya,existing_polity,Banu Ghaniya (Balearic Almoravid remnants),3,algeria|libya|tunisia,Banu Ghaniya (Balearic Almoravid remnants) | Banu Ghaniya | Banu Ghaniya (Almoravid rebels)
 bantu_expansion,unresolved_polity,Tribal societies · Bantu expansion,2,congo|southern_africa,"Tribal societies · Bantu expansion | Bantu-speaking farmers arrive | Cattle-keeping, iron-smelting communities | Nguni-speaking ancestors settle Natal coast | Sotho-Tswana ancestors settle highveld"
 helmand_culture,unresolved_polity,Helmand culture (Helmand Civilization),2,afghanistan|iran,Helmand culture (Helmand Civilization) | Helmand culture
-first_turkic_khaganate,existing_polity,First Türkic Empire (Tokharistan),2,afghanistan|mongolia,First Türkic Empire (Tokharistan) | First Türkic Empire | First Turkic Khaganate (突厥)
 nezak_huns,existing_polity,Nezak Huns (brief),2,afghanistan|india,Nezak Huns (brief) | Nezak Huns | Nezak Huns · Turk Shahis (Gandhara)
 zunbil_dynasty,existing_polity,Zunbil dynasty (Zabulistan — resisted Arab conquest for 200 years),2,afghanistan|india,Zunbil dynasty (Zabulistan — resisted Arab conquest for 200 years) | Zunbil dynasty (finally conquered by Saffarids) | Zunbil dynasty (Zabulistan)
 turk_shahis,existing_polity,Türk Shahis (Buddhist Kabul rulers),2,afghanistan|pakistan,Türk Shahis (Buddhist Kabul rulers) | Türk Shahis → Hindu Shahis (drove out Türk Shahis) | Turk Shahis (Kabul & Gandhara) | Turk Shahis → Hindu Shahis (Gandhara)
@@ -161,10 +160,9 @@ azanian_coast,unresolved_polity,Azanian coast (Greek/Arab trade),2,somalia|swahi
 italian_somaliland,unresolved_polity,Italian Somaliland,2,somalia|swahili_coast,Italian Somaliland | Italian Somaliland — Mogadishu
 somali_republic,unresolved_polity,Somali Republic (union with south),2,somalia|swahili_coast,Somali Republic (union with south) | Somali Republic (1960) | Somalia (independent 1960) — Mogadishu capital
 qin_dynasty,existing_polity,Qin Dynasty (秦),2,china|manchuria,Qin Dynasty (秦) | Qin
-western_han,existing_polity,Western Han (西汉/前汉),2,china|manchuria,Western Han (西汉/前汉) | Western Han
+eastern_han,existing_polity,Eastern Han (东汉/后汉),2,china|vietnam,Eastern Han (东汉/后汉) | Later Han — Giao Châu (Jiaozhou)
 western_jin,existing_polity,Western Jin (西晋),2,china|manchuria,Western Jin (西晋) | Western Jin — Liaodong & Xuantu
 later_jin,existing_polity,Later Jin (后晋),2,china|manchuria,Later Jin (后晋) | Later Jin (后金) → Qing | Later Jin
-later_han,existing_polity,Later Han (后汉),2,china|vietnam,Later Han (后汉) | Later Han — Giao Châu (Jiaozhou)
 mengjiang,existing_polity,Mengjiang,2,china|mongolia,Mengjiang | Mengjiang (蒙疆)
 joseon,existing_polity,Gojoseon,2,korea|manchuria,Gojoseon | Joseon | Joseon (Imjin War · Manchu invasions) | Joseon (Qing tributary)
 goguryeo,existing_polity,Goguryeo,2,korea|manchuria,Goguryeo | Later Goguryeo (Taebong) | Goguryeo — expanding
@@ -480,7 +478,6 @@ eastern_zhou,existing_polity,Eastern Zhou (东周),1,china,Eastern Zhou (东周)
 ba_shu,existing_polity,Ba (巴) · Shu (蜀),1,china,Ba (巴) · Shu (蜀)
 xin,existing_polity,Xin (新) — Wang Mang,1,china,Xin (新) — Wang Mang
 xuan_han,existing_polity,Xuan Han (玄汉),1,china,Xuan Han (玄汉)
-eastern_han,existing_polity,Eastern Han (东汉/后汉),1,china,Eastern Han (东汉/后汉)
 cao_wei,existing_polity,Cao Wei (曹魏),1,china,Cao Wei (曹魏)
 shu_han,existing_polity,Shu Han (蜀汉),1,china,Shu Han (蜀汉)
 eastern_wu,existing_polity,Eastern Wu (东吴),1,china,Eastern Wu (东吴)
@@ -493,6 +490,7 @@ liang,existing_polity,Liang (梁),1,china,Liang (梁)
 chen,existing_polity,Chen (陈),1,china,Chen (陈)
 wu_zhou,existing_polity,Wu Zhou (武周) — Empress Wu Zetian,1,china,Wu Zhou (武周) — Empress Wu Zetian | Wu Zhou (吴周) — Wu Sangui
 later_tang,existing_polity,Later Tang (后唐),1,china,Later Tang (后唐)
+later_han,existing_polity,Later Han (后汉),1,china,Later Han (后汉)
 later_zhou,existing_polity,Later Zhou (后周),1,china,Later Zhou (后周)
 ten_kingdoms,existing_polity,Ten Kingdoms (十国),1,china,Ten Kingdoms (十国)
 northern_song,existing_polity,Northern Song (北宋),1,china,Northern Song (北宋)
@@ -512,15 +510,16 @@ yayoi_people_culture,unresolved_polity,Yayoi people,1,japan,Yayoi people
 hayato,unresolved_polity,Hayato / Kumaso,1,japan,Hayato / Kumaso
 emishi,unresolved_polity,Emishi,1,japan,Emishi | Emishi / Ezo
 ryukyuan,unresolved_polity,Ryukyuan,1,japan,Ryukyuan
-yamato_period,existing_polity,Yamato,1,japan,Yamato | Yamato · Soga Clan
-nara_period,existing_polity,Japan (Ritsuryō state),1,japan,Japan (Ritsuryō state)
+yamato_kingdom,existing_polity,Yamato,1,japan,Yamato | Yamato · Soga Clan
+ritsuryo_japan,existing_polity,Japan (Ritsuryō state),1,japan,Japan (Ritsuryō state) | Japan (Dynastic state) | Sesshō-Kampaku regency | Insei (Cloistered rule)
 gusuku_culture,unresolved_polity,Gusuku culture,1,japan,Gusuku culture
-heian_period,existing_polity,Japan (Dynastic state),1,japan,Japan (Dynastic state) | Sesshō-Kampaku regency | Insei (Cloistered rule)
-feudal_japan,existing_polity,Kamakura Shogunate,1,japan,Kamakura Shogunate | Hōjō Regency | Kenmu Restoration | Ashikaga Shogunate | Hosokawa / Miyoshi regency | Oda Nobunaga | Toyotomi Hideyoshi
+kamakura_shogunate,existing_polity,Kamakura Shogunate,1,japan,Kamakura Shogunate | Hōjō Regency
 ezo,unresolved_polity,Ezo,1,japan,Ezo | Ezo (Matsumae)
-northern_court,unresolved_polity,Northern Court,1,japan,Northern Court
-southern_court,unresolved_polity,Southern Court,1,japan,Southern Court
+kenmu_government,existing_polity,Kenmu Restoration,1,japan,Kenmu Restoration
+ashikaga_shogunate,existing_polity,Northern Court,1,japan,Northern Court | Ashikaga Shogunate | Hosokawa / Miyoshi regency
+southern_court,existing_polity,Southern Court,1,japan,Southern Court
 ryukyu_kingdom,existing_polity,Ryukyu Kingdom,1,japan,Ryukyu Kingdom | Ryukyu Kingdom (Satsuma vassal) | Ryukyu Domain | Ryukyu (US administration)
+oda_toyotomi_government,existing_polity,Oda Nobunaga,1,japan,Oda Nobunaga | Toyotomi Hideyoshi
 tokugawa_shogunate,existing_polity,Tokugawa Shogunate,1,japan,Tokugawa Shogunate
 matsumae_domain,unresolved_polity,Matsumae Domain,1,japan,Matsumae Domain
 empire_of_japan,existing_polity,Meiji Restoration · Boshin War,1,japan,Meiji Restoration · Boshin War | Empire of Japan
@@ -1242,7 +1241,7 @@ sami_peoples,unresolved_polity,Sámi peoples (Lapland — indigenous),1,scandina
 comb_ceramic_culture,unresolved_polity,Comb Ceramic · Corded Ware cultures,1,scandinavia,Comb Ceramic · Corded Ware cultures
 finnish_iron_age_culture,unresolved_polity,Finnish Iron Age,1,scandinavia,Finnish Iron Age
 petty_kingdoms,unresolved_polity,Petty kingdoms (småriker),1,scandinavia,Petty kingdoms (småriker)
-kingdom_of_norway,existing_polity,Kingdom of Norway — Fairhair dynasty,1,scandinavia,Kingdom of Norway — Fairhair dynasty | Kingdom of Norway | Kingdom of Norway — Hardrada dynasty | Kingdom of Norway — peak (Håkon IV) | Kingdom of Norway (independent — Haakon VII)
+kingdom_of_norway,existing_polity,Kingdom of Norway — Fairhair dynasty,1,scandinavia,Kingdom of Norway — Fairhair dynasty | Kingdom of Norway | Kingdom of Norway — Hardrada dynasty | Kingdom of Norway — peak (Håkon IV)
 jutes_danes,unresolved_polity,Jutes · Danes (Jutland · Zealand),1,scandinavia,Jutes · Danes (Jutland · Zealand)
 kingdom_of_denmark,existing_polity,Kingdom of Denmark,1,scandinavia,Kingdom of Denmark | North Sea Empire (Cnut the Great — Denmark + England + Norway) | Kingdom of Denmark — Valdemar IV restores realm | Oldenburg dynasty — Reformation (Lutheranism) | Kingdom of Denmark-Norway | Denmark-Norway — absolute monarchy | Kingdom of Denmark (loses Norway 1814)
 svear_gotar,unresolved_polity,Svear (Uppland) · Götar (Götaland),1,scandinavia,Svear (Uppland) · Götar (Götaland)
@@ -1273,6 +1272,7 @@ diet_of_porvoo,unresolved_polity,Diet of Porvoo — Alexander I preserves Finnis
 helsinki_becomes_capital,unresolved_polity,Helsinki becomes capital,1,scandinavia,Helsinki becomes capital
 fennoman_movement,unresolved_polity,Fennoman movement (Finnish language revival),1,scandinavia,Fennoman movement (Finnish language revival)
 sweden_norway_union_dissolved,unresolved_polity,Sweden-Norway union dissolved,1,scandinavia,Sweden-Norway union dissolved
+modern_norway,existing_polity,Kingdom of Norway (independent — Haakon VII),1,scandinavia,Kingdom of Norway (independent — Haakon VII) | Kingdom of Norway
 finnish_socialist_workers_republic,unresolved_polity,Finnish Socialist Workers' Republic (Red — defeated),1,scandinavia,Finnish Socialist Workers' Republic (Red — defeated)
 republic_of_finland,unresolved_polity,Republic of Finland,1,scandinavia,Republic of Finland
 republic_of_iceland,unresolved_polity,Republic of Iceland,1,scandinavia,Republic of Iceland
@@ -1899,7 +1899,6 @@ elam,existing_polity,Elam,1,iran,Elam | Elam (continued) | Elam / coastal tribes
 marhashi_kingdom,existing_polity,Marhashi,1,iran,Marhashi
 mannai_kingdom,existing_polity,Mannai Kingdom,1,iran,Mannai Kingdom
 anshan_kingdom,existing_polity,Anshan Kingdom,1,iran,Anshan Kingdom
-kidarite_kingdom,existing_polity,Kidarite / Chionite,1,iran,Kidarite / Chionite
 dabuyid_dynasty,existing_polity,Dabuyid Dynasty,1,iran,Dabuyid Dynasty
 bavandid_dynasty,existing_polity,Bavandid Dynasty,1,iran,Bavandid Dynasty | Bavandid / Paduspanid | Bavandid / Maraashi
 rawwadid_dynasty,existing_polity,Rawwadid Dynasty,1,iran,Rawwadid Dynasty
@@ -1998,6 +1997,7 @@ soomra_sindh,unresolved_polity,Soomra Sindh (continuing),1,pakistan,Soomra Sindh
 samma_dynasty,unresolved_polity,Samma dynasty (Sindh),1,pakistan,Samma dynasty (Sindh)
 kashmir_sultanate,unresolved_polity,Kashmir Sultanate (Shah Mir dynasty),1,pakistan,Kashmir Sultanate (Shah Mir dynasty) | Kashmir Sultanate (continuing)
 arghun_dynasty,unresolved_polity,Arghun dynasty (Sindh),1,pakistan,Arghun dynasty (Sindh)
+tarkhan_dynasty,unresolved_polity,Tarkhan dynasty (Sindh),1,pakistan,Tarkhan dynasty (Sindh)
 multan_emirate,unresolved_polity,Multan Emirate (Langah Sultanate),1,pakistan,Multan Emirate (Langah Sultanate)
 talpur_dynasty,unresolved_polity,Talpur dynasty (Sindh),1,pakistan,Talpur dynasty (Sindh)
 tambapanni_kingdom,unresolved_polity,Tambapanni kingdom (legendary Vijaya — Sinhalese origin),1,sri_lanka,Tambapanni kingdom (legendary Vijaya — Sinhalese origin)

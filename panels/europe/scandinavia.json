@@ -653,7 +653,7 @@
               "polity": "sweden_norway_union_dissolved"
             },
             {
-              "polity": "kingdom_of_norway",
+              "polity": "modern_norway",
               "label": "Kingdom of Norway (independent — Haakon VII)",
               "note": "1905–"
             },
@@ -806,7 +806,7 @@
         {
           "stack": [
             {
-              "polity": "kingdom_of_norway",
+              "polity": "modern_norway",
               "label": "Kingdom of Norway",
               "note": "1945–"
             },

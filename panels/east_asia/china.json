@@ -241,7 +241,7 @@
             {
               "label": "Han — Western Regions Protectorate (西域都护)",
               "note": "60 BCE",
-              "polity": "han_dynasty"
+              "polity": "western_han"
             }
           ],
           "span": 1
@@ -474,7 +474,7 @@
             {
               "label": "Rouran → Göktürk Khaganate (突厥)",
               "note": "552–",
-              "polity": "goktürk_khaganate"
+              "polity": "first_turkic_khaganate"
             }
           ],
           "span": 1
@@ -501,7 +501,7 @@
           "stack": [
             {
               "label": "Göktürk Khaganate (Eastern · Western)",
-              "polity": "goktürk_khaganate"
+              "polity": "first_turkic_khaganate"
             }
           ],
           "span": 1

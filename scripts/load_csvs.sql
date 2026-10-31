@@ -112,7 +112,8 @@ UPDATE religion SET depth = tree.depth FROM tree WHERE religion.id = tree.id;
 
 -- ─── POLITY (from polity.csv) ─────────────────────────────
 INSERT INTO polity (id, name, ruling_ethnicity, cultural_language,
-                    religion, government, start_year, end_year, note)
+                    religion, government, start_year, end_year, note,
+                    start_basis, end_basis)
 SELECT id, name,
        NULLIF(id_ruling_ethnicity, ''),
        NULLIF(id_ruling_language, ''),
@@ -120,8 +121,10 @@ SELECT id, name,
        NULLIF(government, ''),
        TRY_CAST(start_year AS INTEGER),
        TRY_CAST(end_year AS INTEGER),
-       NULLIF(note, '')
-FROM read_csv('csvs/polity.csv', auto_detect=true);
+       NULLIF(note, ''),
+       NULLIF(start_basis, ''),
+       NULLIF(end_basis, '')
+FROM read_csv('csvs/polity.csv', auto_detect=true, all_varchar=true);
 
 -- ─── POLITY_TERRITORY (from polity_territory.csv) ─────────
 INSERT INTO polity_territory (polity_id, territory_id, start_year, end_year)

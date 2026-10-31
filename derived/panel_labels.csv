@@ -236,11 +236,11 @@ kazakhstan,aral,4,1,,Hephthalites (eastern branch),c.450–560,1,hephthalites,li
 kazakhstan,steppe,4,0,,Rouran Khaganate (suzerainty),330–555,1,rouran_khaganate,linked,rouran_khaganate_suzerainty
 kazakhstan,zhetysu,4,0,,Rouran Khaganate,330–555,1,rouran_khaganate,linked,rouran_khaganate
 kazakhstan,zhetysu,4,1,,Hephthalites (eastern wing),c.450–560,1,hephthalites,linked,hephthalites_eastern_wing
-kazakhstan,ural,5,0,Medieval — Türkic,Göktürk Khaganate (Western wing),552–659,2,goktürk_khaganate,linked,gktrk_khaganate_western_wing
-kazakhstan,aral,5,0,Medieval — Türkic,Göktürk Khaganate (Western wing),552–659,1,goktürk_khaganate,linked,gktrk_khaganate_western_wing
+kazakhstan,ural,5,0,Medieval — Türkic,Göktürk Khaganate (Western wing),552–659,2,first_turkic_khaganate,linked,gktrk_khaganate_western_wing
+kazakhstan,aral,5,0,Medieval — Türkic,Göktürk Khaganate (Western wing),552–659,1,first_turkic_khaganate,linked,gktrk_khaganate_western_wing
 kazakhstan,aral,5,1,Medieval — Türkic,Turgesh Khaganate,699–766,1,turgesh_khaganate,linked,turgesh_khaganate
-kazakhstan,steppe,5,0,Medieval — Türkic,Göktürk Khaganate,552–744,1,goktürk_khaganate,linked,gktrk_khaganate
-kazakhstan,zhetysu,5,0,Medieval — Türkic,Göktürk Khaganate,552–744,1,goktürk_khaganate,linked,gktrk_khaganate
+kazakhstan,steppe,5,0,Medieval — Türkic,Göktürk Khaganate,552–744,1,first_turkic_khaganate,linked,gktrk_khaganate
+kazakhstan,zhetysu,5,0,Medieval — Türkic,Göktürk Khaganate,552–744,1,first_turkic_khaganate,linked,gktrk_khaganate
 kazakhstan,zhetysu,5,1,Medieval — Türkic,Western Turkic (Nushibi wing),603–659,1,western_turkic,linked,western_turkic_nushibi_wing
 kazakhstan,ural,6,0,,Khazar Khaganate,650–969,2,khazar_khaganate,linked,khazar_khaganate
 kazakhstan,aral,6,0,,Oghuz Yabgu State (Syr Darya),c.750–1055,1,oghuz_yabgu_state,linked,oghuz_yabgu_state_syr_darya
@@ -699,7 +699,7 @@ china,north,5,1,,Later Chu (後楚) · Western Chu (西楚) · Eighteen Kingdoms
 china,frontier,5,0,,Xiongnu Empire,,1,xiongnu,linked,xiongnu_empire
 china,north,6,0,,Western Han (西汉/前汉),202 BCE – 9 CE,2,western_han,linked,western_han
 china,frontier,6,0,,Xiongnu Empire,,1,xiongnu,linked,xiongnu_empire
-china,frontier,6,1,,Han — Western Regions Protectorate (西域都护),60 BCE,1,han_dynasty,linked,han
+china,frontier,6,1,,Han — Western Regions Protectorate (西域都护),60 BCE,1,western_han,linked,han
 china,north,7,0,,Xin (新) — Wang Mang,9–23 CE,2,xin,linked,xin
 china,north,7,1,,Xuan Han (玄汉),23–25 CE,2,xuan_han,linked,xuan_han
 china,frontier,7,0,,Xiongnu — split into Northern / Southern,,1,xiongnu,linked,xiongnu
@@ -727,9 +727,9 @@ china,south,12,1,,Southern Qi (南齐),479–502,1,southern_qi,linked,southern_q
 china,south,12,2,,Liang (梁),502–557,1,liang,linked,liang
 china,south,12,3,,Later Liang (後梁),"555–587, Western Wei vassal",1,later_liang,linked,later_liang
 china,south,12,4,,Chen (陈),557–589,1,chen,linked,chen
-china,frontier,12,0,,Rouran → Göktürk Khaganate (突厥),552–,1,goktürk_khaganate,linked,rouran_gktrk_khaganate
+china,frontier,12,0,,Rouran → Göktürk Khaganate (突厥),552–,1,first_turkic_khaganate,linked,rouran_gktrk_khaganate
 china,north,13,0,Sui–Tang (隋唐),Sui Dynasty (隋),"581–618, reunification",2,sui_dynasty,linked,sui_dynasty
-china,frontier,13,0,Sui–Tang (隋唐),Göktürk Khaganate (Eastern · Western),,1,goktürk_khaganate,linked,gktrk_khaganate_eastern_western
+china,frontier,13,0,Sui–Tang (隋唐),Göktürk Khaganate (Eastern · Western),,1,first_turkic_khaganate,linked,gktrk_khaganate_eastern_western
 china,north,14,0,,Tang Dynasty (唐),618–907; An Lushan Rebellion (安史之乱) (755–763); Pseudo-Yan (僞燕) · Huang Qi (黃齊) (rebel states),2,tang_dynasty,linked,tang_dynasty
 china,north,14,1,,Wu Zhou (武周) — Empress Wu Zetian,690–705,2,wu_zhou,linked,wu_zhou
 china,frontier,14,0,,Göktürks → Tang protectorates,,1,,dynasty,gktrks_tang_protectorates
@@ -790,50 +790,50 @@ japan,main,1,0,Yayoi,Yayoi people,,2,yayoi_people_culture,linked,yayoi_people
 japan,okinawa,1,0,Yayoi,Hayato / Kumaso,,1,hayato,linked,hayato_kumaso
 japan,col_3,1,0,Yayoi,Emishi,,1,emishi,linked,emishi
 japan,col_4,1,0,Yayoi,Ryukyuan,,1,ryukyuan,linked,ryukyuan
-japan,main,2,0,Kofun,Yamato,,3,yamato_period,linked,yamato
+japan,main,2,0,Kofun,Yamato,,3,yamato_kingdom,linked,yamato
 japan,col_3,2,0,Kofun,Emishi,,1,emishi,linked,emishi
 japan,col_4,2,0,Kofun,Ryukyuan,,1,ryukyuan,linked,ryukyuan
-japan,main,3,0,Asuka,Yamato · Soga Clan,,3,yamato_period,linked,yamato_soga_clan
+japan,main,3,0,Asuka,Yamato · Soga Clan,,3,yamato_kingdom,linked,yamato_soga_clan
 japan,col_3,3,0,Asuka,Emishi,,1,emishi,linked,emishi
 japan,col_4,3,0,Asuka,Ryukyuan,,1,ryukyuan,linked,ryukyuan
-japan,main,4,0,Nara,Japan (Ritsuryō state),,3,nara_period,linked,japan_ritsury_state
+japan,main,4,0,Nara,Japan (Ritsuryō state),,3,ritsuryo_japan,linked,japan_ritsury_state
 japan,col_3,4,0,Nara,Emishi,,1,emishi,linked,emishi
 japan,col_4,4,0,Nara,Gusuku culture,,1,gusuku_culture,linked,gusuku_culture
-japan,main,5,0,Heian,Japan (Dynastic state),,3,heian_period,linked,japan_dynastic_state
+japan,main,5,0,Heian,Japan (Dynastic state),,3,ritsuryo_japan,linked,japan_dynastic_state
 japan,col_3,5,0,Heian,Emishi / Ezo,,1,emishi,linked,emishi_ezo
 japan,col_4,5,0,Heian,Sanzan period,,1,,event,sanzan_period
-japan,main,6,0,,Sesshō-Kampaku regency,,3,heian_period,linked,sessh_kampaku_regency
+japan,main,6,0,,Sesshō-Kampaku regency,,3,ritsuryo_japan,linked,sessh_kampaku_regency
 japan,col_3,6,0,,Emishi / Ezo,,1,emishi,linked,emishi_ezo
 japan,col_4,6,0,,Sanzan period,,1,,event,sanzan_period
-japan,main,7,0,,Insei (Cloistered rule),,3,heian_period,linked,insei_cloistered_rule
+japan,main,7,0,,Insei (Cloistered rule),,3,ritsuryo_japan,linked,insei_cloistered_rule
 japan,col_3,7,0,,Emishi / Ezo,,1,emishi,linked,emishi_ezo
 japan,col_4,7,0,,Sanzan period,,1,,event,sanzan_period
-japan,main,8,0,Kamakura,Kamakura Shogunate,,3,feudal_japan,linked,kamakura_shogunate
+japan,main,8,0,Kamakura,Kamakura Shogunate,,3,kamakura_shogunate,linked,kamakura_shogunate
 japan,col_3,8,0,Kamakura,Ezo,,1,ezo,linked,ezo
 japan,col_4,8,0,Kamakura,Sanzan period,,1,,event,sanzan_period
-japan,main,9,0,,Hōjō Regency,,3,feudal_japan,linked,hj_regency
+japan,main,9,0,,Hōjō Regency,,3,kamakura_shogunate,linked,hj_regency
 japan,col_3,9,0,,Ezo,,1,ezo,linked,ezo
 japan,col_4,9,0,,Sanzan period,,1,,event,sanzan_period
-japan,main,10,0,Kenmu,Kenmu Restoration,,3,feudal_japan,linked,kenmu_restoration
+japan,main,10,0,Kenmu,Kenmu Restoration,,3,kenmu_government,linked,kenmu_restoration
 japan,col_3,10,0,Kenmu,Ezo,,1,ezo,linked,ezo
 japan,col_4,10,0,Kenmu,Sanzan period,,1,,event,sanzan_period
-japan,main,11,0,Nanboku-chō,Northern Court,,2,northern_court,linked,northern_court
+japan,main,11,0,Nanboku-chō,Northern Court,,2,ashikaga_shogunate,linked,northern_court
 japan,okinawa,11,0,Nanboku-chō,Southern Court,,1,southern_court,linked,southern_court
 japan,col_3,11,0,Nanboku-chō,Ezo,,1,ezo,linked,ezo
 japan,col_4,11,0,Nanboku-chō,Sanzan period,,1,,event,sanzan_period
-japan,main,12,0,,Ashikaga Shogunate,,3,feudal_japan,linked,ashikaga_shogunate
+japan,main,12,0,,Ashikaga Shogunate,,3,ashikaga_shogunate,linked,ashikaga_shogunate
 japan,col_3,12,0,,Ezo,,1,ezo,linked,ezo
 japan,col_4,12,0,,Ryukyu Kingdom,,1,ryukyu_kingdom,linked,ryukyu_kingdom
-japan,main,13,0,Muromachi,Ashikaga Shogunate,,3,feudal_japan,linked,ashikaga_shogunate
+japan,main,13,0,Muromachi,Ashikaga Shogunate,,3,ashikaga_shogunate,linked,ashikaga_shogunate
 japan,col_3,13,0,Muromachi,Ezo (Matsumae),,1,ezo,linked,ezo_matsumae
 japan,col_4,13,0,Muromachi,Ryukyu Kingdom,,1,ryukyu_kingdom,linked,ryukyu_kingdom
-japan,main,14,0,,Hosokawa / Miyoshi regency,,3,feudal_japan,linked,hosokawa_miyoshi_regency
+japan,main,14,0,,Hosokawa / Miyoshi regency,,3,ashikaga_shogunate,linked,hosokawa_miyoshi_regency
 japan,col_3,14,0,,Ezo (Matsumae),,1,ezo,linked,ezo_matsumae
 japan,col_4,14,0,,Ryukyu Kingdom,,1,ryukyu_kingdom,linked,ryukyu_kingdom
-japan,main,15,0,Sengoku,Oda Nobunaga,,3,feudal_japan,linked,oda_nobunaga
+japan,main,15,0,Sengoku,Oda Nobunaga,,3,oda_toyotomi_government,linked,oda_nobunaga
 japan,col_3,15,0,Sengoku,Ezo (Matsumae),,1,ezo,linked,ezo_matsumae
 japan,col_4,15,0,Sengoku,Ryukyu Kingdom,,1,ryukyu_kingdom,linked,ryukyu_kingdom
-japan,main,16,0,,Toyotomi Hideyoshi,,3,feudal_japan,linked,toyotomi_hideyoshi
+japan,main,16,0,,Toyotomi Hideyoshi,,3,oda_toyotomi_government,linked,toyotomi_hideyoshi
 japan,col_3,16,0,,Ezo (Matsumae),,1,ezo,linked,ezo_matsumae
 japan,col_4,16,0,,Ryukyu Kingdom,,1,ryukyu_kingdom,linked,ryukyu_kingdom
 japan,main,17,0,Edo,Tokugawa Shogunate,,3,tokugawa_shogunate,linked,tokugawa_shogunate
@@ -2451,7 +2451,7 @@ russia,nw,1,0,,East Slavic migration northward,6th–9th c.,2,east_slavic_migrat
 russia,nw,1,1,,Varangian (Norse) trade routes,,2,varangian_trade_routes,linked,varangian_norse_trade_routes
 russia,south,1,0,,Khazar Khaganate (south steppe),,1,khazar_khaganate,linked,khazar_khaganate_south_steppe
 russia,south,1,1,,Volga Bulgaria,c.700–1238 CE,1,volga_bulgaria,linked,volga_bulgaria
-russia,sib,1,0,,Indigenous peoples · Göktürk Khaganate influence,,1,goktürk_khaganate,linked,indigenous_peoples_gktrk_khaganate_influence
+russia,sib,1,0,,Indigenous peoples · Göktürk Khaganate influence,,1,,people,indigenous_peoples_gktrk_khaganate_influence
 russia,nw,2,0,Kievan Rus / Appanages,Novgorod Republic — Rurik dynasty,c.862 CE,1,novgorod_republic,linked,novgorod_republic
 russia,cent,2,0,Kievan Rus / Appanages,Kievan Rus — Vladimir-Suzdal Principality,,1,kievan_rus,linked,kievan_rus
 russia,south,2,0,Kievan Rus / Appanages,Kievan Rus fringe · Khazar remnants,,1,kievan_rus,linked,kievan_rus_fringe_khazar_remnants
@@ -2581,7 +2581,7 @@ scandinavia,finland,8,2,Napoleonic / 19th c.,Helsinki becomes capital,1812,1,hel
 scandinavia,finland,8,3,Napoleonic / 19th c.,Fennoman movement (Finnish language revival),19th c.,1,fennoman_movement,linked,fennoman_movement_finnish_language_revival
 scandinavia,finland,8,4,Napoleonic / 19th c.,Russification policies (Bobrikov era),1899–1905,1,,event,russification_policies_bobrikov_era
 scandinavia,norway,9,0,Modern,Sweden-Norway union dissolved,1905,1,sweden_norway_union_dissolved,linked,sweden_norway_union_dissolved
-scandinavia,norway,9,1,Modern,Kingdom of Norway (independent — Haakon VII),1905–,1,kingdom_of_norway,linked,kingdom_of_norway_independent
+scandinavia,norway,9,1,Modern,Kingdom of Norway (independent — Haakon VII),1905–,1,modern_norway,linked,kingdom_of_norway_independent
 scandinavia,norway,9,2,Modern,Neutral in World War I,,1,,event,neutral_in_world_war_i
 scandinavia,denmark,9,0,Modern,Kingdom of Denmark,,1,kingdom_of_denmark,linked,kingdom_of_denmark
 scandinavia,denmark,9,1,Modern,Neutral in World War I,,1,,event,neutral_in_world_war_i
@@ -2604,7 +2604,7 @@ scandinavia,finland,10,0,,Winter War (Soviet invasion),1939–1940,1,,event,wint
 scandinavia,finland,10,1,,Continuation War (allied with Germany vs USSR),1941–1944,1,,polity,continuation_war_allied_with_germany_vs_ussr
 scandinavia,finland,10,2,,Lapland War (expels German forces),1944–1945,1,,event,lapland_war_expels_german_forces
 scandinavia,finland,10,3,,Cedes Karelia · Petsamo to Soviet Union,1944–1947,1,soviet_union,linked,cedes_karelia_petsamo_to_soviet_union
-scandinavia,norway,11,0,Contemporary,Kingdom of Norway,1945–,1,kingdom_of_norway,linked,kingdom_of_norway
+scandinavia,norway,11,0,Contemporary,Kingdom of Norway,1945–,1,modern_norway,linked,kingdom_of_norway
 scandinavia,norway,11,1,Contemporary,NATO founding member,1949,1,,event,nato_founding_member
 scandinavia,norway,11,2,Contemporary,North Sea oil — petroleum wealth,1969–,1,north_sea_oil,linked,north_sea_oil
 scandinavia,norway,11,3,Contemporary,Rejected EU membership (1972 · 1994),,1,,unclassified,rejected_eu_membership_1972_1994
@@ -4136,9 +4136,9 @@ iran,khorasan,5,0,,Greco-Bactrian Kingdom,256–125 BCE,2,greco_bactrian_kingdom
 iran,khorasan,5,1,,Kushan Empire,30–375 CE,2,kushan_empire,linked,kushan_empire
 iran,baluchistan,5,0,,Kushan / Saka,,1,kushan_empire,linked,kushan_saka
 iran,mazandaran,6,0,Sassanid,Sassanid Empire,,6,sassanid_empire,linked,sassanid_empire
-iran,sistan,6,0,Sassanid,Kidarite / Chionite,c.320–467 CE,2,kidarite_kingdom,linked,kidarite_chionite
+iran,sistan,6,0,Sassanid,Kidarite / Chionite,c.360–467 CE,2,kidarites,linked,kidarite_chionite
 iran,sistan,6,1,Sassanid,Hephthalites,467–557 CE,2,hephthalites,linked,hephthalites
-iran,sistan,6,2,Sassanid,Göktürk Khaganate,557–651 CE,2,goktürk_khaganate,linked,gktrk_khaganate
+iran,sistan,6,2,Sassanid,Göktürk Khaganate,557–651 CE,2,first_turkic_khaganate,linked,gktrk_khaganate
 iran,mazandaran,7,0,Early Islamic,Rashidun Caliphate,637–661,8,rashidun_caliphate,linked,rashidun_caliphate
 iran,mazandaran,7,1,Early Islamic,Umayyad Caliphate,661–750,8,umayyad_caliphate,linked,umayyad_caliphate
 iran,mazandaran,7,2,Early Islamic,Abbasid Caliphate,750–,8,abbasid_caliphate,linked,abbasid_caliphate
@@ -4450,7 +4450,7 @@ pakistan,center,11,3,,Timurid Empire — Timur sacks Delhi (1398),1398–1507,1,
 pakistan,north,11,0,,Kashmir Sultanate (Shah Mir dynasty),1339–1586,1,kashmir_sultanate,linked,kashmir_sultanate_shah_mir_dynasty
 pakistan,north,11,1,,Kart dynasty (Gandhara periphery),c.1244–1389,1,,dynasty,kart_dynasty_gandhara_periphery
 pakistan,south,12,0,,Arghun dynasty (Sindh),1520–1554,1,arghun_dynasty,linked,arghun_dynasty_sindh
-pakistan,south,12,1,,Tarkhan dynasty (Sindh),1554–1591,1,han_dynasty,linked,tarkhan_dynasty_sindh
+pakistan,south,12,1,,Tarkhan dynasty (Sindh),1554–1591,1,tarkhan_dynasty,linked,tarkhan_dynasty_sindh
 pakistan,center,12,0,,Multan Emirate (Langah Sultanate),1445–1526,1,multan_emirate,linked,multan_emirate_langah_sultanate
 pakistan,center,12,1,,Delhi Sultanate (Lodi dynasty),1451–1526; Babur — Battle of Panipat (1526) (1526),1,delhi_sultanate,linked,delhi_sultanate_lodi_dynasty
 pakistan,north,12,0,,Kashmir Sultanate (continuing),1339–1586,1,kashmir_sultanate,linked,kashmir_sultanate_continuing
@@ -4763,9 +4763,9 @@ vietnam,north,0,1,Ancient,Âu Lạc (An Dương Vương — Thục dynasty),257�
 vietnam,center,0,0,Ancient,Sa Huỳnh culture (proto-Cham),c.1000 BCE–200 CE,1,sa_huynh_culture,linked,sa_hunh_culture_proto_cham
 vietnam,south,0,0,Ancient,Óc Eo culture (Funan influence),c.1st–6th c. CE,1,oc_eo_culture,linked,c_eo_culture_funan_influence
 vietnam,north,1,0,,Nam Việt (Triệu dynasty),204–111 BCE,1,nam_viet,linked,nam_vit_triu_dynasty
-vietnam,north,1,1,,Han dynasty — Giao Chỉ (Jiaozhou),111 BCE–40 CE,1,han_dynasty,linked,han_dynasty
+vietnam,north,1,1,,Han dynasty — Giao Chỉ (Jiaozhou),111 BCE–40 CE,1,western_han,linked,han_dynasty
 vietnam,north,1,2,,Trưng Sisters revolt,40–43 CE,1,,event,trng_sisters_revolt
-vietnam,north,1,3,,Later Han — Giao Châu (Jiaozhou),43–220 CE,1,later_han,linked,later_han
+vietnam,north,1,3,,Later Han — Giao Châu (Jiaozhou),43–220 CE,1,eastern_han,linked,later_han
 vietnam,center,1,0,,Champa (Lâm Ấp — Indianized kingdom),c.192 CE–,1,champa,linked,champa_lm_p
 vietnam,south,1,0,,Funan (Óc Eo — Mekong delta),c.1st–6th c. CE,1,funan,linked,funan_c_eo
 vietnam,north,2,0,,Chinese Southern dynasties — Giao Châu,220–544,1,southern_dynasties,linked,chinese_southern_dynasties
