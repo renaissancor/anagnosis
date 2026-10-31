@@ -46,7 +46,7 @@ own cell elsewhere. Default to `X` unless `X` is clearly subordinate to `Y`.
 | Chobanid / Jalayirid | `chobanid_dynasty` | First in pair |
 | Injuid / Muzaffarid | `injuid_dynasty` | First in pair |
 | Kartid / Sarbadaran | `kartid_dynasty` | Primary political power |
-| Kidarite / Chionite | `kidarite_kingdom` | Primary name |
+| Kidarite / Chionite | `kidarites` | Primary name |
 | Kura-Araxes / Urartu | `kura_araxes_culture` | Pre-Urartu period |
 
 ## 3. Cross-panel synonyms
@@ -86,6 +86,13 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 | `western_liao` | `qara_khitai` |
 | `jin_jurchen` | `jin_dynasty` |
 | `hephthalite_empire` | `hephthalites` |
+| `kidarite_kingdom` | `kidarites` |
+| `yamato_period` | `yamato_kingdom` |
+| `nara_period`, `heian_period` | `ritsuryo_japan` |
+| `northern_court` | `ashikaga_shogunate` |
+| `feudal_japan` (split by date, not in `SYNONYM_MAP`) | `kamakura_shogunate` 1185..1333; `kenmu_government` 1333..1336; `ashikaga_shogunate` 1336..1573; `oda_toyotomi_government` 1573..1603 |
+| `han_dynasty` (by date, not in `SYNONYM_MAP`) | `western_han` -202..9; `xin` 9..23; `xuan_han` 23..25; `eastern_han` 25..220 |
+| `goktürk_khaganate` (by date, not in `SYNONYM_MAP`) | `first_turkic_khaganate` 552..603; `second_turkic_khaganate` 682..744 |
 | `italy` (retired as a polity id; still the territory and panel id, so not in `SYNONYM_MAP`) | `kingdom_of_italy` |
 | `kidarites_alchon_huns` (split: Kidarite cells stay on `kidarites`, Alchon cells use `alchon_huns`; not in `SYNONYM_MAP` because the target depends on the cell) | `kidarites` / `alchon_huns` |
 | `first_turkic_empire` | `first_turkic_khaganate` |
@@ -176,7 +183,6 @@ chu_wu_yue   later_chu   republics_of_siena   british_india_sphere
 | `kassite_babylon` | Kassite Babylon | c.1600–1155 BCE | kingdom |
 | `mannai_kingdom` | Mannai Kingdom | c.850–616 BCE | kingdom |
 | `gutian_dynasty` | Gutian Dynasty | c.2154–2112 BCE | dynasty |
-| `kidarite_kingdom` | Kidarite Kingdom | c.320–467 CE | kingdom |
 | `dabuyid_dynasty` | Dabuyid Dynasty | 642–760 | dynasty |
 | `bavandid_dynasty` | Bavandid Dynasty | 651–1349 | dynasty |
 | `tahirid_dynasty` | Tahirid Dynasty | 821–873 | dynasty |
@@ -212,7 +218,7 @@ After restoration, italy.json's FK orphans drop to 14 culture/peoples entries
 
 > The Apr-23 refactor `1e6620b` also renamed six Iran bare-name stubs to add
 > `_kingdom`/`_dynasty` suffixes (`anshan`→`anshan_kingdom`, `lullubi`→`lullubi_kingdom`,
-> `mannai`→`mannai_kingdom`, `marhashi`→`marhashi_kingdom`, `kidarite`→`kidarite_kingdom`,
+> `mannai`→`mannai_kingdom`, `marhashi`→`marhashi_kingdom`, `kidarite`→`kidarites`,
 > `kar_kiya_dynasty`→`karkiya_dynasty`). Panel FKs were already remapped, so this is a
 > no-op at the panel level; the synonyms above cover any lingering old references.
 

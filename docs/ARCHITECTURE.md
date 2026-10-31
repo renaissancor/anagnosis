@@ -143,6 +143,52 @@ analytical convenience, not in the serving path.
  server.js ──► public/              ← layer 4
 ```
 
+## Departments
+
+The storage layers above say where a file lives and what kind of writer it has.
+Work is organised on top of them into three departments, each staffed by agents.
+Agents are replaceable and remember nothing between runs, so everything an agent
+needs must be written down. The folders stay as they are.
+
+```
+Sources          →     Content           →     Presentation
+what evidence says     what we assert          how people read it
+```
+
+| Department | Roles | Reads | Writes | Contract | Hands off |
+|---|---|---|---|---|---|
+| **Sources** | One librarian per source (`.claude/agents/source-*.md`) | `sources/` | Nothing; returns answers | `model/source.md` | Cited answers |
+| **Content** | One curator per contract; succession owner; build owner | Table contracts, librarian answers, `csvs/`, `derived/` | `csvs/`, `panels/`, `code/`, `data/` | `model/<table>.md`, `model/graph.md`, `model/api.md` | Validated CSVs, built into JSON |
+| **Presentation** | UI/UX designer | Routes in `model/api.md` only | `public/`, `server.js` routes | `model/api.md` | The app |
+| **Across all** | Auditor, always a fresh reviewer and never the author | Diffs and contracts | Findings only | This file | Findings at each handoff |
+
+Only the librarians exist as agent files today. The other roles are defined here
+and are not yet set up.
+
+**Targets, not yet true:**
+
+- Sources: each librarian answers real questions with citations, and says when a source doesn't cover them.
+- Tables: every row passes its admission test, and warnings are triaged.
+- JSON: every route matches its contract, checked at build time.
+- Graph: built entirely from `csvs/`, and never authored by hand. Curated inheritance claims are CSV rows, and the graph is their result. Computed edges remain evidence only.
+- Frontend: pages pass a Playwright review at desktop and phone widths.
+
+**Rules:**
+
+1. **One owner per file.** Two agents never edit the same table at once.
+2. **Contracts come first.** Without a contract for its table, a curator is guessing.
+   A curator reads the contract at the start of every run, and hard cases are
+   logged there with the reason. Changing a contract is the project owner's decision.
+3. **Sources are cited, never imported.** Curators ask a librarian and write the
+   row themselves. If a source disagrees with `csvs/`, the CSV stands until
+   someone edits it.
+4. **Each handoff is one-way.** Sources → Content is a citation; Content →
+   Presentation is the JSON contract. A need from downstream becomes a contract
+   change, not a workaround.
+5. **Disputes become open questions.** Log them in the contract rather than
+   settling them in passing.
+6. **Authors don't audit their own work.**
+
 ## How to change things
 
 | You want to… | Edit | Then run |
@@ -169,6 +215,8 @@ analytical convenience, not in the serving path.
 ## See also
 
 - `docs/model/data-model.md` — the property-graph view of the same data
+- `docs/model/api.md` — the contract between the data layer and the frontend
+- `docs/model/graph.md` — the contract for succession edges and inheritance claims
 - `docs/model/erd.md`, `erd.sql`, `erd_nofk.sql` — DDL
 - `docs/migration/csv_workflow.md` — step-by-step editing guide
 - `docs/TODO.md` — roadmap

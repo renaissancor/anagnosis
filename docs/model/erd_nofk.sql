@@ -74,7 +74,9 @@ CREATE TABLE polity (
     government        TEXT,
     start_year        INTEGER NOT NULL,
     end_year          INTEGER,
-    note              TEXT
+    note              TEXT,
+    start_basis       TEXT,
+    end_basis         TEXT
 );
 
 

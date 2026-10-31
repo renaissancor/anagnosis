@@ -5,7 +5,7 @@ Anagnosis is a CSV-first historical-political dataset. **Schema is two-tier:**
 - **Civilization** (nominal top tier — deferred; a future computed projection, not an authored table. See `docs/model/civilization.md`)
 - **Polity** (entity tier; a political entity at the intersection of ethnicity × territory × ideology × time)
 
-**Dynasty** (~192 records) is a **cross-cutting tag** via the `polity_dynasty` junction, *not* a third tier. The earlier "Regime" tier was **dropped** on 2026-05-01 — identity drift inside long-running entities (Roman Republic → Pagan Empire → Christian Empire → Byzantine) is handled by polity-splits at major transitions, not sub-polity periods.
+**Dynasty** (~192 records) is a **cross-cutting tag** via the `polity_dynasty` junction, *not* a third tier. The earlier "Regime" tier was **dropped** on 2026-05-01 — identity drift inside long-running entities (Roman Republic → Empire → Byzantine) is handled by polity-splits at ideology or sovereignty changes, not sub-polity periods. Religion alone never splits a polity.
 
 Auxiliary entities: `ethnicity`, `language`, `religion`, `territory`, `figure`, `government`, plus planned `city` (see `docs/model/city.md`).
 
@@ -29,6 +29,15 @@ A file's home is decided by **who writes it**, never by its format. Four layers,
 5. **Workflow:** edit → `npm test` (validates layers 1–2 directly, no build) → `npm run make:all` → review `csvs/` + `derived/` diffs.
 
 `docs/tree/*.md` are read-only dumps. `scripts/archive/` holds dead one-shot migrations — do not run them.
+
+## Agent departments — details in `docs/ARCHITECTURE.md`
+
+Work flows one way: **Sources** (what evidence says) → **Content** (what we assert) → **Presentation** (how people read it).
+
+- **Sources:** one read-only librarian per source in `.claude/agents/source-*.md`. Sources are cited, never imported.
+- **Content:** `csvs/` is the source of truth. Read `docs/model/<table>.md` before touching a table. The graph is a result of the CSVs, not a separate source.
+- **Presentation:** `public/` reads only the routes in `docs/model/api.md`.
+- **Audit:** a fresh reviewer checks each change; authors don't audit their own work.
 
 ## Docs architecture
 

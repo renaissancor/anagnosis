@@ -59,6 +59,12 @@ Licences change. Seshat moved from CC BY-NC-SA to CC BY-SA, and its Equinox reco
 
 ---
 
+## Scope limit
+
+`source.csv` registers licensed datasets. A book or paper has no licence that the allowlist can accept, so scholarship cannot be cited here yet. See the open question in `graph.md`.
+
+---
+
 ## Adding a source
 
 1. Read the licence on the source's own page, not a mirror. A licence on a repo may cover only its code.
