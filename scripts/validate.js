@@ -15,6 +15,8 @@
  *   6. derived/polity_succession.csv: endpoints exist, no self-loops, no duplicate edges,
  *      shared_territories resolve
  *   7. panels/: every cell polity ref resolves (warning — stubs may not exist yet)
+ *   8. source.csv: licence is allowlisted, required fields present;
+ *      fact_source.csv: table, row, field, and source all resolve
  *
  * Errors fail the run (exit 1). Warnings are reported in aggregate.
  */
@@ -22,6 +24,7 @@
 const fs   = require('fs');
 const path = require('path');
 const csv  = require('../code/lib/csv');
+const { ALLOWED_LICENCES } = require('../code/lib/licences');
 
 const ROOT    = path.join(__dirname, '..');
 const CSVS    = path.join(ROOT, 'csvs');
@@ -44,10 +47,12 @@ const SCHEMA = {
   'city':              ['id', 'name', 'lat', 'lon', 'founding_year', 'abandonment_year', 'region', 'modern_country', 'note'],
   'city_name':         ['city_id', 'name', 'language', 'start_year', 'end_year', 'note'],
   'city_succession':   ['from_city_id', 'to_city_id', 'succession_type', 'year', 'note'],
+  'source':            ['id', 'name', 'url', 'licence', 'version', 'retrieved', 'citation', 'note'],
+  'fact_source':       ['entity_table', 'entity_id', 'field', 'source_id', 'source_record', 'note'],
 };
 
 // Free-text columns where commas are prose, not list separators.
-const PROSE_COLUMNS = new Set(['note', 'description', 'significance', 'name']);
+const PROSE_COLUMNS = new Set(['note', 'description', 'significance', 'name', 'citation']);
 
 // ── Reporting ─────────────────────────────────────────────────────────────────
 
@@ -115,7 +120,8 @@ if (!groups.size) ok('all headers match, no ragged rows'); flush();
 
 section('Primary keys & file hygiene');
 const PK = { polity: ['id'], territory: ['id'], dynasty: ['id'], government: ['id'], ethnicity: ['id'], language: ['id'], religion: ['id'], city: ['id'], figure: ['figure_id'],
-  polity_territory: ['territory_id', 'polity_id', 'start_year'], polity_dynasty: ['polity_id', 'dynasty_id', 'start_year'], city_name: ['city_id', 'name', 'start_year'], city_succession: ['from_city_id', 'to_city_id'] };
+  polity_territory: ['territory_id', 'polity_id', 'start_year'], polity_dynasty: ['polity_id', 'dynasty_id', 'start_year'], city_name: ['city_id', 'name', 'start_year'], city_succession: ['from_city_id', 'to_city_id'],
+  source: ['id'], fact_source: ['entity_table', 'entity_id', 'field', 'source_id'] };
 for (const [name, cols] of Object.entries(PK)) {
   const seen = new Set();
   for (const r of T[name]) {
@@ -267,12 +273,36 @@ else if (!distinctUnresolved.length) ok(`${panels.length} panels, ${cellCount} c
 else console.log(`  ·  ${panels.length} panels, ${cellCount} cells, ${distinctUnresolved.length} distinct unresolved polity ids`);
 flush(15);
 
+// ── 8. Sources & provenance ───────────────────────────────────────────────────
+
+section('Sources & provenance');
+for (const r of T.source) {
+  if (!ALLOWED_LICENCES.has(r.licence)) err('source licence not allowed', `${r.id}: "${r.licence}" (see docs/model/source.md)`);
+  for (const col of ['name', 'url', 'version', 'citation']) if (!r[col]) err('source missing field', `${r.id}.${col}`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(r.retrieved)) err('source retrieved not YYYY-MM-DD', `${r.id}: "${r.retrieved}"`);
+}
+const sourceIds = new Set(T.source.map(r => r.id));
+const usedSources = new Set();
+const rowKeys = {}; // table name → set of primary keys, built on first use
+for (const r of T.fact_source) {
+  const label = `${r.entity_table}/${r.entity_id}`;
+  usedSources.add(r.source_id);
+  if (!sourceIds.has(r.source_id)) err('fact_source.source_id → source', `${label}: "${r.source_id}"`);
+  if (!PK[r.entity_table] || r.entity_table === 'source' || r.entity_table === 'fact_source') { err('fact_source table unknown', label); continue; }
+  rowKeys[r.entity_table] ??= new Set(T[r.entity_table].map(row => PK[r.entity_table].map(c => row[c]).join('|')));
+  if (!rowKeys[r.entity_table].has(r.entity_id)) err('fact_source row not found', label);
+  if (r.field && !SCHEMA[r.entity_table].includes(r.field)) err('fact_source field unknown', `${label}.${r.field}`);
+}
+for (const r of T.source) if (!usedSources.has(r.id)) warn('source unused', `${r.id} (no fact_source row points to it)`);
+if (!groups.size) ok(`${T.source.length} sources, ${T.fact_source.length} provenance rows`); flush();
+
 // ── Summary ───────────────────────────────────────────────────────────────────
 
 console.log('\n' + '─'.repeat(59));
 console.log(`Polities: ${T.polity.length}  |  Territories: ${T.territory.length}  |  Junction rows: ${T.polity_territory.length}  |  Dynasties: ${T.dynasty.length}`);
 console.log(`Ethnicities: ${T.ethnicity.length}  |  Languages: ${T.language.length}  |  Religions: ${T.religion.length}  |  Governments: ${T.government.length}`);
 console.log(`Figures: ${T.figure.length}  |  Cities: ${T.city.length}  |  Succession edges: ${succ.length}  |  Panels: ${panels.length} (${cellCount} cells)`);
+console.log(`Sources: ${T.source.length}  |  Provenance rows: ${T.fact_source.length}`);
 console.log('');
 
 if (report.errors > 0) { console.error(`FAILED: ${report.errors} error(s), ${report.warnings} warning(s)\n`); process.exit(1); }

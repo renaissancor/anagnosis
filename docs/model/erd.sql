@@ -188,6 +188,28 @@ CREATE TABLE city_succession (
     note            TEXT
 );
 
+-- ─── PROVENANCE (see source.md) ─────────────────────────────
+
+CREATE TABLE source (
+    id        TEXT PRIMARY KEY,
+    name      TEXT NOT NULL,
+    url       TEXT NOT NULL,
+    licence   TEXT NOT NULL,
+    version   TEXT NOT NULL,
+    retrieved TEXT NOT NULL,
+    citation  TEXT NOT NULL,
+    note      TEXT
+);
+
+CREATE TABLE fact_source (
+    entity_table  TEXT NOT NULL,
+    entity_id     TEXT NOT NULL,
+    field         TEXT,
+    source_id     TEXT NOT NULL REFERENCES source(id),
+    source_record TEXT,
+    note          TEXT
+);
+
 -- ─── INDEXES ────────────────────────────────────────────────
 
 CREATE INDEX idx_polity_years ON polity(start_year, end_year);

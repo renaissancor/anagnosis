@@ -81,4 +81,4 @@ Add a row to the relevant CSV, run `npm test && npm run make:all`, and open a PR
 
 ## License
 
-Code: ISC. Data license: TBD (a permissive open-data license — e.g. CC BY — is intended).
+Code: ISC ([`LICENSE`](LICENSE)). Data: CC BY-SA 4.0 ([`LICENSE-DATA.md`](LICENSE-DATA.md)).

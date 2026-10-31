@@ -43,6 +43,7 @@ csvs/
   language.csv            695  taxonomy tree via parent_id
   religion.csv            264  taxonomy tree via parent_id
   city.csv / city_name.csv / city_succession.csv   place-not-polis identity (see model/city.md)
+  source.csv / fact_source.csv   external sources and which facts came from them (see model/source.md)
 
 panels/<region>/<country>.json   72 hand-curated regional history panels (nested: columns × rows → cells → stack/split)
 ```
@@ -74,6 +75,7 @@ up in review, but **never edited by hand** — the next run overwrites them.
 | `canonical_entities.csv` | `scripts/dedup_and_link.js` | `generate_stubs.js` |
 | `polity_stubs.csv` | `scripts/generate_stubs.js` | a human, who promotes rows into `csvs/polity.csv` |
 | `overlap_candidates.csv` | `scripts/find_overlaps.js` | a human |
+| `wikidata_candidates.csv` | `scripts/match_wikidata.js` | a reviewer, who confirms QIDs into `csvs/fact_source.csv` |
 
 `polity_succession.csv` is a **similarity computation** over polity attributes
 and territory adjacency (territorial direction, strength, same-ethnicity /
@@ -83,7 +85,9 @@ moves whenever `polity_territory.csv` does; that is expected.
 
 ## Layer 3 — Built (`data/`, `anagnosis.db`)
 
-Both are gitignored and rebuilt from layers 1 and 2.
+Both are gitignored and rebuilt from layers 1 and 2. Third-party downloads in
+`sources/` are gitignored too, and are refetched by `scripts/fetch_sources.js`
+(see `model/source.md`).
 
 ```bash
 npm run make:all     # csvs/ + derived/  →  data/**/*.json   (also regenerates derived/polity_succession.csv)
@@ -109,7 +113,7 @@ data/
 ```
 
 `anagnosis.db` is created by `docs/model/erd_nofk.sql` (DDL, no FK enforcement)
-and filled by `scripts/load_csvs.sql`. Sixteen tables: one per authored CSV, plus
+and filled by `scripts/load_csvs.sql`. Eighteen tables: one per authored CSV, plus
 `polity_policy`, `polity_succession`, `polity_succession_territory`. It is an
 analytical convenience, not in the serving path.
 

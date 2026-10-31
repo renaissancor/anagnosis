@@ -23,7 +23,7 @@ Schema definitions, entity semantics, and naming conventions.
 |-----|---------|
 | [data-model.md](model/data-model.md) | Property graph model and edge types |
 | [erd.md](model/erd.md) | Visual ERD diagram, table summary, example queries |
-| [erd.sql](model/erd.sql) | Full DDL schema (16 tables; `erd_nofk.sql` is the ingest variant used by `make:db`) |
+| [erd.sql](model/erd.sql) | Full DDL schema (18 tables; `erd_nofk.sql` is the ingest variant used by `make:db`) |
 | [naming.md](model/naming.md) | Entity ID naming conventions and collision resolution |
 | [succession.md](model/succession.md) | Succession type logic (A/A-/B/C/D) and edge cases |
 | [dynasty.md](model/dynasty.md) | Dynasty entity and lineage modeling |

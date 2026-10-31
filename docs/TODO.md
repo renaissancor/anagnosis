@@ -2,7 +2,7 @@
 
 ## Phase 1: Schema & Foundation ✅ (done)
 - [x] Design two-tier ERD (Civilization → Polity), with Dynasty as cross-cutting tag
-- [x] Create DuckDB schema (`anagnosis.db`) — now 16 tables, rebuilt by `npm run make:db`
+- [x] Create DuckDB schema (`anagnosis.db`) — now 18 tables, rebuilt by `npm run make:db`
 - [x] Auto-link 637 panel labels to existing polity IDs
 - [x] Document ERD (`docs/model/erd.sql`, `docs/model/erd.md`)
 

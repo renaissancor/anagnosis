@@ -5,6 +5,8 @@
 -- ============================================================
 
 -- Clear existing data (children before parents)
+DELETE FROM fact_source;
+DELETE FROM source;
 DELETE FROM city_succession;
 DELETE FROM city_name;
 DELETE FROM city;
@@ -224,3 +226,12 @@ INSERT INTO city_succession (from_city_id, to_city_id, succession_type, year, no
 SELECT from_city_id, to_city_id, NULLIF(succession_type, ''),
        TRY_CAST(year AS INTEGER), NULLIF(note, '')
 FROM read_csv('csvs/city_succession.csv', auto_detect=true, all_varchar=true);
+
+-- ─── PROVENANCE (from source.csv, fact_source.csv) ──────────
+INSERT INTO source (id, name, url, licence, version, retrieved, citation, note)
+SELECT id, name, url, licence, version, retrieved, citation, NULLIF(note, '')
+FROM read_csv('csvs/source.csv', header=true, all_varchar=true);
+
+INSERT INTO fact_source (entity_table, entity_id, field, source_id, source_record, note)
+SELECT entity_table, entity_id, NULLIF(field, ''), source_id, NULLIF(source_record, ''), NULLIF(note, '')
+FROM read_csv('csvs/fact_source.csv', header=true, all_varchar=true);

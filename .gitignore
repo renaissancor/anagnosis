@@ -45,7 +45,8 @@ $RECYCLE.BIN/
 *.code-workspace
 
 # ── Claude Code ───────────────────────────────────────────────────────────────
-.claude/
+.claude/*
+!.claude/agents/
 .omc/
 .mcp.json
 
@@ -60,6 +61,9 @@ $RECYCLE.BIN/
 data/*
 !data/index.js
 !data/README.md
+
+# ── Third-party downloads (see docs/model/source.md) ─────────────────────────
+sources/
 
 # ── Misc ──────────────────────────────────────────────────────────────────────
 *.orig
