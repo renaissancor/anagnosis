@@ -1,45 +1,33 @@
 polity_id,polity_name,search_term,start_year,end_year,qid,wikidata_label,wikidata_description,wikidata_start,wikidata_end,start_delta,end_delta,confidence,candidates
-sumerian_city_states,Sumerian City-States (Ur; Uruk; Lagash),Sumerian City-States,-3500,-2334,,,,,,,,none,0
-berber,Berber / Mauretania,Berber,-3000,-200,Q25448,Berber,branch of the Afroasiatic language family indigenous to North Africa,,,,,undated,7
+uruk,Uruk,Uruk,-2900,-2334,Q168518,Uruk,ancient city of Sumer and Babylonia,-3200,,-300,,conflict,7
 elam,Kingdom of Elam,Kingdom of Elam,-2700,-539,Q11905260,Amarak,kingdom of Elam conquered by Naram-Sin,,-2325,,-1786,conflict,7
 old_kingdom_egypt,Old Kingdom Egypt,Old Kingdom Egypt,-2686,-2181,Q177819,Old Kingdom of Egypt,period of Ancient Egypt in the 3rd millennium BC,-2707,-2216,-21,-35,medium,7
 punt,Punt (Egyptian trading land),Punt,-2500,-1000,Q270642,Irish pound,former currency of Ireland,1927,2001,4427,3001,conflict,7
 akkadian_empire,Akkadian Empire,Akkadian Empire,-2334,-2154,Q4461035,Akkadian Empire,ancient empire in the Mesopotamia (2334–2154 BC),-2334,-2154,0,0,high,1
 gutian_dynasty,Gutian dynasty,Gutian dynasty,-2141,-2050,Q1064034,Gutian dynasty of Sumer,Gutian Dynasty of Sumer,,,,,undated,1
 ur_iii,Third Dynasty of Ur (Neo-Sumerian),Third Dynasty of Ur,-2112,-2004,Q723587,Third Dynasty of Ur,royal dynasty in Mesopotamia,-2112,-2004,0,0,high,1
-beja,Beja / Habesha coastal lords,Beja,-2000,1500,Q18468051,Beja (Santiago Maior e São João Baptista),civil parish in Beja,2013,,4013,,conflict,7
 old_babylonian,Old Babylonian Empire,Old Babylonian Empire,-1894,-1595,Q1471568,Old Babylonian Period,period of the Babylonian civilization in Mesopotamia (ca 1900–1600 BCE),-1900,-1595,-6,0,high,2
 hittite_empire,Hittite Empire,Hittite Empire,-1600,-1180,Q4496560,Hatti,Empire of the Hittites,-1650,-1178,-50,2,medium,2
 shang_dynasty,Shang Dynasty,Shang Dynasty,-1600,-1046,Q128938,Shang dynasty,the first ancient Chinese dynasty to leave historical records (1600-1046 BC); the empire ruled by this dynasty,-1600,-1046,0,0,high,6
 egyptian_new_kingdom,Egyptian New Kingdom,Egyptian New Kingdom,-1550,-1069,Q124098521,Egyptian New Kingdom Triumphs: A First Blush,sixth chapter in Rituals of Triumph in the Mediterranean World 2013,,,,,undated,1
 new_kingdom_egypt,New Kingdom Egypt,New Kingdom Egypt,-1550,-1070,Q180568,Egyptian Empire,period from 1570 to 1069 BC in Egypt,-1550,-1070,0,0,high,7
 mitanni_empire,Mitanni Empire,Mitanni Empire,-1500,-1300,Q20313815,Template:User Mitanni Empire,Wikimedia template,,,,,undated,2
-olmec,Olmec Civilization,Olmec Civilization,-1500,-400,Q135364,Olmecas,Mesoamerican civilization,-1400,,100,,conflict,2
 middle_assyrian_empire,Middle Assyrian Empire,Middle Assyrian Empire,-1392,-1056,Q12642600,Middle Assyrian Empire,period in the history of Assyria after the fall of the Old Assyrian Empire in the 1300s BC,-1363,-912,29,144,conflict,1
 kingdom_of_saba,Kingdom of Saba (Sheba),Kingdom of Saba,-1200,-275,Q216068,Sheba,Ancient South Arabian kingdom mentioned in multiple religious texts,-1000,275,200,550,conflict,1
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),Phoenician City-States,-1200,-332,,,,,,,,none,0
+tyre,Tyre,Tyre,-1200,-332,Q82070,Tyre,"city in the South Governorate of Lebanon, also an ancient Phoenician city and the legendary birthplace of Europa and Elissa (Dido)",-2750,,-1550,,conflict,7
 kingdom_of_israel,United Kingdom of Israel,United Kingdom of Israel,-1047,-930,Q3185305,United Kingdom of Israel,a legend Israelite kingdom of Israel and Judah (c. 1047–930 BCE),-1050,-930,-3,0,high,1
 zhou_dynasty,Zhou Dynasty,Zhou Dynasty,-1046,-256,Q35216,Zhou dynasty,dynasty of Ancient Chinese kings (王) lasting from c. 1046 to 256 BC,-1046,-256,0,0,high,6
-histri,Histri,Histri,-1000,-177,Q331179,Harlequin Duck,species of bird,,,,,undated,7
-illyrians,Illyrians,Illyrians,-1000,-168,Q146715,Illyrians,ancient Western Balkanic tribes,,,,,undated,2
 kingdom_of_judah,Kingdom of Judah,Kingdom of Judah,-930,-586,Q48685,Kingdom of Judah,"Israelite Kingdom, whose capital was Jerusalem and Hebron, c. 930–586 BCE",-930,-586,0,0,high,1
 neo_assyrian_empire,Neo-Assyrian Empire,Neo-Assyrian Empire,-911,-609,Q10914393,Neo-Assyrian Empire,historical state in Mesopotamia,-911,-609,0,0,high,1
-saka,Saka / Massagetae,Saka,-900,-200,Q230,Georgia,country in the Caucasus region of Europe and Asia,1991,,2891,,conflict,7
 kingdom_of_urartu,Kingdom of Urartu,Kingdom of Urartu,-860,-590,Q185068,Urartu,Iron Age kingdom located in a large region around Lake Van,-860,-590,0,0,high,1
 carthage,Carthage (Phoenician City-State),Carthage,-814,-146,Q2429397,Ancient Carthage,Phoenician city-state and empire,-814,-146,0,0,high,7
 macedonian_kingdom,Macedonian Kingdom,Macedonian Kingdom,-808,-168,Q83958,Macedonia,ancient Hellenic kingdom,-808,-167,0,1,high,1
-cimmerian_scythian_nomads,Cimmerian / Scythian nomads,Cimmerian,-800,-300,Q321371,Bosporan Kingdom,Greco-Scythian state near Sea of Azov (c.438 BC–c.527 AD),-437,370,363,670,conflict,7
 roman_kingdom,Roman Kingdom,Roman Kingdom,-753,-509,Q201038,Roman Kingdom,period of Roman history when the city and its territory were ruled by kings (c.753–c.509 BC),-753,-509,0,0,high,1
-dahae,Dahae,Dahae,-700,-200,Q852554,Dahae,an Iranian people of ancient Central Asia,,,,,undated,7
-donghu,Donghu,Donghu,-700,-209,Q908664,Donghu people,"Nomadic confederacy, 697-150 BCE",-650,-150,50,59,conflict,7
-scythian,Scythian / Sarmatian steppe fringe,Scythian,-700,-200,Q7439685,Scythian,band,2004,,2704,,conflict,7
 median_kingdom,Median Kingdom,Median Kingdom,-678,-550,Q20437507,Median Kingdom,ancient Iranian state (700–550 BC),-678,-550,0,0,high,2
 meroitic_kingdom,Kingdom of Meroe (Meroitic Kingdom),Kingdom of Meroe,-656,350,Q241790,Kingdom of Kush,"c. 1070 BCE – c. CE 350 / kingdom in Nubia (modern-day Sudan), northeast Africa",-2180,350,-1524,0,medium,7
 neo_babylonian,Neo-Babylonian (Chaldean) Empire,Neo-Babylonian  Empire,-626,-539,Q624887,Neo-Babylonian Empire,former empire,-626,-539,0,0,high,7
-celts,Celts,Celts,-600,-200,Q35966,Ancient Celts,Indo-European ethnolinguistic group of tribal societies in Iron Age Europe,-1200,,-600,,conflict,7
 achaemenid_empire,Achaemenid Empire,Achaemenid Empire,-550,-330,Q389688,Achaemenid Empire,Iranian (Persian) empire (550–330 BC),-550,-330,0,0,high,1
 roman_republic,Roman Republic,Roman Republic,-509,-27,Q17167,Roman Republic,period of ancient Roman civilization (509 BC–27 BC),-509,-27,0,0,high,7
-tupi_guarani,Tupí-Guaraní Peoples,Tupí-Guaraní Peoples,-500,1600,Q46429,Guaraní people,ethnic group of South America,,,,,undated,7
 zapotec,Zapotec (Monte Albán),Zapotec,-500,900,Q844750,Zapotec,Mesoamerican civilization that flourished in the Valley of Oaxaca in Mesoamerica,-6700,1201,-6200,301,conflict,7
 kingdom_of_epirus,Kingdom of Epirus,Kingdom of Epirus,-470,-167,Q11266977,Epirus,"ancient Greek state and kingdom, located in the geographical region of Epirus",-500,-146,-30,21,medium,2
 illyrian_kingdom,Illyrian Kingdom,Illyrian Kingdom,-400,-168,Q16084290,Illyrian kingdom,ancient illyrian kingdom,-700,-135,-300,33,conflict,1
@@ -47,9 +35,8 @@ nanda_empire,Nanda Empire,Nanda Empire,-345,-322,Q949268,Nanda Empire,Indian emp
 macedonian_empire,Macedonian Empire (Alexander),Macedonian Empire,-336,-323,Q13405524,Macedonian Empire,"imperial state established by king Alexander III the Great from Macedonia proper and subjected Greek poleis in Southeastern Europe to Egypt, Western Asia and parts of Southern and Central Asia (334 – 301 BCE)",-336,-301,0,22,high,3
 maurya_empire,Maurya Empire,Maurya Empire,-322,-185,Q62943,Maurya empire,ancient Indian empire (322–184 BCE),-322,-185,0,0,high,1
 seleucid_empire,Seleucid Empire,Seleucid Empire,-312,-63,Q93180,Seleucid Empire,Hellenistic-era Greek state in Western Asia (312–63 BC),-312,-63,0,0,high,1
-lysimachus,Lysimachus,Lysimachus,-306,-281,Q32133,Lysimachus,"Macedonian officer, one of Alexander's successor kings",,,,,undated,7
+kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),Kingdom of Lysimachus,-306,-281,,,,,,,,none,0
 ptolemaic_egypt,Ptolemaic Kingdom,Ptolemaic Kingdom,-305,-30,Q2320005,Ptolemaic Kingdom,period from 305 to 30 BC in ancient Egypt,-305,-30,0,0,high,2
-belgae,Belgae,Belgae,-300,-50,Q815478,Belgian Antarctic Expedition,expedition from Belgium to Antarctica 1897–1899,1897,1899,2197,1949,conflict,7
 chera_dynasty,Chera Dynasty,Chera Dynasty,-300,1102,Q877155,Chera dynasty,one of the three major kingdoms of ancient south India. Ruled over parts of present-day states of Kerala and Tamil Nadu in south India,800,1102,1100,0,medium,1
 chola_empire,Chola Empire,Chola Empire,-300,1279,Q151148,Chola dynasty,dynasty of southern India,-300,1279,0,0,high,2
 pandya_dynasty,Pandya Dynasty,Pandya Dynasty,-300,1345,Q844910,Pandya dynasty,ancient Tamil dynasty of south India,-300,1650,0,305,medium,4
@@ -62,7 +49,6 @@ qin_dynasty,Qin Dynasty,Qin Dynasty,-221,-206,Q7183,Qin dynasty,dynasty that rul
 xiongnu,Xiongnu Confederation,Xiongnu Confederation,-209,93,Q16259603,Suibu,one of the ruling clans of the ancient Xiongnu confederation,,,,,undated,3
 numidia,Kingdom of Numidia,Kingdom of Numidia,-202,-46,Q102679,Kingdom of Numidia,Amazigh (Berber) kingdom in North Africa (202 BC - 40 AD),-202,-46,0,0,high,1
 western_han,Western Han,Western Han,-202,9,Q1072949,Western Han,the first half of the Han dynasty of imperial China,-202,9,0,0,high,7
-germanic_tribes,Germanic tribes,Germanic tribes,-200,500,Q22633,Germanic people,Indo-European ethnolinguistic group,,,,,undated,1
 indo_scythian_kingdom,Indo-Scythian Kingdom,Indo-Scythian Kingdom,-200,400,Q240123,Indo-Scythians,former country,-200,400,0,0,high,1
 kangju,Kangju,Kangju,-200,400,Q915517,Kangju,ethnic group mentioned in Chinese history; probably the Sogdians,,,,,undated,7
 wusun,Wusun,Wusun,-200,400,Q835783,Woosung Railway,railway line,1876,1877,2076,1477,conflict,7
@@ -83,14 +69,11 @@ goguryeo,Goguryeo,Goguryeo,-37,668,Q28370,Goguryeo,"one of the Three Kingdoms of
 funan,Funan (Óc Eo,Funan (Óc Eo,50,550,Q125912311,Memory of Oc Eo ancient city and Funan Kingdom in light of recent archaeological discoveries,scientific article published in 2023,,,,,undated,1
 xianbei,Xianbei,Xianbei,93,234,Q4783395,Xianbei state,Nomadic North Asian state (c. 93-236),93,236,0,2,high,7
 aksumite_kingdom,Aksumite Kingdom,Aksumite Kingdom,100,940,Q139377,Kingdom of Aksum,trading nation in the area of Eritrea and Northern Ethiopia,-400,960,-500,20,medium,5
-ancestral_pueblo,Ancestral Puebloans,Ancestral Puebloans,100,1300,Q478805,Ancestral Puebloans,ancient Native American culture in Four Corners region of the United States,,,,,undated,1
-free_dacians,Free Dacians / Carpi,Free Dacians,106,381,Q2741654,Free Dacians,2nd to 4th century group outside Roman borders,,,,,undated,1
 cao_wei,Cao Wei,Cao Wei,220,265,Q320930,Cao Wei,"ancient Chinese state (220–265); one of the three major states in the Three Kingdoms period, with capital at Luoyang",220,265,0,0,high,7
 shu_han,Shu Han,Shu Han,221,263,Q320925,Shu Han,former Chinese state during the Three Kingdoms era,221,263,0,0,high,7
 eastern_wu,Eastern Wu,Eastern Wu,222,280,Q274488,Eastern Wu,one of the Three Kingdoms of China (222-280),229,280,7,0,high,6
 sassanid_empire,Sassanid Empire,Sassanid Empire,224,651,Q83891,Sasanian Empire,last pre-Islamic Iranian empire (224–651 AD),224,651,0,0,high,1
 kushano_sasanian_kingdom,Kushano-Sasanian Kingdom,Kushano-Sasanian Kingdom,230,365,Q1661685,Indo-Sassanids,Branch of Sasanian Persians ruling Bactria (c.230–c.365),,,,,undated,1
-maya_city_states,Maya City-States (Tikal; Calakmul),Maya City-States,250,900,Q213232,Uxmal,Pre-Columbian Maya city in Yucatan,,,,,undated,3
 vakataka_dynasty,Vakataka Dynasty,Vakataka Dynasty,250,500,Q1501306,Vakataka empire,early 1st-millennium Indian dynasty,250,500,0,0,high,7
 yamato_kingdom,Yamato Kingdom,Yamato Kingdom,250,701,,,,,,,,none,0
 ritsuryo_japan,Ritsuryō Japan (律令国家),Ritsuryō Japan,701,1185,Q1059892,Taihō Code,"administrative reorganization enacted in 703 in Japan, at the end of the Asuka period. It was historically one of the Ritsuryō-sei. It was compiled at the direction of Prince Osakabe, Fujiwara no Fuhito and Awata no Mahito.",701,,0,,medium,7
@@ -112,13 +95,10 @@ hunnic_empire,Hunnic Empire,Hunnic Empire,350,453,Q10295972,Hunnic Empire,nomadi
 kamarupa_kingdom,Kamarupa Kingdom,Kamarupa Kingdom,350,1140,Q1194765,Kamarupa,kingdom based around Assam (350-1140),350,1140,0,0,high,4
 kidarites,Kidarites,Kidarites,360,467,Q26996,Kidarites,"dynasty of the ""Ki"" clan",301,477,-59,10,medium,1
 alchon_huns,Alchon Huns,Alchon Huns,380,565,Q21050766,Alchon Huns,Huns in South Asia in the 5-6th century CE,380,560,0,-5,high,1
-northern_dynasties,Northern Dynasties,Northern Dynasties,386,581,Q9721810,Northern dynasties,part of the Chinese Northern and Southern dynasties,439,581,53,0,medium,4
 northern_wei,Northern Wei tributary,Northern Wei tributary,386,535,,,,,,,,none,0
-shiwei,Shiwei,Shiwei,388,907,Q4309867,Mengwu Xiboge Sum,sumu in People's Republic of China,,,,,undated,7
 byzantine_empire,Byzantine Empire,Byzantine Empire,395,1453,Q12544,Byzantine Empire,Roman Empire during Late Antiquity and the Middle Ages,395,1453,0,0,high,7
 western_roman_empire,Western Roman Empire,Western Roman Empire,395,476,Q42834,Western Roman Empire,independently administered western provinces of the Roman Empire,395,476,0,0,high,1
 visigothic_kingdom,Visigothic Kingdom,Visigothic Kingdom,418,711,Q126936,Visigothic Kingdom,Period of Germanic rule on the Iberian Peninsula (418–720) as a successor state to the Western Roman Empire.,476,718,58,7,medium,3
-southern_dynasties,Southern Dynasties,Southern Dynasties,420,589,Q9726365,Southern dynasties,part of the Chinese Northern and Southern dynasties,420,589,0,0,high,3
 vandal_kingdom,Vandal Kingdom of North Africa,Vandal Kingdom of North Africa,429,533,,,,,,,,none,0
 hephthalites,Hephthalites,Hephthalites,440,560,Q26576,Hephthalites,nomadic confederation in Central Asia during the late antiquity period,408,670,-32,110,conflict,1
 gepid_kingdom,Gepid Kingdom,Gepid Kingdom,454,567,Q2784785,Kingdom of the Gepids,,454,567,0,0,high,2
@@ -162,7 +142,6 @@ muhallabid_governors,Muhallabid governors,Muhallabid governors,771,793,Q17257848
 rustamid_dynasty,Rustamid Dynasty,Rustamid Dynasty,776,909,Q940123,Rustamid dynasty,Ibadi ruling house in Maghreb,767,909,-9,0,high,1
 idrisid_dynasty,Idrisid Dynasty,Idrisid Dynasty,788,974,Q431575,Idrisid dynasty,Arab Muslim dynasty that ruled parts of present-day Morocco and parts of western Algeria,788,974,0,0,high,1
 aghlabid_dynasty,Aghlabid Dynasty,Aghlabid Dynasty,800,909,Q207600,Aghlabids,dynasty,800,909,0,0,high,1
-mississippian_culture,Mississippian Culture,Mississippian Culture,800,1600,Q1052095,Mississippian culture,"mound-building Native American culture in Midwestern, Eastern, and Southeastern United States",800,1600,0,0,high,4
 khmer_empire,Khmer Empire,Khmer Empire,802,1431,Q201705,Khmer Empire,802–1431 empire in Southeast Asia,802,1431,0,0,high,2
 samanid_empire,Samanid Empire,Samanid Empire,819,999,Q12150341,Samanid Empire,former state in Central Asia,819,999,0,0,high,2
 ziyadid_dynasty,Ziyadid Dynasty,Ziyadid Dynasty,819,1018,Q207017,Ziyadid dynasty,dynasty,,,,,undated,1
@@ -172,7 +151,6 @@ kara_khanid_khanate,Kara-Khanid Khanate,Kara-Khanid Khanate,840,1212,Q494354,Kar
 kingdom_of_scotland,Kingdom of Scotland,Kingdom of Scotland,843,1707,Q230791,Kingdom of Scotland,historic sovereign kingdom on the British Isles from the 9th century and up to 1707,843,1707,0,0,high,1
 hindu_shahis,Hindu Shahis,Hindu Shahis,850,1026,Q4955540,Hindu Shahis,former dynasty in Pakistan and Afghanistan,850,1026,0,0,high,1
 yadava_dynasty,Yadava Dynasty (Devagiri),Yadava Dynasty,850,1317,Q5790,Seuna Dynasty,Indian dynasty (c. 1187–1317),1173,1317,323,0,medium,6
-pechenegs,Pechenegs,Pechenegs,860,1091,Q181752,Pechenegs,extinct Turkic people,860,1091,0,0,high,2
 saffarid_dynasty,Saffarid Dynasty,Saffarid Dynasty,861,1003,Q45310,Saffarid dynasty,"Iranian dynasty ruling Sistan, Khorasan and Central Iran (861–1003)",861,1003,0,0,high,1
 tulunid_dynasty,Tulunid Dynasty,Tulunid Dynasty,868,905,Q726798,Tulunids,Independent Egyptian Emirate,868,905,0,0,high,7
 kingdom_of_norway,Kingdom of Norway,Kingdom of Norway,872,1380,Q2196956,Kingdom of Norway,former Kingdom from 872 to 1397,872,1397,0,17,high,6
@@ -184,13 +162,10 @@ hamdanid_emirate,Hamdanid Emirate,Hamdanid Emirate,890,1004,Q99469759,Hamdanid e
 hungarian_grand_principality,Hungarian Grand Principality,Hungarian Grand Principality,895,1000,Q2899771,Principality of Hungary,predecessor of the Kingdom of Hungary,895,1000,0,0,high,2
 kingdom_of_bohemia,Kingdom of Bohemia,Kingdom of Bohemia,895,1526,Q42585,Kingdom of Bohemia,"monarchy in Central Europe, predecessor of modern Czech Republic",1198,1918,303,392,conflict,1
 chimu_kingdom,Chimú Kingdom,Chimú Kingdom,900,1470,Q581741,Chimor,political grouping of the Chimú culture that ruled the northern coast of Peru beginning around 850 and ending around 1470,850,1470,-50,0,medium,1
-postclassic_maya,Postclassic Maya (Mayapan; K'iche'),Postclassic Maya,900,1524,Q112266412,"Postclassic Maya Communities at Progresso Lagoon and Laguna Seca, Northern Belize",scientific article published in 1999,,,,,undated,3
 toltec_empire,Toltec Empire,Toltec Empire,900,1168,Q17523945,Toltec Empire,Mesoamerican empire,674,1122,-226,-46,conflict,1
 zagwe_dynasty,Zagwe Dynasty,Zagwe Dynasty,900,1270,Q140446,Zagwe dynasty,"dynasty centered around Lalibela, ruling large parts of the territory from about 900 to 1270",900,1270,0,0,high,1
-five_dynasties,Five Dynasties (North China),Five Dynasties,907,960,Q242115,Five Dynasties and Ten Kingdoms Period,Period of Chinese history (907–979),907,960,0,0,high,5
 later_liang,Later Liang / Northern Liang,Later Liang,907,923,Q783489,Later Liang dynasty,one of the Five Dynasties of China,907,923,0,0,high,4
 liao_dynasty,Liao Dynasty (Khitan),Liao Dynasty,907,1125,Q4958,Liao dynasty,"Khitan imperial dynasty in East Asia (916-1125), controlling northern and northeastern China, Mongolia, Russian Far East and North Korea",916,1125,9,0,high,5
-ten_kingdoms,Ten Kingdoms (South China),Ten Kingdoms,907,979,Q242115,Five Dynasties and Ten Kingdoms Period,Period of Chinese history (907–979),907,960,0,-19,high,2
 fatimid_caliphate,Fatimid Caliphate,Fatimid Caliphate,909,1171,Q160307,Fatimid Caliphate,Egyptian Shia Islamic caliphate (909–1171),909,1171,0,0,high,1
 goryeo,Goryeo Dynasty,Goryeo Dynasty,918,1392,Q702217,list of monarchs of Goryeo,Wikimedia list article,,,,,undated,3
 croatian_kingdom,Croatian Kingdom,Croatian Kingdom,925,1102,Q858841,Kingdom of Croatia,"(925–1102) a medieval kingdom comprising most of what is today Croatia as well as, periodically, parts of Bosnia and Herzegovina",925,1102,0,0,high,1
@@ -234,9 +209,7 @@ ayyubid_sultanate,Ayyubid Sultanate,Ayyubid Sultanate,1171,1260,Q63135869,Ayyubi
 second_bulgarian_empire,Second Bulgarian Empire,Second Bulgarian Empire,1185,1396,Q420759,Second Bulgarian Empire,Medieval Bulgarian state (1185–1396),1185,1396,0,0,high,1
 serbian_empire,Serbian Empire (Nemanjić Dynasty),Serbian Empire,1190,1389,Q1406298,Serbian Empire,1346–1371 empire in the Balkan Peninsula,1346,1371,156,-18,medium,2
 galicia_volhynia,Principality of Galicia-Volhynia,Principality of Galicia-Volhynia,1199,1349,Q239502,Kingdom of Galicia–Volhynia,kingdom in Central Europe,1199,1349,0,0,high,1
-carib_peoples,Carib Peoples,Carib Peoples,1200,1600,Q56611,Carib,"highly endangered South American language, spoken by the Kalina people (Caribs)",,,,,undated,7
 khwarazmian_empire,Khwarazmian Empire,Khwarazmian Empire,1200,1220,Q63134381,Khwarazmian Empire,former empire in Central Asia,1077,1231,-123,11,medium,6
-taino,Taíno,Taíno,1200,1524,Q5232952,Taíno,Arawakan language; the principal language throughout the Caribbean at the time of Spanish contact,,1700,,176,conflict,7
 latin_empire,Latin Empire,Latin Empire,1204,1261,Q178897,Latin Empire,feudal Crusader state founded by the leaders of the Fourth Crusade on lands captured from the Byzantine Empire,1204,1261,0,0,high,2
 despotate_of_epirus,Despotate of Epirus,Despotate of Epirus,1205,1479,Q187684,Despotate of Epirus,former country,1205,1479,0,0,high,1
 delhi_sultanate,Delhi Sultanate,Delhi Sultanate,1206,1526,Q229411,Delhi Sultanate,1206–1526 empire in the Indian subcontinent,1206,1526,0,0,high,4
@@ -326,7 +299,6 @@ qing_dynasty,Qing Dynasty (Manchu),Qing Dynasty,1636,1912,Q8733,Qing dynasty,Man
 cossack_hetmanate,Cossack Hetmanate,Cossack Hetmanate,1649,1764,Q212439,Cossack Hetmanate,1649–1764 Cossack state in Ukraine,1648,1764,-1,0,high,1
 rupert_land,Rupert's Land (Hudson's Bay Company),Rupert's Land,1670,1870,Q738395,Rupert's Land,territory in British North America,1670,1870,0,0,high,7
 maratha_empire,Maratha Empire,Maratha Empire,1674,1818,Q83618,Maratha Empire,1674–1818 empire in the Indian subcontinent,1674,1818,0,0,high,1
-sioux_nations,Sioux Nations (Lakota/Dakota),Sioux Nations,1680,1876,Q17280118,Santee Sioux Nation,Native American tribal organization in Nebraska,1863,,183,,conflict,7
 louisiana_territory,Louisiana Territory (French),Louisiana Territory,1682,1803,Q1500063,Louisiana Territory,territory of the United States of America from 1805 to 1812,1805,1812,123,9,medium,2
 kingdom_of_prussia,Kingdom of Prussia,Kingdom of Prussia,1701,1918,Q27306,Kingdom of Prussia,"former European state (1701–1918), part of the German Empire after 1871",1701,1918,0,0,high,2
 kingdom_of_great_britain,Kingdom of Great Britain,Kingdom of Great Britain,1707,1801,Q161885,Kingdom of Great Britain,constitutional monarchy in Western Europe (1707–1800),1707,1801,0,0,high,1
@@ -419,7 +391,6 @@ peoples_republic_of_china,People's Republic of China,People's Republic of China,
 republic_of_egypt,Republic of Egypt,Republic of Egypt,1952,,Q3087763,Republic of Egypt,1953–1958 republic in Northern Africa,1953,1958,1,,medium,3
 republic_of_iraq,Republic of Iraq,Republic of Iraq,1958,,Q3108185,Ba'athist Iraq,Republic of Iraq from 1968 to 2003 during the time of Ba'athism,1968,2003,10,,medium,3
 united_arab_republic,United Arab Republic,United Arab Republic,1958,1961,Q55773793,United Arab Republic national football team,national association football team,1958,1961,0,0,high,7
-federalization,Federalization,Federalization,1969,1992,Q16721390,federalization,act of joining states to become a federation,,,,,undated,7
 islamic_republic_iran,Islamic Republic of Iran,Islamic Republic of Iran,1979,,Q794,Iran,country in Western Asia,1979,,0,,medium,7
 canada,Canada,Canada,1982,,Q2003,Newfoundland and Labrador,province of Canada,1949,,-33,,conflict,7
 republic_of_yemen,Republic of Yemen,Republic of Yemen,1990,,Q805,Yemen,country in West Asia,1990,,0,,medium,2
@@ -443,7 +414,6 @@ kassite_babylon,Kassite Babylon,Kassite Babylon,-1600,-1155,Q521577,Kurigalzu II
 lullubi_kingdom,Lullubi Kingdom,Lullubi Kingdom,-2300,-1200,Q65084166,Satuni,king or prince of Lullubi kingdom,,,,,undated,1
 mannai_kingdom,Mannai Kingdom,Mannai Kingdom,-850,-616,Q552328,Mannaea,former country,-1000,-800,-150,-184,conflict,2
 marhashi_kingdom,Marhashi Kingdom,Marhashi Kingdom,-2500,-2000,Q492046,Marhasi,Kingdom mentioned in Sumerian sources,,,,,undated,1
-proto_elamite,Proto-Elamite,Proto-Elamite,-3100,-2700,Q1196237,Proto-Elamite period,pre-Iranian civilization from ca. 3400 BC to 2500 BC,-3100,-2700,0,0,high,4
 azerbaijan_peoples_government,Azerbaijan Peoples Government,Azerbaijan Peoples Government,1945,1946,Q2305337,Azerbaijan People's Government,unrecognized self-declared secessionist state puppeted by the Soviet Union in northwestern Iran,1945,1946,0,0,high,7
 mahabad_republic,Mahabad Republic,Mahabad Republic,1946,1946,Q332232,Republic of Mahabad,1946 unrecognised Kurdish state in Iran,1946,1946,0,0,high,5
 kalat_khanate,Kalat Khanate,Kalat Khanate,1666,1955,Q139948,Khanate of Kalat,state in Balochistan,1638,1955,-28,0,medium,1
@@ -474,17 +444,8 @@ nationalist_government,Nationalist Government (国民政府),Nationalist Governm
 wuhan_government,Wuhan Government (武汉政府),Wuhan Government,1927,1927,Q11546052,Wuhan nationalist government,1926–27 leftist Chinese government,1926,1927,-1,0,high,1
 wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),Wang Jingwei Regime,1940,1945,Q696242,Wang Jingwei regime,Chinese puppet government under the Empire of Japan; existed from 1940 to 1945,1940,1945,0,0,high,1
 chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),Chinese Soviet Republic,1931,1937,Q1135255,Chinese Soviet Republic,East Asian unrecognized protostate (1931–1937) in modern-day Jiangxi province,1931,1937,0,0,high,3
-magna_graecia,Magna Graecia,Magna Graecia,-750,-280,Q184313,Magna Graecia,historical region in Italy,-1050,,-300,,conflict,7
 carthaginian_sardinia,Carthaginian Sardinia,Carthaginian Sardinia,-550,-238,Q20002869,Hanno,"Carthaginian military man, active in Sardinia and Corsica",,,,,undated,7
 carthaginian_western_sicily,Carthaginian Western Sicily,Carthaginian Western Sicily,-550,-241,Q590014,Battle of Drepana,"naval battle of the First Punic War near modern Trapani, western Sicily, with the Carthaginian fleet emerging victorious",,,,,undated,1
-phoenician_colonies,Phoenician Colonies of Sardinia,Phoenician Colonies of Sardinia,-900,-550,Q105332474,Category:Phoenician colonies in Sardinia,Wikimedia category,,,,,undated,2
-punic_coastal_settlements,Punic Coastal Settlements,Punic Coastal Settlements,-800,-275,,,,,,,,none,0
-celtic_gauls,Cisalpine Celtic Gauls,Cisalpine Celtic Gauls,-400,-222,Q140606522,Comenses,ancient Celtic people of Cisalpine Gaul,,,,,undated,3
-oscan_samnite_peoples,Oscan-Samnite Peoples,Oscan-Samnite Peoples,-600,-290,,,,,,,,none,0
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,Latin-Sabine-Samnite Peoples,-1000,-500,,,,,,,,none,0
-italic_peoples,Italic Peoples,Italic Peoples,-1000,-500,Q3617880,Italic peoples,"peoples who are or were native speakers of an Italic language, and are or were related to one of them",,,,,undated,1
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,Ligurian-Euganei-Raeti Peoples,-1000,-200,,,,,,,,none,0
-celtic_la_tene_migration,Celtic La Tène Migration,Celtic La Tène Migration,-450,-222,Q141314401,Celtic migrations and the spread of La Tène Culture,"scholarly article published in Archeologické Rozhledy, vol. 76, no. 1 (2024) (DOI: 10.35686/AR.2024.5)",,,,,undated,2
 papal_states,Papal States,Papal States,754,1870,Q170174,Papal States,territories mostly in the Appenine Peninsula under the sovereign direct rule of the pope between 756–1870,754,1870,0,0,high,3
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,Byzantine Exarchate of Ravenna,584,751,,,,,,,,none,0
 byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,Byzantine Catepanate of Italy,965,1071,Q1814277,Catepanate of Italy,province of the Byzantine Empire in the Italian Peninsula (965–1071),965,1071,0,0,high,1
@@ -492,7 +453,6 @@ byzantine_sardinia,Byzantine Sardinia,Byzantine Sardinia,534,700,Q3974081,Byzant
 byzantine_sicilian_theme,Byzantine Sicilian Theme,Byzantine Sicilian Theme,535,827,,,,,,,,none,0
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,Lombard Duchy of Benevento,571,1077,Q4204854,Historia Langobardorum Beneventanorum,"Lombard chronicle of the Duchy of Benevento, in the Langobardia Minor",,,,,undated,1
 lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,Lombard Duchy of Spoleto,570,774,,,,,,,,none,0
-lombard_principalities,Lombard Principalities of Southern Italy,Lombard Principalities of Southern Italy,849,1077,,,,,,,,none,0
 principality_of_salerno,Principality of Salerno,Principality of Salerno,851,1077,Q1065299,Principality of Salerno,Principality in Modern Day Italy from the 9th century to 11th,851,1076,0,-1,high,1
 arab_emirate_of_bari,Arab Emirate of Bari,Arab Emirate of Bari,847,871,Q1878022,Emirate of Bari,short-lived Islamic state in Apulia ruled by non-Arabs from ca. 847 until 871,847,871,0,0,high,6
 emirate_of_sicily,Emirate of Sicily,Emirate of Sicily,831,1072,Q118780154,Emirate of Sicily,Islamic principality that ruled the island of Sicily from 948 to 1091,827,1091,-4,19,high,1
@@ -513,7 +473,6 @@ spanish_duchy_of_milan,Spanish Duchy of Milan,Spanish Duchy of Milan,1535,1706,Q
 republic_of_genoa,Republic of Genoa,Republic of Genoa,1005,1797,Q174306,Republic of Genoa,medieval and early modern maritime republic from (1005-1797),1005,1797,0,0,high,2
 countyduchy_of_savoy,County and Duchy of Savoy,County and Duchy of Savoy,1003,1720,Q706553,County of Nice,Part of the duchy of Savoy,1388,1818,385,98,conflict,1
 kingdom_of_sardinia,Kingdom of Sardinia,Kingdom of Sardinia,1324,1861,Q55599391,Kingdom of Sardinia,historic state 1324-1713,1324,1848,0,-13,high,6
-giudicati_of_sardinia,Giudicati of Sardinia,Giudicati of Sardinia,900,1420,Q1241847,Judicate of Arborea,historical kingdom of Sardinia,800,1420,-100,0,medium,7
 giudicati_torres,Giudicato of Torres,Giudicato of Torres,900,1259,Q1761381,Giudicato of Logudoro,historical state of Sardinia,800,1259,-100,0,medium,5
 aragonese_sardinia,Aragonese Sardinia,Aragonese Sardinia,1323,1718,Q3403866,Aragonese conquest of Sardinia,1323 military campaign,1323,1326,0,-392,medium,5
 pisan_county_of_cagliari,Pisan County of Cagliari,Pisan County of Cagliari,1258,1323,,,,,,,,none,0

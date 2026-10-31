@@ -46,8 +46,7 @@
       "cells": [
         {
           "label": "Yayoi people",
-          "span": 2,
-          "polity": "yayoi_people_culture"
+          "span": 2
         },
         {
           "label": "Hayato / Kumaso",
@@ -130,8 +129,7 @@
         },
         {
           "label": "Gusuku culture",
-          "span": 1,
-          "polity": "gusuku_culture"
+          "span": 1
         }
       ]
     },

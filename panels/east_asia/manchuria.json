@@ -46,7 +46,7 @@
             {
               "label": "Donghu",
               "note": "c.600–209 BCE",
-              "polity": "donghu"
+              "ethnicity": "donghu"
             }
           ],
           "span": 1
@@ -284,7 +284,7 @@
             {
               "label": "Shiwei",
               "note": "Mongolic/Tungusic tribes",
-              "polity": "shiwei"
+              "ethnicity": "shiwei"
             }
           ],
           "span": 1

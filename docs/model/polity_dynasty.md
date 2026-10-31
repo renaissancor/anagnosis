@@ -37,7 +37,7 @@ yuan_dynasty,borjigin,1271,1368
 
 ## Current Coverage
 
-- **274 rows** mapping polities to dynasties
+- **275 rows** mapping polities to dynasties
 - **274 unique polities** (of 277 monarchical polities in polity.csv)
 - **185 unique dynasties** referenced (of 192 defined in dynasty.csv)
 - Non-monarchical polities (republics, communist states, confederations) have no rows

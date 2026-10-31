@@ -45,28 +45,23 @@
           "stack": [
             {
               "label": "Terramare culture",
-              "note": "c.1700–1150 BCE",
-              "polity": "terramare_culture"
+              "note": "c.1700–1150 BCE"
             },
             {
               "label": "Proto-Villanovan culture",
-              "note": "c.1200–900 BCE",
-              "polity": "proto_villanovan_culture"
+              "note": "c.1200–900 BCE"
             },
             {
               "label": "Villanovan culture",
-              "note": "c.900–700 BCE",
-              "polity": "villanovan_culture"
+              "note": "c.900–700 BCE"
             },
             {
               "label": "Este · Golasecca cultures",
-              "note": "c.900–400 BCE",
-              "polity": "este_golasecca_cultures_culture"
+              "note": "c.900–400 BCE"
             },
             {
               "label": "Celtic La Tène migration",
-              "note": "c.450 BCE–",
-              "polity": "celtic_la_tene_migration"
+              "note": "c.450 BCE–"
             }
           ],
           "span": 1
@@ -75,23 +70,19 @@
           "stack": [
             {
               "label": "Rinaldone · Gaudo cultures",
-              "note": "c.3400–2200 BCE",
-              "polity": "rinaldone_gaudo_cultures_culture"
+              "note": "c.3400–2200 BCE"
             },
             {
               "label": "Apennine culture",
-              "note": "c.1700–1100 BCE",
-              "polity": "apennine_culture"
+              "note": "c.1700–1100 BCE"
             },
             {
               "label": "Villanovan culture (central)",
-              "note": "c.900–700 BCE",
-              "polity": "villanovan_culture"
+              "note": "c.900–700 BCE"
             },
             {
               "label": "Latial culture",
-              "note": "c.900–600 BCE",
-              "polity": "latial_culture"
+              "note": "c.900–600 BCE"
             }
           ],
           "span": 1
@@ -100,13 +91,12 @@
           "stack": [
             {
               "label": "Apennine culture",
-              "note": "c.1700–1100 BCE",
-              "polity": "apennine_culture"
+              "note": "c.1700–1100 BCE"
             },
             {
               "label": "Italic peoples (Oscan · Samnite · Lucanian)",
               "note": "c.1000 BCE–",
-              "polity": "italic_peoples"
+              "ethnicity": "italic_peoples"
             }
           ],
           "span": 1
@@ -120,18 +110,15 @@
             },
             {
               "label": "Castelluccio culture",
-              "note": "c.2200–1400 BCE",
-              "polity": "castelluccio_culture"
+              "note": "c.2200–1400 BCE"
             },
             {
               "label": "Thapsos culture",
-              "note": "c.1400–900 BCE",
-              "polity": "thapsos_culture"
+              "note": "c.1400–900 BCE"
             },
             {
               "label": "Pantalica culture",
-              "note": "c.1270–730 BCE",
-              "polity": "pantalica_culture"
+              "note": "c.1270–730 BCE"
             }
           ],
           "span": 1
@@ -140,13 +127,11 @@
           "stack": [
             {
               "label": "Ozieri · Arzachena cultures",
-              "note": "c.4000–2800 BCE",
-              "polity": "ozieri_arzachena_cultures_culture"
+              "note": "c.4000–2800 BCE"
             },
             {
               "label": "Nuragic civilization",
-              "note": "c.1800–238 BCE",
-              "polity": "nuragic_civilization_culture"
+              "note": "c.1800–238 BCE"
             }
           ],
           "span": 1
@@ -164,12 +149,12 @@
             {
               "label": "Ligurians · Euganei · Raeti",
               "note": "pre-Roman",
-              "polity": "ligurians_euganei_raeti"
+              "ethnicity": "ancient_european"
             },
             {
               "label": "Celtic Gauls (Insubres · Boii · Senones)",
               "note": "c.400–222 BCE",
-              "polity": "celtic_gauls"
+              "ethnicity": "gaulish"
             },
             {
               "label": "Venetians (Adriatic coast)",
@@ -182,13 +167,12 @@
           "stack": [
             {
               "label": "Etruscan civilization (Tyrrhenia)",
-              "note": "c.700–400 BCE",
-              "polity": "etruscan_civilization_culture"
+              "note": "c.700–400 BCE"
             },
             {
               "label": "Latin · Sabine · Samnite peoples",
               "note": "c.1000 BCE–",
-              "polity": "latin_sabine_samnite_peoples"
+              "ethnicity": "italic_peoples"
             },
             {
               "polity": "roman_kingdom",
@@ -202,18 +186,16 @@
           "stack": [
             {
               "label": "Magna Graecia (Greek colonies)",
-              "note": "c.750–280 BCE",
-              "polity": "magna_graecia"
+              "note": "c.750–280 BCE"
             },
             {
               "label": "Oscan · Samnite peoples",
               "note": "c.600–290 BCE",
-              "polity": "oscan_samnite_peoples"
+              "ethnicity": "italic_peoples"
             },
             {
               "label": "Punic coastal settlements",
-              "note": "c.800–275 BCE",
-              "polity": "punic_coastal_settlements"
+              "note": "c.800–275 BCE"
             }
           ],
           "span": 1
@@ -236,8 +218,7 @@
           "stack": [
             {
               "label": "Phoenician colonies (Tharros · Nora · Sulcis)",
-              "note": "c.900–550 BCE",
-              "polity": "phoenician_colonies"
+              "note": "c.900–550 BCE"
             },
             {
               "label": "Carthaginian Sardinia",
@@ -544,8 +525,7 @@
             },
             {
               "label": "Giudicati of Sardinia (4 kingdoms)",
-              "note": "c.900–1420",
-              "polity": "giudicati_of_sardinia"
+              "note": "c.900–1420"
             }
           ],
           "span": 1
@@ -596,8 +576,7 @@
           "stack": [
             {
               "label": "Lombard principalities (Benevento · Salerno · Capua)",
-              "note": "–1077",
-              "polity": "lombard_principalities"
+              "note": "–1077"
             },
             {
               "label": "Byzantine Catepanate of Italy",

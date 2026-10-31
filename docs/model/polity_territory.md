@@ -60,7 +60,7 @@ arabia,ottoman_empire,1517,1918
 | `start_year` | integer, BCE negative | yes in practice; part of the key | Year this polity's hold on this zone began. It should fall within the polity's own dates (see section 6) | no row has it empty | `1517`, not the polity's 1299 |
 | `end_year` | integer, BCE negative | no | Year the hold ended | **ongoing**: the polity still holds the zone today. Never unknown. It must only appear on a polity that is itself ongoing (PROPOSED; no row breaks this now) | `1918`; `anatolia/republic_of_turkey` is empty |
 
-**How to fill the dates.** Most rows simply repeat the polity's dates: 787 of 858 do, and only 29 polities have a row that differs. Those rows assert the polity held the zone for its whole life, which is usually a default, not a researched claim. When you research a hold, record the real span as the 71 others do (`egypt/byzantine_empire` 395–641).
+**How to fill the dates.** Most rows simply repeat the polity's dates: 731 of 803 do, and only 30 polities have a row that differs. Those rows assert the polity held the zone for its whole life, which is usually a default, not a researched claim. When you research a hold, record the real span as the 72 others do (`egypt/byzantine_empire` 395–641).
 
 A zero-length span (`start_year = end_year`) is valid. Five rows have one, all for short-lived polities such as `shun`.
 
@@ -125,16 +125,16 @@ Run `node scripts/validate.js`. `npm test` runs `make:all` first.
 
 | Measure | Value |
 |---|---|
-| Rows | 858 |
-| Polities with at least one row | 517 of 523 |
+| Rows | 803 |
+| Polities with at least one row | 476 of 482 |
 | Territories used | 54 of 54 |
 | `end_year` empty | 58 |
-| Rows equal to the polity's exact dates | 787 |
-| Polities with any row that differs from their dates | 29 |
-| Rows per polity | 1 row: 328 polities; 2: 122; 3: 34; 4: 17; 5 or more: 16 |
+| Rows equal to the polity's exact dates | 731 |
+| Polities with any row that differs from their dates | 30 |
+| Rows per polity | 1 row: 300 polities; 2: 110; 3: 33; 4: 17; 5 or more: 16 |
 | Most zones | `roman_empire` has 17 rows; `ottoman_empire`, `umayyad_caliphate` and `mongol_empire` have 9 |
 
-The busiest zones are `italy` (65), `iran_plateau` (49) and `yellow_river` (40). `territory.md` has the full list.
+The busiest zones are `italy` (53), `iran_plateau` (47) and `yellow_river` (38). `territory.md` has the full list.
 
 ### Rows outside the polity's dates
 
@@ -159,4 +159,4 @@ The reverse case is fine: `manchuria/republic_of_china` ends in 1932 while its p
 2. **May a row's years exceed the polity's?** If not, the row above needs fixing and a validator check is possible.
 3. ~~`kingdom_of_norway` after 1380.~~ DECIDED: `modern_norway` is a separate polity starting in 1905 (`polity.md` section 8).
 4. **Should the Roman `380` boundary be collapsed?** It would reduce `roman_empire` to one row per zone.
-5. **Should default-dated rows be flagged?** Nothing separates a researched row from a copied one among the 787, so a reader cannot tell which are real claims.
+5. **Should default-dated rows be flagged?** Nothing separates a researched row from a copied one among the 731, so a reader cannot tell which are real claims.

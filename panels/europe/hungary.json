@@ -40,8 +40,7 @@
             },
             {
               "label": "Celtic La Tène culture (Boii · Taurisci · Azali)",
-              "note": "c.450–35 BCE",
-              "polity": "celtic_la_tene_culture"
+              "note": "c.450–35 BCE"
             }
           ],
           "span": 1
@@ -112,7 +111,7 @@
             {
               "label": "Free Dacians / Carpi",
               "note": "after 271",
-              "polity": "free_dacians"
+              "ethnicity": "dacians"
             }
           ],
           "span": 1

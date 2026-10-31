@@ -69,6 +69,10 @@ Panels are hand-curated nested JSON in `panels/<region>/<country>.json`. A cell'
 as warnings so you can add the polity (or promote a stub from
 `derived/polity_stubs.csv`).
 
+A cell for a people that is not a polity uses an `ethnicity` key in place of `polity`,
+and it must resolve in `ethnicity.csv`. Any other non-polity keeps only its `label`
+(`docs/model/non_polity.md`).
+
 ### Add a column
 
 A new column touches every layer: the CSV, the `SCHEMA` table in

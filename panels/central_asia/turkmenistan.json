@@ -30,13 +30,12 @@
           "stack": [
             {
               "label": "BMAC (Bactria–Margiana Archaeological Complex)",
-              "note": "c.2300–1700 BCE",
-              "polity": "bmac_culture"
+              "note": "c.2300–1700 BCE"
             },
             {
               "label": "Saka / Massagetae",
               "note": "c.900–100 BCE",
-              "polity": "saka"
+              "ethnicity": "scythian"
             }
           ],
           "span": 1
@@ -46,7 +45,7 @@
             {
               "label": "Dahae / Parni (proto-Parthian nomads)",
               "note": "c.1000–247 BCE",
-              "polity": "dahae"
+              "ethnicity": "dahae"
             },
             {
               "label": "Media (suzerainty)",

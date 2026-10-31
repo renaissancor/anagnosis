@@ -1,8 +1,8 @@
 # Non-polities
 
-**Status: PROPOSED.** This is a design for the project owner to approve. Nothing here has been carried out, and it creates no rule until the owner accepts it.
+**Status: ACCEPTED.** The project owner approved this design on 2026-10-31 (section 8). Steps 1 to 10 of section 7 are carried out; step 11, the renderer, is not. Consequences that stay open are in section 9.
 
-**Snapshot:** counts were measured on 2026-10-31 with `code/lib/csv.js`, on the working tree over commit `ac64f59`, while merge passes were running (523 polity rows). Re-measure a row before moving it.
+**Snapshot:** sections 1 to 6 keep the counts measured before the migration, on 2026-10-31 with `code/lib/csv.js` (523 polity rows). They were re-measured just before the move and matched. Section 9 gives the results.
 
 ---
 
@@ -109,7 +109,7 @@ Rows are assigned by judgment. **Cells** counts panel entries whose `polity` is 
 
 ### 2.6 Periods: done, not migrated here
 
-These rows are gone. The decision log in `polity.md` section 8 replaced Japan's four period rows (`yamato_period`, `nara_period`, `heian_period`, `feudal_japan`) with `yamato_kingdom`, `ritsuryo_japan`, `kamakura_shogunate`, `kenmu_government`, `ashikaga_shogunate`, `southern_court` and `oda_toyotomi_government`. `prince_shotoku` now sits on `yamato_kingdom`, and no `fact_source` row names a retired Japan id. The lumped `han_dynasty` and `goktürk_khaganate` were retired too, leaving `zhou_dynasty` and `song_dynasty` on hold. They are outside this migration.
+These rows are gone. The decision log in `polity.md` section 8 replaced Japan's four period rows (`yamato_period`, `nara_period`, `heian_period`, `feudal_japan`) with `yamato_kingdom`, `ritsuryo_japan`, `kamakura_shogunate`, `kenmu_government`, `ashikaga_shogunate`, `southern_court` and `oda_toyotomi_government`. `prince_shotoku` now sits on `yamato_kingdom`, and no `fact_source` row names a retired Japan id. The lumped `han_dynasty` and `goktürk_khaganate` were retired too. `zhou_dynasty` and `song_dynasty` stay, and so do their children. They are outside this migration.
 
 ---
 
@@ -117,7 +117,7 @@ These rows are gone. The decision log in `polity.md` section 8 replaced Japan's 
 
 ### 3.1 Peoples go in `ethnicity.csv`
 
-`ethnicity.md` defines ethnicity as a linguistic ancestry grouping, and `civilization.md` already sends "a people grouped broadly" there. `graph.md` Q6 recommends that a stateless people be an `ethnicity`, which also gives the planned inheritance layer a source for these groups, such as `dahae` to `parthian_empire`.
+`ethnicity.md` defines ethnicity as a named people, usually a linguistic ancestry grouping, and `civilization.md` already sends "a people grouped broadly" there. `graph.md` Q6 recommends that a stateless people be an `ethnicity`, which also gives the planned inheritance layer a source for these groups, such as `dahae` to `parthian_empire`.
 
 Three peoples already share an id across both tables: `beja`, `scythian` and `germanic_tribes`. The 7 new rows follow that pattern where they can:
 
@@ -126,18 +126,18 @@ Three peoples already share an id across both tables: `beja`, `scythian` and `ge
 | `illyrians` | `ancient_european` | `illyrians`, `histri` |
 | `dacians` | `ancient_european` | `free_dacians` |
 | `italic_peoples` | `ancient_european` | `italic_peoples`, `oscan_samnite_peoples`, `latin_sabine_samnite_peoples` |
-| `dahae` | `central_asian_steppe_bloc` | `dahae` |
+| `dahae` | `iranian_cluster` | `dahae` |
 | `donghu` | `central_asian_steppe_bloc` | `donghu` |
-| `shiwei` | `central_asian_steppe_bloc` | `shiwei` |
+| `shiwei` | `mongolic_cluster` | `shiwei` |
 | `pechenegs` | `turkic_cluster` | `pechenegs` |
 
-`ethnicity.csv` has no year columns. The span goes in `description` as prose ("attested c.860–1091"). A column would serve only these rows; 256 of 269 ethnicity rows have neither `description` nor `founded`.
+`ethnicity.csv` has no year columns. Dates go in `description` as prose, from a source rather than from the retired row's span. A column would serve only these rows; 256 of 269 ethnicity rows have neither `description` nor `founded`.
 
 A people's row needs an inbound reference like any other, so a people that no cell points to gets no new row. `sioux_nations` has 0 cells and needs only the existing `sioux_lakota`, if anything.
 
 ### 3.2 Persons go in `figure.csv`
 
-`lysimachus` names a person, but the cells describe a state ("Lysimachus — Kingdom of Thrace"). The kingdom was real (-306 to -281), so it passes the admission test. Add a polity row `kingdom_of_lysimachus`, move its 3 cells, 2 territory rows and dynasty row, and add a `figure` row with `figure_id` `lysimachus`, which is unused today. The new id avoids a person-named polity. Its dynasty row points at `macedonian_argead`, which looks wrong because Lysimachus was not an Argead: check it during the move.
+`lysimachus` names a person, but the cells describe a state ("Lysimachus — Kingdom of Thrace"). The kingdom was real (-306 to -281), so it passes the admission test. Add a polity row `kingdom_of_lysimachus`, move its 3 cells, 2 territory rows and dynasty row, and add a `figure` row with `figure_id` `lysimachus`, which is unused today. The new id avoids a person-named polity. Its dynasty row pointed at `macedonian_argead`, which was wrong: Lysimachus was the son of Agathocles, a Thessalian family settled at Pella, not an Argead. The row was deleted rather than moved, and no `lysimachid` dynasty was added. See section 9.
 
 ### 3.3 Cultures, collectives and events are labels
 
@@ -277,7 +277,7 @@ Recommendation: accept the gaps. An empty span says that no polity is recorded, 
 
 **`fact_source.csv`.** Four QIDs are affected. `pechenegs` (Q181752) and `mississippian_culture` (Q1052095) change `entity_table` and `entity_id` to the ethnicity row; `validate.js` already accepts `ethnicity`. `proto_elamite` (Q1196237) and `southern_dynasties` (Q9726365) lose their row, so record the QID beside the retired id in `merge_map.md`.
 
-**`polity_dynasty`.** Only `lysimachus` is affected among rows moved, and its row moves with the new polity.
+**`polity_dynasty`.** Only `lysimachus` is affected among rows moved. Its row was wrong, so it was deleted (section 3.2).
 
 ---
 
@@ -305,13 +305,66 @@ No DDL, loader or `SCHEMA` change is needed, because no CSV or column is added. 
 
 ---
 
-## 8. Open questions for the owner
+## 8. Owner decisions
 
-1. **Approve no new table?** In particular, this drops the `cultures` table that `merge_map.md` §5 records as decided.
-2. **Accept the territory gaps** in section 6? The alternative is an `ethnicity_territory` table, which this design recommends against. A middle path is to delay `sumerian_city_states`, `maya_city_states` and `postclassic_maya` until member polities exist.
-3. **Promote `uruk` and `tyre`** for the sake of 2 figures? The alternative is deleting `gilgamesh` and `hiram_tyre`, or making `figure.polity_id` optional, which changes `figure.md` and how figures are built.
-4. **The six stay-rows in section 5.** Does a recorded ruler of a loosely organised people suffice for `wusun`, `yuezhi` and `xianbei`?
-5. **`pechenegs`:** confirm it leaves `polity.csv`. It is the named test case in `polity.md` 2.3.
-6. **Reusing a retired id in another table.** `pechenegs` would stop being a polity id and become an ethnicity id. This design treats that as the same identity moving, not reuse, and `beja`, `scythian` and `germanic_tribes` already share ids. Is that acceptable under "never reused"?
-7. **Ethnicity's definition.** `ethnicity.md` says linguistic ancestry, and the languages of `donghu`, `dahae` and `shiwei` are poorly known. Widen the wording to "a named people", or accept the looseness?
-8. **`kingdom_of_lysimachus` as a new id**, or keep the `lysimachus` id and rename only the `name`? The second is smaller, but leaves a person-named polity id.
+Decided on 2026-10-31.
+
+| # | Question | Answer |
+|---|---|---|
+| 1 | Approve no new table? | Yes. No new table, and the `cultures` table in `merge_map.md` §5 is dropped |
+| 2 | Accept the territory gaps in section 6? | Yes |
+| 3 | Promote `uruk` and `tyre`? | Yes, as polity rows |
+| 4 | The six stay-rows in section 5 | They stay |
+| 5 | `pechenegs` | Leaves `polity.csv` |
+| 6 | Is reusing a retired id in another table acceptable? | An id moving from polity to ethnicity for the same identity is not reuse |
+| 7 | Ethnicity's definition | Widened to include a named people (`ethnicity.md`) |
+| 8 | `kingdom_of_lysimachus` | Used as a new id |
+
+---
+
+## 9. Result and consequences
+
+Measured after step 10, with `npm test` passing.
+
+| Measure | Before | After |
+|---|---:|---:|
+| `polity.csv` rows | 523 | 482 (44 retired; `uruk`, `tyre`, `kingdom_of_lysimachus` added) |
+| `ethnicity.csv` rows | 269 | 276 |
+| `polity_territory.csv` rows | 858 | 803 |
+| `polity_dynasty.csv` rows | 276 | 275 |
+| `figure.csv` rows | 285 | 286 |
+| `fact_source.csv` rows | 292 | 290 |
+| Succession edges | 4,107 | 3,743 |
+| Panel entries with `polity` | 4,395 | 4,191 |
+| Panel entries with `ethnicity` | 0 | 57 |
+| Label-only panel entries | 620 | 767 |
+| Unresolved panel ids | 1,793 | 1,697 |
+| Unresolved panel cells | 2,205 | 2,077 |
+| `npm test` warnings | 1,894 | 1,773 |
+
+Unresolved ids stayed at 1,793 through steps 3 to 9. All of the drop is the 96 `*_culture` ids in step 10.
+
+**The four affected QIDs.**
+
+| QID | Was | Now |
+|---|---|---|
+| Q181752 | polity `pechenegs` | ethnicity `pechenegs` |
+| Q1052095 | polity `mississippian_culture` | ethnicity `mississippian` |
+| Q1196237 | polity `proto_elamite` | No row; recorded in `merge_map.md` §6 |
+| Q9726365 | polity `southern_dynasties` | No row; recorded in `merge_map.md` §6 |
+
+Q1052095 names a culture and now identifies a people row, which is close but not exact.
+
+**Territory gaps.** Accepted, and the table in section 6 stands, except that `uruk` narrows `mesopotamia` to -3500..-2901 and `tyre` keeps `levant` covered from -1200. Earliest coverage moved later in several zones, for example `north_africa` to -814, `amazonia` to 1500, `us_west` to 1521, `pontic_steppe` to 350 and `central_asian_steppe` to -300. Mesopotamia and Mesoamerica measure missing rows, not missing states. `maya_city_states` and `postclassic_maya` left no member rows, and `mesoamerica` now starts at -500.
+
+**Rows classified by judgment.** Every assignment in section 2 is a judgment, as are the stay-rows in section 5. The closest calls were `pechenegs`, `donghu` and `scythian`, which left, and `wusun`, `yuezhi` and `xianbei`, which stayed. Reasons in section 5 were mostly general knowledge. `pechenegs` (composition) and `xianbei` (Tanshihuai) were checked against Wikipedia. The others are unverified.
+
+**Choices made during the move.**
+
+- `shiwei`, `donghu` and `dahae` have the `parent_id` in section 3.1, but the evidence fits other parents better. Wikipedia treats the Shiwei as Mongolic, and `mongolic_cluster` exists. It links the Donghu to Mongolic peoples, without certainty. It calls the Dahae generally Eastern Iranian, and `iranian_cluster` exists. The descriptions say so. Moving the parents is the owner's decision.
+- `ligurians_euganei_raeti` links to the broad `ancient_european` node, and `belgae` to `celtic_peoples`, though one of its labels says Celtic-Germanic.
+- `kingdom_of_lysimachus` holds `anatolia` from -301 (Ipsus), not -306 as the retired row had it. Its dynasty row was deleted, not moved.
+- The `pechenegs` description uses the 8th-century first certain attestation, not the row's 860.
+- `czech_slovakia`'s `federalization` cell now links to `czechoslovakia`.
+- `STRIP_LIST` also holds 5 ids that the labels of moved cells would otherwise generate: `phoenician_city_states`, `ancestral_puebloans`, `chinese_southern_dynasties`, `kura_araxes`, `jiroft`.
+- Until step 11, ethnicity-linked cells render as plain text with the `eth-indigenous` colour.

@@ -51,7 +51,7 @@
             {
               "label": "Mississippian Culture — Cahokia",
               "note": "800–1600",
-              "polity": "mississippian_culture"
+              "ethnicity": "mississippian"
             },
             {
               "label": "Iroquois Confederacy",
@@ -69,12 +69,11 @@
         {
           "label": "Mississippian · Siouan peoples",
           "span": 1,
-          "polity": "mississippian_culture"
+          "ethnicity": "mississippian"
         },
         {
           "label": "Ancestral Puebloans · Navajo · Apache",
-          "span": 1,
-          "polity": "ancestral_pueblo"
+          "span": 1
         },
         {
           "label": "Yupik · Inuit · Aleut peoples",

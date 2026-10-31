@@ -14,7 +14,7 @@ The contract for edges in the Anagnosis graph. Layers and writers are set by [`.
 
 **A candidate never asserts succession.** Until claims exist, the project has no curated polity-to-polity succession data.
 
-Figures below were measured on 2026-10-31 through `code/lib/csv.js`. They will move as polity merges land. Running a scratch copy of the generator on that day's `csvs/` reproduced `derived/polity_succession.csv` byte for byte.
+Figures below were measured on 2026-10-31 through `code/lib/csv.js`, after the non-polity migration unless marked. They will move as polity merges land. Running a scratch copy of the generator on that day's `csvs/` reproduced `derived/polity_succession.csv` byte for byte.
 
 ---
 
@@ -22,7 +22,7 @@ Figures below were measured on 2026-10-31 through `code/lib/csv.js`. They will m
 
 ### What the file holds
 
-`derived/polity_succession.csv` has 4,107 directed rows, covering 519 of 523 polities. There is at most one row per ordered pair, with no self-loops and no dangling ids. `funan`, `ancestral_pueblo`, `khmer_empire` and `majapahit_empire` have no edges.
+`derived/polity_succession.csv` has 3,743 directed rows, covering 479 of 482 polities. There is at most one row per ordered pair, with no self-loops and no dangling ids. `funan`, `khmer_empire` and `majapahit_empire` have no edges.
 
 ### When an edge is created
 
@@ -42,7 +42,7 @@ There is no minimum score. Any one test creates a row.
 
 - **Negative gaps pass.** The territory test only bounds the gap from above (line 159), so full contemporaries qualify. Nothing requires A to have ended.
 - **An ongoing period never stops the loop.** With an empty `end_year`, the gap is forced to 0 (line 158), so that period links to every later period on the territory.
-- **Territories are coarse.** There are 54 macro-zones shared by 517 polities, so a rival, a colonial occupier and a successor look alike.
+- **Territories are coarse.** There are 54 macro-zones shared by 476 polities, so a rival, a colonial occupier and a successor look alike.
 - **The overlap loop is redundant.** Lines 164-172 add nothing: a scratch copy without them produced an identical file. The first loop already covers every overlap.
 
 ### Columns
@@ -54,7 +54,7 @@ There is no minimum score. Any one test creates a row.
 | `territorial_direction` | Counts distinct territories over each polity's whole life (lines 288-297). No shared territory is `displacement`; a larger `to` is `expansion`, smaller is `contraction`, equal is `same`; either side empty is `unknown` | A size comparison, not an event. `ottoman_empire → vichy_france` is a "contraction" |
 | `strength` | Number of `shared_territories` + 3 same ethnicity + 1 related + 2 language + 1 religion + 2 if the absolute gap is at most 10, or 1 if at most 50 (lines 300-307) | A weighted count, despite the comment on line 299 calling it a number of signals |
 | `shared_territories`, `shared_territory_count` | Territories where the territory strategy fired | **Not** the intersection of two polities' territories. 367 rows have an empty list although the polities do share territory |
-| `same_ethnicity`, `same_language`, `same_religion` | Id equality, subject to the table above | Label match. Ids include clusters: `turkic_cluster` covers 43 polities, so `pechenegs → ottoman_empire` is "same ethnicity" |
+| `same_ethnicity`, `same_language`, `same_religion` | Id equality, subject to the table above | Label match. Ids include clusters: `turkic_cluster` covers 42 polities, so `mamluk_sultanate → ottoman_empire` is "same ethnicity" |
 | `related_ethnicity` | Dead, see below | Ignore |
 | `temporal_gap_years` | `to.start - from.end`, over polity lifetimes. An ongoing `from` gives 0 (line 285) | Negative means overlap. Thresholds above use territory periods, so this column does not show why a territory edge qualified |
 
@@ -62,16 +62,16 @@ There is no minimum score. Any one test creates a row.
 
 | Measure | Value |
 |---|---:|
-| `territorial_direction` | same 1,315; displacement 1,043; contraction 936; expansion 809; unknown 4 |
-| Empty `shared_territories` | 1,414 (34%) |
-| Of those, with `same_language` | 1,248 |
-| Shared territories but no ethnicity, language or religion signal | 1,179 |
-| `same_language` / `same_ethnicity` / `same_religion` / `related_ethnicity` | 1,968 / 1,098 / 1,094 / 0 |
-| `temporal_gap_years` below 0 / 0 / above 0 | 1,836 / 342 / 1,929 |
-| Polity lifetimes overlap | 2,011 (49%) |
-| `strength` range; median; mean; 90th percentile | 1-15; 3; 3.27; 7 |
-| `strength` at most 2 | 2,032 (49%) |
-| Out-degree median; maximum | 6; 58 (`republic_of_venice`) |
+| `territorial_direction` | same 1,113; displacement 1,019; contraction 869; expansion 738; unknown 4 |
+| Empty `shared_territories` | 1,367 (37%) |
+| Of those, with `same_language` | 1,218 |
+| Shared territories but no ethnicity, language or religion signal | 978 |
+| `same_language` / `same_ethnicity` / `same_religion` / `related_ethnicity` | 1,889 / 1,002 / 1,031 / 0 |
+| `temporal_gap_years` below 0 / 0 / above 0 | 1,591 / 322 / 1,830 |
+| Polity lifetimes overlap | 1,766 (47%) |
+| `strength` range; median; mean; 90th percentile | 1-15; 3; 3.34; 7 |
+| `strength` at most 2 | 1,803 (48%) |
+| Out-degree median; maximum | 6; 55 (`republic_of_venice`) |
 
 `strength` does not rank historical succession. `byzantine_empire → ottoman_empire` and `ottoman_empire → vichy_france` both score 2.
 
@@ -83,7 +83,7 @@ A candidate says two polities co-occurred on a macro-zone within a time window, 
 
 The generator maps polities through `old_id` (lines 38-39, 44), and `ethnicity.csv` no longer has that column. It also calls `parseInt` on ids that are now strings (lines 62, 69). `eth` is therefore always null, and lines 205-221 never add anything. Every value in the column is 0.
 
-A scratch patch resolving string ids set the flag on 651 rows and raised the total to 4,174 edges. `csvs/` and `derived/` were not changed.
+A scratch patch, run before the non-polity migration on the 4,107-edge file, resolved string ids, set the flag on 651 rows and raised the total to 4,174 edges. `csvs/` and `derived/` were not changed.
 
 ### Whether A/B/C/D exists
 
@@ -107,7 +107,7 @@ These docs describe the typing as live and are wrong on that point:
 - `docs/model/succession.md:3`, which calls it "currently implemented"; its four categories, colour rules and worked queries are not implemented either, and line 13 still cites civilization membership
 - `docs/brainstorm/succession/README.md:3` and `01-why-redesign.md`, which also still locates the file in `csvs/` and reports an old edge count
 
-If the matrix were applied to the two nearest columns, 856 rows would have ethnicity and territory, 1,837 territory only, 242 ethnicity only and 1,172 neither. The last group is what the docs call "D, Ahistorical / Invalid". This projection is for scale only and is stored nowhere. `tang_dynasty → ottoman_empire`, the README's example, has no row, but that is absence rather than a type.
+If the matrix were applied to the two nearest columns, 780 rows would have ethnicity and territory, 1,596 territory only, 222 ethnicity only and 1,145 neither. The last group is what the docs call "D, Ahistorical / Invalid". This projection is for scale only and is stored nowhere. `tang_dynasty → ottoman_empire`, the README's example, has no row, but that is absence rather than a type.
 
 ---
 
@@ -117,7 +117,7 @@ If the matrix were applied to the two nearest columns, 856 rows would have ethni
 
 | Node | Home | Notes |
 |---|---|---|
-| Polity | `polity.csv` | 523 rows |
+| Polity | `polity.csv` | 482 rows |
 | Territory | `territory.csv` | 54 macro-zones |
 | Dynasty | `dynasty.csv` | A tag, not a tier |
 | Figure | `figure.csv` | |

@@ -62,18 +62,15 @@
         },
         {
           "label": "Kura-Araxes culture",
-          "span": 1,
-          "polity": "kura_araxes_culture"
+          "span": 1
         },
         {
           "label": "Dalma culture",
-          "span": 1,
-          "polity": "dalma_culture"
+          "span": 1
         },
         {
           "label": "Zayanderud culture",
-          "span": 1,
-          "polity": "zayanderud_culture"
+          "span": 1
         },
         {
           "label": "?",
@@ -81,18 +78,15 @@
         },
         {
           "label": "Helmand culture",
-          "span": 1,
-          "polity": "helmand_culture"
+          "span": 1
         },
         {
           "label": "Oxus / BMAC culture",
-          "span": 1,
-          "polity": "bmac_culture"
+          "span": 1
         },
         {
           "label": "Jiroft culture",
-          "span": 1,
-          "polity": "jiroft_culture"
+          "span": 1
         }
       ]
     },
@@ -108,8 +102,7 @@
         },
         {
           "label": "Kura-Araxes / Urartu",
-          "span": 1,
-          "polity": "kura_araxes_culture"
+          "span": 1
         },
         {
           "stack": [
@@ -130,8 +123,7 @@
           "stack": [
             {
               "label": "Proto-Elamite",
-              "note": "c.3100–2700 BCE",
-              "polity": "proto_elamite"
+              "note": "c.3100–2700 BCE"
             },
             {
               "label": "Elam",
@@ -152,8 +144,7 @@
         },
         {
           "label": "Jiroft / Helmand",
-          "span": 1,
-          "polity": "jiroft_culture"
+          "span": 1
         },
         {
           "label": "?",
@@ -243,15 +234,14 @@
             {
               "label": "Scythian / Saka",
               "note": "c.700–300 BCE",
-              "polity": "scythian"
+              "ethnicity": "scythian"
             }
           ],
           "span": 1
         },
         {
           "label": "Jiroft / Helmand",
-          "span": 1,
-          "polity": "jiroft_culture"
+          "span": 1
         },
         {
           "label": "?",

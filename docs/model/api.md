@@ -2,7 +2,7 @@
 
 This is the contract between layer 3 (built JSON in `data/`) and layer 4 (`server.js` + `public/`). If the JSON shapes below hold, the frontend needs nothing else from the data layer. If a generator changes, section 3 says what it feeds and section 5 says whether the change breaks anyone.
 
-Verified on 2026-10-31 by running `node server.js` (port 3000) against a fresh `data/` (523 polities, 4107 succession edges, 54 territories, 192 dynasties, 29 governments, 72 panels). Counts will drift; shapes should not.
+Verified on 2026-10-31 by running `node server.js` (port 3000) against a fresh `data/` (523 polities at the time, 4107 succession edges, 54 territories, 192 dynasties, 29 governments, 72 panels). Row counts below were updated after the non-polity migration (482 polities, 3743 edges). Counts will drift; shapes should not.
 
 ## 1. Boundary rule
 
@@ -21,7 +21,7 @@ Nullability convention used below: `?` means the key can be absent (generators o
 
 ### 2.1 `GET /api/polity`: lightweight list
 
-Source: `db.polities`, projected in `server.js`. 523 rows, about 140 KB.
+Source: `db.polities`, projected in `server.js`. 482 rows, about 130 KB.
 
 | field | type | notes |
 |---|---|---|
@@ -30,8 +30,8 @@ Source: `db.polities`, projected in `server.js`. 523 rows, about 140 KB.
 | `start` | integer | always present in current data; BCE negative |
 | `end` | integer \| null | `null` = ongoing (41 polities) |
 | `ruling_ethnicity` | string \| null | id into ethnicity taxonomy; null for 0 polities today |
-| `cultural_language` | string \| null | id into language taxonomy; null for 57 |
-| `government` | string \| null | id into `/api/government`; null for 27 |
+| `cultural_language` | string \| null | id into language taxonomy; null for 35 |
+| `government` | string \| null | id into `/api/government`; null for 23 |
 | `ideology` | `{religion?, government?}` \| null | null for 6 polities (no religion and no government) |
 | `territories` | string[] | ids into `/api/territory`; `[]` for 6 polities |
 
@@ -82,7 +82,7 @@ Consumer: `public/polity/app.js` (`/polity/?id=<id>`).
 
 ### 2.4 `GET /api/succession`
 
-Flat array of directed edges (4107, about 1.1 MB, the biggest payload). Source: `data/succession/all.json`.
+Flat array of directed edges (3743, about 1.3 MB, the biggest payload). Source: `data/succession/all.json`.
 
 | field | type | notes |
 |---|---|---|
@@ -117,7 +117,7 @@ Consumers: `public/app.js`, `public/graph.html`, `public/territory/app.js`. **No
 
 ### 2.6 `GET /api/taxonomy/:type`, with `type` in `ethnicity | language | religion`
 
-Flat array of nodes (`parent` is the id of the parent node or `null` for roots; the tree is reconstructed client-side). Unknown type gives 404 `{"error":"Unknown taxonomy type"}`. Sizes: 269 / about 695 / 264 nodes.
+Flat array of nodes (`parent` is the id of the parent node or `null` for roots; the tree is reconstructed client-side). Unknown type gives 404 `{"error":"Unknown taxonomy type"}`. Sizes: 276 / about 695 / 264 nodes.
 
 Branch node (has children): `{id, name, parent, description|null, founded|null, status|null}` (religion branches also have `founder|null`).
 Leaf node: the same, plus a block of placeholder fields that the generators hard-code to `null`/`[]` (ethnicity: `historical_depth, languages, origin_territory, ancestry, social_structure, population, major_regions`; language: `iso6393, glottocode, macro_area, coordinates, scripts, speaker_count`; religion: `founder, founded_region, scriptures, theology, adherent_count, major_regions, sub_sects`). **Leaf and branch shapes differ**, and the placeholder fields carry no data. Do not read them. `population.date` / `speaker_count.date` / `adherent_count.date` are the build year, not a data date.
@@ -147,7 +147,9 @@ No frontend page calls any of these.
 
 - `GET /api/panel`: `[{id:"<region>/<name>", title, region}]`, 72 entries. **Unused**: `public/history/index.html` hard-codes its own `REGIONS` list.
 - `GET /api/panel/:region/:id`: the raw panel JSON (`{id, title, columns:[{id,name,slots,type?}], rows…}`) via `res.sendFile`; 404 `{"error":"Panel not found"}`. The client calls it as `/api/panel/${region}/${name}`.
-- Cells reference polities by `polity: "<polity_id>"`. 4395 such references exist; 2205 point at ids not in `data/polity/` (1793 unique). The client degrades to the default colour (`eth-default`), so this is not an error, but it is where retired or never-created ids surface (section 6).
+- Cells reference polities by `polity: "<polity_id>"`. 4191 such references exist; 2077 point at ids not in `data/polity/` (1697 unique). The client degrades to the default colour (`eth-default`), so this is not an error, but it is where retired or never-created ids surface (section 6).
+- A cell may instead hold `ethnicity: "<ethnicity_id>"`, an FK to `ethnicity.csv`, for a people that is not a polity. 57 cells do. An entry has at most one of `polity` and `ethnicity`, and `scripts/validate.js` fails on an unresolved `ethnicity` or on both keys. The client ignores this key today, so these cells render as plain text like a label (`non_polity.md`).
+- A cell with only `label` is the intended form for any other non-polity: a culture, collective, event or period. 767 entries are label-only.
 
 Panels are the layer-1 file shape, so a change to the panel JSON schema is a data-owner change that the history page must follow.
 
@@ -214,7 +216,7 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 - **Succession type.** `docs/model/data-model.md` line 40 (`Succession --[type]--> A | B | C | D`) and `docs/model/succession.md` describe an A/B/C/D classification. **No JSON edge carries it**: `derived/polity_succession.csv` has no such column, `successions.js` copies none, and no `public/` file reads `.type` on an edge. The only classification that reaches the frontend is `territorial_direction` (5 values). Both model docs are stale on this point. Open question for the data owner: is the A/B/C/D matrix retired (then fix the docs), or does it return in the redesign (`docs/brainstorm/succession/`)? Until that is decided, the frontend must not rely on it.
 - **What `public/graph.html` actually uses.** From `/api/polity`: `id, name, start, end, ruling_ethnicity, government, ideology.religion, territories`. From `/api/succession`: `from, to, territorial_direction, shared_territories, temporal_gap_years` (the last is carried but unused). It derives the macro-region itself from a hard-coded 52-territory-id table (all 52 are valid territory ids today) and computes degree and Louvain communities client-side. It does **not** use `strength`, `same_*`, `related_ethnicity`, or `shared_territory_count`. It also hard-codes the five direction types in its filter, and colour tables keyed by religion and government ids.
 - **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: territory ids (`graph.html`), ethnicity ids (`ETH_CLASS` in `history/index.html`), religion and government ids (colour tables in `graph.html`), panel ids (`history/index.html`). A renamed or retired id in those sets degrades silently to a default colour.
-- **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2205 of 4395 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Open question: should `scripts/validate.js` fail on panel references to a missing polity id, or is "label-only" the intended default for non-polity cells?
+- **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2077 of 4191 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Settled: label-only is the intended form for a non-polity cell (section 2.9), and an unresolved `polity` stays a warning until the remaining ids are triaged.
 - **Open:** whether `/api/polity` should carry `policies`/`note`/`figures` (M1), or the index page should fetch the detail; whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
 
 ## 7. PROPOSED (not implemented): JSON shape check in the build

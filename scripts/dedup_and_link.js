@@ -129,6 +129,7 @@ const SYNONYM_MAP = new Map([
   ['western_liao', 'qara_khitai'],
   ['jin_jurchen', 'jin_dynasty'],
   ['hephthalite_empire', 'hephthalites'],
+  ['lysimachus', 'kingdom_of_lysimachus'],
 
   // ── Roman Empire merge ──
   ['roman_empire_pagan', 'roman_empire'],
@@ -204,6 +205,24 @@ const STRIP_LIST = new Set([
   'chu_wu_yue', 'later_chu', 'republics_of_siena',
   // Narrative / sphere-of-influence
   'british_india_sphere',
+  // Retired polity rows: peoples (cells carry `ethnicity`, docs/model/non_polity.md)
+  'berber', 'beja', 'histri', 'illyrians', 'saka', 'cimmerian_scythian_nomads', 'dahae',
+  'donghu', 'scythian', 'celts', 'tupi_guarani', 'belgae', 'germanic_tribes',
+  'free_dacians', 'shiwei', 'pechenegs', 'carib_peoples', 'taino', 'sioux_nations',
+  'celtic_gauls', 'oscan_samnite_peoples', 'latin_sabine_samnite_peoples',
+  'italic_peoples', 'ligurians_euganei_raeti',
+  // Retired polity rows: cultures
+  'olmec', 'ancestral_pueblo', 'proto_elamite', 'mississippian_culture',
+  // Retired polity rows: collectives
+  'five_dynasties', 'ten_kingdoms', 'northern_dynasties', 'southern_dynasties',
+  'sumerian_city_states', 'phoenician_states', 'maya_city_states', 'postclassic_maya',
+  'lombard_principalities', 'magna_graecia', 'phoenician_colonies',
+  'punic_coastal_settlements', 'giudicati_of_sardinia',
+  // Retired polity rows: events
+  'federalization', 'celtic_la_tene_migration',
+  // Ids the labels of those cells and of former *_culture cells would otherwise generate
+  'phoenician_city_states', 'ancestral_puebloans', 'chinese_southern_dynasties',
+  'kura_araxes', 'jiroft',
 ]);
 
 // Convert to snake_case ID
@@ -351,8 +370,9 @@ function resolveLabel(label, existingPolityField, panelId) {
   if (!core || core === '?') return null;
 
   // Try matching to existing polity
+  // A strip-listed row that still exists must not be relinked from its label.
   const existingMatch = matchExistingPolity(core);
-  if (existingMatch) {
+  if (existingMatch && !STRIP_LIST.has(existingMatch)) {
     registerEntity(existingMatch, core, typeForId(existingMatch), panelId, label);
     return existingMatch;
   }
@@ -388,6 +408,7 @@ function resolveLabel(label, existingPolityField, panelId) {
 const panelFiles = findPanelFiles(HISTORY_DIR);
 let totalCells = 0;
 let alreadyLinked = 0;
+let ethnicityLinked = 0;
 let newlyLinked = 0;
 let bugFixed = 0;
 let stripped = 0;
@@ -405,6 +426,12 @@ for (const filePath of panelFiles) {
       for (const item of items) {
         if (!item.label) continue;
         totalCells++;
+
+        // Ethnicity links are authored and never become polity links.
+        if (item.ethnicity) {
+          ethnicityLinked++;
+          continue;
+        }
 
         const result = resolveLabel(item.label, item.polity, panelId);
 
@@ -482,6 +509,7 @@ for (const e of canonicalEntities.values()) {
 console.log(`\n${DRY_RUN ? '[DRY RUN] ' : ''}Processed ${totalCells} cells across ${panelFiles.length} panels\n`);
 console.log('Cell linking:');
 console.log(`  Already linked:   ${alreadyLinked}`);
+console.log(`  Ethnicity links:  ${ethnicityLinked}`);
 console.log(`  Newly linked:     ${newlyLinked}`);
 console.log(`  Bug fixes:        ${bugFixed}`);
 console.log(`  Stripped:         ${stripped} (non-polity polity fields deleted)`);

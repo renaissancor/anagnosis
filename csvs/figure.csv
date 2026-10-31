@@ -1,6 +1,6 @@
 polity_id,figure_id,name,role,years,significance
-sumerian_city_states,gilgamesh,Gilgamesh,ruler,-2700/-2600,Legendary king of Uruk; the Epic of Gilgamesh is the oldest known work of literature
-sumerian_city_states,ur_nammu,Ur-Nammu,founder,-2112/-2095,Author of the earliest known law code
+uruk,gilgamesh,Gilgamesh,ruler,-2700/-2600,Legendary king of Uruk; the Epic of Gilgamesh is the oldest known work of literature
+ur_iii,ur_nammu,Ur-Nammu,founder,-2112/-2095,Author of the earliest known law code
 old_kingdom_egypt,imhotep,Imhotep,administrator,-2650/-2600,Architect of the Step Pyramid; first named architect in history; later deified
 old_kingdom_egypt,khufu,Khufu (Cheops),ruler,-2589/-2566,Commissioned the Great Pyramid of Giza
 akkadian_empire,sargon_akkad,Sargon of Akkad,founder,-2334/-2279,Created the world first empire; conquered all Sumerian city-states
@@ -12,7 +12,8 @@ shang_dynasty,wu_ding,Wu Ding,ruler,-1250/-1192,Greatest Shang king; oracle bone
 new_kingdom_egypt,thutmose_iii,Thutmose III,ruler,-1481/-1425,Greatest military pharaoh; expanded Egypt to its greatest territorial extent
 new_kingdom_egypt,akhenaten,Akhenaten,reformer,-1353/-1336,Revolutionary monotheist attempt (Aten worship); rejected by successors
 new_kingdom_egypt,ramesses_ii,Ramesses II,ruler,-1303/-1213,Signed the first known peace treaty in history (with the Hittites)
-phoenician_states,hiram_tyre,Hiram I of Tyre,ruler,-980/-947,Ally of King Solomon; expanded Phoenician trade networks across the Mediterranean
+tyre,hiram_tyre,Hiram I of Tyre,ruler,-980/-947,Ally of King Solomon; expanded Phoenician trade networks across the Mediterranean
+kingdom_of_lysimachus,lysimachus,Lysimachus,founder,-360/-281,Bodyguard of Alexander who made Thrace the base of his own kingdom; killed at Corupedium
 kingdom_of_israel,david,David,founder,-1040/-970,Unified the Israelite tribes; made Jerusalem the capital
 kingdom_of_israel,solomon,Solomon,ruler,-970/-931,Built the First Temple; his death caused the kingdom split
 zhou_dynasty,confucius,Confucius (Kong Qiu),philosopher,-551/-479,Defined the moral and political philosophy that governed China for 2500 years

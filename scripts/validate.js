@@ -14,7 +14,8 @@
  *   5. Taxonomy parent_id resolves and has no cycles
  *   6. derived/polity_succession.csv: endpoints exist, no self-loops, no duplicate edges,
  *      shared_territories resolve
- *   7. panels/: every cell polity ref resolves (warning — stubs may not exist yet)
+ *   7. panels/: every cell polity ref resolves (warning — stubs may not exist yet);
+ *      every cell ethnicity ref resolves, and no entry has both keys (errors)
  *   8. source.csv: licence is allowlisted, required fields present;
  *      fact_source.csv: table, row, field, and source all resolve
  *
@@ -263,6 +264,8 @@ for (const { file, data } of panels) {
     const entries = [cell, ...(cell.stack || []), ...(cell.split || [])];
     for (const entry of entries) {
       if (entry !== cell) cellCount++;
+      if (entry.polity && entry.ethnicity) err('panel entry has both polity and ethnicity', `${panelId}: ${entry.label}`);
+      if (entry.ethnicity && !ids.ethnicity.has(entry.ethnicity)) err('panel ethnicity ref not in ethnicity.csv', `${panelId}: "${entry.ethnicity}"`);
       if (entry.polity && !ids.polity.has(entry.polity)) {
         unresolvedRefs.set(entry.polity, (unresolvedRefs.get(entry.polity) || 0) + 1);
         if (!unresolvedRefs.has(`${entry.polity}@${panelId}`)) unresolvedRefs.set(`${entry.polity}@${panelId}`, 0);

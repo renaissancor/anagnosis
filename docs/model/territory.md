@@ -118,13 +118,13 @@ Each entry gives the `polity_territory` row count and the earliest `start_year`.
 
 | Group | Zones |
 |---|---|
-| Mediterranean and Europe | `italy` 65 (-1000); `balkans` 38 (-1000); `hungary` 13 (106); `germany` 12 (-200); `iberia` 12 (-600); `gaul` 11 (-600); `bohemia` 10 (-200); `scandinavia` 9 (872); `britannia` 5 (-27); `poland` 5 (966); `prussia` 5 (1230); `lithuania` 4 (1236); `aquitaine` 3 (486); `scotland` 3 (843); `ireland` 1 (1801) |
-| Eastern Europe and steppe | `kievan_rus` 11 (882); `pontic_steppe` 12 (-800); `central_asian_steppe` 31 (-900); `mongolian_plateau` 17 (-700) |
-| Near East and Iran | `iran_plateau` 49 (-3100); `levant` 35 (-2334); `mesopotamia` 33 (-3500); `caucasus` 20 (-860); `anatolia` 16 (-1600); `arabia` 14 (-1200); `khorasan` 37 (-900); `transoxiana` 29 (-550) |
-| Africa | `north_africa` 28 (-3000); `egypt` 24 (-2686); `nubia` 16 (-2686) |
+| Mediterranean and Europe | `italy` 53 (-753); `balkans` 34 (-808); `hungary` 12 (350); `germany` 11 (486); `iberia` 11 (-509); `gaul` 9 (-509); `bohemia` 8 (833); `scandinavia` 9 (872); `britannia` 5 (-27); `poland` 5 (966); `prussia` 5 (1230); `lithuania` 4 (1236); `aquitaine` 3 (486); `scotland` 3 (843); `ireland` 1 (1801) |
+| Eastern Europe and steppe | `kievan_rus` 11 (882); `pontic_steppe` 9 (350); `central_asian_steppe` 28 (-300); `mongolian_plateau` 14 (-209) |
+| Near East and Iran | `iran_plateau` 47 (-2700); `levant` 35 (-2334); `mesopotamia` 33 (-2900); `caucasus` 19 (-860); `anatolia` 16 (-1600); `arabia` 14 (-1200); `khorasan` 34 (-550); `transoxiana` 28 (-550) |
+| Africa | `north_africa` 27 (-814); `egypt` 24 (-2686); `nubia` 15 (-2686) |
 | South Asia | `deccan` 23 (-322); `ganges_plain` 20 (-345); `indus_valley` 20 (-322); `punjab` 19 (-322) |
-| East Asia | `yellow_river` 41 (-2070); `yangtze` 37 (-1200); `manchuria` 16 (-700); `korean_peninsula` 11 (-57); `japanese_archipelago` 8 (250); `okinawa` 1 (1429) |
-| Americas | `andes` 15 (550); `caribbean` 13 (1200); `mesoamerica` 11 (-1500); `us_south` 10 (800); `patagonia` 8 (1400); `us_east` 8 (800); `amazonia` 6 (-500); `us_midwest` 6 (800); `us_west` 5 (100); `quebec` 3 (1534); `atlantic_canada` 3 (1534); `western_canada` 3 (1670); `alaska` 2 (1733) |
+| East Asia | `yellow_river` 38 (-2070); `yangtze` 35 (-1200); `manchuria` 14 (-37); `korean_peninsula` 11 (-57); `japanese_archipelago` 11 (250); `okinawa` 1 (1429) |
+| Americas | `andes` 15 (550); `caribbean` 11 (1492); `mesoamerica` 8 (-500); `us_south` 9 (1513); `patagonia` 8 (1400); `us_east` 7 (1450); `amazonia` 5 (1500); `us_midwest` 4 (1534); `us_west` 3 (1521); `quebec` 3 (1534); `atlantic_canada` 3 (1534); `western_canada` 3 (1670); `alaska` 2 (1733) |
 | Pacific | `hawaii` 3 (1776) |
 
 ### Known problems
@@ -132,7 +132,7 @@ Each entry gives the `polity_territory` row count and the earliest `start_year`.
 **Gaps.** No zone exists for Southeast Asia, Africa south of `nubia` and `north_africa`, Tibet, Sri Lanka, Oceania beyond `hawaii`, or Australia. As a result:
 
 - `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate` and `sulu_sultanate` have no territory row and so no territorial edges. `kingdom_of_tungning` (Taiwan) has none either.
-- `nubia` is a catch-all. Its 16 rows include `aksumite_kingdom`, `solomonic_dynasty`, `kanem_empire`, `darfur_sultanate`, `punt` and `italian_east_africa`.
+- `nubia` is a catch-all. Its 15 rows include `aksumite_kingdom`, `solomonic_dynasty`, `kanem_empire`, `darfur_sultanate`, `punt` and `italian_east_africa`.
 - `tibetan_empire` sits on `central_asian_steppe`.
 - In `scripts/generate_stubs.js`, the panel regions `southeast_asia`, `central_africa`, `southern_africa` and `west_africa` map to no territory, so stubs from them have none.
 

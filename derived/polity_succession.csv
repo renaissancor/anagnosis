@@ -14,10 +14,10 @@ kingdom_of_great_britain,Kingdom of Great Britain,united_kingdom,United Kingdom 
 thirteen_colonies,Thirteen Colonies,united_states,United States of America,expansion,10,us_east|us_south,2,1,0,1,1,0
 german_empire,German Empire (Deutsches Reich),weimar_republic,Weimar Republic,same,10,germany|prussia,2,1,0,1,1,0
 western_han,Western Han,xin,Xin Dynasty (新),same,10,yangtze|yellow_river,2,1,0,1,1,0
-portuguese_brazil,Portuguese Brazil,empire_of_brazil,Empire of Brazil,same,10,amazonia|patagonia,2,1,0,1,1,0
-empire_of_brazil,Empire of Brazil,republic_of_brazil,Federative Republic of Brazil,same,10,amazonia|patagonia,2,1,0,1,1,0
 viceroyalty_of_new_granada,Viceroyalty of New Granada,gran_colombia,Gran Colombia,same,10,andes|caribbean,2,1,0,1,1,0
 venezuela,Republic of Venezuela,colombia,Republic of Colombia,same,10,andes|caribbean,2,1,0,1,1,0
+portuguese_brazil,Portuguese Brazil,empire_of_brazil,Empire of Brazil,same,10,patagonia|amazonia,2,1,0,1,1,0
+empire_of_brazil,Empire of Brazil,republic_of_brazil,Federative Republic of Brazil,same,10,patagonia|amazonia,2,1,0,1,1,0
 achaemenid_empire,Achaemenid Empire,macedonian_empire,Macedonian Empire (Alexander),contraction,9,anatolia|egypt|iran_plateau|khorasan|levant|mesopotamia|transoxiana,7,0,0,0,0,-6
 macedonian_empire,Macedonian Empire (Alexander),seleucid_empire,Seleucid Empire,contraction,9,anatolia|iran_plateau|levant|mesopotamia,4,1,0,0,1,11
 kingdom_of_italy,Kingdom of Italy,italian_albania,Italian Albania,contraction,9,balkans,1,1,0,1,1,-7
@@ -27,7 +27,6 @@ kingdom_of_prussia,Kingdom of Prussia,weimar_republic,Weimar Republic,contractio
 sassanid_empire,Sassanid Empire,dabuyid_dynasty,Dabuyid Dynasty,contraction,9,iran_plateau,1,1,0,1,1,-9
 sassanid_empire,Sassanid Empire,bavandid_dynasty,Bavandid Dynasty,contraction,9,iran_plateau,1,1,0,1,1,0
 ilkhanate,Ilkhanate,jalayirid_sultanate,Jalayirid Sultanate,contraction,9,iran_plateau|mesopotamia,2,1,0,1,0,0
-carolingian_empire,Frankish Kingdom / Carolingian Empire,lombard_principalities,Lombard Principalities of Southern Italy,contraction,9,italy,1,1,0,1,1,6
 carolingian_empire,Frankish Kingdom / Carolingian Empire,principality_of_salerno,Principality of Salerno,contraction,9,italy,1,1,0,1,1,8
 kingdom_of_italy,Kingdom of Italy,italian_republic,Italian Republic,contraction,9,italy,1,1,0,1,1,0
 goguryeo,Goguryeo,unified_silla,Unified Silla,contraction,9,korean_peninsula,1,1,0,1,1,0
@@ -37,17 +36,17 @@ western_jin,Western Jin Dynasty,eastern_jin,Eastern Jin Dynasty,contraction,9,ya
 northern_song,Northern Song Dynasty,southern_song,Southern Song Dynasty,contraction,9,yangtze,1,1,0,1,1,0
 xin,Xin Dynasty (新),xuan_han,Xuan Han (玄汉),contraction,9,yellow_river,1,1,0,1,1,0
 northern_wei,Northern Wei tributary,western_wei,Western Wei / Northern Zhou tributary,contraction,9,yellow_river,1,1,0,1,1,0
-united_states,United States of America,california_republic,California Republic,contraction,9,us_west,1,1,0,1,1,0
 chile,Republic of Chile,peru,Republic of Peru,contraction,9,andes,1,1,0,1,1,0
 chile,Republic of Chile,bolivia,Republic of Bolivia,contraction,9,andes,1,1,0,1,1,0
 chile,Republic of Chile,ecuador,Republic of Ecuador,contraction,9,andes,1,1,0,1,1,0
-united_states,United States of America,texas_republic,Republic of Texas,contraction,9,us_south,1,1,0,1,1,0
-united_states,United States of America,confederate_states,Confederate States of America,contraction,9,us_south,1,1,0,1,1,0
+viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,argentina,Argentine Republic,contraction,9,patagonia,1,1,0,1,1,0
+chile,Republic of Chile,uruguay,Oriental Republic of Uruguay,contraction,9,patagonia,1,1,0,1,1,0
 new_spain,Viceroyalty of New Spain,gran_colombia,Gran Colombia,contraction,9,caribbean,1,1,0,1,1,-2
 venezuela,Republic of Venezuela,dominican_republic,Dominican Republic,contraction,9,caribbean,1,1,0,1,1,0
 colombia,Republic of Colombia,dominican_republic,Dominican Republic,contraction,9,caribbean,1,1,0,1,1,0
-viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,argentina,Argentine Republic,contraction,9,patagonia,1,1,0,1,1,0
-chile,Republic of Chile,uruguay,Oriental Republic of Uruguay,contraction,9,patagonia,1,1,0,1,1,0
+united_states,United States of America,texas_republic,Republic of Texas,contraction,9,us_south,1,1,0,1,1,0
+united_states,United States of America,confederate_states,Confederate States of America,contraction,9,us_south,1,1,0,1,1,0
+united_states,United States of America,california_republic,California Republic,contraction,9,us_west,1,1,0,1,1,0
 united_states,United States of America,hawaii_republic,Republic of Hawaiʻi,contraction,9,hawaii,1,1,0,1,1,0
 german_confederation,German Confederation (Deutscher Bund,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,9,bohemia,1,1,0,1,1,1
 kingdom_of_egypt,Kingdom of Egypt,united_arab_republic,United Arab Republic,expansion,9,egypt,1,1,0,1,1,6
@@ -107,7 +106,6 @@ kingdom_of_denmark,Kingdom of Denmark,kingdom_of_sweden,Kingdom of Sweden,same,9
 zhou_dynasty,Zhou Dynasty,qin_dynasty,Qin Dynasty,same,9,yangtze|yellow_river,2,1,0,1,1,35
 eastern_zhou,Eastern Zhou (东周),qin_dynasty,Qin Dynasty,same,9,yangtze|yellow_river,2,1,0,1,1,35
 qin_dynasty,Qin Dynasty,western_han,Western Han,same,9,yangtze|yellow_river,2,1,0,1,0,4
-eastern_jin,Eastern Jin Dynasty,southern_dynasties,Southern Dynasties,same,9,yangtze,1,1,0,1,1,0
 liu_song,Liu Song (刘宋),southern_qi,Southern Qi (南齐),same,9,yangtze,1,1,0,1,1,0
 southern_qi,Southern Qi (南齐),liang,Liang Dynasty (梁),same,9,yangtze,1,1,0,1,1,0
 liang,Liang Dynasty (梁),chen,Chen Dynasty (陈),same,9,yangtze,1,1,0,1,1,0
@@ -125,7 +123,7 @@ peru,Republic of Peru,ecuador,Republic of Ecuador,same,9,andes,1,1,0,1,1,0
 bolivia,Republic of Bolivia,ecuador,Republic of Ecuador,same,9,andes,1,1,0,1,1,0
 jamestown_colony,Jamestown Colony,plymouth_colony,Plymouth Colony,same,9,us_east,1,1,0,1,1,-4
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),cuba,Republic of Cuba,same,9,caribbean,1,1,0,1,1,4
-macedonian_empire,Macedonian Empire (Alexander),lysimachus,Lysimachus,contraction,8,anatolia,1,1,0,1,1,17
+macedonian_empire,Macedonian Empire (Alexander),kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),contraction,8,anatolia,1,1,0,1,1,17
 hunnic_empire,Hunnic Empire,avar_khaganate,Avar Khaganate,contraction,8,central_asian_steppe|hungary,2,1,0,1,1,115
 first_turkic_khaganate,First Türkic Empire,second_turkic_khaganate,Second Türkic Khaganate,contraction,8,central_asian_steppe|mongolian_plateau,2,1,0,1,1,79
 first_turkic_khaganate,First Türkic Empire,turgesh_khaganate,Turgesh Khaganate,contraction,8,central_asian_steppe|transoxiana,2,1,0,1,1,96
@@ -152,12 +150,10 @@ first_turkic_khaganate,First Türkic Empire,xueyantuo,Xueyantuo,contraction,8,mo
 almohad_caliphate,Almohad Caliphate,hafsid_dynasty,Hafsid Dynasty,contraction,8,north_africa,1,1,0,1,1,-40
 almohad_caliphate,Almohad Caliphate,marinid_dynasty,Marinid Dynasty,contraction,8,north_africa,1,1,0,1,1,-25
 seljuk_empire,Seljuk Empire,khwarazmian_empire,Khwarazmian Empire,contraction,8,transoxiana,1,1,0,1,0,6
-tang_dynasty,Tang Dynasty,ten_kingdoms,Ten Kingdoms (South China),contraction,8,yangtze,1,1,0,1,0,0
 beiyang_government,Beiyang Government (北洋政府),wuhan_government,Wuhan Government (武汉政府),contraction,8,yangtze,1,1,0,1,0,-1
 beiyang_government,Beiyang Government (北洋政府),chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),contraction,8,yangtze,1,1,0,1,0,3
 nationalist_government,Nationalist Government (国民政府),wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),contraction,8,yangtze,1,1,0,1,0,-9
 western_han,Western Han,xuan_han,Xuan Han (玄汉),contraction,8,yellow_river,1,1,0,1,1,14
-tang_dynasty,Tang Dynasty,five_dynasties,Five Dynasties (North China),contraction,8,yellow_river,1,1,0,1,0,0
 kingdom_of_france,Kingdom of France,angevin_empire,Angevin Empire,expansion,8,aquitaine|gaul,2,1,0,1,1,-638
 hungarian_grand_principality,Hungarian Grand Principality,hungary,Hungary,expansion,8,hungary,1,1,0,1,0,0
 grand_duchy_of_tuscany,Grand Duchy of Tuscany,kingdom_of_italy,Kingdom of Italy,expansion,8,italy,1,1,0,1,0,2
@@ -168,11 +164,7 @@ zirid_dynasty,Zirid Dynasty,almohad_caliphate,Almohad Caliphate,expansion,8,nort
 pakistan,Pakistan,republic_of_india,Republic of India,expansion,8,punjab,1,1,0,1,0,0
 eastern_wu,Eastern Wu,western_jin,Western Jin Dynasty,expansion,8,yangtze,1,1,0,1,1,-15
 liang,Liang Dynasty (梁),sui_dynasty,Sui Dynasty,expansion,8,yangtze,1,1,0,1,1,24
-ten_kingdoms,Ten Kingdoms (South China),song_dynasty,Song Dynasty,expansion,8,yangtze,1,1,0,1,1,-19
-ten_kingdoms,Ten Kingdoms (South China),northern_song,Northern Song Dynasty,expansion,8,yangtze,1,1,0,1,1,-19
 wuhan_government,Wuhan Government (武汉政府),nationalist_government,Nationalist Government (国民政府),expansion,8,yangtze,1,1,0,1,0,1
-five_dynasties,Five Dynasties (North China),song_dynasty,Song Dynasty,expansion,8,yellow_river,1,1,0,1,0,0
-five_dynasties,Five Dynasties (North China),northern_song,Northern Song Dynasty,expansion,8,yellow_river,1,1,0,1,0,0
 later_zhou,Later Zhou (后周),song_dynasty,Song Dynasty,expansion,8,yellow_river,1,1,0,1,0,0
 later_zhou,Later Zhou (后周),northern_song,Northern Song Dynasty,expansion,8,yellow_river,1,1,0,1,0,0
 odoacer_kingdom,Kingdom of Odoacer,carolingian_empire,Frankish Kingdom / Carolingian Empire,expansion,8,,0,1,0,1,1,-7
@@ -186,8 +178,6 @@ german_empire,German Empire (Deutsches Reich),nazi_germany,Nazi Germany (Third R
 afsharid_dynasty,Afsharid Dynasty,qajar_dynasty,Qajar Dynasty,same,8,iran_plateau|khorasan,2,1,0,0,1,0
 qajar_dynasty,Qajar Dynasty,pahlavi_dynasty,Pahlavi Dynasty,same,8,iran_plateau|khorasan,2,1,0,0,1,0
 pahlavi_dynasty,Pahlavi Dynasty,islamic_republic_iran,Islamic Republic of Iran,same,8,iran_plateau|khorasan,2,1,0,0,1,0
-phoenician_colonies,Phoenician Colonies of Sardinia,carthaginian_sardinia,Carthaginian Sardinia,same,8,italy,1,1,0,1,0,0
-phoenician_colonies,Phoenician Colonies of Sardinia,carthaginian_western_sicily,Carthaginian Western Sicily,same,8,italy,1,1,0,1,0,0
 ostrogothic_kingdom,Ostrogothic Kingdom of Italy,lombard_kingdom,Kingdom of the Lombards,same,8,italy,1,1,0,1,1,15
 ostrogothic_kingdom,Ostrogothic Kingdom of Italy,lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,same,8,italy,1,1,0,1,1,17
 ostrogothic_kingdom,Ostrogothic Kingdom of Italy,lombard_duchy_of_benevento,Lombard Duchy of Benevento,same,8,italy,1,1,0,1,1,18
@@ -199,7 +189,6 @@ oda_toyotomi_government,Oda-Toyotomi Government (織豊政権),tokugawa_shogunat
 goryeo,Goryeo Dynasty,joseon,Joseon Dynasty,same,8,korean_peninsula,1,1,0,1,0,0
 zangid_atabegate,Zangid Atabegate,zengid_dynasty,Zengid Dynasty,same,8,levant|mesopotamia,2,1,0,1,1,-123
 zangid_atabegate,Zangid Atabegate,mamluk_sultanate,Mamluk Sultanate,same,8,levant,1,1,0,1,0,0
-berber,Berber / Mauretania,numidia,Kingdom of Numidia,same,8,north_africa,1,1,0,1,0,-2
 hafsid_dynasty,Hafsid Dynasty,saadian_dynasty,Saadian Dynasty,same,8,north_africa,1,1,0,1,1,-25
 saadian_dynasty,Saadian Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,8,north_africa,1,1,0,1,1,-28
 zhou_dynasty,Zhou Dynasty,eastern_zhou,Eastern Zhou (东周),same,8,yangtze|yellow_river,2,1,0,1,1,-514
@@ -213,15 +202,13 @@ chinese_empire,Empire of China (Yuan Shikai) (中华帝国),nationalist_governme
 wuhan_government,Wuhan Government (武汉政府),chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),same,8,yangtze,1,1,0,1,0,4
 chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),same,8,yangtze,1,1,0,1,0,3
 cao_wei,Cao Wei,shu_han,Shu Han,same,8,yellow_river,1,1,0,1,1,-44
-five_dynasties,Five Dynasties (North China),later_zhou,Later Zhou (后周),same,8,yellow_river,1,1,0,1,0,-9
 later_liang,Later Liang / Northern Liang,later_jin,Later Jin,same,8,yellow_river,1,1,0,1,1,13
 later_liang,Later Liang / Northern Liang,later_han,Later Han,same,8,yellow_river,1,1,0,1,1,24
 later_tang,Later Tang (后唐),later_zhou,Later Zhou (后周),same,8,yellow_river,1,1,0,1,1,14
-maya_city_states,Maya City-States (Tikal; Calakmul),postclassic_maya,Postclassic Maya (Mayapan; K'iche'),same,8,mesoamerica,1,1,0,1,0,0
 first_mexican_empire,First Mexican Empire,second_mexican_empire,Second Mexican Empire,same,8,mesoamerica,1,1,0,1,1,41
-portuguese_brazil,Portuguese Brazil,republic_of_brazil,Federative Republic of Brazil,same,8,amazonia|patagonia,2,1,0,1,1,67
 viceroyalty_of_peru,Viceroyalty of Peru,viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,same,8,andes,1,1,0,1,1,-48
 viceroyalty_of_new_granada,Viceroyalty of New Granada,viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,same,8,andes,1,1,0,1,1,-43
+portuguese_brazil,Portuguese Brazil,republic_of_brazil,Federative Republic of Brazil,same,8,patagonia|amazonia,2,1,0,1,1,67
 texas_republic,Republic of Texas,confederate_states,Confederate States of America,same,8,us_south,1,1,0,1,1,15
 first_mexican_empire,First Mexican Empire,mexico,Mexico (United Mexican States),same,8,,0,1,0,1,1,-2
 roman_empire,Roman Empire,byzantine_empire,Byzantine Empire,contraction,7,anatolia|balkans|egypt|levant|north_africa,5,0,0,0,0,0
@@ -265,7 +252,6 @@ almoravid_dynasty,Almoravid Dynasty,hafsid_dynasty,Hafsid Dynasty,contraction,7,
 almoravid_dynasty,Almoravid Dynasty,marinid_dynasty,Marinid Dynasty,contraction,7,north_africa,1,1,0,1,1,97
 almohad_caliphate,Almohad Caliphate,banu_ghaniya,Banu Ghaniya,contraction,7,north_africa,1,1,0,1,1,-121
 muhammad_ali_dynasty,Muhammad Ali dynasty,mahdist_state,Mahdist State,contraction,7,nubia,1,1,0,1,1,-68
-western_jin,Western Jin Dynasty,southern_dynasties,Southern Dynasties,contraction,7,yangtze,1,1,0,1,1,104
 song_dynasty,Song Dynasty,southern_song,Southern Song Dynasty,contraction,7,yangtze,1,1,0,1,1,-152
 ming_dynasty,Ming Dynasty,southern_ming,Southern Ming (南明),contraction,7,yangtze,1,1,0,0,1,0
 republic_of_china,Republic of China,beiyang_government,Beiyang Government (北洋政府),contraction,7,yangtze|yellow_river,2,1,0,0,0,0
@@ -280,19 +266,19 @@ zhou_dynasty,Zhou Dynasty,western_zhou,Western Zhou (西周),contraction,7,yello
 tang_dynasty,Tang Dynasty,later_tang,Later Tang (后唐),contraction,7,yellow_river,1,1,0,1,0,16
 tang_dynasty,Tang Dynasty,later_zhou,Later Zhou (后周),contraction,7,yellow_river,1,1,0,1,0,44
 thirteen_colonies,Thirteen Colonies,plymouth_colony,Plymouth Colony,contraction,7,us_east,1,1,0,1,1,-156
-thirteen_colonies,Thirteen Colonies,texas_republic,Republic of Texas,contraction,7,us_south,1,1,0,1,1,60
-thirteen_colonies,Thirteen Colonies,confederate_states,Confederate States of America,contraction,7,us_south,1,1,0,1,1,85
-new_france,New France,louisiana_territory,Louisiana Territory (French),contraction,7,us_midwest,1,1,0,1,1,-81
 new_spain,Viceroyalty of New Spain,viceroyalty_of_new_granada,Viceroyalty of New Granada,contraction,7,caribbean,1,1,0,1,1,-104
 new_spain,Viceroyalty of New Spain,cuba,Republic of Cuba,contraction,7,caribbean,1,1,0,1,1,81
 viceroyalty_of_new_granada,Viceroyalty of New Granada,cuba,Republic of Cuba,contraction,7,caribbean,1,1,0,1,1,83
 gran_colombia,Gran Colombia,cuba,Republic of Cuba,contraction,7,caribbean,1,1,0,1,1,71
+thirteen_colonies,Thirteen Colonies,texas_republic,Republic of Texas,contraction,7,us_south,1,1,0,1,1,60
+thirteen_colonies,Thirteen Colonies,confederate_states,Confederate States of America,contraction,7,us_south,1,1,0,1,1,85
+new_france,New France,louisiana_territory,Louisiana Territory (French),contraction,7,us_midwest,1,1,0,1,1,-81
 umayyad_caliphate,Umayyad Caliphate,al_andalus,Al-Andalus,contraction,7,,0,1,0,1,1,-39
 ghaznavid_empire,Ghaznavid Empire,khwarazmian_empire,Khwarazmian Empire,contraction,7,,0,1,0,1,1,14
 middle_assyrian_empire,Middle Assyrian Empire,neo_assyrian_empire,Neo-Assyrian Empire,expansion,7,anatolia|levant|mesopotamia,3,1,0,0,1,145
 seljuk_rum,Sultanate of Rum,ottoman_empire,Ottoman Empire,expansion,7,anatolia,1,1,0,0,1,-8
-macedonian_kingdom,Macedonian Kingdom,lysimachus,Lysimachus,expansion,7,balkans,1,1,0,1,1,-138
-kingdom_of_epirus,Kingdom of Epirus,lysimachus,Lysimachus,expansion,7,balkans,1,1,0,1,1,-139
+macedonian_kingdom,Macedonian Kingdom,kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),expansion,7,balkans,1,1,0,1,1,-138
+kingdom_of_epirus,Kingdom of Epirus,kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),expansion,7,balkans,1,1,0,1,1,-139
 holy_roman_empire,Holy Roman Empire,austrian_empire,Austrian Empire,expansion,7,bohemia|italy,2,1,0,0,0,-2
 habsburg_monarchy,Habsburg Monarchy,austrian_empire,Austrian Empire,expansion,7,bohemia|hungary,2,1,0,1,0,-114
 habsburg_monarchy,Habsburg Monarchy,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,7,bohemia|hungary,2,1,0,1,0,-51
@@ -321,15 +307,14 @@ chen,Chen Dynasty (陈),tang_dynasty,Tang Dynasty,expansion,7,yangtze,1,1,0,1,0,
 chen,Chen Dynasty (陈),wu_zhou,Wu Zhou (武周),expansion,7,yangtze,1,1,0,1,1,101
 nationalist_government,Nationalist Government (国民政府),peoples_republic_of_china,People's Republic of China,expansion,7,yangtze|yellow_river,2,1,0,0,0,0
 xuan_han,Xuan Han (玄汉),eastern_han,Eastern Han (东汉),expansion,7,yellow_river,1,1,0,0,1,0
-northern_dynasties,Northern Dynasties,sui_dynasty,Sui Dynasty,expansion,7,yellow_river,1,1,0,0,1,0
 later_tang,Later Tang (后唐),song_dynasty,Song Dynasty,expansion,7,yellow_river,1,1,0,1,0,23
 later_tang,Later Tang (后唐),northern_song,Northern Song Dynasty,expansion,7,yellow_river,1,1,0,1,0,23
 plymouth_colony,Plymouth Colony,united_states,United States of America,expansion,7,us_east,1,1,0,1,1,85
-spanish_florida,Spanish Florida,new_spain,Viceroyalty of New Spain,expansion,7,us_south,1,1,0,1,1,-300
-rupert_land,Rupert's Land (Hudson's Bay Company),united_states,United States of America,expansion,7,us_midwest,1,1,0,1,1,-94
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),new_spain,Viceroyalty of New Spain,expansion,7,caribbean,1,1,0,1,1,-377
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),viceroyalty_of_new_granada,Viceroyalty of New Granada,expansion,7,caribbean,1,1,0,1,1,-181
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),gran_colombia,Gran Colombia,expansion,7,caribbean,1,1,0,1,1,-79
+spanish_florida,Spanish Florida,new_spain,Viceroyalty of New Spain,expansion,7,us_south,1,1,0,1,1,-300
+rupert_land,Rupert's Land (Hudson's Bay Company),united_states,United States of America,expansion,7,us_midwest,1,1,0,1,1,-94
 rupert_land,Rupert's Land (Hudson's Bay Company),canada,Canada,expansion,7,western_canada,1,1,0,1,1,112
 jamestown_colony,Jamestown Colony,thirteen_colonies,Thirteen Colonies,expansion,7,,0,1,0,1,1,-17
 ziyadid_dynasty,Ziyadid Dynasty,sulayhid_dynasty,Sulayhid Dynasty,same,7,arabia,1,1,0,1,0,29
@@ -338,7 +323,6 @@ second_bulgarian_empire,Second Bulgarian Empire,serbian_empire,Serbian Empire (N
 second_bulgarian_empire,Second Bulgarian Empire,bosnian_kingdom,Bosnian Kingdom,same,7,balkans,1,1,0,1,0,-19
 serbian_empire,Serbian Empire (Nemanjić Dynasty),bosnian_kingdom,Bosnian Kingdom,same,7,balkans,1,1,0,1,0,-12
 principality_of_wallachia,Principality of Wallachia,principality_of_moldavia,Principality of Moldavia,same,7,balkans,1,1,0,1,1,-513
-czechoslovakia,Czechoslovakia,federalization,Federalization,same,7,bohemia,1,1,0,1,0,-24
 second_turkic_khaganate,Second Türkic Khaganate,uyghur_khaganate,Uyghur Khaganate,same,7,central_asian_steppe|mongolian_plateau,2,1,0,0,0,0
 dzungar_khanate,Dzungar Khanate,khoshut_khanate,Khoshut Khanate,same,7,central_asian_steppe,1,1,0,1,1,-113
 pandya_dynasty,Pandya Dynasty,pallava_dynasty,Pallava Dynasty,same,7,deccan,1,1,0,1,1,-1070
@@ -369,16 +353,11 @@ byzantine_sicilian_theme,Byzantine Sicilian Theme,byzantine_exarchate_of_ravenna
 byzantine_sicilian_theme,Byzantine Sicilian Theme,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,7,italy,1,1,0,1,1,138
 lombard_kingdom,Kingdom of the Lombards,lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,same,7,italy,1,1,0,1,1,-204
 lombard_kingdom,Kingdom of the Lombards,lombard_duchy_of_benevento,Lombard Duchy of Benevento,same,7,italy,1,1,0,1,1,-203
-lombard_kingdom,Kingdom of the Lombards,lombard_principalities,Lombard Principalities of Southern Italy,same,7,italy,1,1,0,1,1,75
 lombard_kingdom,Kingdom of the Lombards,principality_of_salerno,Principality of Salerno,same,7,italy,1,1,0,1,1,77
 lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,lombard_duchy_of_benevento,Lombard Duchy of Benevento,same,7,italy,1,1,0,1,1,-203
-lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,lombard_principalities,Lombard Principalities of Southern Italy,same,7,italy,1,1,0,1,1,75
 lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,principality_of_salerno,Principality of Salerno,same,7,italy,1,1,0,1,1,77
-lombard_duchy_of_benevento,Lombard Duchy of Benevento,lombard_principalities,Lombard Principalities of Southern Italy,same,7,italy,1,1,0,1,1,-228
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,principality_of_salerno,Principality of Salerno,same,7,italy,1,1,0,1,1,-226
 emirate_of_sicily,Emirate of Sicily,arab_emirate_of_bari,Arab Emirate of Bari,same,7,italy,1,1,0,1,1,-225
-lombard_principalities,Lombard Principalities of Southern Italy,principality_of_salerno,Principality of Salerno,same,7,italy,1,1,0,1,1,-226
-giudicati_of_sardinia,Giudicati of Sardinia,giudicati_torres,Giudicato of Torres,same,7,italy,1,1,0,1,1,-520
 giudicati_torres,Giudicato of Torres,pisan_county_of_cagliari,Pisan County of Cagliari,same,7,italy,1,1,0,0,1,-1
 countyduchy_of_savoy,County and Duchy of Savoy,kingdom_of_sardinia,Kingdom of Sardinia,same,7,italy,1,1,0,1,1,-396
 republic_of_genoa,Republic of Genoa,republic_of_florence,Republic of Florence,same,7,italy,1,1,0,1,1,-682
@@ -417,7 +396,6 @@ khanate_of_khiva,Khanate of Khiva,khanate_of_kokand,Khanate of Kokand,same,7,tra
 zhou_dynasty,Zhou Dynasty,western_han,Western Han,same,7,yangtze|yellow_river,2,1,0,1,0,54
 eastern_zhou,Eastern Zhou (东周),western_han,Western Han,same,7,yangtze|yellow_river,2,1,0,1,0,54
 western_han,Western Han,eastern_han,Eastern Han (东汉),same,7,yangtze|yellow_river,2,1,0,0,1,16
-eastern_wu,Eastern Wu,southern_dynasties,Southern Dynasties,same,7,yangtze,1,1,0,1,1,140
 huan_chu,Huan Chu (桓楚),southern_qi,Southern Qi (南齐),same,7,yangtze,1,1,0,1,1,75
 huan_chu,Huan Chu (桓楚),liang,Liang Dynasty (梁),same,7,yangtze,1,1,0,1,1,98
 liu_song,Liu Song (刘宋),chen,Chen Dynasty (陈),same,7,yangtze,1,1,0,1,1,78
@@ -425,9 +403,7 @@ southern_qi,Southern Qi (南齐),chen,Chen Dynasty (陈),same,7,yangtze,1,1,0,1,
 tang_dynasty,Tang Dynasty,wu_zhou,Wu Zhou (武周),same,7,yangtze|yellow_river,2,1,0,1,0,-217
 tang_dynasty,Tang Dynasty,song_dynasty,Song Dynasty,same,7,yangtze|yellow_river,2,1,0,1,0,53
 tang_dynasty,Tang Dynasty,northern_song,Northern Song Dynasty,same,7,yangtze|yellow_river,2,1,0,1,0,53
-ten_kingdoms,Ten Kingdoms (South China),southern_song,Southern Song Dynasty,same,7,yangtze,1,1,0,1,1,148
 wuhan_government,Wuhan Government (武汉政府),wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),same,7,yangtze,1,1,0,1,0,13
-five_dynasties,Five Dynasties (North China),later_tang,Later Tang (后唐),same,7,yellow_river,1,1,0,1,0,-37
 later_liang,Later Liang / Northern Liang,later_tang,Later Tang (后唐),same,7,yellow_river,1,1,0,0,1,0
 later_tang,Later Tang (后唐),later_jin,Later Jin,same,7,yellow_river,1,1,0,0,1,-1
 later_tang,Later Tang (后唐),later_han,Later Han,same,7,yellow_river,1,1,0,0,1,10
@@ -439,7 +415,6 @@ gran_colombia,Gran Colombia,venezuela,Republic of Venezuela,same,7,andes|caribbe
 gran_colombia,Gran Colombia,colombia,Republic of Colombia,same,7,andes|caribbean,2,0,0,1,1,0
 north_korea,Democratic People's Republic of Korea (North Korea),south_korea,Republic of Korea (South Korea),same,7,,0,1,0,1,0,0
 ottoman_empire,Ottoman Empire,republic_of_turkey,Republic of Turkey,contraction,6,anatolia,1,1,0,0,0,1
-dahae,Dahae,wusun,Wusun,contraction,6,central_asian_steppe,1,1,0,0,0,0
 hephthalites,Hephthalites,avar_khaganate,Avar Khaganate,contraction,6,central_asian_steppe,1,1,0,0,0,8
 chagatai_khanate,Chagatai Khanate,moghulistan,Moghulistan Khanate,contraction,6,central_asian_steppe,1,1,0,0,0,0
 mughal_empire,Mughal Empire,hyderabad_state,Nizam of Hyderabad,contraction,6,deccan,1,1,0,1,0,-133
@@ -483,7 +458,6 @@ republic_of_china,Republic of China,chinese_soviet_republic,Chinese Soviet Repub
 republic_of_china,Republic of China,wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),contraction,6,yangtze,1,1,0,0,0,0
 eastern_han,Eastern Han (东汉),cao_wei,Cao Wei,contraction,6,yellow_river,1,1,0,0,0,0
 eastern_han,Eastern Han (东汉),shu_han,Shu Han,contraction,6,yellow_river,1,1,0,0,0,1
-western_jin,Western Jin Dynasty,northern_dynasties,Northern Dynasties,contraction,6,yellow_river,1,1,0,1,0,70
 tang_dynasty,Tang Dynasty,later_liang,Later Liang / Northern Liang,contraction,6,yellow_river,1,1,0,0,0,0
 ming_dynasty,Ming Dynasty,shun,Shun Dynasty (顺),contraction,6,yellow_river,1,1,0,0,0,0
 new_spain,Viceroyalty of New Spain,mexico,Mexico (United Mexican States),contraction,6,mesoamerica,1,0,0,1,1,0
@@ -535,7 +509,6 @@ cossack_hetmanate,Cossack Hetmanate,russian_empire,Russian Empire,expansion,6,po
 jammu_kashmir,Jammu & Kashmir,pakistan,Pakistan,expansion,6,punjab,1,1,0,0,0,0
 khwarazmian_empire,Khwarazmian Empire,timurid_empire,Timurid Empire,expansion,6,transoxiana,1,1,0,1,0,150
 khanate_of_khiva,Khanate of Khiva,turkestan_assr,Turkestan ASSR,expansion,6,transoxiana,1,1,0,0,0,-2
-southern_dynasties,Southern Dynasties,sui_dynasty,Sui Dynasty,expansion,6,yangtze,1,1,0,0,0,-8
 liu_song,Liu Song (刘宋),tang_dynasty,Tang Dynasty,expansion,6,yangtze,1,1,0,1,0,139
 southern_qi,Southern Qi (南齐),tang_dynasty,Tang Dynasty,expansion,6,yangtze,1,1,0,1,0,116
 liang,Liang Dynasty (梁),tang_dynasty,Tang Dynasty,expansion,6,yangtze,1,1,0,1,0,61
@@ -553,7 +526,6 @@ kingdom_of_egypt,Kingdom of Egypt,muhammad_ali_dynasty,Muhammad Ali dynasty,expa
 jamestown_colony,Jamestown Colony,united_states,United States of America,expansion,6,,0,1,0,1,1,152
 holy_roman_empire,Holy Roman Empire,habsburg_monarchy,Habsburg Monarchy,same,6,bohemia|germany,2,1,0,0,1,-368
 karabakh_khanate,Karabakh Khanate,azerbaijan_peoples_government,Azerbaijan Peoples Government,same,6,caucasus,1,1,0,1,0,123
-dahae,Dahae,kangju,Kangju,same,6,central_asian_steppe,1,1,0,0,0,0
 uyghur_khaganate,Uyghur Khaganate,kara_khanid_khanate,Kara-Khanid Khanate,same,6,central_asian_steppe,1,1,0,0,0,0
 chera_dynasty,Chera Dynasty,kakatiya_dynasty,Kakatiya Dynasty,same,6,deccan,1,1,0,0,1,-19
 kadamba_dynasty,Kadamba Dynasty,chalukya_dynasty,Chalukya Dynasty (Badami),same,6,deccan,1,1,0,0,1,18
@@ -573,18 +545,10 @@ hormuz_kingdom,Hormuz Kingdom,karkiya_dynasty,Kar-Kiya Dynasty,same,6,iran_plate
 hormuz_kingdom,Hormuz Kingdom,zand_dynasty,Zand Dynasty,same,6,iran_plateau,1,1,0,1,0,129
 afsharid_dynasty,Afsharid Dynasty,pahlavi_dynasty,Pahlavi Dynasty,same,6,iran_plateau|khorasan,2,1,0,0,1,129
 qajar_dynasty,Qajar Dynasty,islamic_republic_iran,Islamic Republic of Iran,same,6,iran_plateau|khorasan,2,1,0,0,1,54
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,italic_peoples,Italic Peoples,same,6,italy,1,1,0,1,0,-500
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,oscan_samnite_peoples,Oscan-Samnite Peoples,same,6,italy,1,1,0,1,0,-100
-italic_peoples,Italic Peoples,oscan_samnite_peoples,Oscan-Samnite Peoples,same,6,italy,1,1,0,1,0,-100
-phoenician_colonies,Phoenician Colonies of Sardinia,punic_coastal_settlements,Punic Coastal Settlements,same,6,italy,1,1,0,1,0,-250
-punic_coastal_settlements,Punic Coastal Settlements,carthaginian_sardinia,Carthaginian Sardinia,same,6,italy,1,1,0,1,0,-275
-punic_coastal_settlements,Punic Coastal Settlements,carthaginian_western_sicily,Carthaginian Western Sicily,same,6,italy,1,1,0,1,0,-275
 carthaginian_sardinia,Carthaginian Sardinia,carthaginian_western_sicily,Carthaginian Western Sicily,same,6,italy,1,1,0,1,0,-312
-celtic_la_tene_migration,Celtic La Tène Migration,celtic_gauls,Cisalpine Celtic Gauls,same,6,italy,1,1,0,1,0,-178
 papal_states,Papal States,tuscan_march,March of Tuscany,same,6,italy,1,1,0,1,0,-1070
 tuscan_march,March of Tuscany,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,6,italy,1,0,0,1,1,-3
 tuscan_march,March of Tuscany,hohenstaufen,Hohenstaufen Imperial Italy,same,6,italy,1,0,0,1,1,-3
-giudicati_of_sardinia,Giudicati of Sardinia,duchy_of_milan,Duchy of Milan,same,6,italy,1,1,0,0,1,-25
 giudicati_torres,Giudicato of Torres,kingdom_of_sicily,Kingdom of Sicily,same,6,italy,1,1,0,0,1,23
 giudicati_torres,Giudicato of Torres,kingdom_of_naples,Kingdom of Naples,same,6,italy,1,1,0,0,1,23
 republic_of_genoa,Republic of Genoa,kingdom_of_the_two_sicilies,Kingdom of the Two Sicilies,same,6,italy,1,1,0,0,1,19
@@ -607,7 +571,6 @@ cisalpine,Cisalpine / Italian Republic,italian_republic,Italian Republic,same,6,
 yamato_kingdom,Yamato Kingdom,ritsuryo_japan,Ritsuryō Japan (律令国家),same,6,japanese_archipelago,1,1,0,0,0,0
 unified_silla,Unified Silla,goryeo,Goryeo Dynasty,same,6,korean_peninsula,1,1,0,0,1,-17
 old_babylonian,Old Babylonian Empire,kassite_babylon,Kassite Babylon,same,6,mesopotamia,1,0,0,1,1,-5
-berber,Berber / Mauretania,mauretania_kingdom,Mauretania Kingdom,same,6,north_africa,1,1,0,1,0,-85
 mauretania_kingdom,Mauretania Kingdom,numidia,Kingdom of Numidia,same,6,north_africa,1,1,0,1,0,-242
 muhallabid_governors,Muhallabid governors,idrisid_dynasty,Idrisid Dynasty,same,6,north_africa,1,0,0,1,1,-5
 zagwe_dynasty,Zagwe Dynasty,solomonic_dynasty,Ethiopian Empire (Solomonic),same,6,nubia,1,0,0,1,1,0
@@ -621,8 +584,6 @@ kingdom_of_denmark,Kingdom of Denmark,modern_norway,Norway,same,6,scandinavia,1,
 eastern_han,Eastern Han (东汉),western_jin,Western Jin Dynasty,same,6,yangtze|yellow_river,2,1,0,0,0,45
 eastern_jin,Eastern Jin Dynasty,liu_song,Liu Song (刘宋),same,6,yangtze,1,1,0,0,0,0
 xia,Xia Dynasty (夏),shang_dynasty,Shang Dynasty,same,6,yellow_river,1,1,0,0,0,0
-cao_wei,Cao Wei,northern_dynasties,Northern Dynasties,same,6,yellow_river,1,1,0,1,0,121
-shu_han,Shu Han,northern_dynasties,Northern Dynasties,same,6,yellow_river,1,1,0,1,0,123
 later_liang,Later Liang / Northern Liang,later_zhou,Later Zhou (后周),same,6,yellow_river,1,1,0,0,1,28
 viceroyalty_of_peru,Viceroyalty of Peru,chile,Republic of Chile,same,6,andes,1,0,0,1,1,-6
 viceroyalty_of_peru,Viceroyalty of Peru,venezuela,Republic of Venezuela,same,6,andes,1,0,0,1,1,6
@@ -631,17 +592,17 @@ viceroyalty_of_new_granada,Viceroyalty of New Granada,chile,Republic of Chile,sa
 viceroyalty_of_new_granada,Viceroyalty of New Granada,venezuela,Republic of Venezuela,same,6,andes|caribbean,2,0,0,1,1,11
 viceroyalty_of_new_granada,Viceroyalty of New Granada,colombia,Republic of Colombia,same,6,andes|caribbean,2,0,0,1,1,12
 chile,Republic of Chile,gran_colombia,Gran Colombia,same,6,andes,1,0,0,1,1,0
+argentina,Argentine Republic,uruguay,Oriental Republic of Uruguay,same,6,patagonia,1,0,0,1,1,0
 french_caribbean,French Caribbean,haiti,Republic of Haiti,same,6,caribbean,1,0,0,1,1,0
 dominican_republic,Dominican Republic,cuba,Republic of Cuba,same,6,caribbean,1,0,0,1,1,0
-argentina,Argentine Republic,uruguay,Oriental Republic of Uruguay,same,6,patagonia,1,0,0,1,1,0
-idrisid_dynasty,Idrisid Dynasty,banu_ghaniya,Banu Ghaniya,same,6,,0,1,0,1,1,174
-marinid_dynasty,Marinid Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,6,,0,1,0,1,1,166
 karkiya_dynasty,Kar-Kiya Dynasty,zand_dynasty,Zand Dynasty,same,6,,0,1,0,1,1,159
 huan_chu,Huan Chu (桓楚),chen,Chen Dynasty (陈),same,6,,0,1,0,1,1,153
 northern_song,Northern Song Dynasty,song_dynasty,Song Dynasty,same,6,,0,1,0,1,1,-167
 chera_dynasty,Chera Dynasty,chola_empire,Chola Empire,same,6,,0,1,0,1,1,-1402
 chera_dynasty,Chera Dynasty,pandya_dynasty,Pandya Dynasty,same,6,,0,1,0,1,1,-1402
 chola_empire,Chola Empire,pandya_dynasty,Pandya Dynasty,same,6,,0,1,0,1,1,-1579
+idrisid_dynasty,Idrisid Dynasty,banu_ghaniya,Banu Ghaniya,same,6,,0,1,0,1,1,174
+marinid_dynasty,Marinid Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,6,,0,1,0,1,1,166
 ikhshidid_dynasty,Ikhshidid Dynasty,zangid_atabegate,Zangid Atabegate,same,6,,0,1,0,1,1,158
 ikhshidid_dynasty,Ikhshidid Dynasty,zengid_dynasty,Zengid Dynasty,same,6,,0,1,0,1,1,158
 ritsuryo_japan,Ritsuryō Japan (律令国家),ashikaga_shogunate,Ashikaga Shogunate,same,6,,0,1,0,1,1,151
@@ -651,7 +612,7 @@ first_bulgarian_empire,First Bulgarian Empire,second_bulgarian_empire,Second Bul
 first_bulgarian_empire,First Bulgarian Empire,serbian_empire,Serbian Empire (Nemanjić Dynasty),same,6,,0,1,0,1,1,172
 east_germany,German Democratic Republic (East Germany),federal_republic_germany,Federal Republic of Germany,same,6,,0,1,0,1,0,-41
 achaemenid_empire,Achaemenid Empire,seleucid_empire,Seleucid Empire,contraction,5,anatolia|iran_plateau|levant|mesopotamia,4,0,0,0,0,18
-seleucid_empire,Seleucid Empire,lysimachus,Lysimachus,contraction,5,anatolia,1,1,0,0,1,-243
+seleucid_empire,Seleucid Empire,kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),contraction,5,anatolia,1,1,0,0,1,-243
 austrian_empire,Austrian Empire,kingdom_of_italy,Kingdom of Italy,contraction,5,balkans|italy,2,0,0,0,1,-6
 first_turkic_khaganate,First Türkic Empire,avar_khaganate,Avar Khaganate,contraction,5,central_asian_steppe,1,0,0,1,1,-35
 first_turkic_khaganate,First Türkic Empire,uyghur_khaganate,Uyghur Khaganate,contraction,5,central_asian_steppe|mongolian_plateau,2,1,0,0,0,141
@@ -660,7 +621,6 @@ mongol_empire,Mongol Empire,moghulistan,Moghulistan Khanate,contraction,5,centra
 british_raj,British Raj,republic_of_india,Republic of India,contraction,5,deccan|ganges_plain|punjab,3,0,0,0,0,0
 umayyad_caliphate,Umayyad Caliphate,tulunid_dynasty,Tulunid Dynasty,contraction,5,egypt|levant,2,0,0,1,1,118
 delhi_sultanate,Delhi Sultanate,sur_empire,Sur Empire,contraction,5,ganges_plain|punjab,2,0,0,1,0,14
-celts,Celts,belgae,Belgae,contraction,5,gaul,1,1,0,0,1,-100
 carolingian_empire,Frankish Kingdom / Carolingian Empire,holy_roman_empire,Holy Roman Empire,contraction,5,germany|italy,2,0,0,1,1,119
 kushan_empire,Kushan Empire,nezak_huns,Nezak Huns,contraction,5,indus_valley|khorasan,2,1,0,0,0,100
 alchon_huns,Alchon Huns,nezak_huns,Nezak Huns,contraction,5,indus_valley|khorasan,2,1,0,0,0,-90
@@ -681,7 +641,6 @@ ghorid_dynasty,Ghorid Sultanate,kartid_dynasty,Kartid Dynasty,contraction,5,khor
 kievan_rus,Kievan Rus,novgorod_republic,Novgorod Republic,contraction,5,kievan_rus,1,1,0,0,1,-104
 empire_of_japan,Empire of Japan (Meiji),japanese_korea,Japanese-Occupied Korea,contraction,5,korean_peninsula,1,0,0,1,1,-37
 abbasid_caliphate,Abbasid Caliphate,mamluk_sultanate,Mamluk Sultanate,contraction,5,levant,1,0,0,1,0,-8
-northern_wei,Northern Wei tributary,shiwei,Shiwei,contraction,5,manchuria|mongolian_plateau,2,1,0,0,0,-147
 mongol_empire,Mongol Empire,ming_dynasty,Ming Dynasty,contraction,5,manchuria|yangtze|yellow_river,3,0,0,0,0,0
 qing_dynasty,Qing Dynasty (Manchu),republic_of_china,Republic of China,contraction,5,manchuria|yangtze|yellow_river,3,0,0,0,0,0
 western_roman_empire,Western Roman Empire,vandal_kingdom,Vandal Kingdom of North Africa,contraction,5,north_africa,1,0,0,1,1,-47
@@ -692,14 +651,13 @@ pratihara_dynasty,Pratihara Dynasty,hindu_shahis,Hindu Shahis,contraction,5,punj
 tang_dynasty,Tang Dynasty,later_jin,Later Jin,contraction,5,yellow_river,1,1,0,0,0,29
 tang_dynasty,Tang Dynasty,later_han,Later Han,contraction,5,yellow_river,1,1,0,0,0,40
 new_spain,Viceroyalty of New Spain,second_mexican_empire,Second Mexican Empire,contraction,5,mesoamerica,1,0,0,1,1,43
-viceroyalty_of_peru,Viceroyalty of Peru,paraguay,Republic of Paraguay,contraction,5,amazonia,1,0,0,1,1,-13
 viceroyalty_of_new_granada,Viceroyalty of New Granada,ecuador,Republic of Ecuador,contraction,5,andes,1,0,0,1,1,11
 viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,ecuador,Republic of Ecuador,contraction,5,andes,1,0,0,1,1,14
+viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,uruguay,Oriental Republic of Uruguay,contraction,5,patagonia,1,0,0,1,1,12
 new_spain,Viceroyalty of New Spain,dominican_republic,Dominican Republic,contraction,5,caribbean,1,0,0,1,1,23
 viceroyalty_of_new_granada,Viceroyalty of New Granada,dominican_republic,Dominican Republic,contraction,5,caribbean,1,0,0,1,1,25
 gran_colombia,Gran Colombia,dominican_republic,Dominican Republic,contraction,5,caribbean,1,0,0,1,1,13
-viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,uruguay,Oriental Republic of Uruguay,contraction,5,patagonia,1,0,0,1,1,12
-almohad_caliphate,Almohad Caliphate,saadian_dynasty,Saadian Dynasty,contraction,5,,0,1,0,1,0,280
+viceroyalty_of_peru,Viceroyalty of Peru,paraguay,Republic of Paraguay,contraction,5,amazonia,1,0,0,1,1,-13
 samanid_empire,Samanid Empire,kartid_dynasty,Kartid Dynasty,contraction,5,,0,1,0,1,0,246
 saffarid_dynasty,Saffarid Dynasty,kartid_dynasty,Kartid Dynasty,contraction,5,,0,1,0,1,0,242
 saffarid_dynasty,Saffarid Dynasty,hormuz_kingdom,Hormuz Kingdom,contraction,5,,0,1,0,1,0,297
@@ -719,11 +677,7 @@ eastern_han,Eastern Han (东汉),huan_chu,Huan Chu (桓楚),contraction,5,,0,1,0
 eastern_han,Eastern Han (东汉),liu_song,Liu Song (刘宋),contraction,5,,0,1,0,1,0,200
 eastern_han,Eastern Han (东汉),southern_qi,Southern Qi (南齐),contraction,5,,0,1,0,1,0,259
 eastern_han,Eastern Han (东汉),liang,Liang Dynasty (梁),contraction,5,,0,1,0,1,0,282
-sui_dynasty,Sui Dynasty,five_dynasties,Five Dynasties (North China),contraction,5,,0,1,0,1,0,289
-sui_dynasty,Sui Dynasty,ten_kingdoms,Ten Kingdoms (South China),contraction,5,,0,1,0,1,0,289
 tang_dynasty,Tang Dynasty,southern_song,Southern Song Dynasty,contraction,5,,0,1,0,1,0,220
-wu_zhou,Wu Zhou (武周),five_dynasties,Five Dynasties (North China),contraction,5,,0,1,0,1,0,202
-wu_zhou,Wu Zhou (武周),ten_kingdoms,Ten Kingdoms (South China),contraction,5,,0,1,0,1,0,202
 wu_zhou,Wu Zhou (武周),later_tang,Later Tang (后唐),contraction,5,,0,1,0,1,0,218
 wu_zhou,Wu Zhou (武周),later_zhou,Later Zhou (后周),contraction,5,,0,1,0,1,0,246
 ming_dynasty,Ming Dynasty,beiyang_government,Beiyang Government (北洋政府),contraction,5,,0,1,0,1,0,268
@@ -734,6 +688,7 @@ ming_dynasty,Ming Dynasty,chinese_soviet_republic,Chinese Soviet Republic (中�
 ming_dynasty,Ming Dynasty,wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),contraction,5,,0,1,0,1,0,296
 rashidun_caliphate,Rashidun Caliphate,fatimid_caliphate,Fatimid Caliphate,contraction,5,,0,1,0,1,0,248
 umayyad_caliphate,Umayyad Caliphate,fatimid_caliphate,Fatimid Caliphate,contraction,5,,0,1,0,1,0,159
+almohad_caliphate,Almohad Caliphate,saadian_dynasty,Saadian Dynasty,contraction,5,,0,1,0,1,0,280
 kara_khanid_khanate,Kara-Khanid Khanate,khanate_of_bukhara,Khanate of Bukhara,contraction,5,,0,1,0,1,0,288
 kara_khanid_khanate,Kara-Khanid Khanate,khanate_of_khiva,Khanate of Khiva,contraction,5,,0,1,0,1,0,299
 ghaznavid_empire,Ghaznavid Empire,timurid_empire,Timurid Empire,contraction,5,,0,1,0,1,0,184
@@ -764,8 +719,6 @@ salgurid_dynasty,Salgurid Dynasty,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),ex
 khalji_dynasty,Khalji Dynasty,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),expansion,5,iran_plateau,1,1,0,0,1,58
 karkiya_dynasty,Kar-Kiya Dynasty,afsharid_dynasty,Afsharid Dynasty,expansion,5,iran_plateau,1,1,0,0,1,144
 zand_dynasty,Zand Dynasty,pahlavi_dynasty,Pahlavi Dynasty,expansion,5,iran_plateau,1,1,0,0,1,131
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,roman_republic,Roman Republic,expansion,5,italy,1,0,0,1,0,-9
-italic_peoples,Italic Peoples,roman_republic,Roman Republic,expansion,5,italy,1,0,0,1,0,-9
 kingdom_of_sicily,Kingdom of Sicily,kingdom_of_italy,Kingdom of Italy,expansion,5,italy,1,1,0,0,0,45
 kingdom_of_naples,Kingdom of Naples,kingdom_of_italy,Kingdom of Italy,expansion,5,italy,1,1,0,0,0,45
 samanid_empire,Samanid Empire,seljuk_empire,Seljuk Empire,expansion,5,khorasan|transoxiana,2,0,0,1,0,38
@@ -778,14 +731,11 @@ kangju,Kangju,kidarites,Kidarites,expansion,5,transoxiana,1,1,0,0,0,-40
 kangju,Kangju,alchon_huns,Alchon Huns,expansion,5,transoxiana,1,1,0,0,0,-20
 kara_khanid_khanate,Kara-Khanid Khanate,ghaznavid_empire,Ghaznavid Empire,expansion,5,transoxiana,1,1,0,0,1,-235
 khanate_of_kokand,Khanate of Kokand,turkestan_assr,Turkestan ASSR,expansion,5,transoxiana,1,1,0,0,0,42
-southern_dynasties,Southern Dynasties,tang_dynasty,Tang Dynasty,expansion,5,yangtze,1,1,0,0,0,29
 southern_song,Southern Song Dynasty,ming_dynasty,Ming Dynasty,expansion,5,yangtze,1,1,0,0,1,89
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),republic_of_china,Republic of China,expansion,5,yangtze,1,1,0,0,0,48
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),beiyang_government,Beiyang Government (北洋政府),expansion,5,yangtze,1,1,0,0,0,48
 wuhan_government,Wuhan Government (武汉政府),peoples_republic_of_china,People's Republic of China,expansion,5,yangtze,1,1,0,0,0,22
 chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),peoples_republic_of_china,People's Republic of China,expansion,5,yangtze,1,1,0,0,0,12
-northern_dynasties,Northern Dynasties,tang_dynasty,Tang Dynasty,expansion,5,yellow_river,1,1,0,0,0,37
-northern_dynasties,Northern Dynasties,wu_zhou,Wu Zhou (武周),expansion,5,yellow_river,1,1,0,0,1,109
 later_liang,Later Liang / Northern Liang,song_dynasty,Song Dynasty,expansion,5,yellow_river,1,1,0,0,0,37
 later_liang,Later Liang / Northern Liang,northern_song,Northern Song Dynasty,expansion,5,yellow_river,1,1,0,0,0,37
 later_jin,Later Jin,song_dynasty,Song Dynasty,expansion,5,yellow_river,1,1,0,0,0,13
@@ -863,7 +813,6 @@ lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,tuscan_march,March of Tuscany,
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,norman_county_of_apulia,Norman County of Apulia and Calabria,same,5,italy,1,0,0,1,1,-18
 papal_states,Papal States,fascist_italy,Fascist Italy,same,5,italy,1,1,0,0,1,52
 papal_states,Papal States,italian_republic,Italian Republic,same,5,italy,1,1,0,0,1,76
-tuscan_march,March of Tuscany,giudicati_of_sardinia,Giudicati of Sardinia,same,5,italy,1,1,0,0,1,-297
 tuscan_march,March of Tuscany,giudicati_torres,Giudicato of Torres,same,5,italy,1,1,0,0,1,-297
 tuscan_march,March of Tuscany,countyduchy_of_savoy,County and Duchy of Savoy,same,5,italy,1,1,0,0,1,-194
 tuscan_march,March of Tuscany,republic_of_genoa,Republic of Genoa,same,5,italy,1,1,0,0,1,-192
@@ -872,16 +821,7 @@ tuscan_march,March of Tuscany,pisan_county_of_cagliari,Pisan County of Cagliari,
 tuscan_march,March of Tuscany,kingdom_of_sicily,Kingdom of Sicily,same,5,italy,1,1,0,0,1,85
 tuscan_march,March of Tuscany,kingdom_of_naples,Kingdom of Naples,same,5,italy,1,1,0,0,1,85
 tuscan_march,March of Tuscany,kingdom_of_sardinia,Kingdom of Sardinia,same,5,italy,1,1,0,0,1,127
-lombard_principalities,Lombard Principalities of Southern Italy,norman_county_of_apulia,Norman County of Apulia and Calabria,same,5,italy,1,0,0,1,1,-18
 principality_of_salerno,Principality of Salerno,norman_county_of_apulia,Norman County of Apulia and Calabria,same,5,italy,1,0,0,1,1,-18
-giudicati_of_sardinia,Giudicati of Sardinia,countyduchy_of_savoy,County and Duchy of Savoy,same,5,italy,1,1,0,0,1,-417
-giudicati_of_sardinia,Giudicati of Sardinia,republic_of_genoa,Republic of Genoa,same,5,italy,1,1,0,0,1,-415
-giudicati_of_sardinia,Giudicati of Sardinia,republic_of_florence,Republic of Florence,same,5,italy,1,1,0,0,1,-305
-giudicati_of_sardinia,Giudicati of Sardinia,pisan_county_of_cagliari,Pisan County of Cagliari,same,5,italy,1,1,0,0,1,-162
-giudicati_of_sardinia,Giudicati of Sardinia,kingdom_of_sicily,Kingdom of Sicily,same,5,italy,1,1,0,0,1,-138
-giudicati_of_sardinia,Giudicati of Sardinia,kingdom_of_naples,Kingdom of Naples,same,5,italy,1,1,0,0,1,-138
-giudicati_of_sardinia,Giudicati of Sardinia,kingdom_of_sardinia,Kingdom of Sardinia,same,5,italy,1,1,0,0,1,-96
-giudicati_of_sardinia,Giudicati of Sardinia,grand_duchy_of_tuscany,Grand Duchy of Tuscany,same,5,italy,1,1,0,0,1,149
 giudicati_torres,Giudicato of Torres,countyduchy_of_savoy,County and Duchy of Savoy,same,5,italy,1,1,0,0,1,-256
 giudicati_torres,Giudicato of Torres,republic_of_genoa,Republic of Genoa,same,5,italy,1,1,0,0,1,-254
 giudicati_torres,Giudicato of Torres,republic_of_florence,Republic of Florence,same,5,italy,1,1,0,0,1,-144
@@ -923,23 +863,13 @@ samanid_empire,Samanid Empire,tahirid_dynasty,Tahirid dynasty,same,5,khorasan,1,
 liao_dynasty,Liao Dynasty (Khitan),jin_dynasty,Jin Dynasty,same,5,manchuria|yellow_river,2,0,0,0,1,-10
 yuan_dynasty,Yuan Dynasty,ming_dynasty,Ming Dynasty,same,5,manchuria|yangtze|yellow_river,3,0,0,0,0,0
 darfur_sultanate,Darfur Sultanate,mahdist_state,Mahdist State,same,5,nubia,1,0,0,1,1,-31
-cimmerian_scythian_nomads,Cimmerian / Scythian nomads,scythian,Scythian / Sarmatian steppe fringe,same,5,pontic_steppe,1,1,0,0,1,-400
 kingdom_of_norway,Kingdom of Norway,kalmar_union,Kalmar Union,same,5,scandinavia,1,1,0,0,0,17
 denmark_norway,Denmark-Norway,modern_norway,Norway,same,5,scandinavia,1,1,0,0,1,91
 eastern_jin,Eastern Jin Dynasty,huan_chu,Huan Chu (桓楚),same,5,yangtze,1,1,0,0,0,-17
-huan_chu,Huan Chu (桓楚),southern_dynasties,Southern Dynasties,same,5,yangtze,1,1,0,0,0,16
-southern_dynasties,Southern Dynasties,chen,Chen Dynasty (陈),same,5,yangtze,1,1,0,0,0,-32
-northern_dynasties,Northern Dynasties,western_wei,Western Wei / Northern Zhou tributary,same,5,yellow_river,1,0,0,1,1,-46
-five_dynasties,Five Dynasties (North China),later_jin,Later Jin,same,5,yellow_river,1,1,0,0,0,-24
-five_dynasties,Five Dynasties (North China),later_han,Later Han,same,5,yellow_river,1,1,0,0,0,-13
-olmec,Olmec Civilization,zapotec,Zapotec (Monte Albán),same,5,mesoamerica,1,1,0,0,1,-100
 wari_empire,Wari Empire,chimu_kingdom,Chimú Kingdom,same,5,andes,1,1,0,0,1,-100
 viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,venezuela,Republic of Venezuela,same,5,andes,1,0,0,1,1,14
 viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,colombia,Republic of Colombia,same,5,andes,1,0,0,1,1,15
-carib_peoples,Carib Peoples,taino,Taíno,same,5,caribbean,1,1,0,0,1,-400
-sumerian_city_states,Sumerian City-States (Ur; Uruk; Lagash),ur_iii,Third Dynasty of Ur (Neo-Sumerian),same,5,,0,1,0,1,0,222
-idrisid_dynasty,Idrisid Dynasty,hafsid_dynasty,Hafsid Dynasty,same,5,,0,1,0,1,0,255
-idrisid_dynasty,Idrisid Dynasty,marinid_dynasty,Marinid Dynasty,same,5,,0,1,0,1,0,270
+uruk,Uruk,ur_iii,Third Dynasty of Ur (Neo-Sumerian),same,5,,0,1,0,1,0,222
 ziyarid_dynasty,Ziyarid Dynasty,hormuz_kingdom,Hormuz Kingdom,same,5,,0,1,0,1,0,210
 ziyarid_dynasty,Ziyarid Dynasty,injuid_dynasty,Injuid Dynasty,same,5,,0,1,0,1,0,245
 ziyarid_dynasty,Ziyarid Dynasty,karkiya_dynasty,Kar-Kiya Dynasty,same,5,,0,1,0,1,0,280
@@ -958,6 +888,8 @@ southern_ming,Southern Ming (南明),taiping_heavenly_kingdom,Taiping Heavenly K
 kingdom_of_saba,Kingdom of Saba (Sheba),himyarite_kingdom,Himyarite Kingdom,same,5,,0,1,0,1,0,165
 chalukya_dynasty,Chalukya Dynasty (Badami),western_chalukya,Western Chalukya Empire,same,5,,0,1,0,1,0,216
 chalukya_dynasty,Chalukya Dynasty (Badami),hoysala_dynasty,Hoysala Empire,same,5,,0,1,0,1,0,249
+idrisid_dynasty,Idrisid Dynasty,hafsid_dynasty,Hafsid Dynasty,same,5,,0,1,0,1,0,255
+idrisid_dynasty,Idrisid Dynasty,marinid_dynasty,Marinid Dynasty,same,5,,0,1,0,1,0,270
 tulunid_dynasty,Tulunid Dynasty,zangid_atabegate,Zangid Atabegate,same,5,,0,1,0,1,0,222
 tulunid_dynasty,Tulunid Dynasty,zengid_dynasty,Zengid Dynasty,same,5,,0,1,0,1,0,222
 ikhshidid_dynasty,Ikhshidid Dynasty,mamluk_sultanate,Mamluk Sultanate,same,5,,0,1,0,1,0,281
@@ -970,7 +902,6 @@ chobanid_dynasty,Chobanid dynasty,jalayirid_sultanate,Jalayirid Sultanate,same,5
 north_yuan,North Yuan,mongolian_peoples_republic,Mongolian People's Republic,same,5,,0,1,0,1,0,289
 byzantine_sardinia,Byzantine Sardinia,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,5,,0,1,0,1,0,265
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,5,,0,1,0,1,0,214
-ostrogothic_kingdom,Ostrogothic Kingdom of Italy,lombard_principalities,Lombard Principalities of Southern Italy,same,5,,0,1,0,1,0,296
 ostrogothic_kingdom,Ostrogothic Kingdom of Italy,principality_of_salerno,Principality of Salerno,same,5,,0,1,0,1,0,298
 republic_of_florence,Republic of Florence,cisalpine,Cisalpine / Italian Republic,same,5,,0,1,0,1,0,265
 pisan_county_of_cagliari,Pisan County of Cagliari,grand_duchy_of_tuscany,Grand Duchy of Tuscany,same,5,,0,1,0,1,0,246
@@ -980,7 +911,6 @@ ilkhanate,Ilkhanate,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),contraction,4,an
 ottoman_empire,Ottoman Empire,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),contraction,4,anatolia,1,1,0,0,0,-544
 umayyad_caliphate,Umayyad Caliphate,ziyadid_dynasty,Ziyadid Dynasty,contraction,4,arabia,1,0,0,1,1,69
 abbasid_caliphate,Abbasid Caliphate,ifat_sultanate,Ifat Sultanate,contraction,4,arabia,1,0,0,1,0,27
-histri,Histri,illyrian_kingdom,Illyrian Kingdom,contraction,4,balkans,1,1,0,0,0,-223
 byzantine_empire,Byzantine Empire,despotate_of_epirus,Despotate of Epirus,contraction,4,balkans,1,0,0,1,1,-248
 hungary,Hungary,italian_albania,Italian Albania,contraction,4,balkans,1,0,0,0,1,-7
 hungary,Hungary,independent_state_of_croatia,Independent State of Croatia,contraction,4,balkans,1,0,0,0,1,-5
@@ -1030,15 +960,10 @@ ilkhanate,Ilkhanate,karkiya_dynasty,Kar-Kiya Dynasty,contraction,4,iran_plateau,
 khalji_dynasty,Khalji Dynasty,karkiya_dynasty,Kar-Kiya Dynasty,contraction,4,iran_plateau,1,0,0,1,0,50
 jalayirid_sultanate,Jalayirid Sultanate,injuid_dynasty,Injuid Dynasty,contraction,4,iran_plateau,1,0,0,1,1,-97
 timurid_empire,Timurid Empire,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),contraction,4,iran_plateau,1,1,0,0,0,-133
-histri,Histri,ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,contraction,4,italy,1,1,0,0,0,-823
-histri,Histri,latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,contraction,4,italy,1,1,0,0,0,-823
-histri,Histri,italic_peoples,Italic Peoples,contraction,4,italy,1,1,0,0,0,-823
-histri,Histri,oscan_samnite_peoples,Oscan-Samnite Peoples,contraction,4,italy,1,1,0,0,0,-423
 western_roman_empire,Western Roman Empire,lombard_kingdom,Kingdom of the Lombards,contraction,4,italy,1,0,0,1,1,92
 western_roman_empire,Western Roman Empire,lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,contraction,4,italy,1,0,0,1,1,94
 western_roman_empire,Western Roman Empire,lombard_duchy_of_benevento,Lombard Duchy of Benevento,contraction,4,italy,1,0,0,1,1,95
 republic_of_venice,Venice,tuscan_march,March of Tuscany,contraction,4,italy,1,1,0,0,0,-997
-republic_of_venice,Venice,giudicati_of_sardinia,Giudicati of Sardinia,contraction,4,italy,1,1,0,0,0,-897
 republic_of_venice,Venice,giudicati_torres,Giudicato of Torres,contraction,4,italy,1,1,0,0,0,-897
 republic_of_venice,Venice,countyduchy_of_savoy,County and Duchy of Savoy,contraction,4,italy,1,1,0,0,0,-794
 republic_of_venice,Venice,kingdom_of_sicily,Kingdom of Sicily,contraction,4,italy,1,1,0,0,0,-515
@@ -1077,8 +1002,6 @@ western_jin,Western Jin Dynasty,huan_chu,Huan Chu (桓楚),contraction,4,yangtze
 western_jin,Western Jin Dynasty,liu_song,Liu Song (刘宋),contraction,4,yangtze,1,1,0,0,0,104
 qing_dynasty,Qing Dynasty (Manchu),beiyang_government,Beiyang Government (北洋政府),contraction,4,yangtze|yellow_river,2,0,0,0,0,0
 qing_dynasty,Qing Dynasty (Manchu),chinese_empire,Empire of China (Yuan Shikai) (中华帝国),contraction,4,yangtze|yellow_river,2,0,0,0,0,3
-mississippian_culture,Mississippian Culture,thirteen_colonies,Thirteen Colonies,contraction,4,us_east|us_south,2,0,0,0,0,7
-mississippian_culture,Mississippian Culture,creek_confederacy,Creek Confederacy (Muscogee),contraction,4,us_south,1,0,0,0,1,0
 portuguese_brazil,Portuguese Brazil,argentina,Argentine Republic,contraction,4,patagonia,1,0,0,0,1,-6
 portuguese_brazil,Portuguese Brazil,uruguay,Oriental Republic of Uruguay,contraction,4,patagonia,1,0,0,0,1,6
 gupta_empire,Gupta Empire,chalukya_dynasty,Chalukya Dynasty (Badami),displacement,4,,0,0,0,1,0,-7
@@ -1303,7 +1226,6 @@ lombard_duchy_of_benevento,Lombard Duchy of Benevento,holy_roman_empire,Holy Rom
 republic_of_venice,Venice,french_first_empire,French First Empire,expansion,4,italy,1,0,0,0,1,7
 papal_states,Papal States,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,4,italy,1,0,0,0,1,-3
 tuscan_march,March of Tuscany,holy_roman_empire,Holy Roman Empire,expansion,4,italy,1,0,0,1,1,-235
-lombard_principalities,Lombard Principalities of Southern Italy,holy_roman_empire,Holy Roman Empire,expansion,4,italy,1,0,0,1,1,-115
 principality_of_salerno,Principality of Salerno,holy_roman_empire,Holy Roman Empire,expansion,4,italy,1,0,0,1,1,-115
 countyduchy_of_savoy,County and Duchy of Savoy,kingdom_of_italy,Kingdom of Italy,expansion,4,italy,1,1,0,0,0,141
 samanid_empire,Samanid Empire,ghorid_dynasty,Ghorid Sultanate,expansion,4,khorasan,1,0,0,1,1,149
@@ -1312,7 +1234,7 @@ ghorid_dynasty,Ghorid Sultanate,ilkhanate,Ilkhanate,expansion,4,khorasan,1,0,0,1
 kartid_dynasty,Kartid Dynasty,timurid_empire,Timurid Empire,expansion,4,khorasan,1,0,0,1,0,-19
 kievan_rus,Kievan Rus,golden_horde,Golden Horde,expansion,4,kievan_rus|pontic_steppe,2,0,0,0,0,2
 grand_duchy_of_lithuania,Grand Duchy of Lithuania,polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,expansion,4,kievan_rus|lithuania,2,0,0,0,0,0
-sumerian_city_states,Sumerian City-States (Ur; Uruk; Lagash),akkadian_empire,Akkadian Empire,expansion,4,mesopotamia,1,0,0,0,1,0
+uruk,Uruk,akkadian_empire,Akkadian Empire,expansion,4,mesopotamia,1,0,0,0,1,0
 kassite_babylon,Kassite Babylon,middle_assyrian_empire,Middle Assyrian Empire,expansion,4,mesopotamia,1,0,0,1,1,-237
 xueyantuo,Xueyantuo,uyghur_khaganate,Uyghur Khaganate,expansion,4,mongolian_plateau,1,1,0,0,0,98
 northern_yuan,Northern Yuan,qing_dynasty,Qing Dynasty (Manchu),expansion,4,mongolian_plateau,1,0,0,0,1,1
@@ -1321,15 +1243,14 @@ darfur_sultanate,Darfur Sultanate,muhammad_ali_dynasty,Muhammad Ali dynasty,expa
 kangju,Kangju,kushan_empire,Kushan Empire,expansion,4,transoxiana,1,1,0,0,0,-370
 kara_khanid_khanate,Kara-Khanid Khanate,seljuk_empire,Seljuk Empire,expansion,4,transoxiana,1,1,0,0,0,-175
 khanate_of_bukhara,Khanate of Bukhara,turkestan_assr,Turkestan ASSR,expansion,4,transoxiana,1,1,0,0,0,133
-southern_dynasties,Southern Dynasties,wu_zhou,Wu Zhou (武周),expansion,4,yangtze,1,1,0,0,0,101
 song_dynasty,Song Dynasty,yuan_dynasty,Yuan Dynasty,expansion,4,yangtze|yellow_river,2,0,0,0,0,-8
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),chinese_empire,Empire of China (Yuan Shikai) (中华帝国),expansion,4,yangtze,1,1,0,0,0,51
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),nationalist_government,Nationalist Government (国民政府),expansion,4,yangtze,1,1,0,0,0,64
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),peoples_republic_of_china,People's Republic of China,expansion,4,yangtze,1,1,0,0,0,85
 former_qin,Former Qin (前秦),northern_wei,Northern Wei tributary,expansion,4,yellow_river,1,0,0,0,1,-8
-northern_dynasties,Northern Dynasties,northern_wei,Northern Wei tributary,expansion,4,yellow_river,1,0,0,1,1,-195
-paraguay,Republic of Paraguay,empire_of_brazil,Empire of Brazil,expansion,4,amazonia,1,0,0,0,1,0
-paraguay,Republic of Paraguay,republic_of_brazil,Federative Republic of Brazil,expansion,4,amazonia,1,0,0,0,1,0
+argentina,Argentine Republic,empire_of_brazil,Empire of Brazil,expansion,4,patagonia,1,0,0,0,1,0
+argentina,Argentine Republic,republic_of_brazil,Federative Republic of Brazil,expansion,4,patagonia,1,0,0,0,1,0
+uruguay,Oriental Republic of Uruguay,republic_of_brazil,Federative Republic of Brazil,expansion,4,patagonia,1,0,0,0,1,0
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),venezuela,Republic of Venezuela,expansion,4,caribbean,1,0,0,1,1,-68
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),colombia,Republic of Colombia,expansion,4,caribbean,1,0,0,1,1,-67
 french_caribbean,French Caribbean,viceroyalty_of_new_granada,Viceroyalty of New Granada,expansion,4,caribbean,1,0,0,0,1,0
@@ -1339,9 +1260,8 @@ french_caribbean,French Caribbean,colombia,Republic of Colombia,expansion,4,cari
 haiti,Republic of Haiti,gran_colombia,Gran Colombia,expansion,4,caribbean,1,0,0,0,1,0
 haiti,Republic of Haiti,venezuela,Republic of Venezuela,expansion,4,caribbean,1,0,0,0,1,0
 haiti,Republic of Haiti,colombia,Republic of Colombia,expansion,4,caribbean,1,0,0,0,1,0
-argentina,Argentine Republic,empire_of_brazil,Empire of Brazil,expansion,4,patagonia,1,0,0,0,1,0
-argentina,Argentine Republic,republic_of_brazil,Federative Republic of Brazil,expansion,4,patagonia,1,0,0,0,1,0
-uruguay,Oriental Republic of Uruguay,republic_of_brazil,Federative Republic of Brazil,expansion,4,patagonia,1,0,0,0,1,0
+paraguay,Republic of Paraguay,empire_of_brazil,Empire of Brazil,expansion,4,amazonia,1,0,0,0,1,0
+paraguay,Republic of Paraguay,republic_of_brazil,Federative Republic of Brazil,expansion,4,amazonia,1,0,0,0,1,0
 zand_dynasty,Zand Dynasty,islamic_republic_iran,Islamic Republic of Iran,expansion,4,,0,1,0,0,1,185
 wusun,Wusun,avar_khaganate,Avar Khaganate,expansion,4,,0,1,0,0,1,168
 seljuk_empire,Seljuk Empire,ottoman_empire,Ottoman Empire,expansion,4,,0,1,0,0,1,105
@@ -1351,10 +1271,8 @@ zengid_dynasty,Zengid Dynasty,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),expans
 eldiguzid_dynasty,Eldiguzid Dynasty (Ildeguzids),aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),expansion,4,,0,1,0,0,1,153
 sur_empire,Sur Empire,durrani_empire,Durrani Empire,expansion,4,,0,1,0,0,1,191
 nabataean_kingdom,Nabataean Kingdom,himyarite_kingdom,Himyarite Kingdom,same,4,arabia,1,1,0,0,0,-216
-illyrians,Illyrians,illyrian_kingdom,Illyrian Kingdom,same,4,balkans,1,1,0,0,0,-232
 second_bulgarian_empire,Second Bulgarian Empire,serbian_despotate,Serbian Despotate,same,4,balkans,1,0,0,0,1,6
 italian_albania,Italian Albania,independent_state_of_croatia,Independent State of Croatia,same,4,balkans,1,0,0,0,1,-2
-dahae,Dahae,yuezhi,Yuezhi,same,4,central_asian_steppe,1,1,0,0,0,-100
 avar_khaganate,Avar Khaganate,second_turkic_khaganate,Second Türkic Khaganate,same,4,central_asian_steppe,1,0,0,1,1,-122
 avar_khaganate,Avar Khaganate,turgesh_khaganate,Turgesh Khaganate,same,4,central_asian_steppe,1,0,0,1,1,-105
 second_turkic_khaganate,Second Türkic Khaganate,kara_khanid_khanate,Kara-Khanid Khanate,same,4,central_asian_steppe,1,1,0,0,0,96
@@ -1379,14 +1297,12 @@ khalji_dynasty,Khalji Dynasty,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),sa
 timurid_empire,Timurid Empire,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),same,4,iran_plateau,1,1,0,0,0,-129
 kalat_khanate,Kalat Khanate,mahabad_republic,Mahabad Republic,same,4,iran_plateau,1,0,0,0,1,-9
 hotak_dynasty,Hotak Dynasty,afsharid_dynasty,Afsharid Dynasty,same,4,iran_plateau|khorasan,2,0,0,0,0,-2
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,oscan_samnite_peoples,Oscan-Samnite Peoples,same,4,italy,1,1,0,0,0,-400
 lombard_kingdom,Kingdom of the Lombards,papal_states,Papal States,same,4,italy,1,0,0,1,0,-20
 lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,papal_states,Papal States,same,4,italy,1,0,0,1,0,-20
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,tuscan_march,March of Tuscany,same,4,italy,1,0,0,1,1,-277
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,4,italy,1,0,0,1,1,53
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,4,italy,1,0,0,1,1,117
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,hohenstaufen,Hohenstaufen Imperial Italy,same,4,italy,1,0,0,1,1,117
-papal_states,Papal States,giudicati_of_sardinia,Giudicati of Sardinia,same,4,italy,1,1,0,0,0,-970
 papal_states,Papal States,giudicati_torres,Giudicato of Torres,same,4,italy,1,1,0,0,0,-970
 papal_states,Papal States,countyduchy_of_savoy,County and Duchy of Savoy,same,4,italy,1,1,0,0,0,-867
 papal_states,Papal States,republic_of_genoa,Republic of Genoa,same,4,italy,1,1,0,0,0,-865
@@ -1400,13 +1316,9 @@ papal_states,Papal States,grand_duchy_of_tuscany,Grand Duchy of Tuscany,same,4,i
 papal_states,Papal States,cisalpine,Cisalpine / Italian Republic,same,4,italy,1,1,0,0,0,-73
 papal_states,Papal States,kingdom_of_the_two_sicilies,Kingdom of the Two Sicilies,same,4,italy,1,1,0,0,0,-54
 papal_states,Papal States,italian_social_republic,Italian Social Republic,same,4,italy,1,1,0,0,0,73
-tuscan_march,March of Tuscany,lombard_principalities,Lombard Principalities of Southern Italy,same,4,italy,1,0,0,1,1,-348
 tuscan_march,March of Tuscany,principality_of_salerno,Principality of Salerno,same,4,italy,1,0,0,1,1,-346
 tuscan_march,March of Tuscany,norman_county_of_apulia,Norman County of Apulia and Calabria,same,4,italy,1,0,0,1,1,-138
 tuscan_march,March of Tuscany,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,4,italy,1,0,0,1,1,-67
-lombard_principalities,Lombard Principalities of Southern Italy,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,4,italy,1,0,0,1,1,53
-lombard_principalities,Lombard Principalities of Southern Italy,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,4,italy,1,0,0,1,1,117
-lombard_principalities,Lombard Principalities of Southern Italy,hohenstaufen,Hohenstaufen Imperial Italy,same,4,italy,1,0,0,1,1,117
 principality_of_salerno,Principality of Salerno,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,4,italy,1,0,0,1,1,53
 principality_of_salerno,Principality of Salerno,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,4,italy,1,0,0,1,1,117
 principality_of_salerno,Principality of Salerno,hohenstaufen,Hohenstaufen Imperial Italy,same,4,italy,1,0,0,1,1,117
@@ -1445,33 +1357,27 @@ meroitic_kingdom,Kingdom of Meroe (Meroitic Kingdom),aksumite_kingdom,Aksumite K
 makuria_kingdom,Kingdom of Makuria,funj_sultanate,Funj Sultanate,same,4,nubia,1,1,0,0,0,140
 funj_sultanate,Funj Sultanate,darfur_sultanate,Darfur Sultanate,same,4,nubia,1,0,0,1,1,-218
 funj_sultanate,Funj Sultanate,mahdist_state,Mahdist State,same,4,nubia,1,0,0,1,1,64
-khazar_khaganate,Khazar Khaganate,pechenegs,Pechenegs,same,4,pontic_steppe,1,1,0,0,0,-109
 kingdom_of_norway,Kingdom of Norway,denmark_norway,Denmark-Norway,same,4,scandinavia,1,1,0,0,0,144
 eastern_wu,Eastern Wu,huan_chu,Huan Chu (桓楚),same,4,yangtze,1,1,0,0,0,123
 eastern_wu,Eastern Wu,liu_song,Liu Song (刘宋),same,4,yangtze,1,1,0,0,0,140
 eastern_jin,Eastern Jin Dynasty,southern_qi,Southern Qi (南齐),same,4,yangtze,1,1,0,0,0,59
 eastern_jin,Eastern Jin Dynasty,liang,Liang Dynasty (梁),same,4,yangtze,1,1,0,0,0,82
 eastern_jin,Eastern Jin Dynasty,chen,Chen Dynasty (陈),same,4,yangtze,1,1,0,0,0,137
-southern_dynasties,Southern Dynasties,liu_song,Liu Song (刘宋),same,4,yangtze,1,1,0,0,0,-169
-southern_dynasties,Southern Dynasties,southern_qi,Southern Qi (南齐),same,4,yangtze,1,1,0,0,0,-110
-southern_dynasties,Southern Dynasties,liang,Liang Dynasty (梁),same,4,yangtze,1,1,0,0,0,-87
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),wuhan_government,Wuhan Government (武汉政府),same,4,yangtze,1,1,0,0,0,63
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),same,4,yangtze,1,1,0,0,0,67
 taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),same,4,yangtze,1,1,0,0,0,76
-former_qin,Former Qin (前秦),northern_dynasties,Northern Dynasties,same,4,yellow_river,1,0,0,0,1,-8
-five_dynasties,Five Dynasties (North China),later_liang,Later Liang / Northern Liang,same,4,yellow_river,1,1,0,0,0,-53
 zapotec,Zapotec (Monte Albán),teotihuacan,Teotihuacan,same,4,mesoamerica,1,1,0,0,0,-1000
-viceroyalty_of_peru,Viceroyalty of Peru,empire_of_brazil,Empire of Brazil,same,4,amazonia,1,0,0,0,1,-2
+portuguese_brazil,Portuguese Brazil,chile,Republic of Chile,same,4,patagonia,1,0,0,0,1,-4
+viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,empire_of_brazil,Empire of Brazil,same,4,patagonia,1,0,0,0,1,6
+chile,Republic of Chile,empire_of_brazil,Empire of Brazil,same,4,patagonia,1,0,0,0,1,0
+chile,Republic of Chile,republic_of_brazil,Federative Republic of Brazil,same,4,patagonia,1,0,0,0,1,0
 jamestown_colony,Jamestown Colony,new_amsterdam,New Amsterdam (Dutch),same,4,us_east,1,0,0,0,1,2
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),dominican_republic,Dominican Republic,same,4,caribbean,1,0,0,1,1,-54
 french_caribbean,French Caribbean,dominican_republic,Dominican Republic,same,4,caribbean,1,0,0,0,1,0
 french_caribbean,French Caribbean,cuba,Republic of Cuba,same,4,caribbean,1,0,0,0,1,0
 haiti,Republic of Haiti,dominican_republic,Dominican Republic,same,4,caribbean,1,0,0,0,1,0
 haiti,Republic of Haiti,cuba,Republic of Cuba,same,4,caribbean,1,0,0,0,1,0
-portuguese_brazil,Portuguese Brazil,chile,Republic of Chile,same,4,patagonia,1,0,0,0,1,-4
-viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,empire_of_brazil,Empire of Brazil,same,4,patagonia,1,0,0,0,1,6
-chile,Republic of Chile,empire_of_brazil,Empire of Brazil,same,4,patagonia,1,0,0,0,1,0
-chile,Republic of Chile,republic_of_brazil,Federative Republic of Brazil,same,4,patagonia,1,0,0,0,1,0
+viceroyalty_of_peru,Viceroyalty of Peru,empire_of_brazil,Empire of Brazil,same,4,amazonia,1,0,0,0,1,-2
 afsharid_dynasty,Afsharid Dynasty,islamic_republic_iran,Islamic Republic of Iran,same,4,,0,1,0,0,1,183
 pallava_dynasty,Pallava Dynasty,kakatiya_dynasty,Kakatiya Dynasty,same,4,,0,1,0,0,1,186
 bahmani_sultanate,Bahmani Sultanate,hyderabad_state,Nizam of Hyderabad,same,4,,0,1,0,0,1,197
@@ -1494,7 +1400,6 @@ sajid_dynasty,Sajid dynasty,rawwadid_dynasty,Rawwadid Dynasty,contraction,3,cauc
 ottoman_empire,Ottoman Empire,transcaucasian_democratic_federative_republic,Transcaucasian Democratic Federative Republic,contraction,3,caucasus,1,0,0,0,0,-4
 ottoman_empire,Ottoman Empire,soviet_union,Soviet Union,contraction,3,caucasus,1,0,0,0,0,0
 russian_empire,Russian Empire,transcaucasian_democratic_federative_republic,Transcaucasian Democratic Federative Republic,contraction,3,caucasus,1,0,0,0,0,1
-saka,Saka / Massagetae,wusun,Wusun,contraction,3,central_asian_steppe,1,0,0,0,0,0
 xianbei,Xianbei,rouran_khaganate,Rouran Khaganate,contraction,3,central_asian_steppe|mongolian_plateau,2,0,0,0,1,96
 maurya_empire,Maurya Empire,satavahana_empire,Satavahana Empire,contraction,3,deccan,1,0,0,0,1,-45
 mughal_empire,Mughal Empire,republic_of_india,Republic of India,contraction,3,deccan|ganges_plain|punjab,3,0,0,0,0,90
@@ -1552,12 +1457,10 @@ russian_empire,Russian Empire,second_polish_republic,Second Polish Republic,cont
 seljuk_empire,Seljuk Empire,chagatai_khanate,Chagatai Khanate,contraction,3,transoxiana,1,0,0,0,1,32
 qing_dynasty,Qing Dynasty (Manchu),nationalist_government,Nationalist Government (国民政府),contraction,3,yangtze|yellow_river,2,0,0,0,0,16
 northern_wei,Northern Wei tributary,sui_dynasty,Sui Dynasty,contraction,3,yellow_river,1,0,0,0,1,46
-portuguese_brazil,Portuguese Brazil,paraguay,Republic of Paraguay,contraction,3,amazonia,1,0,0,0,1,-11
-mississippian_culture,Mississippian Culture,cherokee_nation,Cherokee Nation,contraction,3,us_east|us_south,2,0,0,0,1,-60
-mississippian_culture,Mississippian Culture,jamestown_colony,Jamestown Colony,contraction,3,us_east,1,0,0,0,0,7
-cherokee_nation,Cherokee Nation,texas_republic,Republic of Texas,contraction,3,us_south,1,0,0,0,0,-2
 new_spain,Viceroyalty of New Spain,haiti,Republic of Haiti,contraction,3,caribbean,1,0,0,0,1,-17
 viceroyalty_of_new_granada,Viceroyalty of New Granada,haiti,Republic of Haiti,contraction,3,caribbean,1,0,0,0,1,-15
+portuguese_brazil,Portuguese Brazil,paraguay,Republic of Paraguay,contraction,3,amazonia,1,0,0,0,1,-11
+cherokee_nation,Cherokee Nation,texas_republic,Republic of Texas,contraction,3,us_south,1,0,0,0,0,-2
 united_states,United States of America,hawaii_kingdom,Kingdom of Hawaiʻi,contraction,3,hawaii,1,0,0,0,0,0
 sassanid_empire,Sassanid Empire,samanid_empire,Samanid Empire,contraction,3,,0,1,0,0,0,168
 sassanid_empire,Sassanid Empire,tahirid_dynasty,Tahirid dynasty,contraction,3,,0,1,0,0,0,170
@@ -1566,8 +1469,6 @@ sassanid_empire,Sassanid Empire,ziyarid_dynasty,Ziyarid Dynasty,contraction,3,,0
 sassanid_empire,Sassanid Empire,buyid_dynasty,Buyid Dynasty,contraction,3,,0,1,0,0,0,283
 safavid_empire,Safavid Empire,pahlavi_dynasty,Pahlavi Dynasty,contraction,3,,0,1,0,0,0,189
 safavid_empire,Safavid Empire,islamic_republic_iran,Islamic Republic of Iran,contraction,3,,0,1,0,0,0,243
-eastern_han,Eastern Han (东汉),northern_dynasties,Northern Dynasties,contraction,3,,0,1,0,0,0,166
-eastern_han,Eastern Han (东汉),southern_dynasties,Southern Dynasties,contraction,3,,0,1,0,0,0,200
 western_jin,Western Jin Dynasty,southern_qi,Southern Qi (南齐),contraction,3,,0,1,0,0,0,163
 western_jin,Western Jin Dynasty,liang,Liang Dynasty (梁),contraction,3,,0,1,0,0,0,186
 western_jin,Western Jin Dynasty,chen,Chen Dynasty (陈),contraction,3,,0,1,0,0,0,241
@@ -1577,11 +1478,9 @@ wu_zhou,Wu Zhou (武周),later_jin,Later Jin,contraction,3,,0,1,0,0,0,231
 wu_zhou,Wu Zhou (武周),later_han,Later Han,contraction,3,,0,1,0,0,0,242
 ming_dynasty,Ming Dynasty,taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),contraction,3,,0,1,0,0,0,207
 ming_dynasty,Ming Dynasty,manchukuo,Manchukuo,contraction,3,,0,1,0,0,0,288
-histri,Histri,illyrians,Illyrians,contraction,3,,0,1,0,0,0,-823
-xianbei,Xianbei,shiwei,Shiwei,contraction,3,,0,1,0,0,0,154
+gupta_empire,Gupta Empire,pala_empire,Pala Empire,contraction,3,,0,1,0,0,0,200
 kidarites,Kidarites,zunbil_dynasty,Zunbil dynasty,contraction,3,,0,1,0,0,0,213
 avar_khaganate,Avar Khaganate,western_xia,Western Xia (Tangut Empire),contraction,3,,0,1,0,0,0,234
-gupta_empire,Gupta Empire,pala_empire,Pala Empire,contraction,3,,0,1,0,0,0,200
 first_turkic_khaganate,First Türkic Empire,kara_khanid_khanate,Kara-Khanid Khanate,contraction,3,,0,1,0,0,0,237
 kara_khanid_khanate,Kara-Khanid Khanate,kazakh_khanate,Kazakh Khanate,contraction,3,,0,1,0,0,0,253
 seljuk_empire,Seljuk Empire,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),contraction,3,,0,1,0,0,0,180
@@ -1603,13 +1502,10 @@ ghorid_dynasty,Ghorid Sultanate,malwa_sultanate,Malwa Sultanate,contraction,3,,0
 ghorid_dynasty,Ghorid Sultanate,jaunpur_sultanate,Jaunpur Sultanate,contraction,3,,0,0,0,1,1,179
 cao_wei,Cao Wei,eastern_wu,Eastern Wu,displacement,3,,0,0,0,1,0,-43
 shu_han,Shu Han,eastern_wu,Eastern Wu,displacement,3,,0,0,0,1,0,-41
-eastern_jin,Eastern Jin Dynasty,northern_dynasties,Northern Dynasties,displacement,3,,0,0,0,1,0,-34
 eastern_jin,Eastern Jin Dynasty,northern_wei,Northern Wei tributary,displacement,3,,0,0,0,1,0,-34
 macedonian_kingdom,Macedonian Kingdom,indo_greek_kingdom,Indo-Greek Kingdom,displacement,3,,0,0,0,1,0,-12
-magna_graecia,Magna Graecia,lysimachus,Lysimachus,displacement,3,,0,0,0,1,0,-26
-magna_graecia,Magna Graecia,greco_bactrian_kingdom,Greco-Bactrian Kingdom,displacement,3,,0,0,0,1,0,24
 kingdom_of_epirus,Kingdom of Epirus,indo_greek_kingdom,Indo-Greek Kingdom,displacement,3,,0,0,0,1,0,-13
-lysimachus,Lysimachus,greco_bactrian_kingdom,Greco-Bactrian Kingdom,displacement,3,,0,0,0,1,0,25
+kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),greco_bactrian_kingdom,Greco-Bactrian Kingdom,displacement,3,,0,0,0,1,0,25
 visigothic_kingdom,Visigothic Kingdom,papal_states,Papal States,displacement,3,,0,0,0,1,0,43
 vandal_kingdom,Vandal Kingdom of North Africa,carolingian_empire,Frankish Kingdom / Carolingian Empire,displacement,3,,0,0,0,1,0,-47
 vandal_kingdom,Vandal Kingdom of North Africa,ostrogothic_kingdom,Ostrogothic Kingdom of Italy,displacement,3,,0,0,0,1,0,-40
@@ -1619,7 +1515,6 @@ vandal_kingdom,Vandal Kingdom of North Africa,lombard_duchy_of_benevento,Lombard
 chalukya_dynasty,Chalukya Dynasty (Badami),pratihara_dynasty,Pratihara Dynasty,displacement,3,,0,0,0,1,0,-27
 pratihara_dynasty,Pratihara Dynasty,hoysala_dynasty,Hoysala Empire,displacement,3,,0,0,0,1,0,-30
 first_turkic_khaganate,First Türkic Empire,khazar_khaganate,Khazar Khaganate,displacement,3,,0,0,0,1,0,47
-ten_kingdoms,Ten Kingdoms (South China),later_zhou,Later Zhou (后周),displacement,3,,0,0,0,1,0,-28
 rashidun_caliphate,Rashidun Caliphate,al_andalus,Al-Andalus,displacement,3,,0,0,0,1,0,50
 al_andalus,Al-Andalus,funj_sultanate,Funj Sultanate,displacement,3,,0,0,0,1,0,12
 muhallabid_governors,Muhallabid governors,ziyadid_dynasty,Ziyadid Dynasty,displacement,3,,0,0,0,1,0,26
@@ -1795,7 +1690,6 @@ british_military_administration,British Military Administration,canada,Canada,di
 seleucid_empire,Seleucid Empire,roman_empire,Roman Empire,expansion,3,anatolia|levant,2,0,0,0,0,36
 latin_empire,Latin Empire,ilkhanate,Ilkhanate,expansion,3,anatolia,1,0,0,0,0,-5
 latin_empire,Latin Empire,ottoman_empire,Ottoman Empire,expansion,3,anatolia|balkans,2,0,0,0,0,38
-dacian_kingdom,Dacian Kingdom,free_dacians,Free Dacians / Carpi,expansion,3,balkans,1,0,0,0,0,0
 republic_of_venice,Venice,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,3,balkans|italy,2,0,0,0,1,70
 hungary,Hungary,austrian_empire,Austrian Empire,expansion,3,balkans|hungary,2,0,0,0,1,-142
 hungary,Hungary,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,3,balkans|hungary,2,0,0,0,1,-79
@@ -1839,7 +1733,6 @@ jalayirid_sultanate,Jalayirid Sultanate,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkm
 chobanid_dynasty,Chobanid dynasty,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),expansion,3,iran_plateau,1,0,0,0,1,21
 injuid_dynasty,Injuid Dynasty,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),expansion,3,iran_plateau,1,0,0,0,1,21
 kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),safavid_empire,Safavid Empire,expansion,3,iran_plateau|mesopotamia,2,0,0,0,0,33
-oscan_samnite_peoples,Oscan-Samnite Peoples,roman_republic,Roman Republic,expansion,3,italy,1,0,0,1,0,-219
 byzantine_sardinia,Byzantine Sardinia,republic_of_venice,Venice,expansion,3,italy,1,0,0,0,0,-3
 papal_states,Papal States,holy_roman_empire,Holy Roman Empire,expansion,3,italy,1,0,0,1,0,-908
 republic_of_genoa,Republic of Genoa,austrian_empire,Austrian Empire,expansion,3,italy,1,0,0,0,0,7
@@ -1859,7 +1752,7 @@ novgorod_republic,Novgorod Republic,grand_duchy_of_lithuania,Grand Duchy of Lith
 galicia_volhynia,Principality of Galicia-Volhynia,grand_duchy_of_lithuania,Grand Duchy of Lithuania,expansion,3,kievan_rus,1,0,0,1,0,-113
 polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,russian_empire,Russian Empire,expansion,3,kievan_rus|lithuania|poland,3,0,0,0,0,-74
 mitanni_empire,Mitanni Empire,middle_assyrian_empire,Middle Assyrian Empire,expansion,3,levant|mesopotamia,2,0,0,0,1,-92
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),macedonian_empire,Macedonian Empire (Alexander),expansion,3,levant,1,0,0,0,0,-4
+tyre,Tyre,macedonian_empire,Macedonian Empire (Alexander),expansion,3,levant,1,0,0,0,0,-4
 neo_babylonian,Neo-Babylonian (Chaldean) Empire,achaemenid_empire,Achaemenid Empire,expansion,3,levant|mesopotamia,2,0,0,0,0,-11
 hasmonean_dynasty,Hasmonean Dynasty,roman_empire,Roman Empire,expansion,3,levant,1,0,0,0,0,10
 hamdanid_emirate,Hamdanid Emirate,fatimid_caliphate,Fatimid Caliphate,expansion,3,levant,1,0,0,1,0,-95
@@ -1882,15 +1775,13 @@ cao_wei,Cao Wei,northern_wei,Northern Wei tributary,expansion,3,yellow_river,1,0
 shu_han,Shu Han,northern_wei,Northern Wei tributary,expansion,3,yellow_river,1,0,0,1,0,123
 western_jin,Western Jin Dynasty,northern_wei,Northern Wei tributary,expansion,3,yellow_river,1,0,0,1,0,70
 western_wei,Western Wei / Northern Zhou tributary,sui_dynasty,Sui Dynasty,expansion,3,yellow_river,1,0,0,0,1,24
-postclassic_maya,Postclassic Maya (Mayapan; K'iche'),new_spain,Viceroyalty of New Spain,expansion,3,mesoamerica,1,0,0,0,0,-3
 aztec_empire,Aztec Empire (Mexico-Tenochtitlan),new_spain,Viceroyalty of New Spain,expansion,3,mesoamerica,1,0,0,0,0,0
-new_spain,Viceroyalty of New Spain,united_states,United States of America,expansion,3,us_west|us_south,2,0,0,0,0,-45
 muisca_confederation,Muisca Confederation,viceroyalty_of_peru,Viceroyalty of Peru,expansion,3,andes,1,0,0,0,0,1
 inca_empire,Inca Empire (Tawantinsuyu),viceroyalty_of_peru,Viceroyalty of Peru,expansion,3,andes,1,0,0,0,0,9
-iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),united_states,United States of America,expansion,3,us_east,1,0,0,0,0,-8
-louisiana_territory,Louisiana Territory (French),united_states,United States of America,expansion,3,us_south|us_midwest,2,0,0,0,0,-27
-taino,Taíno,new_spain,Viceroyalty of New Spain,expansion,3,caribbean,1,0,0,0,0,-3
 mapuche_nation,Mapuche Nation,republic_of_brazil,Federative Republic of Brazil,expansion,3,patagonia,1,0,0,0,0,6
+iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),united_states,United States of America,expansion,3,us_east,1,0,0,0,0,-8
+new_spain,Viceroyalty of New Spain,united_states,United States of America,expansion,3,us_south|us_west,2,0,0,0,0,-45
+louisiana_territory,Louisiana Territory (French),united_states,United States of America,expansion,3,us_south|us_midwest,2,0,0,0,0,-27
 dabuyid_dynasty,Dabuyid Dynasty,buyid_dynasty,Buyid Dynasty,expansion,3,,0,1,0,0,0,174
 bavandid_dynasty,Bavandid Dynasty,safavid_empire,Safavid Empire,expansion,3,,0,1,0,0,0,152
 hormuz_kingdom,Hormuz Kingdom,qajar_dynasty,Qajar Dynasty,expansion,3,,0,1,0,0,0,174
@@ -1909,17 +1800,12 @@ southern_ming,Southern Ming (南明),chinese_empire,Empire of China (Yuan Shikai
 southern_ming,Southern Ming (南明),nationalist_government,Nationalist Government (国民政府),expansion,3,,0,1,0,0,0,266
 southern_ming,Southern Ming (南明),peoples_republic_of_china,People's Republic of China,expansion,3,,0,1,0,0,0,287
 himyarite_kingdom,Himyarite Kingdom,abbasid_caliphate,Abbasid Caliphate,expansion,3,,0,1,0,0,0,225
-illyrians,Illyrians,free_dacians,Free Dacians / Carpi,expansion,3,,0,1,0,0,0,274
-illyrian_kingdom,Illyrian Kingdom,free_dacians,Free Dacians / Carpi,expansion,3,,0,1,0,0,0,274
-dahae,Dahae,kushan_empire,Kushan Empire,expansion,3,,0,1,0,0,0,230
-dahae,Dahae,xianbei,Xianbei,expansion,3,,0,1,0,0,0,293
 yuezhi,Yuezhi,kushan_empire,Kushan Empire,expansion,3,,0,1,0,0,0,160
 yuezhi,Yuezhi,xianbei,Xianbei,expansion,3,,0,1,0,0,0,223
 turk_shahis,Türk Shahis,seljuk_empire,Seljuk Empire,expansion,3,,0,1,0,0,0,158
 turgesh_khaganate,Turgesh Khaganate,ghaznavid_empire,Ghaznavid Empire,expansion,3,,0,1,0,0,0,211
 turgesh_khaganate,Turgesh Khaganate,seljuk_empire,Seljuk Empire,expansion,3,,0,1,0,0,0,271
 kara_khanid_khanate,Kara-Khanid Khanate,timurid_empire,Timurid Empire,expansion,3,,0,1,0,0,0,158
-pechenegs,Pechenegs,ottoman_empire,Ottoman Empire,expansion,3,,0,1,0,0,0,208
 zengid_dynasty,Zengid Dynasty,ottoman_empire,Ottoman Empire,expansion,3,,0,1,0,0,0,77
 kazakh_khanate,Kazakh Khanate,turkestan_assr,Turkestan ASSR,expansion,3,,0,1,0,0,0,187
 yarkand_khanate,Yarkand Khanate,turkestan_assr,Turkestan ASSR,expansion,3,,0,1,0,0,0,213
@@ -1944,9 +1830,6 @@ albanian_kingdom,Albanian Kingdom,independent_state_of_croatia,Independent State
 albanian_kingdom,Albanian Kingdom,sfr_yugoslavia,SFR Yugoslavia,same,3,balkans,1,0,0,0,0,6
 italian_albania,Italian Albania,sfr_yugoslavia,SFR Yugoslavia,same,3,balkans,1,0,0,0,0,2
 eldiguzid_dynasty,Eldiguzid Dynasty (Ildeguzids),chobanid_dynasty,Chobanid dynasty,same,3,caucasus|iran_plateau,2,0,0,0,1,110
-saka,Saka / Massagetae,xiongnu,Xiongnu Confederation,same,3,central_asian_steppe,1,0,0,0,0,-9
-saka,Saka / Massagetae,kangju,Kangju,same,3,central_asian_steppe,1,0,0,0,0,0
-dahae,Dahae,xiongnu,Xiongnu Confederation,same,3,central_asian_steppe,1,0,0,0,0,-9
 rouran_khaganate,Rouran Khaganate,avar_khaganate,Avar Khaganate,same,3,central_asian_steppe,1,0,0,0,1,13
 rouran_khaganate,Rouran Khaganate,second_turkic_khaganate,Second Türkic Khaganate,same,3,central_asian_steppe|mongolian_plateau,2,0,0,0,1,127
 kara_khanid_khanate,Kara-Khanid Khanate,chagatai_khanate,Chagatai Khanate,same,3,central_asian_steppe|transoxiana,2,0,0,0,0,14
@@ -1962,7 +1845,6 @@ gepid_kingdom,Gepid Kingdom,avar_khaganate,Avar Khaganate,same,3,hungary,1,0,0,0
 visigothic_kingdom,Visigothic Kingdom,al_andalus,Al-Andalus,same,3,iberia,1,0,0,0,0,0
 indo_scythian_kingdom,Indo-Scythian Kingdom,indo_greek_kingdom,Indo-Greek Kingdom,same,3,indus_valley|punjab,2,0,0,0,1,-580
 indo_parthian_kingdom,Indo-Parthian Kingdom,kushano_sasanian_kingdom,Kushano-Sasanian Kingdom,same,3,indus_valley,1,0,0,0,0,4
-proto_elamite,Proto-Elamite,elam,Kingdom of Elam,same,3,iran_plateau,1,0,0,0,0,0
 elam,Kingdom of Elam,marhashi_kingdom,Marhashi Kingdom,same,3,iran_plateau,1,0,0,1,0,-1961
 elam,Kingdom of Elam,anshan_kingdom,Anshan Kingdom,same,3,iran_plateau,1,0,0,1,0,-1861
 sajid_dynasty,Sajid dynasty,buyid_dynasty,Buyid Dynasty,same,3,iran_plateau,1,0,0,0,0,5
@@ -1972,22 +1854,16 @@ kakuyid_dynasty,Kakuyid Dynasty,salgurid_dynasty,Salgurid Dynasty,same,3,iran_pl
 salgurid_dynasty,Salgurid Dynasty,karkiya_dynasty,Kar-Kiya Dynasty,same,3,iran_plateau,1,0,0,1,0,84
 khalji_dynasty,Khalji Dynasty,chobanid_dynasty,Chobanid dynasty,same,3,iran_plateau,1,0,0,0,1,15
 hormuz_kingdom,Hormuz Kingdom,kalat_khanate,Kalat Khanate,same,3,iran_plateau,1,0,0,0,1,44
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,roman_kingdom,Roman Kingdom,same,3,italy,1,0,0,1,0,-253
-italic_peoples,Italic Peoples,roman_kingdom,Roman Kingdom,same,3,italy,1,0,0,1,0,-253
-roman_kingdom,Roman Kingdom,oscan_samnite_peoples,Oscan-Samnite Peoples,same,3,italy,1,0,0,1,0,-91
 byzantine_sicilian_theme,Byzantine Sicilian Theme,emirate_of_sicily,Emirate of Sicily,same,3,italy,1,0,0,0,0,4
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,papal_states,Papal States,same,3,italy,1,0,0,1,0,-323
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,republic_of_florence,Republic of Florence,same,3,italy,1,0,0,0,1,38
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,papal_states,Papal States,same,3,italy,1,0,0,0,0,3
-papal_states,Papal States,lombard_principalities,Lombard Principalities of Southern Italy,same,3,italy,1,0,0,1,0,-1021
 papal_states,Papal States,principality_of_salerno,Principality of Salerno,same,3,italy,1,0,0,1,0,-1019
 papal_states,Papal States,norman_county_of_apulia,Norman County of Apulia and Calabria,same,3,italy,1,0,0,1,0,-811
 papal_states,Papal States,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,3,italy,1,0,0,1,0,-740
 papal_states,Papal States,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,3,italy,1,0,0,1,0,-676
 papal_states,Papal States,hohenstaufen,Hohenstaufen Imperial Italy,same,3,italy,1,0,0,1,0,-676
-lombard_principalities,Lombard Principalities of Southern Italy,republic_of_florence,Republic of Florence,same,3,italy,1,0,0,0,1,38
 principality_of_salerno,Principality of Salerno,republic_of_florence,Republic of Florence,same,3,italy,1,0,0,0,1,38
-giudicati_of_sardinia,Giudicati of Sardinia,aragonese_kingdom_of_naples,Aragonese Kingdom of Naples,same,3,italy,1,0,0,0,1,22
 giudicati_torres,Giudicato of Torres,aragonese_kingdom_of_sicily,Aragonese Kingdom of Sicily,same,3,italy,1,0,0,0,1,23
 norman_county_of_apulia,Norman County of Apulia and Calabria,republic_of_florence,Republic of Florence,same,3,italy,1,0,0,0,1,-15
 hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,kingdom_of_sicily,Kingdom of Sicily,same,3,italy,1,0,0,0,1,16
@@ -2009,26 +1885,21 @@ hamdanid_emirate,Hamdanid Emirate,ikhshidid_dynasty,Ikhshidid Dynasty,same,3,lev
 zangid_atabegate,Zangid Atabegate,ayyubid_sultanate,Ayyubid Sultanate,same,3,levant,1,0,0,1,0,-79
 zengid_dynasty,Zengid Dynasty,ayyubid_sultanate,Ayyubid Sultanate,same,3,levant,1,0,0,1,0,-51
 kingdom_of_jordan,Hashemite Kingdom of Jordan,state_of_israel,State of Israel,same,3,levant,1,0,0,0,0,0
-shiwei,Shiwei,liao_dynasty,Liao Dynasty (Khitan),same,3,manchuria,1,0,0,0,0,0
 balhae,Balhae (Bohai),liao_dynasty,Liao Dynasty (Khitan),same,3,manchuria,1,0,0,0,1,-19
 republic_of_china,Republic of China,empire_of_japan,Empire of Japan (Meiji),same,3,manchuria,1,0,0,0,0,0
 empire_of_japan,Empire of Japan (Meiji),peoples_republic_of_china,People's Republic of China,same,3,manchuria,1,0,0,0,0,2
-donghu,Donghu,xiongnu,Xiongnu Confederation,same,3,mongolian_plateau,1,0,0,0,0,0
 rustamid_dynasty,Rustamid Dynasty,idrisid_dynasty,Idrisid Dynasty,same,3,north_africa,1,0,0,1,0,-121
 rustamid_dynasty,Rustamid Dynasty,aghlabid_dynasty,Aghlabid Dynasty,same,3,north_africa,1,0,0,1,0,-109
 rustamid_dynasty,Rustamid Dynasty,zirid_dynasty,Zirid Dynasty,same,3,north_africa,1,0,0,1,0,63
 alawite_dynasty,Alawite Dynasty (Morocco),british_military_administration,British Military Administration,same,3,north_africa,1,0,0,0,0,0
-beja,Beja / Habesha coastal lords,funj_sultanate,Funj Sultanate,same,3,nubia,1,0,0,0,0,4
 meroitic_kingdom,Kingdom of Meroe (Meroitic Kingdom),makuria_kingdom,Kingdom of Makuria,same,3,nubia,1,0,0,0,0,-10
 sikh_empire,Sikh Empire,jammu_kashmir,Jammu & Kashmir,same,3,punjab,1,0,0,0,0,-3
 kingdom_of_sweden,Kingdom of Sweden,kingdom_of_denmark,Kingdom of Denmark,same,3,scandinavia,1,0,0,0,0,0
 tang_dynasty,Tang Dynasty,liao_dynasty,Liao Dynasty (Khitan),same,3,yellow_river,1,0,0,0,0,0
-zapotec,Zapotec (Monte Albán),postclassic_maya,Postclassic Maya (Mayapan; K'iche'),same,3,mesoamerica,1,0,0,0,0,0
 zapotec,Zapotec (Monte Albán),toltec_empire,Toltec Empire,same,3,mesoamerica,1,0,0,0,0,0
-maya_city_states,Maya City-States (Tikal; Calakmul),toltec_empire,Toltec Empire,same,3,mesoamerica,1,0,0,0,0,0
 mexico,Mexico (United Mexican States),first_mexican_empire,First Mexican Empire,same,3,mesoamerica,1,0,0,0,0,0
-creek_confederacy,Creek Confederacy (Muscogee),texas_republic,Republic of Texas,same,3,us_south,1,0,0,0,0,4
 portuguese_brazil,Portuguese Brazil,viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,same,3,patagonia,1,0,0,0,1,-46
+creek_confederacy,Creek Confederacy (Muscogee),texas_republic,Republic of Texas,same,3,us_south,1,0,0,0,0,4
 hawaii_kingdom,Kingdom of Hawaiʻi,hawaii_republic,Republic of Hawaiʻi,same,3,hawaii,1,0,0,0,0,1
 dabuyid_dynasty,Dabuyid Dynasty,ziyarid_dynasty,Ziyarid Dynasty,same,3,,0,1,0,0,0,170
 dabuyid_dynasty,Dabuyid Dynasty,kakuyid_dynasty,Kakuyid Dynasty,same,3,,0,1,0,0,0,248
@@ -2043,18 +1914,14 @@ ming_dynasty,Ming Dynasty,republic_of_china,Republic of China,same,3,,0,1,0,0,0,
 southern_ming,Southern Ming (南明),wuhan_government,Wuhan Government (武汉政府),same,3,,0,1,0,0,0,265
 southern_ming,Southern Ming (南明),chinese_soviet_republic,Chinese Soviet Republic (中华苏维埃),same,3,,0,1,0,0,0,269
 southern_ming,Southern Ming (南明),wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),same,3,,0,1,0,0,0,278
-olmec,Olmec Civilization,teotihuacan,Teotihuacan,same,3,,0,1,0,0,0,300
 kingdom_of_saba,Kingdom of Saba (Sheba),nabataean_kingdom,Nabataean Kingdom,same,3,,0,1,0,0,0,160
-histri,Histri,free_dacians,Free Dacians / Carpi,same,3,,0,1,0,0,0,283
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,same,3,,0,1,0,0,0,-500
-italic_peoples,Italic Peoples,ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,same,3,,0,1,0,0,0,-500
-kangju,Kangju,avar_khaganate,Avar Khaganate,same,3,,0,1,0,0,0,168
-xianbei,Xianbei,northern_wei,Northern Wei tributary,same,3,,0,1,0,0,0,152
-xianbei,Xianbei,hephthalites,Hephthalites,same,3,,0,1,0,0,0,206
 chera_dynasty,Chera Dynasty,vijayanagara_empire,Vijayanagara Empire,same,3,,0,1,0,0,0,234
 chera_dynasty,Chera Dynasty,mysore_kingdom,Mysore Kingdom,same,3,,0,1,0,0,0,297
 kadamba_dynasty,Kadamba Dynasty,rashtrakuta_dynasty,Rashtrakuta Dynasty,same,3,,0,1,0,0,0,228
 western_chalukya,Western Chalukya Empire,mysore_kingdom,Mysore Kingdom,same,3,,0,1,0,0,0,210
+kangju,Kangju,avar_khaganate,Avar Khaganate,same,3,,0,1,0,0,0,168
+xianbei,Xianbei,northern_wei,Northern Wei tributary,same,3,,0,1,0,0,0,152
+xianbei,Xianbei,hephthalites,Hephthalites,same,3,,0,1,0,0,0,206
 khazar_khaganate,Khazar Khaganate,eldiguzid_dynasty,Eldiguzid Dynasty (Ildeguzids),same,3,,0,1,0,0,0,167
 zengid_dynasty,Zengid Dynasty,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),same,3,,0,1,0,0,0,152
 khwarazmian_empire,Khwarazmian Empire,khanate_of_bukhara,Khanate of Bukhara,same,3,,0,1,0,0,0,280
@@ -2070,11 +1937,9 @@ countyduchy_of_savoy,County and Duchy of Savoy,italian_republic,Italian Republic
 republic_of_florence,Republic of Florence,kingdom_of_the_two_sicilies,Kingdom of the Two Sicilies,same,3,,0,1,0,0,0,284
 duchy_of_milan,Duchy of Milan,cisalpine,Cisalpine / Italian Republic,same,3,,0,1,0,0,0,262
 duchy_of_milan,Duchy of Milan,kingdom_of_the_two_sicilies,Kingdom of the Two Sicilies,same,3,,0,1,0,0,0,281
-proto_elamite,Proto-Elamite,marhashi_kingdom,Marhashi Kingdom,same,3,,0,1,0,0,0,200
-proto_elamite,Proto-Elamite,anshan_kingdom,Anshan Kingdom,same,3,,0,1,0,0,0,300
 muhallabid_governors,Muhallabid governors,zirid_dynasty,Zirid Dynasty,same,3,,0,0,0,1,1,179
 shun,Shun Dynasty (顺),kingdom_of_tungning,Kingdom of Tungning (东宁),unknown,3,,0,0,0,1,0,18
-achaemenid_empire,Achaemenid Empire,lysimachus,Lysimachus,contraction,2,anatolia,1,0,0,0,0,24
+achaemenid_empire,Achaemenid Empire,kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),contraction,2,anatolia,1,0,0,0,0,24
 byzantine_empire,Byzantine Empire,latin_empire,Latin Empire,contraction,2,anatolia|balkans,2,0,0,0,0,-249
 abbasid_caliphate,Abbasid Caliphate,ajuran_sultanate,Ajuran Sultanate,contraction,2,arabia,1,0,0,0,0,42
 byzantine_empire,Byzantine Empire,first_bulgarian_empire,First Bulgarian Empire,contraction,2,balkans,1,0,0,0,1,-772
@@ -2146,7 +2011,6 @@ hotak_dynasty,Hotak Dynasty,zand_dynasty,Zand Dynasty,contraction,2,iran_plateau
 qajar_dynasty,Qajar Dynasty,mahabad_republic,Mahabad Republic,contraction,2,iran_plateau,1,0,0,0,0,21
 pahlavi_dynasty,Pahlavi Dynasty,mahabad_republic,Mahabad Republic,contraction,2,iran_plateau,1,0,0,0,0,-33
 carolingian_empire,Frankish Kingdom / Carolingian Empire,emirate_of_sicily,Emirate of Sicily,contraction,2,italy,1,0,0,0,0,-12
-carolingian_empire,Frankish Kingdom / Carolingian Empire,giudicati_of_sardinia,Giudicati of Sardinia,contraction,2,italy,1,0,0,0,1,57
 carolingian_empire,Frankish Kingdom / Carolingian Empire,giudicati_torres,Giudicato of Torres,contraction,2,italy,1,0,0,0,1,57
 holy_roman_empire,Holy Roman Empire,countyduchy_of_savoy,County and Duchy of Savoy,contraction,2,italy,1,0,0,0,1,-803
 holy_roman_empire,Holy Roman Empire,republic_of_genoa,Republic of Genoa,contraction,2,italy,1,0,0,0,1,-801
@@ -2207,22 +2071,16 @@ liao_dynasty,Liao Dynasty (Khitan),later_tang,Later Tang (后唐),contraction,2,
 liao_dynasty,Liao Dynasty (Khitan),later_jin,Later Jin,contraction,2,yellow_river,1,0,0,0,1,-189
 liao_dynasty,Liao Dynasty (Khitan),later_han,Later Han,contraction,2,yellow_river,1,0,0,0,1,-178
 liao_dynasty,Liao Dynasty (Khitan),later_zhou,Later Zhou (后周),contraction,2,yellow_river,1,0,0,0,1,-174
-new_spain,Viceroyalty of New Spain,california_republic,California Republic,contraction,2,us_west,1,0,0,0,0,25
-sioux_nations,Sioux Nations (Lakota/Dakota),california_republic,California Republic,contraction,2,us_west,1,0,0,0,0,-30
-mississippian_culture,Mississippian Culture,iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),contraction,2,us_east,1,0,0,0,1,-150
-mississippian_culture,Mississippian Culture,plymouth_colony,Plymouth Colony,contraction,2,us_east,1,0,0,0,0,20
-mississippian_culture,Mississippian Culture,new_amsterdam,New Amsterdam (Dutch),contraction,2,us_east,1,0,0,0,0,26
+empire_of_brazil,Empire of Brazil,uruguay,Oriental Republic of Uruguay,contraction,2,patagonia,1,0,0,0,1,-61
 thirteen_colonies,Thirteen Colonies,new_amsterdam,New Amsterdam (Dutch),contraction,2,us_east,1,0,0,0,1,-150
-mississippian_culture,Mississippian Culture,louisiana_territory,Louisiana Territory (French),contraction,2,us_south|us_midwest,2,0,0,0,0,82
+new_spain,Viceroyalty of New Spain,french_caribbean,French Caribbean,contraction,2,caribbean,1,0,0,0,1,-186
 new_spain,Viceroyalty of New Spain,louisiana_territory,Louisiana Territory (French),contraction,2,us_south,1,0,0,0,1,-139
 new_spain,Viceroyalty of New Spain,texas_republic,Republic of Texas,contraction,2,us_south,1,0,0,0,0,15
 new_spain,Viceroyalty of New Spain,confederate_states,Confederate States of America,contraction,2,us_south,1,0,0,0,0,40
 cherokee_nation,Cherokee Nation,creek_confederacy,Creek Confederacy (Muscogee),contraction,2,us_south,1,0,0,0,1,-238
 cherokee_nation,Cherokee Nation,confederate_states,Confederate States of America,contraction,2,us_south,1,0,0,0,0,23
 louisiana_territory,Louisiana Territory (French),texas_republic,Republic of Texas,contraction,2,us_south,1,0,0,0,0,33
-mississippian_culture,Mississippian Culture,sioux_nations,Sioux Nations (Lakota/Dakota),contraction,2,us_midwest,1,0,0,0,1,80
-new_spain,Viceroyalty of New Spain,french_caribbean,French Caribbean,contraction,2,caribbean,1,0,0,0,1,-186
-empire_of_brazil,Empire of Brazil,uruguay,Oriental Republic of Uruguay,contraction,2,patagonia,1,0,0,0,1,-61
+new_spain,Viceroyalty of New Spain,california_republic,California Republic,contraction,2,us_west,1,0,0,0,0,25
 akkadian_empire,Akkadian Empire,old_babylonian,Old Babylonian Empire,contraction,2,,0,0,0,1,0,260
 western_jin,Western Jin Dynasty,western_wei,Western Wei / Northern Zhou tributary,contraction,2,,0,0,0,1,0,219
 roman_empire,Roman Empire,lombard_kingdom,Kingdom of the Lombards,contraction,2,,0,0,0,1,0,173
@@ -2256,36 +2114,22 @@ abbasid_caliphate,Abbasid Caliphate,chagatai_khanate,Chagatai Khanate,contractio
 xuan_han,Xuan Han (玄汉),eastern_wu,Eastern Wu,displacement,2,,0,0,0,1,0,197
 xuan_han,Xuan Han (玄汉),eastern_jin,Eastern Jin Dynasty,displacement,2,,0,0,0,1,0,292
 cao_wei,Cao Wei,eastern_jin,Eastern Jin Dynasty,displacement,2,,0,0,0,1,0,52
-cao_wei,Cao Wei,southern_dynasties,Southern Dynasties,displacement,2,,0,0,0,1,0,155
 shu_han,Shu Han,eastern_jin,Eastern Jin Dynasty,displacement,2,,0,0,0,1,0,54
-shu_han,Shu Han,southern_dynasties,Southern Dynasties,displacement,2,,0,0,0,1,0,157
-eastern_wu,Eastern Wu,northern_dynasties,Northern Dynasties,displacement,2,,0,0,0,1,0,106
 eastern_wu,Eastern Wu,northern_wei,Northern Wei tributary,displacement,2,,0,0,0,1,0,106
 eastern_wu,Eastern Wu,western_wei,Western Wei / Northern Zhou tributary,displacement,2,,0,0,0,1,0,255
 eastern_jin,Eastern Jin Dynasty,western_wei,Western Wei / Northern Zhou tributary,displacement,2,,0,0,0,1,0,115
-northern_dynasties,Northern Dynasties,southern_dynasties,Southern Dynasties,displacement,2,,0,0,0,1,0,-161
-northern_wei,Northern Wei tributary,southern_dynasties,Southern Dynasties,displacement,2,,0,0,0,1,0,-115
-southern_dynasties,Southern Dynasties,western_wei,Western Wei / Northern Zhou tributary,displacement,2,,0,0,0,1,0,-54
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),phoenician_colonies,Phoenician Colonies of Sardinia,displacement,2,,0,0,0,1,0,-568
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),carthage,Carthage (Phoenician City-State),displacement,2,,0,0,0,1,0,-482
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),punic_coastal_settlements,Punic Coastal Settlements,displacement,2,,0,0,0,1,0,-468
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),carthaginian_sardinia,Carthaginian Sardinia,displacement,2,,0,0,0,1,0,-218
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),carthaginian_western_sicily,Carthaginian Western Sicily,displacement,2,,0,0,0,1,0,-218
-phoenician_colonies,Phoenician Colonies of Sardinia,carthage,Carthage (Phoenician City-State),displacement,2,,0,0,0,1,0,-264
-carthage,Carthage (Phoenician City-State),punic_coastal_settlements,Punic Coastal Settlements,displacement,2,,0,0,0,1,0,-654
+tyre,Tyre,carthage,Carthage (Phoenician City-State),displacement,2,,0,0,0,1,0,-482
+tyre,Tyre,carthaginian_sardinia,Carthaginian Sardinia,displacement,2,,0,0,0,1,0,-218
+tyre,Tyre,carthaginian_western_sicily,Carthaginian Western Sicily,displacement,2,,0,0,0,1,0,-218
 carthage,Carthage (Phoenician City-State),carthaginian_sardinia,Carthaginian Sardinia,displacement,2,,0,0,0,1,0,-404
 carthage,Carthage (Phoenician City-State),carthaginian_western_sicily,Carthaginian Western Sicily,displacement,2,,0,0,0,1,0,-404
 nabataean_kingdom,Nabataean Kingdom,palmyrene_empire,Palmyrene Empire,displacement,2,,0,0,0,1,0,154
-macedonian_kingdom,Macedonian Kingdom,magna_graecia,Magna Graecia,displacement,2,,0,0,0,1,0,-582
 macedonian_kingdom,Macedonian Kingdom,macedonian_empire,Macedonian Empire (Alexander),displacement,2,,0,0,0,1,0,-168
 macedonian_kingdom,Macedonian Kingdom,greco_bactrian_kingdom,Greco-Bactrian Kingdom,displacement,2,,0,0,0,1,0,-88
-magna_graecia,Magna Graecia,kingdom_of_epirus,Kingdom of Epirus,displacement,2,,0,0,0,1,0,-190
-magna_graecia,Magna Graecia,macedonian_empire,Macedonian Empire (Alexander),displacement,2,,0,0,0,1,0,-56
-magna_graecia,Magna Graecia,indo_greek_kingdom,Indo-Greek Kingdom,displacement,2,,0,0,0,1,0,100
 kingdom_of_epirus,Kingdom of Epirus,macedonian_empire,Macedonian Empire (Alexander),displacement,2,,0,0,0,1,0,-169
 kingdom_of_epirus,Kingdom of Epirus,greco_bactrian_kingdom,Greco-Bactrian Kingdom,displacement,2,,0,0,0,1,0,-89
 macedonian_empire,Macedonian Empire (Alexander),indo_greek_kingdom,Indo-Greek Kingdom,displacement,2,,0,0,0,1,0,143
-lysimachus,Lysimachus,indo_greek_kingdom,Indo-Greek Kingdom,displacement,2,,0,0,0,1,0,101
+kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),indo_greek_kingdom,Indo-Greek Kingdom,displacement,2,,0,0,0,1,0,101
 greco_bactrian_kingdom,Greco-Bactrian Kingdom,indo_greek_kingdom,Indo-Greek Kingdom,displacement,2,,0,0,0,1,0,-55
 visigothic_kingdom,Visigothic Kingdom,vandal_kingdom,Vandal Kingdom of North Africa,displacement,2,,0,0,0,1,0,-282
 visigothic_kingdom,Visigothic Kingdom,odoacer_kingdom,Kingdom of Odoacer,displacement,2,,0,0,0,1,0,-235
@@ -2295,7 +2139,6 @@ visigothic_kingdom,Visigothic Kingdom,lombard_kingdom,Kingdom of the Lombards,di
 visigothic_kingdom,Visigothic Kingdom,lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,displacement,2,,0,0,0,1,0,-141
 visigothic_kingdom,Visigothic Kingdom,lombard_duchy_of_benevento,Lombard Duchy of Benevento,displacement,2,,0,0,0,1,0,-140
 visigothic_kingdom,Visigothic Kingdom,tuscan_march,March of Tuscany,displacement,2,,0,0,0,1,0,89
-visigothic_kingdom,Visigothic Kingdom,lombard_principalities,Lombard Principalities of Southern Italy,displacement,2,,0,0,0,1,0,138
 visigothic_kingdom,Visigothic Kingdom,principality_of_salerno,Principality of Salerno,displacement,2,,0,0,0,1,0,140
 visigothic_kingdom,Visigothic Kingdom,holy_roman_empire,Holy Roman Empire,displacement,2,,0,0,0,1,0,251
 visigothic_kingdom,Visigothic Kingdom,kingdom_of_poland,Kingdom of Poland,displacement,2,,0,0,0,1,0,255
@@ -2315,8 +2158,6 @@ papal_states,Papal States,kingdom_of_poland,Kingdom of Poland,displacement,2,,0,
 papal_states,Papal States,kingdom_of_hungary,Kingdom of Hungary,displacement,2,,0,0,0,1,0,-870
 tuscan_march,March of Tuscany,kingdom_of_poland,Kingdom of Poland,displacement,2,,0,0,0,1,0,-231
 tuscan_march,March of Tuscany,kingdom_of_hungary,Kingdom of Hungary,displacement,2,,0,0,0,1,0,-197
-lombard_principalities,Lombard Principalities of Southern Italy,kingdom_of_poland,Kingdom of Poland,displacement,2,,0,0,0,1,0,-111
-lombard_principalities,Lombard Principalities of Southern Italy,kingdom_of_hungary,Kingdom of Hungary,displacement,2,,0,0,0,1,0,-77
 principality_of_salerno,Principality of Salerno,kingdom_of_poland,Kingdom of Poland,displacement,2,,0,0,0,1,0,-111
 principality_of_salerno,Principality of Salerno,kingdom_of_hungary,Kingdom of Hungary,displacement,2,,0,0,0,1,0,-77
 holy_roman_empire,Holy Roman Empire,kingdom_of_poland,Kingdom of Poland,displacement,2,,0,0,0,1,0,-840
@@ -2374,9 +2215,6 @@ byzantine_empire,Byzantine Empire,byzantine_sicilian_theme,Byzantine Sicilian Th
 byzantine_empire,Byzantine Empire,byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,displacement,2,,0,0,0,1,0,-869
 byzantine_empire,Byzantine Empire,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,displacement,2,,0,0,0,1,0,-488
 byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,despotate_of_epirus,Despotate of Epirus,displacement,2,,0,0,0,1,0,134
-five_dynasties,Five Dynasties (North China),ten_kingdoms,Ten Kingdoms (South China),displacement,2,,0,0,0,1,0,-53
-five_dynasties,Five Dynasties (North China),southern_song,Southern Song Dynasty,displacement,2,,0,0,0,1,0,167
-ten_kingdoms,Ten Kingdoms (South China),later_tang,Later Tang (后唐),displacement,2,,0,0,0,1,0,-56
 later_tang,Later Tang (后唐),southern_song,Southern Song Dynasty,displacement,2,,0,0,0,1,0,190
 later_zhou,Later Zhou (后周),southern_song,Southern Song Dynasty,displacement,2,,0,0,0,1,0,167
 rashidun_caliphate,Rashidun Caliphate,muhallabid_governors,Muhallabid governors,displacement,2,,0,0,0,1,0,110
@@ -2922,10 +2760,6 @@ dominion_of_canada,Dominion of Canada,hawaii_republic,Republic of Hawaiʻi,displ
 hawaii_republic,Republic of Hawaiʻi,canada,Canada,displacement,2,,0,0,0,1,0,84
 shun,Shun Dynasty (顺),taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),displacement,2,,0,0,0,1,0,207
 byzantine_empire,Byzantine Empire,ottoman_empire,Ottoman Empire,expansion,2,anatolia|balkans,2,0,0,0,0,-154
-histri,Histri,roman_republic,Roman Republic,expansion,2,balkans|italy,2,0,0,0,0,-332
-histri,Histri,roman_empire,Roman Empire,expansion,2,balkans|italy,2,0,0,0,0,150
-free_dacians,Free Dacians / Carpi,byzantine_empire,Byzantine Empire,expansion,2,balkans,1,0,0,0,0,14
-free_dacians,Free Dacians / Carpi,western_roman_empire,Western Roman Empire,expansion,2,balkans,1,0,0,0,0,14
 croatian_principality,Croatian Principality,republic_of_venice,Venice,expansion,2,balkans,1,0,0,0,1,-228
 croatian_principality,Croatian Principality,hungary,Hungary,expansion,2,balkans,1,0,0,0,1,75
 first_bulgarian_empire,First Bulgarian Empire,hungary,Hungary,expansion,2,balkans,1,0,0,0,0,-18
@@ -2954,16 +2788,11 @@ palmyrene_empire,Palmyrene Empire,roman_empire,Roman Empire,expansion,2,egypt|le
 palmyrene_empire,Palmyrene Empire,byzantine_empire,Byzantine Empire,expansion,2,egypt|levant,2,0,0,0,0,122
 sena_dynasty,Sena Dynasty,delhi_sultanate,Delhi Sultanate,expansion,2,ganges_plain,1,0,0,0,0,-24
 gajapati_dynasty,Gajapati Dynasty (Odisha),mughal_empire,Mughal Empire,expansion,2,ganges_plain,1,0,0,0,0,-15
-celts,Celts,roman_republic,Roman Republic,expansion,2,gaul|iberia,2,0,0,0,0,-309
-belgae,Belgae,roman_empire,Roman Empire,expansion,2,gaul,1,0,0,0,0,23
-germanic_tribes,Germanic tribes,carolingian_empire,Frankish Kingdom / Carolingian Empire,expansion,2,germany,1,0,0,0,0,-14
-free_dacians,Free Dacians / Carpi,hunnic_empire,Hunnic Empire,expansion,2,hungary,1,0,0,0,0,-31
 kingdom_of_hungary,Kingdom of Hungary,habsburg_monarchy,Habsburg Monarchy,expansion,2,hungary,1,0,0,0,1,-88
 principality_of_transylvania,Principality of Transylvania,austrian_empire,Austrian Empire,expansion,2,hungary,1,0,0,0,1,93
 visigothic_kingdom,Visigothic Kingdom,umayyad_caliphate,Umayyad Caliphate,expansion,2,iberia,1,0,0,0,0,-50
 indo_parthian_kingdom,Indo-Parthian Kingdom,kidarites,Kidarites,expansion,2,indus_valley,1,0,0,0,1,134
 pratihara_dynasty,Pratihara Dynasty,ghaznavid_empire,Ghaznavid Empire,expansion,2,indus_valley|punjab,2,0,0,0,0,-59
-scythian,Scythian / Sarmatian steppe fringe,parthian_empire,Parthian Empire (Arsacid),expansion,2,iran_plateau,1,0,0,0,0,-47
 bavandid_dynasty,Bavandid Dynasty,jalayirid_sultanate,Jalayirid Sultanate,expansion,2,iran_plateau,1,0,0,0,0,-14
 bavandid_dynasty,Bavandid Dynasty,chobanid_dynasty,Chobanid dynasty,expansion,2,iran_plateau,1,0,0,0,0,-14
 bavandid_dynasty,Bavandid Dynasty,timurid_empire,Timurid Empire,expansion,2,iran_plateau,1,0,0,0,0,21
@@ -2983,12 +2812,10 @@ kalat_khanate,Kalat Khanate,hotak_dynasty,Hotak Dynasty,expansion,2,iran_plateau
 kalat_khanate,Kalat Khanate,pahlavi_dynasty,Pahlavi Dynasty,expansion,2,iran_plateau,1,0,0,0,0,-30
 kalat_khanate,Kalat Khanate,islamic_republic_iran,Islamic Republic of Iran,expansion,2,iran_plateau,1,0,0,0,0,24
 mahabad_republic,Mahabad Republic,islamic_republic_iran,Islamic Republic of Iran,expansion,2,iran_plateau,1,0,0,0,0,33
-phoenician_colonies,Phoenician Colonies of Sardinia,roman_republic,Roman Republic,expansion,2,italy,1,0,0,0,0,41
 papal_states,Papal States,crown_of_aragon,Crown of Aragon,expansion,2,italy,1,0,0,0,1,-706
 papal_states,Papal States,austrian_empire,Austrian Empire,expansion,2,italy,1,0,0,0,1,-66
 papal_states,Papal States,french_first_empire,French First Empire,expansion,2,italy,1,0,0,0,1,-66
 tuscan_march,March of Tuscany,crown_of_aragon,Crown of Aragon,expansion,2,italy,1,0,0,0,0,-33
-giudicati_of_sardinia,Giudicati of Sardinia,holy_roman_empire,Holy Roman Empire,expansion,2,italy,1,0,0,0,1,-458
 giudicati_torres,Giudicato of Torres,holy_roman_empire,Holy Roman Empire,expansion,2,italy,1,0,0,0,1,-297
 norman_county_of_apulia,Norman County of Apulia and Calabria,crown_of_aragon,Crown of Aragon,expansion,2,italy,1,0,0,0,0,34
 norman_kingdom_of_sicily,Norman Kingdom of Sicily,crown_of_aragon,Crown of Aragon,expansion,2,italy,1,0,0,0,0,-30
@@ -2999,8 +2826,6 @@ kingdom_of_naples,Kingdom of Naples,austrian_empire,Austrian Empire,expansion,2,
 kingdom_of_naples,Kingdom of Naples,french_first_empire,French First Empire,expansion,2,italy,1,0,0,0,0,-12
 southern_court,Southern Court (南朝),ryukyu_kingdom,Ryukyu Kingdom,expansion,2,japanese_archipelago,1,0,0,0,0,37
 ryukyu_kingdom,Ryukyu Kingdom,empire_of_japan,Empire of Japan (Meiji),expansion,2,japanese_archipelago,1,0,0,0,0,-11
-saka,Saka / Massagetae,parthian_empire,Parthian Empire (Arsacid),expansion,2,khorasan,1,0,0,0,0,-47
-dahae,Dahae,parthian_empire,Parthian Empire (Arsacid),expansion,2,khorasan,1,0,0,0,0,-47
 kidarites,Kidarites,first_turkic_khaganate,First Türkic Empire,expansion,2,khorasan|transoxiana,2,0,0,0,0,85
 alchon_huns,Alchon Huns,umayyad_caliphate,Umayyad Caliphate,expansion,2,khorasan|transoxiana,2,0,0,0,0,96
 hephthalites,Hephthalites,umayyad_caliphate,Umayyad Caliphate,expansion,2,khorasan|transoxiana,2,0,0,0,0,101
@@ -3016,8 +2841,8 @@ afsharid_dynasty,Afsharid Dynasty,durrani_empire,Durrani Empire,expansion,2,khor
 grand_duchy_moscow,Grand Duchy of Moscow,polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,expansion,2,kievan_rus,1,0,0,0,0,22
 polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,soviet_union,Soviet Union,expansion,2,kievan_rus|lithuania,2,0,0,0,0,127
 joseon,Joseon Dynasty,empire_of_japan,Empire of Japan (Meiji),expansion,2,korean_peninsula,1,0,0,0,0,-29
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),seleucid_empire,Seleucid Empire,expansion,2,levant,1,0,0,0,0,20
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),ptolemaic_egypt,Ptolemaic Kingdom,expansion,2,levant,1,0,0,0,0,27
+tyre,Tyre,seleucid_empire,Seleucid Empire,expansion,2,levant,1,0,0,0,0,20
+tyre,Tyre,ptolemaic_egypt,Ptolemaic Kingdom,expansion,2,levant,1,0,0,0,0,27
 kingdom_of_israel,United Kingdom of Israel,neo_assyrian_empire,Neo-Assyrian Empire,expansion,2,levant,1,0,0,0,0,19
 kingdom_of_judah,Kingdom of Judah,neo_babylonian,Neo-Babylonian (Chaldean) Empire,expansion,2,levant,1,0,0,0,0,-40
 kingdom_of_judah,Kingdom of Judah,achaemenid_empire,Achaemenid Empire,expansion,2,levant,1,0,0,0,0,36
@@ -3042,7 +2867,6 @@ song_dynasty,Song Dynasty,mongol_empire,Mongol Empire,expansion,2,yangtze|yellow
 northern_song,Northern Song Dynasty,mongol_empire,Mongol Empire,expansion,2,yangtze|yellow_river,2,0,0,0,0,79
 northern_song,Northern Song Dynasty,yuan_dynasty,Yuan Dynasty,expansion,2,yangtze|yellow_river,2,0,0,0,0,144
 western_wei,Western Wei / Northern Zhou tributary,wu_zhou,Wu Zhou (武周),expansion,2,yellow_river,1,0,0,0,1,133
-sioux_nations,Sioux Nations (Lakota/Dakota),united_states,United States of America,expansion,2,us_west|us_midwest,2,0,0,0,0,-100
 iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),cherokee_nation,Cherokee Nation,expansion,2,us_east,1,0,0,0,1,-244
 cherokee_nation,Cherokee Nation,united_states,United States of America,expansion,2,us_east|us_south,2,0,0,0,0,-62
 new_amsterdam,New Amsterdam (Dutch),united_states,United States of America,expansion,2,us_east,1,0,0,0,1,112
@@ -3050,7 +2874,6 @@ spanish_florida,Spanish Florida,louisiana_territory,Louisiana Territory (French)
 spanish_florida,Spanish Florida,united_states,United States of America,expansion,2,us_south,1,0,0,0,0,-45
 new_france,New France,united_states,United States of America,expansion,2,us_midwest,1,0,0,0,0,13
 old_babylonian,Old Babylonian Empire,middle_assyrian_empire,Middle Assyrian Empire,expansion,2,,0,0,0,1,0,203
-oscan_samnite_peoples,Oscan-Samnite Peoples,roman_empire,Roman Empire,expansion,2,,0,0,0,1,0,263
 xiongnu,Xiongnu Confederation,hunnic_empire,Hunnic Empire,expansion,2,,0,0,0,1,0,257
 muhallabid_governors,Muhallabid governors,almoravid_dynasty,Almoravid Dynasty,expansion,2,,0,0,0,1,0,247
 rustamid_dynasty,Rustamid Dynasty,almohad_caliphate,Almohad Caliphate,expansion,2,,0,0,0,1,0,212
@@ -3072,7 +2895,6 @@ salgurid_dynasty,Salgurid Dynasty,safavid_empire,Safavid Empire,expansion,2,,0,0
 khalji_dynasty,Khalji Dynasty,safavid_empire,Safavid Empire,expansion,2,,0,0,0,1,0,181
 later_liang,Later Liang / Northern Liang,liao_dynasty,Liao Dynasty (Khitan),expansion,2,,0,0,0,0,1,-16
 abbasid_caliphate,Abbasid Caliphate,ottoman_empire,Ottoman Empire,expansion,2,,0,0,0,0,1,41
-free_dacians,Free Dacians / Carpi,gepid_kingdom,Gepid Kingdom,same,2,balkans|hungary,2,0,0,0,0,73
 republic_of_venice,Venice,hungary,Hungary,same,2,balkans,1,0,0,0,1,-797
 republic_of_venice,Venice,latin_empire,Latin Empire,same,2,balkans,1,0,0,0,1,-593
 hungary,Hungary,latin_empire,Latin Empire,same,2,balkans,1,0,0,0,1,-742
@@ -3093,7 +2915,6 @@ kingdom_of_greece,Kingdom of Greece,independent_state_of_croatia,Independent Sta
 kingdom_of_greece,Kingdom of Greece,sfr_yugoslavia,SFR Yugoslavia,same,2,balkans,1,0,0,0,0,-28
 kingdom_of_romania,Kingdom of Romania,albanian_kingdom,Albanian Kingdom,same,2,balkans,1,0,0,0,0,-19
 transcaucasian_democratic_federative_republic,Transcaucasian Democratic Federative Republic,azerbaijan_peoples_government,Azerbaijan Peoples Government,same,2,caucasus,1,0,0,0,0,27
-saka,Saka / Massagetae,dahae,Dahae,same,2,central_asian_steppe|khorasan,2,0,0,0,0,-500
 rouran_khaganate,Rouran Khaganate,turgesh_khaganate,Turgesh Khaganate,same,2,central_asian_steppe,1,0,0,0,1,144
 avar_khaganate,Avar Khaganate,kara_khanid_khanate,Kara-Khanid Khanate,same,2,central_asian_steppe,1,0,0,0,0,36
 kara_khanid_khanate,Kara-Khanid Khanate,qara_khitai,Qara Khitai (Western Liao),same,2,central_asian_steppe|transoxiana,2,0,0,0,0,-88
@@ -3127,13 +2948,6 @@ saffarid_dynasty,Saffarid Dynasty,sajid_dynasty,Sajid dynasty,same,2,iran_platea
 jalayirid_sultanate,Jalayirid Sultanate,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),same,2,iran_plateau|mesopotamia,2,0,0,0,0,-58
 chobanid_dynasty,Chobanid dynasty,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),same,2,iran_plateau,1,0,0,0,0,17
 hotak_dynasty,Hotak Dynasty,qajar_dynasty,Qajar Dynasty,same,2,iran_plateau|khorasan,2,0,0,0,0,58
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,carthaginian_sardinia,Carthaginian Sardinia,same,2,italy,1,0,0,0,0,-50
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,carthaginian_western_sicily,Carthaginian Western Sicily,same,2,italy,1,0,0,0,0,-50
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,celtic_la_tene_migration,Celtic La Tène Migration,same,2,italy,1,0,0,0,0,50
-italic_peoples,Italic Peoples,carthaginian_sardinia,Carthaginian Sardinia,same,2,italy,1,0,0,0,0,-50
-italic_peoples,Italic Peoples,carthaginian_western_sicily,Carthaginian Western Sicily,same,2,italy,1,0,0,0,0,-50
-italic_peoples,Italic Peoples,celtic_la_tene_migration,Celtic La Tène Migration,same,2,italy,1,0,0,0,0,50
-phoenician_colonies,Phoenician Colonies of Sardinia,oscan_samnite_peoples,Oscan-Samnite Peoples,same,2,italy,1,0,0,0,0,-50
 roman_kingdom,Roman Kingdom,carthaginian_sardinia,Carthaginian Sardinia,same,2,italy,1,0,0,0,0,-41
 roman_kingdom,Roman Kingdom,carthaginian_western_sicily,Carthaginian Western Sicily,same,2,italy,1,0,0,0,0,-41
 odoacer_kingdom,Kingdom of Odoacer,byzantine_sardinia,Byzantine Sardinia,same,2,italy,1,0,0,0,0,41
@@ -3143,13 +2957,9 @@ ostrogothic_kingdom,Ostrogothic Kingdom of Italy,byzantine_sicilian_theme,Byzant
 ostrogothic_kingdom,Ostrogothic Kingdom of Italy,byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,same,2,italy,1,0,0,0,0,31
 byzantine_sicilian_theme,Byzantine Sicilian Theme,tuscan_march,March of Tuscany,same,2,italy,1,0,0,0,0,-27
 byzantine_sicilian_theme,Byzantine Sicilian Theme,arab_emirate_of_bari,Arab Emirate of Bari,same,2,italy,1,0,0,0,0,20
-byzantine_sicilian_theme,Byzantine Sicilian Theme,lombard_principalities,Lombard Principalities of Southern Italy,same,2,italy,1,0,0,0,0,22
 byzantine_sicilian_theme,Byzantine Sicilian Theme,principality_of_salerno,Principality of Salerno,same,2,italy,1,0,0,0,0,24
-lombard_kingdom,Kingdom of the Lombards,giudicati_of_sardinia,Giudicati of Sardinia,same,2,italy,1,0,0,0,1,126
 lombard_kingdom,Kingdom of the Lombards,giudicati_torres,Giudicato of Torres,same,2,italy,1,0,0,0,1,126
-lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,giudicati_of_sardinia,Giudicati of Sardinia,same,2,italy,1,0,0,0,1,126
 lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,giudicati_torres,Giudicato of Torres,same,2,italy,1,0,0,0,1,126
-lombard_duchy_of_benevento,Lombard Duchy of Benevento,giudicati_of_sardinia,Giudicati of Sardinia,same,2,italy,1,0,0,0,1,-177
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,giudicati_torres,Giudicato of Torres,same,2,italy,1,0,0,0,1,-177
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,countyduchy_of_savoy,County and Duchy of Savoy,same,2,italy,1,0,0,0,1,-74
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,republic_of_genoa,Republic of Genoa,same,2,italy,1,0,0,0,1,-72
@@ -3160,26 +2970,11 @@ tuscan_march,March of Tuscany,aragonese_kingdom_of_sicily,Aragonese Kingdom of S
 tuscan_march,March of Tuscany,aragonese_sardinia,Aragonese Sardinia,same,2,italy,1,0,0,0,1,126
 emirate_of_sicily,Emirate of Sicily,norman_county_of_apulia,Norman County of Apulia and Calabria,same,2,italy,1,0,0,0,0,-13
 emirate_of_sicily,Emirate of Sicily,republic_of_florence,Republic of Florence,same,2,italy,1,0,0,0,0,43
-arab_emirate_of_bari,Arab Emirate of Bari,lombard_principalities,Lombard Principalities of Southern Italy,same,2,italy,1,0,0,0,0,-22
 arab_emirate_of_bari,Arab Emirate of Bari,principality_of_salerno,Principality of Salerno,same,2,italy,1,0,0,0,0,-20
-arab_emirate_of_bari,Arab Emirate of Bari,giudicati_of_sardinia,Giudicati of Sardinia,same,2,italy,1,0,0,0,0,29
 arab_emirate_of_bari,Arab Emirate of Bari,giudicati_torres,Giudicato of Torres,same,2,italy,1,0,0,0,0,29
-lombard_principalities,Lombard Principalities of Southern Italy,giudicati_of_sardinia,Giudicati of Sardinia,same,2,italy,1,0,0,0,1,-177
-lombard_principalities,Lombard Principalities of Southern Italy,giudicati_torres,Giudicato of Torres,same,2,italy,1,0,0,0,1,-177
-lombard_principalities,Lombard Principalities of Southern Italy,countyduchy_of_savoy,County and Duchy of Savoy,same,2,italy,1,0,0,0,1,-74
-lombard_principalities,Lombard Principalities of Southern Italy,republic_of_genoa,Republic of Genoa,same,2,italy,1,0,0,0,1,-72
-principality_of_salerno,Principality of Salerno,giudicati_of_sardinia,Giudicati of Sardinia,same,2,italy,1,0,0,0,1,-177
 principality_of_salerno,Principality of Salerno,giudicati_torres,Giudicato of Torres,same,2,italy,1,0,0,0,1,-177
 principality_of_salerno,Principality of Salerno,countyduchy_of_savoy,County and Duchy of Savoy,same,2,italy,1,0,0,0,1,-74
 principality_of_salerno,Principality of Salerno,republic_of_genoa,Republic of Genoa,same,2,italy,1,0,0,0,1,-72
-giudicati_of_sardinia,Giudicati of Sardinia,norman_county_of_apulia,Norman County of Apulia and Calabria,same,2,italy,1,0,0,0,1,-361
-giudicati_of_sardinia,Giudicati of Sardinia,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,2,italy,1,0,0,0,1,-290
-giudicati_of_sardinia,Giudicati of Sardinia,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,2,italy,1,0,0,0,1,-226
-giudicati_of_sardinia,Giudicati of Sardinia,hohenstaufen,Hohenstaufen Imperial Italy,same,2,italy,1,0,0,0,1,-226
-giudicati_of_sardinia,Giudicati of Sardinia,angevin_kingdom_of_naples,Angevin Kingdom of Naples,same,2,italy,1,0,0,0,1,-154
-giudicati_of_sardinia,Giudicati of Sardinia,aragonese_kingdom_of_sicily,Aragonese Kingdom of Sicily,same,2,italy,1,0,0,0,1,-138
-giudicati_of_sardinia,Giudicati of Sardinia,aragonese_sardinia,Aragonese Sardinia,same,2,italy,1,0,0,0,1,-97
-giudicati_of_sardinia,Giudicati of Sardinia,spanish_duchy_of_milan,Spanish Duchy of Milan,same,2,italy,1,0,0,0,1,115
 giudicati_torres,Giudicato of Torres,norman_county_of_apulia,Norman County of Apulia and Calabria,same,2,italy,1,0,0,0,1,-200
 giudicati_torres,Giudicato of Torres,norman_kingdom_of_sicily,Norman Kingdom of Sicily,same,2,italy,1,0,0,0,1,-129
 giudicati_torres,Giudicato of Torres,hohenstaufen_sicily,Hohenstaufen Kingdom of Sicily,same,2,italy,1,0,0,0,1,-65
@@ -3281,25 +3076,22 @@ samanid_empire,Samanid Empire,kara_khanid_khanate,Kara-Khanid Khanate,same,2,tra
 song_dynasty,Song Dynasty,northern_song,Northern Song Dynasty,same,2,yangtze|yellow_river,2,0,0,0,0,-319
 former_qin,Former Qin (前秦),western_wei,Western Wei / Northern Zhou tributary,same,2,yellow_river,1,0,0,0,1,141
 northern_song,Northern Song Dynasty,jin_dynasty,Jin Dynasty,same,2,yellow_river,1,0,0,0,0,-12
-portuguese_brazil,Portuguese Brazil,viceroyalty_of_peru,Viceroyalty of Peru,same,2,amazonia,1,0,0,0,1,-280
-viceroyalty_of_peru,Viceroyalty of Peru,republic_of_brazil,Federative Republic of Brazil,same,2,amazonia,1,0,0,0,1,65
 tiwanaku,Tiwanaku,muisca_confederation,Muisca Confederation,same,2,andes,1,0,0,0,1,-400
 tiwanaku,Tiwanaku,wari_empire,Wari Empire,same,2,andes,1,0,0,0,1,-400
 tiwanaku,Tiwanaku,chimu_kingdom,Chimú Kingdom,same,2,andes,1,0,0,0,1,-100
 muisca_confederation,Muisca Confederation,wari_empire,Wari Empire,same,2,andes,1,0,0,0,1,-941
 muisca_confederation,Muisca Confederation,chimu_kingdom,Chimú Kingdom,same,2,andes,1,0,0,0,1,-641
 chimu_kingdom,Chimú Kingdom,inca_empire,Inca Empire (Tawantinsuyu),same,2,andes,1,0,0,0,0,-32
+viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,republic_of_brazil,Federative Republic of Brazil,same,2,patagonia,1,0,0,0,1,73
 cherokee_nation,Cherokee Nation,thirteen_colonies,Thirteen Colonies,same,2,us_east|us_south,2,0,0,0,0,-231
 plymouth_colony,Plymouth Colony,new_amsterdam,New Amsterdam (Dutch),same,2,us_east,1,0,0,0,1,-65
+spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),french_caribbean,French Caribbean,same,2,caribbean,1,0,0,0,1,-263
+spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),haiti,Republic of Haiti,same,2,caribbean,1,0,0,0,1,-94
+portuguese_brazil,Portuguese Brazil,viceroyalty_of_peru,Viceroyalty of Peru,same,2,amazonia,1,0,0,0,1,-280
+viceroyalty_of_peru,Viceroyalty of Peru,republic_of_brazil,Federative Republic of Brazil,same,2,amazonia,1,0,0,0,1,65
 spanish_florida,Spanish Florida,texas_republic,Republic of Texas,same,2,us_south,1,0,0,0,0,15
 spanish_florida,Spanish Florida,confederate_states,Confederate States of America,same,2,us_south,1,0,0,0,0,40
 creek_confederacy,Creek Confederacy (Muscogee),confederate_states,Confederate States of America,same,2,us_south,1,0,0,0,0,29
-carib_peoples,Carib Peoples,british_caribbean,British Caribbean,same,2,caribbean,1,0,0,0,0,24
-carib_peoples,Carib Peoples,french_caribbean,French Caribbean,same,2,caribbean,1,0,0,0,0,35
-taino,Taíno,spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),same,2,caribbean,1,0,0,0,0,-32
-spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),french_caribbean,French Caribbean,same,2,caribbean,1,0,0,0,1,-263
-spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),haiti,Republic of Haiti,same,2,caribbean,1,0,0,0,1,-94
-viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,republic_of_brazil,Federative Republic of Brazil,same,2,patagonia,1,0,0,0,1,73
 new_france,New France,dominion_of_canada,Dominion of Canada,same,2,quebec|atlantic_canada,2,0,0,0,0,104
 cao_wei,Cao Wei,western_wei,Western Wei / Northern Zhou tributary,same,2,,0,0,0,1,0,270
 shu_han,Shu Han,western_wei,Western Wei / Northern Zhou tributary,same,2,,0,0,0,1,0,272
@@ -3327,20 +3119,14 @@ kingdom_of_tungning,Kingdom of Tungning (东宁),taiping_heavenly_kingdom,Taipin
 byzantine_empire,Byzantine Empire,seljuk_rum,Sultanate of Rum,contraction,1,anatolia,1,0,0,0,0,-376
 byzantine_empire,Byzantine Empire,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),contraction,1,anatolia,1,0,0,0,0,-75
 ottoman_empire,Ottoman Empire,republic_of_yemen,Republic of Yemen,contraction,1,arabia,1,0,0,0,0,68
-histri,Histri,macedonian_kingdom,Macedonian Kingdom,contraction,1,balkans,1,0,0,0,0,-631
-histri,Histri,kingdom_of_epirus,Kingdom of Epirus,contraction,1,balkans,1,0,0,0,0,-293
-histri,Histri,dacian_kingdom,Dacian Kingdom,contraction,1,balkans,1,0,0,0,0,95
 roman_republic,Roman Republic,kingdom_of_epirus,Kingdom of Epirus,contraction,1,balkans,1,0,0,0,0,-443
 roman_republic,Roman Republic,illyrian_kingdom,Illyrian Kingdom,contraction,1,balkans,1,0,0,0,0,-373
-roman_republic,Roman Republic,lysimachus,Lysimachus,contraction,1,balkans,1,0,0,0,0,-279
+roman_republic,Roman Republic,kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),contraction,1,balkans,1,0,0,0,0,-279
 roman_republic,Roman Republic,dacian_kingdom,Dacian Kingdom,contraction,1,balkans,1,0,0,0,0,-55
-roman_republic,Roman Republic,free_dacians,Free Dacians / Carpi,contraction,1,balkans,1,0,0,0,0,133
-roman_empire,Roman Empire,free_dacians,Free Dacians / Carpi,contraction,1,balkans,1,0,0,0,0,-289
 roman_empire,Roman Empire,gepid_kingdom,Gepid Kingdom,contraction,1,balkans,1,0,0,0,0,59
 byzantine_empire,Byzantine Empire,gepid_kingdom,Gepid Kingdom,contraction,1,balkans,1,0,0,0,0,-999
 byzantine_empire,Byzantine Empire,croatian_principality,Croatian Principality,contraction,1,balkans,1,0,0,0,0,-812
 byzantine_empire,Byzantine Empire,republic_of_venice,Venice,contraction,1,balkans,1,0,0,0,0,-756
-byzantine_empire,Byzantine Empire,pechenegs,Pechenegs,contraction,1,balkans,1,0,0,0,0,-593
 byzantine_empire,Byzantine Empire,croatian_kingdom,Croatian Kingdom,contraction,1,balkans,1,0,0,0,0,-528
 byzantine_empire,Byzantine Empire,hungary,Hungary,contraction,1,balkans,1,0,0,0,0,-453
 byzantine_empire,Byzantine Empire,bosnian_kingdom,Bosnian Kingdom,contraction,1,balkans,1,0,0,0,0,-76
@@ -3355,10 +3141,6 @@ republic_of_venice,Venice,serbian_despotate,Serbian Despotate,contraction,1,balk
 republic_of_venice,Venice,kingdom_of_romania,Kingdom of Romania,contraction,1,balkans,1,0,0,0,0,84
 republic_of_venice,Venice,albanian_kingdom,Albanian Kingdom,contraction,1,balkans,1,0,0,0,0,131
 republic_of_venice,Venice,sfr_yugoslavia,SFR Yugoslavia,contraction,1,balkans,1,0,0,0,0,148
-pechenegs,Pechenegs,croatian_kingdom,Croatian Kingdom,contraction,1,balkans,1,0,0,0,0,-166
-pechenegs,Pechenegs,second_bulgarian_empire,Second Bulgarian Empire,contraction,1,balkans,1,0,0,0,0,94
-pechenegs,Pechenegs,serbian_empire,Serbian Empire (Nemanjić Dynasty),contraction,1,balkans,1,0,0,0,0,99
-pechenegs,Pechenegs,despotate_of_epirus,Despotate of Epirus,contraction,1,balkans,1,0,0,0,0,114
 hungary,Hungary,second_bulgarian_empire,Second Bulgarian Empire,contraction,1,balkans,1,0,0,0,0,-761
 hungary,Hungary,serbian_empire,Serbian Empire (Nemanjić Dynasty),contraction,1,balkans,1,0,0,0,0,-756
 hungary,Hungary,despotate_of_epirus,Despotate of Epirus,contraction,1,balkans,1,0,0,0,0,-741
@@ -3379,13 +3161,8 @@ ottoman_empire,Ottoman Empire,austria_hungary,Austria-Hungary / Italian occupati
 austrian_empire,Austrian Empire,albanian_kingdom,Albanian Kingdom,contraction,1,balkans,1,0,0,0,0,61
 austrian_empire,Austrian Empire,sfr_yugoslavia,SFR Yugoslavia,contraction,1,balkans,1,0,0,0,0,78
 kingdom_of_italy,Kingdom of Italy,kingdom_of_romania,Kingdom of Romania,contraction,1,balkans,1,0,0,0,0,-65
-habsburg_monarchy,Habsburg Monarchy,federalization,Federalization,contraction,1,bohemia,1,0,0,0,0,51
 austrian_empire,Austrian Empire,czechoslovakia,Czechoslovakia,contraction,1,bohemia,1,0,0,0,0,51
-austrian_empire,Austrian Empire,federalization,Federalization,contraction,1,bohemia,1,0,0,0,0,102
 german_confederation,German Confederation (Deutscher Bund,czechoslovakia,Czechoslovakia,contraction,1,bohemia,1,0,0,0,0,52
-german_confederation,German Confederation (Deutscher Bund,federalization,Federalization,contraction,1,bohemia,1,0,0,0,0,103
-austria_hungary,Austria-Hungary / Italian occupation zones,federalization,Federalization,contraction,1,bohemia,1,0,0,0,0,51
-cimmerian_scythian_nomads,Cimmerian / Scythian nomads,kingdom_of_armenia,Kingdom of Armenia,contraction,1,caucasus,1,0,0,0,0,110
 khazar_khaganate,Khazar Khaganate,bagratid_armenia,Bagratid Armenia,contraction,1,caucasus,1,0,0,0,0,-84
 ottoman_empire,Ottoman Empire,chobanid_dynasty,Chobanid dynasty,contraction,1,caucasus,1,0,0,0,0,-587
 ottoman_empire,Ottoman Empire,safavid_empire,Safavid Empire,contraction,1,caucasus,1,0,0,0,0,-421
@@ -3403,7 +3180,6 @@ mughal_empire,Mughal Empire,maratha_empire,Maratha Empire,contraction,1,deccan,1
 ottoman_empire,Ottoman Empire,muhammad_ali_dynasty,Muhammad Ali dynasty,contraction,1,egypt,1,0,0,0,0,-117
 ottoman_empire,Ottoman Empire,kingdom_of_egypt,Kingdom of Egypt,contraction,1,egypt,1,0,0,0,0,-117
 muhammad_ali_dynasty,Muhammad Ali dynasty,kingdom_of_egypt,Kingdom of Egypt,contraction,1,egypt,1,0,0,0,0,-148
-roman_republic,Roman Republic,belgae,Belgae,contraction,1,gaul,1,0,0,0,0,-273
 french_first_empire,French First Empire,german_empire,German Empire (Deutsches Reich),contraction,1,germany,1,0,0,0,0,57
 french_first_empire,French First Empire,weimar_republic,Weimar Republic,contraction,1,germany,1,0,0,0,0,104
 french_first_empire,French First Empire,nazi_germany,Nazi Germany (Third Reich),contraction,1,germany,1,0,0,0,0,119
@@ -3426,16 +3202,6 @@ mongol_empire,Mongol Empire,khalji_dynasty,Khalji Dynasty,contraction,1,iran_pla
 mongol_empire,Mongol Empire,hormuz_kingdom,Hormuz Kingdom,contraction,1,iran_plateau,1,0,0,0,0,-68
 safavid_empire,Safavid Empire,kalat_khanate,Kalat Khanate,contraction,1,iran_plateau,1,0,0,0,0,-70
 afsharid_dynasty,Afsharid Dynasty,mahabad_republic,Mahabad Republic,contraction,1,iran_plateau,1,0,0,0,0,150
-histri,Histri,phoenician_colonies,Phoenician Colonies of Sardinia,contraction,1,italy,1,0,0,0,0,-723
-histri,Histri,punic_coastal_settlements,Punic Coastal Settlements,contraction,1,italy,1,0,0,0,0,-623
-histri,Histri,roman_kingdom,Roman Kingdom,contraction,1,italy,1,0,0,0,0,-576
-histri,Histri,magna_graecia,Magna Graecia,contraction,1,italy,1,0,0,0,0,-573
-histri,Histri,carthaginian_sardinia,Carthaginian Sardinia,contraction,1,italy,1,0,0,0,0,-373
-histri,Histri,carthaginian_western_sicily,Carthaginian Western Sicily,contraction,1,italy,1,0,0,0,0,-373
-histri,Histri,celtic_la_tene_migration,Celtic La Tène Migration,contraction,1,italy,1,0,0,0,0,-273
-histri,Histri,celtic_gauls,Cisalpine Celtic Gauls,contraction,1,italy,1,0,0,0,0,-223
-roman_republic,Roman Republic,celtic_la_tene_migration,Celtic La Tène Migration,contraction,1,italy,1,0,0,0,0,-423
-roman_republic,Roman Republic,celtic_gauls,Cisalpine Celtic Gauls,contraction,1,italy,1,0,0,0,0,-373
 roman_empire,Roman Empire,byzantine_sardinia,Byzantine Sardinia,contraction,1,italy,1,0,0,0,0,139
 roman_empire,Roman Empire,byzantine_sicilian_theme,Byzantine Sicilian Theme,contraction,1,italy,1,0,0,0,0,140
 western_roman_empire,Western Roman Empire,byzantine_sardinia,Byzantine Sardinia,contraction,1,italy,1,0,0,0,0,58
@@ -3443,7 +3209,6 @@ western_roman_empire,Western Roman Empire,byzantine_sicilian_theme,Byzantine Sic
 western_roman_empire,Western Roman Empire,byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,contraction,1,italy,1,0,0,0,0,108
 republic_of_venice,Venice,emirate_of_sicily,Emirate of Sicily,contraction,1,italy,1,0,0,0,0,-966
 republic_of_venice,Venice,arab_emirate_of_bari,Arab Emirate of Bari,contraction,1,italy,1,0,0,0,0,-950
-republic_of_venice,Venice,lombard_principalities,Lombard Principalities of Southern Italy,contraction,1,italy,1,0,0,0,0,-948
 republic_of_venice,Venice,principality_of_salerno,Principality of Salerno,contraction,1,italy,1,0,0,0,0,-946
 republic_of_venice,Venice,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,contraction,1,italy,1,0,0,0,0,-832
 republic_of_venice,Venice,norman_county_of_apulia,Norman County of Apulia and Calabria,contraction,1,italy,1,0,0,0,0,-738
@@ -3494,13 +3259,13 @@ durrani_empire,Durrani Empire,pahlavi_dynasty,Pahlavi Dynasty,contraction,1,khor
 grand_duchy_of_lithuania,Grand Duchy of Lithuania,grand_duchy_moscow,Grand Duchy of Moscow,contraction,1,kievan_rus,1,0,0,0,0,-286
 golden_horde,Golden Horde,grand_duchy_moscow,Grand Duchy of Moscow,contraction,1,kievan_rus,1,0,0,0,0,-219
 egyptian_new_kingdom,Egyptian New Kingdom,mitanni_empire,Mitanni Empire,contraction,1,levant,1,0,0,0,0,-431
-egyptian_new_kingdom,Egyptian New Kingdom,phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),contraction,1,levant,1,0,0,0,0,-131
+egyptian_new_kingdom,Egyptian New Kingdom,tyre,Tyre,contraction,1,levant,1,0,0,0,0,-131
 egyptian_new_kingdom,Egyptian New Kingdom,kingdom_of_judah,Kingdom of Judah,contraction,1,levant,1,0,0,0,0,139
 new_kingdom_egypt,New Kingdom Egypt,mitanni_empire,Mitanni Empire,contraction,1,levant,1,0,0,0,0,-430
-new_kingdom_egypt,New Kingdom Egypt,phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),contraction,1,levant,1,0,0,0,0,-130
+new_kingdom_egypt,New Kingdom Egypt,tyre,Tyre,contraction,1,levant,1,0,0,0,0,-130
 new_kingdom_egypt,New Kingdom Egypt,kingdom_of_judah,Kingdom of Judah,contraction,1,levant,1,0,0,0,0,140
-mitanni_empire,Mitanni Empire,phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),contraction,1,levant,1,0,0,0,0,100
-middle_assyrian_empire,Middle Assyrian Empire,phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),contraction,1,levant,1,0,0,0,0,-144
+mitanni_empire,Mitanni Empire,tyre,Tyre,contraction,1,levant,1,0,0,0,0,100
+middle_assyrian_empire,Middle Assyrian Empire,tyre,Tyre,contraction,1,levant,1,0,0,0,0,-144
 middle_assyrian_empire,Middle Assyrian Empire,kingdom_of_judah,Kingdom of Judah,contraction,1,levant,1,0,0,0,0,126
 seleucid_empire,Seleucid Empire,hasmonean_dynasty,Hasmonean Dynasty,contraction,1,levant,1,0,0,0,0,-77
 ptolemaic_egypt,Ptolemaic Kingdom,hasmonean_dynasty,Hasmonean Dynasty,contraction,1,levant,1,0,0,0,0,-110
@@ -3513,7 +3278,6 @@ parthian_empire,Parthian Empire (Arsacid),lakhmid_kingdom,Lakhmid Kingdom,contra
 sassanid_empire,Sassanid Empire,lakhmid_kingdom,Lakhmid Kingdom,contraction,1,mesopotamia,1,0,0,0,0,-351
 northern_wei,Northern Wei tributary,xueyantuo,Xueyantuo,contraction,1,mongolian_plateau,1,0,0,0,0,93
 northern_wei,Northern Wei tributary,second_turkic_khaganate,Second Türkic Khaganate,contraction,1,mongolian_plateau,1,0,0,0,0,147
-shiwei,Shiwei,xueyantuo,Xueyantuo,contraction,1,mongolian_plateau,1,0,0,0,0,-279
 roman_republic,Roman Republic,mauretania_kingdom,Mauretania Kingdom,contraction,1,north_africa,1,0,0,0,0,-258
 roman_republic,Roman Republic,numidia,Kingdom of Numidia,contraction,1,north_africa,1,0,0,0,0,-175
 byzantine_empire,Byzantine Empire,muhallabid_governors,Muhallabid governors,contraction,1,north_africa,1,0,0,0,0,-682
@@ -3539,23 +3303,18 @@ qing_dynasty,Qing Dynasty (Manchu),southern_ming,Southern Ming (南明),contract
 qing_dynasty,Qing Dynasty (Manchu),taiping_heavenly_kingdom,Taiping Heavenly Kingdom (太平天国),contraction,1,yangtze,1,0,0,0,0,-61
 eastern_han,Eastern Han (东汉),former_qin,Former Qin (前秦),contraction,1,yellow_river,1,0,0,0,0,131
 northern_wei,Northern Wei tributary,tang_dynasty,Tang Dynasty,contraction,1,yellow_river,1,0,0,0,0,83
-liao_dynasty,Liao Dynasty (Khitan),five_dynasties,Five Dynasties (North China),contraction,1,yellow_river,1,0,0,0,0,-218
 liao_dynasty,Liao Dynasty (Khitan),later_liang,Later Liang / Northern Liang,contraction,1,yellow_river,1,0,0,0,0,-218
 qing_dynasty,Qing Dynasty (Manchu),shun,Shun Dynasty (顺),contraction,1,yellow_river,1,0,0,0,0,-268
-new_spain,Viceroyalty of New Spain,sioux_nations,Sioux Nations (Lakota/Dakota),contraction,1,us_west,1,0,0,0,0,-141
 cherokee_nation,Cherokee Nation,jamestown_colony,Jamestown Colony,contraction,1,us_east,1,0,0,0,0,-231
 cherokee_nation,Cherokee Nation,plymouth_colony,Plymouth Colony,contraction,1,us_east,1,0,0,0,0,-218
 cherokee_nation,Cherokee Nation,new_amsterdam,New Amsterdam (Dutch),contraction,1,us_east,1,0,0,0,0,-212
 thirteen_colonies,Thirteen Colonies,jamestown_colony,Jamestown Colony,contraction,1,us_east,1,0,0,0,0,-169
-mississippian_culture,Mississippian Culture,spanish_florida,Spanish Florida,contraction,1,us_south,1,0,0,0,0,-87
+new_spain,Viceroyalty of New Spain,british_caribbean,British Caribbean,contraction,1,caribbean,1,0,0,0,0,-197
 new_spain,Viceroyalty of New Spain,cherokee_nation,Cherokee Nation,contraction,1,us_south,1,0,0,0,0,-281
 new_spain,Viceroyalty of New Spain,creek_confederacy,Creek Confederacy (Muscogee),contraction,1,us_south,1,0,0,0,0,-221
 new_spain,Viceroyalty of New Spain,thirteen_colonies,Thirteen Colonies,contraction,1,us_south,1,0,0,0,0,-214
 louisiana_territory,Louisiana Territory (French),confederate_states,Confederate States of America,contraction,1,us_south,1,0,0,0,0,58
-mississippian_culture,Mississippian Culture,rupert_land,Rupert's Land (Hudson's Bay Company),contraction,1,us_midwest,1,0,0,0,0,70
 new_france,New France,rupert_land,Rupert's Land (Hudson's Bay Company),contraction,1,us_midwest,1,0,0,0,0,-93
-new_france,New France,sioux_nations,Sioux Nations (Lakota/Dakota),contraction,1,us_midwest,1,0,0,0,0,-83
-new_spain,Viceroyalty of New Spain,british_caribbean,British Caribbean,contraction,1,caribbean,1,0,0,0,0,-197
 kidarites,Kidarites,turk_shahis,Türk Shahis,contraction,1,,0,0,0,0,1,198
 northern_wei,Northern Wei tributary,wu_zhou,Wu Zhou (武周),contraction,1,,0,0,0,0,1,155
 northern_wei,Northern Wei tributary,balhae,Balhae (Bohai),contraction,1,,0,0,0,0,1,163
@@ -3569,20 +3328,13 @@ latin_empire,Latin Empire,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),expansion,
 ifat_sultanate,Ifat Sultanate,ottoman_empire,Ottoman Empire,expansion,1,arabia,1,0,0,0,0,-116
 ajuran_sultanate,Ajuran Sultanate,ottoman_empire,Ottoman Empire,expansion,1,arabia,1,0,0,0,0,-401
 adal_sultanate,Adal Sultanate,ottoman_empire,Ottoman Empire,expansion,1,arabia,1,0,0,0,0,-278
-illyrians,Illyrians,histri,Histri,expansion,1,balkans,1,0,0,0,0,-832
-illyrians,Illyrians,roman_republic,Roman Republic,expansion,1,balkans,1,0,0,0,0,-341
-illyrians,Illyrians,lysimachus,Lysimachus,expansion,1,balkans,1,0,0,0,0,-138
-illyrians,Illyrians,roman_empire,Roman Empire,expansion,1,balkans,1,0,0,0,0,141
 macedonian_kingdom,Macedonian Kingdom,roman_republic,Roman Republic,expansion,1,balkans,1,0,0,0,0,-341
 macedonian_kingdom,Macedonian Kingdom,roman_empire,Roman Empire,expansion,1,balkans,1,0,0,0,0,141
 kingdom_of_epirus,Kingdom of Epirus,roman_empire,Roman Empire,expansion,1,balkans,1,0,0,0,0,140
-illyrian_kingdom,Illyrian Kingdom,lysimachus,Lysimachus,expansion,1,balkans,1,0,0,0,0,-138
+illyrian_kingdom,Illyrian Kingdom,kingdom_of_lysimachus,Kingdom of Lysimachus (Thrace),expansion,1,balkans,1,0,0,0,0,-138
 illyrian_kingdom,Illyrian Kingdom,roman_empire,Roman Empire,expansion,1,balkans,1,0,0,0,0,141
 dacian_kingdom,Dacian Kingdom,roman_empire,Roman Empire,expansion,1,balkans,1,0,0,0,0,-133
-free_dacians,Free Dacians / Carpi,roman_empire,Roman Empire,expansion,1,balkans,1,0,0,0,0,-408
-croatian_principality,Croatian Principality,pechenegs,Pechenegs,expansion,1,balkans,1,0,0,0,0,-65
 first_bulgarian_empire,First Bulgarian Empire,republic_of_venice,Venice,expansion,1,balkans,1,0,0,0,0,-321
-first_bulgarian_empire,First Bulgarian Empire,pechenegs,Pechenegs,expansion,1,balkans,1,0,0,0,0,-158
 republic_of_venice,Venice,ottoman_empire,Ottoman Empire,expansion,1,balkans,1,0,0,0,0,-498
 second_bulgarian_empire,Second Bulgarian Empire,latin_empire,Latin Empire,expansion,1,balkans,1,0,0,0,0,-192
 second_bulgarian_empire,Second Bulgarian Empire,ottoman_empire,Ottoman Empire,expansion,1,balkans,1,0,0,0,0,-97
@@ -3595,8 +3347,6 @@ principality_of_moldavia,Principality of Moldavia,austrian_empire,Austrian Empir
 kingdom_of_greece,Kingdom of Greece,kingdom_of_italy,Kingdom of Italy,expansion,1,balkans,1,0,0,0,0,-112
 kingdom_of_greece,Kingdom of Greece,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,1,balkans,1,0,0,0,0,-106
 great_moravia,Great Moravia,holy_roman_empire,Holy Roman Empire,expansion,1,bohemia,1,0,0,0,0,55
-kingdom_of_urartu,Kingdom of Urartu,cimmerian_scythian_nomads,Cimmerian / Scythian nomads,expansion,1,caucasus,1,0,0,0,0,-210
-cimmerian_scythian_nomads,Cimmerian / Scythian nomads,achaemenid_empire,Achaemenid Empire,expansion,1,caucasus,1,0,0,0,0,-250
 bagratid_armenia,Bagratid Armenia,sajid_dynasty,Sajid dynasty,expansion,1,caucasus,1,0,0,0,0,-175
 bagratid_armenia,Bagratid Armenia,eldiguzid_dynasty,Eldiguzid Dynasty (Ildeguzids),expansion,1,caucasus,1,0,0,0,0,72
 karabakh_khanate,Karabakh Khanate,russian_empire,Russian Empire,expansion,1,caucasus,1,0,0,0,0,-101
@@ -3626,19 +3376,13 @@ gupta_empire,Gupta Empire,kidarites,Kidarites,expansion,1,indus_valley,1,0,0,0,0
 gupta_empire,Gupta Empire,alchon_huns,Alchon Huns,expansion,1,indus_valley,1,0,0,0,0,-170
 turk_shahis,Türk Shahis,pratihara_dynasty,Pratihara Dynasty,expansion,1,indus_valley,1,0,0,0,0,-149
 elam,Kingdom of Elam,gutian_dynasty,Gutian dynasty,expansion,1,iran_plateau,1,0,0,0,0,-1602
-elam,Kingdom of Elam,scythian,Scythian / Sarmatian steppe fringe,expansion,1,iran_plateau,1,0,0,0,0,-161
 elam,Kingdom of Elam,median_kingdom,Median Kingdom,expansion,1,iran_plateau,1,0,0,0,0,-139
 marhashi_kingdom,Marhashi Kingdom,gutian_dynasty,Gutian dynasty,expansion,1,iran_plateau,1,0,0,0,0,-141
 anshan_kingdom,Anshan Kingdom,gutian_dynasty,Gutian dynasty,expansion,1,iran_plateau,1,0,0,0,0,-1591
-anshan_kingdom,Anshan Kingdom,scythian,Scythian / Sarmatian steppe fringe,expansion,1,iran_plateau,1,0,0,0,0,-150
 anshan_kingdom,Anshan Kingdom,median_kingdom,Median Kingdom,expansion,1,iran_plateau,1,0,0,0,0,-128
 lullubi_kingdom,Lullubi Kingdom,gutian_dynasty,Gutian dynasty,expansion,1,iran_plateau,1,0,0,0,0,-941
-mannai_kingdom,Mannai Kingdom,scythian,Scythian / Sarmatian steppe fringe,expansion,1,iran_plateau,1,0,0,0,0,-84
 mannai_kingdom,Mannai Kingdom,median_kingdom,Median Kingdom,expansion,1,iran_plateau,1,0,0,0,0,-62
 mannai_kingdom,Mannai Kingdom,achaemenid_empire,Achaemenid Empire,expansion,1,iran_plateau,1,0,0,0,0,66
-scythian,Scythian / Sarmatian steppe fringe,achaemenid_empire,Achaemenid Empire,expansion,1,iran_plateau,1,0,0,0,0,-350
-scythian,Scythian / Sarmatian steppe fringe,macedonian_empire,Macedonian Empire (Alexander),expansion,1,iran_plateau,1,0,0,0,0,-136
-scythian,Scythian / Sarmatian steppe fringe,seleucid_empire,Seleucid Empire,expansion,1,iran_plateau,1,0,0,0,0,-112
 dabuyid_dynasty,Dabuyid Dynasty,umayyad_caliphate,Umayyad Caliphate,expansion,1,iran_plateau,1,0,0,0,0,-99
 dabuyid_dynasty,Dabuyid Dynasty,sajid_dynasty,Sajid dynasty,expansion,1,iran_plateau,1,0,0,0,0,129
 bavandid_dynasty,Bavandid Dynasty,umayyad_caliphate,Umayyad Caliphate,expansion,1,iran_plateau,1,0,0,0,0,-688
@@ -3659,9 +3403,6 @@ karkiya_dynasty,Kar-Kiya Dynasty,aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),exp
 karkiya_dynasty,Kar-Kiya Dynasty,hotak_dynasty,Hotak Dynasty,expansion,1,iran_plateau,1,0,0,0,0,117
 kalat_khanate,Kalat Khanate,afsharid_dynasty,Afsharid Dynasty,expansion,1,iran_plateau,1,0,0,0,0,-219
 kalat_khanate,Kalat Khanate,qajar_dynasty,Qajar Dynasty,expansion,1,iran_plateau,1,0,0,0,0,-159
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,roman_republic,Roman Republic,expansion,1,italy,1,0,0,0,0,-309
-punic_coastal_settlements,Punic Coastal Settlements,roman_republic,Roman Republic,expansion,1,italy,1,0,0,0,0,-234
-magna_graecia,Magna Graecia,roman_republic,Roman Republic,expansion,1,italy,1,0,0,0,0,-229
 carthaginian_sardinia,Carthaginian Sardinia,roman_republic,Roman Republic,expansion,1,italy,1,0,0,0,0,-271
 carthaginian_western_sicily,Carthaginian Western Sicily,roman_republic,Roman Republic,expansion,1,italy,1,0,0,0,0,-268
 ostrogothic_kingdom,Ostrogothic Kingdom of Italy,republic_of_venice,Venice,expansion,1,italy,1,0,0,0,0,144
@@ -3684,9 +3425,7 @@ papal_states,Papal States,carolingian_empire,Frankish Kingdom / Carolingian Empi
 emirate_of_sicily,Emirate of Sicily,holy_roman_empire,Holy Roman Empire,expansion,1,italy,1,0,0,0,0,-110
 emirate_of_sicily,Emirate of Sicily,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,92
 arab_emirate_of_bari,Arab Emirate of Bari,holy_roman_empire,Holy Roman Empire,expansion,1,italy,1,0,0,0,0,91
-lombard_principalities,Lombard Principalities of Southern Italy,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,87
 principality_of_salerno,Principality of Salerno,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,87
-giudicati_of_sardinia,Giudicati of Sardinia,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,-256
 giudicati_torres,Giudicato of Torres,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,-95
 byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,93
 countyduchy_of_savoy,County and Duchy of Savoy,crown_of_aragon,Crown of Aragon,expansion,1,italy,1,0,0,0,0,-556
@@ -3712,10 +3451,6 @@ cisalpine,Cisalpine / Italian Republic,austria_hungary,Austria-Hungary / Italian
 kamakura_shogunate,Kamakura Shogunate,ryukyu_kingdom,Ryukyu Kingdom,expansion,1,japanese_archipelago,1,0,0,0,0,96
 kenmu_government,Kenmu Government,ryukyu_kingdom,Ryukyu Kingdom,expansion,1,japanese_archipelago,1,0,0,0,0,93
 ashikaga_shogunate,Ashikaga Shogunate,ryukyu_kingdom,Ryukyu Kingdom,expansion,1,japanese_archipelago,1,0,0,0,0,-144
-saka,Saka / Massagetae,achaemenid_empire,Achaemenid Empire,expansion,1,khorasan,1,0,0,0,0,-350
-saka,Saka / Massagetae,macedonian_empire,Macedonian Empire (Alexander),expansion,1,khorasan,1,0,0,0,0,-136
-dahae,Dahae,achaemenid_empire,Achaemenid Empire,expansion,1,khorasan,1,0,0,0,0,-350
-dahae,Dahae,macedonian_empire,Macedonian Empire (Alexander),expansion,1,khorasan,1,0,0,0,0,-136
 greco_bactrian_kingdom,Greco-Bactrian Kingdom,parthian_empire,Parthian Empire (Arsacid),expansion,1,khorasan,1,0,0,0,0,-122
 parthian_empire,Parthian Empire (Arsacid),kushan_empire,Kushan Empire,expansion,1,khorasan,1,0,0,0,0,-194
 kushano_sasanian_kingdom,Kushano-Sasanian Kingdom,hephthalites,Hephthalites,expansion,1,khorasan,1,0,0,0,0,75
@@ -3729,9 +3464,9 @@ novgorod_republic,Novgorod Republic,polish_lithuanian_commonwealth,Polish-Lithua
 galicia_volhynia,Principality of Galicia-Volhynia,golden_horde,Golden Horde,expansion,1,kievan_rus,1,0,0,0,0,-107
 grand_duchy_of_lithuania,Grand Duchy of Lithuania,golden_horde,Golden Horde,expansion,1,kievan_rus,1,0,0,0,0,-327
 tsardom_russia,Tsardom of Russia,polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,expansion,1,kievan_rus,1,0,0,0,0,-152
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),neo_assyrian_empire,Neo-Assyrian Empire,expansion,1,levant,1,0,0,0,0,-579
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),neo_babylonian,Neo-Babylonian (Chaldean) Empire,expansion,1,levant,1,0,0,0,0,-294
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),achaemenid_empire,Achaemenid Empire,expansion,1,levant,1,0,0,0,0,-218
+tyre,Tyre,neo_assyrian_empire,Neo-Assyrian Empire,expansion,1,levant,1,0,0,0,0,-579
+tyre,Tyre,neo_babylonian,Neo-Babylonian (Chaldean) Empire,expansion,1,levant,1,0,0,0,0,-294
+tyre,Tyre,achaemenid_empire,Achaemenid Empire,expansion,1,levant,1,0,0,0,0,-218
 kingdom_of_judah,Kingdom of Judah,neo_assyrian_empire,Neo-Assyrian Empire,expansion,1,levant,1,0,0,0,0,-325
 kingdom_of_jerusalem,Kingdom of Jerusalem,zangid_atabegate,Zangid Atabegate,expansion,1,levant,1,0,0,0,0,-164
 kingdom_of_jerusalem,Kingdom of Jerusalem,zengid_dynasty,Zengid Dynasty,expansion,1,levant,1,0,0,0,0,-164
@@ -3744,8 +3479,6 @@ kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),ottoman_empire,Ottoman Empire,ex
 aq_qoyunlu,Aq Qoyunlu (White Sheep Turkmen),ottoman_empire,Ottoman Empire,expansion,1,mesopotamia,1,0,0,0,0,-209
 safavid_empire,Safavid Empire,ottoman_empire,Ottoman Empire,expansion,1,mesopotamia,1,0,0,0,0,-437
 rouran_khaganate,Rouran Khaganate,northern_wei,Northern Wei tributary,expansion,1,mongolian_plateau,1,0,0,0,0,-169
-shiwei,Shiwei,first_turkic_khaganate,First Türkic Empire,expansion,1,mongolian_plateau,1,0,0,0,0,-355
-berber,Berber / Mauretania,roman_republic,Roman Republic,expansion,1,north_africa,1,0,0,0,0,-309
 carthage,Carthage (Phoenician City-State),roman_republic,Roman Republic,expansion,1,north_africa,1,0,0,0,0,-363
 carthage,Carthage (Phoenician City-State),roman_empire,Roman Empire,expansion,1,north_africa,1,0,0,0,0,119
 mauretania_kingdom,Mauretania Kingdom,roman_empire,Roman Empire,expansion,1,north_africa,1,0,0,0,0,-67
@@ -3755,8 +3488,6 @@ hafsid_dynasty,Hafsid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_af
 marinid_dynasty,Marinid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-166
 punt,Punt (Egyptian trading land),egyptian_new_kingdom,Egyptian New Kingdom,expansion,1,nubia,1,0,0,0,0,-550
 punt,Punt (Egyptian trading land),new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-550
-beja,Beja / Habesha coastal lords,egyptian_new_kingdom,Egyptian New Kingdom,expansion,1,nubia,1,0,0,0,0,-3050
-beja,Beja / Habesha coastal lords,new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-3050
 solomonic_dynasty,Ethiopian Empire (Solomonic),muhammad_ali_dynasty,Muhammad Ali dynasty,expansion,1,nubia,1,0,0,0,0,-169
 kingdom_of_prussia,Kingdom of Prussia,russian_empire,Russian Empire,expansion,1,poland,1,0,0,0,0,-197
 crimean_khanate,Crimean Khanate,russian_empire,Russian Empire,expansion,1,pontic_steppe,1,0,0,0,0,-62
@@ -3775,26 +3506,21 @@ ba_shu,Ba and Shu (巴·蜀),qin_dynasty,Qin Dynasty,expansion,1,yangtze,1,0,0,0
 ba_shu,Ba and Shu (巴·蜀),western_han,Western Han,expansion,1,yangtze,1,0,0,0,0,114
 southern_song,Southern Song Dynasty,mongol_empire,Mongol Empire,expansion,1,yangtze,1,0,0,0,0,-73
 western_wei,Western Wei / Northern Zhou tributary,tang_dynasty,Tang Dynasty,expansion,1,yellow_river,1,0,0,0,0,61
-tupi_guarani,Tupí-Guaraní Peoples,portuguese_brazil,Portuguese Brazil,expansion,1,amazonia,1,0,0,0,0,-100
-tupi_guarani,Tupí-Guaraní Peoples,viceroyalty_of_peru,Viceroyalty of Peru,expansion,1,amazonia,1,0,0,0,0,-58
 chimu_kingdom,Chimú Kingdom,viceroyalty_of_peru,Viceroyalty of Peru,expansion,1,andes,1,0,0,0,0,72
+mapuche_nation,Mapuche Nation,portuguese_brazil,Portuguese Brazil,expansion,1,patagonia,1,0,0,0,0,-383
+mapuche_nation,Mapuche Nation,viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,expansion,1,patagonia,1,0,0,0,0,-107
+mapuche_nation,Mapuche Nation,chile,Republic of Chile,expansion,1,patagonia,1,0,0,0,0,-65
+mapuche_nation,Mapuche Nation,empire_of_brazil,Empire of Brazil,expansion,1,patagonia,1,0,0,0,0,-61
 iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),thirteen_colonies,Thirteen Colonies,expansion,1,us_east,1,0,0,0,0,-177
-mississippian_culture,Mississippian Culture,new_spain,Viceroyalty of New Spain,expansion,1,us_south,1,0,0,0,0,-79
+british_caribbean,British Caribbean,viceroyalty_of_new_granada,Viceroyalty of New Granada,expansion,1,caribbean,1,0,0,0,0,-245
+british_caribbean,British Caribbean,gran_colombia,Gran Colombia,expansion,1,caribbean,1,0,0,0,0,-143
+british_caribbean,British Caribbean,venezuela,Republic of Venezuela,expansion,1,caribbean,1,0,0,0,0,-132
+british_caribbean,British Caribbean,colombia,Republic of Colombia,expansion,1,caribbean,1,0,0,0,0,-131
 spanish_florida,Spanish Florida,cherokee_nation,Cherokee Nation,expansion,1,us_south,1,0,0,0,0,-281
 spanish_florida,Spanish Florida,thirteen_colonies,Thirteen Colonies,expansion,1,us_south,1,0,0,0,0,-214
 creek_confederacy,Creek Confederacy (Muscogee),thirteen_colonies,Thirteen Colonies,expansion,1,us_south,1,0,0,0,0,-225
 creek_confederacy,Creek Confederacy (Muscogee),louisiana_territory,Louisiana Territory (French),expansion,1,us_south,1,0,0,0,0,-150
 creek_confederacy,Creek Confederacy (Muscogee),united_states,United States of America,expansion,1,us_south,1,0,0,0,0,-56
-carib_peoples,Carib Peoples,new_spain,Viceroyalty of New Spain,expansion,1,caribbean,1,0,0,0,0,-79
-carib_peoples,Carib Peoples,viceroyalty_of_new_granada,Viceroyalty of New Granada,expansion,1,caribbean,1,0,0,0,0,117
-british_caribbean,British Caribbean,viceroyalty_of_new_granada,Viceroyalty of New Granada,expansion,1,caribbean,1,0,0,0,0,-245
-british_caribbean,British Caribbean,gran_colombia,Gran Colombia,expansion,1,caribbean,1,0,0,0,0,-143
-british_caribbean,British Caribbean,venezuela,Republic of Venezuela,expansion,1,caribbean,1,0,0,0,0,-132
-british_caribbean,British Caribbean,colombia,Republic of Colombia,expansion,1,caribbean,1,0,0,0,0,-131
-mapuche_nation,Mapuche Nation,portuguese_brazil,Portuguese Brazil,expansion,1,patagonia,1,0,0,0,0,-383
-mapuche_nation,Mapuche Nation,viceroyalty_of_rio_de_la_plata,Viceroyalty of Río de la Plata,expansion,1,patagonia,1,0,0,0,0,-107
-mapuche_nation,Mapuche Nation,chile,Republic of Chile,expansion,1,patagonia,1,0,0,0,0,-65
-mapuche_nation,Mapuche Nation,empire_of_brazil,Empire of Brazil,expansion,1,patagonia,1,0,0,0,0,-61
 russian_alaska,Russian America,united_states,United States of America,expansion,1,alaska,1,0,0,0,0,-91
 wusun,Wusun,first_turkic_khaganate,First Türkic Empire,expansion,1,,0,0,0,0,1,152
 former_qin,Former Qin (前秦),sui_dynasty,Sui Dynasty,expansion,1,,0,0,0,0,1,187
@@ -3807,10 +3533,6 @@ gujarat_sultanate,Gujarat Sultanate,durrani_empire,Durrani Empire,expansion,1,,0
 crown_of_aragon,Crown of Aragon,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,1,,0,0,0,0,1,151
 principality_of_transylvania,Principality of Transylvania,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,1,,0,0,0,0,1,156
 byzantine_empire,Byzantine Empire,ilkhanate,Ilkhanate,same,1,anatolia,1,0,0,0,0,-197
-illyrians,Illyrians,macedonian_kingdom,Macedonian Kingdom,same,1,balkans,1,0,0,0,0,-640
-illyrians,Illyrians,kingdom_of_epirus,Kingdom of Epirus,same,1,balkans,1,0,0,0,0,-302
-illyrians,Illyrians,dacian_kingdom,Dacian Kingdom,same,1,balkans,1,0,0,0,0,86
-histri,Histri,lysimachus,Lysimachus,same,1,balkans,1,0,0,0,0,-129
 macedonian_kingdom,Macedonian Kingdom,illyrian_kingdom,Illyrian Kingdom,same,1,balkans,1,0,0,0,0,-232
 macedonian_kingdom,Macedonian Kingdom,dacian_kingdom,Dacian Kingdom,same,1,balkans,1,0,0,0,0,86
 kingdom_of_epirus,Kingdom of Epirus,illyrian_kingdom,Illyrian Kingdom,same,1,balkans,1,0,0,0,0,-233
@@ -3820,9 +3542,6 @@ byzantine_empire,Byzantine Empire,western_roman_empire,Western Roman Empire,same
 gepid_kingdom,Gepid Kingdom,republic_of_venice,Venice,same,1,balkans,1,0,0,0,0,130
 croatian_principality,Croatian Principality,first_bulgarian_empire,First Bulgarian Empire,same,1,balkans,1,0,0,0,0,-244
 first_bulgarian_empire,First Bulgarian Empire,croatian_kingdom,Croatian Kingdom,same,1,balkans,1,0,0,0,0,-93
-republic_of_venice,Venice,pechenegs,Pechenegs,same,1,balkans,1,0,0,0,0,-937
-pechenegs,Pechenegs,hungary,Hungary,same,1,balkans,1,0,0,0,0,-91
-pechenegs,Pechenegs,latin_empire,Latin Empire,same,1,balkans,1,0,0,0,0,113
 croatian_kingdom,Croatian Kingdom,second_bulgarian_empire,Second Bulgarian Empire,same,1,balkans,1,0,0,0,0,83
 croatian_kingdom,Croatian Kingdom,serbian_empire,Serbian Empire (Nemanjić Dynasty),same,1,balkans,1,0,0,0,0,88
 croatian_kingdom,Croatian Kingdom,despotate_of_epirus,Despotate of Epirus,same,1,balkans,1,0,0,0,0,103
@@ -3838,11 +3557,9 @@ principality_of_moldavia,Principality of Moldavia,italian_albania,Italian Albani
 principality_of_moldavia,Principality of Moldavia,independent_state_of_croatia,Independent State of Croatia,same,1,balkans,1,0,0,0,0,82
 principality_of_moldavia,Principality of Moldavia,sfr_yugoslavia,SFR Yugoslavia,same,1,balkans,1,0,0,0,0,86
 bosnian_kingdom,Bosnian Kingdom,serbian_despotate,Serbian Despotate,same,1,balkans,1,0,0,0,0,-61
-cimmerian_scythian_nomads,Cimmerian / Scythian nomads,median_kingdom,Median Kingdom,same,1,caucasus,1,0,0,0,0,-378
 khazar_khaganate,Khazar Khaganate,sajid_dynasty,Sajid dynasty,same,1,caucasus,1,0,0,0,0,-80
 bagratid_armenia,Bagratid Armenia,rawwadid_dynasty,Rawwadid Dynasty,same,1,caucasus,1,0,0,0,0,-109
 karabakh_khanate,Karabakh Khanate,transcaucasian_democratic_federative_republic,Transcaucasian Democratic Federative Republic,same,1,caucasus,1,0,0,0,0,96
-saka,Saka / Massagetae,yuezhi,Yuezhi,same,1,central_asian_steppe,1,0,0,0,0,-100
 yuezhi,Yuezhi,xiongnu,Xiongnu Confederation,same,1,central_asian_steppe,1,0,0,0,0,-79
 xiongnu,Xiongnu Confederation,kangju,Kangju,same,1,central_asian_steppe,1,0,0,0,0,-293
 kangju,Kangju,rouran_khaganate,Rouran Khaganate,same,1,central_asian_steppe,1,0,0,0,0,-70
@@ -3880,7 +3597,6 @@ elam,Kingdom of Elam,mannai_kingdom,Mannai Kingdom,same,1,iran_plateau,1,0,0,0,0
 marhashi_kingdom,Marhashi Kingdom,lullubi_kingdom,Lullubi Kingdom,same,1,iran_plateau,1,0,0,0,0,-300
 anshan_kingdom,Anshan Kingdom,lullubi_kingdom,Lullubi Kingdom,same,1,iran_plateau,1,0,0,0,0,-1750
 anshan_kingdom,Anshan Kingdom,mannai_kingdom,Mannai Kingdom,same,1,iran_plateau,1,0,0,0,0,-300
-scythian,Scythian / Sarmatian steppe fringe,median_kingdom,Median Kingdom,same,1,iran_plateau,1,0,0,0,0,-478
 dabuyid_dynasty,Dabuyid Dynasty,dulafid_dynasty,Dulafid Dynasty,same,1,iran_plateau,1,0,0,0,0,80
 bavandid_dynasty,Bavandid Dynasty,dulafid_dynasty,Dulafid Dynasty,same,1,iran_plateau,1,0,0,0,0,-509
 bavandid_dynasty,Bavandid Dynasty,salgurid_dynasty,Salgurid Dynasty,same,1,iran_plateau,1,0,0,0,0,-201
@@ -3888,49 +3604,6 @@ dulafid_dynasty,Dulafid Dynasty,kakuyid_dynasty,Kakuyid Dynasty,same,1,iran_plat
 jalayirid_sultanate,Jalayirid Sultanate,chobanid_dynasty,Chobanid dynasty,same,1,iran_plateau,1,0,0,0,0,-97
 karkiya_dynasty,Kar-Kiya Dynasty,kalat_khanate,Kalat Khanate,same,1,iran_plateau,1,0,0,0,0,74
 kalat_khanate,Kalat Khanate,zand_dynasty,Zand Dynasty,same,1,iran_plateau,1,0,0,0,0,-204
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,same,1,italy,1,0,0,0,0,-800
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,italic_peoples,Italic Peoples,same,1,italy,1,0,0,0,0,-800
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,phoenician_colonies,Phoenician Colonies of Sardinia,same,1,italy,1,0,0,0,0,-700
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,punic_coastal_settlements,Punic Coastal Settlements,same,1,italy,1,0,0,0,0,-600
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,roman_kingdom,Roman Kingdom,same,1,italy,1,0,0,0,0,-553
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,magna_graecia,Magna Graecia,same,1,italy,1,0,0,0,0,-550
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,carthaginian_sardinia,Carthaginian Sardinia,same,1,italy,1,0,0,0,0,-350
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,carthaginian_western_sicily,Carthaginian Western Sicily,same,1,italy,1,0,0,0,0,-350
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,-250
-ligurians_euganei_raeti,Ligurian-Euganei-Raeti Peoples,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,-200
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,phoenician_colonies,Phoenician Colonies of Sardinia,same,1,italy,1,0,0,0,0,-400
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,punic_coastal_settlements,Punic Coastal Settlements,same,1,italy,1,0,0,0,0,-300
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,magna_graecia,Magna Graecia,same,1,italy,1,0,0,0,0,-250
-latin_sabine_samnite_peoples,Latin-Sabine-Samnite Peoples,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,100
-italic_peoples,Italic Peoples,phoenician_colonies,Phoenician Colonies of Sardinia,same,1,italy,1,0,0,0,0,-400
-italic_peoples,Italic Peoples,punic_coastal_settlements,Punic Coastal Settlements,same,1,italy,1,0,0,0,0,-300
-italic_peoples,Italic Peoples,magna_graecia,Magna Graecia,same,1,italy,1,0,0,0,0,-250
-italic_peoples,Italic Peoples,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,100
-phoenician_colonies,Phoenician Colonies of Sardinia,roman_kingdom,Roman Kingdom,same,1,italy,1,0,0,0,0,-203
-phoenician_colonies,Phoenician Colonies of Sardinia,magna_graecia,Magna Graecia,same,1,italy,1,0,0,0,0,-200
-phoenician_colonies,Phoenician Colonies of Sardinia,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,100
-phoenician_colonies,Phoenician Colonies of Sardinia,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,150
-punic_coastal_settlements,Punic Coastal Settlements,roman_kingdom,Roman Kingdom,same,1,italy,1,0,0,0,0,-478
-punic_coastal_settlements,Punic Coastal Settlements,magna_graecia,Magna Graecia,same,1,italy,1,0,0,0,0,-475
-punic_coastal_settlements,Punic Coastal Settlements,oscan_samnite_peoples,Oscan-Samnite Peoples,same,1,italy,1,0,0,0,0,-325
-punic_coastal_settlements,Punic Coastal Settlements,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,-175
-punic_coastal_settlements,Punic Coastal Settlements,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,-125
-roman_kingdom,Roman Kingdom,magna_graecia,Magna Graecia,same,1,italy,1,0,0,0,0,-241
-roman_kingdom,Roman Kingdom,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,59
-roman_kingdom,Roman Kingdom,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,109
-magna_graecia,Magna Graecia,oscan_samnite_peoples,Oscan-Samnite Peoples,same,1,italy,1,0,0,0,0,-320
-magna_graecia,Magna Graecia,carthaginian_sardinia,Carthaginian Sardinia,same,1,italy,1,0,0,0,0,-270
-magna_graecia,Magna Graecia,carthaginian_western_sicily,Carthaginian Western Sicily,same,1,italy,1,0,0,0,0,-270
-magna_graecia,Magna Graecia,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,-170
-magna_graecia,Magna Graecia,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,-120
-oscan_samnite_peoples,Oscan-Samnite Peoples,carthaginian_sardinia,Carthaginian Sardinia,same,1,italy,1,0,0,0,0,-260
-oscan_samnite_peoples,Oscan-Samnite Peoples,carthaginian_western_sicily,Carthaginian Western Sicily,same,1,italy,1,0,0,0,0,-260
-oscan_samnite_peoples,Oscan-Samnite Peoples,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,-160
-oscan_samnite_peoples,Oscan-Samnite Peoples,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,-110
-carthaginian_sardinia,Carthaginian Sardinia,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,-212
-carthaginian_sardinia,Carthaginian Sardinia,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,-162
-carthaginian_western_sicily,Carthaginian Western Sicily,celtic_la_tene_migration,Celtic La Tène Migration,same,1,italy,1,0,0,0,0,-209
-carthaginian_western_sicily,Carthaginian Western Sicily,celtic_gauls,Cisalpine Celtic Gauls,same,1,italy,1,0,0,0,0,-159
 odoacer_kingdom,Kingdom of Odoacer,byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,same,1,italy,1,0,0,0,0,91
 byzantine_sardinia,Byzantine Sardinia,lombard_kingdom,Kingdom of the Lombards,same,1,italy,1,0,0,0,0,-132
 byzantine_sardinia,Byzantine Sardinia,lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,same,1,italy,1,0,0,0,0,-130
@@ -3939,12 +3612,10 @@ byzantine_sardinia,Byzantine Sardinia,papal_states,Papal States,same,1,italy,1,0
 byzantine_sardinia,Byzantine Sardinia,tuscan_march,March of Tuscany,same,1,italy,1,0,0,0,0,100
 byzantine_sardinia,Byzantine Sardinia,emirate_of_sicily,Emirate of Sicily,same,1,italy,1,0,0,0,0,131
 byzantine_sardinia,Byzantine Sardinia,arab_emirate_of_bari,Arab Emirate of Bari,same,1,italy,1,0,0,0,0,147
-byzantine_sardinia,Byzantine Sardinia,lombard_principalities,Lombard Principalities of Southern Italy,same,1,italy,1,0,0,0,0,149
 byzantine_sicilian_theme,Byzantine Sicilian Theme,lombard_kingdom,Kingdom of the Lombards,same,1,italy,1,0,0,0,0,-259
 byzantine_sicilian_theme,Byzantine Sicilian Theme,lombard_duchy_of_spoleto,Lombard Duchy of Spoleto,same,1,italy,1,0,0,0,0,-257
 byzantine_sicilian_theme,Byzantine Sicilian Theme,lombard_duchy_of_benevento,Lombard Duchy of Benevento,same,1,italy,1,0,0,0,0,-256
 byzantine_sicilian_theme,Byzantine Sicilian Theme,papal_states,Papal States,same,1,italy,1,0,0,0,0,-73
-byzantine_sicilian_theme,Byzantine Sicilian Theme,giudicati_of_sardinia,Giudicati of Sardinia,same,1,italy,1,0,0,0,0,73
 byzantine_sicilian_theme,Byzantine Sicilian Theme,giudicati_torres,Giudicato of Torres,same,1,italy,1,0,0,0,0,73
 lombard_kingdom,Kingdom of the Lombards,byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,same,1,italy,1,0,0,0,0,-190
 lombard_kingdom,Kingdom of the Lombards,emirate_of_sicily,Emirate of Sicily,same,1,italy,1,0,0,0,0,57
@@ -3958,9 +3629,7 @@ lombard_duchy_of_benevento,Lombard Duchy of Benevento,arab_emirate_of_bari,Arab 
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-112
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,emirate_of_sicily,Emirate of Sicily,same,1,italy,1,0,0,0,0,80
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,arab_emirate_of_bari,Arab Emirate of Bari,same,1,italy,1,0,0,0,0,96
-byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,lombard_principalities,Lombard Principalities of Southern Italy,same,1,italy,1,0,0,0,0,98
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,principality_of_salerno,Principality of Salerno,same,1,italy,1,0,0,0,0,100
-byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,giudicati_of_sardinia,Giudicati of Sardinia,same,1,italy,1,0,0,0,0,149
 byzantine_exarchate_of_ravenna,Byzantine Exarchate of Ravenna,giudicati_torres,Giudicato of Torres,same,1,italy,1,0,0,0,0,149
 papal_states,Papal States,emirate_of_sicily,Emirate of Sicily,same,1,italy,1,0,0,0,0,-1039
 papal_states,Papal States,arab_emirate_of_bari,Arab Emirate of Bari,same,1,italy,1,0,0,0,0,-1023
@@ -3973,9 +3642,7 @@ papal_states,Papal States,spanish_duchy_of_milan,Spanish Duchy of Milan,same,1,i
 tuscan_march,March of Tuscany,emirate_of_sicily,Emirate of Sicily,same,1,italy,1,0,0,0,0,-366
 tuscan_march,March of Tuscany,arab_emirate_of_bari,Arab Emirate of Bari,same,1,italy,1,0,0,0,0,-350
 tuscan_march,March of Tuscany,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-232
-emirate_of_sicily,Emirate of Sicily,lombard_principalities,Lombard Principalities of Southern Italy,same,1,italy,1,0,0,0,0,-223
 emirate_of_sicily,Emirate of Sicily,principality_of_salerno,Principality of Salerno,same,1,italy,1,0,0,0,0,-221
-emirate_of_sicily,Emirate of Sicily,giudicati_of_sardinia,Giudicati of Sardinia,same,1,italy,1,0,0,0,0,-172
 emirate_of_sicily,Emirate of Sicily,giudicati_torres,Giudicato of Torres,same,1,italy,1,0,0,0,0,-172
 emirate_of_sicily,Emirate of Sicily,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-107
 emirate_of_sicily,Emirate of Sicily,countyduchy_of_savoy,County and Duchy of Savoy,same,1,italy,1,0,0,0,0,-69
@@ -3986,9 +3653,7 @@ emirate_of_sicily,Emirate of Sicily,hohenstaufen,Hohenstaufen Imperial Italy,sam
 arab_emirate_of_bari,Arab Emirate of Bari,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,94
 arab_emirate_of_bari,Arab Emirate of Bari,countyduchy_of_savoy,County and Duchy of Savoy,same,1,italy,1,0,0,0,0,132
 arab_emirate_of_bari,Arab Emirate of Bari,republic_of_genoa,Republic of Genoa,same,1,italy,1,0,0,0,0,134
-lombard_principalities,Lombard Principalities of Southern Italy,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-112
 principality_of_salerno,Principality of Salerno,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-112
-giudicati_of_sardinia,Giudicati of Sardinia,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-455
 giudicati_torres,Giudicato of Torres,byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,same,1,italy,1,0,0,0,0,-294
 byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,countyduchy_of_savoy,County and Duchy of Savoy,same,1,italy,1,0,0,0,0,-68
 byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,republic_of_genoa,Republic of Genoa,same,1,italy,1,0,0,0,0,-66
@@ -3997,8 +3662,6 @@ byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,hohenstaufen_sicily,
 byzantine_catepanate_of_italy,Byzantine Catepanate of Italy,hohenstaufen,Hohenstaufen Imperial Italy,same,1,italy,1,0,0,0,0,123
 kingdom_of_sicily,Kingdom of Sicily,aragonese_kingdom_of_sicily,Aragonese Kingdom of Sicily,same,1,italy,1,0,0,0,0,-534
 kingdom_of_naples,Kingdom of Naples,aragonese_kingdom_of_sicily,Aragonese Kingdom of Sicily,same,1,italy,1,0,0,0,0,-534
-saka,Saka / Massagetae,greco_bactrian_kingdom,Greco-Bactrian Kingdom,same,1,khorasan,1,0,0,0,0,-56
-dahae,Dahae,greco_bactrian_kingdom,Greco-Bactrian Kingdom,same,1,khorasan,1,0,0,0,0,-56
 parthian_empire,Parthian Empire (Arsacid),kidarites,Kidarites,same,1,khorasan,1,0,0,0,0,136
 sassanid_empire,Sassanid Empire,alchon_huns,Alchon Huns,same,1,khorasan,1,0,0,0,0,-271
 sassanid_empire,Sassanid Empire,first_turkic_khaganate,First Türkic Empire,same,1,khorasan,1,0,0,0,0,-99
@@ -4009,27 +3672,13 @@ hindu_shahis,Hindu Shahis,saffarid_dynasty,Saffarid Dynasty,same,1,khorasan,1,0,
 golden_horde,Golden Horde,polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,same,1,kievan_rus,1,0,0,0,0,67
 egyptian_new_kingdom,Egyptian New Kingdom,middle_assyrian_empire,Middle Assyrian Empire,same,1,levant,1,0,0,0,0,-323
 new_kingdom_egypt,New Kingdom Egypt,middle_assyrian_empire,Middle Assyrian Empire,same,1,levant,1,0,0,0,0,-322
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),kingdom_of_israel,United Kingdom of Israel,same,1,levant,1,0,0,0,0,-715
-phoenician_states,Phoenician City-States (Tyre; Sidon; Byblos),kingdom_of_judah,Kingdom of Judah,same,1,levant,1,0,0,0,0,-598
-goguryeo,Goguryeo,shiwei,Shiwei,same,1,manchuria,1,0,0,0,0,-280
-shiwei,Shiwei,balhae,Balhae (Bohai),same,1,manchuria,1,0,0,0,0,-209
+tyre,Tyre,kingdom_of_israel,United Kingdom of Israel,same,1,levant,1,0,0,0,0,-715
+tyre,Tyre,kingdom_of_judah,Kingdom of Judah,same,1,levant,1,0,0,0,0,-598
 buyid_dynasty,Buyid Dynasty,zangid_atabegate,Zangid Atabegate,same,1,mesopotamia,1,0,0,0,0,65
 buyid_dynasty,Buyid Dynasty,zengid_dynasty,Zengid Dynasty,same,1,mesopotamia,1,0,0,0,0,65
-rouran_khaganate,Rouran Khaganate,shiwei,Shiwei,same,1,mongolian_plateau,1,0,0,0,0,-167
-shiwei,Shiwei,second_turkic_khaganate,Second Türkic Khaganate,same,1,mongolian_plateau,1,0,0,0,0,-225
-shiwei,Shiwei,uyghur_khaganate,Uyghur Khaganate,same,1,mongolian_plateau,1,0,0,0,0,-163
-berber,Berber / Mauretania,carthage,Carthage (Phoenician City-State),same,1,north_africa,1,0,0,0,0,-614
 carthage,Carthage (Phoenician City-State),mauretania_kingdom,Mauretania Kingdom,same,1,north_africa,1,0,0,0,0,-139
 carthage,Carthage (Phoenician City-State),numidia,Kingdom of Numidia,same,1,north_africa,1,0,0,0,0,-56
 western_roman_empire,Western Roman Empire,byzantine_empire,Byzantine Empire,same,1,north_africa,1,0,0,0,0,-81
-punt,Punt (Egyptian trading land),beja,Beja / Habesha coastal lords,same,1,nubia,1,0,0,0,0,-1000
-beja,Beja / Habesha coastal lords,meroitic_kingdom,Kingdom of Meroe (Meroitic Kingdom),same,1,nubia,1,0,0,0,0,-2156
-beja,Beja / Habesha coastal lords,aksumite_kingdom,Aksumite Kingdom,same,1,nubia,1,0,0,0,0,-1400
-beja,Beja / Habesha coastal lords,makuria_kingdom,Kingdom of Makuria,same,1,nubia,1,0,0,0,0,-1160
-beja,Beja / Habesha coastal lords,kanem_empire,Kanem Empire / Daju,same,1,nubia,1,0,0,0,0,-800
-beja,Beja / Habesha coastal lords,zagwe_dynasty,Zagwe Dynasty,same,1,nubia,1,0,0,0,0,-600
-beja,Beja / Habesha coastal lords,solomonic_dynasty,Ethiopian Empire (Solomonic),same,1,nubia,1,0,0,0,0,-230
-beja,Beja / Habesha coastal lords,darfur_sultanate,Darfur Sultanate,same,1,nubia,1,0,0,0,0,103
 aksumite_kingdom,Aksumite Kingdom,makuria_kingdom,Kingdom of Makuria,same,1,nubia,1,0,0,0,0,-600
 aksumite_kingdom,Aksumite Kingdom,kanem_empire,Kanem Empire / Daju,same,1,nubia,1,0,0,0,0,-240
 makuria_kingdom,Kingdom of Makuria,kanem_empire,Kanem Empire / Daju,same,1,nubia,1,0,0,0,0,-664
@@ -4043,7 +3692,6 @@ solomonic_dynasty,Ethiopian Empire (Solomonic),mahdist_state,Mahdist State,same,
 funj_sultanate,Funj Sultanate,italian_east_africa,Italian East Africa,same,1,nubia,1,0,0,0,0,115
 polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,kingdom_of_prussia,Kingdom of Prussia,same,1,poland,1,0,0,0,0,-94
 khazar_khaganate,Khazar Khaganate,kievan_rus,Kievan Rus,same,1,pontic_steppe,1,0,0,0,0,-87
-pechenegs,Pechenegs,kievan_rus,Kievan Rus,same,1,pontic_steppe,1,0,0,0,0,-209
 kazan_khanate,Kazan Khanate,cossack_hetmanate,Cossack Hetmanate,same,1,pontic_steppe,1,0,0,0,0,97
 crimean_khanate,Crimean Khanate,cossack_hetmanate,Cossack Hetmanate,same,1,pontic_steppe,1,0,0,0,0,-134
 pratihara_dynasty,Pratihara Dynasty,ghorid_dynasty,Ghorid Sultanate,same,1,punjab,1,0,0,0,0,112
@@ -4060,39 +3708,27 @@ shu_han,Shu Han,former_qin,Former Qin (前秦),same,1,yellow_river,1,0,0,0,0,88
 liao_dynasty,Liao Dynasty (Khitan),song_dynasty,Song Dynasty,same,1,yellow_river,1,0,0,0,0,-165
 liao_dynasty,Liao Dynasty (Khitan),northern_song,Northern Song Dynasty,same,1,yellow_river,1,0,0,0,0,-165
 song_dynasty,Song Dynasty,jin_dynasty,Jin Dynasty,same,1,yellow_river,1,0,0,0,0,-164
-zapotec,Zapotec (Monte Albán),maya_city_states,Maya City-States (Tikal; Calakmul),same,1,mesoamerica,1,0,0,0,0,-650
-teotihuacan,Teotihuacan,maya_city_states,Maya City-States (Tikal; Calakmul),same,1,mesoamerica,1,0,0,0,0,-300
-postclassic_maya,Postclassic Maya (Mayapan; K'iche'),toltec_empire,Toltec Empire,same,1,mesoamerica,1,0,0,0,0,-624
-postclassic_maya,Postclassic Maya (Mayapan; K'iche'),aztec_empire,Aztec Empire (Mexico-Tenochtitlan),same,1,mesoamerica,1,0,0,0,0,-96
 muisca_confederation,Muisca Confederation,inca_empire,Inca Empire (Tawantinsuyu),same,1,andes,1,0,0,0,0,-103
+mapuche_nation,Mapuche Nation,argentina,Argentine Republic,same,1,patagonia,1,0,0,0,0,-67
+mapuche_nation,Mapuche Nation,uruguay,Oriental Republic of Uruguay,same,1,patagonia,1,0,0,0,0,-55
 iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),jamestown_colony,Jamestown Colony,same,1,us_east,1,0,0,0,0,-177
 iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),plymouth_colony,Plymouth Colony,same,1,us_east,1,0,0,0,0,-164
 iroquois_confederacy,Iroquois Confederacy (Haudenosaunee),new_amsterdam,New Amsterdam (Dutch),same,1,us_east,1,0,0,0,0,-158
-spanish_florida,Spanish Florida,creek_confederacy,Creek Confederacy (Muscogee),same,1,us_south,1,0,0,0,0,-221
-cherokee_nation,Cherokee Nation,louisiana_territory,Louisiana Territory (French),same,1,us_south,1,0,0,0,0,-156
-thirteen_colonies,Thirteen Colonies,louisiana_territory,Louisiana Territory (French),same,1,us_south,1,0,0,0,0,-94
-mississippian_culture,Mississippian Culture,new_france,New France,same,1,us_midwest,1,0,0,0,0,-66
-rupert_land,Rupert's Land (Hudson's Bay Company),sioux_nations,Sioux Nations (Lakota/Dakota),same,1,us_midwest,1,0,0,0,0,-190
-rupert_land,Rupert's Land (Hudson's Bay Company),louisiana_territory,Louisiana Territory (French),same,1,us_midwest,1,0,0,0,0,-188
-sioux_nations,Sioux Nations (Lakota/Dakota),louisiana_territory,Louisiana Territory (French),same,1,us_midwest,1,0,0,0,0,-194
-carib_peoples,Carib Peoples,spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),same,1,caribbean,1,0,0,0,0,-108
-taino,Taíno,british_caribbean,British Caribbean,same,1,caribbean,1,0,0,0,0,100
-taino,Taíno,french_caribbean,French Caribbean,same,1,caribbean,1,0,0,0,0,111
 spanish_caribbean,Spanish Caribbean (Cuba/Hispaniola/Puerto Rico),british_caribbean,British Caribbean,same,1,caribbean,1,0,0,0,0,-274
 british_caribbean,British Caribbean,french_caribbean,French Caribbean,same,1,caribbean,1,0,0,0,0,-327
 british_caribbean,British Caribbean,haiti,Republic of Haiti,same,1,caribbean,1,0,0,0,0,-158
 british_caribbean,British Caribbean,dominican_republic,Dominican Republic,same,1,caribbean,1,0,0,0,0,-118
 british_caribbean,British Caribbean,cuba,Republic of Cuba,same,1,caribbean,1,0,0,0,0,-60
-mapuche_nation,Mapuche Nation,argentina,Argentine Republic,same,1,patagonia,1,0,0,0,0,-67
-mapuche_nation,Mapuche Nation,uruguay,Oriental Republic of Uruguay,same,1,patagonia,1,0,0,0,0,-55
+spanish_florida,Spanish Florida,creek_confederacy,Creek Confederacy (Muscogee),same,1,us_south,1,0,0,0,0,-221
+cherokee_nation,Cherokee Nation,louisiana_territory,Louisiana Territory (French),same,1,us_south,1,0,0,0,0,-156
+thirteen_colonies,Thirteen Colonies,louisiana_territory,Louisiana Territory (French),same,1,us_south,1,0,0,0,0,-94
+rupert_land,Rupert's Land (Hudson's Bay Company),louisiana_territory,Louisiana Territory (French),same,1,us_midwest,1,0,0,0,0,-188
 tibetan_empire,Tibetan Empire,western_xia,Western Xia (Tangut Empire),same,1,,0,0,0,0,1,196
 balhae,Balhae (Bohai),jin_dynasty,Jin Dynasty,same,1,,0,0,0,0,1,189
 first_bulgarian_empire,First Bulgarian Empire,despotate_of_epirus,Despotate of Epirus,same,1,,0,0,0,0,1,187
 galicia_volhynia,Principality of Galicia-Volhynia,tsardom_russia,Tsardom of Russia,same,1,,0,0,0,0,1,198
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,pisan_county_of_cagliari,Pisan County of Cagliari,same,1,,0,0,0,0,1,181
 lombard_duchy_of_benevento,Lombard Duchy of Benevento,angevin_kingdom_of_naples,Angevin Kingdom of Naples,same,1,,0,0,0,0,1,189
-lombard_principalities,Lombard Principalities of Southern Italy,pisan_county_of_cagliari,Pisan County of Cagliari,same,1,,0,0,0,0,1,181
-lombard_principalities,Lombard Principalities of Southern Italy,angevin_kingdom_of_naples,Angevin Kingdom of Naples,same,1,,0,0,0,0,1,189
 principality_of_salerno,Principality of Salerno,pisan_county_of_cagliari,Pisan County of Cagliari,same,1,,0,0,0,0,1,181
 principality_of_salerno,Principality of Salerno,angevin_kingdom_of_naples,Angevin Kingdom of Naples,same,1,,0,0,0,0,1,189
 giudicati_torres,Giudicato of Torres,aragonese_kingdom_of_naples,Aragonese Kingdom of Naples,same,1,,0,0,0,0,1,183

@@ -48,7 +48,7 @@ Extracted 4,572 labels from the history panels (now in `panels/`). Analysis comp
 - [ ] **P3.9** Write `polity` fields into history JSONs for confident matches
 - [ ] **P3.10** Create new polity stubs in DuckDB for genuinely new entities (~400–800 expected)
 - [ ] **P3.11** Populate `dynasties` table from dynasty-category labels (~400+ expected)
-- [ ] **P3.12** Populate `cultures` table from culture-category labels (~100 records)
+- [x] **P3.12** Closed as won't do: no `cultures` table, and cultures stay panel labels (`docs/model/non_polity.md`)
 - [ ] **P3.13** Review remaining unclassified labels — reclassify or mark as label-only
 
 ### Phase 3 Overlap Issues (63 intra-panel, 75 cross-panel)
@@ -109,8 +109,7 @@ Key patterns to resolve:
 | Polities | 268 | ~700–1,100 | ~1,500 (enriched) |
 | Polities | 0 | ~400+ | ~2,500 |
 | Polity successions | 1,995 | ~3,000 | ~4,500 |
-| Cultures | 0 | ~100 | ~150 |
-| Figures | 285 | ~285 | ~1,000 |
+| Figures | 286 | ~285 | ~1,000 |
 | History panels | 61 (JSON) | 61 (DB) | 70+ |
 | **Total entities** | **~270** | **~1,500+** | **~5,200+** |
 

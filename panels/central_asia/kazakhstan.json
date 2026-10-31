@@ -45,13 +45,11 @@
           "stack": [
             {
               "label": "Yamna culture (Pontic–Caspian steppe)",
-              "note": "c.3500–2200 BCE",
-              "polity": "yamna_culture"
+              "note": "c.3500–2200 BCE"
             },
             {
               "label": "Abashevo culture",
-              "note": "c.2500–1900 BCE",
-              "polity": "abashevo_culture"
+              "note": "c.2500–1900 BCE"
             },
             {
               "label": "Sintashta (earliest chariots)",
@@ -65,13 +63,11 @@
           "stack": [
             {
               "label": "Kelteminar culture",
-              "note": "c.5000–3000 BCE",
-              "polity": "kelteminar_culture"
+              "note": "c.5000–3000 BCE"
             },
             {
               "label": "Yamna / early pastoral cultures",
-              "note": "c.3500–2000 BCE",
-              "polity": "yamna_culture"
+              "note": "c.3500–2000 BCE"
             }
           ],
           "span": 1
@@ -80,13 +76,11 @@
           "stack": [
             {
               "label": "Kelteminar culture",
-              "note": "c.5000–3000 BCE",
-              "polity": "kelteminar_culture"
+              "note": "c.5000–3000 BCE"
             },
             {
               "label": "Andronovo culture",
-              "note": "c.2000–900 BCE",
-              "polity": "andronovo_culture"
+              "note": "c.2000–900 BCE"
             }
           ],
           "span": 1
@@ -95,13 +89,11 @@
           "stack": [
             {
               "label": "Botai culture (horse domestication)",
-              "note": "c.3500–3000 BCE",
-              "polity": "botai_culture"
+              "note": "c.3500–3000 BCE"
             },
             {
               "label": "Andronovo culture",
-              "note": "c.2000–900 BCE",
-              "polity": "andronovo_culture"
+              "note": "c.2000–900 BCE"
             }
           ],
           "span": 1
@@ -110,13 +102,11 @@
           "stack": [
             {
               "label": "Afanasievo culture",
-              "note": "c.3300–2500 BCE",
-              "polity": "afanasievo_culture"
+              "note": "c.3300–2500 BCE"
             },
             {
               "label": "Andronovo culture",
-              "note": "c.2000–900 BCE",
-              "polity": "andronovo_culture"
+              "note": "c.2000–900 BCE"
             }
           ],
           "span": 1
@@ -133,13 +123,11 @@
           "stack": [
             {
               "label": "Srubnaya (Timber Grave) culture",
-              "note": "c.1800–1200 BCE",
-              "polity": "srubnaya_culture"
+              "note": "c.1800–1200 BCE"
             },
             {
               "label": "Proto-Scythian cultures",
-              "note": "c.1000–700 BCE",
-              "polity": "proto_scythian_cultures_culture"
+              "note": "c.1000–700 BCE"
             }
           ],
           "span": 1
@@ -148,8 +136,7 @@
           "stack": [
             {
               "label": "Srubnaya culture",
-              "note": "c.1800–1200 BCE",
-              "polity": "srubnaya_culture"
+              "note": "c.1800–1200 BCE"
             },
             {
               "label": "Cimmerian / early Saka",
@@ -177,13 +164,11 @@
           "stack": [
             {
               "label": "Begazy–Dandybai culture",
-              "note": "c.1400–900 BCE",
-              "polity": "begazy_dandybai_culture"
+              "note": "c.1400–900 BCE"
             },
             {
               "label": "Tasmola culture",
-              "note": "c.700–300 BCE",
-              "polity": "tasmola_culture"
+              "note": "c.700–300 BCE"
             }
           ],
           "span": 1
@@ -192,13 +177,11 @@
           "stack": [
             {
               "label": "Karasuk culture",
-              "note": "c.1500–800 BCE",
-              "polity": "karasuk_culture"
+              "note": "c.1500–800 BCE"
             },
             {
               "label": "Pazyryk culture (Altai)",
-              "note": "c.600–200 BCE",
-              "polity": "pazyryk_culture"
+              "note": "c.600–200 BCE"
             }
           ],
           "span": 1
@@ -246,7 +229,7 @@
             {
               "label": "Dahae",
               "note": "c.500–200 BCE",
-              "polity": "dahae"
+              "ethnicity": "dahae"
             }
           ],
           "span": 1
@@ -542,7 +525,7 @@
             {
               "label": "Pechenegs (origin here → move west)",
               "note": "c.860–900",
-              "polity": "pechenegs"
+              "ethnicity": "pechenegs"
             },
             {
               "label": "Cuman–Kipchak (Desht-i-Kipchak)",

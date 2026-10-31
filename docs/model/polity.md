@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity.csv`. This doc decides what counts as a polity.
 
-**Snapshot:** every count below was measured on 2026-10-31 on the working tree over commit `ac64f59` (uncommitted curation included) using `code/lib/csv.js`. Merge passes are running, so re-measure any duplicate list before acting on it.
+**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). Re-measure any duplicate list before acting on it.
 
 **Labels used here:**
 
@@ -33,11 +33,11 @@ No single admission rule was ever written. These pieces exist:
 | A change of dynasty, ruler, religion, language, territorial extent or policy never creates a row on its own | **Decided**, same |
 | There are no sub-polity periods. Drift inside a long polity is handled by a split at a major transition, or not at all | **Decided**, `CLAUDE.md` (the old tier was dropped 2026-05-01) |
 | Events, eras, peoples and collectives are not polities and must never be used as a polity reference | **Decided for panels**, `docs/migration/merge_map.md` §4 and §6 |
-| Archaeological cultures do not belong in `polity.csv` | **Decided, never carried out**, `merge_map.md` §5 names a `cultures` table that does not exist |
+| Archaeological cultures do not belong in `polity.csv` | **Decided and carried out**, `non_polity.md`: a culture stays a panel label, and there is no `cultures` table |
 | An entity earns a row through inbound references, not fame | **Decided**, `CLAUDE.md` and `city.md` Scope Discipline |
 | A dependent unit may be a polity. `province` means "modelled as a polity for territorial succession only" | **Decided**, `csvs/government.csv` |
 
-The panel rules and the rows disagree: `polity.csv` contains many peoples, cultures and periods. See 2.3.
+The non-polity migration brought the rows into line with the panel rules. See 2.3.
 
 ### 2.2 Test for a new row
 
@@ -51,22 +51,22 @@ Add a row only if all of these are true. Section 2.3 overrides this test: a cand
 
 ### 2.3 Hard cases: what the data does now
 
-Peoples, cultures, periods, collectives, events and persons are not polities (see the decision log). Do not add new rows in these classes. Existing rows stay until they have a new home, so that references keep resolving. Report them; do not delete them.
+Peoples, cultures, periods, collectives, events and persons are not polities (see the decision log). Do not add rows in these classes. `non_polity.md` gives each class its home and records the classified rows, all of which have moved. If you find another such row, report it; do not delete it.
 
 | Case | Documents say | Data now | Examples |
 |---|---|---|---|
-| **Peoples** with no recorded government | Not a polity (`merge_map.md` §4, §6) | Rows exist, almost all with `government = tribal_confederation` (42 rows in that group, which also holds real confederacies such as `iroquois_confederacy` and `aq_qoyunlu`) | `pechenegs` (860..1091, 5 panel cells), `germanic_tribes`, `celts`, `illyrians`, `italic_peoples`, `carib_peoples`, `tupi_guarani` |
-| **Archaeological cultures** | Belong in a `cultures` table that does not exist | Rows exist | `mississippian_culture`, `olmec`, `ancestral_pueblo` |
+| **Peoples** with no recorded government | Not a polity (`merge_map.md` §4, §6). Home is `ethnicity.csv`; a panel cell uses the `ethnicity` key | 24 rows moved. `government = tribal_confederation` is not the test: its 14 remaining rows are kept as real governments (`non_polity.md` section 5) | Moved: `pechenegs`, `germanic_tribes`, `celts`, `illyrians`. Kept: `iroquois_confederacy`, `aq_qoyunlu`, `wusun`, `yuezhi`, `xianbei` |
+| **Archaeological cultures** | A panel label, no entity; no `cultures` table (`non_polity.md`) | 4 rows retired. `mississippian_culture` became a link to ethnicity `mississippian` | `olmec`, `ancestral_pueblo`, `proto_elamite` |
 | **Periods** | Eras are not polities (`merge_map.md` §6 strips `warring_states`, `sixteen_kingdoms`) | Japan's period rows have been replaced by polity rows (section 8). No other period row is listed here | None listed |
-| **Collectives** covering many separate states | §6 strips "combined / multi-polity" labels | Rows exist, some beside rows for their members | `five_dynasties` beside `later_liang`, `later_zhou`; `southern_dynasties` beside `liu_song`, `chen`; `ten_kingdoms`, `northern_dynasties`, `sumerian_city_states`, `phoenician_states`, `maya_city_states`, `lombard_principalities`, `magna_graecia` |
-| **Events and migrations** | Not polities (§6) | Rows exist | `federalization` (1969..1992), `celtic_la_tene_migration` |
-| **A person** | `alexander` maps to `macedonian_empire` (§3), so a person is not a row | One row exists | `lysimachus` |
-| **Lumped row beside its split rows** | 07 says remove `han_dynasty` | Rows remain on hold (section 8) | `zhou_dynasty` with `western_zhou` + `eastern_zhou`; `song_dynasty` with `northern_song` + `southern_song` |
+| **Collectives** covering many separate states | §6 strips "combined / multi-polity" labels. A panel label, no entity | 13 rows retired. Members have rows only where something references them (`uruk`, `tyre`, `later_liang`, `liu_song`) | `five_dynasties`, `southern_dynasties`, `ten_kingdoms`, `sumerian_city_states`, `maya_city_states`, `magna_graecia` |
+| **Events and migrations** | Not polities (§6). A panel label, no entity | 2 rows retired | `federalization`, `celtic_la_tene_migration` |
+| **A person** | `alexander` maps to `macedonian_empire` (§3), so a person is not a row. The person goes in `figure.csv` and the state gets a polity row | None remain | `lysimachus` became `kingdom_of_lysimachus` plus a figure |
+| **Lumped row beside its split rows** | 07 says remove `han_dynasty` | These rows and their children stay (section 8) | `zhou_dynasty` with `western_zhou` + `eastern_zhou`; `song_dynasty` with `northern_song` + `southern_song` |
 | **Dependent units** | Allowed | 8 `province`, 21 `colonial_administration`, 4 `puppet_state` | `byzantine_exarchate_of_ravenna`, `new_spain`, `vichy_france` |
 | **Influence zones** | Skip: `{Power} sphere` is not direct rule (§4) | None in `polity.csv` | Leave the panel cell without a polity |
 | **Unknown** | Skip `?` cells (§4) | None | Leave the panel cell without a polity |
 
-Which class a row is in is often a judgment. `hephthalites`, `xiongnu` and `kara_koyunlu` carry a people's name and were real states. The test is whether someone governed (2.2 step 1), not the name. For a people with a recorded ruler, or any case that could fit either side, report it rather than add it. `pechenegs` is the test case, and stays until reviewed.
+Which class a row is in is often a judgment. `hephthalites`, `xiongnu` and `kara_koyunlu` carry a people's name and were real states. The test is whether someone governed (2.2 step 1), not the name. For a people with a recorded ruler, or any case that could fit either side, report it rather than add it. `pechenegs` was the test case: it failed step 1 of 2.2 and moved to `ethnicity.csv`.
 
 ### 2.4 Dynasties versus states
 
@@ -154,13 +154,23 @@ An empty `end_year` still means ongoing, so an unknown end needs an estimate and
 - Keep to about 40 characters.
 - If two entities would collide, add a geographic or temporal qualifier, or use the established name: `cao_wei`, `northern_wei`.
 
-Ignore the parts of `naming.md` headed by the `polity__dynasty` double-underscore pattern and the `cultures` table. They describe tables that do not exist.
+Ignore the part of `naming.md` headed by the `polity__dynasty` double-underscore pattern. It describes a table that does not exist.
 
 ### Retired ids
 
 Ids are permanent and never reused. An id with no row has been retired.
 
-There is no registry of retired ids. They survive in `SYNONYM_MAP` in `scripts/dedup_and_link.js` and in `merge_map.md` §3. Commit `ac64f59` retired `kidarites_alchon_huns`, `hephthalite_empire`, `jin_jurchen`, `western_liao`, `mongol_il_khanate` and `italy`. Later uncommitted curation retired `kidarite_kingdom`, `han_dynasty`, `goktürk_khaganate`, `yamato_period`, `nara_period`, `heian_period` and `feudal_japan`.
+There is no registry of retired ids. They survive in `STRIP_LIST` or `SYNONYM_MAP` in `scripts/dedup_and_link.js`, and in `merge_map.md` §3 or §6. Commit `ac64f59` retired `kidarites_alchon_huns`, `hephthalite_empire`, `jin_jurchen`, `western_liao`, `mongol_il_khanate` and `italy`. Later curation retired `kidarite_kingdom`, `han_dynasty`, `goktürk_khaganate`, `yamato_period`, `nara_period`, `heian_period` and `feudal_japan`.
+
+The non-polity migration retired these 44, listed with their homes in `merge_map.md` §6:
+
+- Peoples: `berber`, `beja`, `histri`, `illyrians`, `saka`, `cimmerian_scythian_nomads`, `dahae`, `donghu`, `scythian`, `celts`, `tupi_guarani`, `belgae`, `germanic_tribes`, `free_dacians`, `shiwei`, `pechenegs`, `carib_peoples`, `taino`, `sioux_nations`, `celtic_gauls`, `oscan_samnite_peoples`, `latin_sabine_samnite_peoples`, `italic_peoples`, `ligurians_euganei_raeti`
+- Cultures: `olmec`, `ancestral_pueblo`, `proto_elamite`, `mississippian_culture`
+- Collectives: `five_dynasties`, `ten_kingdoms`, `northern_dynasties`, `southern_dynasties`, `sumerian_city_states`, `phoenician_states`, `maya_city_states`, `postclassic_maya`, `lombard_principalities`, `magna_graecia`, `phoenician_colonies`, `punic_coastal_settlements`, `giudicati_of_sardinia`
+- Events: `federalization`, `celtic_la_tene_migration`
+- Person: `lysimachus`, replaced by `kingdom_of_lysimachus`
+
+An id that moves to another table for the same identity, as `pechenegs` did, is not reuse (section 8). As a polity id it stays retired.
 
 `italy` shows why you must check first: it is retired as a polity but is still a valid territory id and panel id.
 
@@ -169,7 +179,7 @@ To retire an id, change these together, as `ac64f59` did:
 1. `csvs/polity.csv`
 2. `csvs/polity_territory.csv`, `csvs/polity_dynasty.csv`, `csvs/figure.csv`, `csvs/fact_source.csv`
 3. the `polity` field in `panels/**/*.json`
-4. `SYNONYM_MAP` and `merge_map.md` §3
+4. `SYNONYM_MAP` and `merge_map.md` §3 for a row replaced by another polity; `STRIP_LIST` and `merge_map.md` §6 for a row with no polity replacement
 
 ### When to split (Decided 2026-06-21, 07-polity-split.md)
 
@@ -245,14 +255,15 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 - years are integers, and `start_year` <= `end_year`
 - ethnicity, language, religion and government values resolve when present
 - every polity reference from `polity_territory`, `polity_dynasty`, `figure`, `fact_source` and the derived succession file resolves
+- a panel entry's `ethnicity` resolves, and no panel entry has both `polity` and `ethnicity`
 
 **Enforced as warnings:**
 
-- `id_ruling_religion` empty (59)
-- `government` empty (27)
+- `id_ruling_religion` empty (38)
+- `government` empty (23)
 - CRLF line endings
 - a comma in a non-prose column, including `policies`
-- a panel cell's `polity` not in `polity.csv` (1,793 distinct ids)
+- a panel cell's `polity` not in `polity.csv` (1,697 distinct ids)
 
 **Convention only, not checked:**
 
@@ -273,22 +284,22 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 | Measure | Value |
 |---|---|
-| Rows | 523 |
-| Year range of `start_year` | -3500 to 1991 |
-| `id_ruling_language` empty | 57 |
-| `id_ruling_religion` empty | 59 |
-| `government` empty | 27 |
-| Empty in both language and religion | 22 |
+| Rows | 482 |
+| Year range of `start_year` | -2900 to 1991 |
+| `id_ruling_language` empty | 35 |
+| `id_ruling_religion` empty | 38 |
+| `government` empty | 23 |
+| Empty in both language and religion | 13 |
 | `end_year` empty (ongoing) | 41 |
 | `policies` filled | 20 rows, 27 slugs, each used once |
-| `note` filled | 375 |
+| `note` filled | 357 |
 | No `polity_territory` row | 6: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning` |
-| No `polity_dynasty` row | 248 (76 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
-| No `figure` row | 392 |
-| Wikidata identity link | 292 (231 have none) |
-| No panel reference | 16 (such as `zhou_dynasty`, `song_dynasty`, `ecuador`) |
-| No panel cell, `figure` or `polity_dynasty` row (the step 4 test in 2.2) | 6: `northern_dynasties`, `creek_confederacy`, `sioux_nations`, `ecuador`, `venezuela`, `grand_duchy_moscow` |
-| Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 152 |
+| No `polity_dynasty` row | 208 (75 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
+| No `figure` row | 350 |
+| Wikidata identity link | 288 (194 have none) |
+| No panel reference | 16 (such as `zhou_dynasty`, `song_dynasty`, `ecuador`, `uruk`, `tyre`) |
+| No panel cell, `figure` or `polity_dynasty` row (the step 4 test in 2.2) | 4: `creek_confederacy`, `ecuador`, `venezuela`, `grand_duchy_moscow` |
+| Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 139 |
 
 **Coverage gaps.** There are no rows for Mali, Songhai, Ghana, Kongo, Benin or Great Zimbabwe, and Southeast Asia has only a handful (`funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`), although panels exist for those regions. Sparse coverage is expected in this project, but queries there return little or nothing.
 
@@ -296,7 +307,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 **Religion ids used interchangeably.**
 
-- `catholic` (78) and its child `roman_catholicism` (23) have no written difference. `kingdom_of_france` is `catholic`; `hungary` is `roman_catholicism`.
+- `catholic` (76) and its child `roman_catholicism` (23) have no written difference. `kingdom_of_france` is `catholic`; `hungary` is `roman_catholicism`.
 - `sunni` (80), `sunni_hanafi` (10) and `sunni_shafi` (2) mix levels. `sunni_maliki` and `sunni_hanbali` do not exist in `religion.csv`.
 - `shia` (12) sits beside `twelver_shia` (1) and `ismaili_shia` (2).
 - `christianity` (3) is used at the root level.
@@ -306,7 +317,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 - `chinese_imperial` (11) and `imperial_monarchy`: `western_han` is one and `eastern_han` the other.
 - `republic` (18) and `democratic_republic` (27): `cuba` and `haiti` versus `argentina`.
-- `monarchy` (77), `absolute_monarchy` (14), `feudal_monarchy` (56): `kingdom_of_france` is `absolute_monarchy` from 987, though its own note places absolutism under Louis XIV. `manchukuo` is `absolute_monarchy`, not `puppet_state`.
+- `monarchy` (77), `absolute_monarchy` (14), `feudal_monarchy` (54): `kingdom_of_france` is `absolute_monarchy` from 987, though its own note places absolutism under Louis XIV. `manchukuo` is `absolute_monarchy`, not `puppet_state`.
 - `caliphate`, `imamate`, `theocracy`: `fatimid_caliphate` and `safavid_empire` are `imamate`, `sassanid_empire` is `theocracy`, and `ottoman_empire` is `caliphate` from 1299 although its note dates the claim to 1517.
 - `tribal_confederation` and `khanate`: `dzungar_khanate` and `khoshut_khanate` are the former.
 - `city_state`: `anshan_kingdom` and `zapotec` are the form, `republic_of_venice` is `republic`.
@@ -322,7 +333,7 @@ See `government.md` section 7.
 
 **Other row problems.**
 
-- `elam` has ruling ethnicity `persian`. `ancestral_pueblo` is `navajo`. `muisca_confederation` is `mesoamerican_cluster`, though its note says Colombian highlands.
+- `elam` has ruling ethnicity `persian`. `muisca_confederation` is `mesoamerican_cluster`, though its note says Colombian highlands.
 - `carolingian_empire` starts in 486 and is named `Frankish Kingdom / Carolingian Empire`, so it folds in the Merovingian state.
 - `later_liang` is named `Later Liang / Northern Liang`.
 - `german_confederation`'s name has an unclosed bracket.
@@ -344,7 +355,7 @@ Questions marked DECIDED are settled in section 8, and the numbers are kept beca
 8. **Renaming.** 07 suggests considering `eastern_roman_empire` for `byzantine_empire`. `naming.md` says ids are never renamed.
 9. **An unknown ruling ethnicity.** The column is required and has no unknown value, which forces a guess or a broad cluster.
 10. **Where to record an interruption** (07's Byzantine marker), since no column exists and the inheritance layer has not landed.
-11. **Promotion from stubs.** 1,793 distinct panel ids do not resolve and 1,704 stubs exist. Who promotes them, by what test, and in what order?
+11. **Promotion from stubs.** 1,697 distinct panel ids do not resolve and 1,704 stubs exist. Who promotes them, by what test, and in what order?
 12. **Start of a dependent phase.** Nurhaci's Later Jin state, before 1636, has no row of its own, and `qing_dynasty` starts in 1636. Should the row start earlier, or should the earlier state get a row?
 
 ---
@@ -366,4 +377,5 @@ Decisions by the project owner, newest last. These override the open questions a
 | 2026-10-31 | `roman_empire` and `byzantine_empire` stay two rows, split by the 395 fission. Religion alone never splits a polity. The change from Augustus's authority to the sacred authority of later emperors is real, and is recorded on the inheritance link, not as a split. | Keeps the 07 rule, and puts the disputed question on the axes built for it. Known weakness: contemporaries saw 395 as one empire with two courts |
 | 2026-10-31 | Japan's period rows are replaced by `yamato_kingdom`, `ritsuryo_japan`, `kamakura_shogunate`, `kenmu_government`, `ashikaga_shogunate`, `southern_court` and `oda_toyotomi_government`. Splits follow the source of authority, so Sengoku is not a split, and 1336 is fission. The 701 boundary is the closest call. | Periods are not polities |
 | 2026-10-31 | `kingdom_of_norway` ends in 1380. `modern_norway` starts in 1905 as a revival. | Sovereignty was extinguished in between, so one ongoing row would break section 4 |
+| 2026-10-31 | The non-polity migration is accepted (`non_polity.md`). No new table, and no `cultures` table. Peoples go to `ethnicity.csv` through a panel `ethnicity` key; cultures, collectives and events become panel labels; `lysimachus` becomes `kingdom_of_lysimachus` and a figure. `uruk` and `tyre` are promoted. `wusun`, `yuezhi`, `xianbei`, `mapuche_nation`, `cherokee_nation` and `lullubi_kingdom` stay. An id moving between tables for the same identity is not reuse. Territory gaps are accepted. | Rows earn their place through references, and most of these had none beyond a panel link |
 | 2026-10-31 | Deferred: feudal states (Japan's 701 boundary, feudal Germany, the Spring and Autumn period). Japan's rows stay as they are until this is taken up. | A separate topic for the owner |

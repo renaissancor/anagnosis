@@ -30,12 +30,12 @@ This is the FK-driven rule from `CLAUDE.md`: no inbound reference, no row. A fam
 | Measure | Count |
 |---|---|
 | Rows | 695 (36 roots, 146 internal nodes) |
-| Directly referenced by a polity or city_name | 109 by polity; city_name adds none (its 7 resolving values are also polity values, 3 more do not resolve); **109 rows in total** |
-| Rows with no direct polity or city_name reference | **586** |
-| Rows that are neither referenced nor an ancestor of a referenced row | **521** |
-| `polity.id_ruling_language` empty | 57 of 523 polities |
+| Directly referenced by a polity or city_name | 106 by polity; city_name adds none (its 7 resolving values are also polity values, 3 more do not resolve); **106 rows in total** |
+| Rows with no direct polity or city_name reference | **589** |
+| Rows that are neither referenced nor an ancestor of a referenced row | **524** |
+| `polity.id_ruling_language` empty | 35 of 482 polities |
 
-The table was seeded as a broad taxonomy, ahead of the references. Whether to prune the 521 is an open question (section 7); do not delete them on your own.
+The table was seeded as a broad taxonomy, ahead of the references. Whether to prune the 524 is an open question (section 7); do not delete them on your own.
 
 ---
 

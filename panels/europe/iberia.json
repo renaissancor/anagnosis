@@ -51,7 +51,7 @@
             {
               "label": "Celts (NW Gallaecia)",
               "note": "c.800 BCE–",
-              "polity": "celts"
+              "ethnicity": "celtic_peoples"
             }
           ],
           "span": 1
@@ -99,13 +99,11 @@
           "stack": [
             {
               "label": "Tartessian civilization (Guadalquivir)",
-              "note": "c.1100–500 BCE",
-              "polity": "tartessian_civilization_culture"
+              "note": "c.1100–500 BCE"
             },
             {
               "label": "Phoenician colonies (Gadir · Málaga · Sexi)",
-              "note": "c.1100 BCE–",
-              "polity": "phoenician_colonies"
+              "note": "c.1100 BCE–"
             },
             {
               "label": "Carthaginian expansion (New Carthage)",

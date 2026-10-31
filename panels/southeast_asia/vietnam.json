@@ -50,8 +50,7 @@
           "stack": [
             {
               "label": "Sa Huỳnh culture (proto-Cham)",
-              "note": "c.1000 BCE–200 CE",
-              "polity": "sa_huynh_culture"
+              "note": "c.1000 BCE–200 CE"
             }
           ],
           "span": 1
@@ -60,8 +59,7 @@
           "stack": [
             {
               "label": "Óc Eo culture (Funan influence)",
-              "note": "c.1st–6th c. CE",
-              "polity": "oc_eo_culture"
+              "note": "c.1st–6th c. CE"
             }
           ],
           "span": 1
@@ -124,8 +122,7 @@
           "stack": [
             {
               "label": "Chinese Southern dynasties — Giao Châu",
-              "note": "220–544",
-              "polity": "southern_dynasties"
+              "note": "220–544"
             },
             {
               "label": "Sĩ Nhiếp (Shi Xie) autonomous rule",
@@ -182,8 +179,7 @@
             },
             {
               "label": "Five Dynasties — Tĩnh Hải quân",
-              "note": "905–938",
-              "polity": "five_dynasties"
+              "note": "905–938"
             },
             {
               "label": "An Nam — Ngô dynasty",

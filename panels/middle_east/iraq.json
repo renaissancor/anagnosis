@@ -45,18 +45,15 @@
             },
             {
               "label": "Baradostian culture",
-              "note": "c.36,000–18,000 BCE",
-              "polity": "baradostian_culture"
+              "note": "c.36,000–18,000 BCE"
             },
             {
               "label": "Zarzian culture",
-              "note": "c.18,000–8,000 BCE",
-              "polity": "zarzian_culture"
+              "note": "c.18,000–8,000 BCE"
             },
             {
               "label": "Halaf · Hassuna cultures",
-              "note": "c.6100–5000 BCE",
-              "polity": "halaf_hassuna_cultures_culture"
+              "note": "c.6100–5000 BCE"
             }
           ],
           "span": 1
@@ -65,13 +62,11 @@
           "stack": [
             {
               "label": "Pre-Pottery Neolithic A·B",
-              "note": "c.10,000–6,500 BCE",
-              "polity": "pre_pottery_neolithic_a_culture"
+              "note": "c.10,000–6,500 BCE"
             },
             {
               "label": "Halaf culture",
-              "note": "c.6100–5100 BCE",
-              "polity": "halaf_culture"
+              "note": "c.6100–5100 BCE"
             }
           ],
           "span": 1
@@ -80,21 +75,18 @@
           "stack": [
             {
               "label": "Samarra culture",
-              "note": "c.5500–4800 BCE",
-              "polity": "samarra_culture"
+              "note": "c.5500–4800 BCE"
             },
             {
               "label": "Ubaid culture",
-              "note": "c.6500–3800 BCE",
-              "polity": "ubaid_culture"
+              "note": "c.6500–3800 BCE"
             }
           ],
           "span": 1
         },
         {
           "label": "Ubaid culture (origin)",
-          "span": 1,
-          "polity": "ubaid_culture"
+          "span": 1
         }
       ]
     },
@@ -108,8 +100,7 @@
           "stack": [
             {
               "label": "Sumerian city-states",
-              "note": "Uruk → Jemdet Nasr → Early Dynastic, c.3500–2334 BCE",
-              "polity": "sumerian_city_states"
+              "note": "Uruk → Jemdet Nasr → Early Dynastic, c.3500–2334 BCE"
             },
             {
               "polity": "akkadian_empire",

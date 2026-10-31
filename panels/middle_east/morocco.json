@@ -58,8 +58,7 @@
       "cells": [
         {
           "label": "Capsian culture · Amazigh / Berber peoples",
-          "span": 8,
-          "polity": "capsian_culture"
+          "span": 8
         }
       ]
     },
@@ -94,7 +93,7 @@
             {
               "label": "Berber / Mauretania",
               "note": "",
-              "polity": "berber"
+              "ethnicity": "berber_amazigh_cluster"
             }
           ],
           "span": 1
@@ -131,7 +130,7 @@
         {
           "label": "Berber / Mauretania",
           "span": 1,
-          "polity": "berber"
+          "ethnicity": "berber_amazigh_cluster"
         },
         {
           "label": "Gaetuli / Zenata (Berber)",
@@ -219,7 +218,7 @@
         {
           "label": "Berber / Saharan",
           "span": 2,
-          "polity": "berber"
+          "ethnicity": "berber_amazigh_cluster"
         }
       ]
     },
@@ -292,12 +291,12 @@
         {
           "label": "Berber (Zenata)",
           "span": 1,
-          "polity": "berber"
+          "ethnicity": "berber_amazigh_cluster"
         },
         {
           "label": "Berber (Atlas tribes)",
           "span": 1,
-          "polity": "berber"
+          "ethnicity": "berber_amazigh_cluster"
         },
         {
           "stack": [

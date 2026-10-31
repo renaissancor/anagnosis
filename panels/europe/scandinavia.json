@@ -40,18 +40,15 @@
           "stack": [
             {
               "label": "Nordic Bronze Age",
-              "note": "c.1700–500 BCE",
-              "polity": "nordic_bronze_age_culture"
+              "note": "c.1700–500 BCE"
             },
             {
               "label": "Pre-Roman & Roman Iron Age",
-              "note": "c.500 BCE–400 CE",
-              "polity": "pre_roman_roman_iron_age_culture"
+              "note": "c.500 BCE–400 CE"
             },
             {
               "label": "Germanic Iron Age · Migration Period",
-              "note": "c.400–793",
-              "polity": "germanic_iron_age_culture"
+              "note": "c.400–793"
             }
           ],
           "span": 3
@@ -70,13 +67,11 @@
             },
             {
               "label": "Comb Ceramic · Corded Ware cultures",
-              "note": "",
-              "polity": "comb_ceramic_culture"
+              "note": ""
             },
             {
               "label": "Finnish Iron Age",
-              "note": "c.500 BCE–1150 CE",
-              "polity": "finnish_iron_age_culture"
+              "note": "c.500 BCE–1150 CE"
             }
           ],
           "span": 1

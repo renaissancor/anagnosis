@@ -50,8 +50,7 @@
             },
             {
               "label": "Neolithic farmers",
-              "note": "c.7000 BCE",
-              "polity": "neolithic_farmers_culture"
+              "note": "c.7000 BCE"
             },
             {
               "label": "Aryan / East Iranian migrations",
@@ -64,8 +63,7 @@
           "stack": [
             {
               "label": "Helmand culture (Helmand Civilization)",
-              "note": "c.3200–2350 BCE",
-              "polity": "helmand_culture"
+              "note": "c.3200–2350 BCE"
             },
             {
               "label": "Mundigak — Indus-related urban site",
@@ -84,8 +82,7 @@
           "stack": [
             {
               "label": "BMAC / Oxus Civilization",
-              "note": "c.2300–1700 BCE",
-              "polity": "bmac_culture"
+              "note": "c.2300–1700 BCE"
             },
             {
               "label": "Shortugai (Harappan colony)",
@@ -114,8 +111,7 @@
             },
             {
               "label": "Gandara Grave Culture",
-              "note": "c.1400–800 BCE",
-              "polity": "gandara_grave_culture"
+              "note": "c.1400–800 BCE"
             }
           ],
           "span": 1
@@ -129,8 +125,7 @@
             },
             {
               "label": "Neolithic highland peoples",
-              "note": "c.5000 BCE onward",
-              "polity": "neolithic_highland_peoples_culture"
+              "note": "c.5000 BCE onward"
             }
           ],
           "span": 1
@@ -190,8 +185,7 @@
           "stack": [
             {
               "label": "Gandara Grave Culture — early Indo-Aryan",
-              "note": "c.1400–600 BCE",
-              "polity": "gandara_grave_culture"
+              "note": "c.1400–600 BCE"
             },
             {
               "label": "Gandara · Kamboja (eastern border peoples)",

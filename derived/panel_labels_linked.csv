@@ -18,26 +18,26 @@ congo,lower_congo,7,0,,Democratic Republic of the Congo,1964–1971; Mobutu Sese
 congo,lower_congo,8,0,,Zaire,"1971–1997; Mobutu Sese Seko regime, kleptocracy",4,zaire,linked,,unresolved_link
 congo,lower_congo,9,0,,Democratic Republic of the Congo,1997–; Laurent-Désiré Kabila → Joseph Kabila → Félix Tshisekedi,4,drc,linked,,unresolved_link
 afghanistan,herat,0,0,Prehistoric,Homo sapiens migration,"c.50,000 BCE",1,homo_sapiens_migration,linked,,unresolved_link
-afghanistan,herat,0,1,Prehistoric,Neolithic farmers,c.7000 BCE,1,neolithic_farmers_culture,linked,,unresolved_link
+afghanistan,herat,0,1,Prehistoric,Neolithic farmers,c.7000 BCE,1,,culture,neolithic_farmers_culture,culture
 afghanistan,herat,0,2,Prehistoric,Aryan / East Iranian migrations,c.2000–1500 BCE,1,,event,aryan_east_iranian_migrations,event
-afghanistan,kandahar,0,0,Prehistoric,Helmand culture (Helmand Civilization),c.3200–2350 BCE,1,helmand_culture,linked,,unresolved_link
+afghanistan,kandahar,0,0,Prehistoric,Helmand culture (Helmand Civilization),c.3200–2350 BCE,1,,culture,helmand_culture,culture
 afghanistan,kandahar,0,1,Prehistoric,Mundigak — Indus-related urban site,c.3000–2000 BCE,1,mundigak,linked,,unresolved_link
 afghanistan,kandahar,0,2,Prehistoric,Aryan migration · Vedic peoples,c.2000–1500 BCE,1,aryan_migration,linked,,unresolved_link
-afghanistan,balkh,0,0,Prehistoric,BMAC / Oxus Civilization,c.2300–1700 BCE,1,bmac_culture,linked,,unresolved_link
+afghanistan,balkh,0,0,Prehistoric,BMAC / Oxus Civilization,c.2300–1700 BCE,1,,culture,bmac_oxus_civilization_culture,culture
 afghanistan,balkh,0,1,Prehistoric,Shortugai (Harappan colony),c.2200–1800 BCE,1,shortugai,linked,,unresolved_link
 afghanistan,balkh,0,2,Prehistoric,Aryan migrations — proto-Bactrian pastoralists,c.2000–1500 BCE,1,aryan_migrations,linked,,unresolved_link
 afghanistan,kabul,0,0,Prehistoric,Indus Valley contacts,c.2500–1700 BCE,1,indus_valley_contacts,linked,,unresolved_link
 afghanistan,kabul,0,1,Prehistoric,Mundigak (eastern contacts),c.3000–2000 BCE,1,mundigak,linked,,unresolved_link
-afghanistan,kabul,0,2,Prehistoric,Gandara Grave Culture,c.1400–800 BCE,1,gandara_grave_culture,linked,,unresolved_link
+afghanistan,kabul,0,2,Prehistoric,Gandara Grave Culture,c.1400–800 BCE,1,,culture,gandara_grave_culture,culture
 afghanistan,badakhshan,0,0,Prehistoric,Shortugai (Harappan colony — lapis lazuli source),c.2200–1800 BCE,1,shortugai,linked,,unresolved_link
-afghanistan,badakhshan,0,1,Prehistoric,Neolithic highland peoples,c.5000 BCE onward,1,neolithic_highland_peoples_culture,linked,,unresolved_link
+afghanistan,badakhshan,0,1,Prehistoric,Neolithic highland peoples,c.5000 BCE onward,1,,culture,neolithic_highland_peoples_culture,culture
 afghanistan,herat,1,0,Ancient,East Iranian peoples (Avestan sphere — 'Haroiva'),c.1500–700 BCE,1,east_iranian_peoples,linked,,unresolved_link
 afghanistan,herat,1,1,Ancient,Media suzerainty,c.678–550 BCE,1,,unclassified,media_suzerainty,unclassified
 afghanistan,kandahar,1,0,Ancient,Vedic period (early/middle/late) — Arachosia,c.1500–550 BCE,1,,event,vedic_period,event
 afghanistan,kandahar,1,1,Ancient,Gandara · Kamboja (Rigvedic peoples),c.1200–550 BCE,1,gandara_kamboja,linked,,unresolved_link
 afghanistan,balkh,1,0,Ancient,Bactrian pastoralists (Avestan 'Bāxδī' — holy land),c.1500–700 BCE,1,bactrian_pastoralists,linked,,unresolved_link
 afghanistan,balkh,1,1,Ancient,Central Asian nomadic groups,c.1000–600 BCE,1,central_asian_nomadic_groups,linked,,unresolved_link
-afghanistan,kabul,1,0,Ancient,Gandara Grave Culture — early Indo-Aryan,c.1400–600 BCE,1,gandara_grave_culture,linked,,unresolved_link
+afghanistan,kabul,1,0,Ancient,Gandara Grave Culture — early Indo-Aryan,c.1400–600 BCE,1,,culture,gandara_grave_culture__early_indo_aryan,polity
 afghanistan,kabul,1,1,Ancient,Gandara · Kamboja (eastern border peoples),c.1200–550 BCE,1,gandara_kamboja,linked,,unresolved_link
 afghanistan,badakhshan,1,0,Ancient,East Iranian highland peoples,c.1500 BCE,1,east_iranian_highland_peoples,linked,,unresolved_link
 afghanistan,badakhshan,1,1,Ancient,Nuristani / Dardic ancestors (non-Indo-Iranian),c.1000 BCE,1,nuristani,linked,,unresolved_link
@@ -191,32 +191,32 @@ afghanistan,balkh,12,0,,Northern Alliance (Balkh — General Dostum base),1992�
 afghanistan,balkh,12,1,,US-led coalition / NATO (ISAF),2001–2021,1,us_led_coalition,linked,,unresolved_link
 afghanistan,kabul,12,0,,Islamic Republic of Afghanistan (US-backed),2004–2021,2,islamic_republic_of_afghanistan,linked,,unresolved_link
 afghanistan,kabul,12,1,,Taliban Second Emirate,2021–,2,taliban_second_emirate,linked,,unresolved_link
-kazakhstan,ural,0,0,Prehistoric,Yamna culture (Pontic–Caspian steppe),c.3500–2200 BCE,1,yamna_culture,linked,,unresolved_link
-kazakhstan,ural,0,1,Prehistoric,Abashevo culture,c.2500–1900 BCE,1,abashevo_culture,linked,,unresolved_link
+kazakhstan,ural,0,0,Prehistoric,Yamna culture (Pontic–Caspian steppe),c.3500–2200 BCE,1,,culture,yamna_culture,culture
+kazakhstan,ural,0,1,Prehistoric,Abashevo culture,c.2500–1900 BCE,1,,culture,abashevo_culture,culture
 kazakhstan,ural,0,2,Prehistoric,Sintashta (earliest chariots),c.2100–1800 BCE,1,sintashta,linked,,unresolved_link
-kazakhstan,caspian,0,0,Prehistoric,Kelteminar culture,c.5000–3000 BCE,1,kelteminar_culture,linked,,unresolved_link
-kazakhstan,caspian,0,1,Prehistoric,Yamna / early pastoral cultures,c.3500–2000 BCE,1,yamna_culture,linked,,unresolved_link
-kazakhstan,aral,0,0,Prehistoric,Kelteminar culture,c.5000–3000 BCE,1,kelteminar_culture,linked,,unresolved_link
-kazakhstan,aral,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,andronovo_culture,linked,,unresolved_link
-kazakhstan,steppe,0,0,Prehistoric,Botai culture (horse domestication),c.3500–3000 BCE,1,botai_culture,linked,,unresolved_link
-kazakhstan,steppe,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,andronovo_culture,linked,,unresolved_link
-kazakhstan,zhetysu,0,0,Prehistoric,Afanasievo culture,c.3300–2500 BCE,1,afanasievo_culture,linked,,unresolved_link
-kazakhstan,zhetysu,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,andronovo_culture,linked,,unresolved_link
-kazakhstan,ural,1,0,Early Ancient (Bronze Age),Srubnaya (Timber Grave) culture,c.1800–1200 BCE,1,srubnaya_culture,linked,,unresolved_link
-kazakhstan,ural,1,1,Early Ancient (Bronze Age),Proto-Scythian cultures,c.1000–700 BCE,1,proto_scythian_cultures_culture,linked,,unresolved_link
-kazakhstan,caspian,1,0,Early Ancient (Bronze Age),Srubnaya culture,c.1800–1200 BCE,1,srubnaya_culture,linked,,unresolved_link
+kazakhstan,caspian,0,0,Prehistoric,Kelteminar culture,c.5000–3000 BCE,1,,culture,kelteminar_culture,culture
+kazakhstan,caspian,0,1,Prehistoric,Yamna / early pastoral cultures,c.3500–2000 BCE,1,,people,yamna_early_pastoral_cultures,people
+kazakhstan,aral,0,0,Prehistoric,Kelteminar culture,c.5000–3000 BCE,1,,culture,kelteminar_culture,culture
+kazakhstan,aral,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,,culture,andronovo_culture,culture
+kazakhstan,steppe,0,0,Prehistoric,Botai culture (horse domestication),c.3500–3000 BCE,1,,culture,botai_culture,culture
+kazakhstan,steppe,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,,culture,andronovo_culture,culture
+kazakhstan,zhetysu,0,0,Prehistoric,Afanasievo culture,c.3300–2500 BCE,1,,culture,afanasievo_culture,culture
+kazakhstan,zhetysu,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,,culture,andronovo_culture,culture
+kazakhstan,ural,1,0,Early Ancient (Bronze Age),Srubnaya (Timber Grave) culture,c.1800–1200 BCE,1,,culture,srubnaya_culture,culture
+kazakhstan,ural,1,1,Early Ancient (Bronze Age),Proto-Scythian cultures,c.1000–700 BCE,1,,people,proto_scythian_cultures,people
+kazakhstan,caspian,1,0,Early Ancient (Bronze Age),Srubnaya culture,c.1800–1200 BCE,1,,culture,srubnaya_culture,culture
 kazakhstan,caspian,1,1,Early Ancient (Bronze Age),Cimmerian / early Saka,c.1000–700 BCE,1,cimmerian,linked,,unresolved_link
 kazakhstan,aral,1,0,Early Ancient (Bronze Age),Andronovo → Alakul culture,c.1800–1200 BCE,1,,culture,andronovo_alakul_culture,culture
 kazakhstan,aral,1,1,Early Ancient (Bronze Age),Saka nomads (early),c.1000–700 BCE,1,saka_nomads,linked,,unresolved_link
-kazakhstan,steppe,1,0,Early Ancient (Bronze Age),Begazy–Dandybai culture,c.1400–900 BCE,1,begazy_dandybai_culture,linked,,unresolved_link
-kazakhstan,steppe,1,1,Early Ancient (Bronze Age),Tasmola culture,c.700–300 BCE,1,tasmola_culture,linked,,unresolved_link
-kazakhstan,zhetysu,1,0,Early Ancient (Bronze Age),Karasuk culture,c.1500–800 BCE,1,karasuk_culture,linked,,unresolved_link
-kazakhstan,zhetysu,1,1,Early Ancient (Bronze Age),Pazyryk culture (Altai),c.600–200 BCE,1,pazyryk_culture,linked,,unresolved_link
+kazakhstan,steppe,1,0,Early Ancient (Bronze Age),Begazy–Dandybai culture,c.1400–900 BCE,1,,culture,begazy_dandybai_culture,culture
+kazakhstan,steppe,1,1,Early Ancient (Bronze Age),Tasmola culture,c.700–300 BCE,1,,culture,tasmola_culture,culture
+kazakhstan,zhetysu,1,0,Early Ancient (Bronze Age),Karasuk culture,c.1500–800 BCE,1,,culture,karasuk_culture,culture
+kazakhstan,zhetysu,1,1,Early Ancient (Bronze Age),Pazyryk culture (Altai),c.600–200 BCE,1,,culture,pazyryk_culture,culture
 kazakhstan,ural,2,0,Saka / Scythian,Royal Scythians (Pontic),c.700–200 BCE,1,royal_scythians,linked,,unresolved_link
 kazakhstan,ural,2,1,Saka / Scythian,Early Sarmatians,c.500 BCE–,1,early_sarmatians,linked,,unresolved_link
-kazakhstan,caspian,2,0,Saka / Scythian,Saka · Massagetae (Caspian steppe),c.700–200 BCE,1,saka_massagetae,linked,saka,existing_polity
+kazakhstan,caspian,2,0,Saka / Scythian,Saka · Massagetae (Caspian steppe),c.700–200 BCE,1,saka_massagetae,linked,,unresolved_link
 kazakhstan,aral,2,0,Saka / Scythian,Massagetae (near Aral Sea),c.700–200 BCE,1,massagetae,linked,,unresolved_link
-kazakhstan,aral,2,1,Saka / Scythian,Dahae,c.500–200 BCE,1,dahae,linked,dahae,existing_polity
+kazakhstan,aral,2,1,Saka / Scythian,Dahae,c.500–200 BCE,1,,people,dahae,people
 kazakhstan,steppe,2,0,Saka / Scythian,Saka of the central steppe,c.700–200 BCE,1,saka_of_the_central_steppe,linked,,unresolved_link
 kazakhstan,zhetysu,2,0,Saka / Scythian,Saka Tigrakhauda (Pointed-hat Saka),c.700–200 BCE,1,saka_tigrakhauda,linked,,unresolved_link
 kazakhstan,zhetysu,2,1,Saka / Scythian,Pazyryk / Wusun (Zhetysu),c.500–100 BCE,1,pazyryk,linked,,unresolved_link
@@ -248,7 +248,7 @@ kazakhstan,aral,6,1,,Kangars / Pecheneg confederation,c.750–900,1,kangars,link
 kazakhstan,steppe,6,0,,Kimek–Kipchak confederation,c.750–1220,1,kimek_kipchak_confederation,linked,,unresolved_link
 kazakhstan,zhetysu,6,0,,Uyghur Khaganate (suzerainty),744–840,1,uyghur_khaganate,linked,uyghur_khaganate,existing_polity
 kazakhstan,zhetysu,6,1,,Karluk Khaganate (Zhetysu),766–940,1,karluk_khaganate,linked,,unresolved_link
-kazakhstan,ural,7,0,,Pechenegs (origin here → move west),c.860–900,1,pechenegs,linked,pechenegs,existing_polity
+kazakhstan,ural,7,0,,Pechenegs (origin here → move west),c.860–900,1,,event,pechenegs,event
 kazakhstan,ural,7,1,,Cuman–Kipchak (Desht-i-Kipchak),c.1050–1220,1,cuman_kipchak,linked,,unresolved_link
 kazakhstan,caspian,7,0,,Oghuz (moving west toward Pontic),c.900–1050,1,oghuz,linked,,unresolved_link
 kazakhstan,caspian,7,1,,Cuman–Kipchak,c.1050–1220,1,cuman_kipchak,linked,,unresolved_link
@@ -286,9 +286,9 @@ kazakhstan,zhetysu,11,0,Soviet & Modern,Turkestan ASSR (Semirechye),1918–1924,
 kazakhstan,zhetysu,11,1,Soviet & Modern,Kyrgyz-Kazakh ASSR,1924–1936,1,kyrgyz_kazakh_assr,linked,,unresolved_link
 kazakhstan,ural,12,0,,Kazakh Soviet Socialist Republic,1936–1991,5,kazakh_soviet_socialist_republic,linked,,unresolved_link
 kazakhstan,ural,12,1,,Republic of Kazakhstan,1991–,5,republic_of_kazakhstan,linked,,unresolved_link
-turkmenistan,margiana,0,0,Ancient,BMAC (Bactria–Margiana Archaeological Complex),c.2300–1700 BCE,1,bmac_culture,linked,,unresolved_link
-turkmenistan,margiana,0,1,Ancient,Saka / Massagetae,c.900–100 BCE,1,saka,linked,saka,existing_polity
-turkmenistan,parthia,0,0,Ancient,Dahae / Parni (proto-Parthian nomads),c.1000–247 BCE,1,dahae,linked,dahae,existing_polity
+turkmenistan,margiana,0,0,Ancient,BMAC (Bactria–Margiana Archaeological Complex),c.2300–1700 BCE,1,,culture,bmac_culture,culture
+turkmenistan,margiana,0,1,Ancient,Saka / Massagetae,c.900–100 BCE,1,,unclassified,saka_massagetae,unclassified
+turkmenistan,parthia,0,0,Ancient,Dahae / Parni (proto-Parthian nomads),c.1000–247 BCE,1,,people,dahae_parni,people
 turkmenistan,parthia,0,1,Ancient,Media (suzerainty),c.678–550 BCE,1,,unclassified,media,unclassified
 turkmenistan,margiana,1,0,,Achaemenid Empire (Margiana Satrapy),550–330 BCE,1,achaemenid_empire,linked,achaemenid_empire,existing_polity
 turkmenistan,margiana,1,1,,Alexander the Great · Seleucid,330–250 BCE,1,macedonian_empire,linked,macedonian_empire,existing_polity
@@ -348,15 +348,15 @@ turkmenistan,parthia,8,0,Contemporary,Transcaspian Provisional Government,1918�
 turkmenistan,margiana,9,0,,Turkestan ASSR,1918–1924,2,turkestan_assr,linked,turkestan_assr,existing_polity
 turkmenistan,margiana,10,0,,Turkmen Soviet Socialist Republic,1924–1991,2,turkmen_soviet_socialist_republic,linked,,unresolved_link
 turkmenistan,margiana,10,1,,Republic of Turkmenistan,1991–,2,republic_of_turkmenistan,linked,,unresolved_link
-uzbekistan,khorezm,0,0,Prehistoric,Kelteminar culture,c.6000–3000 BCE,1,kelteminar_culture,linked,,unresolved_link
+uzbekistan,khorezm,0,0,Prehistoric,Kelteminar culture,c.6000–3000 BCE,1,,culture,kelteminar_culture,culture
 uzbekistan,khorezm,0,1,Prehistoric,Primitive nomads,c.3000–2000 BCE,1,primitive_nomads,linked,,unresolved_link
-uzbekistan,khorezm,0,2,Prehistoric,Afanasievo culture,c.3300–2500 BCE,1,afanasievo_culture,linked,,unresolved_link
+uzbekistan,khorezm,0,2,Prehistoric,Afanasievo culture,c.3300–2500 BCE,1,,culture,afanasievo_culture,culture
 uzbekistan,khorezm,0,3,Prehistoric,Indo-European influx (Avestan peoples),c.2000 BCE,1,indo_european_influx,linked,,unresolved_link
-uzbekistan,transoxiana,0,0,Prehistoric,BMAC (Bactria–Margiana Archaeological Complex),c.2300–1700 BCE,1,bmac_culture,linked,,unresolved_link
-uzbekistan,transoxiana,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,andronovo_culture,linked,,unresolved_link
+uzbekistan,transoxiana,0,0,Prehistoric,BMAC (Bactria–Margiana Archaeological Complex),c.2300–1700 BCE,1,,culture,bmac_culture,culture
+uzbekistan,transoxiana,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,,culture,andronovo_culture,culture
 uzbekistan,transoxiana,0,2,Prehistoric,Indo-European migrations (West & East Iranian),c.1500–800 BCE,1,,event,indo_european_migrations,event
-uzbekistan,fergana,0,0,Prehistoric,BMAC (Bactria–Margiana Archaeological Complex),c.2300–1700 BCE,1,bmac_culture,linked,,unresolved_link
-uzbekistan,fergana,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,andronovo_culture,linked,,unresolved_link
+uzbekistan,fergana,0,0,Prehistoric,BMAC (Bactria–Margiana Archaeological Complex),c.2300–1700 BCE,1,,culture,bmac_culture,culture
+uzbekistan,fergana,0,1,Prehistoric,Andronovo culture,c.2000–900 BCE,1,,culture,andronovo_culture,culture
 uzbekistan,fergana,0,2,Prehistoric,Indo-European migrations (East Iranian · Tocharian),c.1500–800 BCE,1,indo_european_migrations,linked,,unresolved_link
 uzbekistan,khorezm,1,0,Ancient,Achaemenid Empire (Chorasmia Satrapy),550–330 BCE,1,achaemenid_empire,linked,achaemenid_empire,existing_polity
 uzbekistan,khorezm,1,1,Ancient,Alexander the Great · Seleucid,330–250 BCE,1,macedonian_empire,linked,macedonian_empire,existing_polity
@@ -449,7 +449,7 @@ uzbekistan,fergana,8,0,Contemporary,Turkestan ASSR (Fergana),1918–1924,1,turke
 uzbekistan,khorezm,9,0,,Uzbek Soviet Socialist Republic,1924–1991,3,uzbek_soviet_socialist_republic,linked,,unresolved_link
 uzbekistan,khorezm,9,1,,Republic of Uzbekistan,1991–,3,republic_of_uzbekistan,linked,,unresolved_link
 xinjiang,kashgaria,0,0,Ancient,Tocharians (Indo-European western settlers),c.2000–200 BCE,1,tocharians,linked,,unresolved_link
-xinjiang,kashgaria,0,1,Ancient,Saka / Indo-Iranian influx,c.700–300 BCE,1,saka,linked,saka,existing_polity
+xinjiang,kashgaria,0,1,Ancient,Saka / Indo-Iranian influx,c.700–300 BCE,1,,unclassified,saka_indo_iranian_influx,unclassified
 xinjiang,kashgaria,0,2,Ancient,Lesser Yuezhi (settled here after 165 BCE),c.165 BCE–,1,lesser_yuezhi,linked,,unresolved_link
 xinjiang,kashgaria,0,3,Ancient,Shule (Kashgar) · Suoche (Yarkand) forming,c.300 BCE,1,,event,shule_suoche_forming,event
 xinjiang,tarim,0,0,Ancient,Tocharians (Kucha · Karasahr · Loulan · Khotan),c.2000–400 CE,1,tocharians,linked,,unresolved_link
@@ -560,7 +560,7 @@ ethiopia,eri,2,0,,Islamic coastal presence — Dahlak Sultanate,8th c.,1,islamic
 ethiopia,tigray,2,0,,Aksumite decline (Islamic trade disruption),Gudit revolt — Yodit burns Aksum (c.960 CE),1,,event,aksumite_decline,event
 ethiopia,cent,2,0,,Post-Aksum fragmentation,,1,,event,post_aksum_fragmentation,event
 ethiopia,eri,3,0,Medieval,Dahlak Sultanate (Islamic),,1,dahlak_sultanate,linked,,unresolved_link
-ethiopia,eri,3,1,Medieval,Beja / Habesha coastal lords,,1,beja,linked,beja,existing_polity
+ethiopia,eri,3,1,Medieval,Beja / Habesha coastal lords,,1,,unclassified,beja_habesha_coastal_lords,unclassified
 ethiopia,tigray,3,0,Medieval,Zagwe Dynasty (capital: Lalibela),c.900–1270; Rock-hewn churches built (12th c.),1,zagwe_dynasty,linked,zagwe_dynasty,existing_polity
 ethiopia,cent,3,0,Medieval,Zagwe fringe / various Cushitic kingdoms,,1,,unclassified,zagwe_fringe_various_cushitic_kingdoms,unclassified
 ethiopia,eri,4,0,,Egyptian Mamluk / Ottoman coastal influence,,1,,dynasty,egyptian_mamluk_ottoman_coastal_influence,unclassified
@@ -676,9 +676,9 @@ swahili_coast,central,7,0,Independence & Modern (1960s–),Republic of Kenya —
 swahili_coast,south,7,0,Independence & Modern (1960s–),Tanganyika independent (1961) → Tanzania (1964),,1,united_republic_of_tanzania,linked,,unresolved_link
 swahili_coast,south,7,1,Independence & Modern (1960s–),Comoros independent from France,1975,1,republic_of_comoros,linked,,unresolved_link
 swahili_coast,zanzibar,7,0,Independence & Modern (1960s–),Zanzibar Revolution — Arab sultanate overthrown,January 1964; union with Tanganyika → Tanzania,1,united_republic_of_tanzania,linked,,unresolved_link
-china,north,0,0,Pre-Qin (先秦),Yellow River Civilization (黄河文明),Yangshao · Longshan cultures,1,yellow_river_civilization_culture,linked,,unresolved_link
-china,south,0,0,Pre-Qin (先秦),Yangtze River Civilizations,Hemudu · Liangzhu cultures,1,yangtze_river_civilizations_culture,linked,,unresolved_link
-china,frontier,0,0,Pre-Qin (先秦),Steppe · desert cultures,,1,steppe_desert_cultures_culture,linked,,unresolved_link
+china,north,0,0,Pre-Qin (先秦),Yellow River Civilization (黄河文明),Yangshao · Longshan cultures,1,,culture,yellow_river_civilization_culture,culture
+china,south,0,0,Pre-Qin (先秦),Yangtze River Civilizations,Hemudu · Liangzhu cultures,1,,culture,yangtze_river_civilizations_culture,culture
+china,frontier,0,0,Pre-Qin (先秦),Steppe · desert cultures,,1,,unclassified,steppe_desert_cultures,unclassified
 china,north,1,0,,Xia (夏),~2070–1600 BCE,1,xia,linked,xia,existing_polity
 china,north,1,1,,Shang (商),~1600–1046 BCE,1,shang_dynasty,linked,shang_dynasty,existing_polity
 china,south,1,0,,Indigenous peoples · Baiyue (百越),,1,,people,indigenous_peoples_baiyue,people
@@ -740,7 +740,7 @@ china,north,15,1,Five Dynasties & Ten Kingdoms (五代十国),Later Tang (后唐
 china,north,15,2,Five Dynasties & Ten Kingdoms (五代十国),Later Jin (后晋),936–947,1,later_jin,linked,later_jin,existing_polity
 china,north,15,3,Five Dynasties & Ten Kingdoms (五代十国),Later Han (后汉),947–951,1,later_han,linked,later_han,existing_polity
 china,north,15,4,Five Dynasties & Ten Kingdoms (五代十国),Later Zhou (后周),951–960,1,later_zhou,linked,later_zhou,existing_polity
-china,south,15,0,Five Dynasties & Ten Kingdoms (五代十国),Ten Kingdoms (十国),"907–979, various southern states",1,ten_kingdoms,linked,ten_kingdoms,existing_polity
+china,south,15,0,Five Dynasties & Ten Kingdoms (五代十国),Ten Kingdoms (十国),"907–979, various southern states",1,,unclassified,ten_kingdoms,unclassified
 china,frontier,15,0,Five Dynasties & Ten Kingdoms (五代十国),Liao Dynasty (辽/契丹),"907–1125, Khitan; Sixteen Prefectures (燕云十六州) ceded (938)",1,liao_dynasty,linked,liao_dynasty,existing_polity
 china,north,16,0,Song–Yuan (宋元),Northern Song (北宋),"960–1127, capital Kaifeng",2,northern_song,linked,northern_song,existing_polity
 china,frontier,16,0,Song–Yuan (宋元),Liao Dynasty (辽),,1,liao_dynasty,linked,liao_dynasty,existing_polity
@@ -786,7 +786,7 @@ china,frontier,26,0,,Manchukuo · Japanese occupation,Soviet entry into Manchuri
 china,north,27,0,Modern (现代),People's Republic of China (中华人民共和国),1949–,3,peoples_republic_of_china,linked,peoples_republic_of_china,existing_polity
 china,north,27,1,Modern (现代),Republic of China (中华民国) — Taiwan,1949– retreat to Taiwan,3,republic_of_china,linked,republic_of_china,existing_polity
 japan,main,0,0,Jōmon,Jōmon people,,5,jomon_people,linked,,unresolved_link
-japan,main,1,0,Yayoi,Yayoi people,,2,yayoi_people_culture,linked,,unresolved_link
+japan,main,1,0,Yayoi,Yayoi people,,2,,culture,yayoi_people_culture,culture
 japan,okinawa,1,0,Yayoi,Hayato / Kumaso,,1,hayato,linked,,unresolved_link
 japan,col_3,1,0,Yayoi,Emishi,,1,emishi,linked,,unresolved_link
 japan,col_4,1,0,Yayoi,Ryukyuan,,1,ryukyuan,linked,,unresolved_link
@@ -798,7 +798,7 @@ japan,col_3,3,0,Asuka,Emishi,,1,emishi,linked,,unresolved_link
 japan,col_4,3,0,Asuka,Ryukyuan,,1,ryukyuan,linked,,unresolved_link
 japan,main,4,0,Nara,Japan (Ritsuryō state),,3,ritsuryo_japan,linked,ritsuryo_japan,existing_polity
 japan,col_3,4,0,Nara,Emishi,,1,emishi,linked,,unresolved_link
-japan,col_4,4,0,Nara,Gusuku culture,,1,gusuku_culture,linked,,unresolved_link
+japan,col_4,4,0,Nara,Gusuku culture,,1,,culture,gusuku_culture,culture
 japan,main,5,0,Heian,Japan (Dynastic state),,3,ritsuryo_japan,linked,ritsuryo_japan,existing_polity
 japan,col_3,5,0,Heian,Emishi / Ezo,,1,emishi,linked,,unresolved_link
 japan,col_4,5,0,Heian,Sanzan period,,1,,event,sanzan_period,event
@@ -847,7 +847,7 @@ japan,main,20,0,,Japan (Allied Occupation → State of Japan),,3,modern_japan,li
 japan,col_3,20,0,,Japan,,1,modern_japan,linked,modern_japan,existing_polity
 japan,col_4,20,0,,Ryukyu (US administration),,1,ryukyu_kingdom,linked,ryukyu_kingdom,existing_polity
 japan,main,21,0,Contemporary,Japan,,5,modern_japan,linked,modern_japan,existing_polity
-korea,manchuria,0,0,Prehistoric,Paleolithic / Neolithic peoples,,5,paleolithic_culture,linked,,unresolved_link
+korea,manchuria,0,0,Prehistoric,Paleolithic / Neolithic peoples,,5,,culture,paleolithic_neolithic_peoples_culture,culture
 korea,manchuria,1,0,Gojoseon,Gojoseon,,2,joseon,linked,joseon,existing_polity
 korea,jeju,1,0,Gojoseon,Jin state (south tribes),,2,jin_state,linked,,unresolved_link
 korea,col_4,1,0,Gojoseon,Tamna,,1,tamna,linked,,unresolved_link
@@ -892,7 +892,7 @@ korea,manchuria,11,0,Contemporary,China,,1,china,linked,,unresolved_link
 korea,peninsula,11,0,Contemporary,North Korea,,1,north_korea,linked,north_korea,existing_polity
 korea,jeju,11,0,Contemporary,South Korea,,3,south_korea,linked,south_korea,existing_polity
 manchuria,west,0,0,BCE,Shanrong,c.800–300 BCE,1,shanrong,linked,,unresolved_link
-manchuria,west,0,1,BCE,Donghu,c.600–209 BCE,1,donghu,linked,donghu,existing_polity
+manchuria,west,0,1,BCE,Donghu,c.600–209 BCE,1,,people,donghu,people
 manchuria,south,0,0,BCE,Yan,c.400–222 BCE,1,yan,linked,,unresolved_link
 manchuria,south,0,1,BCE,Liaodong Commandery,from c.300 BCE,1,liaodong_commandery,linked,,unresolved_link
 manchuria,east,0,0,BCE,Gojoseon,c.2333–108 BCE,1,joseon,linked,joseon,existing_polity
@@ -923,7 +923,7 @@ manchuria,east,3,0,4th–6th c.,Goguryeo,,1,goguryeo,linked,goguryeo,existing_po
 manchuria,north,3,0,4th–6th c.,Dûmokrô,Buyeo successor state,1,dumokro,linked,,unresolved_link
 manchuria,north,3,1,4th–6th c.,Wuji,proto-Mohe Tungusic,1,wuji,linked,,unresolved_link
 manchuria,west,4,0,,Khitan confederacy,forming c.400s CE,1,khitan_confederacy,linked,,unresolved_link
-manchuria,west,4,1,,Shiwei,Mongolic/Tungusic tribes,1,shiwei,linked,shiwei,existing_polity
+manchuria,west,4,1,,Shiwei,Mongolic/Tungusic tribes,1,,people,shiwei,people
 manchuria,south,4,0,,N. Qi → N. Zhou,550–581 CE,1,,dynasty,n_qi_n_zhou,unclassified
 manchuria,east,4,0,,Goguryeo,,1,goguryeo,linked,goguryeo,existing_polity
 manchuria,north,4,0,,Mohe — Tungusic confederation,,1,mohe,linked,,unresolved_link
@@ -998,7 +998,7 @@ manchuria,west,21,0,Present,PRC — Northeast Three Provinces,,2,peoples_republi
 manchuria,north,21,0,Present,Russian Federation — Far Eastern Federal District,,1,russian_federation,linked,russian_federation,existing_polity
 mongolia,central,0,0,Ancient,Xiongnu forming,central steppe confederation,1,xiongnu,linked,xiongnu,existing_polity
 mongolia,west,0,0,Ancient,Yuezhi (月氏),"~5th–2nd c. BCE, Indo-European nomads",1,yuezhi,linked,yuezhi,existing_polity
-mongolia,north,0,0,Ancient,Donghu (東胡),"~4th–2nd c. BCE, eastern steppe",1,donghu,linked,donghu,existing_polity
+mongolia,north,0,0,Ancient,Donghu (東胡),"~4th–2nd c. BCE, eastern steppe",1,,unclassified,donghu,unclassified
 mongolia,south,0,0,Ancient,Steppe nomadic peoples,,1,steppe_nomadic_peoples,linked,,unresolved_link
 mongolia,central,1,0,,Xiongnu Empire (匈奴),"209 BCE – 1st c. CE, Modu Chanyu unifies steppe",4,xiongnu,linked,xiongnu,existing_polity
 mongolia,central,2,0,,Northern Xiongnu (北匈奴),→ expelled westward ~89 CE,2,xiongnu,linked,xiongnu,existing_polity
@@ -1028,7 +1028,7 @@ mongolia,central,9,0,,Uyghur Khaganate (回鶻),"744–840, capital Ordu-Baliq",
 mongolia,south,9,0,,Tang dynasty (唐),,1,tang_dynasty,linked,tang_dynasty,existing_polity
 mongolia,central,10,0,,Kyrgyz Khaganate (黠戛斯),840–~920s,1,kyrgyz_khaganate,linked,,unresolved_link
 mongolia,west,10,0,,Kyrgyz (western range),,1,kyrgyz,linked,,unresolved_link
-mongolia,north,10,0,,Shiwei (室韋),proto-Mongolic peoples,1,shiwei,linked,shiwei,existing_polity
+mongolia,north,10,0,,Shiwei (室韋),proto-Mongolic peoples,1,,unclassified,shiwei,unclassified
 mongolia,south,10,0,,Khitan (契丹),rising power,1,khitan,linked,,unresolved_link
 mongolia,central,11,0,Medieval,Zubu (阻卜),steppe tribal confederation,2,zubu,linked,,unresolved_link
 mongolia,north,11,0,Medieval,Proto-Mongolic forest peoples,,1,proto_mongolic_forest_peoples,linked,,unresolved_link
@@ -1092,7 +1092,7 @@ mongolia,north,22,2,,Buryatia Republic (Бурятия),from 1992,1,buryatia_rep
 mongolia,south,22,0,,PRC — Inner Mongolia Autonomous Region,内蒙古自治区,1,peoples_republic_of_china,linked,peoples_republic_of_china,existing_polity
 tibet,ladakh,0,0,Ancient,Dards (Indo-Aryan peoples),,1,dards,linked,,unresolved_link
 tibet,ngari,0,0,Ancient,Zhangzhung Kingdom,c.500 BCE – 625 CE,1,zhangzhung_kingdom,linked,,unresolved_link
-tibet,ngari,0,1,Ancient,Teyurang culture,,1,teyurang_culture,linked,,unresolved_link
+tibet,ngari,0,1,Ancient,Teyurang culture,,1,,culture,teyurang_culture,culture
 tibet,amdo,0,0,Ancient,Lepcha tribes,,2,lepcha_tribes,linked,,unresolved_link
 tibet,amdo,0,1,Ancient,Nomadic pastoralists,,2,nomadic_pastoralists,linked,,unresolved_link
 tibet,utsang,0,0,Ancient,Yarlung Kingdom (pre-imperial),c.200 BCE – 600 CE,1,yarlung_kingdom,linked,,unresolved_link
@@ -1193,7 +1193,7 @@ albania,cent,1,1,,Roman conquest,,1,,polity,roman_conquest,polity
 albania,south,1,0,,Kingdom of Epirus — Pyrrhus (south),,1,kingdom_of_epirus,linked,kingdom_of_epirus,existing_polity
 albania,south,1,1,,Roman conquest,,1,,polity,roman_conquest,polity
 albania,east,1,0,,Macedonian Kingdom,,1,macedonian_kingdom,linked,macedonian_kingdom,existing_polity
-albania,east,1,1,,Lysimachus (brief),,1,lysimachus,linked,lysimachus,existing_polity
+albania,east,1,1,,Lysimachus (brief),,1,kingdom_of_lysimachus,linked,kingdom_of_lysimachus,existing_polity
 albania,north,2,0,,Roman Republic → Roman Empire (Illyricum / Epirus province),,4,roman_republic,linked,roman_republic,existing_polity
 albania,north,2,1,,Eastern Roman / Byzantine Empire,,4,byzantine_empire,linked,byzantine_empire,existing_polity
 albania,north,3,0,Medieval,Dioclea / Zeta (early Serbian principality),,1,dioclea,linked,,unresolved_link
@@ -1327,8 +1327,8 @@ belarus,west,11,1,WWII,Nazi Germany — Reichskommissariat Ostland,1941–1944,3
 belarus,west,11,2,WWII,Soviet reconquest (Operation Bagration),1944,3,soviet_reconquest,linked,,unresolved_link
 belarus,west,12,0,Soviet,Byelorussian SSR — UN founding member (1945),1944–1991,3,,polity,byelorussian_ssr__un_founding_member,polity
 belarus,west,13,0,Contemporary,Republic of Belarus — Lukashenko (1994–) · 2020 protests · Union State with Russia (1999),,3,republic_of_belarus,linked,,unresolved_link
-bosnia,north,0,0,Ancient,Illyrians — Pannonian tribes (Breuci · Oseriates),,1,illyrians,linked,illyrians,existing_polity
-bosnia,cent,0,0,Ancient,Illyrians — Daesitiates,core of the Great Illyrian Revolt 6–9 CE,1,illyrians,linked,illyrians,existing_polity
+bosnia,north,0,0,Ancient,Illyrians — Pannonian tribes (Breuci · Oseriates),,1,,people,illyrians,people
+bosnia,cent,0,0,Ancient,Illyrians — Daesitiates,core of the Great Illyrian Revolt 6–9 CE,1,,event,illyrians,event
 bosnia,south,0,0,Ancient,Celto-Illyrians — Delmatae,,1,celto_illyrians,linked,,unresolved_link
 bosnia,north,1,0,,Roman Empire — Illyricum · Dalmatia province,,3,roman_empire,linked,roman_empire,existing_polity
 bosnia,north,1,1,,Western Roman Empire — decline,4th–5th c.,3,western_roman_empire,linked,western_roman_empire,existing_polity
@@ -1458,7 +1458,7 @@ bulgaria,cent,0,0,Ancient,Thracian tribes,,1,thracian_tribes,linked,,unresolved_
 bulgaria,south,0,0,Ancient,Odrysian Kingdom,c.480–170 BCE — Thrace core,1,odrysian_kingdom,linked,,unresolved_link
 bulgaria,south,0,1,Ancient,Achaemenid Persian Empire,513–479 BCE,1,achaemenid_persian_empire,linked,,unresolved_link
 bulgaria,north,1,0,,"Macedonian Kingdom — Philip II (Triballi, 339 BCE)",,1,macedonian_kingdom,linked,macedonian_kingdom,existing_polity
-bulgaria,north,1,1,,Lysimachus — Kingdom of Thrace,305–281 BCE,1,lysimachus,linked,lysimachus,existing_polity
+bulgaria,north,1,1,,Lysimachus — Kingdom of Thrace,305–281 BCE,1,kingdom_of_lysimachus,linked,kingdom_of_lysimachus,existing_polity
 bulgaria,north,1,2,,Odrysian revival (Roman client),3rd–1st c. BCE,1,odrysian_revival,linked,,unresolved_link
 bulgaria,cent,1,0,,Macedonian Kingdom,,1,macedonian_kingdom,linked,macedonian_kingdom,existing_polity
 bulgaria,cent,1,1,,Lysimachus · Seleucid (brief),,1,lysimachus_seleucid,linked,,unresolved_link
@@ -1495,7 +1495,7 @@ bulgaria,north,9,1,,Balkan Wars 1912–13 · WWI (Central Powers) · WWII (Axis-
 bulgaria,north,10,0,,People's Republic of Bulgaria,1946–1990,3,peoples_republic_of_bulgaria,linked,,unresolved_link
 bulgaria,north,10,1,,Soviet-aligned · Warsaw Pact,,3,,unclassified,soviet_aligned_warsaw_pact,unclassified
 bulgaria,north,11,0,,Republic of Bulgaria — NATO (2004) · EU member (2007),,3,,polity,republic_of_bulgaria__nato_eu_member,polity
-croatia,istria,0,0,Ancient,Histri (Illyrian),indigenous Istrian tribe,1,histri,linked,histri,existing_polity
+croatia,istria,0,0,Ancient,Histri (Illyrian),indigenous Istrian tribe,1,,people,histri,people
 croatia,istria,0,1,Ancient,Illyrian Kingdom,,1,illyrian_kingdom,linked,illyrian_kingdom,existing_polity
 croatia,dalm,0,0,Ancient,Dalmatian Kingdom (Delmatae · Liburnians),,1,dalmatian_kingdom,linked,,unresolved_link
 croatia,dalm,0,1,Ancient,Illyrian Kingdom,,1,illyrian_kingdom,linked,illyrian_kingdom,existing_polity
@@ -1580,7 +1580,7 @@ croatia,slav,14,1,Contemporary,RSK — Eastern Slavonia,1991–1995,1,rsk,linked
 croatia,slav,14,2,Contemporary,UNTAES administration,1996–1998,1,untaes_administration,linked,,unresolved_link
 croatia,istria,15,0,,Republic of Croatia — NATO (2009) · EU member (2013),,4,,polity,republic_of_croatia__nato_eu_member,polity
 czech_slovakia,bohemia,0,0,Ancient,Celtic Boii,c.400–50 BCE; give Bohemia its name,3,celtic_boii,linked,,unresolved_link
-czech_slovakia,bohemia,0,1,Ancient,Germanic tribes (Marcomanni · Quadi),c.50 BCE–5th c.,3,germanic_tribes,linked,germanic_tribes,existing_polity
+czech_slovakia,bohemia,0,1,Ancient,Germanic tribes (Marcomanni · Quadi),c.50 BCE–5th c.,3,,people,germanic_tribes,people
 czech_slovakia,bohemia,0,2,Ancient,West Slavic settlement,c.500–600,3,west_slavic_settlement,linked,,unresolved_link
 czech_slovakia,bohemia,0,3,Ancient,Avar Khaganate (overlordship),c.560–626,3,avar_khaganate,linked,avar_khaganate,existing_polity
 czech_slovakia,bohemia,0,4,Ancient,Samo's Empire (first Slavic polity),623–658,3,samos_empire,linked,,unresolved_link
@@ -1626,7 +1626,7 @@ czech_slovakia,slovakia,9,0,,First Slovak Republic (Tiso — Nazi client state),
 czech_slovakia,bohemia,10,0,,Third Republic (restored),1945–1948; Sudeten Germans expelled,3,czechoslovakia,linked,czechoslovakia,existing_polity
 czech_slovakia,bohemia,10,1,,Czechoslovak Socialist Republic,1948–1989; Communist coup Feb 1948,3,czechoslovakia,linked,czechoslovakia,existing_polity
 czech_slovakia,bohemia,10,2,,Prague Spring — reform crushed by Warsaw Pact invasion,1968,3,,event,prague_spring,event
-czech_slovakia,bohemia,10,3,,Federalization (Czech SR + Slovak SR),1969,3,federalization,linked,federalization,existing_polity
+czech_slovakia,bohemia,10,3,,Federalization (Czech SR + Slovak SR),1969,3,czechoslovakia,linked,czechoslovakia,existing_polity
 czech_slovakia,bohemia,11,0,Contemporary,Czechoslovak Federal Republic (post-Velvet Revolution),1989–1992,3,czechoslovakia,linked,czechoslovakia,existing_polity
 czech_slovakia,bohemia,11,1,Contemporary,Velvet Divorce (peaceful dissolution),1 January 1993,3,,unclassified,velvet_divorce,unclassified
 czech_slovakia,bohemia,12,0,,Czech Republic (Česká republika),1993–,2,czech_republic,linked,,unresolved_link
@@ -1635,15 +1635,15 @@ czech_slovakia,slovakia,12,0,,Slovak Republic (Slovenská republika),1993–,1,s
 czech_slovakia,slovakia,12,1,,NATO (2004) · EU (2004) · Eurozone (2009),,1,nato_eu_eurozone,linked,,unresolved_link
 france,north,0,0,Prehistoric,Neanderthals,"c.400,000–30,000 BCE",4,neanderthals,linked,,unresolved_link
 france,north,0,1,Prehistoric,Homo sapiens migration,"c.45,000 BCE–",4,homo_sapiens_migration,linked,,unresolved_link
-france,north,0,2,Prehistoric,Magdalenian culture,"c.17,000–12,000 BCE",4,magdalenian_culture,linked,,unresolved_link
+france,north,0,2,Prehistoric,Magdalenian culture,"c.17,000–12,000 BCE",4,,culture,magdalenian_culture,culture
 france,north,0,3,Prehistoric,Early European farmers,c.5500 BCE–,4,early_european_farmers,linked,,unresolved_link
-france,north,0,4,Prehistoric,Atlantic megalithic culture,c.4500–2000 BCE,4,atlantic_megalithic_culture,linked,,unresolved_link
-france,north,0,5,Prehistoric,Cardial / Impressed Ware culture,c.5500–4500 BCE,4,cardial_culture,linked,,unresolved_link
-france,north,0,6,Prehistoric,Atlantic Bronze Age,c.1300–700 BCE,4,atlantic_bronze_age_culture,linked,,unresolved_link
+france,north,0,4,Prehistoric,Atlantic megalithic culture,c.4500–2000 BCE,4,,culture,atlantic_megalithic_culture,culture
+france,north,0,5,Prehistoric,Cardial / Impressed Ware culture,c.5500–4500 BCE,4,,culture,cardial_impressed_ware_culture,culture
+france,north,0,6,Prehistoric,Atlantic Bronze Age,c.1300–700 BCE,4,,culture,atlantic_bronze_age_culture,culture
 france,north,0,7,Prehistoric,Tumulus culture → Urnfield culture,c.1600–750 BCE,4,,culture,tumulus_culture_urnfield_culture,culture
-france,north,0,8,Prehistoric,Hallstatt culture,c.800–450 BCE,4,hallstatt_culture,linked,,unresolved_link
-france,north,0,9,Prehistoric,La Tène culture,c.450–50 BCE,4,la_tene_culture,linked,,unresolved_link
-france,north,1,0,Ancient,Belgae (Gallia Belgica),c.300 BCE–,1,belgae,linked,belgae,existing_polity
+france,north,0,8,Prehistoric,Hallstatt culture,c.800–450 BCE,4,,culture,hallstatt_culture,culture
+france,north,0,9,Prehistoric,La Tène culture,c.450–50 BCE,4,,culture,la_tene_culture,culture
+france,north,1,0,Ancient,Belgae (Gallia Belgica),c.300 BCE–,1,,unclassified,belgae,unclassified
 france,north,1,1,Ancient,Parisii · Suessiones · Remi · Nervii,,1,parisii_suessiones_remi_nervii,linked,,unresolved_link
 france,west,1,0,Ancient,Armoricani (Armorica),c.500 BCE–,1,armoricani,linked,,unresolved_link
 france,west,1,1,Ancient,Veneti · Osismii · Namnetes,,1,veneti_osismii_namnetes,linked,,unresolved_link
@@ -1719,7 +1719,7 @@ france,east,13,1,,Alsace-Lorraine returned to France,1919–,1,,event,alsace_lor
 france,north,15,0,,Provisional Government (GPRF),1944–1946,4,provisional_government,linked,,unresolved_link
 france,north,15,1,,French Fourth Republic,1946–1958,4,french_fourth_republic,linked,,unresolved_link
 france,north,15,2,,French Fifth Republic,1958–,4,french_fifth_republic,linked,,unresolved_link
-germany,west,0,0,Ancient,Celtic La Tène culture (Rhineland · southern Germany),c.450–50 BCE,1,celtic_la_tene_culture,linked,,unresolved_link
+germany,west,0,0,Ancient,Celtic La Tène culture (Rhineland · southern Germany),c.450–50 BCE,1,,culture,celtic_la_tene_culture,culture
 germany,west,0,1,Ancient,Roman Republic — Gallic Wars (Caesar),58–50 BCE,1,roman_republic,linked,roman_republic,existing_polity
 germany,west,0,2,Ancient,Roman Empire — Germania Superior · Inferior,12 BCE–,1,roman_empire,linked,roman_empire,existing_polity
 germany,west,0,3,Ancient,Limes Germanicus (frontier wall),c.83–260 CE,1,limes_germanicus,linked,,unresolved_link
@@ -1807,8 +1807,8 @@ germany,prussia,14,0,,Former East Prussia: divided between Soviet Union (Kalinin
 germany,west,15,0,Reunification,Federal Republic of Germany (reunified),3 October 1990,4,federal_republic_germany,linked,federal_republic_germany,existing_polity
 germany,west,15,1,Reunification,EU founding member · Eurozone (2002) · Berlin restored as capital (1999),,4,,event,eu_founding_member_eurozone_berlin_restored_as_capital,event
 germany,west,15,2,Reunification,Largest economy in Europe · NATO member,,4,,event,largest_economy_in_europe_nato_member,event
-greece,north,0,0,Prehistoric,Minoan civilization — Crete & Cyclades,c.3000–1100 BCE,4,minoan_civilization_culture,linked,,unresolved_link
-greece,north,1,0,,Mycenaean civilization — Mycenae · Tiryns · Pylos,c.1600–1100 BCE,4,mycenaean_civilization_culture,linked,,unresolved_link
+greece,north,0,0,Prehistoric,Minoan civilization — Crete & Cyclades,c.3000–1100 BCE,4,,culture,minoan_civilization_culture,culture
+greece,north,1,0,,Mycenaean civilization — Mycenae · Tiryns · Pylos,c.1600–1100 BCE,4,,culture,mycenaean_civilization_culture,culture
 greece,north,1,1,,Greek Dark Ages — migrations · depopulation,c.1100–800 BCE,4,,event,greek_dark_ages,event
 greece,north,2,0,Archaic,Macedonian kingdom — Argead dynasty forming,c.700s BCE,1,macedonian_kingdom,linked,macedonian_kingdom,existing_polity
 greece,north,2,1,Archaic,Thessalian League,,1,thessalian_league,linked,,unresolved_link
@@ -1834,7 +1834,7 @@ greece,center,5,1,,Thebes — Epaminondas · Sacred Band · Leuctra,371–362 BC
 greece,south,5,0,,Sparta — post-Leuctra decline,,1,,event,sparta,event
 greece,south,5,1,,Corinth · Argos (Macedonian clients),,1,corinth_argos,linked,,unresolved_link
 greece,west,5,0,,Kingdom of Epirus — Aeacid dynasty · expansion,,1,kingdom_of_epirus,linked,kingdom_of_epirus,existing_polity
-greece,north,6,0,Hellenistic,Lysimachus — Thrace & Macedonia,306–281 BCE,1,lysimachus,linked,lysimachus,existing_polity
+greece,north,6,0,Hellenistic,Lysimachus — Thrace & Macedonia,306–281 BCE,1,kingdom_of_lysimachus,linked,kingdom_of_lysimachus,existing_polity
 greece,north,6,1,Hellenistic,Antipater → Cassander — Macedonia,321–297 BCE,1,,event,antipater_cassander,event
 greece,north,6,2,Hellenistic,Antigonus I Monophthalmus,–301 BCE,1,antigonus_i_monophthalmus,linked,,unresolved_link
 greece,center,6,0,Hellenistic,Demetrius Poliorcetes — Athens,307–302 BCE,1,demetrius_poliorcetes,linked,,unresolved_link
@@ -1881,7 +1881,7 @@ greece,north,17,0,,Kingdom of Greece — Glücksburg dynasty,1949–1967,4,kingd
 greece,north,17,1,,Military Junta (Colonels' Regime),1967–1974,4,military_junta,linked,,unresolved_link
 greece,north,18,0,,Third Hellenic Republic — EU member (1981) · Eurozone (2001),,4,,polity,third_hellenic_republic__eu_member_eurozone,polity
 hungary,pannonia,0,0,Ancient,Illyrian / Pannonian tribes,c.1000–35 BCE,1,illyrian,linked,,unresolved_link
-hungary,pannonia,0,1,Ancient,Celtic La Tène culture (Boii · Taurisci · Azali),c.450–35 BCE,1,celtic_la_tene_culture,linked,,unresolved_link
+hungary,pannonia,0,1,Ancient,Celtic La Tène culture (Boii · Taurisci · Azali),c.450–35 BCE,1,,culture,celtic_la_tene_culture,culture
 hungary,plain,0,0,Ancient,Scythian tribes,c.600–200 BCE,1,scythian_tribes,linked,,unresolved_link
 hungary,plain,0,1,Ancient,Sarmatian Iazyges (Great Plain),c.50 BCE–380 CE,1,sarmatian_iazyges,linked,,unresolved_link
 hungary,transylvania,0,0,Ancient,Dacian Kingdom,82 BCE–106 CE,1,dacian_kingdom,linked,dacian_kingdom,existing_polity
@@ -1890,7 +1890,7 @@ hungary,pannonia,1,1,,Roman Empire (Christian),380–395,1,roman_empire,linked,r
 hungary,pannonia,1,2,,Western Roman Empire,395–433,1,western_roman_empire,linked,western_roman_empire,existing_polity
 hungary,plain,1,0,,Sarmatian Iazyges (Roman clients),1st–4th c.,1,sarmatian_iazyges,linked,,unresolved_link
 hungary,transylvania,1,0,,Roman Empire — Dacia Province,106–271 CE,1,roman_empire,linked,roman_empire,existing_polity
-hungary,transylvania,1,1,,Free Dacians / Carpi,after 271,1,free_dacians,linked,free_dacians,existing_polity
+hungary,transylvania,1,1,,Free Dacians / Carpi,after 271,1,,unclassified,free_dacians_carpi,unclassified
 hungary,pannonia,2,0,Migration Period,Hunnic Empire (capital near Tisza),433–453,3,hunnic_empire,linked,hunnic_empire,existing_polity
 hungary,pannonia,3,0,,Ostrogothic Kingdom (Pannonia),453–473,1,ostrogothic_kingdom,linked,ostrogothic_kingdom,existing_polity
 hungary,pannonia,3,1,,Lombards (Pannonia),547–568,1,lombards,linked,,unresolved_link
@@ -1929,15 +1929,15 @@ hungary,pannonia,14,2,,Hungarian People's Republic,1949–1989; 1956 revolution 
 hungary,pannonia,14,3,,Third Hungarian Republic,1989–,3,third_hungarian_republic,linked,,unresolved_link
 iberia,portugal,0,0,Ancient,Cynetes / Conii (far southwest),pre-Roman,1,cynetes,linked,,unresolved_link
 iberia,portugal,0,1,Ancient,Lusitanians,c.1000 BCE–,1,lusitanians,linked,,unresolved_link
-iberia,portugal,0,2,Ancient,Celts (NW Gallaecia),c.800 BCE–,1,celts,linked,celts,existing_polity
+iberia,portugal,0,2,Ancient,Celts (NW Gallaecia),c.800 BCE–,1,,people,celts,people
 iberia,castile,0,0,Ancient,Celtiberians,c.800–200 BCE,1,celtiberians,linked,,unresolved_link
 iberia,castile,0,1,Ancient,Iberians (eastern & southern),c.800 BCE–,1,iberians,linked,,unresolved_link
 iberia,castile,0,2,Ancient,Basques (Pyrenees — continuous),c.1000 BCE–,1,basques,linked,,unresolved_link
 iberia,aragon,0,0,Ancient,Basques (Vascones · Pyrenees),c.1000 BCE– (pre-IE),1,basques,linked,,unresolved_link
 iberia,aragon,0,1,Ancient,Iberians (Mediterranean coast),c.800 BCE–,1,iberians,linked,,unresolved_link
 iberia,aragon,0,2,Ancient,Greek colonies (Emporion · Rhode),c.600 BCE–,1,,unclassified,greek_colonies,unclassified
-iberia,andalus,0,0,Ancient,Tartessian civilization (Guadalquivir),c.1100–500 BCE,1,tartessian_civilization_culture,linked,,unresolved_link
-iberia,andalus,0,1,Ancient,Phoenician colonies (Gadir · Málaga · Sexi),c.1100 BCE–,1,phoenician_colonies,linked,phoenician_colonies,existing_polity
+iberia,andalus,0,0,Ancient,Tartessian civilization (Guadalquivir),c.1100–500 BCE,1,,culture,tartessian_civilization_culture,culture
+iberia,andalus,0,1,Ancient,Phoenician colonies (Gadir · Málaga · Sexi),c.1100 BCE–,1,,unclassified,phoenician_colonies,unclassified
 iberia,andalus,0,2,Ancient,Carthaginian expansion (New Carthage),c.237–206 BCE,1,carthage,linked,carthage,existing_polity
 iberia,portugal,1,0,,Roman Republic — Lusitania (Sertorius revolt 80–72 BCE),206–27 BCE,1,roman_republic,linked,roman_republic,existing_polity
 iberia,portugal,1,1,,Roman Empire — Gallaecia · Lusitania,27 BCE–380 CE,1,roman_empire,linked,roman_empire,existing_polity
@@ -2046,35 +2046,35 @@ iberia,castile,13,0,,Second Spanish Republic,1931–1939,3,second_spanish_republ
 iberia,castile,13,1,,Spanish Civil War,1936–1939,3,,event,spanish_civil_war,event
 iberia,castile,13,2,,Francoist Spain (Estado Español),1939–1975,3,francoist_spain,linked,,unresolved_link
 iberia,castile,13,3,,Kingdom of Spain (Juan Carlos I — democracy),1978–,3,kingdom_of_spain,linked,,unresolved_link
-italy,north,0,0,Prehistoric,Terramare culture,c.1700–1150 BCE,1,terramare_culture,linked,,unresolved_link
-italy,north,0,1,Prehistoric,Proto-Villanovan culture,c.1200–900 BCE,1,proto_villanovan_culture,linked,,unresolved_link
-italy,north,0,2,Prehistoric,Villanovan culture,c.900–700 BCE,1,villanovan_culture,linked,,unresolved_link
-italy,north,0,3,Prehistoric,Este · Golasecca cultures,c.900–400 BCE,1,este_golasecca_cultures_culture,linked,,unresolved_link
-italy,north,0,4,Prehistoric,Celtic La Tène migration,c.450 BCE–,1,celtic_la_tene_migration,linked,celtic_la_tene_migration,existing_polity
-italy,center,0,0,Prehistoric,Rinaldone · Gaudo cultures,c.3400–2200 BCE,1,rinaldone_gaudo_cultures_culture,linked,,unresolved_link
-italy,center,0,1,Prehistoric,Apennine culture,c.1700–1100 BCE,1,apennine_culture,linked,,unresolved_link
-italy,center,0,2,Prehistoric,Villanovan culture (central),c.900–700 BCE,1,villanovan_culture,linked,,unresolved_link
-italy,center,0,3,Prehistoric,Latial culture,c.900–600 BCE,1,latial_culture,linked,,unresolved_link
-italy,south,0,0,Prehistoric,Apennine culture,c.1700–1100 BCE,1,apennine_culture,linked,,unresolved_link
-italy,south,0,1,Prehistoric,Italic peoples (Oscan · Samnite · Lucanian),c.1000 BCE–,1,italic_peoples,linked,italic_peoples,existing_polity
+italy,north,0,0,Prehistoric,Terramare culture,c.1700–1150 BCE,1,,culture,terramare_culture,culture
+italy,north,0,1,Prehistoric,Proto-Villanovan culture,c.1200–900 BCE,1,,culture,proto_villanovan_culture,culture
+italy,north,0,2,Prehistoric,Villanovan culture,c.900–700 BCE,1,,culture,villanovan_culture,culture
+italy,north,0,3,Prehistoric,Este · Golasecca cultures,c.900–400 BCE,1,,unclassified,este_golasecca_cultures,unclassified
+italy,north,0,4,Prehistoric,Celtic La Tène migration,c.450 BCE–,1,,culture,celtic_la_tene_migration_culture,culture
+italy,center,0,0,Prehistoric,Rinaldone · Gaudo cultures,c.3400–2200 BCE,1,,unclassified,rinaldone_gaudo_cultures,unclassified
+italy,center,0,1,Prehistoric,Apennine culture,c.1700–1100 BCE,1,,culture,apennine_culture,culture
+italy,center,0,2,Prehistoric,Villanovan culture (central),c.900–700 BCE,1,,culture,villanovan_culture,culture
+italy,center,0,3,Prehistoric,Latial culture,c.900–600 BCE,1,,culture,latial_culture,culture
+italy,south,0,0,Prehistoric,Apennine culture,c.1700–1100 BCE,1,,culture,apennine_culture,culture
+italy,south,0,1,Prehistoric,Italic peoples (Oscan · Samnite · Lucanian),c.1000 BCE–,1,,people,italic_peoples,people
 italy,sicily,0,0,Prehistoric,Sicanian · Sicel · Elymian peoples,pre-Greek,1,sicanian_sicel_elymian_peoples,linked,,unresolved_link
-italy,sicily,0,1,Prehistoric,Castelluccio culture,c.2200–1400 BCE,1,castelluccio_culture,linked,,unresolved_link
-italy,sicily,0,2,Prehistoric,Thapsos culture,c.1400–900 BCE,1,thapsos_culture,linked,,unresolved_link
-italy,sicily,0,3,Prehistoric,Pantalica culture,c.1270–730 BCE,1,pantalica_culture,linked,,unresolved_link
-italy,sardinia,0,0,Prehistoric,Ozieri · Arzachena cultures,c.4000–2800 BCE,1,ozieri_arzachena_cultures_culture,linked,,unresolved_link
-italy,sardinia,0,1,Prehistoric,Nuragic civilization,c.1800–238 BCE,1,nuragic_civilization_culture,linked,,unresolved_link
-italy,north,1,0,Ancient,Ligurians · Euganei · Raeti,pre-Roman,1,ligurians_euganei_raeti,linked,ligurians_euganei_raeti,existing_polity
-italy,north,1,1,Ancient,Celtic Gauls (Insubres · Boii · Senones),c.400–222 BCE,1,celtic_gauls,linked,celtic_gauls,existing_polity
+italy,sicily,0,1,Prehistoric,Castelluccio culture,c.2200–1400 BCE,1,,culture,castelluccio_culture,culture
+italy,sicily,0,2,Prehistoric,Thapsos culture,c.1400–900 BCE,1,,culture,thapsos_culture,culture
+italy,sicily,0,3,Prehistoric,Pantalica culture,c.1270–730 BCE,1,,culture,pantalica_culture,culture
+italy,sardinia,0,0,Prehistoric,Ozieri · Arzachena cultures,c.4000–2800 BCE,1,,unclassified,ozieri_arzachena_cultures,unclassified
+italy,sardinia,0,1,Prehistoric,Nuragic civilization,c.1800–238 BCE,1,,culture,nuragic_civilization_culture,culture
+italy,north,1,0,Ancient,Ligurians · Euganei · Raeti,pre-Roman,1,,unclassified,ligurians_euganei_raeti,unclassified
+italy,north,1,1,Ancient,Celtic Gauls (Insubres · Boii · Senones),c.400–222 BCE,1,,people,celtic_gauls,people
 italy,north,1,2,Ancient,Venetians (Adriatic coast),c.1000 BCE–,1,,unclassified,venetians,unclassified
-italy,center,1,0,Ancient,Etruscan civilization (Tyrrhenia),c.700–400 BCE,1,etruscan_civilization_culture,linked,,unresolved_link
-italy,center,1,1,Ancient,Latin · Sabine · Samnite peoples,c.1000 BCE–,1,latin_sabine_samnite_peoples,linked,latin_sabine_samnite_peoples,existing_polity
+italy,center,1,0,Ancient,Etruscan civilization (Tyrrhenia),c.700–400 BCE,1,,culture,etruscan_civilization_culture,culture
+italy,center,1,1,Ancient,Latin · Sabine · Samnite peoples,c.1000 BCE–,1,,people,latin_sabine_samnite_peoples,people
 italy,center,1,2,Ancient,Roman Kingdom,753–509 BCE,1,roman_kingdom,linked,roman_kingdom,existing_polity
-italy,south,1,0,Ancient,Magna Graecia (Greek colonies),c.750–280 BCE,1,magna_graecia,linked,magna_graecia,existing_polity
-italy,south,1,1,Ancient,Oscan · Samnite peoples,c.600–290 BCE,1,oscan_samnite_peoples,linked,oscan_samnite_peoples,existing_polity
-italy,south,1,2,Ancient,Punic coastal settlements,c.800–275 BCE,1,punic_coastal_settlements,linked,punic_coastal_settlements,existing_polity
+italy,south,1,0,Ancient,Magna Graecia (Greek colonies),c.750–280 BCE,1,,unclassified,magna_graecia,unclassified
+italy,south,1,1,Ancient,Oscan · Samnite peoples,c.600–290 BCE,1,,people,oscan_samnite_peoples,people
+italy,south,1,2,Ancient,Punic coastal settlements,c.800–275 BCE,1,,unclassified,punic_coastal_settlements,unclassified
 italy,sicily,1,0,Ancient,Greek colonies (Syracuse · Akragas · Selinunte),c.734 BCE–,1,,unclassified,greek_colonies,unclassified
 italy,sicily,1,1,Ancient,Carthaginian western Sicily,c.550–241 BCE,1,carthaginian_western_sicily,linked,carthaginian_western_sicily,existing_polity
-italy,sardinia,1,0,Ancient,Phoenician colonies (Tharros · Nora · Sulcis),c.900–550 BCE,1,phoenician_colonies,linked,phoenician_colonies,existing_polity
+italy,sardinia,1,0,Ancient,Phoenician colonies (Tharros · Nora · Sulcis),c.900–550 BCE,1,,unclassified,phoenician_colonies,unclassified
 italy,sardinia,1,1,Ancient,Carthaginian Sardinia,c.550–238 BCE,1,carthaginian_sardinia,linked,carthaginian_sardinia,existing_polity
 italy,north,2,0,,Roman Republic — Gallia Cisalpina,222–27 BCE,1,roman_republic,linked,roman_republic,existing_polity
 italy,north,2,1,,Roman Empire (Italia),27 BCE–380 CE,1,roman_empire,linked,roman_empire,existing_polity
@@ -2115,13 +2115,13 @@ italy,sicily,5,0,,Arab raids from North Africa begin,from 827,1,,event,arab_raid
 italy,sicily,5,1,,Emirate of Sicily (Aghlabid then Kalbid),831–1072,1,emirate_of_sicily,linked,emirate_of_sicily,existing_polity
 italy,sicily,5,2,,Arab Emirate of Bari,847–871,1,arab_emirate_of_bari,linked,arab_emirate_of_bari,existing_polity
 italy,sardinia,5,0,,Byzantine Sardinia → Giudicati emerging,c.700–900,1,byzantine_sardinia,linked,byzantine_sardinia,existing_polity
-italy,sardinia,5,1,,Giudicati of Sardinia (4 kingdoms),c.900–1420,1,giudicati_of_sardinia,linked,giudicati_of_sardinia,existing_polity
+italy,sardinia,5,1,,Giudicati of Sardinia (4 kingdoms),c.900–1420,1,,unclassified,giudicati_of_sardinia,unclassified
 italy,north,6,0,Medieval,Middle Kingdom of Italy (Carolingian split),843–888,1,kingdom_of_italy,linked,kingdom_of_italy,existing_polity
 italy,north,6,1,Medieval,Holy Roman Empire — Kingdom of Italy,962–1250,1,holy_roman_empire,linked,holy_roman_empire,existing_polity
 italy,center,6,0,Medieval,Papal States,754–1870,1,papal_states,linked,papal_states,existing_polity
 italy,center,6,1,Medieval,Tuscan March,9th–11th c.,1,tuscan_march,linked,tuscan_march,existing_polity
 italy,center,6,2,Medieval,Investiture Controversy,1076–1122,1,,unclassified,investiture_controversy,unclassified
-italy,south,6,0,Medieval,Lombard principalities (Benevento · Salerno · Capua),–1077,1,lombard_principalities,linked,lombard_principalities,existing_polity
+italy,south,6,0,Medieval,Lombard principalities (Benevento · Salerno · Capua),–1077,1,,people,lombard_principalities,people
 italy,south,6,1,Medieval,Byzantine Catepanate of Italy,–1071,1,byzantine_catepanate_of_italy,linked,byzantine_catepanate_of_italy,existing_polity
 italy,sicily,6,0,Medieval,"Emirate of Sicily (Arab rule, Palermo capital)",831–1072,1,emirate_of_sicily,linked,emirate_of_sicily,existing_polity
 italy,sicily,6,1,Medieval,Norman conquest begins (Roger I),1061–1091,1,,event,norman_conquest_begins,event
@@ -2187,9 +2187,9 @@ italy,north,12,2,Modern,Italian Social Republic (RSI — northern rump),1943–1
 italy,north,12,3,Modern,Italian Republic,1946–,5,italian_republic,linked,italian_republic,existing_polity
 low_countries,north,0,0,Ancient,Frisii (Frisian tribes),c.500 BCE–,1,frisii,linked,,unresolved_link
 low_countries,north,0,1,Ancient,Batavi · Cananefates (Rhine delta),,1,batavi_cananefates,linked,,unresolved_link
-low_countries,flemish,0,0,Ancient,Belgae (Celtic-Germanic tribes),c.300 BCE–,1,belgae,linked,belgae,existing_polity
+low_countries,flemish,0,0,Ancient,Belgae (Celtic-Germanic tribes),c.300 BCE–,1,,people,belgae,people
 low_countries,flemish,0,1,Ancient,Menapii · Nervii · Morini · Eburones,,1,menapii_nervii_morini_eburones,linked,,unresolved_link
-low_countries,walloon,0,0,Ancient,Belgae (Aduatuci · Treveri · Tungri),c.300 BCE–,1,belgae,linked,belgae,existing_polity
+low_countries,walloon,0,0,Ancient,Belgae (Aduatuci · Treveri · Tungri),c.300 BCE–,1,,unclassified,belgae,unclassified
 low_countries,north,1,0,,Roman Republic (Gallic Wars — Caesar),57–27 BCE,1,roman_republic,linked,roman_republic,existing_polity
 low_countries,north,1,1,,Roman Empire — Germania Inferior,27 BCE–; Batavian Revolt 69–70 CE,1,roman_empire,linked,roman_empire,existing_polity
 low_countries,north,1,2,,Frisii beyond the limes (unconquered),,1,frisii_beyond_the_limes,linked,,unresolved_link
@@ -2269,7 +2269,7 @@ low_countries,north,14,0,Contemporary,Kingdom of the Netherlands,1945–,1,kingd
 low_countries,north,14,1,Contemporary,Benelux economic union,1948,1,benelux_economic_union,linked,,unresolved_link
 low_countries,north,14,2,Contemporary,Founding member of ECSC · EEC · EU,1952–,1,,event,founding_member_of_ecsc_eec_eu,event
 low_countries,flemish,14,0,Contemporary,Kingdom of Belgium,1945–,1,kingdom_of_belgium,linked,,unresolved_link
-low_countries,flemish,14,1,Contemporary,Federalization (Flemish · Walloon · Brussels regions),1970–1993,1,federalization,linked,federalization,existing_polity
+low_countries,flemish,14,1,Contemporary,Federalization (Flemish · Walloon · Brussels regions),1970–1993,1,,unclassified,federalization,unclassified
 low_countries,walloon,14,0,Contemporary,Grand Duchy of Luxembourg,1945–,1,grand_duchy_of_luxembourg,linked,,unresolved_link
 low_countries,walloon,14,1,Contemporary,Benelux · ECSC · EEC founding member,,1,,event,benelux_ecsc_eec_founding_member,event
 north_macedonia,west,0,0,Ancient,Paeonians (indigenous),c.700–358 BCE,1,paeonians,linked,,unresolved_link
@@ -2306,17 +2306,17 @@ north_macedonia,west,10,1,,Socialist Republic of Macedonia,,3,socialist_republic
 north_macedonia,west,10,2,,Republic of Macedonia,1991–2019,3,republic_of_macedonia,linked,,unresolved_link
 north_macedonia,west,10,3,,North Macedonia,2019–present,3,north_macedonia,linked,,unresolved_link
 poland,greater,0,0,Prehistoric,Early human presence (Homo erectus · Neanderthals · Homo sapiens),"c.500,000–40,000 BCE",3,early_human_presence,linked,,unresolved_link
-poland,greater,0,1,Prehistoric,Early European farmers · Danubian culture,c.5500 BCE–,3,early_european_farmers_culture,linked,,unresolved_link
-poland,greater,0,2,Prehistoric,Linear Pottery culture (Linearbandkeramik),c.5500–4500 BCE,3,linear_pottery_culture,linked,,unresolved_link
-poland,greater,0,3,Prehistoric,Corded Ware culture · Globular Amphora culture,c.3200–2300 BCE,3,corded_ware_culture,linked,,unresolved_link
-poland,greater,0,4,Prehistoric,Funnel Beaker · Bell Beaker cultures,,3,funnel_beaker_culture,linked,,unresolved_link
+poland,greater,0,1,Prehistoric,Early European farmers · Danubian culture,c.5500 BCE–,3,,culture,early_european_farmers_danubian_culture,culture
+poland,greater,0,2,Prehistoric,Linear Pottery culture (Linearbandkeramik),c.5500–4500 BCE,3,,culture,linear_pottery_culture,culture
+poland,greater,0,3,Prehistoric,Corded Ware culture · Globular Amphora culture,c.3200–2300 BCE,3,,culture,corded_ware_culture_globular_amphora_culture,culture
+poland,greater,0,4,Prehistoric,Funnel Beaker · Bell Beaker cultures,,3,,culture,funnel_beaker_bell_beaker_cultures_culture,culture
 poland,greater,0,5,Prehistoric,Únětice culture → Urnfield culture,c.2300–750 BCE,3,,culture,unetice_culture_urnfield_culture,culture
-poland,greater,0,6,Prehistoric,Lusatian culture,c.1300–500 BCE,3,lusatian_culture,linked,,unresolved_link
-poland,greater,0,7,Prehistoric,Hallstatt culture · Pomeranian culture,c.700–300 BCE,3,hallstatt_culture,linked,,unresolved_link
+poland,greater,0,6,Prehistoric,Lusatian culture,c.1300–500 BCE,3,,culture,lusatian_culture,culture
+poland,greater,0,7,Prehistoric,Hallstatt culture · Pomeranian culture,c.700–300 BCE,3,,culture,hallstatt_culture_pomeranian_culture,culture
 poland,greater,1,0,Ancient,Celtic migrations (La Tène — Silesia · Lesser Poland),c.400–100 BCE,3,celtic_migrations,linked,,unresolved_link
-poland,greater,1,1,Ancient,Germanic tribes (Lugii · Vandals · Goths · Burgundians),c.200 BCE–5th c.,3,germanic_tribes,linked,germanic_tribes,existing_polity
-poland,greater,1,2,Ancient,Przeworsk culture (associated with Vandals/Lugii),c.200 BCE–500 CE,3,przeworsk_culture,linked,,unresolved_link
-poland,greater,1,3,Ancient,Wielbark culture (associated with Goths),c.1st–4th c. CE,3,wielbark_culture,linked,,unresolved_link
+poland,greater,1,1,Ancient,Germanic tribes (Lugii · Vandals · Goths · Burgundians),c.200 BCE–5th c.,3,,people,germanic_tribes,people
+poland,greater,1,2,Ancient,Przeworsk culture (associated with Vandals/Lugii),c.200 BCE–500 CE,3,,culture,przeworsk_culture,culture
+poland,greater,1,3,Ancient,Wielbark culture (associated with Goths),c.1st–4th c. CE,3,,culture,wielbark_culture,culture
 poland,greater,1,4,Ancient,Hunnic incursions,c.375–453,3,hunnic_incursions,linked,,unresolved_link
 poland,greater,1,5,Ancient,West Slavic settlement (Polanie · Vistulans · Slenzans · Pomeranians),c.500–700,3,west_slavic_settlement,linked,,unresolved_link
 poland,greater,2,0,Early Medieval,Polanie (tribe around Gniezno · Poznań),c.700–960,1,polanie,linked,,unresolved_link
@@ -2380,11 +2380,11 @@ poland,greater,14,0,Contemporary,Third Polish Republic,1989–,3,third_polish_re
 poland,greater,14,1,Contemporary,NATO member (1999) · EU member (2004),,3,,event,nato_member_eu_member,event
 romania,trans,0,0,Ancient,Dacian Kingdom — Sarmizegetusa Regia (capital),c.82 BCE–106 CE,1,dacian_kingdom,linked,dacian_kingdom,existing_polity
 romania,wal,0,0,Ancient,Dacia — Getae / Dacian tribes,,1,dacia,linked,,unresolved_link
-romania,mold,0,0,Ancient,Free Dacians — Carpi (east of Roman reach),,1,free_dacians,linked,free_dacians,existing_polity
+romania,mold,0,0,Ancient,Free Dacians — Carpi (east of Roman reach),,1,,polity,free_dacians__carpi,polity
 romania,trans,1,0,,Roman Dacia province,106–271 CE — Trajan's conquest,1,roman_dacia_province,linked,,unresolved_link
 romania,trans,1,1,,Roman withdrawal · Goths settle,271 CE,1,roman_withdrawal,linked,,unresolved_link
 romania,wal,1,0,,Roman Empire (partly) · Goths · Sarmatians · Alans,,1,roman_empire,linked,roman_empire,existing_polity
-romania,mold,1,0,,Free Dacians / Carpi · Goths · Alans,,1,free_dacians,linked,free_dacians,existing_polity
+romania,mold,1,0,,Free Dacians / Carpi · Goths · Alans,,1,,people,free_dacians_carpi_goths_alans,people
 romania,trans,2,0,,Gepid Kingdom,454–567 CE,1,gepid_kingdom,linked,gepid_kingdom,existing_polity
 romania,trans,2,1,,Avar Khaganate,567–796 CE,1,avar_khaganate,linked,avar_khaganate,existing_polity
 romania,trans,2,2,,Slavic migration,,1,slavic_migration,linked,,unresolved_link
@@ -2397,11 +2397,11 @@ romania,trans,3,1,Medieval,Hungarian conquest of Transylvania,c.895–1000 CE,1,
 romania,wal,3,0,Medieval,First Bulgarian Empire (partly),,1,first_bulgarian_empire,linked,first_bulgarian_empire,existing_polity
 romania,wal,3,1,Medieval,Vlachs (Romanized populations),,1,vlachs,linked,,unresolved_link
 romania,mold,3,0,Medieval,First Bulgarian Empire,,1,first_bulgarian_empire,linked,first_bulgarian_empire,existing_polity
-romania,mold,3,1,Medieval,Pechenegs (from c.895 CE),,1,pechenegs,linked,pechenegs,existing_polity
+romania,mold,3,1,Medieval,Pechenegs (from c.895 CE),,1,,unclassified,pechenegs,unclassified
 romania,trans,4,0,,Kingdom of Hungary — Transylvania (with Saxon colonists),11th–13th c.,1,kingdom_of_hungary,linked,kingdom_of_hungary,existing_polity
-romania,wal,4,0,,Pechenegs → Cumans,from c.1040,1,pechenegs,linked,pechenegs,existing_polity
+romania,wal,4,0,,Pechenegs → Cumans,from c.1040,1,,event,pechenegs_cumans,event
 romania,wal,4,1,,Second Bulgarian Empire border,,1,second_bulgarian_empire,linked,second_bulgarian_empire,existing_polity
-romania,mold,4,0,,Pechenegs → Cumans (dominant),from c.1040,1,pechenegs,linked,pechenegs,existing_polity
+romania,mold,4,0,,Pechenegs → Cumans (dominant),from c.1040,1,,event,pechenegs_cumans,event
 romania,trans,5,0,,Kingdom of Hungary,Mongol invasion 1241–42,1,kingdom_of_hungary,linked,kingdom_of_hungary,existing_polity
 romania,wal,5,0,,Golden Horde (post-Mongol invasion),,1,golden_horde,linked,golden_horde,existing_polity
 romania,wal,5,1,,Principality of Wallachia,"founded c.1290–1330, Basarab I",1,principality_of_wallachia,linked,principality_of_wallachia,existing_polity
@@ -2444,7 +2444,7 @@ romania,trans,12,0,Contemporary,Romania — democracy,from 1989,2,romania,linked
 romania,mold,12,0,Contemporary,Republic of Moldova (independent 1991),Transnistrian War 1992 — frozen conflict,1,republic_of_moldova,linked,,unresolved_link
 romania,trans,13,0,,Romania — NATO (2004) · EU member (2007),,2,,event,romania,event
 russia,nw,0,0,Ancient,Finno-Ugric peoples (Chud · Veps · Merya),,2,finno_ugric_peoples,linked,,unresolved_link
-russia,south,0,0,Ancient,Scythian / Sarmatian steppe fringe,,1,scythian,linked,scythian,existing_polity
+russia,south,0,0,Ancient,Scythian / Sarmatian steppe fringe,,1,,people,scythian_sarmatian_steppe_fringe,people
 russia,south,0,1,Ancient,Finno-Ugric (Mordvins · Mari) · Turkic Bulgars,,1,finno_ugric_turkic_bulgars,linked,,unresolved_link
 russia,sib,0,0,Ancient,Indigenous Siberian peoples (Nenets · Khanty · Evenks · Yakuts · Chukchi),,1,indigenous_siberian_peoples,linked,,unresolved_link
 russia,nw,1,0,,East Slavic migration northward,6th–9th c.,2,east_slavic_migration_northward,linked,,unresolved_link
@@ -2496,13 +2496,13 @@ russia,nw,13,0,Contemporary,Russian Federation (1991),"Chechen Wars 1994–1996,
 russia,south,13,0,Contemporary,Russian Federation — Volga Federal District,,1,russian_federation,linked,russian_federation,existing_polity
 russia,sib,13,0,Contemporary,Russian Federation — Siberian · Far Eastern Federal Districts,,1,russian_federation,linked,russian_federation,existing_polity
 russia,nw,14,0,,Russian Federation — Putin era (2000–) · Annexation of Crimea (2014) · Full-scale war in Ukraine (2022–),,4,russian_federation,linked,russian_federation,existing_polity
-scandinavia,norway,0,0,Ancient,Nordic Bronze Age,c.1700–500 BCE,3,nordic_bronze_age_culture,linked,,unresolved_link
-scandinavia,norway,0,1,Ancient,Pre-Roman & Roman Iron Age,c.500 BCE–400 CE,3,pre_roman_roman_iron_age_culture,linked,,unresolved_link
-scandinavia,norway,0,2,Ancient,Germanic Iron Age · Migration Period,c.400–793,3,germanic_iron_age_culture,linked,,unresolved_link
+scandinavia,norway,0,0,Ancient,Nordic Bronze Age,c.1700–500 BCE,3,,culture,nordic_bronze_age_culture,culture
+scandinavia,norway,0,1,Ancient,Pre-Roman & Roman Iron Age,c.500 BCE–400 CE,3,,culture,pre_roman_roman_iron_age_culture,culture
+scandinavia,norway,0,2,Ancient,Germanic Iron Age · Migration Period,c.400–793,3,,culture,germanic_iron_age_migration_period_culture,culture
 scandinavia,finland,0,0,Ancient,Finnic peoples (Suomalaiset) migration,c.3000–1000 BCE,1,finnic_peoples_migration,linked,,unresolved_link
 scandinavia,finland,0,1,Ancient,Sámi peoples (Lapland — indigenous),pre-Finnic,1,sami_peoples,linked,,unresolved_link
-scandinavia,finland,0,2,Ancient,Comb Ceramic · Corded Ware cultures,,1,comb_ceramic_culture,linked,,unresolved_link
-scandinavia,finland,0,3,Ancient,Finnish Iron Age,c.500 BCE–1150 CE,1,finnish_iron_age_culture,linked,,unresolved_link
+scandinavia,finland,0,2,Ancient,Comb Ceramic · Corded Ware cultures,,1,,culture,comb_ceramic_corded_ware_cultures_culture,culture
+scandinavia,finland,0,3,Ancient,Finnish Iron Age,c.500 BCE–1150 CE,1,,culture,finnish_iron_age_culture,culture
 scandinavia,norway,1,0,Viking Age,Petty kingdoms (småriker),pre-872,1,petty_kingdoms,linked,,unresolved_link
 scandinavia,norway,1,1,Viking Age,Kingdom of Norway — Fairhair dynasty,c.872–; unified by Harald Fairhair,1,kingdom_of_norway,linked,kingdom_of_norway,existing_polity
 scandinavia,denmark,1,0,Viking Age,Jutes · Danes (Jutland · Zealand),,1,jutes_danes,linked,,unresolved_link
@@ -2619,10 +2619,10 @@ scandinavia,finland,11,0,Contemporary,Republic of Finland,1945–,1,republic_of_
 scandinavia,finland,11,1,Contemporary,Finlandization (Cold War neutrality — Soviet pressure),,1,,event,finlandization_cold_war_neutrality,event
 scandinavia,finland,11,2,Contemporary,Nordic welfare state model,,1,nordic_welfare_state_model,linked,,unresolved_link
 scandinavia,finland,11,3,Contemporary,EU member (1995) · NATO member (2023),,1,,event,eu_member_nato_member,event
-serbia,kosovo,0,0,Ancient,Illyrians (Dardani),indigenous western Balkans,1,illyrians,linked,illyrians,existing_polity
+serbia,kosovo,0,0,Ancient,Illyrians (Dardani),indigenous western Balkans,1,,unclassified,illyrians,unclassified
 serbia,nis,0,0,Ancient,Illyrians · Celts (Scordisci),mixed Illyro-Celtic,1,illyrians_celts,linked,,unresolved_link
-serbia,raska,0,0,Ancient,Illyrians (Autariatae),inner Balkans,1,illyrians,linked,illyrians,existing_polity
-serbia,belgrade,0,0,Ancient,Celts (Scordisci),lower Danube,1,celts,linked,celts,existing_polity
+serbia,raska,0,0,Ancient,Illyrians (Autariatae),inner Balkans,1,,unclassified,illyrians,unclassified
+serbia,belgrade,0,0,Ancient,Celts (Scordisci),lower Danube,1,,people,celts,people
 serbia,vojv,0,0,Ancient,Celts (Scordisci) · Dacians,,1,celts_dacians,linked,,unresolved_link
 serbia,kosovo,1,0,,Roman Empire — Moesia Superior · Dardania provinces,,3,roman_empire,linked,roman_empire,existing_polity
 serbia,belgrade,1,0,,Roman Empire — Singidunum (Belgrade),,1,roman_empire,linked,roman_empire,existing_polity
@@ -2713,7 +2713,7 @@ serbia,nis,19,0,,Federal Republic of Yugoslavia,1992–2003,4,federal_republic_o
 serbia,nis,19,1,,Serbia & Montenegro,2003–2006,4,serbia_montenegro,linked,,unresolved_link
 serbia,kosovo,20,0,,Kosovo (partially recognised),,1,kosovo,linked,,unresolved_link
 serbia,nis,20,0,,Republic of Serbia — EU candidate,,4,republic_of_serbia,linked,,unresolved_link
-slovenia,istria,0,0,Ancient,Histri (Illyrian),,1,histri,linked,histri,existing_polity
+slovenia,istria,0,0,Ancient,Histri (Illyrian),,1,,people,histri,people
 slovenia,lj,0,0,Ancient,Illyrian peoples,,1,illyrian_peoples,linked,,unresolved_link
 slovenia,lj,0,1,Ancient,Taurisci Celts,,1,taurisci_celts,linked,,unresolved_link
 slovenia,mb,0,0,Ancient,Celtic Noricum tribes (Celts / Norici),,1,celtic_noricum_tribes,linked,,unresolved_link
@@ -2761,7 +2761,7 @@ slovenia,istria,10,0,Yugoslav,Yugoslavia / Slovenia (Zone B → Slovenia 1954),O
 slovenia,lj,10,0,Yugoslav,SFR Yugoslavia — Socialist Republic of Slovenia (1945–1991),,2,sfr_yugoslavia,linked,sfr_yugoslavia,existing_polity
 slovenia,istria,11,0,Contemporary,Republic of Slovenia — NATO (2004) · EU member (2004) · Schengen (2007),,3,,polity,republic_of_slovenia__nato_eu_member_schengen,polity
 switzerland_austria,west_swiss,0,0,Ancient,Helvetii (Celtic — western Swiss Plateau),c.300 BCE–,1,helvetii,linked,,unresolved_link
-switzerland_austria,west_swiss,0,1,Ancient,La Tène culture heartland (Neuchâtel),c.450–50 BCE,1,la_tene_culture_heartland_culture,linked,,unresolved_link
+switzerland_austria,west_swiss,0,1,Ancient,La Tène culture heartland (Neuchâtel),c.450–50 BCE,1,,culture,la_tene_culture_heartland_culture,culture
 switzerland_austria,east_swiss,0,0,Ancient,Raetians (Alpine — Graubünden · Tyrol),pre-Roman,1,raetians,linked,,unresolved_link
 switzerland_austria,east_swiss,0,1,Ancient,Helvetii (eastern),,1,helvetii,linked,,unresolved_link
 switzerland_austria,austria,0,0,Ancient,Kingdom of Noricum (Celtic — allied with Rome),c.400–15 BCE,1,kingdom_of_noricum,linked,,unresolved_link
@@ -2861,21 +2861,21 @@ switzerland_austria,austria,11,0,Contemporary,Second Austrian Republic,1955–,1
 switzerland_austria,austria,11,1,Contemporary,Austrian State Treaty — sovereignty restored · permanent neutrality,1955,1,,polity,austrian_state_treaty__sovereignty_restored_permanent_neutrality,polity
 switzerland_austria,austria,11,2,Contemporary,EU member (1995) · not in NATO (neutral),,1,,event,eu_member_not_in_nato,event
 switzerland_austria,austria,11,3,Contemporary,Vienna — UN/OSCE/OPEC headquarters,,1,vienna,linked,,unresolved_link
-ukraine,west,0,0,Ancient,Trypillia culture,c.5500–2750 BCE,1,trypillia_culture,linked,,unresolved_link
+ukraine,west,0,0,Ancient,Trypillia culture,c.5500–2750 BCE,1,,culture,trypillia_culture,culture
 ukraine,west,0,1,Ancient,Dacian / Thracian tribes,,1,dacian_kingdom,linked,dacian_kingdom,existing_polity
-ukraine,cent,0,0,Ancient,Trypillia culture,,2,trypillia_culture,linked,,unresolved_link
+ukraine,cent,0,0,Ancient,Trypillia culture,,2,,culture,trypillia_culture,culture
 ukraine,cent,0,1,Ancient,Scythian steppe fringe,,2,scythian_steppe_fringe,linked,,unresolved_link
-ukraine,south,0,0,Ancient,Scythian Kingdom (steppe),,1,scythian_kingdom,linked,scythian,existing_polity
+ukraine,south,0,0,Ancient,Scythian Kingdom (steppe),,1,scythian_kingdom,linked,,unresolved_link
 ukraine,south,0,1,Ancient,Greek colonies (Olbia · Tyras),,1,,unclassified,greek_colonies,unclassified
 ukraine,crimea,0,0,Ancient,Taurians (indigenous),,1,taurians,linked,,unresolved_link
 ukraine,crimea,0,1,Ancient,Greek colony — Chersonesus,c.421 BCE,1,greek_colony,linked,,unresolved_link
 ukraine,west,1,0,,Bastarnae / Celtic tribes · Dacians,,1,bastarnae,linked,,unresolved_link
-ukraine,cent,1,0,,Scythian Kingdom,,2,scythian_kingdom,linked,scythian,existing_polity
+ukraine,cent,1,0,,Scythian Kingdom,,2,scythian_kingdom,linked,,unresolved_link
 ukraine,south,1,0,,Scythian Kingdom · Sarmatians (Roxolani),,1,scythian_kingdom,linked,,unresolved_link
 ukraine,south,1,1,,Greek colonies on Black Sea coast,,1,greek_colonies_on_black_sea_coast,linked,,unresolved_link
 ukraine,crimea,1,0,,Bosporan Kingdom (Crimea),438 BCE–370 CE,1,bosporan_kingdom,linked,,unresolved_link
 ukraine,crimea,1,1,,Scythian kingdom in Crimea,,1,scythian_kingdom_in_crimea,linked,,unresolved_link
-ukraine,west,2,0,,Gothic Kingdom (Chernjakhov culture),,3,gothic_kingdom_culture,linked,,unresolved_link
+ukraine,west,2,0,,Gothic Kingdom (Chernjakhov culture),,3,,culture,gothic_kingdom_culture,culture
 ukraine,west,2,1,,Hunnic Empire → Slavic migration,,3,hunnic_empire,linked,hunnic_empire,existing_polity
 ukraine,south,2,0,,Sarmatians (Alans) → Hunnic Empire,,1,hunnic_empire,linked,hunnic_empire,existing_polity
 ukraine,south,2,1,,Slavic migration (Antes · Sklavenoi),,1,slavic_migration,linked,,unresolved_link
@@ -2885,7 +2885,7 @@ ukraine,west,3,0,Early Medieval,White Croats · Dulebes · Volhynians (E. Slavic
 ukraine,cent,3,0,Early Medieval,Polyanians · Drevlyanians · Ulichians,,1,polyanians_drevlyanians_ulichians,linked,,unresolved_link
 ukraine,east,3,0,Early Medieval,Severians · Vyatichi,,1,severians_vyatichi,linked,,unresolved_link
 ukraine,south,3,0,Early Medieval,Tivertsi · Ulichians · Antes (Slavic),,1,tivertsi_ulichians_antes,linked,,unresolved_link
-ukraine,south,3,1,Early Medieval,Pechenegs (from c.900),,1,pechenegs,linked,pechenegs,existing_polity
+ukraine,south,3,1,Early Medieval,Pechenegs (from c.900),,1,,unclassified,pechenegs,unclassified
 ukraine,crimea,3,0,Early Medieval,Khazar Khaganate · Byzantine Chersonesus,,1,khazar_khaganate,linked,khazar_khaganate,existing_polity
 ukraine,west,4,0,,Rus' Khaganate (Varangian polity),c.830–882,3,rus_khaganate,linked,,unresolved_link
 ukraine,south,4,0,,Rus' Khaganate steppe fringe,,1,,polity,rus_khaganate_steppe_fringe,polity
@@ -2966,8 +2966,8 @@ ukraine,south,16,0,Contemporary,Ukraine,,1,ukraine,linked,,unresolved_link
 ukraine,crimea,16,0,Contemporary,Russia annexes Crimea,2014 — internationally unrecognised,1,russia_annexes_crimea,linked,,unresolved_link
 ukraine,west,17,0,,Ukraine — full-scale Russian invasion,,2,,event,ukraine,event
 ukraine,crimea,17,0,,Russia (occupied · unrecognised),,1,russia,linked,,unresolved_link
-caribbean,greater_antilles,0,0,Pre-Columbian,Taíno (Arawak) — Cuba · Hispaniola · Jamaica · Puerto Rico,,2,taino,linked,taino,existing_polity
-caribbean,col_2,0,0,Pre-Columbian,Carib peoples — Lesser Antilles,,1,carib_peoples,linked,carib_peoples,existing_polity
+caribbean,greater_antilles,0,0,Pre-Columbian,Taíno (Arawak) — Cuba · Hispaniola · Jamaica · Puerto Rico,,2,,unclassified,taino,unclassified
+caribbean,col_2,0,0,Pre-Columbian,Carib peoples — Lesser Antilles,,1,,people,carib_peoples,people
 caribbean,greater_antilles,1,0,Colonial,Spanish Caribbean (Cuba · Hispaniola · Puerto Rico),,1,spanish_caribbean,linked,spanish_caribbean,existing_polity
 caribbean,lesser_antilles,1,0,Colonial,British Jamaica (1655–),,1,british_caribbean,linked,british_caribbean,existing_polity
 caribbean,col_2,1,0,Colonial,British Caribbean,Barbados 1627 · Trinidad 1797,1,british_caribbean,linked,british_caribbean,existing_polity
@@ -2982,15 +2982,15 @@ caribbean,greater_antilles,3,1,Modern,Dominican Republic,,1,dominican_republic,l
 caribbean,greater_antilles,3,2,Modern,Haiti,,1,haiti,linked,haiti,existing_polity
 caribbean,lesser_antilles,3,0,Modern,Jamaica (1962) · Trinidad (1962) · Bahamas (1973),,1,,unclassified,jamaica_trinidad_bahamas,unclassified
 caribbean,col_2,3,0,Modern,Barbados (1966) · Dominica (1978) · St. Lucia (1979),,1,,unclassified,barbados_dominica_st_lucia,unclassified
-mexico,central,0,0,Pre-Classic,Olmec (La Venta · San Lorenzo),,1,olmec,linked,olmec,existing_polity
+mexico,central,0,0,Pre-Classic,Olmec (La Venta · San Lorenzo),,1,,unclassified,olmec,unclassified
 mexico,maya,0,0,Pre-Classic,Early Maya settlements,,1,,unclassified,early_maya_settlements,unclassified
 mexico,oaxaca,0,0,Pre-Classic,Zapotec (early San José Mogote),,1,zapotec,linked,zapotec,existing_polity
 mexico,central,1,0,Classic,Teotihuacan,,1,teotihuacan,linked,teotihuacan,existing_polity
-mexico,maya,1,0,Classic,Maya City-States (Tikal · Calakmul · Palenque),,1,maya_city_states,linked,maya_city_states,existing_polity
+mexico,maya,1,0,Classic,Maya City-States (Tikal · Calakmul · Palenque),,1,,polity,maya_city_states,polity
 mexico,oaxaca,1,0,Classic,Zapotec (Monte Albán),,1,zapotec,linked,zapotec,existing_polity
 mexico,central,2,0,Post-Classic,Toltec Empire (Tula),900–1168,1,toltec_empire,linked,toltec_empire,existing_polity
 mexico,central,2,1,Post-Classic,Aztec Empire (Mexico-Tenochtitlan),1428–1521,1,aztec_empire,linked,aztec_empire,existing_polity
-mexico,maya,2,0,Post-Classic,Postclassic Maya (Mayapan · K'iche' · Uxmal),,1,postclassic_maya,linked,postclassic_maya,existing_polity
+mexico,maya,2,0,Post-Classic,Postclassic Maya (Mayapan · K'iche' · Uxmal),,1,,unclassified,postclassic_maya,unclassified
 mexico,oaxaca,2,0,Post-Classic,Mixtec kingdoms,,1,,unclassified,mixtec_kingdoms,unclassified
 mexico,central,3,0,Colonial,Viceroyalty of New Spain (1521–1821),,3,new_spain,linked,new_spain,existing_polity
 mexico,central,4,0,Independence,First Mexican Empire (Iturbide),1821–1823,3,first_mexican_empire,linked,first_mexican_empire,existing_polity
@@ -3008,7 +3008,7 @@ peru,south_highlands,1,0,Initial Period / Early Horizon (1800–200 BCE),Pucará
 peru,north_coast,2,0,Early Intermediate (200 BCE – 600 CE),Virú / Gallinazo (200 BCE – 300 CE),Moche Valley predecessors; fortified settlements,1,viru,linked,,unresolved_link
 peru,north_coast,2,1,Early Intermediate (200 BCE – 600 CE),Moche (c. 100–700 CE),Huaca del Sol y de la Luna; elaborate ceramics; Sipán royal tombs,1,moche,linked,,unresolved_link
 peru,south_coast,2,0,Early Intermediate (200 BCE – 600 CE),Nazca (c. 100–700 CE),Nazca Lines geoglyphs; polychrome pottery; Cahuachi ceremonial center,1,nazca,linked,,unresolved_link
-peru,central_highlands,2,0,Early Intermediate (200 BCE – 600 CE),Lima Culture (c. 200–700 CE),Maranga and Pachacámac complexes; central coast hegemony,1,lima_culture,linked,,unresolved_link
+peru,central_highlands,2,0,Early Intermediate (200 BCE – 600 CE),Lima Culture (c. 200–700 CE),Maranga and Pachacámac complexes; central coast hegemony,1,,culture,lima_culture,culture
 peru,central_highlands,2,1,Early Intermediate (200 BCE – 600 CE),Recuay (200 BCE – 600 CE),Ancash highlands; stone sculpture; warrior cult,1,recuay,linked,,unresolved_link
 peru,south_highlands,2,0,Early Intermediate (200 BCE – 600 CE),Tiwanaku (c. 550–1000 CE),Lake Titicaca highlands; Gateway of the Sun; raised-field agriculture,1,tiwanaku,linked,tiwanaku,existing_polity
 peru,north_coast,3,0,Middle Horizon (600–1000),Moche decline / Lambayeque (Sicán) (c. 700–1375),Successor to Moche; Batán Grande gold workshops; Naylamp dynasty legend,1,lambayeque_sican,linked,,unresolved_link
@@ -3036,7 +3036,7 @@ south_america,andes,0,1,Pre-Columbian,Wari Empire (600–1000),first Andean empi
 south_america,andes,0,2,Pre-Columbian,Chimú Kingdom (900–1470),coastal Peru,1,chimu_kingdom,linked,chimu_kingdom,existing_polity
 south_america,andes,0,3,Pre-Columbian,Inca Empire (1438–1533),Tawantinsuyu,1,inca_empire,linked,inca_empire,existing_polity
 south_america,northern,0,0,Pre-Columbian,Muisca Confederation,,1,muisca_confederation,linked,muisca_confederation,existing_polity
-south_america,brazil,0,0,Pre-Columbian,Tupí-Guaraní peoples,,1,tupi_guarani,linked,tupi_guarani,existing_polity
+south_america,brazil,0,0,Pre-Columbian,Tupí-Guaraní peoples,,1,,people,tupi_guarani_peoples,people
 south_america,southern,0,0,Pre-Columbian,Mapuche Nation,,1,mapuche_nation,linked,mapuche_nation,existing_polity
 south_america,andes,1,0,Colonial,Viceroyalty of Peru (1542–1824),,1,viceroyalty_of_peru,linked,viceroyalty_of_peru,existing_polity
 south_america,northern,1,0,Colonial,Viceroyalty of New Granada (1717–1819),,1,viceroyalty_of_new_granada,linked,viceroyalty_of_new_granada,existing_polity
@@ -3058,12 +3058,12 @@ south_america,brazil,3,0,Modern,Brazil,,1,republic_of_brazil,linked,republic_of_
 south_america,southern,3,0,Modern,Argentina · Chile · Uruguay · Paraguay,,1,argentina,linked,argentina,existing_polity
 anatolia,west,0,0,Prehistoric,Neanderthals,"c.200,000–40,000 BCE",1,neanderthals,linked,,unresolved_link
 anatolia,west,0,1,Prehistoric,Homo sapiens migration,"c.40,000 BCE onward",1,homo_sapiens_migration,linked,,unresolved_link
-anatolia,central,0,0,Prehistoric,Neolithic settlements,"c.10,000 BCE",1,neolithic_settlements_culture,linked,,unresolved_link
+anatolia,central,0,0,Prehistoric,Neolithic settlements,"c.10,000 BCE",1,,culture,neolithic_settlements_culture,culture
 anatolia,central,0,1,Prehistoric,Çatalhöyük · Göbekli Tepe · Çayönü,c.9500–5700 BCE,1,catalhoyuk_gobekli_tepe_cayonu,linked,,unresolved_link
 anatolia,east,0,0,Prehistoric,Nevali Çori · Yumuktepe,,1,nevali_cori,linked,,unresolved_link
 anatolia,west,1,0,Early Ancient,Indo-European migrations,c.2000 BCE; Bronze Age Collapse (c.1200 BCE),1,,culture,indo_european_migrations_culture,culture
 anatolia,west,1,1,Early Ancient,Troy,c.3000–1180 BCE,1,troy,linked,,unresolved_link
-anatolia,west,1,2,Early Ancient,Mycenaean culture,c.1600–1180 BCE,1,mycenaean_culture,linked,,unresolved_link
+anatolia,west,1,2,Early Ancient,Mycenaean culture,c.1600–1180 BCE,1,,culture,mycenaean_culture,culture
 anatolia,west,1,3,Early Ancient,Ancient Greek colonies,c.1000–546 BCE,1,ancient_greek_colonies,linked,,unresolved_link
 anatolia,west,1,4,Early Ancient,Phrygian Kingdom,c.1200–695 BCE,1,phrygian_kingdom,linked,,unresolved_link
 anatolia,west,1,5,Early Ancient,Lydia,c.695–546 BCE,1,lydia,linked,,unresolved_link
@@ -3197,9 +3197,9 @@ arabia,nejd,6,0,Contemporary,Qatar,,1,qatar,linked,,unresolved_link
 arabia,hejaz,6,0,Contemporary,Bahrain,,1,bahrain,linked,,unresolved_link
 arabia,col_5,6,0,Contemporary,Kuwait,,1,kuwait,linked,,unresolved_link
 arabia,col_6,6,0,Contemporary,Saudi Arabia,,2,saudi_arabia,linked,saudi_arabia,existing_polity
-armenia,main,0,0,Prehistoric,Shulaveri-Shomu culture,c.6000–4000 BCE,2,shulaveri_shomu_culture,linked,,unresolved_link
-armenia,main,0,1,Prehistoric,Kura-Araxes culture,c.3500–2200 BCE,2,kura_araxes_culture,linked,,unresolved_link
-armenia,main,0,2,Prehistoric,Trialeti-Vanadzor culture,c.2200–1500 BCE,2,trialeti_vanadzor_culture,linked,,unresolved_link
+armenia,main,0,0,Prehistoric,Shulaveri-Shomu culture,c.6000–4000 BCE,2,,culture,shulaveri_shomu_culture,culture
+armenia,main,0,1,Prehistoric,Kura-Araxes culture,c.3500–2200 BCE,2,,culture,kura_araxes_culture,culture
+armenia,main,0,2,Prehistoric,Trialeti-Vanadzor culture,c.2200–1500 BCE,2,,culture,trialeti_vanadzor_culture,culture
 armenia,main,1,0,Early Antiquity,Mitanni Empire — suzerainty,c.1500–1260 BCE,1,mitanni_empire,linked,mitanni_empire,existing_polity
 armenia,main,1,1,Early Antiquity,Hittite Empire — suzerainty,c.1400–1200 BCE,1,hittite_empire,linked,hittite_empire,existing_polity
 armenia,main,1,2,Early Antiquity,Hayasa-Azzi confederation,c.1600–1200 BCE,1,hayasa_azzi_confederation,linked,,unresolved_link
@@ -3259,7 +3259,7 @@ armenia,main,15,0,Modern,Transcaucasian SFSR,1922–1936,2,soviet_union,linked,s
 armenia,main,15,1,Modern,Armenian SSR,1936–1991,2,soviet_union,linked,soviet_union,existing_polity
 armenia,main,15,2,Modern,Republic of Armenia (Second Republic),1991–,2,republic_of_armenia,linked,,unresolved_link
 azerbaijan,arran,0,0,Early Antiquity,Manna Kingdom,c.850–616 BCE,2,manna_kingdom,linked,,unresolved_link
-azerbaijan,arran,0,1,Early Antiquity,Cimmerian · Scythian nomads,c.800–600 BCE,2,cimmerian_scythian_nomads,linked,cimmerian_scythian_nomads,existing_polity
+azerbaijan,arran,0,1,Early Antiquity,Cimmerian · Scythian nomads,c.800–600 BCE,2,,people,cimmerian_scythian_nomads,people
 azerbaijan,arran,1,0,,Median Empire,678–550 BCE,2,median_kingdom,linked,median_kingdom,existing_polity
 azerbaijan,arran,1,1,,Achaemenid Persia (satrapy),550–330 BCE,2,achaemenid_empire,linked,achaemenid_empire,existing_polity
 azerbaijan,arran,1,2,,Seleucid / Atropatenian suzerainty,330–200 BCE,2,seleucid_empire,linked,seleucid_empire,existing_polity
@@ -3368,14 +3368,14 @@ egypt,lower,20,0,,Kingdom of Egypt (nominal independence; British influence),,2,
 egypt,lower,21,0,Contemporary,Republic of Egypt,1953–1958,2,republic_of_egypt,linked,republic_of_egypt,existing_polity
 egypt,lower,21,1,Contemporary,United Arab Republic (union with Syria),1958–1971,2,united_arab_republic,linked,united_arab_republic,existing_polity
 egypt,lower,22,0,,Arab Republic of Egypt,,2,republic_of_egypt,linked,republic_of_egypt,existing_polity
-georgia,west,0,0,Prehistoric,Shulaveri-Shomu culture,c.6000–4000 BCE,1,shulaveri_shomu_culture,linked,,unresolved_link
-georgia,west,0,1,Prehistoric,Kura-Araxes culture,c.3500–2200 BCE,1,kura_araxes_culture,linked,,unresolved_link
-georgia,west,0,2,Prehistoric,Colchian Bronze culture,c.1700–700 BCE,1,colchian_bronze_culture,linked,,unresolved_link
-georgia,south,0,0,Prehistoric,Shulaveri-Shomu culture,c.6000–4000 BCE,2,shulaveri_shomu_culture,linked,,unresolved_link
-georgia,south,0,1,Prehistoric,Kura-Araxes culture,c.3500–2200 BCE,2,kura_araxes_culture,linked,,unresolved_link
-georgia,south,0,2,Prehistoric,Trialeti-Vanadzor culture,c.2200–1500 BCE,2,trialeti_vanadzor_culture,linked,,unresolved_link
+georgia,west,0,0,Prehistoric,Shulaveri-Shomu culture,c.6000–4000 BCE,1,,culture,shulaveri_shomu_culture,culture
+georgia,west,0,1,Prehistoric,Kura-Araxes culture,c.3500–2200 BCE,1,,culture,kura_araxes_culture,culture
+georgia,west,0,2,Prehistoric,Colchian Bronze culture,c.1700–700 BCE,1,,culture,colchian_bronze_culture,culture
+georgia,south,0,0,Prehistoric,Shulaveri-Shomu culture,c.6000–4000 BCE,2,,culture,shulaveri_shomu_culture,culture
+georgia,south,0,1,Prehistoric,Kura-Araxes culture,c.3500–2200 BCE,2,,culture,kura_araxes_culture,culture
+georgia,south,0,2,Prehistoric,Trialeti-Vanadzor culture,c.2200–1500 BCE,2,,culture,trialeti_vanadzor_culture,culture
 georgia,west,1,0,Early Antiquity,Colchis Kingdom (Egrisi),c.1300–600 BCE,1,colchis_kingdom,linked,,unresolved_link
-georgia,west,1,1,Early Antiquity,Cimmerian · Scythian nomads,c.800–600 BCE,1,cimmerian_scythian_nomads,linked,cimmerian_scythian_nomads,existing_polity
+georgia,west,1,1,Early Antiquity,Cimmerian · Scythian nomads,c.800–600 BCE,1,,people,cimmerian_scythian_nomads,people
 georgia,south,1,0,Early Antiquity,Diauehi Kingdom,c.1115–760 BCE,2,diauehi_kingdom,linked,,unresolved_link
 georgia,south,1,1,Early Antiquity,Urartu suzerainty,c.860–590 BCE,2,kingdom_of_urartu,linked,kingdom_of_urartu,existing_polity
 georgia,west,2,0,,Greek colonies (Phasis · Dioscurias),from c.600 BCE,1,,unclassified,greek_colonies,unclassified
@@ -3435,15 +3435,15 @@ georgia,west,14,0,Modern,Transcaucasian SFSR,1922–1936,3,soviet_union,linked,s
 georgia,west,14,1,Modern,Georgian SSR,1936–1991,3,soviet_union,linked,soviet_union,existing_polity
 georgia,west,14,2,Modern,Republic of Georgia,1991–,3,republic_of_georgia,linked,,unresolved_link
 iraq,nw,0,0,Prehistoric,Neanderthals (Shanidar Cave),"c.65,000–35,000 BCE",1,neanderthals,linked,,unresolved_link
-iraq,nw,0,1,Prehistoric,Baradostian culture,"c.36,000–18,000 BCE",1,baradostian_culture,linked,,unresolved_link
-iraq,nw,0,2,Prehistoric,Zarzian culture,"c.18,000–8,000 BCE",1,zarzian_culture,linked,,unresolved_link
-iraq,nw,0,3,Prehistoric,Halaf · Hassuna cultures,c.6100–5000 BCE,1,halaf_hassuna_cultures_culture,linked,,unresolved_link
-iraq,sw,0,0,Prehistoric,Pre-Pottery Neolithic A·B,"c.10,000–6,500 BCE",1,pre_pottery_neolithic_a_culture,linked,,unresolved_link
-iraq,sw,0,1,Prehistoric,Halaf culture,c.6100–5100 BCE,1,halaf_culture,linked,,unresolved_link
-iraq,central,0,0,Prehistoric,Samarra culture,c.5500–4800 BCE,1,samarra_culture,linked,,unresolved_link
-iraq,central,0,1,Prehistoric,Ubaid culture,c.6500–3800 BCE,1,ubaid_culture,linked,,unresolved_link
-iraq,se,0,0,Prehistoric,Ubaid culture (origin),,1,ubaid_culture,linked,,unresolved_link
-iraq,nw,1,0,Early Ancient,Sumerian city-states,"Uruk → Jemdet Nasr → Early Dynastic, c.3500–2334 BCE",4,sumerian_city_states,linked,sumerian_city_states,existing_polity
+iraq,nw,0,1,Prehistoric,Baradostian culture,"c.36,000–18,000 BCE",1,,culture,baradostian_culture,culture
+iraq,nw,0,2,Prehistoric,Zarzian culture,"c.18,000–8,000 BCE",1,,culture,zarzian_culture,culture
+iraq,nw,0,3,Prehistoric,Halaf · Hassuna cultures,c.6100–5000 BCE,1,,unclassified,halaf_hassuna_cultures,unclassified
+iraq,sw,0,0,Prehistoric,Pre-Pottery Neolithic A·B,"c.10,000–6,500 BCE",1,,culture,pre_pottery_neolithic_a_b_culture,culture
+iraq,sw,0,1,Prehistoric,Halaf culture,c.6100–5100 BCE,1,,culture,halaf_culture,culture
+iraq,central,0,0,Prehistoric,Samarra culture,c.5500–4800 BCE,1,,culture,samarra_culture,culture
+iraq,central,0,1,Prehistoric,Ubaid culture,c.6500–3800 BCE,1,,culture,ubaid_culture,culture
+iraq,se,0,0,Prehistoric,Ubaid culture (origin),,1,,culture,ubaid_culture,culture
+iraq,nw,1,0,Early Ancient,Sumerian city-states,"Uruk → Jemdet Nasr → Early Dynastic, c.3500–2334 BCE",4,,polity,sumerian_city_states,polity
 iraq,nw,1,1,Early Ancient,Akkadian Empire,c.2334–2154 BCE,4,akkadian_empire,linked,akkadian_empire,existing_polity
 iraq,nw,1,2,Early Ancient,Gutian dynasty,c.2154–2112 BCE,4,gutian_dynasty,linked,gutian_dynasty,existing_polity
 iraq,nw,1,3,Early Ancient,Third Dynasty of Ur (Ur III),c.2112–2004 BCE,4,ur_iii,linked,ur_iii,existing_polity
@@ -3534,10 +3534,10 @@ iraq,nw,11,2,,Iraqi government retakes,2017,1,iraqi_government_retakes,linked,,u
 iraq,sw,11,0,,ISIL occupation (Anbar),2014–2015,1,,event,isil_occupation,event
 iraq,sw,11,1,,Republic of Iraq,2015–,1,republic_of_iraq,linked,republic_of_iraq,existing_polity
 iraq,central,11,0,,Republic of Iraq,,2,republic_of_iraq,linked,republic_of_iraq,existing_polity
-levant,n_syria,0,0,Prehistoric,Aurignacian · Kebaran cultures,"c.45,000–12,000 BCE",4,aurignacian_kebaran_cultures_culture,linked,,unresolved_link
-levant,n_syria,0,1,Prehistoric,Natufian culture,"c.12,500–9,500 BCE",4,natufian_culture,linked,,unresolved_link
-levant,n_syria,0,2,Prehistoric,Pre-Pottery Neolithic A·B,"c.9,500–6,400 BCE",4,pre_pottery_neolithic_a_culture,linked,,unresolved_link
-levant,n_syria,0,3,Prehistoric,Halaf · Yarmukian · Ghassulian cultures,"c.6,400–3,500 BCE",4,halaf_yarmukian_ghassulian_cultures_culture,linked,,unresolved_link
+levant,n_syria,0,0,Prehistoric,Aurignacian · Kebaran cultures,"c.45,000–12,000 BCE",4,,culture,aurignacian_kebaran_cultures_culture,culture
+levant,n_syria,0,1,Prehistoric,Natufian culture,"c.12,500–9,500 BCE",4,,culture,natufian_culture,culture
+levant,n_syria,0,2,Prehistoric,Pre-Pottery Neolithic A·B,"c.9,500–6,400 BCE",4,,culture,pre_pottery_neolithic_a_b_culture,culture
+levant,n_syria,0,3,Prehistoric,Halaf · Yarmukian · Ghassulian cultures,"c.6,400–3,500 BCE",4,,unclassified,halaf_yarmukian_ghassulian_cultures,unclassified
 levant,n_syria,1,0,Early Ancient,Ebla (c.3000–1600 BCE),major bronze age city-state,1,ebla,linked,,unresolved_link
 levant,n_syria,1,1,Early Ancient,Mari (c.2900–1761 BCE),on middle Euphrates,1,mari,linked,,unresolved_link
 levant,coastal,1,0,Early Ancient,Byblos / Gubla,c.3000 BCE onward,1,byblos,linked,,unresolved_link
@@ -3554,12 +3554,12 @@ levant,damascus,2,1,,Egyptian New Kingdom,c.1550–1150 BCE,1,egyptian_new_kingd
 levant,damascus,2,2,,Mitanni,c.1500–1300 BCE,1,mitanni_empire,linked,mitanni_empire,existing_polity
 levant,palestine,2,0,,Egyptian New Kingdom,c.1550–1150 BCE,1,egyptian_new_kingdom,linked,egyptian_new_kingdom,existing_polity
 levant,palestine,2,1,,Canaanite cities (Egyptian vassals),,1,canaanite_cities,linked,,unresolved_link
-levant,n_syria,3,0,,Late Bronze Age Collapse · Sea Peoples,c.1200–1150 BCE,1,late_bronze_age_collapse_culture,linked,,unresolved_link
+levant,n_syria,3,0,,Late Bronze Age Collapse · Sea Peoples,c.1200–1150 BCE,1,,culture,late_bronze_age_collapse_sea_peoples_culture,culture
 levant,n_syria,3,1,,Aramaean kingdoms (Bit Adini etc.),c.1100–732 BCE,1,aramaean_kingdoms,linked,,unresolved_link
 levant,n_syria,3,2,,Neo-Hittite states,c.1200–700 BCE,1,neo_hittite_states,linked,,unresolved_link
 levant,n_syria,3,3,,Neo-Assyrian Empire,911–609 BCE,1,neo_assyrian_empire,linked,neo_assyrian_empire,existing_polity
 levant,n_syria,3,4,,Neo-Babylonian Empire,609–539 BCE,1,neo_babylonian,linked,neo_babylonian,existing_polity
-levant,coastal,3,0,,Phoenician city-states (Byblos · Sidon · Tyre),c.1200–332 BCE,1,phoenician_states,linked,phoenician_states,existing_polity
+levant,coastal,3,0,,Phoenician city-states (Byblos · Sidon · Tyre),c.1200–332 BCE,1,,polity,phoenician_city_states,polity
 levant,damascus,3,0,,Aram-Damascus,c.1200–732 BCE,1,aram_damascus,linked,,unresolved_link
 levant,damascus,3,1,,Neo-Assyrian Empire,732–609 BCE,1,neo_assyrian_empire,linked,neo_assyrian_empire,existing_polity
 levant,damascus,3,2,,Neo-Babylonian Empire,609–539 BCE,1,neo_babylonian,linked,neo_babylonian,existing_polity
@@ -3641,16 +3641,16 @@ levant,coastal,13,0,Contemporary,Lebanese Republic,,1,lebanese_republic,linked,,
 levant,damascus,13,0,Contemporary,Hashemite Kingdom of Jordan,,1,kingdom_of_jordan,linked,kingdom_of_jordan,existing_polity
 levant,coastal,14,0,,Lebanese Republic,,1,lebanese_republic,linked,,unresolved_link
 levant,damascus,14,0,,Hashemite Kingdom of Jordan,,1,kingdom_of_jordan,linked,kingdom_of_jordan,existing_polity
-morocco,tangier,0,0,Prehistoric,Capsian culture · Amazigh / Berber peoples,,8,capsian_culture,linked,,unresolved_link
+morocco,tangier,0,0,Prehistoric,Capsian culture · Amazigh / Berber peoples,,8,,culture,capsian_culture_amazigh_berber_peoples_culture,culture
 morocco,tangier,1,0,Ancient,Phoenician Tingis,c.800 BCE,1,phoenician_tingis,linked,,unresolved_link
 morocco,tangier,1,1,Ancient,Mauretanian city,→ 42 CE,1,mauretanian_city,linked,,unresolved_link
 morocco,rif,1,0,Ancient,Phoenician Rusaddir,c.600 BCE,1,phoenician_rusaddir,linked,,unresolved_link
-morocco,rif,1,1,Ancient,Berber / Mauretania,,1,berber,linked,berber,existing_polity
+morocco,rif,1,1,Ancient,Berber / Mauretania,,1,,people,berber_mauretania,people
 morocco,atlantic,1,0,Ancient,Phoenician Lixus,c.1100 BCE,1,phoenician_lixus,linked,,unresolved_link
 morocco,atlantic,1,1,Ancient,Mauretanian Atlantic,,1,mauretanian_atlantic,linked,,unresolved_link
 morocco,fes,1,0,Ancient,Carthaginian influence,c.300–146 BCE,2,,polity,carthaginian_influence,polity
 morocco,fes,1,1,Ancient,Mauretania Kingdom,3rd c. BCE–42 CE,2,mauretania_kingdom,linked,mauretania_kingdom,existing_polity
-morocco,atlas,1,0,Ancient,Berber / Mauretania,,1,berber,linked,berber,existing_polity
+morocco,atlas,1,0,Ancient,Berber / Mauretania,,1,,people,berber_mauretania,people
 morocco,tafilalet,1,0,Ancient,Gaetuli / Zenata (Berber),,1,gaetuli,linked,,unresolved_link
 morocco,wsahara,1,0,Ancient,Saharan Berber,,1,saharan_berber,linked,,unresolved_link
 morocco,tangier,2,0,,Roman Mauretania Tingitana,,4,roman_empire,linked,roman_empire,existing_polity
@@ -3663,7 +3663,7 @@ morocco,rif,3,0,Late Antique,Berber Rif,,1,berber_rif,linked,,unresolved_link
 morocco,rif,3,1,Late Antique,Minor Byzantine presence,coastal,1,minor_byzantine_presence,linked,,unresolved_link
 morocco,atlantic,3,0,Late Antique,Berber Atlantic tribes,,1,berber_atlantic_tribes,linked,,unresolved_link
 morocco,fes,3,0,Late Antique,Berber kingdoms,,3,berber_kingdoms,linked,,unresolved_link
-morocco,tafilalet,3,0,Late Antique,Berber / Saharan,,2,berber,linked,berber,existing_polity
+morocco,tafilalet,3,0,Late Antique,Berber / Saharan,,2,,people,berber_saharan,people
 morocco,tangier,4,0,Umayyad,Umayyad Caliphate — conquest of the Maghreb,,8,umayyad_caliphate,linked,umayyad_caliphate,existing_polity
 morocco,tangier,5,0,,Hammudids (Ceuta),1016–1058,1,hammudids,linked,,unresolved_link
 morocco,rif,5,0,,Salihids of Nakur / Rif,710–1019,1,salihids_of_nakur,linked,,unresolved_link
@@ -3671,8 +3671,8 @@ morocco,atlantic,5,0,,Barghawata Confederacy,744–1058,1,barghawata_confederacy
 morocco,fes,5,0,,Idrisid dynasty,788–985,1,idrisid_dynasty,linked,idrisid_dynasty,existing_polity
 morocco,fes,5,1,,Fatimid (nominal),927–980,1,fatimid_caliphate,linked,fatimid_caliphate,existing_polity
 morocco,fes,5,2,,Zirid / Meknasa,980–1055,1,zirid_dynasty,linked,zirid_dynasty,existing_polity
-morocco,marrakesh,5,0,,Berber (Zenata),,1,berber,linked,berber,existing_polity
-morocco,atlas,5,0,,Berber (Atlas tribes),,1,berber,linked,berber,existing_polity
+morocco,marrakesh,5,0,,Berber (Zenata),,1,,people,berber,people
+morocco,atlas,5,0,,Berber (Atlas tribes),,1,,people,berber,people
 morocco,tafilalet,5,0,,Midraris of Sijilmasa,757–976,1,midraris_of_sijilmasa,linked,,unresolved_link
 morocco,tafilalet,5,1,,Zenata / Maghrawa,976–1053,1,zenata,linked,,unresolved_link
 morocco,wsahara,5,0,,Sanhaja / Lamtuna (Sahara),,1,sanhaja,linked,,unresolved_link
@@ -3761,7 +3761,7 @@ yemen,west,8,1,Contemporary,South Yemen secession attempt (civil war),1994,3,,ev
 yemen,west,8,2,Contemporary,Yemeni Revolution (Arab Spring),2011–2012,3,,event,yemeni_revolution,event
 yemen,west,8,3,Contemporary,Yemeni Civil War (Houthi vs government · Saudi intervention),2014–,3,,event,yemeni_civil_war,event
 yemen,west,8,4,Contemporary,Supreme Political Council (Houthi — Sana'a),2016–,3,supreme_political_council,linked,,unresolved_link
-algeria,west,0,0,Ancient,Capsian culture / Berber peoples,prehistoric,4,capsian_culture,linked,,unresolved_link
+algeria,west,0,0,Ancient,Capsian culture / Berber peoples,prehistoric,4,,culture,capsian_culture_berber_peoples_culture,culture
 algeria,west,0,1,Ancient,Phoenician coastal settlements (c.900 BCE),Tipasa · Iol/Cherchell · Hippo Regius,4,phoenician_coastal_settlements,linked,,unresolved_link
 algeria,west,1,0,,Mauretania Kingdom,c.200 BCE–44 CE,1,mauretania_kingdom,linked,mauretania_kingdom,existing_polity
 algeria,west,1,1,,Roman Mauretania Caesariensis,44 CE–429,1,roman_mauretania_caesariensis,linked,,unresolved_link
@@ -3819,8 +3819,8 @@ algeria,west,7,3,Modern,Algerian War of Independence,1954–1962,4,,event,algeri
 algeria,west,8,0,Contemporary,People's Democratic Republic of Algeria (FLN one-party state),1962–1989,4,peoples_democratic_republic_of_algeria,linked,,unresolved_link
 algeria,west,8,1,Contemporary,Algerian Civil War (Black Decade),1991–2002,4,,event,algerian_civil_war,event
 algeria,west,8,2,Contemporary,People's Democratic Republic of Algeria,2002–,4,peoples_democratic_republic_of_algeria,linked,,unresolved_link
-libya,tripolitania,0,0,Prehistoric & Ancient,Berber / Libu peoples,prehistoric,1,berber,linked,berber,existing_polity
-libya,tripolitania,0,1,Prehistoric & Ancient,Phoenician colonies (Oea · Sabratha · Leptis Magna),c.600 BCE,1,phoenician_colonies,linked,phoenician_colonies,existing_polity
+libya,tripolitania,0,0,Prehistoric & Ancient,Berber / Libu peoples,prehistoric,1,,people,berber_libu_peoples,people
+libya,tripolitania,0,1,Prehistoric & Ancient,Phoenician colonies (Oea · Sabratha · Leptis Magna),c.600 BCE,1,,unclassified,phoenician_colonies,unclassified
 libya,tripolitania,0,2,Prehistoric & Ancient,Carthaginian suzerainty,6th–2nd c. BCE,1,,polity,carthaginian_suzerainty,polity
 libya,cyrenaica,0,0,Prehistoric & Ancient,Pentapolis — Greek city-states (Cyrene · Apollonia · Barca · Berenice · Euhesperides),,1,pentapolis,linked,,unresolved_link
 libya,fezzan,0,0,Prehistoric & Ancient,Garamantian Kingdom,,1,garamantian_kingdom,linked,,unresolved_link
@@ -3832,7 +3832,7 @@ libya,cyrenaica,1,0,,Ptolemaic Egypt,331–96 BCE,1,ptolemaic_egypt,linked,ptole
 libya,cyrenaica,1,1,,Roman Empire,96 BCE–395 CE,1,roman_empire,linked,roman_empire,existing_polity
 libya,cyrenaica,1,2,,Byzantine Empire,395–642,1,byzantine_empire,linked,byzantine_empire,existing_polity
 libya,fezzan,1,0,,Roman (fringe),1st–4th c. CE,1,roman_empire,linked,roman_empire,existing_polity
-libya,fezzan,1,1,,Berber / Tuareg tribes,,1,berber,linked,berber,existing_polity
+libya,fezzan,1,1,,Berber / Tuareg tribes,,1,,people,berber_tuareg_tribes,people
 libya,tripolitania,2,0,Medieval & Early Modern,Rashidun Caliphate,642–661,3,rashidun_caliphate,linked,rashidun_caliphate,existing_polity
 libya,tripolitania,2,1,Medieval & Early Modern,Umayyad Caliphate,661–750,3,umayyad_caliphate,linked,umayyad_caliphate,existing_polity
 libya,tripolitania,3,0,,Abbasid Caliphate,750–800,1,abbasid_caliphate,linked,abbasid_caliphate,existing_polity
@@ -3848,7 +3848,7 @@ libya,cyrenaica,3,2,,Ikhshidid dynasty,935–969,1,ikhshidid_dynasty,linked,ikhs
 libya,cyrenaica,3,3,,Fatimid Caliphate,969–1048,1,fatimid_caliphate,linked,fatimid_caliphate,existing_polity
 libya,cyrenaica,3,4,,Banu Hilal / Banu Sulaym,1048 onward,1,banu_hilal,linked,,unresolved_link
 libya,cyrenaica,3,5,,Banu Ghaniya,c.1160–1228,1,banu_ghaniya,linked,banu_ghaniya,existing_polity
-libya,fezzan,3,0,,Berber / Tuareg (Ibadi independent),,1,berber,linked,berber,existing_polity
+libya,fezzan,3,0,,Berber / Tuareg (Ibadi independent),,1,,people,berber_tuareg,people
 libya,tripolitania,4,0,,Hafsid dynasty,1229–1574,1,hafsid_dynasty,linked,hafsid_dynasty,existing_polity
 libya,tripolitania,4,1,,Ottoman Tripolitania,1551–1711,1,ottoman_empire,linked,ottoman_empire,existing_polity
 libya,tripolitania,4,2,,Karamanli dynasty,1711–1835,1,karamanli_dynasty,linked,,unresolved_link
@@ -3856,7 +3856,7 @@ libya,tripolitania,4,3,,Ottoman direct rule,1835–1911,1,ottoman_empire,linked,
 libya,cyrenaica,4,0,,Ayyubid (partial),1171–1250,1,ayyubid_sultanate,linked,ayyubid_sultanate,existing_polity
 libya,cyrenaica,4,1,,Hafsid dynasty,1250–1574,1,hafsid_dynasty,linked,hafsid_dynasty,existing_polity
 libya,cyrenaica,4,2,,Ottoman Cyrenaica,1574–1911,1,ottoman_empire,linked,ottoman_empire,existing_polity
-libya,fezzan,4,0,,Berber / Tuareg,,1,berber,linked,berber,existing_polity
+libya,fezzan,4,0,,Berber / Tuareg,,1,,people,berber_tuareg,people
 libya,fezzan,4,1,,Awlad Muhammad dynasty,1577–1842,1,awlad_muhammad_dynasty,linked,,unresolved_link
 libya,fezzan,4,2,,Ottoman (nominal),16th–19th c.,1,ottoman_empire,linked,ottoman_empire,existing_polity
 libya,tripolitania,5,0,Modern,Italian Libya — Tripolitania,1911–1943,1,italian_libya,linked,,unresolved_link
@@ -3894,26 +3894,26 @@ sudan,north,3,0,Medieval,Nobatia (Christian),c.400–650 CE,1,nobatia,linked,,un
 sudan,north,3,1,Medieval,Makuria / Dongola (Christian),c.580–1323,1,makuria_kingdom,linked,makuria_kingdom,existing_polity
 sudan,cent,3,0,Medieval,Makuria (southern territory),,1,makuria_kingdom,linked,makuria_kingdom,existing_polity
 sudan,alwa,3,0,Medieval,Alwa Kingdom (Christian Nubian),c.6th c.–1504; Aksumite Christian influence,1,alwa_kingdom,linked,,unresolved_link
-sudan,east,3,0,Medieval,Beja (Christian / Islamicising),,1,beja,linked,beja,existing_polity
+sudan,east,3,0,Medieval,Beja (Christian / Islamicising),,1,,unclassified,beja,unclassified
 sudan,west,3,0,Medieval,Kanem Empire (eastern influence),,1,kanem_empire,linked,kanem_empire,existing_polity
 sudan,south,3,0,Medieval,Nilotic peoples,,1,nilotic_peoples,linked,,unresolved_link
 sudan,north,4,0,,Makuria (Dongola) — Baqt Treaty,652 CE; Umayyad / Abbasid raids,1,makuria_kingdom,linked,makuria_kingdom,existing_polity
 sudan,cent,4,0,,Makuria · Banu Kanz (forming),,1,,event,makuria_banu_kanz,event
 sudan,alwa,4,0,,Alwa Kingdom,,1,alwa_kingdom,linked,,unresolved_link
-sudan,east,4,0,,Beja (Islamicising),,1,beja,linked,beja,existing_polity
+sudan,east,4,0,,Beja (Islamicising),,1,,unclassified,beja,unclassified
 sudan,west,4,0,,Kanem Empire · Daju,,1,kanem_empire,linked,kanem_empire,existing_polity
 sudan,south,4,0,,Nilotic peoples,,1,nilotic_peoples,linked,,unresolved_link
 sudan,north,5,0,,Dongola Kingdom (declining),Mamluk interference (1276 · 1317),1,,polity,dongola_kingdom,polity
 sudan,cent,5,0,,Banu Kanz (Arab-Nubian dynasty),,1,banu_kanz,linked,,unresolved_link
 sudan,alwa,5,0,,Alwa declining → Funj forming,,1,,event,alwa_declining_funj_forming,event
-sudan,east,5,0,,Beja (Hadendoa · Bisharin),,1,beja,linked,beja,existing_polity
+sudan,east,5,0,,Beja (Hadendoa · Bisharin),,1,,unclassified,beja,unclassified
 sudan,west,5,0,,Tunjur dynasty,,1,tunjur_dynasty,linked,,unresolved_link
 sudan,south,5,0,,Nilotic peoples,,1,nilotic_peoples,linked,,unresolved_link
 sudan,north,6,0,Early Modern,Ayyubid → Mamluk dynasty (N. Sudan),,1,ayyubid_sultanate,linked,ayyubid_sultanate,existing_polity
 sudan,north,6,1,Early Modern,Ottoman Empire suzerainty,from 1517,1,ottoman_empire,linked,ottoman_empire,existing_polity
 sudan,cent,6,0,Early Modern,Ottoman Egypt border · Funj tributary,,1,ottoman_egypt_border,linked,,unresolved_link
 sudan,alwa,6,0,Early Modern,Funj Sultanate (Sennar Sultanate),1504–1821,1,funj_sultanate,linked,funj_sultanate,existing_polity
-sudan,east,6,0,Early Modern,Beja (under Ottoman / Funj suzerainty),,1,beja,linked,beja,existing_polity
+sudan,east,6,0,Early Modern,Beja (under Ottoman / Funj suzerainty),,1,,unclassified,beja,unclassified
 sudan,west,6,0,Early Modern,Darfur Sultanate (Keira dynasty),c.1603–1874,1,darfur_sultanate,linked,darfur_sultanate,existing_polity
 sudan,south,6,0,Early Modern,Nilotic peoples (Shilluk · Dinka · Nuer),,1,nilotic_peoples,linked,,unresolved_link
 sudan,north,7,0,Modern,Muhammad Ali dynasty — Turco-Egyptian Sudan,conquered 1820–1821,6,muhammad_ali_dynasty,linked,muhammad_ali_dynasty,existing_polity
@@ -3981,11 +3981,11 @@ canada,col_3,4,0,Confederation,"Founding provinces (NS, NB, 1867)",1867–,1,dom
 canada,col_3,4,1,Confederation,PEI (1873) · Newfoundland (1949),later joins,1,,event,pei_newfoundland,event
 canada,west_north,5,0,Dominion Era,Dominion of Canada — World Wars · Westminster Statute (1931),,4,dominion_of_canada,linked,dominion_of_canada,existing_polity
 canada,west_north,6,0,Modern,Canada — Constitution Act 1982 · Nunavut (1999) · 10 provinces + 3 territories,,4,canada,linked,canada,existing_polity
-united_states,east,0,0,Pre-Columbian,Mississippian Culture — Cahokia,800–1600,1,mississippian_culture,linked,mississippian_culture,existing_polity
+united_states,east,0,0,Pre-Columbian,Mississippian Culture — Cahokia,800–1600,1,,culture,mississippian_culture,culture
 united_states,east,0,1,Pre-Columbian,Iroquois Confederacy,c. 1450–,1,iroquois_confederacy,linked,iroquois_confederacy,existing_polity
 united_states,south,0,0,Pre-Columbian,Cherokee · Creek · Seminole,,1,cherokee_nation,linked,cherokee_nation,existing_polity
-united_states,midwest,0,0,Pre-Columbian,Mississippian · Siouan peoples,,1,mississippian_culture,linked,mississippian_culture,existing_polity
-united_states,west,0,0,Pre-Columbian,Ancestral Puebloans · Navajo · Apache,,1,ancestral_pueblo,linked,ancestral_pueblo,existing_polity
+united_states,midwest,0,0,Pre-Columbian,Mississippian · Siouan peoples,,1,,people,mississippian_siouan_peoples,people
+united_states,west,0,0,Pre-Columbian,Ancestral Puebloans · Navajo · Apache,,1,,unclassified,ancestral_puebloans_navajo_apache,unclassified
 united_states,alaska,0,0,Pre-Columbian,Yupik · Inuit · Aleut peoples,,1,,people,yupik_inuit_aleut_peoples,people
 united_states,hawaii,0,0,Pre-Columbian,Native Hawaiian (Polynesian settlement c. 1000),,1,hawaii_kingdom,linked,hawaii_kingdom,existing_polity
 united_states,east,1,0,Early Colonial,Jamestown (1607),1607–1624,1,jamestown_colony,linked,jamestown_colony,existing_polity
@@ -4092,22 +4092,22 @@ oceania,polynesia,4,3,Post-War / Decolonisation,Tonga,independence 1970; constit
 oceania,polynesia,4,4,Post-War / Decolonisation,Tuvalu,1978; formerly Ellice Islands,1,tuvalu,linked,,unresolved_link
 oceania,polynesia,4,5,Post-War / Decolonisation,State of Hawaiʻi (US),1959–; 50th US state,1,state_of_hawaii,linked,,unresolved_link
 iran,mazandaran,0,0,Prehistoric,?,,1,,event,,skip
-iran,azerbaijan,0,0,Prehistoric,Kura-Araxes culture,,1,kura_araxes_culture,linked,,unresolved_link
-iran,western,0,0,Prehistoric,Dalma culture,,1,dalma_culture,linked,,unresolved_link
-iran,central,0,0,Prehistoric,Zayanderud culture,,1,zayanderud_culture,linked,,unresolved_link
+iran,azerbaijan,0,0,Prehistoric,Kura-Araxes culture,,1,,culture,kura_araxes_culture,culture
+iran,western,0,0,Prehistoric,Dalma culture,,1,,culture,dalma_culture,culture
+iran,central,0,0,Prehistoric,Zayanderud culture,,1,,culture,zayanderud_culture,culture
 iran,coastal,0,0,Prehistoric,?,,1,,event,,skip
-iran,khorasan,0,0,Prehistoric,Helmand culture,,1,helmand_culture,linked,,unresolved_link
-iran,sistan,0,0,Prehistoric,Oxus / BMAC culture,,1,bmac_culture,linked,,unresolved_link
-iran,baluchistan,0,0,Prehistoric,Jiroft culture,,1,jiroft_culture,linked,,unresolved_link
+iran,khorasan,0,0,Prehistoric,Helmand culture,,1,,culture,helmand_culture,culture
+iran,sistan,0,0,Prehistoric,Oxus / BMAC culture,,1,,culture,oxus_bmac_culture,culture
+iran,baluchistan,0,0,Prehistoric,Jiroft culture,,1,,culture,jiroft_culture,culture
 iran,mazandaran,1,0,Early Ancient,?,,1,,event,,skip
-iran,azerbaijan,1,0,Early Ancient,Kura-Araxes / Urartu,,1,kura_araxes_culture,linked,,unresolved_link
+iran,azerbaijan,1,0,Early Ancient,Kura-Araxes / Urartu,,1,,unclassified,kura_araxes_urartu,unclassified
 iran,western,1,0,Early Ancient,Lullubi Kingdom,c.2300–1200 BCE,1,lullubi_kingdom,linked,lullubi_kingdom,existing_polity
 iran,western,1,1,Early Ancient,Kassite Babylon,c.1600–1155 BCE,1,kassite_babylon,linked,kassite_babylon,existing_polity
-iran,central,1,0,Early Ancient,Proto-Elamite,c.3100–2700 BCE,1,proto_elamite,linked,proto_elamite,existing_polity
+iran,central,1,0,Early Ancient,Proto-Elamite,c.3100–2700 BCE,1,,unclassified,proto_elamite,unclassified
 iran,central,1,1,Early Ancient,Elam,c.2700–539 BCE,1,elam,linked,elam,existing_polity
 iran,coastal,1,0,Early Ancient,Marhashi,,1,marhashi_kingdom,linked,marhashi_kingdom,existing_polity
 iran,khorasan,1,0,Early Ancient,?,,1,,event,,skip
-iran,sistan,1,0,Early Ancient,Jiroft / Helmand,,1,jiroft_culture,linked,,unresolved_link
+iran,sistan,1,0,Early Ancient,Jiroft / Helmand,,1,,unclassified,jiroft_helmand,unclassified
 iran,baluchistan,1,0,Early Ancient,?,,1,,event,,skip
 iran,mazandaran,2,0,,?,,1,,event,,skip
 iran,azerbaijan,2,0,,Urartu,c.860–590 BCE,1,kingdom_of_urartu,linked,kingdom_of_urartu,existing_polity
@@ -4121,8 +4121,8 @@ iran,western,2,5,,Median Kingdom,678–550 BCE,1,median_kingdom,linked,median_ki
 iran,central,2,0,,Elam (continued),c.2700–539 BCE,1,elam,linked,elam,existing_polity
 iran,central,2,1,,Anshan Kingdom,c.2400–550 BCE,1,anshan_kingdom,linked,anshan_kingdom,existing_polity
 iran,coastal,2,0,,Elam / coastal tribes,,1,elam,linked,elam,existing_polity
-iran,khorasan,2,0,,Scythian / Saka,c.700–300 BCE,1,scythian,linked,scythian,existing_polity
-iran,sistan,2,0,,Jiroft / Helmand,,1,jiroft_culture,linked,,unresolved_link
+iran,khorasan,2,0,,Scythian / Saka,c.700–300 BCE,1,,people,scythian_saka,people
+iran,sistan,2,0,,Jiroft / Helmand,,1,,unclassified,jiroft_helmand,unclassified
 iran,baluchistan,2,0,,?,,1,,event,,skip
 iran,mazandaran,3,0,Classical,Achaemenid Empire,,8,achaemenid_empire,linked,achaemenid_empire,existing_polity
 iran,mazandaran,4,0,Hellenistic,Macedonian / Diadochi,334–312 BCE,4,macedonian_empire,linked,macedonian_empire,existing_polity
@@ -4241,7 +4241,7 @@ india,upper_ganges,0,0,Iron Age,Kuru Kingdom · Panchala Kingdom,c.1200–500 BC
 india,lower_ganges,0,0,Iron Age,Magadha (early Janapada),,1,magadha,linked,,unresolved_link
 india,lower_ganges,0,1,Iron Age,Adivasi tribal communities,,1,adivasi_tribal_communities,linked,,unresolved_link
 india,central,0,0,Iron Age,Assaka (Deccan Janapada),,1,assaka,linked,,unresolved_link
-india,south,0,0,Iron Age,Prehistoric (megalithic cultures),,1,prehistoric_culture,linked,,unresolved_link
+india,south,0,0,Iron Age,Prehistoric (megalithic cultures),,1,,culture,prehistoric_culture,culture
 india,indus,1,0,6th–5th c. BCE,Achaemenid Empire — Gandhara & Hindush Satrapies,c.520–330 BCE; Persian-Greek cultural influx,1,achaemenid_empire,linked,achaemenid_empire,existing_polity
 india,upper_ganges,1,0,6th–5th c. BCE,Second Urbanisation wave,c.600–300 BCE,1,second_urbanisation_wave,linked,,unresolved_link
 india,upper_ganges,1,1,6th–5th c. BCE,Shramana movements — Jainism · Buddhism · Ajivika · Yoga,,1,shramana_movements,linked,,unresolved_link
@@ -4375,12 +4375,12 @@ india,indus,18,0,,Pakistan (West Pakistan),,1,pakistan,linked,pakistan,existing_
 india,upper_ganges,18,0,,Republic of India,,3,republic_of_india,linked,republic_of_india,existing_polity
 india,south,18,0,,East Pakistan (1947–1971),Bangladesh Liberation War (1971),1,pakistan,linked,pakistan,existing_polity
 india,south,18,1,,People's Republic of Bangladesh,from 1971,1,peoples_republic_of_bangladesh,linked,,unresolved_link
-pakistan,south,0,0,Prehistoric,Soanian culture (Lower Palaeolithic),"c.500,000–100,000 BCE",3,soanian_culture,linked,,unresolved_link
-pakistan,south,0,1,Prehistoric,Chalcolithic (Copper-Stone Age),c.7000–3300 BCE,3,chalcolithic_culture,linked,,unresolved_link
-pakistan,south,0,2,Prehistoric,Mehrgarh — earliest Neolithic farming in South Asia,c.7000–2500 BCE,3,mehrgarh_culture,linked,,unresolved_link
+pakistan,south,0,0,Prehistoric,Soanian culture (Lower Palaeolithic),"c.500,000–100,000 BCE",3,,culture,soanian_culture,culture
+pakistan,south,0,1,Prehistoric,Chalcolithic (Copper-Stone Age),c.7000–3300 BCE,3,,culture,chalcolithic_culture,culture
+pakistan,south,0,2,Prehistoric,Mehrgarh — earliest Neolithic farming in South Asia,c.7000–2500 BCE,3,,culture,mehrgarh_culture,culture
 pakistan,south,1,0,Proto-Ancient,Dravidian / pre-Aryan populations,c.3300 BCE onward,3,dravidian,linked,,unresolved_link
-pakistan,south,1,1,Proto-Ancient,Indus Valley Civilization (Harappa · Kot Diji · Amri-Nal · Mohenjo-daro · Ganeriwal),c.3300–1300 BCE,3,indus_valley_civilization_culture,linked,,unresolved_link
-pakistan,south,2,0,,Vedic Age (dawn) — Jhukar culture · Cemetery H culture,c.1900–1300 BCE; Aryan migration · Iron Age introduction (c.1500–1000 BCE),3,vedic_age_culture,linked,,unresolved_link
+pakistan,south,1,1,Proto-Ancient,Indus Valley Civilization (Harappa · Kot Diji · Amri-Nal · Mohenjo-daro · Ganeriwal),c.3300–1300 BCE,3,,culture,indus_valley_civilization_culture,culture
+pakistan,south,2,0,,Vedic Age (dawn) — Jhukar culture · Cemetery H culture,c.1900–1300 BCE; Aryan migration · Iron Age introduction (c.1500–1000 BCE),3,,culture,vedic_age_culture,culture
 pakistan,south,2,1,,Vedic Age (early / late) — Aryan expansion,c.1500–500 BCE,3,,event,vedic_age,event
 pakistan,south,3,0,Ancient,Indigenous communities,,1,indigenous_communities,linked,,unresolved_link
 pakistan,south,3,1,Ancient,Sindhu Sauvira Kingdom (Abhira),c.600–325 BCE,1,sindhu_sauvira_kingdom,linked,,unresolved_link
@@ -4513,7 +4513,7 @@ sri_lanka,sinhala,7,3,Contemporary,Post-war Sri Lanka,2009–,3,,event,post_war_
 indonesia,sumatra,0,0,Ancient,Malay peoples (Austronesian settlement),c.2000 BCE–,1,malay_peoples,linked,,unresolved_link
 indonesia,sumatra,0,1,Ancient,Melayu kingdom (Jambi),c.7th c.,1,melayu_kingdom,linked,,unresolved_link
 indonesia,sumatra,0,2,Ancient,Kandari kingdom,,1,kandari_kingdom,linked,,unresolved_link
-indonesia,java,0,0,Ancient,Buni culture (West Java),c.400 BCE–100 CE,1,buni_culture,linked,,unresolved_link
+indonesia,java,0,0,Ancient,Buni culture (West Java),c.400 BCE–100 CE,1,,culture,buni_culture,culture
 indonesia,java,0,1,Ancient,Salaka kingdom,,1,salaka_kingdom,linked,,unresolved_link
 indonesia,java,0,2,Ancient,Tarumanagara (West Java — Indianized),c.358–669,1,tarumanagara,linked,,unresolved_link
 indonesia,java,0,3,Ancient,Kalingga kingdom (Central Java),c.6th–7th c.,1,kalingga_kingdom,linked,,unresolved_link
@@ -4760,22 +4760,22 @@ thailand_cambodia_laos,laos,8,1,Contemporary,Economic reform (New Economic Mecha
 thailand_cambodia_laos,laos,8,2,Contemporary,ASEAN member,1997,1,,event,asean_member,event
 vietnam,north,0,0,Ancient,Văn Lang (Hùng kings — Lạc Việt),c.2879–258 BCE (trad.),1,van_lang,linked,,unresolved_link
 vietnam,north,0,1,Ancient,Âu Lạc (An Dương Vương — Thục dynasty),257–179 BCE,1,au_lac,linked,,unresolved_link
-vietnam,center,0,0,Ancient,Sa Huỳnh culture (proto-Cham),c.1000 BCE–200 CE,1,sa_huynh_culture,linked,,unresolved_link
-vietnam,south,0,0,Ancient,Óc Eo culture (Funan influence),c.1st–6th c. CE,1,oc_eo_culture,linked,,unresolved_link
+vietnam,center,0,0,Ancient,Sa Huỳnh culture (proto-Cham),c.1000 BCE–200 CE,1,,culture,sa_huynh_culture,culture
+vietnam,south,0,0,Ancient,Óc Eo culture (Funan influence),c.1st–6th c. CE,1,,culture,oc_eo_culture,culture
 vietnam,north,1,0,,Nam Việt (Triệu dynasty),204–111 BCE,1,nam_viet,linked,,unresolved_link
 vietnam,north,1,1,,Han dynasty — Giao Chỉ (Jiaozhou),111 BCE–40 CE,1,western_han,linked,western_han,existing_polity
 vietnam,north,1,2,,Trưng Sisters revolt,40–43 CE,1,,event,trung_sisters_revolt,event
 vietnam,north,1,3,,Later Han — Giao Châu (Jiaozhou),43–220 CE,1,eastern_han,linked,eastern_han,existing_polity
 vietnam,center,1,0,,Champa (Lâm Ấp — Indianized kingdom),c.192 CE–,1,champa,linked,,unresolved_link
 vietnam,south,1,0,,Funan (Óc Eo — Mekong delta),c.1st–6th c. CE,1,funan,linked,funan,existing_polity
-vietnam,north,2,0,,Chinese Southern dynasties — Giao Châu,220–544,1,southern_dynasties,linked,southern_dynasties,existing_polity
+vietnam,north,2,0,,Chinese Southern dynasties — Giao Châu,220–544,1,,unclassified,chinese_southern_dynasties,unclassified
 vietnam,north,2,1,,Sĩ Nhiếp (Shi Xie) autonomous rule,187–226,1,si_nhiep_autonomous_rule,linked,,unresolved_link
 vietnam,north,2,2,,Vạn Xuân (Early Lý dynasty — Lý Bí),544–602,1,van_xuan,linked,,unresolved_link
 vietnam,north,2,3,,Sui dynasty — Giao Châu,602–618,1,sui_dynasty,linked,sui_dynasty,existing_polity
 vietnam,center,2,0,,Champa (expanding — Mỹ Sơn temple complex),4th–8th c.,1,champa,linked,,unresolved_link
 vietnam,south,2,0,,Funan → Chenla (Khmer predecessor),6th c.–,1,funan,linked,funan,existing_polity
 vietnam,north,3,0,Medieval,Tang dynasty — Giao Châu (An Nam đô hộ phủ),618–905,1,tang_dynasty,linked,tang_dynasty,existing_polity
-vietnam,north,3,1,Medieval,Five Dynasties — Tĩnh Hải quân,905–938,1,five_dynasties,linked,five_dynasties,existing_polity
+vietnam,north,3,1,Medieval,Five Dynasties — Tĩnh Hải quân,905–938,1,,unclassified,five_dynasties,unclassified
 vietnam,north,3,2,Medieval,An Nam — Ngô dynasty,938–965,1,an_nam,linked,,unresolved_link
 vietnam,north,3,3,Medieval,Twelve Warlords period (Thập nhị sứ quân),966–968,1,,event,twelve_warlords_period,event
 vietnam,center,3,0,Medieval,Champa (Indrapura · Vijaya),7th–10th c.,1,champa,linked,,unresolved_link
@@ -4922,12 +4922,12 @@ southern_africa,mozambique,9,0,Modern,Republic of Mozambique,1990–,1,republic_
 southern_africa,mozambique,9,1,Modern,Peace agreement · multiparty elections,1992–1994,1,republic_of_mozambique,linked,,unresolved_link
 southern_africa,mozambique,9,2,Modern,Maputo — major regional port,,1,republic_of_mozambique,linked,,unresolved_link
 west_africa,west,0,0,Prehistoric,West African hunter-gatherers,"c.12,000 BCE–",1,west_african_hunter_gatherers,linked,,unresolved_link
-west_africa,west,0,1,Prehistoric,Tichitt culture (Mauritania — early agropastoral),c.2000–500 BCE,1,tichitt_culture,linked,,unresolved_link
+west_africa,west,0,1,Prehistoric,Tichitt culture (Mauritania — early agropastoral),c.2000–500 BCE,1,,culture,tichitt_culture_mauritania__early_agropastoral,polity
 west_africa,west,0,2,Prehistoric,Dhar Néma · Dhar Tichitt · Dhar Walata,,1,dhar_nema,linked,,unresolved_link
 west_africa,center,0,0,Prehistoric,Niger-Congo language family dispersal,,1,niger_congo_language_family_dispersal,linked,,unresolved_link
 west_africa,center,0,1,Prehistoric,Senegambian stone circles,c.300 BCE–1600 CE,1,senegambian_stone_circles,linked,,unresolved_link
-west_africa,center,0,2,Prehistoric,Bura culture (Niger River bend),c.3rd–13th c.,1,bura_culture,linked,,unresolved_link
-west_africa,east,0,0,Prehistoric,Nok culture (central Nigeria — earliest sub-Saharan sculpture),c.1000 BCE–300 CE,1,nok_culture,linked,,unresolved_link
+west_africa,center,0,2,Prehistoric,Bura culture (Niger River bend),c.3rd–13th c.,1,,culture,bura_culture,culture
+west_africa,east,0,0,Prehistoric,Nok culture (central Nigeria — earliest sub-Saharan sculpture),c.1000 BCE–300 CE,1,,culture,nok_culture_central_nigeria_culture,culture
 west_africa,east,0,1,Prehistoric,Igbo-Ukwu · Ife · Jenne-Jeno (early urbanization),,1,igbo_ukwu_ife_jenne_jeno,linked,,unresolved_link
 west_africa,west,1,0,Ancient / Early Medieval,Berber nomads (Sanhaja · Zenata · Masmuda),,1,berber_nomads,linked,,unresolved_link
 west_africa,west,1,1,Ancient / Early Medieval,Takrur kingdom (Senegal River — early Islam),c.800–1285,1,takrur_kingdom,linked,,unresolved_link

@@ -19,7 +19,7 @@ A row exists only if at least one `polity.government` points at it, and it names
 - A time-bounded regime change inside a polity (split the polity instead; `CLAUDE.md`).
 - A near-synonym of an existing row. Check section 7 first.
 
-**Measured today:** 29 rows, **0 with no inbound reference** (every id is used by at least one polity; usage ranges from 1 to 77 polities). Separately, **27 of 523 polities have an empty `government`** (for example `silla`, `baekje`, `cao_wei`, `shu_han`, `eastern_wu`, `western_jin`).
+**Measured today:** 29 rows, **1 with no inbound reference (`city_state_league`, 0 polities after the non-polity migration)** (every other id is used by at least one polity; usage ranges from 1 to 77 polities). Separately, **23 of 482 polities have an empty `government`** (for example `silla`, `baekje`, `cao_wei`, `shu_han`, `eastern_wu`, `western_jin`).
 
 ---
 
@@ -87,15 +87,15 @@ Government form is an analytical judgement, so most rows will rest on the curato
 
 ## 7. Current state and open questions
 
-29 rows. Polity counts per row, highest first: `monarchy` 77, `imperial_monarchy` 61, `feudal_monarchy` 56, `tribal_confederation` 42, `communist_state` 7 ... `shogunate` 3, `confederation` 1.
+29 rows. Polity counts per row, highest first: `monarchy` 77, `imperial_monarchy` 61, `feudal_monarchy` 54, `democratic_republic` 27, `sultanate` 26 ... `shogunate` 3, `confederation` 1.
 
 Open questions, none resolved here:
 
 1. **`chinese_imperial` (11 polities) vs `imperial_monarchy` (61).** Both are `traditional` and both are emperor-led. The first is distinguished by Mandate of Heaven and the civil examination system, but it is the only culture-specific id, and it sits beside a general form that could include it. Examples: `western_han` and `northern_wei` use `chinese_imperial`; `akkadian_empire` and `hittite_empire` use `imperial_monarchy`. Keep both, merge, or rename?
-2. **`khaganate` (13) vs `tribal_confederation` (42) vs `khanate` (16).** `khaganate` is charismatic and `tribal_confederation` is traditional, though `xiongnu` (khaganate) and `berber` (tribal_confederation) are both loose tribal unions. No written rule separates them. `confederation` (1: `german_confederation`) and `city_state_league` (3) add a similar overlap.
+2. **`khaganate` (13) vs `tribal_confederation` (14) vs `khanate` (16).** `khaganate` is charismatic and `tribal_confederation` is traditional, though `xiongnu` (khaganate) and `wusun` (tribal_confederation) are both loose tribal unions. No written rule separates them. `confederation` (1: `german_confederation`) and `city_state_league` (0) add a similar overlap.
 3. **`monarchy` (77) is a catch-all** next to `absolute_monarchy`, `feudal_monarchy`, `constitutional_monarchy`, `elective_monarchy`, `divine_monarchy` and `imperial_monarchy`. No decision procedure picks between them.
 4. **What are `finer_type` and `weber_legitimacy` for?** Nothing reads them. They are also inconsistent between close forms: `oligarchy` is `forum` and `traditional` while `republic` is `forum` and `rational_legal`; `theocracy` and `imamate` are `church` yet `imamate` is described as Shia or Ibadi. Decide whether to validate against fixed lists, define each value in this doc, or drop the columns. The name `finer_type` has no documented parent type.
 5. **One-polity row:** `confederation` (only `german_confederation`). Whether it should stay a row or fold into a broader form is undecided. `shogunate` is no longer one: it now has three polities.
-6. **27 polities with no government.** Empty means not yet curated; there is no "not applicable" marker. Is a missing value acceptable for the pre-state or contested cases, or must every polity get one?
+6. **23 polities with no government.** Empty means not yet curated; there is no "not applicable" marker. Is a missing value acceptable for the pre-state or contested cases, or must every polity get one?
 7. **`province` and `colonial_administration`** (8 and 21) describe a relationship to another power rather than an internal structure, and `finer_type` `foreign` is used only for those and `puppet_state`. Whether "dependent" should be its own dimension is undecided.
 8. **`docs/model/erd.md` lists 26 governments and `docs/ARCHITECTURE.md` says 29**; the CSV has 29. The ERD figure is stale.

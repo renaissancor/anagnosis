@@ -256,7 +256,7 @@
           "stack": [
             {
               "label": "Beja (Christian / Islamicising)",
-              "polity": "beja"
+              "ethnicity": "beja"
             }
           ],
           "span": 1
@@ -315,7 +315,7 @@
           "stack": [
             {
               "label": "Beja (Islamicising)",
-              "polity": "beja"
+              "ethnicity": "beja"
             }
           ],
           "span": 1
@@ -373,7 +373,7 @@
           "stack": [
             {
               "label": "Beja (Hadendoa · Bisharin)",
-              "polity": "beja"
+              "ethnicity": "beja"
             }
           ],
           "span": 1
@@ -441,7 +441,7 @@
           "stack": [
             {
               "label": "Beja (under Ottoman / Funj suzerainty)",
-              "polity": "beja"
+              "ethnicity": "beja"
             }
           ],
           "span": 1

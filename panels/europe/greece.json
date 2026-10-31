@@ -40,8 +40,7 @@
           "stack": [
             {
               "label": "Minoan civilization — Crete & Cyclades",
-              "note": "c.3000–1100 BCE",
-              "polity": "minoan_civilization_culture"
+              "note": "c.3000–1100 BCE"
             }
           ],
           "span": 4
@@ -55,8 +54,7 @@
           "stack": [
             {
               "label": "Mycenaean civilization — Mycenae · Tiryns · Pylos",
-              "note": "c.1600–1100 BCE",
-              "polity": "mycenaean_civilization_culture"
+              "note": "c.1600–1100 BCE"
             },
             {
               "label": "Greek Dark Ages — migrations · depopulation",
@@ -266,7 +264,7 @@
             {
               "label": "Lysimachus — Thrace & Macedonia",
               "note": "306–281 BCE",
-              "polity": "lysimachus"
+              "polity": "kingdom_of_lysimachus"
             },
             {
               "label": "Antipater → Cassander — Macedonia",

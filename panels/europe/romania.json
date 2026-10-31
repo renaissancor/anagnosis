@@ -54,7 +54,7 @@
           "stack": [
             {
               "label": "Free Dacians — Carpi (east of Roman reach)",
-              "polity": "free_dacians"
+              "ethnicity": "dacians"
             }
           ],
           "span": 1
@@ -92,7 +92,7 @@
           "stack": [
             {
               "label": "Free Dacians / Carpi · Goths · Alans",
-              "polity": "free_dacians"
+              "ethnicity": "dacians"
             }
           ],
           "span": 1
@@ -191,7 +191,7 @@
             },
             {
               "label": "Pechenegs (from c.895 CE)",
-              "polity": "pechenegs"
+              "ethnicity": "pechenegs"
             }
           ],
           "span": 1
@@ -216,7 +216,7 @@
             {
               "label": "Pechenegs → Cumans",
               "note": "from c.1040",
-              "polity": "pechenegs"
+              "ethnicity": "pechenegs"
             },
             {
               "label": "Second Bulgarian Empire border",
@@ -230,7 +230,7 @@
             {
               "label": "Pechenegs → Cumans (dominant)",
               "note": "from c.1040",
-              "polity": "pechenegs"
+              "ethnicity": "pechenegs"
             }
           ],
           "span": 1

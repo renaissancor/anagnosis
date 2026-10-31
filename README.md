@@ -41,10 +41,10 @@ The last row is the whole point: this framework exists to make "Tang Dynasty →
 
 | | Count | | Count |
 |---|---:|---|---:|
-| Polities | **527** | History panels | **72** |
-| Succession edges | **4,229** (computed) | Territories | **54** |
+| Polities | **482** | History panels | **72** |
+| Succession edges | **3,743** (computed) | Territories | **54** |
 | Languages | **695** | Religions | **264** |
-| Ethnicities | **269** | Dynasties | **192** |
+| Ethnicities | **276** | Dynasties | **192** |
 
 Regional history-panel coverage spans **Europe, East / South / Southeast / Central Asia, the Middle East & Persia, Africa, the Americas, and Oceania** (72 panels in `panels/`), unevenly.
 

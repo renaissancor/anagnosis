@@ -40,23 +40,19 @@
             },
             {
               "label": "Early European farmers · Danubian culture",
-              "note": "c.5500 BCE–",
-              "polity": "early_european_farmers_culture"
+              "note": "c.5500 BCE–"
             },
             {
               "label": "Linear Pottery culture (Linearbandkeramik)",
-              "note": "c.5500–4500 BCE",
-              "polity": "linear_pottery_culture"
+              "note": "c.5500–4500 BCE"
             },
             {
               "label": "Corded Ware culture · Globular Amphora culture",
-              "note": "c.3200–2300 BCE",
-              "polity": "corded_ware_culture"
+              "note": "c.3200–2300 BCE"
             },
             {
               "label": "Funnel Beaker · Bell Beaker cultures",
-              "note": "",
-              "polity": "funnel_beaker_culture"
+              "note": ""
             },
             {
               "label": "Únětice culture → Urnfield culture",
@@ -64,13 +60,11 @@
             },
             {
               "label": "Lusatian culture",
-              "note": "c.1300–500 BCE",
-              "polity": "lusatian_culture"
+              "note": "c.1300–500 BCE"
             },
             {
               "label": "Hallstatt culture · Pomeranian culture",
-              "note": "c.700–300 BCE",
-              "polity": "hallstatt_culture"
+              "note": "c.700–300 BCE"
             }
           ],
           "span": 3
@@ -93,17 +87,15 @@
             {
               "label": "Germanic tribes (Lugii · Vandals · Goths · Burgundians)",
               "note": "c.200 BCE–5th c.",
-              "polity": "germanic_tribes"
+              "ethnicity": "germanic_tribes"
             },
             {
               "label": "Przeworsk culture (associated with Vandals/Lugii)",
-              "note": "c.200 BCE–500 CE",
-              "polity": "przeworsk_culture"
+              "note": "c.200 BCE–500 CE"
             },
             {
               "label": "Wielbark culture (associated with Goths)",
-              "note": "c.1st–4th c. CE",
-              "polity": "wielbark_culture"
+              "note": "c.1st–4th c. CE"
             },
             {
               "label": "Hunnic incursions",

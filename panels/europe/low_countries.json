@@ -51,7 +51,7 @@
             {
               "label": "Belgae (Celtic-Germanic tribes)",
               "note": "c.300 BCE–",
-              "polity": "belgae"
+              "ethnicity": "celtic_peoples"
             },
             {
               "label": "Menapii · Nervii · Morini · Eburones",
@@ -66,7 +66,7 @@
             {
               "label": "Belgae (Aduatuci · Treveri · Tungri)",
               "note": "c.300 BCE–",
-              "polity": "belgae"
+              "ethnicity": "celtic_peoples"
             }
           ],
           "span": 1
@@ -716,8 +716,7 @@
             },
             {
               "label": "Federalization (Flemish · Walloon · Brussels regions)",
-              "note": "1970–1993",
-              "polity": "federalization"
+              "note": "1970–1993"
             }
           ],
           "span": 1

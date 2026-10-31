@@ -29,6 +29,7 @@ const SYNONYM_MAP = new Map([
   ['western_liao', 'qara_khitai'],
   ['jin_jurchen', 'jin_dynasty'],
   ['hephthalite_empire', 'hephthalites'],
+  ['lysimachus', 'kingdom_of_lysimachus'],
   ['kidarite', 'kidarites'],
   ['kidarite_kingdom', 'kidarites'],
   ['yamato_period', 'yamato_kingdom'],

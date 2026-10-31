@@ -35,18 +35,15 @@
           "stack": [
             {
               "label": "Soanian culture (Lower Palaeolithic)",
-              "note": "c.500,000–100,000 BCE",
-              "polity": "soanian_culture"
+              "note": "c.500,000–100,000 BCE"
             },
             {
               "label": "Chalcolithic (Copper-Stone Age)",
-              "note": "c.7000–3300 BCE",
-              "polity": "chalcolithic_culture"
+              "note": "c.7000–3300 BCE"
             },
             {
               "label": "Mehrgarh — earliest Neolithic farming in South Asia",
-              "note": "c.7000–2500 BCE",
-              "polity": "mehrgarh_culture"
+              "note": "c.7000–2500 BCE"
             }
           ],
           "span": 3
@@ -68,8 +65,7 @@
             },
             {
               "label": "Indus Valley Civilization (Harappa · Kot Diji · Amri-Nal · Mohenjo-daro · Ganeriwal)",
-              "note": "c.3300–1300 BCE",
-              "polity": "indus_valley_civilization_culture"
+              "note": "c.3300–1300 BCE"
             }
           ],
           "span": 3
@@ -83,8 +79,7 @@
           "stack": [
             {
               "label": "Vedic Age (dawn) — Jhukar culture · Cemetery H culture",
-              "note": "c.1900–1300 BCE; Aryan migration · Iron Age introduction (c.1500–1000 BCE)",
-              "polity": "vedic_age_culture"
+              "note": "c.1900–1300 BCE; Aryan migration · Iron Age introduction (c.1500–1000 BCE)"
             },
             {
               "label": "Vedic Age (early / late) — Aryan expansion",

@@ -30,18 +30,15 @@
           "stack": [
             {
               "label": "Shulaveri-Shomu culture",
-              "note": "c.6000–4000 BCE",
-              "polity": "shulaveri_shomu_culture"
+              "note": "c.6000–4000 BCE"
             },
             {
               "label": "Kura-Araxes culture",
-              "note": "c.3500–2200 BCE",
-              "polity": "kura_araxes_culture"
+              "note": "c.3500–2200 BCE"
             },
             {
               "label": "Trialeti-Vanadzor culture",
-              "note": "c.2200–1500 BCE",
-              "polity": "trialeti_vanadzor_culture"
+              "note": "c.2200–1500 BCE"
             }
           ],
           "span": 2

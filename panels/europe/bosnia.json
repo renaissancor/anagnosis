@@ -35,7 +35,7 @@
           "stack": [
             {
               "label": "Illyrians — Pannonian tribes (Breuci · Oseriates)",
-              "polity": "illyrians"
+              "ethnicity": "illyrians"
             }
           ],
           "span": 1
@@ -45,7 +45,7 @@
             {
               "label": "Illyrians — Daesitiates",
               "note": "core of the Great Illyrian Revolt 6–9 CE",
-              "polity": "illyrians"
+              "ethnicity": "illyrians"
             }
           ],
           "span": 1

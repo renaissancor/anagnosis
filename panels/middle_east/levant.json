@@ -40,23 +40,19 @@
           "stack": [
             {
               "label": "Aurignacian · Kebaran cultures",
-              "note": "c.45,000–12,000 BCE",
-              "polity": "aurignacian_kebaran_cultures_culture"
+              "note": "c.45,000–12,000 BCE"
             },
             {
               "label": "Natufian culture",
-              "note": "c.12,500–9,500 BCE",
-              "polity": "natufian_culture"
+              "note": "c.12,500–9,500 BCE"
             },
             {
               "label": "Pre-Pottery Neolithic A·B",
-              "note": "c.9,500–6,400 BCE",
-              "polity": "pre_pottery_neolithic_a_culture"
+              "note": "c.9,500–6,400 BCE"
             },
             {
               "label": "Halaf · Yarmukian · Ghassulian cultures",
-              "note": "c.6,400–3,500 BCE",
-              "polity": "halaf_yarmukian_ghassulian_cultures_culture"
+              "note": "c.6,400–3,500 BCE"
             }
           ],
           "span": 4
@@ -193,8 +189,7 @@
           "stack": [
             {
               "label": "Late Bronze Age Collapse · Sea Peoples",
-              "note": "c.1200–1150 BCE",
-              "polity": "late_bronze_age_collapse_culture"
+              "note": "c.1200–1150 BCE"
             },
             {
               "label": "Aramaean kingdoms (Bit Adini etc.)",
@@ -222,7 +217,6 @@
         {
           "stack": [
             {
-              "polity": "phoenician_states",
               "label": "Phoenician city-states (Byblos · Sidon · Tyre)",
               "note": "c.1200–332 BCE"
             }

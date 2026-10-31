@@ -50,8 +50,7 @@
             },
             {
               "label": "Magdalenian culture",
-              "note": "c.17,000–12,000 BCE",
-              "polity": "magdalenian_culture"
+              "note": "c.17,000–12,000 BCE"
             },
             {
               "label": "Early European farmers",
@@ -60,18 +59,15 @@
             },
             {
               "label": "Atlantic megalithic culture",
-              "note": "c.4500–2000 BCE",
-              "polity": "atlantic_megalithic_culture"
+              "note": "c.4500–2000 BCE"
             },
             {
               "label": "Cardial / Impressed Ware culture",
-              "note": "c.5500–4500 BCE",
-              "polity": "cardial_culture"
+              "note": "c.5500–4500 BCE"
             },
             {
               "label": "Atlantic Bronze Age",
-              "note": "c.1300–700 BCE",
-              "polity": "atlantic_bronze_age_culture"
+              "note": "c.1300–700 BCE"
             },
             {
               "label": "Tumulus culture → Urnfield culture",
@@ -79,13 +75,11 @@
             },
             {
               "label": "Hallstatt culture",
-              "note": "c.800–450 BCE",
-              "polity": "hallstatt_culture"
+              "note": "c.800–450 BCE"
             },
             {
               "label": "La Tène culture",
-              "note": "c.450–50 BCE",
-              "polity": "la_tene_culture"
+              "note": "c.450–50 BCE"
             }
           ],
           "span": 4
@@ -103,7 +97,7 @@
             {
               "label": "Belgae (Gallia Belgica)",
               "note": "c.300 BCE–",
-              "polity": "belgae"
+              "ethnicity": "celtic_peoples"
             },
             {
               "label": "Parisii · Suessiones · Remi · Nervii",

@@ -41,7 +41,7 @@
             {
               "label": "Germanic tribes (Marcomanni · Quadi)",
               "note": "c.50 BCE–5th c.",
-              "polity": "germanic_tribes"
+              "ethnicity": "germanic_tribes"
             },
             {
               "label": "West Slavic settlement",
@@ -431,7 +431,7 @@
             {
               "label": "Federalization (Czech SR + Slovak SR)",
               "note": "1969",
-              "polity": "federalization"
+              "polity": "czechoslovakia"
             }
           ],
           "span": 3

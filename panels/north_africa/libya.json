@@ -36,12 +36,11 @@
             {
               "label": "Berber / Libu peoples",
               "note": "prehistoric",
-              "polity": "berber"
+              "ethnicity": "berber_amazigh_cluster"
             },
             {
               "label": "Phoenician colonies (Oea · Sabratha · Leptis Magna)",
-              "note": "c.600 BCE",
-              "polity": "phoenician_colonies"
+              "note": "c.600 BCE"
             },
             {
               "label": "Carthaginian suzerainty",
@@ -120,7 +119,7 @@
             {
               "label": "Berber / Tuareg tribes",
               "note": "",
-              "polity": "berber"
+              "ethnicity": "berber_amazigh_cluster"
             }
           ],
           "span": 1
@@ -231,7 +230,7 @@
         {
           "label": "Berber / Tuareg (Ibadi independent)",
           "span": 1,
-          "polity": "berber"
+          "ethnicity": "berber_amazigh_cluster"
         }
       ]
     },
@@ -288,7 +287,7 @@
             {
               "label": "Berber / Tuareg",
               "note": "",
-              "polity": "berber"
+              "ethnicity": "berber_amazigh_cluster"
             },
             {
               "label": "Awlad Muhammad dynasty",

@@ -87,8 +87,7 @@
         },
         {
           "label": "Prehistoric (megalithic cultures)",
-          "span": 1,
-          "polity": "prehistoric_culture"
+          "span": 1
         }
       ]
     },

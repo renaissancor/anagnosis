@@ -45,8 +45,7 @@
           "stack": [
             {
               "label": "Trypillia culture",
-              "note": "c.5500–2750 BCE",
-              "polity": "trypillia_culture"
+              "note": "c.5500–2750 BCE"
             },
             {
               "label": "Dacian / Thracian tribes",
@@ -58,8 +57,7 @@
         {
           "stack": [
             {
-              "label": "Trypillia culture",
-              "polity": "trypillia_culture"
+              "label": "Trypillia culture"
             },
             {
               "label": "Scythian steppe fringe",
@@ -152,8 +150,7 @@
         {
           "stack": [
             {
-              "label": "Gothic Kingdom (Chernjakhov culture)",
-              "polity": "gothic_kingdom_culture"
+              "label": "Gothic Kingdom (Chernjakhov culture)"
             },
             {
               "label": "Hunnic Empire → Slavic migration",
@@ -232,7 +229,7 @@
             },
             {
               "label": "Pechenegs (from c.900)",
-              "polity": "pechenegs"
+              "ethnicity": "pechenegs"
             }
           ],
           "span": 1

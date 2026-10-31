@@ -35,8 +35,7 @@
           "stack": [
             {
               "label": "Kelteminar culture",
-              "note": "c.6000–3000 BCE",
-              "polity": "kelteminar_culture"
+              "note": "c.6000–3000 BCE"
             },
             {
               "label": "Primitive nomads",
@@ -45,8 +44,7 @@
             },
             {
               "label": "Afanasievo culture",
-              "note": "c.3300–2500 BCE",
-              "polity": "afanasievo_culture"
+              "note": "c.3300–2500 BCE"
             },
             {
               "label": "Indo-European influx (Avestan peoples)",
@@ -60,13 +58,11 @@
           "stack": [
             {
               "label": "BMAC (Bactria–Margiana Archaeological Complex)",
-              "note": "c.2300–1700 BCE",
-              "polity": "bmac_culture"
+              "note": "c.2300–1700 BCE"
             },
             {
               "label": "Andronovo culture",
-              "note": "c.2000–900 BCE",
-              "polity": "andronovo_culture"
+              "note": "c.2000–900 BCE"
             },
             {
               "label": "Indo-European migrations (West & East Iranian)",
@@ -79,13 +75,11 @@
           "stack": [
             {
               "label": "BMAC (Bactria–Margiana Archaeological Complex)",
-              "note": "c.2300–1700 BCE",
-              "polity": "bmac_culture"
+              "note": "c.2300–1700 BCE"
             },
             {
               "label": "Andronovo culture",
-              "note": "c.2000–900 BCE",
-              "polity": "andronovo_culture"
+              "note": "c.2000–900 BCE"
             },
             {
               "label": "Indo-European migrations (East Iranian · Tocharian)",

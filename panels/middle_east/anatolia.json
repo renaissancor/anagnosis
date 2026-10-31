@@ -50,8 +50,7 @@
           "stack": [
             {
               "label": "Neolithic settlements",
-              "note": "c.10,000 BCE",
-              "polity": "neolithic_settlements_culture"
+              "note": "c.10,000 BCE"
             },
             {
               "label": "Çatalhöyük · Göbekli Tepe · Çayönü",
@@ -87,8 +86,7 @@
             },
             {
               "label": "Mycenaean culture",
-              "note": "c.1600–1180 BCE",
-              "polity": "mycenaean_culture"
+              "note": "c.1600–1180 BCE"
             },
             {
               "label": "Ancient Greek colonies",

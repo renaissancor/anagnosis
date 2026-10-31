@@ -61,7 +61,7 @@
             {
               "label": "Donghu (東胡)",
               "note": "~4th–2nd c. BCE, eastern steppe",
-              "polity": "donghu"
+              "ethnicity": "donghu"
             }
           ],
           "span": 1
@@ -359,7 +359,7 @@
             {
               "label": "Shiwei (室韋)",
               "note": "proto-Mongolic peoples",
-              "polity": "shiwei"
+              "ethnicity": "shiwei"
             }
           ],
           "span": 1

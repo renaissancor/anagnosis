@@ -84,17 +84,9 @@ tahirid_dynasty
 ghaznavid_dynasty
 ```
 
-### Cultures (`cultures` table)
+### Cultures
 
-Pattern: `{name}_culture` (when archaeological) or `{name}` (when named civilization)
-
-```
-minoan_culture
-mycenaean_culture
-yangshao_culture
-hallstatt_culture
-jomon                 ← widely known by single name
-```
+There is no `cultures` table, and a culture has no id. It stays a panel label (`non_polity.md`). The `{name}_culture` form survives only as a pipeline id in `derived/canonical_entities.csv`.
 
 ### Ethnicities, Languages, Religions
 

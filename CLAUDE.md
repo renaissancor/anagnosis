@@ -36,6 +36,7 @@ Work flows one way: **Sources** (what evidence says) → **Content** (what we as
 
 - **Sources:** one read-only librarian per source in `.claude/agents/source-*.md`. Sources are cited, never imported.
 - **Content:** `csvs/` is the source of truth. Read `docs/model/<table>.md` before touching a table. The graph is a result of the CSVs, not a separate source.
+- **Non-polities:** peoples use an `ethnicity` key on panel cells; cultures, collectives and events are plain labels. See `docs/model/non_polity.md`.
 - **Presentation:** `public/` reads only the routes in `docs/model/api.md`.
 - **Audit:** a fresh reviewer checks each change; authors don't audit their own work.
 

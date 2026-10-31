@@ -35,8 +35,7 @@
           "stack": [
             {
               "label": "Yellow River Civilization (黄河文明)",
-              "note": "Yangshao · Longshan cultures",
-              "polity": "yellow_river_civilization_culture"
+              "note": "Yangshao · Longshan cultures"
             }
           ],
           "span": 1
@@ -45,8 +44,7 @@
           "stack": [
             {
               "label": "Yangtze River Civilizations",
-              "note": "Hemudu · Liangzhu cultures",
-              "polity": "yangtze_river_civilizations_culture"
+              "note": "Hemudu · Liangzhu cultures"
             }
           ],
           "span": 1
@@ -54,8 +52,7 @@
         {
           "stack": [
             {
-              "label": "Steppe · desert cultures",
-              "polity": "steppe_desert_cultures_culture"
+              "label": "Steppe · desert cultures"
             }
           ],
           "span": 1
@@ -585,8 +582,7 @@
           "stack": [
             {
               "label": "Ten Kingdoms (十国)",
-              "note": "907–979, various southern states",
-              "polity": "ten_kingdoms"
+              "note": "907–979, various southern states"
             }
           ],
           "span": 1

@@ -35,18 +35,15 @@
           "stack": [
             {
               "label": "Shulaveri-Shomu culture",
-              "note": "c.6000–4000 BCE",
-              "polity": "shulaveri_shomu_culture"
+              "note": "c.6000–4000 BCE"
             },
             {
               "label": "Kura-Araxes culture",
-              "note": "c.3500–2200 BCE",
-              "polity": "kura_araxes_culture"
+              "note": "c.3500–2200 BCE"
             },
             {
               "label": "Colchian Bronze culture",
-              "note": "c.1700–700 BCE",
-              "polity": "colchian_bronze_culture"
+              "note": "c.1700–700 BCE"
             }
           ],
           "span": 1
@@ -55,18 +52,15 @@
           "stack": [
             {
               "label": "Shulaveri-Shomu culture",
-              "note": "c.6000–4000 BCE",
-              "polity": "shulaveri_shomu_culture"
+              "note": "c.6000–4000 BCE"
             },
             {
               "label": "Kura-Araxes culture",
-              "note": "c.3500–2200 BCE",
-              "polity": "kura_araxes_culture"
+              "note": "c.3500–2200 BCE"
             },
             {
               "label": "Trialeti-Vanadzor culture",
-              "note": "c.2200–1500 BCE",
-              "polity": "trialeti_vanadzor_culture"
+              "note": "c.2200–1500 BCE"
             }
           ],
           "span": 2
@@ -89,7 +83,7 @@
             {
               "label": "Cimmerian · Scythian nomads",
               "note": "c.800–600 BCE",
-              "polity": "cimmerian_scythian_nomads"
+              "ethnicity": "scythian"
             }
           ],
           "span": 1

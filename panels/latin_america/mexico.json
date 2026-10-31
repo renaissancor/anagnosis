@@ -33,8 +33,7 @@
       "cells": [
         {
           "label": "Olmec (La Venta · San Lorenzo)",
-          "span": 1,
-          "polity": "olmec"
+          "span": 1
         },
         {
           "label": "Early Maya settlements",
@@ -60,8 +59,7 @@
         },
         {
           "label": "Maya City-States (Tikal · Calakmul · Palenque)",
-          "span": 1,
-          "polity": "maya_city_states"
+          "span": 1
         },
         {
           "label": "Zapotec (Monte Albán)",
@@ -93,8 +91,7 @@
         },
         {
           "label": "Postclassic Maya (Mayapan · K'iche' · Uxmal)",
-          "span": 1,
-          "polity": "postclassic_maya"
+          "span": 1
         },
         {
           "label": "Mixtec kingdoms",

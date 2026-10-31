@@ -46,7 +46,7 @@
             {
               "label": "Illyrians (Dardani)",
               "note": "indigenous western Balkans",
-              "polity": "illyrians"
+              "ethnicity": "illyrians"
             }
           ],
           "span": 1
@@ -66,7 +66,7 @@
             {
               "label": "Illyrians (Autariatae)",
               "note": "inner Balkans",
-              "polity": "illyrians"
+              "ethnicity": "illyrians"
             }
           ],
           "span": 1
@@ -76,7 +76,7 @@
             {
               "label": "Celts (Scordisci)",
               "note": "lower Danube",
-              "polity": "celts"
+              "ethnicity": "celtic_peoples"
             }
           ],
           "span": 1

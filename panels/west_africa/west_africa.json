@@ -40,8 +40,7 @@
             },
             {
               "label": "Tichitt culture (Mauritania — early agropastoral)",
-              "note": "c.2000–500 BCE",
-              "polity": "tichitt_culture"
+              "note": "c.2000–500 BCE"
             },
             {
               "label": "Dhar Néma · Dhar Tichitt · Dhar Walata",
@@ -65,8 +64,7 @@
             },
             {
               "label": "Bura culture (Niger River bend)",
-              "note": "c.3rd–13th c.",
-              "polity": "bura_culture"
+              "note": "c.3rd–13th c."
             }
           ],
           "span": 1
@@ -75,8 +73,7 @@
           "stack": [
             {
               "label": "Nok culture (central Nigeria — earliest sub-Saharan sculpture)",
-              "note": "c.1000 BCE–300 CE",
-              "polity": "nok_culture"
+              "note": "c.1000 BCE–300 CE"
             },
             {
               "label": "Igbo-Ukwu · Ife · Jenne-Jeno (early urbanization)",
