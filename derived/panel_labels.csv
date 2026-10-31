@@ -78,7 +78,7 @@ afghanistan,herat,4,3,,Hephthalites,c.450–560,1,hephthalites,linked,hephthalit
 afghanistan,herat,4,4,,Sassanid (restored in Aria),560–651,1,sassanid_empire,linked,sassanid_restored_in_aria
 afghanistan,kandahar,4,0,,Kushan Empire,c.50–375 CE,1,kushan_empire,linked,kushan_empire
 afghanistan,kandahar,4,1,,Kushano-Sasanian Kingdom (south),c.230–365,1,kushano_sasanian_kingdom,linked,kushano_sasanian_kingdom_south
-afghanistan,kandahar,4,2,,Kidarites · Alchon Huns (Zabulistan),c.350–500,1,kidarites_alchon_huns,linked,kidarites_alchon_huns_zabulistan
+afghanistan,kandahar,4,2,,Kidarites · Alchon Huns (Zabulistan),c.350–500,1,kidarites,linked,kidarites_alchon_huns_zabulistan
 afghanistan,kandahar,4,3,,Hephthalite principalities (Zabul / Zun cult),c.450–565,1,hephthalite_principalities,linked,hephthalite_principalities_zabul_zun_cult
 afghanistan,balkh,4,0,,Kushan Empire (Bactrian heartland),c.50–375 CE,1,kushan_empire,linked,kushan_empire_bactrian_heartland
 afghanistan,balkh,4,1,,Kushano-Sasanian Kingdom,c.230–365,1,kushano_sasanian_kingdom,linked,kushano_sasanian_kingdom
@@ -120,7 +120,7 @@ afghanistan,balkh,6,3,,Samanid dynasty,900–999,1,samanid_empire,linked,samanid
 afghanistan,kabul,6,0,,Türk Shahis → Hindu Shahis (drove out Türk Shahis),870–1026,1,turk_shahis,linked,trk_shahis_hindu_shahis_drove_out_trk_shahis
 afghanistan,kabul,6,1,,Second Türkic Empire (nominal suzerainty),682–744,1,,polity,second_trkic_empire_nominal_suzerainty
 afghanistan,kabul,6,2,,Saffarid · Samanid (western Kabul pressure),9th–10th c.,1,saffarid_samanid,linked,saffarid_samanid_western_kabul_pressure
-afghanistan,badakhshan,6,0,,Semi-independent / Samanid influence,9th–10th c.,1,,regime,semi_independent_samanid_influence
+afghanistan,badakhshan,6,0,,Semi-independent / Samanid influence,9th–10th c.,1,,dynasty,semi_independent_samanid_influence
 afghanistan,herat,7,0,,Ghaznavid dynasty,999–1140,1,ghaznavid_empire,linked,ghaznavid_dynasty
 afghanistan,herat,7,1,,Seljuk Empire (Herat — defeat of Ghaznavids),1040–1194,1,seljuk_empire,linked,seljuk_empire_herat
 afghanistan,herat,7,2,,Ghorid dynasty,1149–1215,1,ghorid_dynasty,linked,ghorid_dynasty
@@ -138,7 +138,7 @@ afghanistan,kabul,7,2,,Ghorid dynasty,1186–1215,1,ghorid_dynasty,linked,ghorid
 afghanistan,kabul,7,3,,Hindu Shahis (eastern reaches to 1026),to 1026,1,hindu_shahis,linked,hindu_shahis_eastern_reaches_to_1026
 afghanistan,badakhshan,7,0,,Ghaznavid / Ghorid,999–1215,1,ghaznavid_empire,linked,ghaznavid_ghorid
 afghanistan,herat,8,0,,Mongol Empire (Herat sacked 1221; rebuilt),1221–1245,1,mongol_empire,linked,mongol_empire_herat_sacked_1221_rebuilt
-afghanistan,herat,8,1,,Kart dynasty (local Persian rulers under Mongol suzerainty),1244–1389,1,,regime,kart_dynasty_local_persian_rulers_under_mongol_suzerainty
+afghanistan,herat,8,1,,Kart dynasty (local Persian rulers under Mongol suzerainty),1244–1389,1,,dynasty,kart_dynasty_local_persian_rulers_under_mongol_suzerainty
 afghanistan,herat,8,2,,Il-Khanate (Herat under Kart as vassals),1256–1335,1,ilkhanate,linked,il_khanate_herat_under_kart_as_vassals
 afghanistan,herat,8,3,,Timurid Empire (Herat — cultural golden age),1381–1507,1,timurid_empire,linked,timurid_empire_herat
 afghanistan,kandahar,8,0,,Mongol Empire,1221–1260,1,mongol_empire,linked,mongol_empire
@@ -177,7 +177,7 @@ afghanistan,badakhshan,9,1,Modern,Durrani Empire,1747–,1,durrani_empire,linked
 afghanistan,herat,10,0,,Herat Emirate (Sadozai / Kuhzad),1818–1863,1,herat_emirate,linked,herat_emirate_sadozai_kuhzad
 afghanistan,kandahar,10,0,,Kandahar Emirate (Sadozai / Barakzai),1818–1855,1,kandahar_emirate,linked,kandahar_emirate_sadozai_barakzai
 afghanistan,balkh,10,0,,Maimana Khanate · Kunduz Khanate,1818–1850s,1,maimana_khanate,linked,maimana_khanate_kunduz_khanate
-afghanistan,kabul,10,0,,Kabul Emirate (Barakzai) → Emirate of Afghanistan,1826–1919,1,,regime,kabul_emirate_barakzai_emirate_of_afghanistan
+afghanistan,kabul,10,0,,Kabul Emirate (Barakzai) → Emirate of Afghanistan,1826–1919,1,,dynasty,kabul_emirate_barakzai_emirate_of_afghanistan
 afghanistan,kabul,10,1,,Anglo-Afghan Wars (1st · 2nd · 3rd) · Great Game,1839–1919,1,,event,anglo_afghan_wars_1st_2nd_3rd_great_game
 afghanistan,badakhshan,10,0,,Semi-autonomous principality → Emirate of Afghanistan,1850s–1919,1,,polity,semi_autonomous_principality_emirate_of_afghanistan
 afghanistan,herat,11,0,Contemporary,Kingdom of Afghanistan,1919–1973,5,kingdom_of_afghanistan,linked,kingdom_of_afghanistan
@@ -275,7 +275,7 @@ kazakhstan,ural,10,1,,Bukei Khanate (Inner Horde),1801–1845,1,bukei_khanate,li
 kazakhstan,caspian,10,0,,Russian Empire (Zakaspi Oblast),1881–1920,1,russian_empire,linked,russian_empire_zakaspi_oblast
 kazakhstan,aral,10,0,,Russian Empire (Syr-Darya Oblast · Russian Turkestan),1865–1920,1,russian_empire,linked,russian_empire_syr_darya_oblast_russian_turkestan
 kazakhstan,steppe,10,0,,Russian Empire (Akmolinsk / Turgai Oblast),1824–1920,1,russian_empire,linked,russian_empire_akmolinsk_turgai_oblast
-kazakhstan,zhetysu,10,0,,Qing Empire (Great Zhuz suzerainty),1757–1860,1,,regime,qing_empire_great_zhuz_suzerainty
+kazakhstan,zhetysu,10,0,,Qing Empire (Great Zhuz suzerainty),1757–1860,1,,dynasty,qing_empire_great_zhuz_suzerainty
 kazakhstan,zhetysu,10,1,,Russian Empire (Semirechye Oblast),1847–1920,1,russian_empire,linked,russian_empire_semirechye_oblast
 kazakhstan,ural,11,0,Soviet & Modern,Alash Autonomy,1917–1920,2,alash_autonomy,linked,alash_autonomy
 kazakhstan,aral,11,0,Soviet & Modern,Alash Autonomy / Turkestan Autonomy,1917–1920,1,alash_autonomy,linked,alash_autonomy_turkestan_autonomy
@@ -461,9 +461,9 @@ xinjiang,dzungaria,0,0,Ancient,Yuezhi (before westward migration 176 BCE),c.300�
 xinjiang,dzungaria,0,1,Ancient,Xiongnu (supreme after 176 BCE),c.200 BCE–,1,xiongnu,linked,xiongnu_supreme_after_176_bce
 xinjiang,dzungaria,0,2,Ancient,Wusun (Ili Valley),c.160 BCE–,1,wusun,linked,wusun_ili_valley
 xinjiang,dzungaria,0,3,Ancient,Kangju (far northwest),c.200 BCE–,1,kangju,linked,kangju_far_northwest
-xinjiang,kashgaria,1,0,,Western Han Protectorate of Western Regions (都護府),60 BCE–23 CE,3,,regime,western_han_protectorate_of_western_regions
+xinjiang,kashgaria,1,0,,Western Han Protectorate of Western Regions (都護府),60 BCE–23 CE,3,,dynasty,western_han_protectorate_of_western_regions
 xinjiang,kashgaria,1,1,,Xiongnu dominance (interlude),23–73 CE,3,xiongnu,linked,xiongnu_dominance_interlude
-xinjiang,kashgaria,1,2,,Eastern Han Protectorate of Western Regions,"73–107, 123–168 CE",3,,regime,eastern_han_protectorate_of_western_regions
+xinjiang,kashgaria,1,2,,Eastern Han Protectorate of Western Regions,"73–107, 123–168 CE",3,,dynasty,eastern_han_protectorate_of_western_regions
 xinjiang,kashgaria,1,3,,Semi-independent city-states · Kushan influence,2nd–3rd c.,3,,polity,semi_independent_city_states_kushan_influence
 xinjiang,kashgaria,1,4,,Han · Wei · Jin — Western Regions (長史府),c.220–420,3,han_wei_jin,linked,han_wei_jin
 xinjiang,dzungaria,1,0,,Xiongnu (dominant in north),2nd c. BCE–2nd c. CE,1,xiongnu,linked,xiongnu_dominant_in_north
@@ -473,11 +473,11 @@ xinjiang,dzungaria,1,3,,Xianbei,2nd–4th c.,1,xianbei,linked,xianbei
 xinjiang,kashgaria,2,0,,Former Liang · Former Qin,320–385,1,former_liang,linked,former_liang_former_qin
 xinjiang,kashgaria,2,1,,Later Liang · Northern Liang,386–439,1,later_liang,linked,later_liang_northern_liang
 xinjiang,kashgaria,2,2,,Rouran (Avars) suzerainty,402–552,1,rouran_suzerainty,linked,rouran_avars_suzerainty
-xinjiang,kashgaria,2,3,,Kidarites · Alchon Huns,c.350–500,1,kidarites_alchon_huns,linked,kidarites_alchon_huns
+xinjiang,kashgaria,2,3,,Kidarites · Alchon Huns,c.350–500,1,kidarites,linked,kidarites_alchon_huns
 xinjiang,kashgaria,2,4,,Hephthalites,c.450–560,1,hephthalites,linked,hephthalites
 xinjiang,tarim,2,0,,Former Liang · Northern Liang,320–439,1,former_liang,linked,former_liang_northern_liang
 xinjiang,tarim,2,1,,Rouran suzerainty,402–552,1,rouran_suzerainty,linked,rouran_suzerainty
-xinjiang,tarim,2,2,,Kidarites · Alchon Huns,c.350–500,1,kidarites_alchon_huns,linked,kidarites_alchon_huns
+xinjiang,tarim,2,2,,Kidarites · Alchon Huns,c.350–500,1,kidarites,linked,kidarites_alchon_huns
 xinjiang,tarim,2,3,,Hephthalites,c.450–560,1,hephthalites,linked,hephthalites
 xinjiang,turfan,2,0,,Northern Liang (capital briefly at Gaochang),421–439,1,,unclassified,northern_liang_capital_briefly_at_gaochang
 xinjiang,turfan,2,1,,Gaochang Kingdom (高昌 — local dynasties),499–640,1,gaochang_kingdom,linked,gaochang_kingdom
@@ -497,7 +497,7 @@ xinjiang,dzungaria,4,0,Medieval,Tang Dynasty — Anxi Protectorate,640–657,1,t
 xinjiang,dzungaria,4,1,Medieval,Turgesh Khaganate (Ili Valley),699–766,1,turgesh_khaganate,linked,turgesh_khaganate_ili_valley
 xinjiang,dzungaria,4,2,Medieval,Shatuo Turks (eastern Dzungaria),8th–9th c.,1,shatuo_turks,linked,shatuo_turks_eastern_dzungaria
 xinjiang,kashgaria,5,0,,Tibetan Empire (吐蕃) occupation,763–866,1,tibetan_empire,linked,tibetan_empire_occupation
-xinjiang,kashgaria,5,1,,Samanid influence (far west Kashgaria),9th–10th c.,1,,regime,samanid_influence_far_west_kashgaria
+xinjiang,kashgaria,5,1,,Samanid influence (far west Kashgaria),9th–10th c.,1,,dynasty,samanid_influence_far_west_kashgaria
 xinjiang,tarim,5,0,,Tibetan Empire,763–866,1,tibetan_empire,linked,tibetan_empire
 xinjiang,tarim,5,1,,Uyghur Khaganate (suzerainty),744–840,1,uyghur_khaganate,linked,uyghur_khaganate_suzerainty
 xinjiang,turfan,5,0,,Second Türkic Khaganate,682–744,1,second_turkic_khaganate,linked,second_trkic_khaganate
@@ -509,8 +509,8 @@ xinjiang,dzungaria,5,2,,Kyrgyz Empire (brief dominance after 840),840–920,1,ky
 xinjiang,dzungaria,5,3,,Karluk Yabgu state (Ili/Chuy valleys),766–940,1,karluk_yabgu_state,linked,karluk_yabgu_state_ilichuy_valleys
 xinjiang,dzungaria,5,4,,Kangar / Kimek-Kipchak,9th–10th c.,1,kangar,linked,kangar_kimek_kipchak
 xinjiang,kashgaria,6,0,,Kara-Khanid Khanate (first Islamic Turkic state — Kashgar capital),c.940–1212,1,kara_khanid_khanate,linked,kara_khanid_khanate_first_islamic_turkic_state
-xinjiang,kashgaria,6,1,,Ghaznavid influence (far west),999–1040,1,,regime,ghaznavid_influence_far_west
-xinjiang,kashgaria,6,2,,Seljuk suzerainty (western Kashgaria),1040s–1130s,1,,regime,seljuk_suzerainty_western_kashgaria
+xinjiang,kashgaria,6,1,,Ghaznavid influence (far west),999–1040,1,,dynasty,ghaznavid_influence_far_west
+xinjiang,kashgaria,6,2,,Seljuk suzerainty (western Kashgaria),1040s–1130s,1,,dynasty,seljuk_suzerainty_western_kashgaria
 xinjiang,kashgaria,6,3,,Qara Khitai / Western Liao,1131–1218,1,qara_khitai,linked,qara_khitai_western_liao
 xinjiang,kashgaria,6,4,,Khwarazmian Empire (brief),1210–1218,1,khwarazmian_empire,linked,khwarazmian_empire_brief
 xinjiang,kashgaria,6,5,,Mongol Empire — Chagatai Khanate,1218–1347,1,mongol_empire,linked,mongol_empire
@@ -518,7 +518,7 @@ xinjiang,tarim,6,0,,Kara-Khanid Khanate (eastern wing),c.940–1212,1,kara_khani
 xinjiang,tarim,6,1,,Khotan Kingdom (last Buddhist oasis — conquered by Karakhanids),to 1006,1,khotan_kingdom,linked,khotan_kingdom_last_buddhist_oasis
 xinjiang,tarim,6,2,,Qara Khitai / Western Liao,1131–1218,1,qara_khitai,linked,qara_khitai_western_liao
 xinjiang,tarim,6,3,,Mongol Empire — Chagatai Khanate,1218–1347,1,mongol_empire,linked,mongol_empire
-xinjiang,tarim,6,4,,Timurid influence (western Tarim),1370–1450s,1,,regime,timurid_influence_western_tarim
+xinjiang,tarim,6,4,,Timurid influence (western Tarim),1370–1450s,1,,dynasty,timurid_influence_western_tarim
 xinjiang,turfan,6,0,,Turfan Uyghurs (高昌回鶻) — Buddhist center,866–1209; Submitted voluntarily to Mongols (1209),1,turfan_uyghurs,linked,turfan_uyghurs
 xinjiang,turfan,6,1,,Ogedei Khanate / Yuan Dynasty (Turfan),1225–1368,1,yuan_dynasty,linked,ogedei_khanate_yuan_dynasty_turfan
 xinjiang,turfan,6,2,,Chagatai Khanate (eastern — Moghulistan),14th c.,1,chagatai_khanate,linked,chagatai_khanate_eastern
@@ -542,10 +542,10 @@ xinjiang,kashgaria,8,0,Modern,Dzungar conquest of Kashgaria (Yarkand Khanate end
 xinjiang,kashgaria,8,1,Modern,Qing Dynasty — Uyghur/Muslim Tarim Basin,1759,3,qing_dynasty,linked,qing_dynasty
 xinjiang,dzungaria,8,0,Modern,Dzungar Khanate (peak power — capital: Ghulja/Yining),1634–1758,1,dzungar_khanate,linked,dzungar_khanate_peak_power
 xinjiang,kashgaria,9,0,,Yettishar — Ya'qub Beg's Emirate (Kashgar base),1865–1877; Dungan Revolt (Muslim Hui rebellion) (1862–1877),4,yettishar,linked,yettishar
-xinjiang,kashgaria,9,1,,Qing reconquest → Xinjiang Province (新疆省),1877 · 1884,4,,regime,qing_reconquest_xinjiang_province
+xinjiang,kashgaria,9,1,,Qing reconquest → Xinjiang Province (新疆省),1877 · 1884,4,,dynasty,qing_reconquest_xinjiang_province
 xinjiang,kashgaria,9,2,,Republic of China — Xinjiang Province,1912–1944,4,republic_of_china,linked,republic_of_china
 xinjiang,kashgaria,10,0,Contemporary,First East Turkestan Republic (Kashgar — Islamic Republic),1933–1934,1,first_east_turkestan_republic,linked,first_east_turkestan_republic_kashgar
-xinjiang,tarim,10,0,Contemporary,ROC Xinjiang — Warlord governors (Jin Shuren · Sheng Shicai),1928–1944,2,,regime,roc_xinjiang
+xinjiang,tarim,10,0,Contemporary,ROC Xinjiang — Warlord governors (Jin Shuren · Sheng Shicai),1928–1944,2,,dynasty,roc_xinjiang
 xinjiang,dzungaria,10,0,Contemporary,"Second East Turkestan Republic (ETR2 — Ili / Dzungaria, Soviet-backed)",1944–1949,1,second_east_turkestan_republic,linked,second_east_turkestan_republic_etr2
 xinjiang,kashgaria,11,0,,PRC — Xinjiang Uyghur Autonomous Region (新疆维吾尔自治区),1955–,4,peoples_republic_of_china,linked,prc
 xinjiang,kashgaria,11,1,,East Turkestan Government in Exile,2004–,4,,event,east_turkestan_government_in_exile
@@ -563,7 +563,7 @@ ethiopia,eri,3,0,Medieval,Dahlak Sultanate (Islamic),,1,dahlak_sultanate,linked,
 ethiopia,eri,3,1,Medieval,Beja / Habesha coastal lords,,1,beja,linked,beja_habesha_coastal_lords
 ethiopia,tigray,3,0,Medieval,Zagwe Dynasty (capital: Lalibela),c.900–1270; Rock-hewn churches built (12th c.),1,zagwe_dynasty,linked,zagwe_dynasty_capital_lalibela
 ethiopia,cent,3,0,Medieval,Zagwe fringe / various Cushitic kingdoms,,1,,unclassified,zagwe_fringe_various_cushitic_kingdoms
-ethiopia,eri,4,0,,Egyptian Mamluk / Ottoman coastal influence,,1,,regime,egyptian_mamluk_ottoman_coastal_influence
+ethiopia,eri,4,0,,Egyptian Mamluk / Ottoman coastal influence,,1,,dynasty,egyptian_mamluk_ottoman_coastal_influence
 ethiopia,tigray,4,0,,Solomonic restoration — Yekuno Amlak,1270; Wars vs Ifat Sultanate,1,solomonic_restoration,linked,solomonic_restoration
 ethiopia,cent,4,0,,Solomonic expansion south,Wars vs Adal Sultanate (NW Somalia border),1,,event,solomonic_expansion_south
 ethiopia,eri,5,0,,Ottoman Empire — Massawa port,1557,1,ottoman_empire,linked,ottoman_empire
@@ -694,7 +694,7 @@ china,frontier,3,0,,Xiongnu confederation forming,,1,xiongnu,linked,xiongnu_conf
 china,frontier,3,1,,Donghu · Yuezhi,,1,,people,donghu_yuezhi
 china,north,4,0,Qin–Han (秦汉),Qin Dynasty (秦),221–206 BCE — first unified empire,2,qin_dynasty,linked,qin_dynasty
 china,frontier,4,0,Qin–Han (秦汉),Xiongnu Empire (匈奴),Modu Chanyu,1,xiongnu,linked,xiongnu_empire
-china,north,5,0,,Chu–Han Contention (楚汉争霸),206–202 BCE,2,,regime,chu_han_contention
+china,north,5,0,,Chu–Han Contention (楚汉争霸),206–202 BCE,2,,dynasty,chu_han_contention
 china,north,5,1,,Later Chu (後楚) · Western Chu (西楚) · Eighteen Kingdoms,,2,,unclassified,later_chu_western_chu_eighteen_kingdoms
 china,frontier,5,0,,Xiongnu Empire,,1,xiongnu,linked,xiongnu_empire
 china,north,6,0,,Western Han (西汉/前汉),202 BCE – 9 CE,2,western_han,linked,western_han
@@ -720,8 +720,8 @@ china,south,11,0,,Eastern Jin (东晋),"317–420, capital Jiankang",1,eastern_j
 china,south,11,1,,Huan Chu (桓楚) — usurpation,403–404,1,huan_chu,linked,huan_chu
 china,frontier,11,0,,Rouran Khaganate (柔然),330–555,1,rouran_khaganate,linked,rouran_khaganate
 china,north,12,0,,Northern Wei (北魏),386–534,1,northern_wei,linked,northern_wei
-china,north,12,1,,→ Eastern Wei (东魏) + Western Wei (西魏),,1,,regime,eastern_wei_western_wei
-china,north,12,2,,→ Northern Qi (北齐) + Northern Zhou (北周),,1,,regime,northern_qi_northern_zhou
+china,north,12,1,,→ Eastern Wei (东魏) + Western Wei (西魏),,1,,dynasty,eastern_wei_western_wei
+china,north,12,2,,→ Northern Qi (北齐) + Northern Zhou (北周),,1,,dynasty,northern_qi_northern_zhou
 china,south,12,0,,Liu Song (刘宋),420–479,1,liu_song,linked,liu_song
 china,south,12,1,,Southern Qi (南齐),479–502,1,southern_qi,linked,southern_qi
 china,south,12,2,,Liang (梁),502–557,1,liang,linked,liang
@@ -732,7 +732,7 @@ china,north,13,0,Sui–Tang (隋唐),Sui Dynasty (隋),"581–618, reunification
 china,frontier,13,0,Sui–Tang (隋唐),Göktürk Khaganate (Eastern · Western),,1,goktürk_khaganate,linked,gktrk_khaganate_eastern_western
 china,north,14,0,,Tang Dynasty (唐),618–907; An Lushan Rebellion (安史之乱) (755–763); Pseudo-Yan (僞燕) · Huang Qi (黃齊) (rebel states),2,tang_dynasty,linked,tang_dynasty
 china,north,14,1,,Wu Zhou (武周) — Empress Wu Zetian,690–705,2,wu_zhou,linked,wu_zhou
-china,frontier,14,0,,Göktürks → Tang protectorates,,1,,regime,gktrks_tang_protectorates
+china,frontier,14,0,,Göktürks → Tang protectorates,,1,,dynasty,gktrks_tang_protectorates
 china,frontier,14,1,,Tibetan Empire (吐蕃),,1,tibetan_empire,linked,tibetan_empire
 china,frontier,14,2,,Uyghur Khaganate (回鹘),744–840,1,uyghur_khaganate,linked,uyghur_khaganate
 china,north,15,0,Five Dynasties & Ten Kingdoms (五代十国),Later Liang (后梁),907–923,1,later_liang,linked,later_liang
@@ -747,10 +747,10 @@ china,frontier,16,0,Song–Yuan (宋元),Liao Dynasty (辽),,1,liao_dynasty,link
 china,frontier,16,1,Song–Yuan (宋元),Western Xia (西夏),"1038–1227, Tangut",1,western_xia,linked,western_xia
 china,north,17,0,,Jin Dynasty (金),"1115–1234, Jurchen; Jingkang Incident — fall of Northern Song (1127)",1,jin_dynasty,linked,jin_dynasty
 china,south,17,0,,Southern Song (南宋),"1127–1279, capital Lin'an (Hangzhou)",1,southern_song,linked,southern_song
-china,frontier,17,0,,Western Liao (西辽/哈喇契丹),1124–1218,1,western_liao,linked,western_liao
+china,frontier,17,0,,Western Liao (西辽/哈喇契丹),1124–1218,1,qara_khitai,linked,western_liao
 china,frontier,17,1,,Western Xia (西夏),,1,western_xia,linked,western_xia
 china,frontier,17,2,,Mongol Empire — Genghis Khan,1206–,1,mongol_empire,linked,mongol_empire
-china,north,18,0,,Mongol conquest of Jin,completed 1234,1,,regime,mongol_conquest_of_jin
+china,north,18,0,,Mongol conquest of Jin,completed 1234,1,,dynasty,mongol_conquest_of_jin
 china,south,18,0,,Southern Song (南宋),resists until 1279,1,southern_song,linked,southern_song
 china,frontier,18,0,,Mongol Empire (大蒙古国),,1,mongol_empire,linked,mongol_empire
 china,north,19,0,,Yuan Dynasty (元) — Kublai Khan,1271–1368,3,yuan_dynasty,linked,yuan_dynasty
@@ -763,17 +763,17 @@ china,south,21,1,,Wu Zhou (吴周) — Wu Sangui,1673–1681,1,wu_zhou,linked,wu
 china,south,21,2,,Kingdom of Tungning (东宁),"1662–1683, Taiwan",1,kingdom_of_tungning,linked,kingdom_of_tungning
 china,frontier,21,0,,Later Jin (后金) → Qing,1616/1636–,1,later_jin,linked,later_jin_qing
 china,north,22,0,,Qing Dynasty (清),1644–1912; Kangxi · Yongzheng · Qianlong — golden age,2,qing_dynasty,linked,qing_dynasty
-china,frontier,22,0,,"Qing expansion — Tibet, Xinjiang, Mongolia",,1,,regime,qing_expansion
+china,frontier,22,0,,"Qing expansion — Tibet, Xinjiang, Mongolia",,1,,dynasty,qing_expansion
 china,frontier,22,1,,Dzungar Khanate conquest,1755–1758,1,dzungar_khanate,linked,dzungar_khanate_conquest
-china,north,23,0,,Late Qing — Opium Wars · Unequal Treaties,1839–; Self-Strengthening Movement · Hundred Days' Reform,2,,regime,late_qing
+china,north,23,0,,Late Qing — Opium Wars · Unequal Treaties,1839–; Self-Strengthening Movement · Hundred Days' Reform,2,,dynasty,late_qing
 china,north,23,1,,Taiping Heavenly Kingdom (太平天国),1851–1864,2,taiping_heavenly_kingdom,linked,taiping_heavenly_kingdom
-china,frontier,23,0,,Qing frontier — Russian encroachment,,1,,regime,qing_frontier
+china,frontier,23,0,,Qing frontier — Russian encroachment,,1,,dynasty,qing_frontier
 china,north,24,0,Republic (民国),Republic of China (中华民国),1912–,2,republic_of_china,linked,republic_of_china
 china,north,24,1,Republic (民国),Beiyang Government (北洋政府),1912–1928,2,beiyang_government,linked,beiyang_government
 china,north,24,2,Republic (民国),Warlord Era (军阀混战),1916–1928,2,,event,warlord_era
 china,north,24,3,Republic (民国),Chinese Empire — Yuan Shikai,1915–1916,2,chinese_empire,linked,chinese_empire
 china,frontier,24,0,Republic (民国),Outer Mongolia independence,1911/1921,1,,event,outer_mongolia_independence
-china,frontier,24,1,Republic (民国),Qing court remnants (宣统小朝廷),,1,,regime,qing_court_remnants
+china,frontier,24,1,Republic (民国),Qing court remnants (宣统小朝廷),,1,,dynasty,qing_court_remnants
 china,north,25,0,,Nationalist Government (国民政府),1928–1949,2,nationalist_government,linked,nationalist_government
 china,north,25,1,,Wuhan Government (武汉政府),1927,2,wuhan_government,linked,wuhan_government
 china,north,25,2,,Chinese Soviet Republic (中华苏维埃),"1931–1937, Jiangxi",2,chinese_soviet_republic,linked,chinese_soviet_republic
@@ -862,7 +862,7 @@ korea,col_3,3,0,Three Kingdoms,Silla · Gaya,,1,silla,linked,silla_gaya
 korea,col_4,3,0,Three Kingdoms,Tamna,,1,tamna,linked,tamna
 korea,manchuria,4,0,North-South States,Balhae,,1,balhae,linked,balhae
 korea,peninsula,4,0,North-South States,Unified Silla,,3,unified_silla,linked,unified_silla
-korea,col_4,4,0,North-South States,Tamna → Silla,,1,,regime,tamna_silla
+korea,col_4,4,0,North-South States,Tamna → Silla,,1,,dynasty,tamna_silla
 korea,manchuria,5,0,Later Three Kingdoms,Khitan (forming),,1,,event,khitan_forming
 korea,peninsula,5,0,Later Three Kingdoms,Later Goguryeo (Taebong),,1,goguryeo,linked,later_goguryeo_taebong
 korea,jeju,5,0,Later Three Kingdoms,Later Baekje,,1,baekje,linked,later_baekje
@@ -918,16 +918,16 @@ manchuria,west,3,0,4th–6th c.,Former Yan · Former Qin,337–395 CE,1,former_y
 manchuria,west,3,1,4th–6th c.,Later Yan · Northern Yan,384–436 CE,1,later_yan,linked,later_yan_northern_yan
 manchuria,west,3,2,4th–6th c.,Northern Wei,436–534 CE,1,northern_wei,linked,northern_wei
 manchuria,south,3,0,4th–6th c.,Former/Later Yan — Liaodong,337–436 CE,1,formerlater_yan,linked,formerlater_yan
-manchuria,south,3,1,4th–6th c.,N. Wei → Eastern Wei,534–,1,,regime,n_wei_eastern_wei
+manchuria,south,3,1,4th–6th c.,N. Wei → Eastern Wei,534–,1,,dynasty,n_wei_eastern_wei
 manchuria,east,3,0,4th–6th c.,Goguryeo,,1,goguryeo,linked,goguryeo
 manchuria,north,3,0,4th–6th c.,Dûmokrô,Buyeo successor state,1,dumokro,linked,dmokr
 manchuria,north,3,1,4th–6th c.,Wuji,proto-Mohe Tungusic,1,wuji,linked,wuji
 manchuria,west,4,0,,Khitan confederacy,forming c.400s CE,1,khitan_confederacy,linked,khitan_confederacy
 manchuria,west,4,1,,Shiwei,Mongolic/Tungusic tribes,1,shiwei,linked,shiwei
-manchuria,south,4,0,,N. Qi → N. Zhou,550–581 CE,1,,regime,n_qi_n_zhou
+manchuria,south,4,0,,N. Qi → N. Zhou,550–581 CE,1,,dynasty,n_qi_n_zhou
 manchuria,east,4,0,,Goguryeo,,1,goguryeo,linked,goguryeo
 manchuria,north,4,0,,Mohe — Tungusic confederation,,1,mohe,linked,mohe
-manchuria,west,5,0,7th–9th c.,Tang suzerainty (Jimi),,1,,regime,tang_suzerainty_jimi
+manchuria,west,5,0,7th–9th c.,Tang suzerainty (Jimi),,1,,dynasty,tang_suzerainty_jimi
 manchuria,south,5,0,7th–9th c.,Sui,581–618,1,sui_dynasty,linked,sui
 manchuria,south,5,1,7th–9th c.,Tang,618–907,1,tang_dynasty,linked,tang
 manchuria,east,5,0,7th–9th c.,Balhae,698–926,1,balhae,linked,balhae
@@ -941,7 +941,7 @@ manchuria,west,7,1,10th–12th c.,Dongdan Kingdom,"926–983, Balhae successor",
 manchuria,east,7,0,10th–12th c.,Balhae Restoration Movement,,1,balhae,linked,balhae_restoration_movement
 manchuria,east,7,1,10th–12th c.,Jurchen tribes consolidating,,1,jurchen_tribes,linked,jurchen_tribes_consolidating
 manchuria,north,7,0,10th–12th c.,Five Nations Dept (Wuguofu),far-north Jurchen federation,1,five_nations_dept,linked,five_nations_dept_wuguofu
-manchuria,west,8,0,,Jin — Jurchen Empire,1115–1234,4,jin_jurchen,linked,jin
+manchuria,west,8,0,,Jin — Jurchen Empire,1115–1234,4,jin_dynasty,linked,jin
 manchuria,west,9,0,13th c.,Mongol Empire — western invasion,,1,mongol_empire,linked,mongol_empire
 manchuria,south,9,0,13th c.,Eastern Liao · Later Liao,Khitan remnant states,1,eastern_liao,linked,eastern_liao_later_liao
 manchuria,east,9,0,13th c.,Eastern Xia (Dongxia) — 1215–1233,,1,eastern_xia,linked,eastern_xia_dongxia
@@ -1037,7 +1037,7 @@ mongolia,south,11,1,Medieval,Western Xia (西夏),"1038–1227, Tangut",1,wester
 mongolia,central,12,0,,Kerait (克烈),central Mongolia,1,kerait,linked,kerait
 mongolia,central,12,1,,Khamag Mongol (蒙兀國),Onon–Kerulen rivers,1,khamag_mongol,linked,khamag_mongol
 mongolia,west,12,0,,Naiman (乃蠻),western Mongolia,1,naiman,linked,naiman
-mongolia,west,12,1,,Western Liao (西遼),"1124–1218, Qara Khitai",1,western_liao,linked,western_liao
+mongolia,west,12,1,,Western Liao (西遼),"1124–1218, Qara Khitai",1,qara_khitai,linked,western_liao
 mongolia,north,12,0,,Merkit (蔑兒乞),Baikal region,1,merkit,linked,merkit
 mongolia,north,12,1,,Tatar (塔塔兒),eastern steppe,1,tatar,linked,tatar
 mongolia,south,12,0,,Jin dynasty (金),"1115–1234, Jurchen",1,jin_dynasty,linked,jin_dynasty
@@ -1210,7 +1210,7 @@ albania,east,4,0,,Second Bulgarian Empire,,1,second_bulgarian_empire,linked,seco
 albania,east,4,1,,Nicaean Empire / Epirus,,1,nicaean_empire,linked,nicaean_empire_epirus
 albania,north,5,0,,Zeta · Serbian Kingdom,,1,zeta_serbian_kingdom,linked,zeta_serbian_kingdom
 albania,cent,5,0,,Kingdom of Albania — Charles of Anjou,1272–1285,1,kingdom_of_albania,linked,kingdom_of_albania
-albania,cent,5,1,,Duchy of Durazzo → Thopia dynasty,14th c.,1,,regime,duchy_of_durazzo_thopia_dynasty
+albania,cent,5,1,,Duchy of Durazzo → Thopia dynasty,14th c.,1,,dynasty,duchy_of_durazzo_thopia_dynasty
 albania,south,5,0,,Despotate of Epirus · Angevin Albania,,1,despotate_of_epirus,linked,despotate_of_epirus_angevin_albania
 albania,east,5,0,,Second Bulgarian Empire,,1,second_bulgarian_empire,linked,second_bulgarian_empire
 albania,east,5,1,,Byzantine,,1,byzantine_empire,linked,byzantine
@@ -1395,7 +1395,7 @@ britain_ireland,england,3,3,,Danelaw (Viking-controlled eastern England),865–9
 britain_ireland,ireland,4,0,Medieval,Gaelic Ireland (provincial kingdoms),,1,gaelic_ireland,linked,gaelic_ireland_provincial_kingdoms
 britain_ireland,ireland,4,1,Medieval,Kingdom of Dublin (Norse-Gaelic),853–1170,1,kingdom_of_dublin,linked,kingdom_of_dublin_norse_gaelic
 britain_ireland,scotland,4,0,Medieval,Kingdom of Scotland,843–,1,kingdom_of_scotland,linked,kingdom_of_scotland
-britain_ireland,scotland,4,1,Medieval,House of Alpin → Dunkeld → Canmore,,1,,regime,house_of_alpin_dunkeld_canmore
+britain_ireland,scotland,4,1,Medieval,House of Alpin → Dunkeld → Canmore,,1,,dynasty,house_of_alpin_dunkeld_canmore
 britain_ireland,wales,4,0,Medieval,Deheubarth (Hywel Dda — Welsh law codified),920–1197,1,deheubarth,linked,deheubarth_hywel_dda
 britain_ireland,wales,4,1,Medieval,Gwynedd,c.450–1283; Gruffudd ap Llywelyn briefly unifies Wales 1055–1063,1,gwynedd,linked,gwynedd
 britain_ireland,england,4,0,Medieval,Kingdom of England — Wessex dynasty,927–1013,1,kingdom_of_england,linked,kingdom_of_england
@@ -1404,7 +1404,7 @@ britain_ireland,ireland,5,0,,Lordship of Ireland (under English Crown),1171–15
 britain_ireland,ireland,5,1,,Gaelic resurgence outside the Pale,13th–15th c.,1,gaelic_resurgence_outside_the_pale,linked,gaelic_resurgence_outside_the_pale
 britain_ireland,scotland,5,0,,Kingdom of Scotland,,1,kingdom_of_scotland,linked,kingdom_of_scotland
 britain_ireland,scotland,5,1,,Wars of Scottish Independence,1296–1328; Wallace · Bruce,1,,event,wars_of_scottish_independence
-britain_ireland,scotland,5,2,,House of Bruce → Stewart/Stuart,1306–,1,,regime,house_of_bruce_stewartstuart
+britain_ireland,scotland,5,2,,House of Bruce → Stewart/Stuart,1306–,1,,dynasty,house_of_bruce_stewartstuart
 britain_ireland,wales,5,0,,Principality of Wales (Llywelyn the Great · Llywelyn the Last),1216–1283,1,principality_of_wales,linked,principality_of_wales_llywelyn_the_great_llywelyn_the_last
 britain_ireland,wales,5,1,,Wales under English Crown,1284–; conquered by Edward I in 1283,1,wales_under_english_crown,linked,wales_under_english_crown
 britain_ireland,england,5,0,,Kingdom of England — Norman dynasty,1066–1154,1,kingdom_of_england,linked,kingdom_of_england
@@ -1433,7 +1433,7 @@ britain_ireland,ireland,10,0,Union Era,Kingdom of Ireland,Penal Laws against Cat
 britain_ireland,scotland,10,0,Union Era,Kingdom of England — Stuart Restoration,1660–1688; Glorious Revolution 1688; Bill of Rights 1689,3,kingdom_of_england,linked,kingdom_of_england
 britain_ireland,ireland,11,0,,Kingdom of Ireland (separate parliament),Grattan's Parliament 1782–1800,1,kingdom_of_ireland,linked,kingdom_of_ireland_separate_parliament
 britain_ireland,scotland,11,0,,Kingdom of Great Britain (Acts of Union — England + Scotland),1707–1801,3,kingdom_of_great_britain,linked,kingdom_of_great_britain_acts_of_union
-britain_ireland,scotland,11,1,,Hanoverian dynasty — Georgian era,1714–1837,3,,regime,hanoverian_dynasty
+britain_ireland,scotland,11,1,,Hanoverian dynasty — Georgian era,1714–1837,3,,dynasty,hanoverian_dynasty
 britain_ireland,scotland,11,2,,First British Empire (American colonies · India),–1783,3,first_british_empire,linked,first_british_empire_american_colonies_india
 britain_ireland,scotland,11,3,,Second British Empire (India · Africa · Pacific),1783–,3,second_british_empire,linked,second_british_empire_india_africa_pacific
 britain_ireland,ireland,12,0,Imperial Era,United Kingdom of Great Britain & Ireland,1801–1922; Act of Union 1800/1801,4,united_kingdom,linked,united_kingdom_of_great_britain_ireland
@@ -1537,7 +1537,7 @@ croatia,istria,7,0,,Venice Republic (most of coast),,1,republic_of_venice,linked
 croatia,istria,7,1,,Habsburg — Pazin county,,1,habsburg_monarchy,linked,habsburg
 croatia,dalm,7,0,,Venice Republic,,1,republic_of_venice,linked,venice_republic
 croatia,dalm,7,1,,Republic of Ragusa (Dubrovnik),autonomous 1358–1808,1,republic_of_ragusa,linked,republic_of_ragusa_dubrovnik
-croatia,core,7,0,,Hungary-Croatia → Habsburg,from 1527,1,,regime,hungary_croatia_habsburg
+croatia,core,7,0,,Hungary-Croatia → Habsburg,from 1527,1,,dynasty,hungary_croatia_habsburg
 croatia,slav,7,0,,Hungary-Croatia → Ottoman raids,,1,,event,hungary_croatia_ottoman_raids
 croatia,slav,7,1,,Battle of Mohács,1526,1,,event,battle_of_mohcs
 croatia,istria,8,0,Ottoman Frontier,Venice Republic,,1,republic_of_venice,linked,venice_republic
@@ -1551,7 +1551,7 @@ croatia,istria,9,0,,Venice Republic,,1,republic_of_venice,linked,venice_republic
 croatia,istria,9,1,,Habsburg — Pazin area,,1,habsburg_monarchy,linked,habsburg
 croatia,dalm,9,0,,Venice Republic,,1,republic_of_venice,linked,venice_republic
 croatia,dalm,9,1,,Republic of Ragusa,,1,republic_of_ragusa,linked,republic_of_ragusa
-croatia,core,9,0,,Habsburg Croatia · Military Frontier,,1,,regime,habsburg_croatia_military_frontier
+croatia,core,9,0,,Habsburg Croatia · Military Frontier,,1,,dynasty,habsburg_croatia_military_frontier
 croatia,slav,9,0,,Habsburg — reconquered (Treaty of Karlowitz 1699),,1,habsburg_monarchy,linked,habsburg
 croatia,slav,9,1,,Slavonian Military Frontier,,1,,unclassified,slavonian_military_frontier
 croatia,istria,10,0,19th c.,Habsburg → Austria-Hungary (Austrian Küstenland),,1,habsburg_monarchy,linked,habsburg_austria_hungary_austrian_kstenland
@@ -1559,12 +1559,12 @@ croatia,dalm,10,0,19th c.,French (briefly 1806–14) → Austrian Empire,,1,,pol
 croatia,dalm,10,1,19th c.,Austria-Hungary — Dalmatia crown land,,1,austria_hungary,linked,austria_hungary
 croatia,core,10,0,19th c.,Austrian Empire → Austria-Hungary,,2,austrian_empire,linked,austrian_empire_austria_hungary
 croatia,core,10,1,19th c.,Kingdom of Croatia-Slavonia (1868),,2,kingdom_of_croatia_slavonia,linked,kingdom_of_croatia_slavonia_1868
-croatia,istria,11,0,Yugoslav,Italy — Istria (Treaty of Rapallo 1920),,1,italy,linked,italy
+croatia,istria,11,0,Yugoslav,Italy — Istria (Treaty of Rapallo 1920),,1,kingdom_of_italy,linked,italy
 croatia,dalm,11,0,Yugoslav,Kingdom of SCS → Yugoslavia,,1,,polity,kingdom_of_scs_yugoslavia
-croatia,dalm,11,1,Yugoslav,Italy — Zadar & some coastal towns,,1,italy,linked,italy
+croatia,dalm,11,1,Yugoslav,Italy — Zadar & some coastal towns,,1,kingdom_of_italy,linked,italy
 croatia,core,11,0,Yugoslav,"Kingdom of Serbs, Croats & Slovenes → Kingdom of Yugoslavia",,2,,polity,kingdom_of_serbs_croats_slovenes_kingdom_of_yugoslavia
-croatia,istria,12,0,,Italy — annexed Istria,1941–1943,1,italy,linked,italy
-croatia,dalm,12,0,,Italy (1941–43) → Germany / NDH (1943–45),,1,italy,linked,italy_1941_43_germany_ndh_1943_45
+croatia,istria,12,0,,Italy — annexed Istria,1941–1943,1,kingdom_of_italy,linked,italy
+croatia,dalm,12,0,,Italy (1941–43) → Germany / NDH (1943–45),,1,kingdom_of_italy,linked,italy_1941_43_germany_ndh_1943_45
 croatia,core,12,0,,Independent State of Croatia (NDH) — Axis puppet,1941–1945,1,independent_state_of_croatia,linked,independent_state_of_croatia_ndh
 croatia,slav,12,0,,NDH,,1,ndh,linked,ndh
 croatia,slav,12,1,,Hungary — Baranja occupied,1941–1944,1,hungary,linked,hungary
@@ -1828,7 +1828,7 @@ greece,south,4,1,,Corinth · Argos · Olympia,,1,corinth_argos_olympia,linked,co
 greece,west,4,0,,Kingdom of Epirus — Molossian / Aeacid dynasty,,1,kingdom_of_epirus,linked,kingdom_of_epirus
 greece,west,4,1,,Corcyra (allied then neutral),,1,corcyra,linked,corcyra_allied_then_neutral
 greece,north,5,0,,Macedonia — Philip II · Battle of Chaeronea · League of Corinth,338–337 BCE,1,,polity,macedonia
-greece,north,5,1,,Alexander III — conquest of Persia,336–323 BCE,1,,regime,alexander_iii
+greece,north,5,1,,Alexander III — conquest of Persia,336–323 BCE,1,,dynasty,alexander_iii
 greece,center,5,0,,Athens — Second Athenian League,378–355 BCE,1,athens,linked,athens
 greece,center,5,1,,Thebes — Epaminondas · Sacred Band · Leuctra,371–362 BCE,1,thebes,linked,thebes
 greece,south,5,0,,Sparta — post-Leuctra decline,,1,,event,sparta
@@ -1935,7 +1935,7 @@ iberia,castile,0,1,Ancient,Iberians (eastern & southern),c.800 BCE–,1,iberians
 iberia,castile,0,2,Ancient,Basques (Pyrenees — continuous),c.1000 BCE–,1,basques,linked,basques_pyrenees
 iberia,aragon,0,0,Ancient,Basques (Vascones · Pyrenees),c.1000 BCE– (pre-IE),1,basques,linked,basques_vascones_pyrenees
 iberia,aragon,0,1,Ancient,Iberians (Mediterranean coast),c.800 BCE–,1,iberians,linked,iberians_mediterranean_coast
-iberia,aragon,0,2,Ancient,Greek colonies (Emporion · Rhode),c.600 BCE–,1,greek_colonies,linked,greek_colonies_emporion_rhode
+iberia,aragon,0,2,Ancient,Greek colonies (Emporion · Rhode),c.600 BCE–,1,,unclassified,greek_colonies_emporion_rhode
 iberia,andalus,0,0,Ancient,Tartessian civilization (Guadalquivir),c.1100–500 BCE,1,tartessian_civilization_culture,linked,tartessian_civilization_guadalquivir
 iberia,andalus,0,1,Ancient,Phoenician colonies (Gadir · Málaga · Sexi),c.1100 BCE–,1,phoenician_colonies,linked,phoenician_colonies_gadir_mlaga_sexi
 iberia,andalus,0,2,Ancient,Carthaginian expansion (New Carthage),c.237–206 BCE,1,carthage,linked,carthaginian_expansion_new_carthage
@@ -2021,16 +2021,16 @@ iberia,castile,9,2,Habsburg Era,Moriscos expelled,1609,3,moriscos_expelled,linke
 iberia,portugal,10,0,,Iberian Union (Philip II absorbs Portugal),1580–1640,1,iberian_union,linked,iberian_union_philip_ii_absorbs_portugal
 iberia,portugal,10,1,,Braganza Restoration,1640,1,braganza_restoration,linked,braganza_restoration
 iberia,portugal,10,2,,Kingdom of Portugal (Braganza dynasty),1640–1910,1,kingdom_of_portugal,linked,kingdom_of_portugal_braganza_dynasty
-iberia,castile,10,0,,"Habsburg Spain — Armada defeat (1588), decline",,3,,regime,habsburg_spain
-iberia,castile,10,1,,Bourbon Spain (War of Spanish Succession),1700–1714,3,,regime,bourbon_spain_war_of_spanish_succession
+iberia,castile,10,0,,"Habsburg Spain — Armada defeat (1588), decline",,3,,dynasty,habsburg_spain
+iberia,castile,10,1,,Bourbon Spain (War of Spanish Succession),1700–1714,3,,dynasty,bourbon_spain_war_of_spanish_succession
 iberia,portugal,11,0,Bourbon / Napoleonic,Kingdom of Portugal (Braganza),–1807,1,kingdom_of_portugal,linked,kingdom_of_portugal_braganza
 iberia,portugal,11,1,Bourbon / Napoleonic,Pombal reforms,1755–1777,1,,event,pombal_reforms
 iberia,portugal,11,2,Bourbon / Napoleonic,Napoleonic invasion — court to Brazil,1807,1,,event,napoleonic_invasion
 iberia,portugal,11,3,Bourbon / Napoleonic,United Kingdom Portugal-Brazil-Algarves,1815–1822,1,united_kingdom,linked,united_kingdom_portugal_brazil_algarves
-iberia,castile,11,0,Bourbon / Napoleonic,Bourbon Spain (Philip V → Carlos III enlightenment),1700–1808,3,,regime,bourbon_spain_philip_v_carlos_iii_enlightenment
+iberia,castile,11,0,Bourbon / Napoleonic,Bourbon Spain (Philip V → Carlos III enlightenment),1700–1808,3,,dynasty,bourbon_spain_philip_v_carlos_iii_enlightenment
 iberia,castile,11,1,Bourbon / Napoleonic,Napoleonic Spain (José I Bonaparte),1808–1813,3,napoleonic_spain,linked,napoleonic_spain_jos_i_bonaparte
 iberia,castile,11,2,Bourbon / Napoleonic,Peninsular War / War of Independence,1808–1814,3,,event,peninsular_war_war_of_independence
-iberia,castile,11,3,Bourbon / Napoleonic,Bourbon restored (Fernando VII),1814,3,,regime,bourbon_restored_fernando_vii
+iberia,castile,11,3,Bourbon / Napoleonic,Bourbon restored (Fernando VII),1814,3,,dynasty,bourbon_restored_fernando_vii
 iberia,portugal,12,0,Liberal Monarchies & Republics,Constitutional Portugal (Braganza),1820–1910,1,constitutional_portugal,linked,constitutional_portugal_braganza
 iberia,portugal,12,1,Liberal Monarchies & Republics,Saxe-Coburg-Gotha dynasty,1853–1910,1,saxe_coburg_gotha_dynasty,linked,saxe_coburg_gotha_dynasty
 iberia,portugal,12,2,Liberal Monarchies & Republics,First Portuguese Republic,1910–1926,1,first_portuguese_republic,linked,first_portuguese_republic
@@ -2114,7 +2114,7 @@ italy,south,5,2,,Byzantine Catepanate of Italy,965–1071,1,byzantine_catepanate
 italy,sicily,5,0,,Arab raids from North Africa begin,from 827,1,,event,arab_raids_from_north_africa_begin
 italy,sicily,5,1,,Emirate of Sicily (Aghlabid then Kalbid),831–1072,1,emirate_of_sicily,linked,emirate_of_sicily_aghlabid_then_kalbid
 italy,sicily,5,2,,Arab Emirate of Bari,847–871,1,arab_emirate_of_bari,linked,arab_emirate_of_bari
-italy,sardinia,5,0,,Byzantine Sardinia → Giudicati emerging,c.700–900,1,,polity,byzantine_sardinia_giudicati_emerging
+italy,sardinia,5,0,,Byzantine Sardinia → Giudicati emerging,c.700–900,1,byzantine_sardinia,linked,byzantine_sardinia_giudicati_emerging
 italy,sardinia,5,1,,Giudicati of Sardinia (4 kingdoms),c.900–1420,1,giudicati_of_sardinia,linked,giudicati_of_sardinia_4_kingdoms
 italy,north,6,0,Medieval,Middle Kingdom of Italy (Carolingian split),843–888,1,kingdom_of_italy,linked,middle_kingdom_of_italy_carolingian_split
 italy,north,6,1,Medieval,Holy Roman Empire — Kingdom of Italy,962–1250,1,holy_roman_empire,linked,holy_roman_empire
@@ -2153,9 +2153,9 @@ italy,south,8,0,,Aragonese Kingdom of Naples,1442–1503,1,aragonese_kingdom_of_
 italy,sicily,8,0,,Kingdom of Sicily (Aragonese),1282–1409,1,kingdom_of_sicily,linked,kingdom_of_sicily_aragonese
 italy,sicily,8,1,,Crown of Aragon (unified Sicily),1409–1713,1,crown_of_aragon,linked,crown_of_aragon_unified_sicily
 italy,sardinia,8,0,,Aragonese / Spanish Kingdom of Sardinia,1323–1718,1,aragonese_sardinia,linked,aragonese_spanish_kingdom_of_sardinia
-italy,north,9,0,Early Modern,Italian Wars (France vs Habsburg),1494–1559,1,,regime,italian_wars_france_vs_habsburg
+italy,north,9,0,Early Modern,Italian Wars (France vs Habsburg),1494–1559,1,,dynasty,italian_wars_france_vs_habsburg
 italy,north,9,1,Early Modern,Spanish Duchy of Milan,1535–1706,1,spanish_duchy_of_milan,linked,spanish_duchy_of_milan
-italy,north,9,2,Early Modern,Austrian Habsburg — Lombardy-Venetia,1706–1796,1,,regime,austrian_habsburg
+italy,north,9,2,Early Modern,Austrian Habsburg — Lombardy-Venetia,1706–1796,1,,dynasty,austrian_habsburg
 italy,center,9,0,Early Modern,Grand Duchy of Tuscany (Medici),1569–1737,1,grand_duchy_of_tuscany,linked,grand_duchy_of_tuscany_medici
 italy,center,9,1,Early Modern,Grand Duchy of Tuscany (Habsburg-Lorraine),1737–1859,1,grand_duchy_of_tuscany,linked,grand_duchy_of_tuscany_habsburg_lorraine
 italy,center,9,2,Early Modern,Papal States,–1870,1,papal_states,linked,papal_states
@@ -2166,7 +2166,7 @@ italy,north,10,0,Napoleonic & Risorgimento,Cisalpine / Italian Republic (Napoleo
 italy,north,10,1,Napoleonic & Risorgimento,Kingdom of Italy (Napoleon),1805–1814,1,kingdom_of_italy,linked,kingdom_of_italy_napoleon
 italy,north,10,2,Napoleonic & Risorgimento,Austrian Empire — Lombardy-Venetia,1815–1859/66,1,austrian_empire,linked,austrian_empire
 italy,center,10,0,Napoleonic & Risorgimento,Napoleon annexes Rome,1809–1814,1,,unclassified,napoleon_annexes_rome
-italy,center,10,1,Napoleonic & Risorgimento,Papal States (restored),1814–1870,1,,polity,papal_states_restored
+italy,center,10,1,Napoleonic & Risorgimento,Papal States (restored),1814–1870,1,papal_states,linked,papal_states_restored
 italy,south,10,0,Napoleonic & Risorgimento,Kingdom of Naples (Murat then Bourbon),1806–1816,1,kingdom_of_naples,linked,kingdom_of_naples_murat_then_bourbon
 italy,south,10,1,Napoleonic & Risorgimento,Kingdom of the Two Sicilies,1816–1861,1,kingdom_of_the_two_sicilies,linked,kingdom_of_the_two_sicilies
 italy,sicily,10,0,Napoleonic & Risorgimento,Kingdom of Sicily (British-backed Bourbon),1806–1816,1,kingdom_of_sicily,linked,kingdom_of_sicily_british_backed_bourbon
@@ -2226,7 +2226,7 @@ low_countries,flemish,5,0,,Burgundian Netherlands (Flanders · Brabant),1384/143
 low_countries,walloon,5,0,,Burgundian Netherlands (Namur · Luxembourg),1421/1443–,1,burgundian_netherlands,linked,burgundian_netherlands_namur_luxembourg
 low_countries,walloon,5,1,,Prince-Bishopric of Liège (resists Burgundy),,1,,polity,prince_bishopric_of_lige_resists_burgundy
 low_countries,north,6,0,Burgundian / Habsburg,Burgundian Netherlands (Valois-Burgundy),1384–1477,3,burgundian_netherlands,linked,burgundian_netherlands_valois_burgundy
-low_countries,north,6,1,Burgundian / Habsburg,Habsburg Netherlands (Mary of Burgundy → Maximilian),1477–1556; Pragmatic Sanction 1549 unifies 17 Provinces,3,,regime,habsburg_netherlands_mary_of_burgundy_maximilian
+low_countries,north,6,1,Burgundian / Habsburg,Habsburg Netherlands (Mary of Burgundy → Maximilian),1477–1556; Pragmatic Sanction 1549 unifies 17 Provinces,3,,dynasty,habsburg_netherlands_mary_of_burgundy_maximilian
 low_countries,north,7,0,,Spanish Netherlands (Philip II),1556–,3,spanish_netherlands,linked,spanish_netherlands_philip_ii
 low_countries,north,7,1,,Dutch Revolt (Eighty Years' War),1568–1648; Union of Utrecht 1579 — northern provinces rebel,3,,event,dutch_revolt_eighty_years_war
 low_countries,north,8,0,Early Modern,Dutch Republic (Republic of the Seven United Provinces),1581–1795,1,dutch_republic,linked,dutch_republic_republic_of_the_seven_united_provinces
@@ -2350,16 +2350,16 @@ poland,silesia,6,1,Jagiellonian Era,German-speaking urbanization deepens,,1,germ
 poland,greater,7,0,Commonwealth,Polish-Lithuanian Commonwealth (Rzeczpospolita — 'First Republic'),1569–1795,3,polish_lithuanian_commonwealth,linked,polish_lithuanian_commonwealth_rzeczpospolita
 poland,greater,7,1,Commonwealth,Elected monarchy (szlachta democracy — Golden Liberty),Union of Lublin 1569,3,elected_monarchy,linked,elected_monarchy_szlachta_democracy
 poland,greater,7,2,Commonwealth,Height under Sigismund III · John III Sobieski,relief of Vienna 1683,3,height_under_sigismund_iii,linked,height_under_sigismund_iii_john_iii_sobieski
-poland,greater,7,3,Commonwealth,Decline — Liberum veto · Saxon dynasty · Russian interference,18th c.; Constitution of 3 May 1791,3,,regime,decline
+poland,greater,7,3,Commonwealth,Decline — Liberum veto · Saxon dynasty · Russian interference,18th c.; Constitution of 3 May 1791,3,,dynasty,decline
 poland,greater,7,4,Commonwealth,Partitions: First (1772) · Second (1793) · Third (1795),,3,,unclassified,partitions_first_1772_second_1793_third_1795
 poland,greater,8,0,Partition Era,Prussian Partition (Greater Poland · Pomerania),1772/1793–,1,kingdom_of_prussia,linked,prussian_partition_greater_poland_pomerania
 poland,greater,8,1,Partition Era,Grand Duchy of Posen (Poznań),1815–1848,1,grand_duchy_of_posen,linked,grand_duchy_of_posen_pozna
 poland,greater,8,2,Partition Era,Province of Posen · West Prussia (Germanization — Kulturkampf),1848–1918,1,province_of_posen,linked,province_of_posen_west_prussia_germanization
 poland,lesser,8,0,Partition Era,Austrian Partition (Lesser Poland · Galicia),1772/1795–,1,,event,austrian_partition_lesser_poland_galicia
-poland,lesser,8,1,Partition Era,Duchy of Warsaw (Napoleonic client state),1807–1815,1,,regime,duchy_of_warsaw_napoleonic_client_state
+poland,lesser,8,1,Partition Era,Duchy of Warsaw (Napoleonic client state),1807–1815,1,,dynasty,duchy_of_warsaw_napoleonic_client_state
 poland,lesser,8,2,Partition Era,Congress Kingdom of Poland (Russian puppet),1815–1831,1,kingdom_of_poland,linked,congress_kingdom_of_poland_russian_puppet
 poland,lesser,8,3,Partition Era,Privislinsky Krai (direct Russian rule),"1867–1915; November Uprising 1830, January Uprising 1863",1,privislinsky_krai,linked,privislinsky_krai_direct_russian_rule
-poland,silesia,8,0,Partition Era,Prussian Partition (Silesia remains Prussian/Habsburg),,1,,regime,prussian_partition_silesia_remains_prussianhabsburg
+poland,silesia,8,0,Partition Era,Prussian Partition (Silesia remains Prussian/Habsburg),,1,,dynasty,prussian_partition_silesia_remains_prussianhabsburg
 poland,silesia,8,1,Partition Era,Free City of Kraków,1815–1846,1,free_city_of_krakow,linked,free_city_of_krakw
 poland,silesia,8,2,Partition Era,Austrian Galicia-Lodomeria (relative autonomy),1867–1918,1,austrian_galicia_lodomeria,linked,austrian_galicia_lodomeria_relative_autonomy
 poland,silesia,8,3,Partition Era,Grand Duchy of Kraków (Austrian),1846–1918,1,grand_duchy_of_krakow,linked,grand_duchy_of_krakw_austrian
@@ -2456,16 +2456,16 @@ russia,nw,2,0,Kievan Rus / Appanages,Novgorod Republic — Rurik dynasty,c.862 C
 russia,cent,2,0,Kievan Rus / Appanages,Kievan Rus — Vladimir-Suzdal Principality,,1,kievan_rus,linked,kievan_rus
 russia,south,2,0,Kievan Rus / Appanages,Kievan Rus fringe · Khazar remnants,,1,kievan_rus,linked,kievan_rus_fringe_khazar_remnants
 russia,south,2,1,Kievan Rus / Appanages,Volga Bulgaria (Ural–Volga),,1,volga_bulgaria,linked,volga_bulgaria_ural_volga
-russia,sib,2,0,Kievan Rus / Appanages,Indigenous peoples — no Rus penetration,,1,indigenous_peoples,linked,indigenous_peoples
+russia,sib,2,0,Kievan Rus / Appanages,Indigenous peoples — no Rus penetration,,1,,people,indigenous_peoples
 russia,nw,3,0,,Novgorod Republic (Lord Novgorod the Great),Mongol invasion spared Novgorod 1237–1240; Alexander Nevsky defeats Teutonic Knights 1242,1,novgorod_republic,linked,novgorod_republic_lord_novgorod_the_great
 russia,cent,3,0,,Golden Horde suzerainty — 'Tatar Yoke',Vladimir-Suzdal sacked 1238,1,golden_horde,linked,golden_horde_suzerainty
 russia,south,3,0,,Golden Horde — Sarai (capital on lower Volga),Volga Bulgaria destroyed 1237,1,golden_horde,linked,golden_horde
-russia,sib,3,0,,Indigenous peoples,,1,indigenous_peoples,linked,indigenous_peoples
+russia,sib,3,0,,Indigenous peoples,,1,,people,indigenous_peoples
 russia,nw,4,0,Rise of Moscow,Novgorod Republic,annexed by Moscow 1478,1,novgorod_republic,linked,novgorod_republic
 russia,cent,4,0,Rise of Moscow,Principality of Moscow (Muscovy),founded c.1263; end of Tatar Yoke 1480,1,principality_of_moscow,linked,principality_of_moscow_muscovy
 russia,south,4,0,Rise of Moscow,Golden Horde → Kazan Khanate,1438,1,golden_horde,linked,golden_horde_kazan_khanate
 russia,south,4,1,Rise of Moscow,Astrakhan Khanate · Nogai Horde,,1,astrakhan_khanate,linked,astrakhan_khanate_nogai_horde
-russia,sib,4,0,Rise of Moscow,Indigenous peoples,,1,indigenous_peoples,linked,indigenous_peoples
+russia,sib,4,0,Rise of Moscow,Indigenous peoples,,1,,people,indigenous_peoples
 russia,nw,5,0,,Tsardom of Russia — Ivan IV (the Terrible),1547; Livonian War 1558–1583,1,tsardom_russia,linked,tsardom_of_russia
 russia,cent,5,0,,Tsardom of Russia,Time of Troubles 1598–1613; Romanov dynasty 1613,1,tsardom_russia,linked,tsardom_of_russia
 russia,south,5,0,,Tsardom of Russia — Kazan conquered (1552) · Astrakhan (1556),,1,tsardom_russia,linked,tsardom_of_russia
@@ -2676,13 +2676,13 @@ serbia,kosovo,10,0,Ottoman,Ottoman Empire — Rumelia · Kosovo vilayet,,3,ottom
 serbia,belgrade,10,0,Ottoman,Ottoman Empire (Belgrade — key fortress),,1,ottoman_empire,linked,ottoman_empire_belgrade
 serbia,vojv,10,0,Ottoman,Kingdom of Hungary → Habsburg Empire,,1,kingdom_of_hungary,linked,kingdom_of_hungary_habsburg_empire
 serbia,kosovo,11,0,,Ottoman Empire,,3,ottoman_empire,linked,ottoman_empire
-serbia,belgrade,11,0,,Great Turkish War — Holy League (Habsburg),1683–1699,1,,regime,great_turkish_war
+serbia,belgrade,11,0,,Great Turkish War — Holy League (Habsburg),1683–1699,1,,dynasty,great_turkish_war
 serbia,belgrade,11,1,,Habsburg Empire — Belgrade captured,1688,1,habsburg_monarchy,linked,habsburg_empire
 serbia,vojv,11,0,,Habsburg Empire (Treaty of Karlowitz 1699),,1,habsburg_monarchy,linked,habsburg_empire_treaty_of_karlowitz_1699
 serbia,kosovo,12,0,,Ottoman Empire,,2,ottoman_empire,linked,ottoman_empire
 serbia,raska,12,0,,Ottoman Empire,,1,ottoman_empire,linked,ottoman_empire
-serbia,raska,12,1,,"Habsburg–Ottoman wars, Belgrade alternating",,1,,regime,habsburg_ottoman_wars_belgrade_alternating
-serbia,belgrade,12,0,,Habsburg–Ottoman wars,Belgrade: Ottoman/Habsburg cycles,1,,regime,habsburg_ottoman_wars
+serbia,raska,12,1,,"Habsburg–Ottoman wars, Belgrade alternating",,1,,dynasty,habsburg_ottoman_wars_belgrade_alternating
+serbia,belgrade,12,0,,Habsburg–Ottoman wars,Belgrade: Ottoman/Habsburg cycles,1,,dynasty,habsburg_ottoman_wars
 serbia,belgrade,12,1,,Habsburg Empire — Belgrade,1718–1739 · 1789–91,1,habsburg_monarchy,linked,habsburg_empire
 serbia,vojv,12,0,,Habsburg Empire — Vojvodina,,1,habsburg_monarchy,linked,habsburg_empire
 serbia,kosovo,13,0,,Ottoman Empire,,3,ottoman_empire,linked,ottoman_empire
@@ -2751,9 +2751,9 @@ slovenia,lj,7,0,19th c.,French Illyrian Provinces (1809–13) → Austrian Empir
 slovenia,lj,7,1,19th c.,Illyrian Kingdom (Austrian),1816–1849,1,illyrian_kingdom,linked,illyrian_kingdom_austrian
 slovenia,lj,7,2,19th c.,Austria-Hungary — Duchy of Carniola (crown land),,1,austria_hungary,linked,austria_hungary
 slovenia,mb,7,0,19th c.,Austrian Empire → Austria-Hungary — Duchy of Styria,,1,austrian_empire,linked,austrian_empire_austria_hungary
-slovenia,istria,8,0,Interwar / WWII,Italy — Istria (Treaty of Rapallo 1920),,1,italy,linked,italy
+slovenia,istria,8,0,Interwar / WWII,Italy — Istria (Treaty of Rapallo 1920),,1,kingdom_of_italy,linked,italy
 slovenia,lj,8,0,Interwar / WWII,"Kingdom of Serbs, Croats & Slovenes → Kingdom of Yugoslavia",,2,,polity,kingdom_of_serbs_croats_slovenes_kingdom_of_yugoslavia
-slovenia,istria,9,0,,Italy — Istria (continued),,1,italy,linked,italy
+slovenia,istria,9,0,,Italy — Istria (continued),,1,kingdom_of_italy,linked,italy
 slovenia,lj,9,0,,German occupation (Lower Styria / Carniola),1941–1945,1,,event,german_occupation_lower_styria_carniola
 slovenia,mb,9,0,,Nazi Germany — annexed to Reich (Lower Styria),1941–1945,1,nazi_germany,linked,nazi_germany
 slovenia,mb,9,1,,Hungary — Prekmurje,1941–1944,1,hungary,linked,hungary
@@ -2810,7 +2810,7 @@ switzerland_austria,east_swiss,5,0,,Old Swiss Confederacy (Eidgenossenschaft),"1
 switzerland_austria,east_swiss,5,1,,Eight Cantons (Luzern · Zürich · Bern · Glarus join),1332–1353,1,eight_cantons,linked,eight_cantons_luzern_zrich_bern_glarus_join
 switzerland_austria,austria,5,0,,Habsburg dynasty takes Austria (Rudolf I),"1278–, after Battle of Marchfeld",1,habsburg_monarchy,linked,habsburg_dynasty_takes_austria_rudolf_i
 switzerland_austria,austria,5,1,,Archduchy of Austria (Privilegium Maius — forged charter),1358/1453,1,archduchy_of_austria,linked,archduchy_of_austria_privilegium_maius
-switzerland_austria,austria,5,2,,Habsburg expansion (Tyrol · Carinthia · Styria · Carniola),14th c.,1,,regime,habsburg_expansion_tyrol_carinthia_styria_carniola
+switzerland_austria,austria,5,2,,Habsburg expansion (Tyrol · Carinthia · Styria · Carniola),14th c.,1,,dynasty,habsburg_expansion_tyrol_carinthia_styria_carniola
 switzerland_austria,austria,5,3,,Loss of Swiss territories to Confederacy,14th–15th c.,1,loss_of_swiss_territories_to_confederacy,linked,loss_of_swiss_territories_to_confederacy
 switzerland_austria,west_swiss,6,0,Late Medieval / Reformation,Old Swiss Confederacy — Thirteen Cantons,1481–1798,2,old_swiss_confederacy,linked,old_swiss_confederacy
 switzerland_austria,west_swiss,6,1,Late Medieval / Reformation,Burgundian Wars — Charles the Bold defeated,1474–1477,2,,event,burgundian_wars
@@ -2866,7 +2866,7 @@ ukraine,west,0,1,Ancient,Dacian / Thracian tribes,,1,dacian_kingdom,linked,dacia
 ukraine,cent,0,0,Ancient,Trypillia culture,,2,trypillia_culture,linked,trypillia_culture
 ukraine,cent,0,1,Ancient,Scythian steppe fringe,,2,scythian_steppe_fringe,linked,scythian_steppe_fringe
 ukraine,south,0,0,Ancient,Scythian Kingdom (steppe),,1,scythian_kingdom,linked,scythian_kingdom_steppe
-ukraine,south,0,1,Ancient,Greek colonies (Olbia · Tyras),,1,greek_colonies,linked,greek_colonies_olbia_tyras
+ukraine,south,0,1,Ancient,Greek colonies (Olbia · Tyras),,1,,unclassified,greek_colonies_olbia_tyras
 ukraine,crimea,0,0,Ancient,Taurians (indigenous),,1,taurians,linked,taurians_indigenous
 ukraine,crimea,0,1,Ancient,Greek colony — Chersonesus,c.421 BCE,1,greek_colony,linked,greek_colony
 ukraine,west,1,0,,Bastarnae / Celtic tribes · Dacians,,1,bastarnae,linked,bastarnae_celtic_tribes_dacians
@@ -3025,7 +3025,7 @@ peru,north_coast,6,0,Conquest & Neo-Inca (1532–1572),Spanish Conquest (1532–
 peru,south_highlands,6,0,Conquest & Neo-Inca (1532–1572),Neo-Inca State of Vilcabamba (1537–1572),Manco Inca's resistance state in jungle; last ruler Túpac Amaru executed 1572,1,neo_inca_vilcabamba,linked,neo_inca_state_of_vilcabamba_1537_1572
 peru,north_coast,7,0,Colonial (1542–1824),Viceroyalty of Peru (1542–1824),Lima as capital of all Spanish South America until 18th-c. Bourbon reforms,4,viceroyalty_of_peru,linked,viceroyalty_of_peru_1542_1824
 peru,north_coast,8,0,,Túpac Amaru II Rebellion (1780–1783),"Indigenous-mestizo uprising; largest colonial rebellion; 100,000 dead",4,,event,tpac_amaru_ii_rebellion_1780_1783
-peru,north_coast,8,1,,Bourbon Reforms,"Viceroyalty split: New Granada (1717), Río de la Plata (1776); Intendancy system",4,,regime,bourbon_reforms
+peru,north_coast,8,1,,Bourbon Reforms,"Viceroyalty split: New Granada (1717), Río de la Plata (1776); Intendancy system",4,,dynasty,bourbon_reforms
 peru,north_coast,9,0,Independence & Republic (1821–),Protectorate of Peru (1821–1822),San Martín declares independence 28 Jul 1821,4,protectorate_of_peru,linked,protectorate_of_peru_1821_1822
 peru,north_coast,9,1,Independence & Republic (1821–),Republic of Peru (1824–),Battle of Ayacucho (1824) secures independence; caudillo era follows,4,republic_of_peru,linked,republic_of_peru_1824
 peru,north_coast,10,0,,War of the Pacific (1879–1884),"Peru and Bolivia vs Chile; Peru lost Tarapacá, Arica, Tacna",4,,event,war_of_the_pacific_1879_1884
@@ -3105,7 +3105,7 @@ anatolia,east,3,0,Medieval,Byzantine Empire,395–1071,1,byzantine_empire,linked
 anatolia,east,3,1,Medieval,Seljuk · 1st Beyliks (Shah-Armen · Saltuk · Artuqid),1071–1200,1,seljuk_empire,linked,seljuk_1st_beyliks_shah_armen_saltuk_artuqid
 anatolia,east,3,2,Medieval,Cilician Armenia,1080–1375,1,cilician_armenia,linked,cilician_armenia
 anatolia,east,3,3,Medieval,Trebizond Empire,1204–1461,1,trebizond_empire,linked,trebizond_empire
-anatolia,east,3,4,Medieval,Mongol Il-Khanate,1243–1335,1,mongol_il_khanate,linked,mongol_il_khanate
+anatolia,east,3,4,Medieval,Mongol Il-Khanate,1243–1335,1,ilkhanate,linked,mongol_il_khanate
 anatolia,east,3,5,Medieval,Mamluk · Ramazan · Dulkadir,14th–15th c.,1,mamluk_ramazan_dulkadir,linked,mamluk_ramazan_dulkadir
 anatolia,east,3,6,Medieval,Ottoman Sultanate,late 15th c.,1,ottoman_empire,linked,ottoman_sultanate
 anatolia,west,4,0,Ottoman · Modern,Ottoman Empire,,3,ottoman_empire,linked,ottoman_empire
@@ -3166,7 +3166,7 @@ arabia,yemen,4,0,Ottoman · Early Modern,Ottoman Empire,1517–1636 · 1849–19
 arabia,yemen,4,1,Ottoman · Early Modern,Zaydi Imamate (revolt),1636–1849,1,,polity,zaydi_imamate_revolt
 arabia,oman,4,0,Ottoman · Early Modern,Portuguese Estado da India,1507–1650,1,portuguese_estado_da_india,linked,portuguese_estado_da_india
 arabia,oman,4,1,Ottoman · Early Modern,Yarubid Dynasty,1624–1749,1,yarubid_dynasty,linked,yarubid_dynasty
-arabia,oman,4,2,Ottoman · Early Modern,Afsharid invasion,1737–1749,1,,regime,afsharid_invasion
+arabia,oman,4,2,Ottoman · Early Modern,Afsharid invasion,1737–1749,1,,dynasty,afsharid_invasion
 arabia,oman,4,3,Ottoman · Early Modern,Busaidi Sultanate,1749–,1,busaidi_sultanate,linked,busaidi_sultanate
 arabia,gulf,4,0,Ottoman · Early Modern,Portuguese Estado da India,1521–1602,4,portuguese_estado_da_india,linked,portuguese_estado_da_india
 arabia,gulf,4,1,Ottoman · Early Modern,Ottoman (Kuwait · N. Gulf),16th–17th c.,4,ottoman_empire,linked,ottoman_kuwait_n_gulf
@@ -3326,7 +3326,7 @@ egypt,lower,4,0,Third Intermediate,21st Dynasty (Tanis),1069–945 BCE,1,21st_dy
 egypt,upper,4,0,Third Intermediate,High Priests of Amun (Thebes),1080–945 BCE,1,high_priests_of_amun,linked,high_priests_of_amun_thebes
 egypt,lower,5,0,,22nd Dynasty (Bubastite / Libyan),945–720 BCE,1,22nd_dynasty,linked,22nd_dynasty_bubastite_libyan
 egypt,lower,5,1,,24th Dynasty (Sais),732–720 BCE,1,24th_dynasty,linked,24th_dynasty_sais
-egypt,upper,5,0,,22nd Dynasty (nominal),945–837 BCE,1,,regime,22nd_dynasty_nominal
+egypt,upper,5,0,,22nd Dynasty (nominal),945–837 BCE,1,,dynasty,22nd_dynasty_nominal
 egypt,upper,5,1,,23rd Dynasty (Leontopolis),837–728 BCE,1,23rd_dynasty,linked,23rd_dynasty_leontopolis
 egypt,lower,6,0,,25th Dynasty (Kushite / Nubian) — unified Egypt from the south,,2,meroitic_kingdom,linked,25th_dynasty_kushite_nubian
 egypt,lower,7,0,Late Period,Neo-Assyrian conquest,671–656 BCE,2,neo_assyrian_empire,linked,neo_assyrian_conquest
@@ -3356,7 +3356,7 @@ egypt,lower,14,1,,Ayyubid Sultanate — Saladin; Crusader Wars,1171–1250,2,ayy
 egypt,lower,15,0,Mamluk,Bahri Mamluk Sultanate — defeat of Mongols (Ain Jalut 1260); peak power,,2,mamluk_sultanate,linked,bahri_mamluk_sultanate
 egypt,lower,16,0,,Burji Mamluk Sultanate — Circassian; Timur invasion; decline,,2,mamluk_sultanate,linked,burji_mamluk_sultanate
 egypt,lower,17,0,Ottoman,Ottoman Empire (conquest of Egypt 1517),1517–1798,2,ottoman_empire,linked,ottoman_empire_conquest_of_egypt_1517
-egypt,lower,17,1,Ottoman,Ali Bey al-Kabir (brief independence),1769–1773,2,,regime,ali_bey_al_kabir_brief_independence
+egypt,lower,17,1,Ottoman,Ali Bey al-Kabir (brief independence),1769–1773,2,,dynasty,ali_bey_al_kabir_brief_independence
 egypt,lower,18,0,,French occupation (Napoleon),1798–1801,2,,event,french_occupation_napoleon
 egypt,lower,18,1,,Ottoman restored,1801–1805,2,ottoman_empire,linked,ottoman_restored
 egypt,lower,18,2,,Muhammad Ali dynasty (Khedivate of Egypt),1805–1867,2,muhammad_ali_dynasty,linked,muhammad_ali_dynasty_khedivate_of_egypt
@@ -3378,11 +3378,11 @@ georgia,west,1,0,Early Antiquity,Colchis Kingdom (Egrisi),c.1300–600 BCE,1,col
 georgia,west,1,1,Early Antiquity,Cimmerian · Scythian nomads,c.800–600 BCE,1,cimmerian_scythian_nomads,linked,cimmerian_scythian_nomads
 georgia,south,1,0,Early Antiquity,Diauehi Kingdom,c.1115–760 BCE,2,diauehi_kingdom,linked,diauehi_kingdom
 georgia,south,1,1,Early Antiquity,Urartu suzerainty,c.860–590 BCE,2,kingdom_of_urartu,linked,urartu_suzerainty
-georgia,west,2,0,,Greek colonies (Phasis · Dioscurias),from c.600 BCE,1,greek_colonies,linked,greek_colonies_phasis_dioscurias
+georgia,west,2,0,,Greek colonies (Phasis · Dioscurias),from c.600 BCE,1,,unclassified,greek_colonies_phasis_dioscurias
 georgia,west,2,1,,Colchis Kingdom,to c.100 BCE,1,colchis_kingdom,linked,colchis_kingdom
 georgia,south,2,0,,Achaemenid Persia — suzerainty,550–330 BCE,2,achaemenid_empire,linked,achaemenid_persia
 georgia,south,2,1,,Kingdom of Iberia (Kartli) founded,c.302 BCE,2,kingdom_of_iberia_founded,linked,kingdom_of_iberia_kartli_founded
-georgia,west,3,0,Ancient,Colchis → Pontus client kingdom,c.100–63 BCE,1,,regime,colchis_pontus_client_kingdom
+georgia,west,3,0,Ancient,Colchis → Pontus client kingdom,c.100–63 BCE,1,,dynasty,colchis_pontus_client_kingdom
 georgia,west,3,1,Ancient,Lazica (Egrisi) Kingdom,c.131–562 CE,1,lazica_kingdom,linked,lazica_egrisi_kingdom
 georgia,south,3,0,Ancient,Achaemenid / Orontid suzerainty,550–302 BCE,2,achaemenid_empire,linked,achaemenid_orontid_suzerainty
 georgia,south,3,1,Ancient,Kingdom of Iberia — Arsacid dynasty,1st–3rd c. CE,2,kingdom_of_iberia,linked,kingdom_of_iberia
@@ -3493,20 +3493,20 @@ iraq,nw,7,7,,Kara Koyunlu · Ak Koyunlu,1375–1508,1,kara_koyunlu,linked,kara_k
 iraq,sw,7,0,,Abbasid Caliphate,–1258,1,abbasid_caliphate,linked,abbasid_caliphate
 iraq,sw,7,1,,Seljuk suzerainty,1055–1194,1,seljuk_empire,linked,seljuk_suzerainty
 iraq,sw,7,2,,Mazyadid / tribal confederations,961–1150,1,mazyadid,linked,mazyadid_tribal_confederations
-iraq,sw,7,3,,Mongol · Il-Khanate,1258–1335,1,mongol_il_khanate,linked,mongol_il_khanate
-iraq,sw,7,4,,Jalayirid · Timurid invasion,1335–1410,1,,regime,jalayirid_timurid_invasion
+iraq,sw,7,3,,Mongol · Il-Khanate,1258–1335,1,ilkhanate,linked,mongol_il_khanate
+iraq,sw,7,4,,Jalayirid · Timurid invasion,1335–1410,1,,dynasty,jalayirid_timurid_invasion
 iraq,sw,7,5,,Ak Koyunlu,1452–1508,1,ak_koyunlu,linked,ak_koyunlu
 iraq,central,7,0,,Buyid dynasty,945–1055,1,buyid_dynasty,linked,buyid_dynasty
 iraq,central,7,1,,Abbasid Caliphate (nominal · Baghdad),945–1258; Mongol conquest (Sack of Baghdad) (1258),1,abbasid_caliphate,linked,abbasid_caliphate_nominal_baghdad
 iraq,central,7,2,,Seljuk Empire,1055–1194,1,seljuk_empire,linked,seljuk_empire
 iraq,central,7,3,,Il-Khanate,1258–1335,1,ilkhanate,linked,il_khanate
 iraq,central,7,4,,Jalayirid Sultanate,1335–1432,1,jalayirid_sultanate,linked,jalayirid_sultanate
-iraq,central,7,5,,Timurid invasion,1393–1405,1,,regime,timurid_invasion
+iraq,central,7,5,,Timurid invasion,1393–1405,1,,dynasty,timurid_invasion
 iraq,central,7,6,,Kara Koyunlu · Ak Koyunlu,1432–1508,1,kara_koyunlu,linked,kara_koyunlu_ak_koyunlu
 iraq,se,7,0,,Buyid dynasty,945–1055,1,buyid_dynasty,linked,buyid_dynasty
 iraq,se,7,1,,Abbasid Caliphate (nominal),945–1258,1,abbasid_caliphate,linked,abbasid_caliphate_nominal
 iraq,se,7,2,,Seljuk Empire,1055–1194,1,seljuk_empire,linked,seljuk_empire
-iraq,se,7,3,,Mongol · Il-Khanate,1258–1335,1,mongol_il_khanate,linked,mongol_il_khanate
+iraq,se,7,3,,Mongol · Il-Khanate,1258–1335,1,ilkhanate,linked,mongol_il_khanate
 iraq,se,7,4,,Jalayirid · Timurid,1335–1432,1,jalayirid_timurid,linked,jalayirid_timurid
 iraq,se,7,5,,Kara Koyunlu · Ak Koyunlu,1432–1508,1,kara_koyunlu,linked,kara_koyunlu_ak_koyunlu
 iraq,nw,8,0,Ottoman · Modern,Ottoman Empire,1534–1918,1,ottoman_empire,linked,ottoman_empire
@@ -3604,7 +3604,7 @@ levant,n_syria,9,2,,Mirdasid dynasty (Aleppo),1024–1080,1,mirdasid_dynasty,lin
 levant,n_syria,9,3,,Seljuk Empire,1070–1128,1,seljuk_empire,linked,seljuk_empire
 levant,n_syria,9,4,,Zangid Atabegate (Aleppo · Mosul),1128–1183,1,zangid_atabegate,linked,zangid_atabegate_aleppo_mosul
 levant,n_syria,9,5,,Ayyubid,1183–1260,1,ayyubid_sultanate,linked,ayyubid
-levant,n_syria,9,6,,Mongol Il-Khanate (raids),1260,1,mongol_il_khanate,linked,mongol_il_khanate_raids
+levant,n_syria,9,6,,Mongol Il-Khanate (raids),1260,1,ilkhanate,linked,mongol_il_khanate_raids
 levant,n_syria,9,7,,Mamluk Sultanate,1260–1516,1,mamluk_sultanate,linked,mamluk_sultanate
 levant,coastal,9,0,,Fatimid Caliphate,969–1099,1,fatimid_caliphate,linked,fatimid_caliphate
 levant,coastal,9,1,,Principality of Antioch (Crusader),1098–1268,1,,polity,principality_of_antioch_crusader
@@ -3739,7 +3739,7 @@ yemen,west,4,0,,Sulayhid dynasty (Ismaili Shia),1047–1138,2,sulayhid_dynasty,l
 yemen,west,4,1,,Hamdanid dynasty,1098–1174,2,hamdanid_dynasty,linked,hamdanid_dynasty
 yemen,east,4,0,,Zuray'id dynasty (Aden),1083–1174,1,zurayid_dynasty,linked,zuray_id_dynasty_aden
 yemen,west,5,0,,Ayyubid dynasty (Saladin's brother — conquers Yemen),1174–1229,2,ayyubid_sultanate,linked,ayyubid_dynasty_saladin_s_brother
-yemen,west,5,1,,Rasulid dynasty (Sunni — golden age of medieval Yemen),1229–1454,2,,regime,rasulid_dynasty_sunni
+yemen,west,5,1,,Rasulid dynasty (Sunni — golden age of medieval Yemen),1229–1454,2,,dynasty,rasulid_dynasty_sunni
 yemen,west,5,2,,Tahirid dynasty,1454–1517,2,tahirid_dynasty,linked,tahirid_dynasty
 yemen,east,5,0,,Kathiri Sultanate (Hadramaut),c.1395–1967,1,kathiri_sultanate,linked,kathiri_sultanate_hadramaut
 yemen,east,5,1,,Qu'aiti Sultanate (Hadramaut),c.1858–1967,1,quaiti_sultanate,linked,qu_aiti_sultanate_hadramaut
@@ -3791,7 +3791,7 @@ algeria,east,3,2,,Zirid dynasty,969–1052,1,zirid_dynasty,linked,zirid_dynasty
 algeria,west,4,0,,Almohad Caliphate,1147–1229; Marinid raids (border pressure) (13th–15th c.),1,almohad_caliphate,linked,almohad_caliphate
 algeria,west,4,1,,Zayyanid / Abdalwadid dynasty (Tlemcen),1235–1556,1,zayyanid,linked,zayyanid_abdalwadid_dynasty_tlemcen
 algeria,algiers,4,0,,Almohad Caliphate,1147–1229,1,almohad_caliphate,linked,almohad_caliphate
-algeria,algiers,4,1,,Zayyanid suzerainty (coastal),partial,1,,regime,zayyanid_suzerainty_coastal
+algeria,algiers,4,1,,Zayyanid suzerainty (coastal),partial,1,,dynasty,zayyanid_suzerainty_coastal
 algeria,kabylia,4,0,,Almohad Caliphate,1147–1229,1,almohad_caliphate,linked,almohad_caliphate
 algeria,kabylia,4,1,,Banu Ghaniya (Balearic Almoravid remnants),c.1184–1228,1,banu_ghaniya,linked,banu_ghaniya_balearic_almoravid_remnants
 algeria,kabylia,4,2,,Hafsid (nominal suzerainty),partial,1,hafsid_dynasty,linked,hafsid_nominal_suzerainty
@@ -3884,7 +3884,7 @@ sudan,alwa,1,0,Ancient,Alwa (forming),,1,,event,alwa_forming
 sudan,east,1,0,Ancient,Blemmyes (nomadic eastern desert),,1,blemmyes,linked,blemmyes_nomadic_eastern_desert
 sudan,west,1,0,Ancient,Nile peoples · Dagu,,1,nile_peoples,linked,nile_peoples_dagu
 sudan,south,1,0,Ancient,Nilotic peoples (Luo · proto-Dinka),,1,nilotic_peoples,linked,nilotic_peoples_luo_proto_dinka
-sudan,north,2,0,,Roman client / Nobatia forming,Meroite-Roman conflict & diplomacy (23–21 BCE),1,,regime,roman_client_nobatia_forming
+sudan,north,2,0,,Roman client / Nobatia forming,Meroite-Roman conflict & diplomacy (23–21 BCE),1,,dynasty,roman_client_nobatia_forming
 sudan,cent,2,0,,Kush Kingdom — Meroe phase,c.300 BCE–350 CE,1,kush_kingdom,linked,kush_kingdom
 sudan,alwa,2,0,,Alwa Kingdom (forming),,1,,polity,alwa_kingdom_forming
 sudan,east,2,0,,Blemmyes · early Beja,,1,blemmyes_early_beja,linked,blemmyes_early_beja
@@ -4137,7 +4137,7 @@ iran,khorasan,5,1,,Kushan Empire,30–375 CE,2,kushan_empire,linked,kushan_empir
 iran,baluchistan,5,0,,Kushan / Saka,,1,kushan_empire,linked,kushan_saka
 iran,mazandaran,6,0,Sassanid,Sassanid Empire,,6,sassanid_empire,linked,sassanid_empire
 iran,sistan,6,0,Sassanid,Kidarite / Chionite,c.320–467 CE,2,kidarite_kingdom,linked,kidarite_chionite
-iran,sistan,6,1,Sassanid,Hephthalite Empire,467–557 CE,2,hephthalite_empire,linked,hephthalite_empire
+iran,sistan,6,1,Sassanid,Hephthalites,467–557 CE,2,hephthalites,linked,hephthalites
 iran,sistan,6,2,Sassanid,Göktürk Khaganate,557–651 CE,2,goktürk_khaganate,linked,gktrk_khaganate
 iran,mazandaran,7,0,Early Islamic,Rashidun Caliphate,637–661,8,rashidun_caliphate,linked,rashidun_caliphate
 iran,mazandaran,7,1,Early Islamic,Umayyad Caliphate,661–750,8,umayyad_caliphate,linked,umayyad_caliphate
@@ -4253,7 +4253,7 @@ india,indus,2,0,4th–3rd c. BCE,Seleucid Empire (briefly),312–305 BCE; Alexan
 india,indus,2,1,4th–3rd c. BCE,Maurya Empire,322–185 BCE,1,maurya_empire,linked,maurya_empire
 india,upper_ganges,2,0,4th–3rd c. BCE,Maurya Empire — Pataliputra capital · Chandragupta · Ashoka,,3,maurya_empire,linked,maurya_empire
 india,south,2,0,4th–3rd c. BCE,Satavahana Dynasty (emerging),c.230 BCE,1,satavahana_empire,linked,satavahana_dynasty_emerging
-india,south,2,1,4th–3rd c. BCE,Sangam period (c.300 BCE – 200 CE) — Chola · Pandya · Chera,,1,,regime,sangam_period_c300_bce_200_ce
+india,south,2,1,4th–3rd c. BCE,Sangam period (c.300 BCE – 200 CE) — Chola · Pandya · Chera,,1,,dynasty,sangam_period_c300_bce_200_ce
 india,indus,3,0,2nd–1st c. BCE,Indo-Greek Kingdom (Menander I / Milinda),c.180–10 BCE,1,indo_greek_kingdom,linked,indo_greek_kingdom_menander_i_milinda
 india,indus,3,1,2nd–1st c. BCE,Indo-Scythians,c.100 BCE onward,1,indo_scythian_kingdom,linked,indo_scythians
 india,upper_ganges,3,0,2nd–1st c. BCE,Shunga Dynasty,185–73 BCE,1,shunga_dynasty,linked,shunga_dynasty
@@ -4262,7 +4262,7 @@ india,upper_ganges,3,2,2nd–1st c. BCE,Kuninda Kingdom,,1,kuninda_kingdom,linke
 india,lower_ganges,3,0,2nd–1st c. BCE,Mahameghavahana dynasty (Kalinga),c.100 BCE–400 CE,1,mahameghavahana_dynasty,linked,mahameghavahana_dynasty_kalinga
 india,lower_ganges,3,1,2nd–1st c. BCE,Adivasi tribal communities,,1,adivasi_tribal_communities,linked,adivasi_tribal_communities
 india,central,3,0,2nd–1st c. BCE,Satavahana Dynasty — Deccan overlords,,1,satavahana_empire,linked,satavahana_dynasty
-india,south,3,0,2nd–1st c. BCE,Sangam period — Chola · Pandya · Chera,c.300 BCE – 200 CE,1,,regime,sangam_period
+india,south,3,0,2nd–1st c. BCE,Sangam period — Chola · Pandya · Chera,c.300 BCE – 200 CE,1,,dynasty,sangam_period
 india,indus,4,0,1st–3rd c. CE,Indo-Scythians — Western Satraps,c.100 BCE–400 CE,1,indo_scythian_kingdom,linked,indo_scythians
 india,indus,4,1,1st–3rd c. CE,Indo-Parthian Kingdom (Gondophares),c.19 BCE–226 CE,1,indo_parthian_kingdom,linked,indo_parthian_kingdom_gondophares
 india,indus,4,2,1st–3rd c. CE,Kushan Empire,c.30–375 CE,1,kushan_empire,linked,kushan_empire
@@ -4275,7 +4275,7 @@ india,south,4,0,1st–3rd c. CE,Sangam period (ending c.200 CE),,1,,event,sangam
 india,south,4,1,1st–3rd c. CE,Chola (early — Sangam period),,1,chola_empire,linked,chola_early
 india,south,4,2,1st–3rd c. CE,Pandya Dynasty,,1,pandya_dynasty,linked,pandya_dynasty
 india,indus,5,0,4th–5th c. CE,Kidarites (Hunnic),c.350–467,1,kidarites,linked,kidarites_hunnic
-india,indus,5,1,4th–5th c. CE,Hephthalites — Alchon Huns (Toramana · Mihirakula),c.460–528,1,hephthalite_empire,linked,hephthalites
+india,indus,5,1,4th–5th c. CE,Alchon Huns (Toramana · Mihirakula),c.460–528,1,alchon_huns,linked,alchon_huns_toramana_mihirakula
 india,upper_ganges,5,0,4th–5th c. CE,Gupta Empire — Golden Age of India,c.320–550 CE; Chandragupta I · Samudragupta · Chandragupta II · Kumaragupta,2,gupta_empire,linked,gupta_empire
 india,central,5,0,4th–5th c. CE,Andhra Ikshvaku,c.210–340,1,andhra_ikshvaku,linked,andhra_ikshvaku
 india,central,5,1,4th–5th c. CE,Vakataka Dynasty,c.250–500,1,vakataka_dynasty,linked,vakataka_dynasty
@@ -4415,12 +4415,12 @@ pakistan,center,6,2,,Kidarites,c.350–467,1,kidarites,linked,kidarites
 pakistan,center,6,3,,Gupta Empire (Punjab frontier),c.320–550,1,gupta_empire,linked,gupta_empire_punjab_frontier
 pakistan,north,6,0,,Kushan Empire — Gandhara Buddhist art flourishes,c.30–375 CE,1,kushan_empire,linked,kushan_empire
 pakistan,north,6,1,,Kidarites,c.350–467,1,kidarites,linked,kidarites
-pakistan,north,6,2,,Alchon Huns (Hephthalites),c.460–565,1,hephthalite_empire,linked,alchon_huns_hephthalites
+pakistan,north,6,2,,Alchon Huns,c.460–565,1,alchon_huns,linked,alchon_huns
 pakistan,north,6,3,,Sassanid Empire (western influence),c.560–651,1,sassanid_empire,linked,sassanid_empire_western_influence
 pakistan,south,7,0,,Rai Dynasty of Sindh,c.489–632,1,rai_dynasty_of_sindh,linked,rai_dynasty_of_sindh
 pakistan,center,7,0,,Malwa Kingdom,c.500–625,1,malwa_kingdom,linked,malwa_kingdom
 pakistan,center,7,1,,Kanauj Kingdom,c.550–647,1,kanauj_kingdom,linked,kanauj_kingdom
-pakistan,north,7,0,,Alchon Huns (declining),c.500–565,1,hephthalite_empire,linked,alchon_huns_declining
+pakistan,north,7,0,,Alchon Huns (declining),c.500–565,1,alchon_huns,linked,alchon_huns_declining
 pakistan,north,7,1,,Turk Shahis (Kabul & Gandhara),c.565–870,1,turk_shahis,linked,turk_shahis_kabul_gandhara
 pakistan,north,7,2,,Kashmir (Karkota dynasty),c.625–855,1,kashmir,linked,kashmir_karkota_dynasty
 pakistan,south,8,0,Medieval,Rashidun Caliphate (frontier raids),c.644–661; Arab conquest of Sindh (Muhammad bin Qasim) (711–712),1,rashidun_caliphate,linked,rashidun_caliphate_frontier_raids
@@ -4448,17 +4448,17 @@ pakistan,center,11,1,,Eastern Chagatai Khanate (incursions),1340s–1400,1,chaga
 pakistan,center,11,2,,Delhi Sultanate (Sayyid dynasty),1414–1451,1,delhi_sultanate,linked,delhi_sultanate_sayyid_dynasty
 pakistan,center,11,3,,Timurid Empire — Timur sacks Delhi (1398),1398–1507,1,timurid_empire,linked,timurid_empire
 pakistan,north,11,0,,Kashmir Sultanate (Shah Mir dynasty),1339–1586,1,kashmir_sultanate,linked,kashmir_sultanate_shah_mir_dynasty
-pakistan,north,11,1,,Kart dynasty (Gandhara periphery),c.1244–1389,1,,regime,kart_dynasty_gandhara_periphery
+pakistan,north,11,1,,Kart dynasty (Gandhara periphery),c.1244–1389,1,,dynasty,kart_dynasty_gandhara_periphery
 pakistan,south,12,0,,Arghun dynasty (Sindh),1520–1554,1,arghun_dynasty,linked,arghun_dynasty_sindh
 pakistan,south,12,1,,Tarkhan dynasty (Sindh),1554–1591,1,han_dynasty,linked,tarkhan_dynasty_sindh
 pakistan,center,12,0,,Multan Emirate (Langah Sultanate),1445–1526,1,multan_emirate,linked,multan_emirate_langah_sultanate
 pakistan,center,12,1,,Delhi Sultanate (Lodi dynasty),1451–1526; Babur — Battle of Panipat (1526) (1526),1,delhi_sultanate,linked,delhi_sultanate_lodi_dynasty
 pakistan,north,12,0,,Kashmir Sultanate (continuing),1339–1586,1,kashmir_sultanate,linked,kashmir_sultanate_continuing
 pakistan,south,13,0,Modern,Mughal Empire — Sindh Subah,1591–1739,1,mughal_empire,linked,mughal_empire
-pakistan,south,13,1,Modern,Kalhora dynasty (Sindh — Mughal vassals → independent),1701–1783,1,,regime,kalhora_dynasty_sindh
+pakistan,south,13,1,Modern,Kalhora dynasty (Sindh — Mughal vassals → independent),1701–1783,1,,dynasty,kalhora_dynasty_sindh
 pakistan,south,13,2,Modern,Talpur dynasty (Sindh),1783–1843,1,talpur_dynasty,linked,talpur_dynasty_sindh
 pakistan,center,13,0,Modern,Mughal Empire — Punjab & Lahore Subah,1526–1739,1,mughal_empire,linked,mughal_empire
-pakistan,center,13,1,Modern,Sur dynasty (Afghan interregnum),1540–1556,1,,regime,sur_dynasty_afghan_interregnum
+pakistan,center,13,1,Modern,Sur dynasty (Afghan interregnum),1540–1556,1,,dynasty,sur_dynasty_afghan_interregnum
 pakistan,center,13,2,Modern,Hotak dynasty (invasion of Punjab),1709–1738,1,hotak_dynasty,linked,hotak_dynasty_invasion_of_punjab
 pakistan,center,13,3,Modern,Afsharid dynasty — Nadir Shah sacks Delhi (1739),1738–1747,1,afsharid_dynasty,linked,afsharid_dynasty
 pakistan,center,13,4,Modern,Durrani Empire — Punjab as Afghan territory,1747–1799,1,durrani_empire,linked,durrani_empire
@@ -4480,7 +4480,7 @@ sri_lanka,sinhala,0,2,Ancient,Great Chronicle (Mahavamsa) traditions,,2,great_ch
 sri_lanka,east,0,0,Ancient,Ruhuna kingdom (southeastern principality),c.200 BCE–,1,ruhuna_kingdom,linked,ruhuna_kingdom_southeastern_principality
 sri_lanka,east,0,1,Ancient,Often semi-independent from Anuradhapura,,1,often_semi_independent_from_anuradhapura,linked,often_semi_independent_from_anuradhapura
 sri_lanka,sinhala,1,0,Anuradhapura,Anuradhapura kingdom (continued — great irrigation works),c.377 BCE–1017,2,anuradhapura_kingdom,linked,anuradhapura_kingdom_continued
-sri_lanka,sinhala,1,1,Anuradhapura,South Indian invasions (Chola · Pandya · Pallava raids),recurring,2,,regime,south_indian_invasions_chola_pandya_pallava_raids
+sri_lanka,sinhala,1,1,Anuradhapura,South Indian invasions (Chola · Pandya · Pallava raids),recurring,2,,dynasty,south_indian_invasions_chola_pandya_pallava_raids
 sri_lanka,east,1,0,Anuradhapura,Ruhuna (refuge for Sinhalese kings during invasions),,1,,unclassified,ruhuna_refuge_for_sinhalese_kings_during_invasions
 sri_lanka,sinhala,2,0,Polonnaruwa,Chola Empire (conquest of Anuradhapura),1017–1070,2,chola_empire,linked,chola_empire_conquest_of_anuradhapura
 sri_lanka,sinhala,2,1,Polonnaruwa,Polonnaruwa kingdom (Vijayabahu I recovers from Chola),1070–1232,2,polonnaruwa_kingdom,linked,polonnaruwa_kingdom_vijayabahu_i_recovers_from_chola
@@ -4529,7 +4529,7 @@ indonesia,java,1,3,,Kahuripan → Kediri kingdom (East Java),1006–1222,1,,poli
 indonesia,java,1,4,,Kanjuruhan kingdom (East Java),c.760–,1,kanjuruhan_kingdom,linked,kanjuruhan_kingdom_east_java
 indonesia,east,1,0,,Early Maluku states (Gapi kingdom etc.),,1,early_maluku_states,linked,early_maluku_states_gapi_kingdom_etc
 indonesia,east,1,1,,Luwu · Gowa · Banggai kingdoms (Sulawesi),,1,luwu_gowa_banggai_kingdoms,linked,luwu_gowa_banggai_kingdoms_sulawesi
-indonesia,sumatra,2,0,Medieval,Srivijaya (declining after Chola raids),1025–,1,,regime,srivijaya_declining_after_chola_raids
+indonesia,sumatra,2,0,Medieval,Srivijaya (declining after Chola raids),1025–,1,,dynasty,srivijaya_declining_after_chola_raids
 indonesia,sumatra,2,1,Medieval,Dharmasraya (Sumatran successor state),c.1183–1347,1,dharmasraya,linked,dharmasraya_sumatran_successor_state
 indonesia,sumatra,2,2,Medieval,Pagaruyung kingdom (Minangkabau highlands),c.1347–,1,pagaruyung_kingdom,linked,pagaruyung_kingdom_minangkabau_highlands
 indonesia,java,2,0,Medieval,Sunda kingdom (West Java),c.669–1579,1,sunda_kingdom,linked,sunda_kingdom_west_java
@@ -4539,7 +4539,7 @@ indonesia,east,2,0,Medieval,Ternate Sultanate · Tidore Sultanate (Maluku — sp
 indonesia,east,2,1,Medieval,Kutai Kartanegara (East Kalimantan),,1,kutai_kartanegara,linked,kutai_kartanegara_east_kalimantan
 indonesia,sumatra,3,0,,Samudra Pasai Sultanate (first Islamic state in SE Asia),c.1267–1521,1,samudra_pasai_sultanate,linked,samudra_pasai_sultanate_first_islamic_state_in_se_asia
 indonesia,java,3,0,,Majapahit Empire (declining),c.1400–1527,1,majapahit_empire,linked,majapahit_empire_declining
-indonesia,java,3,1,,Bali — Warmadiwa dynasty → Gelgel kingdom,,1,,regime,bali
+indonesia,java,3,1,,Bali — Warmadiwa dynasty → Gelgel kingdom,,1,,dynasty,bali
 indonesia,east,3,0,,Brunei Sultanate (NW Borneo),,1,brunei_sultanate,linked,brunei_sultanate_nw_borneo
 indonesia,east,3,1,,Sulu Sultanate (NE Borneo),,1,sulu_sultanate,linked,sulu_sultanate_ne_borneo
 indonesia,sumatra,4,0,Islamization,Aceh Sultanate (dominant in N. Sumatra),c.1496–1903,1,aceh_sultanate,linked,aceh_sultanate_dominant_in_n_sumatra
@@ -4652,7 +4652,7 @@ myanmar,lower,2,1,Fragmentation,Yuan dynasty — Mien Province (brief Mongol int
 myanmar,arakan,2,0,Fragmentation,Arakan kingdom (Laungkyet dynasty),c.1237–1430,1,arakan_kingdom,linked,arakan_kingdom_laungkyet_dynasty
 myanmar,arakan,2,1,Fragmentation,Mrauk U kingdom (Arakanese golden age),1430–1785,1,,polity,mrauk_u_kingdom_arakanese_golden_age
 myanmar,upper,3,0,Toungoo,Toungoo dynasty (reunifies Burma — Tabinshwehti · Bayinnaung),1510–1599,2,toungoo_dynasty,linked,toungoo_dynasty_reunifies_burma
-myanmar,upper,3,1,Toungoo,Restored Toungoo dynasty (Nyaungyan),1599–1752,2,,regime,restored_toungoo_dynasty_nyaungyan
+myanmar,upper,3,1,Toungoo,Restored Toungoo dynasty (Nyaungyan),1599–1752,2,,dynasty,restored_toungoo_dynasty_nyaungyan
 myanmar,arakan,3,0,Toungoo,Mrauk U kingdom (Arakan — independent),1430–1785,1,mrauk_u_kingdom,linked,mrauk_u_kingdom_arakan
 myanmar,upper,4,0,Konbaung,Konbaung dynasty (Alaungpaya — last Burmese dynasty),1752–1885,2,konbaung_dynasty,linked,konbaung_dynasty_alaungpaya
 myanmar,upper,4,1,Konbaung,Conquers Arakan (1785) · Manipur · Assam,,2,conquers_arakan,linked,conquers_arakan_1785_manipur_assam
@@ -4788,12 +4788,12 @@ vietnam,center,4,0,,Champa (Vijaya capital — wars with Đại Việt),10th–1
 vietnam,south,4,0,,Khmer Empire (Angkor — declining),–15th c.,1,khmer_empire,linked,khmer_empire_angkor
 vietnam,north,5,0,,Đại Ngu — Hồ dynasty,1400–1407,1,ai_ngu,linked,i_ngu
 vietnam,north,5,1,,Ming dynasty — Giao Chỉ (Chinese occupation),1407–1427,1,ming_dynasty,linked,ming_dynasty
-vietnam,north,5,2,,Đại Việt — Later Trần dynasty (resistance),1407–1413,1,,regime,i_vit
+vietnam,north,5,2,,Đại Việt — Later Trần dynasty (resistance),1407–1413,1,,dynasty,i_vit
 vietnam,north,5,3,,Đại Việt — Later Lê dynasty (Lê Lợi),1428–1527,1,ai_viet,linked,i_vit
 vietnam,center,5,0,,Champa (declining under Đại Việt pressure),15th c.,1,,polity,champa_declining_under_i_vit_pressure
 vietnam,south,5,0,,Khmer post-Angkor (Phnom Penh era),15th c.–,1,,event,khmer_post_angkor_phnom_penh_era
 vietnam,north,6,0,,Đại Việt — Mạc dynasty (usurper),1527–1592,1,ai_viet,linked,i_vit
-vietnam,north,6,1,,Đại Việt — Later Lê dynasty (restored),1533–1789,1,,regime,i_vit
+vietnam,north,6,1,,Đại Việt — Later Lê dynasty (restored),1533–1789,1,,dynasty,i_vit
 vietnam,center,6,0,,Champa (rump state — final decline),–1832,2,,polity,champa_rump_state
 vietnam,north,7,0,Trịnh-Nguyễn Partition,Đàng Ngoài — Trịnh lords (control Lê emperor),1545–1787,1,ang_ngoai,linked,ng_ngoi
 vietnam,center,7,0,Trịnh-Nguyễn Partition,Đàng Trong — Nguyễn lords (Quảng Nam),1558–1777,2,ang_trong,linked,ng_trong

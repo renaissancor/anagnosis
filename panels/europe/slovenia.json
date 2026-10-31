@@ -366,7 +366,7 @@
           "stack": [
             {
               "label": "Italy — Istria (Treaty of Rapallo 1920)",
-              "polity": "italy"
+              "polity": "kingdom_of_italy"
             }
           ],
           "span": 1
@@ -388,7 +388,7 @@
           "stack": [
             {
               "label": "Italy — Istria (continued)",
-              "polity": "italy"
+              "polity": "kingdom_of_italy"
             }
           ],
           "span": 1

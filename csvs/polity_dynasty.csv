@@ -92,13 +92,11 @@ ilkhanate,ilkhanid,1256,1335
 indo_greek_kingdom,indo_greek,-180,-10
 indo_parthian_kingdom,indo_parthian,19,226
 indo_scythian_kingdom,indo_scythian,-110,400
-italy,savoy,1861,1946
 jalayirid_sultanate,jalayirid,1335,1432
 jammu_kashmir,dogra,1846,1947
 japanese_korea,imperial_yamato,1910,1945
 jaunpur_sultanate,delhi_mamluk,1394,1479
 jin_dynasty,jin_wanyan,1115,1234
-jin_jurchen,jin_wanyan,1115,1234
 joseon,joseon_yi,1392,1897
 kadamba_dynasty,kadamba,345,525
 kakatiya_dynasty,kakatiya,1163,1323
@@ -117,7 +115,7 @@ khazar_khaganate,khazar,650,969
 khmer_empire,angkor,802,1431
 khwarazmian_empire,khwarazmshah,1077,1231
 kidarites,hunnic,360,467
-kidarites_alchon_huns,hunnic,360,560
+alchon_huns,hunnic,380,565
 kievan_rus,rurikid,882,1240
 kingdom_of_armenia,bagratid,331,428
 kingdom_of_bohemia,habsburg,1526,1918
@@ -172,7 +170,6 @@ mitanni_empire,hurrian_royal,-1500,-1300
 modern_japan,imperial_yamato,1947,
 moghulistan,borjigin,1347,1462
 mongol_empire,borjigin,1206,1368
-mongol_il_khanate,ilkhanid,1256,1335
 mughal_empire,mughal,1526,1857
 muhallabid_governors,umayyad,771,793
 muhammad_ali_dynasty,muhammad_ali,1805,1953
@@ -257,7 +254,6 @@ vijayanagara_empire,chalukya,1336,1646
 visigothic_kingdom,visigothic_royal,418,721
 western_chalukya,western_chalukya,973,1189
 western_han,han_liu,-202,-9
-western_liao,qara_khitai,1124,1218
 western_roman_empire,roman_julio_claudian,395,476
 western_wei,xiongnu_royal,535,557
 western_xia,western_xia_royal,1038,1227

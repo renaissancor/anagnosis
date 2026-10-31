@@ -582,7 +582,7 @@
           "stack": [
             {
               "label": "Italy — Istria (Treaty of Rapallo 1920)",
-              "polity": "italy"
+              "polity": "kingdom_of_italy"
             }
           ],
           "span": 1
@@ -594,7 +594,7 @@
             },
             {
               "label": "Italy — Zadar & some coastal towns",
-              "polity": "italy"
+              "polity": "kingdom_of_italy"
             }
           ],
           "span": 1
@@ -617,7 +617,7 @@
             {
               "label": "Italy — annexed Istria",
               "note": "1941–1943",
-              "polity": "italy"
+              "polity": "kingdom_of_italy"
             }
           ],
           "span": 1
@@ -626,7 +626,7 @@
           "stack": [
             {
               "label": "Italy (1941–43) → Germany / NDH (1943–45)",
-              "polity": "italy"
+              "polity": "kingdom_of_italy"
             }
           ],
           "span": 1

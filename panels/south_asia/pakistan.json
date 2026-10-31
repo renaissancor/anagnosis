@@ -334,8 +334,8 @@
               "polity": "kidarites"
             },
             {
-              "polity": "hephthalite_empire",
-              "label": "Alchon Huns (Hephthalites)",
+              "polity": "alchon_huns",
+              "label": "Alchon Huns",
               "note": "c.460–565"
             },
             {
@@ -379,7 +379,7 @@
         {
           "stack": [
             {
-              "polity": "hephthalite_empire",
+              "polity": "alchon_huns",
               "label": "Alchon Huns (declining)",
               "note": "c.500–565"
             },

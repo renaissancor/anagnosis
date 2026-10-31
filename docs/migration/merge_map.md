@@ -82,7 +82,12 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 | `alexander`, `alexander_the_great` | `macedonian_empire` |
 | `prc` | `peoples_republic_of_china` |
 | `venice`, `venice_republic` | `republic_of_venice` |
-| `il_khanate` | `ilkhanate` |
+| `il_khanate`, `mongol_il_khanate` | `ilkhanate` |
+| `western_liao` | `qara_khitai` |
+| `jin_jurchen` | `jin_dynasty` |
+| `hephthalite_empire` | `hephthalites` |
+| `italy` (retired as a polity id; still the territory and panel id, so not in `SYNONYM_MAP`) | `kingdom_of_italy` |
+| `kidarites_alchon_huns` (split: Kidarite cells stay on `kidarites`, Alchon cells use `alchon_huns`; not in `SYNONYM_MAP` because the target depends on the cell) | `kidarites` / `alchon_huns` |
 | `first_turkic_empire` | `first_turkic_khaganate` |
 | `roman_empire_pagan`, `roman_empire_christian` | `roman_empire` |
 | `inju`, `injuid` | `injuid_dynasty` |

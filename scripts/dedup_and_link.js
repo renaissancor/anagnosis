@@ -120,6 +120,10 @@ const SYNONYM_MAP = new Map([
   ['injuid', 'injuid_dynasty'],
   ['khalji', 'khalji_dynasty'],
   ['il_khanate', 'ilkhanate'],
+  ['mongol_il_khanate', 'ilkhanate'],
+  ['western_liao', 'qara_khitai'],
+  ['jin_jurchen', 'jin_dynasty'],
+  ['hephthalite_empire', 'hephthalites'],
 
   // ── Roman Empire merge ──
   ['roman_empire_pagan', 'roman_empire'],
