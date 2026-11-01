@@ -1,47 +1,30 @@
 #!/usr/bin/env node
 // ============================================================
 // Generate polity.csv stub rows for unresolved canonical entities
-// (P3.10). Reads csvs/derived/canonical_entities.csv (filter to unresolved_polity
+// (P3.10). Reads derived/canonical_entities.csv (filter to unresolved_polity
 // + polity), walks panel JSONs to gather occurrence context, parses
 // dates from notes, infers government from ID suffixes, and maps
 // panel directories to territory FKs.
 //
 // Usage:   node scripts/generate_stubs.js
-// Output:  csvs/derived/polity_stubs.csv  (review-only; DO NOT merge blindly)
+// Output:  derived/polity_stubs.csv  (review-only; DO NOT merge blindly)
 // ============================================================
 
 const fs = require('fs');
 const path = require('path');
 
 const BASE = path.join(__dirname, '..');
-const HISTORY_DIR = path.join(BASE, 'data', 'history');
-const ENTITIES_IN  = path.join(BASE, 'csvs', 'derived', 'canonical_entities.csv');
+const HISTORY_DIR = path.join(BASE, 'panels');
+const ENTITIES_IN  = path.join(BASE, 'derived', 'canonical_entities.csv');
 const POLITY_IN    = path.join(BASE, 'csvs', 'polity.csv');
 const TERRITORY_IN = path.join(BASE, 'csvs', 'territory.csv');
-const STUBS_OUT    = path.join(BASE, 'csvs', 'derived', 'polity_stubs.csv');
+const STUBS_OUT    = path.join(BASE, 'derived', 'polity_stubs.csv');
 
 // ─── CSV PARSING ──────────────────────────────────────────
 
-// Minimal RFC4180-ish parser (handles quoted fields, double-quote escapes).
+const csv = require('../code/lib/csv');
 function parseCSV(text) {
-  const rows = [];
-  let row = [], cur = '', inQ = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQ) {
-      if (c === '"' && text[i + 1] === '"') { cur += '"'; i++; }
-      else if (c === '"') inQ = false;
-      else cur += c;
-    } else {
-      if (c === '"') inQ = true;
-      else if (c === ',') { row.push(cur); cur = ''; }
-      else if (c === '\n') { row.push(cur); rows.push(row); row = []; cur = ''; }
-      else if (c === '\r') { /* skip */ }
-      else cur += c;
-    }
-  }
-  if (cur.length || row.length) { row.push(cur); rows.push(row); }
-  return rows.filter(r => r.length > 1 || (r.length === 1 && r[0] !== ''));
+  return csv.parseRows(text).filter(r => r.length > 1 || (r.length === 1 && r[0] !== ''));
 }
 
 function escapeCSV(val) {

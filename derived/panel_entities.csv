@@ -1,0 +1,1172 @@
+entity_id,entity_type,canonical_name,dynasty,panel_count,panels,source_labels
+neolithic_farmers_culture,culture,Neolithic farmers,,1,afghanistan,Neolithic farmers
+aryan_east_iranian_migrations,event,Aryan / East Iranian migrations,,1,afghanistan,Aryan / East Iranian migrations
+helmand_culture,culture,Helmand culture,,2,afghanistan|iran,Helmand culture (Helmand Civilization) | Helmand culture
+bmac_oxus_civilization_culture,culture,BMAC / Oxus Civilization,,1,afghanistan,BMAC / Oxus Civilization
+gandara_grave_culture,culture,Gandara Grave Culture,,1,afghanistan,Gandara Grave Culture
+neolithic_highland_peoples_culture,culture,Neolithic highland peoples,,1,afghanistan,Neolithic highland peoples
+media_suzerainty,unclassified,Media suzerainty,,1,afghanistan,Media suzerainty
+vedic_period,event,Vedic period,,1,afghanistan,Vedic period (early/middle/late) — Arachosia
+gandara_grave_culture__early_indo_aryan,polity,Gandara Grave Culture — early Indo-Aryan,early Indo-Aryan,1,afghanistan,Gandara Grave Culture — early Indo-Aryan
+achaemenid_empire,existing_polity,Achaemenid Empire,,27,afghanistan|turkmenistan|uzbekistan|anatolia|arabia|armenia|azerbaijan|egypt|georgia|iraq|levant|iran|india|pakistan,Achaemenid Empire — Aria Satrapy | Achaemenid Empire — Arachosia Satrapy | Achaemenid Empire — Bactria Satrapy | Achaemenid Empire — Gandhara / Paropamisadae Satrapies | Achaemenid Empire — Bactria / Gandhara border | Achaemenid Empire (Margiana Satrapy) | Achaemenid Empire (Parthia Satrapy) | Achaemenid Empire (Chorasmia Satrapy) | Achaemenid Empire (Sogdiana Satrapy) | Achaemenid Empire (Ferghana Satrapy) | Hellespontine-Phrygia · Lydia Satrapies | Cappadocia Satrapy | Armenia Satrapy | Achaemenid Maka Satrapy | Achaemenid Empire | Achaemenid Persia — Armenian satrapy | Achaemenid Persia (satrapy) | Achaemenid / 27th Dynasty | Achaemenid / 31st Dynasty | Achaemenid Persia — suzerainty | Achaemenid / Orontid suzerainty | Achaemenid Empire — Gandhara & Hindush Satrapies | Achaemenid Empire — Sindh frontier | Achaemenid Empire — Gandhara Satrapy
+macedonian_empire,existing_polity,Alexander the Great,,14,afghanistan|turkmenistan|uzbekistan|egypt|iraq|levant|iran,Alexander the Great (Alexandria in Aria) | Alexander — Alexandria Arachosia (Kandahar) | Alexander — Alexandria-on-the-Oxus (Balkh) | Alexander — Paropamisadae / Alexandria sub Caucaso | Alexander the Great · Seleucid | Argead dynasty — Alexander the Great · Diadochi | Macedonian Empire (Alexander) | Alexander / Diadochi | Macedonian / Diadochi
+seleucid_empire,existing_polity,Seleucid Empire,,18,afghanistan|anatolia|armenia|azerbaijan|iraq|levant|iran|india|pakistan,Seleucid Empire (Aria province) | Seleucid Empire | Seleucid → Greco-Bactrian | Seleucid Empire · Galatia · Paphlagonia | Seleucid suzerainty | Seleucid / Atropatenian suzerainty | Seleucid Empire (briefly)
+greco_bactrian_kingdom,existing_polity,Greco-Bactrian Kingdom,,9,afghanistan|turkmenistan|uzbekistan|iran|pakistan,Greco-Bactrian Kingdom (influence) | Greco-Bactrian Kingdom | Greco-Bactrian Kingdom (center — Bactra) | Greco-Bactrian Kingdom (Gandhara)
+parthian_empire,existing_polity,Parthian Empire,,10,afghanistan|turkmenistan|arabia|azerbaijan|iraq|iran,Parthian Empire (Aria satrapy) | Parthian Empire (Aria) | Parthian Empire (Arsacid dynasty — from Nisa) | Parthian Empire | Parthian suzerainty | Parthian Empire (Ctesiphon)
+maurya_empire,existing_polity,Maurya Empire,,8,afghanistan|iran|india|pakistan,Maurya Empire | Mauryan Empire (briefly) | Maurya Empire — Pataliputra capital · Chandragupta · Ashoka | Maurya Empire — Taxila as provincial capital
+indo_greek_kingdom,existing_polity,Indo-Greek Kingdom,,6,afghanistan|india|pakistan,Indo-Greek Kingdom | Indo-Greek Kingdom (Menander I / Milinda) | Indo-Greek Kingdom (lower Sindh)
+indo_scythian_kingdom,existing_polity,Indo-Scythian Kingdom,,5,afghanistan|india|pakistan,Indo-Scythian Kingdom | Indo-Scythians | Indo-Scythians — Western Satraps | Indo-Scythians — Northern Satraps
+yuezhi_migration_through_bactria,event,Yuezhi migration through Bactria,,1,afghanistan,Yuezhi (Da Yuezhi) migration through Bactria
+kushan_empire,existing_polity,Kushan Empire (origins here,,18,afghanistan|turkmenistan|uzbekistan|tibet|iran|india|pakistan,Kushan Empire (origins here — Yuezhi chiefs) | Kushan Empire | Kushan Empire (Bactrian heartland) | Kushan Empire (frontier influence) | Kushan / Saka | Kushan Empire (Mathura second capital) | Kushan Empire — Gandhara Buddhist art flourishes
+indo_parthian_kingdom,existing_polity,Indo-Parthian Kingdom,,5,afghanistan|india|pakistan,Indo-Parthian Kingdom | Indo-Parthian Kingdom (Gondophares)
+sassanid_empire,existing_polity,Sassanid Empire,,25,afghanistan|turkmenistan|uzbekistan|arabia|armenia|azerbaijan|egypt|georgia|iraq|levant|iran|pakistan,Sassanid Empire | Sassanid (restored in Aria) | Sassanid (restored) | Sassanid (Sogdian city-states as vassals) | Sassanid Yemen | Sassanid Marzpanate (Persarmenia) | Sassanid Persia (full control) | Sassanid occupation | Sassanid Iberia (Marzpanate) | Sassanid Persia (East Georgia) | Sassanid Empire (Ctesiphon) | Sassanid | Sassanid Empire (western Sindh frontier) | Sassanid Empire (western influence)
+kidarites,existing_polity,Kidarites / Alchon Huns,,16,afghanistan|turkmenistan|uzbekistan|xinjiang|iran|india|pakistan,Kidarites / Alchon Huns (Aria) | Kidarites · Alchon Huns (Zabulistan) | Kidarites | Kidarites / Alchon Huns | Kidarites / Xionites | Kidarites · Alchon Huns | Kidarite / Chionite | Kidarites (Hunnic)
+hephthalites,existing_polity,Hephthalites,,14,afghanistan|kazakhstan|turkmenistan|uzbekistan|xinjiang|iran,Hephthalites | Hephthalites (eastern branch) | Hephthalites (eastern wing)
+kushano_sasanian_kingdom,existing_polity,Kushano-Sasanian Kingdom,,8,afghanistan|turkmenistan|uzbekistan|india|pakistan,Kushano-Sasanian Kingdom (south) | Kushano-Sasanian Kingdom | Kushano-Sasanian / Sassanid | Kushano-Sasanian (western frontier)
+first_turkic_khaganate,existing_polity,First Türkic Empire,,10,afghanistan|kazakhstan|china|mongolia|iran,First Türkic Empire (Tokharistan) | First Türkic Empire | Göktürk Khaganate (Western wing) | Göktürk Khaganate | Rouran → Göktürk Khaganate (突厥) | Göktürk Khaganate (Eastern · Western) | First Turkic Khaganate (突厥)
+nezak_huns,existing_polity,Nezak Huns,,3,afghanistan|india,Nezak Huns (brief) | Nezak Huns | Nezak Huns · Turk Shahis (Gandhara)
+rashidun_caliphate,existing_polity,Rashidun Caliphate,,17,afghanistan|turkmenistan|uzbekistan|arabia|armenia|azerbaijan|egypt|georgia|iraq|levant|algeria|libya|tunisia|iran|pakistan,Rashidun Caliphate (Herat conquered 651) | Rashidun conquest (Balkh 652) | Rashidun Caliphate | Rashidun Caliphate (Arminiya) | Rashidun Caliphate (frontier raids)
+umayyad_caliphate,existing_polity,Umayyad Caliphate,,23,afghanistan|turkmenistan|uzbekistan|iberia|arabia|armenia|azerbaijan|egypt|georgia|iraq|levant|morocco|algeria|libya|tunisia|iran|pakistan,Umayyad Caliphate | Umayyad Caliphate (Tokharistan) | Umayyad Caliphate (Transoxiana conquest) | Umayyad conquest | Umayyad conquest (partial) | Umayyad Caliphate (Al-Andalus) | Umayyad Caliphate (Arminiya) | Umayyad Caliphate (capital: Damascus) | Umayyad Caliphate — conquest of the Maghreb | Umayyad Caliphate — Sindh Province
+zunbil_dynasty,existing_polity,Zunbil dynasty (Zabulistan,,3,afghanistan|india,Zunbil dynasty (Zabulistan — resisted Arab conquest for 200 years) | Zunbil dynasty (finally conquered by Saffarids) | Zunbil dynasty (Zabulistan)
+tocharistan_yabgu,unclassified,Tocharistan Yabgu,,1,afghanistan,Tocharistan Yabgu (northern Kandahar fringe)
+turk_shahis,existing_polity,Türk Shahis,,4,afghanistan|pakistan,Türk Shahis (Buddhist Kabul rulers) | Türk Shahis → Hindu Shahis (drove out Türk Shahis) | Turk Shahis (Kabul & Gandhara) | Turk Shahis → Hindu Shahis (Gandhara)
+tang_dynasty,existing_polity,Tang Dynasty / Anxi Protectorate,,13,afghanistan|xinjiang|china|manchuria|mongolia|vietnam,"Tang Dynasty / Anxi Protectorate (nominal) | Tang tributary (Duolu/Nushibi Turks) | Tang Dynasty — Anxi Protectorate (安西都護府, garrison: Kashgar) | Tang Dynasty — Anxi Protectorate | Tang Dynasty (唐) | Tang | Tang — declining | Tang → regional Mohe chiefs | Tang (唐) | Tang dynasty (唐) | Tang dynasty — Giao Châu (An Nam đô hộ phủ)"
+abbasid_caliphate,existing_polity,Abbasid Caliphate,,25,afghanistan|turkmenistan|uzbekistan|arabia|armenia|azerbaijan|egypt|georgia|iraq|levant|yemen|algeria|libya|iran|pakistan,Abbasid Caliphate | Abbasid Caliphate (Arminiya) | Abbasid restored | Abbasid Caliphate (Islamic Golden Age · Samarra period) | Abbasid Caliphate (nominal · Baghdad) | Abbasid Caliphate (nominal) | Rashidun · Umayyad · Abbasid caliphates | Abbasid / Muhallabid governors | Abbasid Caliphate — Sindh Province
+tahirid_dynasty,existing_polity,Tahirid dynasty,,10,afghanistan|turkmenistan|uzbekistan|arabia|yemen|iran|pakistan,Tahirid dynasty | Tahirid Dynasty | Tahirid dynasty (nominal)
+saffarid_dynasty,existing_polity,Saffarid dynasty (capital: Zaranj,,9,afghanistan|turkmenistan|iran|pakistan,Saffarid dynasty (capital: Zaranj — rose from Sistan) | Saffarid dynasty | Saffarid Dynasty | Saffarid (remnant)
+samanid_empire,existing_polity,Samanid dynasty,,9,afghanistan|turkmenistan|uzbekistan|iran,Samanid dynasty | Samanid dynasty (capital: Bukhara) | Samanid Empire
+second_turkic_empire,polity,Second Türkic Empire (nominal suzerainty),Second Türkic Empire,1,afghanistan,Second Türkic Empire (nominal suzerainty)
+semi_independent_samanid_influence,unclassified,Semi-independent / Samanid influence,,1,afghanistan,Semi-independent / Samanid influence
+ghaznavid_empire,existing_polity,Ghaznavid dynasty,,16,afghanistan|turkmenistan|uzbekistan|iran|india|pakistan,Ghaznavid dynasty | Ghaznavid dynasty (capital: Ghazni near here) | Ghaznavid dynasty (Ghazni capital) | Ghaznavid / Ghorid | Ghaznavid Empire | Ghaznavid / Ghurid | Ghaznavid Empire — Mahmud's 17 raids | Ghaznavid Empire — Mahmud's 17 raids into India
+seljuk_empire,existing_polity,Seljuk Empire (Herat,,22,afghanistan|turkmenistan|uzbekistan|anatolia|arabia|armenia|azerbaijan|iraq|levant|iran,Seljuk Empire (Herat — defeat of Ghaznavids) | Seljuk Empire | Seljuk Empire (Kabul area) | Seljuk Empire (capital at Merv under Sultan Sanjar) | Seljuk · 1st Beyliks (Smyrna · Germiyan · Menteshe · Saruhan · Karasi · Hamid) | Seljuk · Rum Sultanate · Danishmend · Mengujek | Seljuk · 1st Beyliks (Shah-Armen · Saltuk · Artuqid) | Seljuk suzerainty (nominal) | Seljuk conquest — Ani falls | Seljuk suzerainty | Seljuk (Damascus)
+ghorid_dynasty,existing_polity,Ghorid dynasty,,8,afghanistan|turkmenistan|iran|india|pakistan,Ghorid dynasty | Ghorid dynasty (Balkh capital at times) | Ghurid Sultanate | Ghorid Sultanate — Muhammad of Ghor | Ghorid Sultanate — Muhammad of Ghor conquers Punjab
+khwarazmian_empire,existing_polity,Khwarazmian Empire,,10,afghanistan|turkmenistan|uzbekistan|xinjiang|iran,Khwarazmian Empire | Khwarazmian Empire (Anushteginid) | Khwarazmian Empire (Anushteginid — capital: Urgench) | Khwarazmian Empire (brief)
+hindu_shahis,existing_polity,Hindu Shahis,,2,afghanistan|india,Hindu Shahis (eastern reaches to 1026) | Hindu Shahis (NW India & Gandhara)
+mongol_empire,existing_polity,Mongol Empire,,29,afghanistan|kazakhstan|turkmenistan|uzbekistan|xinjiang|china|manchuria|mongolia|hungary|armenia|azerbaijan|georgia|iran|pakistan,Mongol Empire (Herat sacked 1221; rebuilt) | Mongol Empire | Mongol Empire (Balkh destroyed 1220 — 'Mother of Cities' never fully recovered) | Mongol Empire → Il-Khanate → Chagatai | Mongol Empire — Chagatai Khanate | Mongol Empire — Ogedei Khanate | Mongol Empire — Genghis Khan | Mongol Empire (大蒙古国) | Mongol Empire — western invasion | Mongol Empire — northern front | Mongol Empire (蒙古帝國) | Mongol Invasion | Mongol Empire invasion | Mongol Conquest | Mongol Empire — invasions repelled
+kart_dynasty,unclassified,Kart dynasty,,2,afghanistan|pakistan,Kart dynasty (local Persian rulers under Mongol suzerainty) | Kart dynasty (Gandhara periphery)
+ilkhanate,existing_polity,Il-Khanate,,21,afghanistan|turkmenistan|anatolia|armenia|azerbaijan|georgia|iraq|levant|iran,Il-Khanate (Herat under Kart as vassals) | Il-Khanate | Mongol Il-Khanate | Ilkhanate | Mongol · Il-Khanate | Mongol Il-Khanate (raids)
+timurid_empire,existing_polity,Timurid Empire (Herat,,22,afghanistan|kazakhstan|turkmenistan|uzbekistan|armenia|azerbaijan|iran|india|pakistan,Timurid Empire (Herat — cultural golden age) | Timurid Empire | Timurid / Mughal influence | Timurid Empire (southeastern) | Timurid fragmentation | Timurid Empire (capital: Samarkand) | Timurid Empire — Timur sacks Delhi (1398)
+chagatai_khanate,existing_polity,Chagatai Khanate,,11,afghanistan|kazakhstan|uzbekistan|xinjiang|mongolia|pakistan,Chagatai Khanate (southern Afghanistan) | Chagatai Khanate (Transoxiana/Bactria) | Chagatai Khanate (Kabul area) | Chagatai Khanate / Moghulistan | Chagatai Khanate | Western Chagatai Khanate | Chagatai Khanate (eastern — Moghulistan) | Chagatai Khanate (eastern part) | Chagatai Khanate (察合台汗國) | Eastern Chagatai Khanate (incursions)
+delhi_sultanate,existing_polity,Delhi Sultanate,,15,afghanistan|india|pakistan,Delhi Sultanate — Khalji / Tughluq (raids) | Delhi Sultanate — Slave · Khalji · Tughluq · Sayyid · Lodi (Kabul contested) | Delhi Sultanate (Mamluk / Slave dynasty) | Delhi Sultanate expansion into Bengal | Delhi Sultanate (Khalji dynasty) — Alauddin Khalji · Malik Kafur raids Deccan & South | Delhi Sultanate — Khalji conquests in Deccan | Delhi Sultanate (Tughluq dynasty) | Delhi Sultanate (Sayyid dynasty) | Delhi Sultanate (Tughluq) | Delhi Sultanate (Lodi dynasty) | Delhi Sultanate (Khalji dynasty)
+safavid_empire,existing_polity,Safavid dynasty (Herat,,14,afghanistan|turkmenistan|arabia|armenia|azerbaijan|georgia|iraq|iran,Safavid dynasty (Herat — major Safavid city) | Safavid dynasty (disputed with Mughals) | Safavid dynasty (Merv contested with Khorasan) | Safavid dynasty | Safavid (Bahrain · Hormuz) | Safavid Persia (eastern Armenia) | Safavid Empire | Safavid Empire — Shirvanshah abolished | Safavid (Shirvan province restored) | Safavid–Ottoman frontier wars | Safavid (collapse)
+afsharid_dynasty,existing_polity,Afsharid dynasty,,18,afghanistan|turkmenistan|uzbekistan|armenia|azerbaijan|georgia|iran|india|pakistan,Afsharid dynasty (Nadir Shah reconquered Herat) | Afsharid dynasty (Nadir Shah defeated Hotakis) | Afsharid dynasty | Afsharid dynasty (Nadir Shah — reunited Merv) | Afsharid dynasty (suzerainty) | Afsharid suzerainty | Afsharid Dynasty | Afsharid — Nadir Shah sacks Delhi (1739) | Afsharid dynasty — Nadir Shah sacks Delhi (1739)
+durrani_empire,existing_polity,Durrani Empire (Ahmad Shah,,9,afghanistan|iran|india|pakistan,Durrani Empire (Ahmad Shah — Afghan unification) | Durrani Empire (original Durrani capital) | Durrani Empire | Durrani Empire (capital moved to Kabul 1776) | Durrani Empire (Punjab raids · Battle of Panipat 1761) | Durrani Empire — Punjab as Afghan territory | Durrani Empire — Kashmir
+hotak_dynasty,existing_polity,Hotak dynasty (Ghilzai Pashtun,,7,afghanistan|iran|pakistan,Hotak dynasty (Ghilzai Pashtun — founded in Kandahar) | Hotak dynasty (briefly held Kabul) | Hotaki Afghan | Hotak dynasty (invasion of Punjab)
+mughal_empire,existing_polity,Mughal Empire,,11,afghanistan|india|pakistan,Mughal Empire (Shah Jahan conquered Balkh 1646) | Mughal Empire (Babur — Kabul capital 1504) | Mughal Empire — Akbar the Great | Mughal Empire — Bengal Subah | Mughal Empire — Jahangir · Shah Jahan · Aurangzeb | Mughal conquest of Deccan Sultanates (Aurangzeb) | Mughal Empire (crumbling) | Mughal Empire (nominal) | Mughal Empire — Sindh Subah | Mughal Empire — Punjab & Lahore Subah | Mughal Empire — Kashmir Subah
+kabul_emirate_emirate_of_afghanistan,unclassified,Kabul Emirate → Emirate of Afghanistan,,1,afghanistan,Kabul Emirate (Barakzai) → Emirate of Afghanistan
+anglo_afghan_wars_great_game,event,Anglo-Afghan Wars · Great Game,,1,afghanistan,Anglo-Afghan Wars (1st · 2nd · 3rd) · Great Game
+semi_autonomous_principality_emirate_of_afghanistan,polity,Semi-autonomous principality → Emirate of Afghanistan,Semi-autonomous principality → Emirate of Afghanistan,1,afghanistan,Semi-autonomous principality → Emirate of Afghanistan
+soviet_afghan_war,event,Soviet-Afghan War,,1,afghanistan,Soviet-Afghan War
+yamna_culture,culture,Yamna culture,,1,kazakhstan,Yamna culture (Pontic–Caspian steppe)
+abashevo_culture,culture,Abashevo culture,,1,kazakhstan,Abashevo culture
+kelteminar_culture,culture,Kelteminar culture,,3,kazakhstan|uzbekistan,Kelteminar culture
+yamna_early_pastoral_cultures,people,Yamna / early pastoral cultures,,1,kazakhstan,Yamna / early pastoral cultures
+andronovo_culture,culture,Andronovo culture,,5,kazakhstan|uzbekistan,Andronovo culture
+botai_culture,culture,Botai culture,,1,kazakhstan,Botai culture (horse domestication)
+afanasievo_culture,culture,Afanasievo culture,,2,kazakhstan|uzbekistan,Afanasievo culture
+srubnaya_culture,culture,Srubnaya culture,,2,kazakhstan,Srubnaya (Timber Grave) culture | Srubnaya culture
+proto_scythian_cultures,people,Proto-Scythian cultures,,1,kazakhstan,Proto-Scythian cultures
+andronovo_alakul_culture,culture,Andronovo → Alakul culture,,1,kazakhstan,Andronovo → Alakul culture
+begazy_dandybai_culture,culture,Begazy–Dandybai culture,,1,kazakhstan,Begazy–Dandybai culture
+tasmola_culture,culture,Tasmola culture,,1,kazakhstan,Tasmola culture
+karasuk_culture,culture,Karasuk culture,,1,kazakhstan,Karasuk culture
+pazyryk_culture,culture,Pazyryk culture,,1,kazakhstan,Pazyryk culture (Altai)
+dahae,people,Dahae,,1,kazakhstan,Dahae
+kangju,existing_polity,Kangju Kingdom,,3,kazakhstan|uzbekistan|xinjiang,Kangju Kingdom | Kangju (Kang kingdom) | Kangju (far northwest)
+yuezhi,existing_polity,Yuezhi,,5,kazakhstan|turkmenistan|uzbekistan|xinjiang|mongolia,Yuezhi (before westward migration) | Yuezhi (Da Yuezhi) | Yuezhi (before westward migration 176 BCE) | Yuezhi (月氏)
+xiongnu,existing_polity,Xiongnu Confederation,,20,kazakhstan|xinjiang|china|manchuria|mongolia,Xiongnu Confederation (western fringe) | Xiongnu Confederation | Yueban Kingdom (remnant Xiongnu) | Xiongnu (supreme after 176 BCE) | Xiongnu dominance (interlude) | Xiongnu (dominant in north) | Yueban (悅般 — Northern Xiongnu remnant) | Lushui Hu (盧水胡 — Xiongnu-related) | Xiongnu confederation forming | Xiongnu Empire (匈奴) | Xiongnu Empire | Xiongnu — split into Northern / Southern | Southern Xiongnu (vassals) | Northern Xiongnu → expelled westward | Xiongnu — from 209 BCE | Xiongnu forming | Northern Xiongnu (北匈奴) | Southern Xiongnu (南匈奴)
+hunnic_empire,existing_polity,Hunnic Empire,,7,kazakhstan|hungary|romania|ukraine,Hunnic Empire | Hunnic Empire (capital near Tisza) | Hunnic Empire → Goths/Sarmatians | Hunnic Empire · Alans · Free Dacians remnants | Hunnic Empire → Slavic migration | Sarmatians (Alans) → Hunnic Empire
+rouran_khaganate,existing_polity,Rouran Khaganate,,5,kazakhstan|xinjiang|china|mongolia,Rouran Khaganate (suzerainty) | Rouran Khaganate | Rouran Khaganate (柔然)
+turgesh_khaganate,existing_polity,Turgesh Khaganate,,3,kazakhstan|uzbekistan|xinjiang,Turgesh Khaganate | Turgesh Khaganate (Ili Valley)
+khazar_khaganate,existing_polity,Khazar Khaganate,,6,kazakhstan|russia|ukraine|georgia,Khazar Khaganate | Khazar Khaganate (south steppe) | Khazar Khaganate (partly) | Khazar Khaganate · Byzantine Chersonesus | Khazar Khaganate — raids
+uyghur_khaganate,existing_polity,Uyghur Khaganate,,6,kazakhstan|xinjiang|china|mongolia,Uyghur Khaganate (suzerainty) | Uyghur Khaganate | Uyghur Khaganate (Orkhon heartland / reach here) | Uyghur Khaganate (回鹘) | Uyghur Khaganate (回鶻)
+pechenegs,event,Pechenegs,,3,kazakhstan|romania|ukraine,Pechenegs (origin here → move west) | Pechenegs (from c.895 CE) | Pechenegs (from c.900)
+oghuz_yabgu_state,polity,Oghuz Yabgu State (declining),Oghuz Yabgu State,1,kazakhstan,Oghuz Yabgu State (declining)
+kara_khanid_khanate,existing_polity,Kara-Khanid Khanate,,8,kazakhstan|turkmenistan|uzbekistan|xinjiang,Kara-Khanid Khanate (Zhetysu) | Kara-Khanid (eastern fringe) | Kara-Khanid Khanate | Kara-Khanid Khanate (first Islamic Turkic state — Kashgar capital) | Kara-Khanid Khanate (eastern wing) | Kara-Khanid (northern fringe)
+qara_khitai,existing_polity,Qara Khitai,,8,kazakhstan|uzbekistan|xinjiang|china|mongolia,Qara Khitai (Western Liao) | Qara Khitai / Western Liao | Western Liao (西辽/哈喇契丹) | Western Liao (西遼)
+golden_horde,existing_polity,Golden Horde (Blue Horde,,12,kazakhstan|uzbekistan|romania|russia|ukraine,Golden Horde (Blue Horde — Ural) | Golden Horde (White Horde — Aral) | Golden Horde (Kipchak Khanate) | Golden Horde (post-Mongol invasion) | Golden Horde suzerainty — 'Tatar Yoke' | Golden Horde — Sarai (capital on lower Volga) | Golden Horde → Kazan Khanate | Mongol Golden Horde suzerainty | Mongol Golden Horde | Mongol Golden Horde — Crimean ulus | Golden Horde disintegrating
+kazakh_khanate,existing_polity,Kazakh Khanate,,4,kazakhstan|xinjiang,Kazakh Khanate (Small Zhuz) | Kazakh Khanate (Middle Zhuz) | Kazakh Khanate (Great Zhuz) | Kazakh Khanate (northwestern range)
+dzungar_khanate,existing_polity,Dzungar Khanate pressure,,5,kazakhstan|xinjiang|china|mongolia,Dzungar Khanate pressure | Oirat → Dzungar Khanate forming | Dzungar Khanate (peak power — capital: Ghulja/Yining) | Dzungar Khanate conquest | Dzungar Khanate (準噶爾)
+russian_empire,existing_polity,Russian Empire,,44,kazakhstan|turkmenistan|uzbekistan|manchuria|mongolia|baltic|belarus|romania|russia|scandinavia|ukraine|armenia|azerbaijan|georgia|iran,Russian Empire (Small Zhuz protectorate) | Russian Empire (Zakaspi Oblast) | Russian Empire (Syr-Darya Oblast · Russian Turkestan) | Russian Empire (Akmolinsk / Turgai Oblast) | Russian Empire (Semirechye Oblast) | Russian Empire (Transcaspia Oblast — conquest of Merv) | Russian Empire — Battle of Geok-Tepe (Tekke defeated) | Russian Empire (Khiva Protectorate) | Russian Empire (Bukhara Protectorate) | Russian Empire (Kokand Protectorate) | Russian Empire — Fergana Oblast (direct rule) | Russian Empire — Amur | Russian Empire — CER · Trans-Siberian Rwy | Russian Empire | Russian Empire — Governorate of Estonia (Reval) | Russian Empire (Partitions of Poland 1795) | Russian Empire — Partitions of Poland | Russian Empire annexes Bessarabia | Russian Empire — Bessarabia (east of Prut) | Russian Empire (proclaimed 1721) | Russian Empire — Volga-Don region | Russian Empire — Siberian expansion continues | Russian Empire — Napoleonic era | Russian Empire — Caucasus wars | Russian Empire — East Siberia · Amur acquired from China | Russian Empire — emancipation of serfs (1861) · industrialisation | Russian Empire — Trans-Siberian Railway | Russian Empire — Trans-Siberian Railway · Russo-Japanese War | Grand Duchy of Finland (Russian Empire — autonomous) | Russian Empire absorbs Right Bank | Russian Empire — New Russia (Novorossiya) | Russian Empire — Crimea annexed | Russian Empire — Kyiv guberniya | Russian Empire — Novorossiya · Odessa (founded 1794) | Russian Empire — Taurida guberniya | Russian Empire (after Turkmenchay) | Russian Empire (Gulistan Treaty) | Russian Empire (Baku Governorate) | Russian Empire (Tiflis Governorate) | Russian Empire (ceded territories) | Russian Empire (occupied)
+qing_empire,unclassified,Qing Empire,,1,kazakhstan,Qing Empire (Great Zhuz suzerainty)
+turkestan_assr,existing_polity,Turkestan ASSR,,5,kazakhstan|turkmenistan|uzbekistan,Turkestan ASSR | Turkestan ASSR (Semirechye) | Turkestan ASSR (Fergana Oblast) | Turkestan ASSR (Fergana)
+bmac_culture,culture,BMAC,,3,turkmenistan|uzbekistan,BMAC (Bactria–Margiana Archaeological Complex)
+saka_massagetae,unclassified,Saka / Massagetae,,1,turkmenistan,Saka / Massagetae
+dahae_parni,people,Dahae / Parni,,1,turkmenistan,Dahae / Parni (proto-Parthian nomads)
+media,unclassified,Media,,1,turkmenistan,Media (suzerainty)
+kara_koyunlu,existing_polity,Kara Koyunlu (Black Sheep,,11,turkmenistan|armenia|azerbaijan|georgia|iraq|iran,Kara Koyunlu (Black Sheep — western fringe) | Kara Koyunlu (Black Sheep) | Kara Koyunlu border raids | Kara Koyunlu | Kara Koyunlu · Ak Koyunlu
+aq_qoyunlu,existing_polity,Aq Qoyunlu (White Sheep,,7,turkmenistan|armenia|azerbaijan|georgia|iran,Aq Qoyunlu (White Sheep — western fringe) | Aq Qoyunlu (White Sheep) | Aq Qoyunlu
+khanate_of_bukhara,existing_polity,Khanate of Bukhara,,2,turkmenistan|uzbekistan,Khanate of Bukhara (Merv region) | Khanate of Bukhara
+khanate_of_khiva,existing_polity,Khanate of Khiva / Bukhara,,2,turkmenistan|uzbekistan,Khanate of Khiva / Bukhara (contested) | Khanate of Khiva
+qajar_dynasty,existing_polity,Qajar dynasty,,12,turkmenistan|armenia|azerbaijan|iran,Qajar dynasty (Iran) | Qajar Iran (suzerain) | Qajar Iran (suzerain of khanates) | Qajar Iran | Qajar (consolidating) | Qajar Dynasty
+indo_european_migrations,event,Indo-European migrations,,1,uzbekistan,Indo-European migrations (West & East Iranian)
+parthia,unclassified,Parthia,,1,uzbekistan,Parthia (suzerainty)
+wusun,existing_polity,Wusun,,3,uzbekistan|xinjiang,"Wusun | Wusun (Ili Valley) | Wusun (Ili Valley, semi-autonomous)"
+gokturk_empire_western_turks,polity,Göktürk Empire → Western Turks,Göktürk Empire → Western Turks,4,uzbekistan|xinjiang,Göktürk Empire → Western Turks | Göktürk Empire → Western Turks (Ön Oq)
+moghulistan,existing_polity,Eastern Chagatai,,3,uzbekistan|xinjiang,Eastern Chagatai (Moghulistan) | Moghulistan Khanate (capital: Almaliq → Kashgar) | Moghulistan Khanate (eastern)
+khanate_of_kokand,existing_polity,Khanate of Kokand,,1,uzbekistan,Khanate of Kokand
+saka_indo_iranian_influx,unclassified,Saka / Indo-Iranian influx,,1,xinjiang,Saka / Indo-Iranian influx
+shule_suoche_forming,event,Shule · Suoche forming,,1,xinjiang,Shule (Kashgar) · Suoche (Yarkand) forming
+saka_city_states_forming,polity,Saka city-states forming,Saka city-states forming,1,xinjiang,Saka city-states forming
+yanqi_city_state_forming,polity,Yanqi (Karasahr) city-state forming,Yanqi city-state forming,1,xinjiang,Yanqi (Karasahr) city-state forming
+western_han_protectorate_of_western_regions,unclassified,Western Han Protectorate of Western Regions,,1,xinjiang,Western Han Protectorate of Western Regions (都護府)
+eastern_han_protectorate_of_western_regions,unclassified,Eastern Han Protectorate of Western Regions,,1,xinjiang,Eastern Han Protectorate of Western Regions
+semi_independent_city_states_kushan_influence,polity,Semi-independent city-states · Kushan influence,Semi-independent city-states · Kushan influence,1,xinjiang,Semi-independent city-states · Kushan influence
+xianbei,existing_polity,Xianbei,,4,xinjiang|china|manchuria|mongolia,Xianbei | Xianbei (Murong · Tuoba) | Xianbei (鮮卑) — dominant steppe power
+later_liang,existing_polity,Later Liang · Northern Liang,,3,xinjiang|china,Later Liang · Northern Liang | Later Liang (後梁) | Later Liang (后梁)
+northern_liang,unclassified,Northern Liang,,1,xinjiang,Northern Liang (capital briefly at Gaochang)
+northern_wei,existing_polity,Northern Wei tributary,,4,xinjiang|china|manchuria|mongolia,Northern Wei tributary | Northern Wei (北魏) | Northern Wei
+western_wei,existing_polity,Western Wei / Northern Zhou tributary,,2,xinjiang|mongolia,Western Wei / Northern Zhou tributary | Western Wei (西魏) · Eastern Wei (東魏)
+sui_dynasty,existing_polity,Sui Dynasty,,5,xinjiang|china|manchuria|mongolia|vietnam,Sui Dynasty (tributary) | Sui Dynasty (隋) | Sui | Sui (隋) | Sui dynasty — Giao Châu
+gokturk_empire_eastern_turks,polity,Göktürk Empire (Altai heartland) → Eastern Turks,Göktürk Empire → Eastern Turks,1,xinjiang,Göktürk Empire (Altai heartland) → Eastern Turks
+xueyantuo,existing_polity,Xueyantuo,,2,xinjiang|mongolia,Xueyantuo | Xueyantuo (薛延陀)
+tibetan_empire,existing_polity,Tibetan Empire occupation,,6,xinjiang|china|tibet,Tibetan Empire (吐蕃) occupation | Tibetan Empire | Tibetan Empire (吐蕃) | Tibetan Empire — Songtsen Gampo · Trisong Detsen | Tibetan Empire (periphery)
+samanid_influence,unclassified,Samanid influence,,1,xinjiang,Samanid influence (far west Kashgaria)
+second_turkic_khaganate,existing_polity,Second Türkic Khaganate,,3,xinjiang|mongolia,Second Türkic Khaganate | Second Türkic Khaganate (heartland) | Second Turkic Khaganate (後突厥)
+ghaznavid_influence,unclassified,Ghaznavid influence,,1,xinjiang,Ghaznavid influence (far west)
+seljuk_suzerainty,unclassified,Seljuk suzerainty,,1,xinjiang,Seljuk suzerainty (western Kashgaria)
+timurid_influence,unclassified,Timurid influence,,1,xinjiang,Timurid influence (western Tarim)
+yuan_dynasty,existing_polity,Ogedei Khanate / Yuan Dynasty,,9,xinjiang|china|manchuria|mongolia|tibet|myanmar,Ogedei Khanate / Yuan Dynasty (Turfan) | Yuan Dynasty (元) — Kublai Khan | Yuan | Yuan — Liaoyang Province | Yuan — far north | Yuan dynasty (元) | Yuan dynasty | Yuan Empire — Xuanzheng Yuan (Bureau of Buddhist and Tibetan Affairs) | Yuan dynasty — Mien Province (brief Mongol intervention)
+yarkand_khanate,existing_polity,Yarkand Khanate / Said Khanate,,3,xinjiang,Yarkand Khanate / Said Khanate | Yarkand Khanate (Tarim Basin control) | Dzungar conquest of Kashgaria (Yarkand Khanate ended)
+kokand_khanate,polity,Kokand Khanate (western influence),Kokand Khanate,1,xinjiang,Kokand Khanate (western influence)
+khoshut_khanate,existing_polity,Khoshut Khanate,,2,xinjiang|tibet,Khoshut Khanate (southern Dzungaria) | Khoshut Khanate (Gushi Khan)
+qing_dynasty,existing_polity,Qing Dynasty,,16,xinjiang|china|korea|manchuria|mongolia|tibet,Qing Dynasty — Uyghur/Muslim Tarim Basin | Qing Dynasty (清) | Qing Dynasty | Qing → Russian sphere | Qing | Qing — declining | Qing → ROC | Qing dynasty (清) | Qing intervention — Amban system established | Tibet under Qing suzerainty | Tibet under Qing — Amban governance
+qing_reconquest_xinjiang_province,unclassified,Qing reconquest → Xinjiang Province,,1,xinjiang,Qing reconquest → Xinjiang Province (新疆省)
+republic_of_china,existing_polity,Republic of China,,4,xinjiang|china|mongolia,Republic of China — Xinjiang Province | Republic of China (中华民国) | Republic of China (中华民国) — Taiwan | Republic of China
+roc_xinjiang,unclassified,ROC Xinjiang,,1,xinjiang,ROC Xinjiang — Warlord governors (Jin Shuren · Sheng Shicai)
+peoples_republic_of_china,existing_polity,PRC,,7,xinjiang|china|manchuria|mongolia|tibet,PRC — Xinjiang Uyghur Autonomous Region (新疆维吾尔自治区) | People's Republic of China (中华人民共和国) | PRC — Northeast Three Provinces | PRC — Inner Mongolia Autonomous Region | People's Republic of China | People's Republic of China (continuing)
+east_turkestan_government_in_exile,event,East Turkestan Government in Exile,,1,xinjiang,East Turkestan Government in Exile
+aksumite_kingdom,existing_polity,Aksumite Kingdom,,3,ethiopia|yemen,Aksumite Kingdom — Adulis (main Red Sea port) | Aksumite Kingdom (capital: Aksum) | Aksumite occupation
+aksumite_expansion_southward,event,Aksumite expansion southward,,1,ethiopia,Aksumite expansion southward
+aksumite_decline,event,Aksumite decline,,1,ethiopia,Aksumite decline (Islamic trade disruption)
+post_aksum_fragmentation,event,Post-Aksum fragmentation,,1,ethiopia,Post-Aksum fragmentation
+beja_habesha_coastal_lords,unclassified,Beja / Habesha coastal lords,,1,ethiopia,Beja / Habesha coastal lords
+zagwe_dynasty,existing_polity,Zagwe Dynasty,,1,ethiopia,Zagwe Dynasty (capital: Lalibela)
+zagwe_fringe_various_cushitic_kingdoms,unclassified,Zagwe fringe / various Cushitic kingdoms,,1,ethiopia,Zagwe fringe / various Cushitic kingdoms
+egyptian_mamluk_ottoman_coastal_influence,unclassified,Egyptian Mamluk / Ottoman coastal influence,,1,ethiopia,Egyptian Mamluk / Ottoman coastal influence
+solomonic_expansion_south,event,Solomonic expansion south,,1,ethiopia,Solomonic expansion south
+ottoman_empire,existing_polity,Ottoman Empire,,58,ethiopia|albania|bosnia|bulgaria|croatia|czech_slovakia|greece|hungary|north_macedonia|romania|serbia|ukraine|anatolia|arabia|armenia|azerbaijan|egypt|georgia|iraq|levant|yemen|algeria|libya|sudan|tunisia,"Ottoman Empire — Massawa port | Ottoman Empire (16th–19th c.) · Ali Pasha of Ioannina controls south (1788–1822) | Ottoman Empire · Albanian National Awakening (Rilindja) | Ottoman Empire — Bosnia Eyalet / Vilayet (1463–1878) · Muslim, Orthodox & Catholic communities | Ottoman Empire — Danube vilayet · Rumelia · Bulgarian national revival movement | Ottoman Empire — most of Slavonia | Ottoman Empire — Ottoman Hungary (south) | Ottoman Empire — Greek millet · Phanariots · Klephts | Ottoman Empire | Ottoman Hungary (Buda Eyalet) | Ottoman — early conquest | Ottoman Empire — Monastir, Kosovo & Salonika vilayets | Ottoman Empire (suppressed uprising) | Ottoman vassal | Ottoman Empire — conquest complete | Ottoman Empire — Rumelia · Kosovo vilayet | Ottoman Empire (Belgrade — key fortress) | Ottoman Beylik → Sultanate | Ottoman Sultanate (Ankara · Interregnum) | Ottoman Sultanate | Ottoman (Kuwait · N. Gulf) | Ottoman (nominal) | Ottoman Empire (western — Six Vilayets) | Ottoman Empire — Armenian Genocide | Ottoman occupation (Shirvan) | Ottoman Empire (conquest of Egypt 1517) | Ottoman restored | Ottoman Empire (Samtskhe / SW Georgia) | Ottoman Empire — Bilad al-Sham provinces (Damascus · Aleppo · Sidon · Tripoli · Jerusalem) | Ottoman Empire (1st occupation) | Ottoman Empire (2nd occupation) | Ottoman influence (coastal areas) | Ottoman Regency (west) | Ottoman Regency of Algiers | Ottoman Constantine province | Ottoman Regency of Algiers (–1830) | Ottoman Tripolitania | Ottoman direct rule | Ottoman Cyrenaica | Ottoman Empire suzerainty | Ottoman Empire (Eyalet of Tunis)"
+adal_ethiopian_war,event,Adal-Ethiopian war,,2,ethiopia|somalia,Adal-Ethiopian war — Ahmad ibn Ibrahim (Grañ) | Adal-Ethiopian War (Ahmad Grañ)
+gondar_era,event,Gondar era,,1,ethiopia,Gondar era — capital Fasil Ghebbi
+zemene_mesafint,event,Zemene Mesafint,,1,ethiopia,Zemene Mesafint (Era of the Princes)
+egyptian_khedivate_italian_territory,event,Egyptian Khedivate → Italian territory,,1,ethiopia,Egyptian Khedivate → Italian territory (Assab 1882)
+ethiopian_reunification,event,Ethiopian reunification,,1,ethiopia,Ethiopian reunification — Tewodros II
+yohannes_iv_battle_of_adwa,event,Yohannes IV · Battle of Adwa,,1,ethiopia,Yohannes IV · Battle of Adwa (Menelik II)
+annexed_by_ethiopia,unclassified,Annexed by Ethiopia,,1,ethiopia,Annexed by Ethiopia
+italian_east_africa,existing_polity,Italian East Africa,,3,ethiopia|somalia,Italian East Africa | Italian East Africa → Ethiopian Empire
+ethiopian_empire_restored,polity,Ethiopian Empire restored (Haile Selassie),Ethiopian Empire restored,1,ethiopia,Ethiopian Empire restored (Haile Selassie)
+eritrean_liberation_front,event,Eritrean Liberation Front,,1,ethiopia,Eritrean Liberation Front — independence war
+ogaden_war_with_somalia,event,Ogaden War with Somalia,,1,ethiopia,Ogaden War with Somalia
+eritrea_ethiopia_war,event,Eritrea-Ethiopia War,,1,ethiopia,Eritrea-Ethiopia War
+tigray_war,event,Tigray War,,1,ethiopia,Tigray War
+fdre,event,FDRE,,1,ethiopia,"FDRE — EPRDF → Prosperity Party (Abiy Ahmed, 2018)"
+punt,existing_polity,Punt (Egyptian trading land,,2,somalia|sudan,Punt (Egyptian trading land — incense coast) | Punt (Egyptian trading land)
+ifat_sultanate,existing_polity,Ifat Sultanate,,1,somalia,Ifat Sultanate
+adal_sultanate,existing_polity,Adal Sultanate,,2,somalia,Adal Sultanate (capital: Zeila then Harar) | Adal Sultanate
+ajuran_sultanate,existing_polity,Ajuran Sultanate,,2,somalia,Ajuran Sultanate (Somali) | Ajuran Sultanate declining
+ottoman_suzerainty,unclassified,Ottoman suzerainty,,1,somalia,Ottoman suzerainty (Zeila)
+omani_sultanate_coastal_influence,polity,Omani Sultanate (Zanzibar) coastal influence,Omani Sultanate coastal influence,1,somalia,Omani Sultanate (Zanzibar) coastal influence
+british_somaliland,event,British Somaliland,,1,somalia,British Somaliland (restored 1941)
+french_somaliland_republic_of_djibouti,polity,French Somaliland → Republic of Djibouti,French Somaliland → Republic of Djibouti,1,somalia,French Somaliland → Republic of Djibouti
+somali_civil_war,event,Somali civil war,,1,somalia,Somali civil war
+al_shabaab_insurgency,event,Al-Shabaab insurgency,,1,somalia,Al-Shabaab insurgency (Al-Qaeda affiliate)
+yellow_river_civilization_culture,culture,Yellow River Civilization,,1,china,Yellow River Civilization (黄河文明)
+yangtze_river_civilizations_culture,culture,Yangtze River Civilizations,,1,china,Yangtze River Civilizations
+steppe_desert_cultures,unclassified,Steppe · desert cultures,,1,china,Steppe · desert cultures
+xia,existing_polity,Xia,,1,china,Xia (夏)
+shang_dynasty,existing_polity,Shang,,1,china,Shang (商)
+indigenous_peoples_baiyue,people,Indigenous peoples · Baiyue,,1,china,Indigenous peoples · Baiyue (百越)
+northern_steppe_peoples,people,Northern steppe peoples,,1,china,Northern steppe peoples
+western_zhou,existing_polity,Western Zhou,,1,china,Western Zhou (西周) — 1046–771 BCE
+xianyun_quanrong,unclassified,Xianyun · Quanrong,,1,china,Xianyun · Quanrong
+eastern_zhou,existing_polity,Eastern Zhou,,1,china,Eastern Zhou (东周)
+spring_and_autumn,unclassified,Spring and Autumn,,1,china,Spring and Autumn (春秋)
+warring_states,unclassified,Warring States,,1,china,Warring States (战国)
+chu_wu_yue,unclassified,Chu · Wu · Yue,,1,china,Chu (楚) · Wu (吴) · Yue (越)
+ba_shu,existing_polity,Ba · Shu,,1,china,Ba (巴) · Shu (蜀)
+donghu_yuezhi,people,Donghu · Yuezhi,,1,china,Donghu · Yuezhi
+qin_dynasty,existing_polity,Qin Dynasty,,2,china|manchuria,Qin Dynasty (秦) | Qin
+chu_han_contention,unclassified,Chu–Han Contention,,1,china,Chu–Han Contention (楚汉争霸)
+later_chu_western_chu_eighteen_kingdoms,unclassified,Later Chu · Western Chu · Eighteen Kingdoms,,1,china,Later Chu (後楚) · Western Chu (西楚) · Eighteen Kingdoms
+western_han,existing_polity,Western Han,,4,china|manchuria|vietnam,Western Han (西汉/前汉) | Han — Western Regions Protectorate (西域都护) | Western Han | Han dynasty — Giao Chỉ (Jiaozhou)
+xin,existing_polity,Xin,,1,china,Xin (新) — Wang Mang
+xuan_han,existing_polity,Xuan Han,,1,china,Xuan Han (玄汉)
+eastern_han,existing_polity,Eastern Han,,2,china|vietnam,Eastern Han (东汉/后汉) | Later Han — Giao Châu (Jiaozhou)
+xianbei_rising,unclassified,Xianbei rising,,1,china,Xianbei (鲜卑) rising
+cao_wei,existing_polity,Cao Wei,,1,china,Cao Wei (曹魏)
+shu_han,existing_polity,Shu Han,,1,china,Shu Han (蜀汉)
+eastern_wu,existing_polity,Eastern Wu,,1,china,Eastern Wu (东吴)
+various_steppe_peoples,people,Various steppe peoples,,1,china,Various steppe peoples
+western_jin,existing_polity,Western Jin,,2,china|manchuria,Western Jin (西晋) | Western Jin — Liaodong & Xuantu
+five_barbarians_migrating_south,unclassified,Five Barbarians migrating south,,1,china,Five Barbarians (五胡) migrating south
+sixteen_kingdoms,unclassified,Sixteen Kingdoms,,1,china,Sixteen Kingdoms (五胡十六国)
+former_qin,existing_polity,Former Qin,,1,china,Former Qin (前秦) — Fu Jian
+eastern_jin,existing_polity,Eastern Jin,,1,china,Eastern Jin (东晋)
+huan_chu,existing_polity,Huan Chu,,1,china,Huan Chu (桓楚) — usurpation
+eastern_wei_western_wei,unclassified,→ Eastern Wei + Western Wei,,1,china,→ Eastern Wei (东魏) + Western Wei (西魏)
+northern_qi_northern_zhou,unclassified,→ Northern Qi + Northern Zhou,,1,china,→ Northern Qi (北齐) + Northern Zhou (北周)
+liu_song,existing_polity,Liu Song,,1,china,Liu Song (刘宋)
+southern_qi,existing_polity,Southern Qi,,1,china,Southern Qi (南齐)
+liang,existing_polity,Liang,,1,china,Liang (梁)
+chen,existing_polity,Chen,,1,china,Chen (陈)
+wu_zhou,existing_polity,Wu Zhou,,2,china,Wu Zhou (武周) — Empress Wu Zetian | Wu Zhou (吴周) — Wu Sangui
+gokturks_tang_protectorates,unclassified,Göktürks → Tang protectorates,,1,china,Göktürks → Tang protectorates
+later_tang,existing_polity,Later Tang,,1,china,Later Tang (后唐)
+later_jin,existing_polity,Later Jin,,3,china|manchuria,Later Jin (后晋) | Later Jin (后金) → Qing | Later Jin
+later_han,existing_polity,Later Han,,1,china,Later Han (后汉)
+later_zhou,existing_polity,Later Zhou,,1,china,Later Zhou (后周)
+ten_kingdoms,unclassified,Ten Kingdoms,,1,china,Ten Kingdoms (十国)
+liao_dynasty,existing_polity,Liao Dynasty,,4,china|manchuria|mongolia,Liao Dynasty (辽/契丹) | Liao Dynasty (辽) | Liao — Khitan Empire | Liao dynasty (遼)
+northern_song,existing_polity,Northern Song,,1,china,Northern Song (北宋)
+western_xia,existing_polity,Western Xia,,4,china|mongolia|tibet,Western Xia (西夏) | Western Xia (Tangut Empire)
+jin_dynasty,existing_polity,Jin Dynasty,,3,china|manchuria|mongolia,Jin Dynasty (金) | Jin — Jurchen Empire | Jin dynasty (金)
+southern_song,existing_polity,Southern Song,,2,china,Southern Song (南宋)
+mongol_conquest_of_jin,unclassified,Mongol conquest of Jin,,1,china,Mongol conquest of Jin
+ming_dynasty,existing_polity,Ming Dynasty,,7,china|korea|manchuria|mongolia|vietnam,Ming Dynasty (明) | Ming Dynasty | Ming | Ming dynasty (明) | Ming dynasty — Giao Chỉ (Chinese occupation)
+northern_yuan,existing_polity,Northern Yuan,,4,china|manchuria|mongolia,Northern Yuan (北元) | Northern Yuan | Northern Yuan (declining) · Uriyangkhai Three Guards
+various_mongol_khanates,unclassified,Various Mongol khanates,,1,china,Various Mongol khanates
+shun,existing_polity,Shun,,1,china,Shun (顺) — Li Zicheng
+southern_ming,existing_polity,Southern Ming,,1,china,Southern Ming (南明)
+kingdom_of_tungning,existing_polity,Kingdom of Tungning,,1,china,Kingdom of Tungning (东宁)
+qing_expansion,unclassified,Qing expansion,,1,china,"Qing expansion — Tibet, Xinjiang, Mongolia"
+late_qing,unclassified,Late Qing,,1,china,Late Qing — Opium Wars · Unequal Treaties
+taiping_heavenly_kingdom,existing_polity,Taiping Heavenly Kingdom,,1,china,Taiping Heavenly Kingdom (太平天国)
+qing_frontier,unclassified,Qing frontier,,1,china,Qing frontier — Russian encroachment
+beiyang_government,existing_polity,Beiyang Government,,1,china,Beiyang Government (北洋政府)
+warlord_era,event,Warlord Era,,1,china,Warlord Era (军阀混战)
+chinese_empire,existing_polity,Chinese Empire,,1,china,Chinese Empire — Yuan Shikai
+outer_mongolia_independence,event,Outer Mongolia independence,,1,china,Outer Mongolia independence
+qing_court_remnants,unclassified,Qing court remnants,,1,china,Qing court remnants (宣统小朝廷)
+nationalist_government,existing_polity,Nationalist Government,,1,china,Nationalist Government (国民政府)
+wuhan_government,existing_polity,Wuhan Government,,1,china,Wuhan Government (武汉政府)
+chinese_soviet_republic,existing_polity,Chinese Soviet Republic,,1,china,Chinese Soviet Republic (中华苏维埃)
+manchukuo,existing_polity,Manchukuo,,6,china|korea|manchuria|mongolia,"Manchukuo (满洲国) | Manchukuo · Japanese occupation | Manchukuo (Japan puppet) | Manchukuo — Japanese puppet state, 1932–1945 | Manchukuo · Soviet Union (border zone) | Manchukuo"
+mengjiang,existing_polity,Mengjiang,,2,china|mongolia,Mengjiang | Mengjiang (蒙疆)
+second_sino_japanese_war,event,Second Sino-Japanese War,,1,china,Second Sino-Japanese War (抗日战争)
+wang_jingwei_regime,existing_polity,Wang Jingwei regime,,1,china,Wang Jingwei regime (汪精卫政权)
+chinese_civil_war,event,Chinese Civil War,,1,china,Chinese Civil War (国共内战)
+yayoi_people_culture,culture,Yayoi people,,1,japan,Yayoi people
+yamato_kingdom,existing_polity,Yamato,,2,japan,Yamato | Yamato · Soga Clan
+ritsuryo_japan,existing_polity,Japan,,4,japan,Japan (Ritsuryō state) | Japan (Dynastic state) | Sesshō-Kampaku regency | Insei (Cloistered rule)
+gusuku_culture,culture,Gusuku culture,,1,japan,Gusuku culture
+sanzan_period,event,Sanzan period,,7,japan,Sanzan period
+kamakura_shogunate,existing_polity,Kamakura Shogunate,,2,japan,Kamakura Shogunate | Hōjō Regency
+kenmu_government,existing_polity,Kenmu Restoration,,1,japan,Kenmu Restoration
+ashikaga_shogunate,existing_polity,Northern Court,,4,japan,Northern Court | Ashikaga Shogunate | Hosokawa / Miyoshi regency
+southern_court,existing_polity,Southern Court,,1,japan,Southern Court
+ryukyu_kingdom,existing_polity,Ryukyu Kingdom,,8,japan,Ryukyu Kingdom | Ryukyu Kingdom (Satsuma vassal) | Ryukyu Domain | Ryukyu (US administration)
+oda_toyotomi_government,existing_polity,Oda Nobunaga,,2,japan,Oda Nobunaga | Toyotomi Hideyoshi
+tokugawa_shogunate,existing_polity,Tokugawa Shogunate,,1,japan,Tokugawa Shogunate
+empire_of_japan,existing_polity,Meiji Restoration · Boshin War,,2,japan,Meiji Restoration · Boshin War | Empire of Japan
+modern_japan,existing_polity,Japan,,3,japan,Japan (Allied Occupation → State of Japan) | Japan
+paleolithic_neolithic_peoples_culture,culture,Paleolithic / Neolithic peoples,,1,korea,Paleolithic / Neolithic peoples
+joseon,existing_polity,Gojoseon,,6,korea|manchuria,Gojoseon | Joseon | Joseon (Imjin War · Manchu invasions) | Joseon (Qing tributary)
+goguryeo,existing_polity,Goguryeo,,5,korea|manchuria,Goguryeo | Later Goguryeo (Taebong) | Goguryeo — expanding
+baekje,existing_polity,Baekje,,2,korea,Baekje | Later Baekje
+silla,existing_polity,Silla · Gaya,,2,korea,Silla · Gaya | Silla (declining)
+balhae,existing_polity,Balhae,,4,korea|manchuria,Balhae | Balhae Restoration Movement
+unified_silla,existing_polity,Unified Silla,,1,korea,Unified Silla
+tamna_silla,unclassified,Tamna → Silla,,1,korea,Tamna → Silla
+khitan,event,Khitan,,1,korea,Khitan (forming)
+goryeo,existing_polity,Goryeo,,4,korea|manchuria,Goryeo | Goryeo (Yuan vassal) | Goryeo (restored) | Border Goryeo · Sim Wang
+japanese_korea,existing_polity,Japanese Korea,,3,korea|manchuria,Japanese Korea | ROC · Japanese Korea (from 1910) | ROC · Japanese Korea
+soviet_zone_china,event,Soviet zone → China,,1,korea,Soviet zone → China (PRC)
+north_korea,existing_polity,North Korea,,3,korea|manchuria,North Korea (DPRK) | North Korea | ROC → PRC · North Korea (from 1948)
+south_korea,existing_polity,South Korea,,2,korea,South Korea (ROK) | South Korea
+donghu,people,Donghu,,2,manchuria|mongolia,Donghu | Donghu (東胡)
+gori_kingdom_buyeo_forming,polity,Gori Kingdom · Buyeo forming,Gori Kingdom · Buyeo forming,1,manchuria,Gori Kingdom · Buyeo forming
+n_wei_eastern_wei,unclassified,N. Wei → Eastern Wei,,1,manchuria,N. Wei → Eastern Wei
+shiwei,people,Shiwei,,2,manchuria|mongolia,Shiwei | Shiwei (室韋)
+n_qi_n_zhou,unclassified,N. Qi → N. Zhou,,1,manchuria,N. Qi → N. Zhou
+tang_suzerainty,unclassified,Tang suzerainty,,1,manchuria,Tang suzerainty (Jimi)
+liaodong_warlord,unclassified,Liaodong Warlord,,1,manchuria,Liaodong Warlord
+soviet_union,existing_polity,Soviet Union,,18,manchuria|mongolia|germany|romania|russia|scandinavia|armenia|azerbaijan|georgia,Soviet Union | Former East Prussia: divided between Soviet Union (Kaliningrad) and Poland | Soviet Union — Moldavian SSR | Soviet Union — Leningrad (formerly St. Petersburg) | Soviet Union / Russian SFSR — Moscow capital | Soviet Union — Volga-Ural industrial region | Soviet Union — Gulag system · Siberian labour camps | Soviet Union — WWII (Great Patriotic War) | Soviet Union — Cold War · Space Race · Khrushchev Thaw | Cedes Karelia · Petsamo to Soviet Union | Transcaucasian SFSR | Armenian SSR | Azerbaijan SSR | Georgian SSR
+roc_prc,event,ROC → PRC,,2,manchuria,ROC → PRC
+russian_federation,existing_polity,Russian Federation,,6,manchuria|mongolia|russia,Russian Federation — Far Eastern Federal District | Russian Federation | Russian Federation (1991) | Russian Federation — Volga Federal District | Russian Federation — Siberian · Far Eastern Federal Districts | Russian Federation — Putin era (2000–) · Annexation of Crimea (2014) · Full-scale war in Ukraine (2022–)
+roc_occupation,event,ROC occupation,,1,mongolia,ROC occupation
+bogd_khanate_restored,polity,Bogd Khanate restored,Bogd Khanate restored,1,mongolia,Bogd Khanate restored
+mongolian_peoples_republic,existing_polity,Mongolian People's Republic,,3,mongolia,Mongolian People's Republic | Inner Mongolian People's Republic
+teyurang_culture,culture,Teyurang culture,,1,tibet,Teyurang culture
+tuyuhun,unclassified,Tuyuhun,,1,tibet,Tuyuhun (frontier)
+tibetan_fragmentation_era,event,Tibetan fragmentation era,,1,tibet,Tibetan fragmentation era
+ladakh_kingdom,polity,Ladakh Kingdom (declining),Ladakh Kingdom,1,tibet,Ladakh Kingdom (declining)
+fragmentation_era,event,Fragmentation era,,1,tibet,Fragmentation era
+sikh_empire,existing_polity,Sikh Empire,,5,tibet|india|pakistan,Sikh Empire (conquers Ladakh) | Sikh Empire — Ranjit Singh (Punjab) | Sikh Empire (Sindh frontier raids) | Sikh Empire — Ranjit Singh (Lahore) | Sikh Empire — conquers Kashmir (1819)
+jammu_kashmir,existing_polity,Jammu & Kashmir,,4,tibet|pakistan,Jammu & Kashmir (Dogra princely state) | Jammu & Kashmir (princely state) | Jammu & Kashmir (princely state — accession dispute) | Jammu & Kashmir (Dogra dynasty — British princely state)
+gurkha_kingdom,polity,Gurkha Kingdom (southern raids),Gurkha Kingdom,1,tibet,Gurkha Kingdom (southern raids)
+british_raj,existing_polity,British East India Company / British Raj,,12,tibet|india|pakistan,British East India Company / British Raj | British Indian Empire (Bhutan — protectorate) | British Indian Empire | British Bengal (Company rule) | British East India Company — Company Raj | British Indian Empire (British Raj) | British Raj — World War I · Non-cooperation · Quit India · World War II | British East India Company — conquers Sindh (1843) | British East India Company — Anglo-Sikh Wars (1845–49) | British Indian Empire — Punjab Province
+central_tibetan_administration,polity,"Central Tibetan Administration (government-in-exile, Dharamsala)",Central Tibetan Administration,1,tibet,"Central Tibetan Administration (government-in-exile, Dharamsala)"
+republic_of_india,existing_polity,Republic of India,,3,tibet|india,Republic of India | Republic of India — Sikkim State (from 1975)
+jammu_kashmir_state_ladakh_union_territory,polity,Jammu & Kashmir State → Ladakh Union Territory,Jammu & Kashmir State → Ladakh Union Territory,1,tibet,Jammu & Kashmir State → Ladakh Union Territory
+illyrian_kingdom,existing_polity,Illyrian Kingdom,,6,albania|croatia|slovenia,Illyrian Kingdom (Shkodër capital) | Illyrian Kingdom — Queen Teuta | Illyrian Kingdom | Illyrian Kingdom · Pannonian tribes (Colapiani) | Illyrian Kingdom (Austrian)
+roman_conquest,polity,Roman conquest,Roman conquest,3,albania,Roman conquest
+antipatrid_macedonian_influence,unclassified,Antipatrid / Macedonian influence,,1,albania,Antipatrid / Macedonian influence
+kingdom_of_epirus,existing_polity,Kingdom of Epirus,,4,albania|greece,Kingdom of Epirus — Pyrrhus (south) | Kingdom of Epirus — Molossian / Aeacid dynasty | Kingdom of Epirus — Aeacid dynasty · expansion | Kingdom of Epirus — post-Pyrrhus fragmentation
+macedonian_kingdom,existing_polity,Macedonian Kingdom,,7,albania|bulgaria|greece|north_macedonia,"Macedonian Kingdom | Macedonian Kingdom — Philip II (Triballi, 339 BCE) | Macedonian kingdom — Argead dynasty forming | Macedonian kingdom (Argead dynasty) | Macedonian Kingdom — Philip II conquered Paeonia"
+kingdom_of_lysimachus,existing_polity,Lysimachus,,3,albania|bulgaria|greece,Lysimachus (brief) | Lysimachus — Kingdom of Thrace | Lysimachus — Thrace & Macedonia
+roman_republic,existing_polity,Roman Republic → Roman Empire,,25,albania|croatia|france|germany|iberia|italy|low_countries|slovenia|anatolia|egypt|iraq,Roman Republic → Roman Empire (Illyricum / Epirus province) | Roman Republic (Illyrian Wars) | Roman Republic — Gallia Belgica | Roman Republic — Gallia Lugdunensis | Roman Republic — Narbonensis · Aquitania | Roman Republic — Belgica (east) | Roman Republic — Gallic Wars (Caesar) | Roman Republic — Lusitania (Sertorius revolt 80–72 BCE) | Roman Republic — Hispania Citerior | Roman Republic — Tarraconensis | Roman Republic — Hispania Ulterior | Roman Republic — Gallia Cisalpina | Roman Republic (heartland) | Roman Republic — Samnite Wars · Social War | Roman Republic — Sicilia Province | Roman Republic — Sardinia et Corsica | Roman Republic (Gallic Wars — Caesar) | Roman Republic → Roman Empire | Roman Republic · Empire | Roman Republic | Roman Republic (border campaigns)
+byzantine_empire,existing_polity,Eastern Roman / Byzantine Empire,,45,albania|bosnia|bulgaria|croatia|greece|iberia|north_macedonia|serbia|slovenia|anatolia|armenia|egypt|georgia|levant|algeria|libya|tunisia,Eastern Roman / Byzantine Empire | Byzantine Empire | Byzantine (Lake Ohrid — Ohrid Archbishopric) | Byzantine | Byzantine (Eastern Roman) | Byzantine Empire — Thrace (core territory) | Byzantine Empire — Thrace | Byzantine Empire — Dalmatian coastal theme | Byzantine (coastal cities) | Byzantine Empire restored — Palaiologos dynasty | Byzantine Spania Province | Byzantine Empire (Ohrid — major cultural centre) | Byzantine Empire (contested) | Byzantine (Palaiologos) | Byzantine Armenia (thema) | Byzantine restored | Byzantine Empire (Lazica Province) | Byzantine Empire (Abkhazia border zone) | Byzantine (recovered Antioch) | Byzantine (coastal garrisons) | Byzantine Exarchate of Africa
+first_bulgarian_empire,existing_polity,First Bulgarian Empire,,7,albania|bulgaria|north_macedonia|romania|serbia,First Bulgarian Empire | First Bulgarian Empire — Krum · Boris I · Simeon I | First Bulgarian Empire (partly) | vs First Bulgarian Empire · Frankish pressure
+despotate_of_epirus,existing_polity,Despotate of Epirus,,4,albania|greece,Despotate of Epirus | Despotate of Epirus · Angevin Albania | Despotate of Epirus — Angelos dynasty | Despotate of Epirus (continuing)
+second_bulgarian_empire,existing_polity,Second Bulgarian Empire,,5,albania|bulgaria|north_macedonia|romania,Second Bulgarian Empire | Second Bulgarian Empire — Tărnovo | Second Bulgarian Empire border
+duchy_of_durazzo_thopia_dynasty,unclassified,Duchy of Durazzo → Thopia dynasty,,1,albania,Duchy of Durazzo → Thopia dynasty
+serbian_empire,existing_polity,Serbian Empire → Zeta,,7,albania|north_macedonia|serbia,Serbian Empire → Zeta (Balšić family) | Serbian Empire → Albanian principalities | Serbian Empire → Byzantine → Albanian lords | Serbian Empire — Stefan Dušan | Serbian Empire
+republic_of_venice,existing_polity,Venice,,16,albania|croatia|greece|italy|slovenia,Venice — Durrës | Venice (Durrës until 1501) | Venice — acquiring coastal towns | Venice — Dalmatian cities | Venice Republic (acquiring coastal towns) | Venice Republic (most of coast) | Venice Republic | Venice — Ionian Islands & Crete | Venice — Crete (until 1669) · Ionian Islands (until 1797) | Republic of Venice | Venice — Istrian coastal towns | Venice Republic (coast)
+ottoman_conquest,event,Ottoman conquest,,6,albania|bulgaria|serbia,Ottoman conquest
+austria_hungary,existing_polity,Austria-Hungary / Italian occupation zones,,6,albania|bosnia|croatia|romania|serbia|slovenia,Austria-Hungary / Italian occupation zones | Austria-Hungary — Bosnia-Herzegovina Condominium | Austria-Hungary — Dalmatia crown land | Austria-Hungary → Romania | Austria-Hungary — Vojvodina | Austria-Hungary — Duchy of Carniola (crown land)
+albanian_kingdom,existing_polity,Albanian Kingdom,,2,albania|north_macedonia,Albanian Kingdom — Zog I | Albanian Kingdom
+italian_albania,existing_polity,Italian Albania,,2,albania|north_macedonia,Italian Albania | Italian Albania (occupied western districts)
+german_occupation,event,German occupation,,4,albania|baltic|belarus|slovenia,German occupation | German occupation (Ober Ost) | German occupation (Lower Styria / Carniola)
+people_s_republic_of_albania_people_s_socialist_republic,people,People's Republic of Albania → People's Socialist Republic,,1,albania,People's Republic of Albania → People's Socialist Republic
+grand_duchy_of_lithuania,existing_polity,Grand Duchy of Lithuania,,6,baltic|belarus|ukraine,Grand Duchy of Lithuania | Grand Duchy of Lithuania (peak power) | Grand Duchy of Lithuania absorbs Belarusian principalities | Grand Duchy of Lithuania — Old Ruthenian (Belarusian) official language | Grand Duchy of Lithuania — Volhynia | Grand Duchy of Lithuania (Kyiv principality)
+polish_lithuanian_commonwealth,existing_polity,Polish-Lithuanian Commonwealth,,7,baltic|belarus|poland|ukraine,Polish-Lithuanian Commonwealth | Polish-Lithuanian Commonwealth (–1795) | Polish-Lithuanian Commonwealth (Rzeczpospolita — 'First Republic')
+denmark_norway,existing_polity,Denmark-Norway,,3,baltic|scandinavia,Denmark-Norway — Saaremaa (Ösel) | Denmark-Norway (Norway as junior partner) | Denmark-Norway (Norwegian subordination continues)
+soviet_occupation,event,Soviet occupation,,1,baltic,Soviet occupation (Molotov-Ribbentrop Pact)
+nazi_germany,existing_polity,Nazi Germany,,13,baltic|belarus|czech_slovakia|germany|low_countries|serbia|slovenia|switzerland_austria|ukraine,Nazi Germany — Reichskommissariat Ostland | Protectorate of Bohemia & Moravia (Nazi occupation) | Nazi Germany (Third Reich — Hitler) | Nazi Germany — Reichskommissariat Niederlande | Nazi Germany — Military Administration Belgium-Northern France | Nazi Germany — occupied Luxembourg | Nazi Germany — Military Government in Serbia | Nazi Germany — annexed to Reich (Lower Styria) | Anschluss — annexed by Nazi Germany | Nazi Germany — General Government / Distrikt Galizien | Nazi Germany — Reichskommissariat Ukraine | Nazi Germany occupation
+polotsk_principality_vitebsk_druts_appanages,polity,Polotsk Principality → Vitebsk · Druts appanages,Polotsk Principality → Vitebsk · Druts appanages,1,belarus,Polotsk Principality → Vitebsk · Druts appanages
+duchy_of_warsaw,polity,Duchy of Warsaw (briefly),Duchy of Warsaw,2,belarus|poland,Duchy of Warsaw (briefly) | Duchy of Warsaw (Napoleonic client state)
+second_polish_republic,existing_polity,Second Polish Republic,,4,belarus|ukraine,Second Polish Republic (Kresy) | Second Polish Republic — Eastern Borderlands (Kresy wschodnie) | Second Polish Republic (Galicia)
+soviet_occupation__west_joins_bssr,polity,Soviet occupation — west joins BSSR (Molotov-Ribbentrop),west joins BSSR (Molotov-Ribbentrop),1,belarus,Soviet occupation — west joins BSSR (Molotov-Ribbentrop)
+byelorussian_ssr__un_founding_member,polity,Byelorussian SSR — UN founding member (1945),UN founding member (1945),1,belarus,Byelorussian SSR — UN founding member (1945)
+illyrians,people,Illyrians,,4,bosnia|serbia,Illyrians — Pannonian tribes (Breuci · Oseriates) | Illyrians — Daesitiates | Illyrians (Dardani) | Illyrians (Autariatae)
+roman_empire,existing_polity,Roman Empire,,61,bosnia|britain_ireland|bulgaria|croatia|france|germany|greece|hungary|iberia|italy|low_countries|romania|serbia|slovenia|switzerland_austria|armenia|azerbaijan|egypt|georgia|iraq|levant|morocco|libya,Roman Empire — Illyricum · Dalmatia province | Roman Britain (Britannia) | Roman | Roman Empire — Regio X (Venetia et Histria) | Roman Empire — Dalmatia province | Roman Empire — Pannonia Savia | Roman Empire — Pannonia Inferior · Pannonia Secunda | Roman Empire — Gallia Belgica · Lugdunensis | Roman Empire — Gallia Lugdunensis | Roman Empire — Narbonensis · Aquitania | Roman Empire — Belgica · Germania Superior | Roman Empire (Christian) | Roman Empire — Germania Superior · Inferior | Roman Macedonia province | Roman Achaea province — Athens as cultural centre | Roman Empire — Pannonia Province | Roman Empire — Dacia Province | Roman Empire — Gallaecia · Lusitania | Roman Empire — Tarraconensis | Roman Empire — Baetica Province | Western Roman Empire | Roman Empire (Italia) | Roman Empire | Roman Empire — Sicilia | Roman Empire — Sardinia | Roman Empire — Germania Inferior | Roman Empire — Gallia Belgica · Germania Inferior | Roman Empire — Gallia Belgica · Germania Superior | Roman Empire (partly) · Goths · Sarmatians · Alans | Roman Empire — Moesia Superior · Dardania provinces | Roman Empire — Singidunum (Belgrade) | Roman Empire — Pannonia province | Roman Empire — Noricum · Pannonia provinces | Roman Empire — Gallia Belgica / Germania Superior | Roman Empire — Raetia Province | Roman Empire — Noricum · Pannonia | Roman Armenia (province) | Byzantine Armenia (eastern thema) | Roman suzerainty (Pompey) | Roman Empire — Lazica (client) | Iberia — Roman client (Pompey treaty) | Roman Empire (Mesopotamia · Assyria provinces) | Roman Republic · Roman Empire | Arabia Petraea | Roman Empire (Christian) · Byzantine | Byzantine | Roman Mauretania Tingitana | Roman (fringe)
+western_roman_empire,existing_polity,Western Roman Empire,,11,bosnia|france|germany|hungary|italy|low_countries|switzerland_austria,Western Roman Empire — decline | Western Roman Empire | Western Roman Empire (Rhineland) | Western Roman Empire (declining)
+ostrogothic_kingdom,existing_polity,Ostrogothic Kingdom,,10,bosnia|croatia|hungary|italy|slovenia|switzerland_austria,Ostrogothic Kingdom | Ostrogothic Kingdom → Byzantine briefly | Ostrogothic Kingdom (Pannonia) | Ostrogothic Kingdom (Pavia) | Ostrogothic Kingdom (Ravenna capital) | Ostrogothic Kingdom (Sicily) | W. Roman → Visigoth transit → Ostrogothic Kingdom
+avar_khaganate,existing_polity,Avar Khaganate,,12,bosnia|croatia|czech_slovakia|hungary|romania|serbia|slovenia|switzerland_austria,Avar Khaganate | Avar Khaganate · South Slavic migration | Avar Khaganate (overlordship) | Avar Khaganate (Carpathian core) | Avar Khaganate (declining) · Vlachs | Lombard Kingdom → Avar Khaganate | Avar Khaganate (eastern frontier raids)
+croatian_principality,existing_polity,Croatian Principality,,4,bosnia|croatia,Croatian Principality | Croatian Principality (hinterland) | Croatian Principality · Frankish suzerainty (Carolingian) | Croatian Principality · East Frankish (Pannonian Croatia)
+kingdom_of_hungary,existing_polity,Croatia → Kingdom of Hungary,,24,bosnia|czech_slovakia|hungary|romania|serbia,Croatia → Kingdom of Hungary | Kingdom of Hungary (nominal suzerainty) | Kingdom of Hungary | Kingdom of Hungary (Árpád dynasty) | Kingdom of Hungary — Angevin dynasty | Kingdom of Hungary — Jagiellonian dynasty | Kingdom of Hungary — Habsburg rule | Kingdom of Hungary (Stephen I) | Kingdom of Hungary (Angevin then Jagiellonian) | Kingdom of Hungary (Horthy regency) | Kingdom of Hungary — Transylvania (with Saxon colonists) | Kingdom of Hungary → Eastern Kingdom of Hungary | Kingdom of Hungary forming | Kingdom of Hungary — Belgrade | Kingdom of Hungary → Habsburg Empire
+bosnian_kingdom,existing_polity,Bosnian Kingdom,,4,bosnia,Bosnian Kingdom — Kotromanić dynasty | Bosnian Kingdom · Hum region absorbed | Bosnian Kingdom — Tvrtko I | Bosnian Kingdom → Ottoman conquest
+duchy_of_saint_sava_ottoman,polity,Duchy of Saint Sava → Ottoman,Duchy of Saint Sava → Ottoman,1,bosnia,Duchy of Saint Sava → Ottoman
+kingdom_of_serbs_croats_slovenes_yugoslavia,polity,"Kingdom of Serbs, Croats & Slovenes → Yugoslavia","Kingdom of Serbs, Croats & Slovenes → Yugoslavia",4,bosnia|north_macedonia|serbia,"Kingdom of Serbs, Croats & Slovenes → Yugoslavia"
+independent_state_of_croatia,existing_polity,Independent State of Croatia,,2,bosnia|croatia,Independent State of Croatia (NDH) — Axis puppet
+sfr_yugoslavia,existing_polity,SFR Yugoslavia,,4,bosnia|croatia|serbia|slovenia,SFR Yugoslavia — Socialist Republic of Bosnia & Herzegovina (1945–1992) | SFR Yugoslavia — Socialist Republic of Croatia | SFR Yugoslavia — Socialist Republic of Serbia | SFR Yugoslavia — Socialist Republic of Slovenia (1945–1991)
+outside_roman_control,polity,Outside Roman control,Outside Roman control,2,britain_ireland,Outside Roman control
+welsh_kingdoms,event,Welsh kingdoms,,1,britain_ireland,Welsh kingdoms (resisting Anglo-Saxon expansion)
+kingdom_of_scotland,existing_polity,Kingdom of Scotland,,6,britain_ireland,Kingdom of Scotland | Kingdom of Scotland — Stuart dynasty | Kingdom of Scotland — Stuart
+house_of_alpin_dunkeld_canmore,unclassified,House of Alpin → Dunkeld → Canmore,,1,britain_ireland,House of Alpin → Dunkeld → Canmore
+kingdom_of_england,existing_polity,Kingdom of England,,9,britain_ireland,Kingdom of England — Wessex dynasty | Kingdom of England — Norman dynasty | Angevin dynasty (Angevin Empire) | Kingdom of England — Plantagenet dynasty | Kingdom of England — Lancaster dynasty | Kingdom of England — York dynasty (Wars of the Roses) | Kingdom of England — Tudor dynasty | Kingdom of England — Stuart dynasty | Kingdom of England — Stuart Restoration
+wars_of_scottish_independence,event,Wars of Scottish Independence,,1,britain_ireland,Wars of Scottish Independence
+house_of_bruce_stewartstuart,unclassified,House of Bruce → Stewart/Stuart,,1,britain_ireland,House of Bruce → Stewart/Stuart
+elizabethan_era,event,Elizabethan era,,1,britain_ireland,Elizabethan era
+english_civil_war,event,English Civil War,,1,britain_ireland,English Civil War
+kingdom_of_great_britain,existing_polity,Kingdom of Great Britain (Acts of Union,,1,britain_ireland,Kingdom of Great Britain (Acts of Union — England + Scotland)
+hanoverian_dynasty,unclassified,Hanoverian dynasty,,1,britain_ireland,Hanoverian dynasty — Georgian era
+united_kingdom,existing_polity,United Kingdom of Great Britain & Ireland,,6,britain_ireland|iberia|low_countries,United Kingdom of Great Britain & Ireland | United Kingdom of Great Britain & Northern Ireland | United Kingdom | United Kingdom Portugal-Brazil-Algarves | United Kingdom of the Netherlands (William I — Congress of Vienna) | United Kingdom of the Netherlands
+victorian_era__height_of_british_empire,polity,Victorian era — height of British Empire,height of British Empire,1,britain_ireland,Victorian era — height of British Empire
+edwardian_era,event,Edwardian era,,1,britain_ireland,Edwardian era
+irish_war_of_independence,event,Irish War of Independence,,1,britain_ireland,Irish War of Independence
+world_war_i_world_war_ii,event,World War I · World War II,,1,britain_ireland,World War I · World War II
+scottish_devolution,event,Scottish devolution,,1,britain_ireland,Scottish devolution (Scottish Parliament restored)
+pliska_preslav,event,Pliska → Preslav,,1,bulgaria,Pliska → Preslav (capitals)
+treaty_of_san_stefano_congress_of_berlin_russian_protectorat,polity,Treaty of San Stefano · Congress of Berlin · Russian protectorate,Treaty of San Stefano · Congress of Berlin · Russian protectorate,1,bulgaria,Treaty of San Stefano · Congress of Berlin · Russian protectorate
+balkan_wars_1912_13_wwi_wwii,event,Balkan Wars 1912–13 · WWI · WWII,,1,bulgaria,Balkan Wars 1912–13 · WWI (Central Powers) · WWII (Axis-aligned)
+soviet_aligned_warsaw_pact,unclassified,Soviet-aligned · Warsaw Pact,,1,bulgaria,Soviet-aligned · Warsaw Pact
+republic_of_bulgaria__nato_eu_member,polity,Republic of Bulgaria — NATO (2004) · EU member (2007),NATO (2004) · EU member (2007),1,bulgaria,Republic of Bulgaria — NATO (2004) · EU member (2007)
+histri,people,Histri,,2,croatia|slovenia,Histri (Illyrian)
+w_roman_odoacer_ostrogothic_byzantine,event,W. Roman → Odoacer → Ostrogothic → Byzantine,,3,croatia|slovenia,W. Roman → Odoacer → Ostrogothic → Byzantine
+gepid_kingdom,existing_polity,Gepid Kingdom,,5,croatia|hungary|romania|serbia,Gepid Kingdom | Gepid Kingdom (Great Plain · Tisza) | Gepid Kingdom (Transylvania)
+frankish_middle_frankish_east_frankish_hre,event,Frankish → Middle Frankish → East Frankish → HRE,,1,croatia,Frankish → Middle Frankish → East Frankish → HRE
+holy_roman_empire,existing_polity,Holy Roman Empire,,14,croatia|germany|italy|low_countries|slovenia|switzerland_austria,Holy Roman Empire | Holy Roman Empire — Habsburg era | Holy Roman Empire — Kingdom of Italy | Holy Roman Empire — German Kingdom | Holy Roman Empire — Duchy of Carniola | Holy Roman Empire — Duchy of Carinthia · Duchy of Styria | Holy Roman Empire dissolved (Francis abdicates as Emperor)
+croatian_kingdom,existing_polity,Byzantine · Croatian Kingdom,,3,croatia,Byzantine (some cities) · Croatian Kingdom | Croatian Kingdom — Tomislav | Croatian Kingdom → Hungarian pressure
+venice_dominates_republic_of_ragusa_forming,polity,Venice dominates · Republic of Ragusa forming,Venice dominates · Republic of Ragusa forming,1,croatia,Venice dominates · Republic of Ragusa forming
+mongol_invasion,event,Mongol invasion,,1,croatia,Mongol invasion
+habsburg_monarchy,existing_polity,Habsburg,,28,croatia|czech_slovakia|germany|hungary|low_countries|romania|serbia|slovenia|switzerland_austria,Habsburg — Pazin county | Habsburg — Pazin | Habsburg — Pazin area | Habsburg — reconquered (Treaty of Karlowitz 1699) | Habsburg → Austria-Hungary (Austrian Küstenland) | Habsburg Monarchy | Austrian Empire (president of Confederation) | Habsburg Kingdom of Hungary | Habsburg (Transylvania reintegrated) | Austrian Empire — Kingdom of Hungary | Habsburg Monarchy rule | Habsburg — Duchy of Bukovina | Habsburg Empire — Belgrade captured | Habsburg Empire (Treaty of Karlowitz 1699) | Habsburg Empire — Belgrade | Habsburg Empire — Vojvodina | Habsburg Empire | Habsburg Empire → Austria-Hungary | Habsburg (from 1335) | Habsburg — Pazin / inland Istria | Habsburg → Austria-Hungary (Austrian Littoral) | Habsburg dynasty takes Austria (Rudolf I) | Habsburg Empire (Maximilian I — 'the Last Knight') | Habsburg Monarchy — Austrian branch | Austrian Empire (proclaimed by Francis II) | Austrian Empire | Austria-Hungary (Dual Monarchy — Ausgleich)
+hungary_croatia_habsburg,unclassified,Hungary-Croatia → Habsburg,,1,croatia,Hungary-Croatia → Habsburg
+hungary_croatia_ottoman_raids,event,Hungary-Croatia → Ottoman raids,,1,croatia,Hungary-Croatia → Ottoman raids
+battle_of_mohacs,event,Battle of Mohács,,1,croatia,Battle of Mohács
+military_frontier,unclassified,Military Frontier,,1,croatia,Military Frontier (Vojna Krajina)
+habsburg_croatia_military_frontier,unclassified,Habsburg Croatia · Military Frontier,,1,croatia,Habsburg Croatia · Military Frontier
+slavonian_military_frontier,unclassified,Slavonian Military Frontier,,1,croatia,Slavonian Military Frontier
+french_austrian_empire,polity,French (briefly 1806–14) → Austrian Empire,French → Austrian Empire,1,croatia,French (briefly 1806–14) → Austrian Empire
+austrian_empire,existing_polity,Austrian Empire → Austria-Hungary,,6,croatia|italy|romania|slovenia|ukraine,Austrian Empire → Austria-Hungary | Austrian Empire — Lombardy-Venetia | Austrian Empire → Austria-Hungary — Duchy of Styria | Austrian Empire — Galicia
+kingdom_of_italy,existing_polity,Italy,,14,croatia|italy|slovenia,Italy — Istria (Treaty of Rapallo 1920) | Italy — Zadar & some coastal towns | Italy — annexed Istria | Italy (1941–43) → Germany / NDH (1943–45) | Middle Kingdom of Italy (Carolingian split) | Kingdom of Italy (Napoleon) | Kingdom of Italy | Kingdom of Italy — Sicily 1860 | Kingdom of Italy — Sardinia (core state) | Kingdom of Italy — Liberal era | Italy — Istria (continued)
+kingdom_of_scs_yugoslavia,polity,Kingdom of SCS → Yugoslavia,Kingdom of SCS → Yugoslavia,1,croatia,Kingdom of SCS → Yugoslavia
+kingdom_of_serbs_croats_slovenes_kingdom_of_yugoslavia,polity,"Kingdom of Serbs, Croats & Slovenes → Kingdom of Yugoslavia","Kingdom of Serbs, Croats & Slovenes → Kingdom of Yugoslavia",2,croatia|slovenia,"Kingdom of Serbs, Croats & Slovenes → Kingdom of Yugoslavia"
+hungary,existing_polity,Hungary,,3,croatia|serbia|slovenia,Hungary — Baranja occupied | Hungary — Vojvodina re-occupied | Hungary — Prekmurje
+yugoslavia_croatia,event,Yugoslavia / Croatia,,1,croatia,Yugoslavia / Croatia (Zone B → Croatia 1954)
+republic_of_croatia__nato_eu_member,polity,Republic of Croatia — NATO (2009) · EU member (2013),NATO (2009) · EU member (2013),1,croatia,Republic of Croatia — NATO (2009) · EU member (2013)
+germanic_tribes,people,Germanic tribes,,2,czech_slovakia|poland,Germanic tribes (Marcomanni · Quadi) | Germanic tribes (Lugii · Vandals · Goths · Burgundians)
+great_moravia,existing_polity,Great Moravia,,2,czech_slovakia|poland,Great Moravia (Rastislav · Svatopluk I) | Great Moravia (brief overlordship of Vistulans)
+magyar_conquest,event,Magyar conquest,,1,czech_slovakia,Magyar conquest
+kingdom_of_bohemia,existing_polity,Kingdom of Bohemia,,5,czech_slovakia,Kingdom of Bohemia — Přemyslid dynasty | Kingdom of Bohemia — Piast dynasty (briefly) | Kingdom of Bohemia — Luxembourg dynasty | Kingdom of Bohemia — Jagiellonian dynasty | Kingdom of Bohemia — Habsburg dynasty
+matthias_corvinus,unclassified,Matthias Corvinus,,1,czech_slovakia,Matthias Corvinus (briefly holds Moravia too)
+hussite_wars,event,Hussite Wars,,1,czech_slovakia,Hussite Wars (Bohemian Reformation)
+thirty_years_war,event,Thirty Years' War,,3,czech_slovakia|scandinavia|switzerland_austria,Thirty Years' War | Thirty Years' War (Protestant champion) | Thirty Years' War — devastation of HRE
+czechoslovakia,existing_polity,Czechoslovak Republic (First Republic,,8,czech_slovakia|ukraine,Czechoslovak Republic (First Republic — T.G. Masaryk) | Second Republic (truncated) | Third Republic (restored) | Czechoslovak Socialist Republic | Federalization (Czech SR + Slovak SR) | Czechoslovak Federal Republic (post-Velvet Revolution) | Romania — Bukovina · Czechoslovakia — Ruthenia | Transcarpathia from Czechoslovakia
+czechoslovak_government_in_exile_benes,event,Czechoslovak government-in-exile (Beneš,,1,czech_slovakia,Czechoslovak government-in-exile (Beneš — London)
+prague_spring,event,Prague Spring,,1,czech_slovakia,Prague Spring — reform crushed by Warsaw Pact invasion
+velvet_divorce,unclassified,Velvet Divorce,,1,czech_slovakia,Velvet Divorce (peaceful dissolution)
+nato_member_eu_member,event,NATO member · EU member,,2,czech_slovakia|poland,NATO member (1999) · EU member (2004)
+magdalenian_culture,culture,Magdalenian culture,,1,france,Magdalenian culture
+atlantic_megalithic_culture,culture,Atlantic megalithic culture,,1,france,Atlantic megalithic culture
+cardial_impressed_ware_culture,culture,Cardial / Impressed Ware culture,,1,france,Cardial / Impressed Ware culture
+atlantic_bronze_age_culture,culture,Atlantic Bronze Age,,1,france,Atlantic Bronze Age
+tumulus_culture_urnfield_culture,culture,Tumulus culture → Urnfield culture,,1,france,Tumulus culture → Urnfield culture
+hallstatt_culture,culture,Hallstatt culture,,1,france,Hallstatt culture
+la_tene_culture,culture,La Tène culture,,1,france,La Tène culture
+belgae,unclassified,Belgae,,3,france|low_countries,Belgae (Gallia Belgica) | Belgae (Celtic-Germanic tribes) | Belgae (Aduatuci · Treveri · Tungri)
+carolingian_empire,existing_polity,Frankish Kingdom,,18,france|germany|italy|low_countries|slovenia|switzerland_austria,Frankish Kingdom — Merovingian dynasty | Frankish Kingdom — Merovingian (Neustria · Austrasia) | Frankish Kingdom — Carolingian dynasty | Carolingian Empire (Charlemagne) | Frankish Kingdom — Merovingian then Carolingian | Carolingian Empire (Kingdom of Italy) | Frankish Kingdom (Clovis I) | Frankish Kingdom (conquest of Frisia — Charles Martel · Boniface) | Carolingian Empire | Frankish Kingdom → East Frankish → HRE | Frankish Kingdom — Burgundy conquered | Frankish Kingdom — Alemannia conquered | Frankish Kingdom — Bavaria conquered
+brythonic_migration_from_britain,event,Brythonic migration from Britain,,1,france,Brythonic migration from Britain
+visigothic_kingdom,existing_polity,Visigothic Kingdom,,6,france|iberia,Visigothic Kingdom (Toulouse) | Visigothic Kingdom absorbs Suebi | Visigothic Kingdom (Toledo capital after 507) | Visigothic Kingdom
+al_andalus,existing_polity,Al-Andalus,,6,france|iberia,Al-Andalus (Umayyad raids into Aquitaine) | Emirate of Córdoba (Umayyad) | Caliphate of Córdoba | Taifa Kingdoms (reinos de taifas) | Nasrid Emirate of Granada
+kingdom_of_france,existing_polity,Kingdom of France,,7,france,Kingdom of France — Capetian dynasty | Kingdom of France — Valois dynasty | Kingdom of France — Valois (continued) | Kingdom of France — Bourbon dynasty | Constitutional Monarchy | Restoration — Bourbon dynasty | July Monarchy — Bourbon-Orléans
+albigensian_crusade,event,Albigensian Crusade,,1,france,Albigensian Crusade
+italian_wars,event,Italian Wars,,2,france|italy,Italian Wars | Italian Wars (France vs Habsburg)
+french_wars_of_religion,event,French Wars of Religion,,1,france,French Wars of Religion
+alsace,event,Alsace,,1,france,Alsace (HRE → French acquisition)
+lorraine_hre,unclassified,Lorraine (HRE,,1,france,Lorraine (HRE — French influence growing)
+alsace_fully_french,event,Alsace fully French,,1,france,Alsace fully French
+french_first_empire,existing_polity,French First Empire,,3,france|low_countries,French First Empire — Bonaparte dynasty | French First Empire
+german_empire,existing_polity,Alsace-Lorraine,,2,france|germany,Alsace-Lorraine (German Empire) | German Empire (Deutsches Kaiserreich)
+alsace_lorraine_returned_to_france,event,Alsace-Lorraine returned to France,,1,france,Alsace-Lorraine returned to France
+celtic_la_tene_culture,culture,Celtic La Tène culture,,2,germany|hungary,Celtic La Tène culture (Rhineland · southern Germany) | Celtic La Tène culture (Boii · Taurisci · Azali)
+migration_period,event,Migration Period,,1,germany,Migration Period — Angles/Saxons to Britain
+saxon_wars_charlemagne,event,Saxon Wars (Charlemagne,,1,germany,Saxon Wars (Charlemagne — conquest & forced Christianization)
+hohenstaufen,existing_polity,Hohenstaufen dynasty,,2,germany|italy,Hohenstaufen dynasty (Frederick Barbarossa · Frederick II) | Hohenstaufen (Frederick II)
+baltic_prussians,event,Baltic Prussians,,1,germany,"Baltic Prussians (pagan, resisting Christianization)"
+teutonic_order,existing_polity,Teutonic Order,,4,germany|poland,Teutonic Order — crusade against Prussians | Teutonic Order State (Monastic State of Prussia) | Duchy of Prussia (Teutonic Order secularized) | Teutonic Order in Pomerelia / Prussia (hostile neighbor)
+prussian_crusade,event,Prussian Crusade,,1,germany,Prussian Crusade (Baltic pagans conquered · Germanized)
+great_interregnum,event,Great Interregnum,,2,germany|scandinavia,Great Interregnum
+margraviate_of_brandenburg,polity,Margraviate of Brandenburg (Ascanian → Wittelsbach → Luxembourg),Margraviate of Brandenburg,1,germany,Margraviate of Brandenburg (Ascanian → Wittelsbach → Luxembourg)
+livonian_order,unclassified,Livonian Order,,1,germany,Livonian Order (Baltic crusader branch)
+reformation_splits_germany_protestant_north_vs_catholic_sout,unclassified,Reformation splits Germany: Protestant north vs Catholic south,,1,germany,Reformation splits Germany: Protestant north vs Catholic south
+thirty_years_war_devastates_germany,event,Thirty Years' War (devastates Germany,,1,germany,Thirty Years' War (devastates Germany — ~30% population loss)
+300_sovereign_territories_kleinstaaterei,event,~300 sovereign territories · 'Kleinstaaterei',,1,germany,~300 sovereign territories · 'Kleinstaaterei'
+kingdom_of_prussia,existing_polity,Brandenburg-Prussia (Frederick William,,5,germany|poland,Brandenburg-Prussia (Frederick William — the Great Elector) | Kingdom of Prussia (Frederick I) | Kingdom of Prussia | Kingdom of Prussia — Bismarck era | Prussian Partition (Greater Poland · Pomerania)
+french_occupation_of_rhineland,event,French occupation of Rhineland,,1,germany,French occupation of Rhineland
+french_occupation_of_northern_germany,event,French occupation of northern Germany,,1,germany,French occupation of northern Germany
+prussian_reforms,event,Prussian reforms,,1,germany,Prussian reforms (Stein · Hardenberg · Scharnhorst)
+wars_of_liberation,event,Wars of Liberation,,1,germany,Wars of Liberation — Prussia leads anti-Napoleon coalition
+german_confederation,existing_polity,German Confederation (Deutscher Bund,,3,germany|switzerland_austria,German Confederation (Deutscher Bund — 39 states) | German Confederation (northern members) | German Confederation (Austria as president)
+wilhelmine_era_kaiser_wilhelm_ii,event,Wilhelmine era (Kaiser Wilhelm II,,1,germany,Wilhelmine era (Kaiser Wilhelm II — aggressive foreign policy)
+world_war_i,event,World War I,,1,germany,World War I
+weimar_republic,existing_polity,Weimar Republic,,1,germany,Weimar Republic (Weimarer Republik)
+world_war_ii_holocaust,event,World War II · Holocaust,,1,germany,World War II · Holocaust (6 million Jews murdered)
+allied_occupation,event,Allied occupation,,2,germany|switzerland_austria,Allied occupation (four zones: US · UK · France · Soviet) | Allied occupation (four zones)
+federal_republic_germany,existing_polity,Federal Republic of Germany (West Germany,,2,germany,Federal Republic of Germany (West Germany — Bonn) | Federal Republic of Germany (reunified)
+nato_member_eec_founding_member,event,NATO member · EEC founding member,,1,germany,NATO member (1955) · EEC founding member (1957)
+east_germany,existing_polity,German Democratic Republic (East Germany,,1,germany,German Democratic Republic (East Germany — Berlin)
+eu_founding_member_eurozone_berlin_restored_as_capital,event,EU founding member · Eurozone · Berlin restored as capital,,1,germany,EU founding member · Eurozone (2002) · Berlin restored as capital (1999)
+largest_economy_in_europe_nato_member,event,Largest economy in Europe · NATO member,,1,germany,Largest economy in Europe · NATO member
+minoan_civilization_culture,culture,Minoan civilization,,1,greece,Minoan civilization — Crete & Cyclades
+mycenaean_civilization_culture,culture,Mycenaean civilization,,1,greece,Mycenaean civilization — Mycenae · Tiryns · Pylos
+greek_dark_ages,event,Greek Dark Ages,,1,greece,Greek Dark Ages — migrations · depopulation
+persian_wars,event,Persian Wars,,1,greece,Persian Wars — Marathon · Thermopylae · Salamis · Plataea
+macedonia__philip_ii_battle_of_chaeronea_league_of_corinth,polity,Macedonia — Philip II · Battle of Chaeronea · League of Corinth,Philip II · Battle of Chaeronea · League of Corinth,1,greece,Macedonia — Philip II · Battle of Chaeronea · League of Corinth
+alexander_iii,unclassified,Alexander III,,1,greece,Alexander III — conquest of Persia
+sparta,event,Sparta,,1,greece,Sparta — post-Leuctra decline
+antipater_cassander,event,Antipater → Cassander,,1,greece,Antipater → Cassander — Macedonia
+aetolian_league_forming,polity,Aetolian League forming,Aetolian League forming,1,greece,Aetolian League forming
+achaean_league_forming,polity,Achaean League forming,Achaean League forming,1,greece,Achaean League forming
+pyrrhic_war,event,Pyrrhic War,,1,greece,Pyrrhic War — Italy & Sicily
+cleomenes_iii_of_sparta,event,Cleomenes III of Sparta,,1,greece,Cleomenes III of Sparta — reform wars
+latin_empire,existing_polity,Latin Empire,,2,greece|anatolia,Latin Empire — Constantinople-based | Latin Empire · Nicaea Empire
+greek_war_of_independence,event,Greek War of Independence,,1,greece,Greek War of Independence
+kingdom_of_greece,existing_polity,Kingdom of Greece,,3,greece,Kingdom of Greece — Wittelsbach dynasty (Otto I) | Kingdom of Greece — Glücksburg dynasty (George I —) | Kingdom of Greece — Glücksburg dynasty
+megali_idea_balkan_wars_1912_13_wwi_smyrna_disaster_1922,event,Megali Idea · Balkan Wars 1912–13 · WWI · Smyrna disaster 1922,,1,greece,Megali Idea · Balkan Wars 1912–13 · WWI · Smyrna disaster 1922
+greek_government_in_exile,event,Greek Government in Exile,,1,greece,Greek Government in Exile — Cairo · London
+third_hellenic_republic__eu_member_eurozone,polity,Third Hellenic Republic — EU member (1981) · Eurozone (2001),EU member (1981) · Eurozone (2001),1,greece,Third Hellenic Republic — EU member (1981) · Eurozone (2001)
+dacian_kingdom,existing_polity,Dacian Kingdom,,3,hungary|romania|ukraine,Dacian Kingdom | Dacian Kingdom — Sarmizegetusa Regia (capital) | Dacian / Thracian tribes
+free_dacians_carpi,unclassified,Free Dacians / Carpi,,1,hungary,Free Dacians / Carpi
+east_frankish_frontier_march,unclassified,East Frankish frontier march,,1,hungary,East Frankish frontier march
+bulgarian_suzerainty,polity,Bulgarian (First Empire) suzerainty,Bulgarian suzerainty,3,hungary|serbia,Bulgarian (First Empire) suzerainty | Bulgarian suzerainty (Simeon I)
+hungarian_grand_principality,existing_polity,Hungarian Grand Principality,,2,hungary|switzerland_austria,Hungarian Grand Principality (Árpád conquest) | Hungarian Grand Principality (overlordship)
+principality_of_transylvania,existing_polity,Principality of Transylvania,,3,hungary|romania,"Principality of Transylvania (Ottoman vassal, de facto autonomous) | Principality of Transylvania"
+northern_transylvania_returned,event,Northern Transylvania returned,,1,hungary,Northern Transylvania returned (Second Vienna Award)
+transylvania_to_romania,event,Transylvania to Romania,,1,hungary,Transylvania to Romania (Paris Peace 1947)
+celts,people,Celts,,2,iberia|serbia,Celts (NW Gallaecia) | Celts (Scordisci)
+greek_colonies,unclassified,Greek colonies,,4,iberia|italy|ukraine|georgia,Greek colonies (Emporion · Rhode) | Greek colonies (Syracuse · Akragas · Selinunte) | Greek colonies (Olbia · Tyras) | Greek colonies (Phasis · Dioscurias)
+tartessian_civilization_culture,culture,Tartessian civilization,,1,iberia,Tartessian civilization (Guadalquivir)
+phoenician_colonies,unclassified,Phoenician colonies,,3,iberia|italy|libya,Phoenician colonies (Gadir · Málaga · Sexi) | Phoenician colonies (Tharros · Nora · Sulcis) | Phoenician colonies (Oea · Sabratha · Leptis Magna)
+carthage,existing_polity,Carthaginian expansion,,2,iberia|tunisia,Carthaginian expansion (New Carthage) | Carthage (Punic civilization)
+vandals_in_baetica_africa,event,Vandals in Baetica → Africa,,1,iberia,Vandals in Baetica → Africa
+vandals_in_baetica_north_africa_429,event,Vandals in Baetica → North Africa 429,,1,iberia,Vandals in Baetica → North Africa 429
+pelayo_s_reconquista_begins,event,Pelayo's Reconquista begins,,1,iberia,Pelayo's Reconquista begins
+conquest_of_toledo,event,Conquest of Toledo,,1,iberia,Conquest of Toledo
+crown_of_aragon,existing_polity,Crown of Aragon,,4,iberia|italy,"Crown of Aragon (Aragon + Catalonia) | Crown of Aragon (Sicily 1282, Sardinia 1323) | Crown of Aragon (Naples 1442, Mediterranean empire) | Crown of Aragon (unified Sicily)"
+almoravid_dynasty,existing_polity,Almoravid Dynasty,,4,iberia|morocco|algeria|west_africa,"Almoravid Dynasty | Almoravid dynasty (al-Murabitun) — originated in Western Sahara Sanhaja; unified Morocco, Iberia | Almoravid (Murabitun) | Almoravid Sultanate (Berber — conquers Ghana)"
+crown_of_castile,unclassified,Crown of Castile,,1,iberia,Crown of Castile (Castile + León merged)
+almohad_caliphate,existing_polity,Almohad Caliphate,,8,iberia|morocco|algeria|libya|tunisia,Almohad Caliphate | Almohad dynasty (al-Muwahhidun) — Masmuda Berber from High Atlas; unified Morocco + Iberia + Algeria
+age_of_discovery_begins,event,Age of Discovery begins,,1,iberia,Age of Discovery begins (Henry the Navigator)
+navarre_annexed_by_castile,event,Navarre → annexed by Castile,,1,iberia,Navarre → annexed by Castile
+fall_of_granada,event,Fall of Granada,,1,iberia,Fall of Granada
+habsburg_spain,unclassified,Habsburg Spain,,1,iberia,"Habsburg Spain — Armada defeat (1588), decline"
+bourbon_spain,unclassified,Bourbon Spain,,2,iberia,Bourbon Spain (War of Spanish Succession) | Bourbon Spain (Philip V → Carlos III enlightenment)
+pombal_reforms,event,Pombal reforms,,1,iberia,Pombal reforms
+napoleonic_invasion,event,Napoleonic invasion,,1,iberia,Napoleonic invasion — court to Brazil
+peninsular_war_war_of_independence,event,Peninsular War / War of Independence,,1,iberia,Peninsular War / War of Independence
+bourbon_restored,unclassified,Bourbon restored,,1,iberia,Bourbon restored (Fernando VII)
+carnation_revolution,event,Carnation Revolution,,1,iberia,Carnation Revolution
+spanish_civil_war,event,Spanish Civil War,,1,iberia,Spanish Civil War
+terramare_culture,culture,Terramare culture,,1,italy,Terramare culture
+proto_villanovan_culture,culture,Proto-Villanovan culture,,1,italy,Proto-Villanovan culture
+villanovan_culture,culture,Villanovan culture,,2,italy,Villanovan culture | Villanovan culture (central)
+este_golasecca_cultures,unclassified,Este · Golasecca cultures,,1,italy,Este · Golasecca cultures
+celtic_la_tene_migration_culture,culture,Celtic La Tène migration,,1,italy,Celtic La Tène migration
+rinaldone_gaudo_cultures,unclassified,Rinaldone · Gaudo cultures,,1,italy,Rinaldone · Gaudo cultures
+apennine_culture,culture,Apennine culture,,2,italy,Apennine culture
+latial_culture,culture,Latial culture,,1,italy,Latial culture
+italic_peoples,people,Italic peoples,,1,italy,Italic peoples (Oscan · Samnite · Lucanian)
+castelluccio_culture,culture,Castelluccio culture,,1,italy,Castelluccio culture
+thapsos_culture,culture,Thapsos culture,,1,italy,Thapsos culture
+pantalica_culture,culture,Pantalica culture,,1,italy,Pantalica culture
+ozieri_arzachena_cultures,unclassified,Ozieri · Arzachena cultures,,1,italy,Ozieri · Arzachena cultures
+nuragic_civilization_culture,culture,Nuragic civilization,,1,italy,Nuragic civilization
+ligurians_euganei_raeti,unclassified,Ligurians · Euganei · Raeti,,1,italy,Ligurians · Euganei · Raeti
+celtic_gauls,people,Celtic Gauls,,1,italy,Celtic Gauls (Insubres · Boii · Senones)
+venetians,unclassified,Venetians,,1,italy,Venetians (Adriatic coast)
+etruscan_civilization_culture,culture,Etruscan civilization,,1,italy,Etruscan civilization (Tyrrhenia)
+latin_sabine_samnite_peoples,people,Latin · Sabine · Samnite peoples,,1,italy,Latin · Sabine · Samnite peoples
+roman_kingdom,existing_polity,Roman Kingdom,,2,italy|algeria,Roman Kingdom | Mauro-Roman Kingdom · Altava Kingdom
+magna_graecia,unclassified,Magna Graecia,,1,italy,Magna Graecia (Greek colonies)
+oscan_samnite_peoples,people,Oscan · Samnite peoples,,1,italy,Oscan · Samnite peoples
+punic_coastal_settlements,unclassified,Punic coastal settlements,,1,italy,Punic coastal settlements
+carthaginian_western_sicily,existing_polity,Carthaginian western Sicily,,1,italy,Carthaginian western Sicily
+carthaginian_sardinia,existing_polity,Carthaginian Sardinia,,1,italy,Carthaginian Sardinia
+odoacer_kingdom,existing_polity,Kingdom of Odoacer,,4,italy,Kingdom of Odoacer | Kingdom of Odoacer (Ravenna) | Kingdom of Odoacer (Sicily)
+gothic_war,polity,Gothic War (Byzantine reconquest),Gothic War,1,italy,Gothic War (Byzantine reconquest)
+byzantine_exarchate_of_ravenna,existing_polity,Byzantine Exarchate of Ravenna,,2,italy,Byzantine Exarchate of Ravenna
+byzantine_catepanate_of_italy,existing_polity,Byzantine Catepanate of Italy,,3,italy,Byzantine Catepanate of Italy (Puglia · Calabria) | Byzantine Catepanate of Italy
+vandal_raids_on_sicily,event,Vandal raids on Sicily,,1,italy,Vandal raids on Sicily
+byzantine_sicilian_theme,existing_polity,Byzantine Sicilian Theme,,1,italy,Byzantine Sicilian Theme
+vandal_kingdom,existing_polity,Vandal Kingdom,,5,italy|algeria|libya|tunisia,Vandal Kingdom (Sardinia) | Vandal Kingdom (transit) | Vandal Kingdom
+byzantine_sardinia,existing_polity,Byzantine Sardinia,,2,italy,Byzantine Sardinia | Byzantine Sardinia → Giudicati emerging
+lombard_kingdom,existing_polity,Lombard Kingdom,,2,italy|switzerland_austria,Lombard Kingdom (Milan · Pavia) | Lombard Kingdom (parts of Tyrol · Carinthia)
+lombard_duchy_of_spoleto,existing_polity,Lombard Duchy of Spoleto,,1,italy,Lombard Duchy of Spoleto
+papal_states,existing_polity,Papal States,,5,italy,Papal States (formalized) | Papal States | Papal States (restored)
+lombard_duchy_of_benevento,existing_polity,Lombard Duchy of Benevento,,1,italy,Lombard Duchy of Benevento
+principality_of_salerno,existing_polity,Principality of Salerno,,1,italy,Principality of Salerno
+arab_raids_from_north_africa_begin,event,Arab raids from North Africa begin,,1,italy,Arab raids from North Africa begin
+emirate_of_sicily,existing_polity,Emirate of Sicily,,2,italy,"Emirate of Sicily (Aghlabid then Kalbid) | Emirate of Sicily (Arab rule, Palermo capital)"
+arab_emirate_of_bari,existing_polity,Arab Emirate of Bari,,1,italy,Arab Emirate of Bari
+giudicati_of_sardinia,unclassified,Giudicati of Sardinia,,1,italy,Giudicati of Sardinia (4 kingdoms)
+tuscan_march,existing_polity,Tuscan March,,1,italy,Tuscan March
+investiture_controversy,unclassified,Investiture Controversy,,1,italy,Investiture Controversy
+lombard_principalities,people,Lombard principalities,,1,italy,Lombard principalities (Benevento · Salerno · Capua)
+norman_conquest_begins,event,Norman conquest begins,,1,italy,Norman conquest begins (Roger I)
+giudicati_torres,existing_polity,Giudicati: Torres · Gallura · Arborea · Cagliari,,1,italy,Giudicati: Torres · Gallura · Arborea · Cagliari
+pisan_genoese_commercial_influence,polity,Pisan / Genoese commercial influence,Pisan / Genoese commercial influence,1,italy,Pisan / Genoese commercial influence
+lombard_league_vs_frederick_barbarossa,polity,Lombard League vs Frederick Barbarossa,Lombard League vs Frederick Barbarossa,1,italy,Lombard League vs Frederick Barbarossa
+city_communes,unclassified,City communes,,1,italy,City communes (Milan · Venice · Genoa · Verona)
+guelph_vs_ghibelline,unclassified,Guelph vs Ghibelline,,1,italy,Guelph vs Ghibelline
+norman_county_of_apulia,existing_polity,Norman County of Apulia · Calabria,,1,italy,Norman County of Apulia · Calabria
+norman_kingdom_of_sicily,existing_polity,Norman Kingdom of Sicily,,2,italy,Norman Kingdom of Sicily (south) | Norman Kingdom of Sicily
+angevin_kingdom_of_naples,existing_polity,Angevin Kingdom of Naples,,1,italy,Angevin Kingdom of Naples
+hohenstaufen_sicily,existing_polity,Hohenstaufen Sicily,,1,italy,Hohenstaufen Sicily
+angevin_sicily_sicilian_vespers,event,Angevin Sicily → Sicilian Vespers,,1,italy,Angevin Sicily → Sicilian Vespers
+aragonese_kingdom_of_sicily,existing_polity,Aragonese Kingdom of Sicily,,1,italy,Aragonese Kingdom of Sicily
+giudicati,event,Giudicati,,1,italy,Giudicati (declining under Pisa/Genoa)
+pisan_county_of_cagliari,existing_polity,Pisan County of Cagliari,,1,italy,Pisan County of Cagliari
+aragonese_sardinia,existing_polity,Aragonese Sardinia,,2,italy,Aragonese Sardinia | Aragonese / Spanish Kingdom of Sardinia
+duchy_of_milan,existing_polity,Duchy of Milan,,1,italy,Duchy of Milan (Visconti then Sforza)
+republic_of_genoa,existing_polity,Republic of Genoa,,1,italy,Republic of Genoa
+countyduchy_of_savoy,existing_polity,County/Duchy of Savoy,,1,italy,County/Duchy of Savoy
+republic_of_florence,existing_polity,Republic of Florence,,1,italy,Republic of Florence (Medici)
+italian_renaissance,unclassified,Italian Renaissance,,1,italy,Italian Renaissance
+republics_of_siena_lucca_pisa,unclassified,Republics of Siena · Lucca · Pisa,,1,italy,Republics of Siena · Lucca · Pisa
+aragonese_kingdom_of_naples,existing_polity,Aragonese Kingdom of Naples,,1,italy,Aragonese Kingdom of Naples
+kingdom_of_sicily,existing_polity,Kingdom of Sicily,,3,italy,Kingdom of Sicily (Aragonese) | Kingdom of Sicily (Spanish then Bourbon) | Kingdom of Sicily (British-backed Bourbon)
+spanish_duchy_of_milan,existing_polity,Spanish Duchy of Milan,,1,italy,Spanish Duchy of Milan
+austrian_habsburg,unclassified,Austrian Habsburg,,1,italy,Austrian Habsburg — Lombardy-Venetia
+grand_duchy_of_tuscany,existing_polity,Grand Duchy of Tuscany,,2,italy,Grand Duchy of Tuscany (Medici) | Grand Duchy of Tuscany (Habsburg-Lorraine)
+kingdom_of_naples,existing_polity,Kingdom of Naples,,2,italy,Kingdom of Naples (Spanish then Bourbon) | Kingdom of Naples (Murat then Bourbon)
+kingdom_of_sardinia,existing_polity,Kingdom of Sardinia,,2,italy,"Kingdom of Sardinia (Savoy, after 1718) | Kingdom of Sardinia (Savoy–Piedmont)"
+cisalpine,existing_polity,Cisalpine / Italian Republic,,1,italy,Cisalpine / Italian Republic (Napoleon)
+napoleon_annexes_rome,unclassified,Napoleon annexes Rome,,1,italy,Napoleon annexes Rome
+kingdom_of_the_two_sicilies,existing_polity,Kingdom of the Two Sicilies,,2,italy,Kingdom of the Two Sicilies
+leads_risorgimento,unclassified,Leads Risorgimento,,1,italy,Leads Risorgimento (Cavour · Garibaldi)
+lombardy_1859_venetia_1866,unclassified,Lombardy 1859 · Venetia 1866,,1,italy,Lombardy 1859 · Venetia 1866
+rome_annexed_1870__end_of_papal_states,polity,Rome annexed 1870 — end of Papal States,end of Papal States,1,italy,Rome annexed 1870 — end of Papal States
+garibaldi_s_expedition_of_the_thousand_1860,unclassified,Garibaldi's Expedition of the Thousand 1860,,1,italy,Garibaldi's Expedition of the Thousand 1860
+fascist_italy,existing_polity,Fascist Italy,,1,italy,Fascist Italy (Mussolini · March on Rome)
+italian_social_republic,existing_polity,Italian Social Republic (RSI,,1,italy,Italian Social Republic (RSI — northern rump)
+italian_republic,existing_polity,Italian Republic,,1,italy,Italian Republic
+prince_bishopric_of_liege,polity,Prince-Bishopric of Liège (resists Burgundy),Prince-Bishopric of Liège,1,low_countries,Prince-Bishopric of Liège (resists Burgundy)
+habsburg_netherlands,unclassified,Habsburg Netherlands,,1,low_countries,Habsburg Netherlands (Mary of Burgundy → Maximilian)
+dutch_revolt,event,Dutch Revolt,,1,low_countries,Dutch Revolt (Eighty Years' War)
+dutch_republic_declining__stadholderless_periods,polity,Dutch Republic (declining — stadholderless periods),stadholderless periods),1,low_countries,Dutch Republic (declining — stadholderless periods)
+austrian_netherlands,event,Austrian Netherlands,,1,low_countries,Austrian Netherlands (Treaty of Utrecht)
+austrian_rule_restored,event,Austrian rule restored,,1,low_countries,Austrian rule restored
+annexed_into_french_first_empire,polity,Annexed into French First Empire,Annexed into French First Empire,1,low_countries,Annexed into French First Empire
+grand_duchy_of_luxembourg,polity,Grand Duchy of Luxembourg (personal union with NL → independent),Grand Duchy of Luxembourg,1,low_countries,Grand Duchy of Luxembourg (personal union with NL → independent)
+belgian_colonial_empire,polity,Belgian colonial empire (Congo Free State → Belgian Congo),Belgian colonial empire,1,low_countries,Belgian colonial empire (Congo Free State → Belgian Congo)
+dutch_government_in_exile,event,Dutch government-in-exile,,1,low_countries,Dutch government-in-exile (London)
+grand_duchess_charlotte_in_exile,event,Grand Duchess Charlotte in exile,,1,low_countries,Grand Duchess Charlotte in exile
+founding_member_of_ecsc_eec_eu,event,Founding member of ECSC · EEC · EU,,1,low_countries,Founding member of ECSC · EEC · EU
+federalization,unclassified,Federalization,,1,low_countries,Federalization (Flemish · Walloon · Brussels regions)
+benelux_ecsc_eec_founding_member,event,Benelux · ECSC · EEC founding member,,1,low_countries,Benelux · ECSC · EEC founding member
+ancient_greek_influence,unclassified,Ancient Greek influence,,1,north_macedonia,Ancient Greek influence (south)
+persian_satrapy,unclassified,Persian satrapy,,1,north_macedonia,Persian satrapy (briefly)
+krusevo_republic,polity,Kruševo Republic (Ilinden Uprising),Kruševo Republic,1,north_macedonia,Kruševo Republic (Ilinden Uprising)
+serbia,event,Serbia,,2,north_macedonia|serbia,Serbia — after First Balkan War
+bulgarian_kingdom__occupation,polity,Bulgarian Kingdom — occupation,occupation,1,north_macedonia,Bulgarian Kingdom — occupation
+yugoslav_partisans_sfr_yugoslavia,event,Yugoslav Partisans → SFR Yugoslavia,,2,north_macedonia|serbia,Yugoslav Partisans → SFR Yugoslavia
+early_european_farmers_danubian_culture,culture,Early European farmers · Danubian culture,,1,poland,Early European farmers · Danubian culture
+linear_pottery_culture,culture,Linear Pottery culture,,1,poland,Linear Pottery culture (Linearbandkeramik)
+corded_ware_culture_globular_amphora_culture,culture,Corded Ware culture · Globular Amphora culture,,1,poland,Corded Ware culture · Globular Amphora culture
+funnel_beaker_bell_beaker_cultures_culture,culture,Funnel Beaker · Bell Beaker cultures,,1,poland,Funnel Beaker · Bell Beaker cultures
+unetice_culture_urnfield_culture,culture,Únětice culture → Urnfield culture,,1,poland,Únětice culture → Urnfield culture
+lusatian_culture,culture,Lusatian culture,,1,poland,Lusatian culture
+hallstatt_culture_pomeranian_culture,culture,Hallstatt culture · Pomeranian culture,,1,poland,Hallstatt culture · Pomeranian culture
+przeworsk_culture,culture,Przeworsk culture,,1,poland,Przeworsk culture (associated with Vandals/Lugii)
+wielbark_culture,culture,Wielbark culture,,1,poland,Wielbark culture (associated with Goths)
+bohemian_influence_in_silesia,unclassified,Bohemian influence in Silesia,,1,poland,Bohemian influence in Silesia
+kingdom_of_poland,existing_polity,Kingdom of Poland,,7,poland|ukraine,Kingdom of Poland — Bolesław I the Brave | Kingdom of Poland reunified — Władysław I the Elbow-High | Kingdom of Poland — Jagiellonian dynasty | Congress Kingdom of Poland (Russian puppet) | Regency Kingdom of Poland (German puppet — WWI) | Second Polish Republic (Józef Piłsudski) | Kingdom of Poland — Galicia
+fragmentation_into_many_silesian_duchies,event,Fragmentation into many Silesian duchies,,1,poland,Fragmentation into many Silesian duchies
+thirteen_years_war,event,Thirteen Years' War,,1,poland,Thirteen Years' War — Royal Prussia recovered
+decline__liberum_veto_saxon_dynasty_russian_interference,polity,Decline — Liberum veto · Saxon dynasty · Russian interference,Liberum veto · Saxon dynasty · Russian interference,1,poland,Decline — Liberum veto · Saxon dynasty · Russian interference
+partitions_first_second_third,unclassified,Partitions: First · Second · Third,,1,poland,Partitions: First (1772) · Second (1793) · Third (1795)
+austrian_partition,event,Austrian Partition,,1,poland,Austrian Partition (Lesser Poland · Galicia)
+prussian_partition,unclassified,Prussian Partition,,1,poland,Prussian Partition (Silesia remains Prussian/Habsburg)
+polish_independence_restored,event,Polish independence restored,,1,poland,Polish independence restored
+polish_soviet_war,event,Polish-Soviet War,,1,poland,Polish-Soviet War
+polish_government_in_exile,event,Polish government-in-exile,,1,poland,Polish government-in-exile (London)
+round_table_agreement_end_of_communist_rule,event,Round Table Agreement → end of communist rule,,1,poland,Round Table Agreement → end of communist rule
+free_dacians__carpi,polity,Free Dacians — Carpi (east of Roman reach),Carpi (east of Roman reach),1,romania,Free Dacians — Carpi (east of Roman reach)
+free_dacians_carpi_goths_alans,people,Free Dacians / Carpi · Goths · Alans,,1,romania,Free Dacians / Carpi · Goths · Alans
+pechenegs_cumans,event,Pechenegs → Cumans,,2,romania,Pechenegs → Cumans | Pechenegs → Cumans (dominant)
+principality_of_wallachia,existing_polity,Principality of Wallachia,,2,romania,Principality of Wallachia
+principality_of_moldavia,existing_polity,Principality of Moldavia,,2,romania,Principality of Moldavia | Principality of Moldavia — Stephen the Great
+kingdom_of_romania,existing_polity,Kingdom of Romania,,5,romania,Kingdom of Romania | United Principalities → Kingdom of Romania (Romanian Moldavia) | Kingdom of Romania (fully independent 1877) | Kingdom of Romania — Bessarabia rejoins
+n_transylvania_hungary,event,N. Transylvania → Hungary,,1,romania,N. Transylvania → Hungary (Second Vienna Award)
+soviet_moldavian_ssr,polity,Soviet Moldavian SSR (restored),Soviet Moldavian SSR,1,romania,Soviet Moldavian SSR (restored)
+romanian_people_s_republic_socialist_republic_of_romania,people,Romanian People's Republic → Socialist Republic of Romania,,1,romania,Romanian People's Republic → Socialist Republic of Romania
+romania,event,Romania,,1,romania,Romania — NATO (2004) · EU member (2007)
+scythian_sarmatian_steppe_fringe,people,Scythian / Sarmatian steppe fringe,,1,russia,Scythian / Sarmatian steppe fringe
+indigenous_peoples_gokturk_khaganate_influence,people,Indigenous peoples · Göktürk Khaganate influence,,1,russia,Indigenous peoples · Göktürk Khaganate influence
+novgorod_republic,existing_polity,Novgorod Republic,,3,russia,Novgorod Republic — Rurik dynasty | Novgorod Republic (Lord Novgorod the Great) | Novgorod Republic
+kievan_rus,existing_polity,Kievan Rus,,7,russia|ukraine,Kievan Rus — Vladimir-Suzdal Principality | Kievan Rus fringe · Khazar remnants | Kievan Rus — Volhynia principality | Kievan Rus — Kyiv (capital) | Kievan Rus — Pereyaslavl · Chernihiv | Kievan Rus steppe border · Pecheneg/Cuman raids | Kievan Rus — fragmented into principalities
+indigenous_peoples,people,Indigenous peoples,,4,russia|united_states,Indigenous peoples — no Rus penetration | Indigenous peoples
+tsardom_russia,existing_polity,Tsardom of Russia,,3,russia,Tsardom of Russia — Ivan IV (the Terrible) | Tsardom of Russia | Tsardom of Russia — Kazan conquered (1552) · Astrakhan (1556)
+don_cossack_host,event,Don Cossack Host,,1,russia,Don Cossack Host (expansion)
+conquest_of_siberia_begins,event,Conquest of Siberia begins,,1,russia,Conquest of Siberia begins (Yermak)
+russian_alaska,existing_polity,Russian America,,4,russia|united_states,Russian America (Alaska) | Russian America
+white_army,event,White Army,,1,russia,White Army — Volunteer Army (Denikin) · Cossack revolt
+nordic_bronze_age_culture,culture,Nordic Bronze Age,,1,scandinavia,Nordic Bronze Age
+pre_roman_roman_iron_age_culture,culture,Pre-Roman & Roman Iron Age,,1,scandinavia,Pre-Roman & Roman Iron Age
+germanic_iron_age_migration_period_culture,culture,Germanic Iron Age · Migration Period,,1,scandinavia,Germanic Iron Age · Migration Period
+comb_ceramic_corded_ware_cultures_culture,culture,Comb Ceramic · Corded Ware cultures,,1,scandinavia,Comb Ceramic · Corded Ware cultures
+finnish_iron_age_culture,culture,Finnish Iron Age,,1,scandinavia,Finnish Iron Age
+kingdom_of_norway,existing_polity,Kingdom of Norway,,4,scandinavia,Kingdom of Norway — Fairhair dynasty | Kingdom of Norway | Kingdom of Norway — Hardrada dynasty | Kingdom of Norway — peak (Håkon IV)
+kingdom_of_denmark,existing_polity,Kingdom of Denmark,,10,scandinavia,Kingdom of Denmark | North Sea Empire (Cnut the Great — Denmark + England + Norway) | Kingdom of Denmark — Valdemar IV restores realm | Oldenburg dynasty — Reformation (Lutheranism) | Kingdom of Denmark-Norway | Denmark-Norway — absolute monarchy | Kingdom of Denmark (loses Norway 1814)
+kingdom_of_sweden,existing_polity,Kingdom of Sweden,,10,scandinavia,Kingdom of Sweden (emerging) | Kingdom of Sweden | Kingdom of Sweden — medieval consolidation | Kingdom of Sweden — Vasa dynasty | Swedish Empire (Stormaktstiden) | Kingdom of Sweden — Bernadotte dynasty | Sweden — neutral in World War II
+norwegian_civil_war_era,event,Norwegian Civil War era,,1,scandinavia,Norwegian Civil War era
+civil_war_period,event,Civil war period,,1,scandinavia,Civil war period
+valdemar_i,event,Valdemar I,,1,scandinavia,Valdemar I — Danish Baltic expansion
+northern_crusades,unclassified,Northern Crusades,,1,scandinavia,Northern Crusades (Finland conquered)
+swedish_crusades_into_finland,unclassified,Swedish Crusades into Finland,,1,scandinavia,Swedish Crusades into Finland
+black_death,event,Black Death,,1,scandinavia,Black Death — population collapse
+decline__personal_union_with_sweden_then_denmark,polity,"Decline — personal union with Sweden (1319), then Denmark","personal union with Sweden (1319), then Denmark",1,scandinavia,"Decline — personal union with Sweden (1319), then Denmark"
+swedish_novgorodian_border_wars,event,Swedish-Novgorodian border wars,,1,scandinavia,Swedish-Novgorodian border wars
+treaty_of_noteborg,event,Treaty of Nöteborg,,1,scandinavia,Treaty of Nöteborg (border fixed)
+kalmar_union,existing_polity,Kalmar Union,,1,scandinavia,Kalmar Union (Denmark · Norway · Sweden · Iceland · Finland)
+swedish_resistance,event,Swedish resistance,,1,scandinavia,Swedish resistance — Engelbrekt Rebellion · Sten Sture regents
+gustav_vasa,event,Gustav Vasa,,1,scandinavia,Gustav Vasa — Swedish independence (Finland follows Sweden out)
+thirty_years_war_involvement,event,Thirty Years' War involvement,,1,scandinavia,Thirty Years' War involvement
+reformation_centralization_under_gustav_vasa,unclassified,Reformation · centralization under Gustav Vasa,,1,scandinavia,Reformation · centralization under Gustav Vasa
+constant_wars_with_russia_over_karelia,event,Constant wars with Russia over Karelia,,1,scandinavia,Constant wars with Russia over Karelia
+great_northern_war,event,Great Northern War,,3,scandinavia,Great Northern War — allied against Sweden | Great Northern War | Great Northern War — Russian occupation (Great Wrath)
+age_of_liberty,event,Age of Liberty,,1,scandinavia,Age of Liberty (parliamentary rule)
+gustavian_era,event,Gustavian era,,1,scandinavia,Gustavian era (enlightened absolutism)
+lesser_wrath,event,Lesser Wrath,,1,scandinavia,Lesser Wrath (Russian occupation)
+norway_ceded_from_denmark_to_sweden,event,Norway ceded from Denmark to Sweden,,1,scandinavia,Norway ceded from Denmark to Sweden (Treaty of Kiel)
+schleswig_wars,event,Schleswig Wars,,1,scandinavia,Schleswig Wars — loss of Schleswig-Holstein to Prussia
+russification_policies,event,Russification policies,,1,scandinavia,Russification policies (Bobrikov era)
+modern_norway,existing_polity,Kingdom of Norway (independent,,2,scandinavia,Kingdom of Norway (independent — Haakon VII) | Kingdom of Norway
+neutral_in_world_war_i,event,Neutral in World War I,,3,scandinavia,Neutral in World War I
+iceland_sovereignty_under_danish_crown,unclassified,Iceland: sovereignty under Danish Crown,,1,scandinavia,Iceland: sovereignty under Danish Crown
+universal_suffrage_welfare_state_begins,polity,Universal suffrage · welfare state begins,Universal suffrage · welfare state begins,1,scandinavia,Universal suffrage · welfare state begins
+finnish_independence_declared,event,Finnish independence declared,,1,scandinavia,Finnish independence declared
+finnish_civil_war,event,Finnish Civil War,,1,scandinavia,Finnish Civil War
+kingdom_of_finland_briefly__german_prince_elected,polity,Kingdom of Finland (briefly — German prince elected),German prince elected),1,scandinavia,Kingdom of Finland (briefly — German prince elected)
+nazi_german_occupation__reichskommissariat_norwegen,polity,Nazi German occupation — Reichskommissariat Norwegen,Reichskommissariat Norwegen,1,scandinavia,Nazi German occupation — Reichskommissariat Norwegen
+norwegian_government_in_exile,event,Norwegian government-in-exile,,1,scandinavia,Norwegian government-in-exile (London)
+nazi_german_occupation__protectorate_of_denmark,polity,Nazi German occupation — Protectorate of Denmark,Protectorate of Denmark,1,scandinavia,Nazi German occupation — Protectorate of Denmark
+iceland_allied_occupation,event,Iceland: Allied occupation,,1,scandinavia,Iceland: Allied (British/US) occupation
+winter_war,event,Winter War,,1,scandinavia,Winter War (Soviet invasion)
+continuation_war,polity,Continuation War (allied with Germany vs USSR),Continuation War,1,scandinavia,Continuation War (allied with Germany vs USSR)
+lapland_war,event,Lapland War,,1,scandinavia,Lapland War (expels German forces)
+nato_founding_member,event,NATO founding member,,1,scandinavia,NATO founding member
+rejected_eu_membership,unclassified,Rejected EU membership,,1,scandinavia,Rejected EU membership (1972 · 1994)
+nato_founding_member_eu_member,event,NATO founding member · EU member,,1,scandinavia,NATO founding member (1949) · EU member (1973)
+armed_neutrality_swedish_welfare_model,event,Armed neutrality → Swedish welfare model,,1,scandinavia,Armed neutrality → Swedish welfare model
+eu_member_nato_member,event,EU member · NATO member,,2,scandinavia,EU member (1995) · NATO member (2024) | EU member (1995) · NATO member (2023)
+finlandization_cold_war_neutrality,event,Finlandization (Cold War neutrality,,1,scandinavia,Finlandization (Cold War neutrality — Soviet pressure)
+first_battle_of_kosovo,event,First Battle of Kosovo,,1,serbia,First Battle of Kosovo — Moravian Serbia / Ottoman
+serbian_despotate,existing_polity,Serbian Despotate,,4,serbia,Serbian Despotate — Lazarević dynasty | Serbian Despotate — Belgrade capital | Serbian Despotate — Branković dynasty | Serbian Despotate — Belgrade
+second_battle_of_kosovo,event,Second Battle of Kosovo,,1,serbia,Second Battle of Kosovo — Ottoman victory
+ottoman_conquest_of_kosovo,event,Ottoman conquest of Kosovo,,1,serbia,Ottoman conquest of Kosovo
+great_turkish_war__holy_league,polity,Great Turkish War — Holy League (Habsburg),Holy League (Habsburg),1,serbia,Great Turkish War — Holy League (Habsburg)
+habsburg_ottoman_wars_belgrade_alternating,unclassified,"Habsburg–Ottoman wars, Belgrade alternating",,1,serbia,"Habsburg–Ottoman wars, Belgrade alternating"
+habsburg_ottoman_wars,unclassified,Habsburg–Ottoman wars,,1,serbia,Habsburg–Ottoman wars
+first_serbian_uprising,event,First Serbian Uprising,,1,serbia,First Serbian Uprising — Karađorđe
+second_serbian_uprising,event,Second Serbian Uprising,,1,serbia,Second Serbian Uprising
+kosovo_war_nato_intervention,event,Kosovo War · NATO intervention,,1,serbia,Kosovo War · NATO intervention
+kosovo,event,Kosovo,,1,serbia,Kosovo — declared independence
+w_roman_germanic_tribes_ostrogothic_lombard,people,W. Roman → Germanic tribes → Ostrogothic → Lombard,,1,slovenia,W. Roman → Germanic tribes → Ostrogothic → Lombard
+duchy_of_carantania_forming,polity,Duchy of Carantania forming,Duchy of Carantania forming,1,slovenia,Duchy of Carantania forming
+duchy_of_carantania_frankish_suzerainty,polity,Duchy of Carantania → Frankish suzerainty,Duchy of Carantania → Frankish suzerainty,1,slovenia,Duchy of Carantania → Frankish suzerainty
+duchy_of_carantania_frankish,polity,Duchy of Carantania (Carinthia) → Frankish,Duchy of Carantania → Frankish,1,slovenia,Duchy of Carantania (Carinthia) → Frankish
+french_illyrian_provinces_austrian_empire,polity,French Illyrian Provinces (1809–13) → Austrian Empire,French Illyrian Provinces → Austrian Empire,1,slovenia,French Illyrian Provinces (1809–13) → Austrian Empire
+yugoslavia_slovenia,event,Yugoslavia / Slovenia,,1,slovenia,Yugoslavia / Slovenia (Zone B → Slovenia 1954)
+republic_of_slovenia__nato_eu_member_schengen,polity,Republic of Slovenia — NATO (2004) · EU member (2004) · Schengen (2007),NATO (2004) · EU member (2004) · Schengen (2007),1,slovenia,Republic of Slovenia — NATO (2004) · EU member (2004) · Schengen (2007)
+la_tene_culture_heartland_culture,culture,La Tène culture heartland,,1,switzerland_austria,La Tène culture heartland (Neuchâtel)
+carnuntum,unclassified,Carnuntum,,1,switzerland_austria,Carnuntum — Danube frontier capital
+first_burgundian_kingdom,polity,First Burgundian Kingdom (Worms → Sapaudia/Savoy),First Burgundian Kingdom,1,switzerland_austria,First Burgundian Kingdom (Worms → Sapaudia/Savoy)
+savoy_influence,unclassified,Savoy influence,,1,switzerland_austria,Savoy influence (Vaud · Valais)
+babenberg_extinction_premyslid_interlude,event,Babenberg extinction → Přemyslid interlude,,1,switzerland_austria,Babenberg extinction → Přemyslid interlude (Ottokar II)
+habsburg_expansion,unclassified,Habsburg expansion,,1,switzerland_austria,Habsburg expansion (Tyrol · Carinthia · Styria · Carniola)
+burgundian_wars,event,Burgundian Wars,,1,switzerland_austria,Burgundian Wars — Charles the Bold defeated
+swabian_war,event,Swabian War,,1,switzerland_austria,Swabian War — de facto independence from HRE
+confessional_division,event,Confessional division,,1,switzerland_austria,Confessional division (Catholic vs Reformed cantons)
+ottoman_sieges_of_vienna,unclassified,Ottoman sieges of Vienna,,1,switzerland_austria,Ottoman sieges of Vienna
+swiss_neutrality_in_thirty_years_war,event,Swiss neutrality in Thirty Years' War,,1,switzerland_austria,Swiss neutrality in Thirty Years' War
+peace_of_westphalia,event,Peace of Westphalia,,1,switzerland_austria,Peace of Westphalia — Swiss independence recognized (de jure)
+villmergen_wars,event,Villmergen Wars,,1,switzerland_austria,Villmergen Wars (Catholic-Protestant internal conflicts)
+war_of_spanish_succession,event,War of Spanish Succession,,1,switzerland_austria,War of Spanish Succession — Austria gains Netherlands · Naples · Milan
+act_of_mediation,event,Act of Mediation,,1,switzerland_austria,Act of Mediation (Napoleon restores cantonal system)
+napoleonic_wars,event,Napoleonic Wars,,1,switzerland_austria,Napoleonic Wars — multiple defeats by France
+metternich_era,event,Metternich era,,1,switzerland_austria,Metternich era — Congress of Vienna architect
+swiss_confederation_restored,polity,Swiss Confederation restored (Congress of Vienna),Swiss Confederation restored,1,switzerland_austria,Swiss Confederation restored (Congress of Vienna)
+perpetual_neutrality_guaranteed_by_great_powers,event,Perpetual neutrality guaranteed by great powers,,1,switzerland_austria,Perpetual neutrality guaranteed by great powers
+direct_democracy_federal_system_armed_neutrality,event,Direct democracy · federal system · armed neutrality,,1,switzerland_austria,Direct democracy · federal system · armed neutrality
+austro_prussian_war,event,Austro-Prussian War,,1,switzerland_austria,Austro-Prussian War — Austria excluded from Germany
+switzerland,event,Switzerland,,2,switzerland_austria,Switzerland — neutral in World War I | Switzerland — neutral in World War II
+controversies,event,Controversies,,1,switzerland_austria,Controversies (Nazi gold · refugee policy)
+international_neutrality,event,International neutrality,,1,switzerland_austria,International neutrality (not in NATO · UN member only 2002)
+not_an_eu_member,event,Not an EU member,,1,switzerland_austria,Not an EU member (bilateral agreements)
+austrian_state_treaty__sovereignty_restored_permanent_neutrality,polity,Austrian State Treaty — sovereignty restored · permanent neutrality,sovereignty restored · permanent neutrality,1,switzerland_austria,Austrian State Treaty — sovereignty restored · permanent neutrality
+eu_member_not_in_nato,event,EU member · not in NATO,,1,switzerland_austria,EU member (1995) · not in NATO (neutral)
+trypillia_culture,culture,Trypillia culture,,2,ukraine,Trypillia culture
+gothic_kingdom_culture,culture,Gothic Kingdom,,1,ukraine,Gothic Kingdom (Chernjakhov culture)
+rus_khaganate_steppe_fringe,polity,Rus' Khaganate steppe fringe,Rus' Khaganate steppe fringe,1,ukraine,Rus' Khaganate steppe fringe
+galicia_volhynia,existing_polity,Principality of Galicia-Volhynia,,1,ukraine,Principality of Galicia-Volhynia
+wild_fields,event,Wild Fields,,1,ukraine,Wild Fields — Zaporozhian Cossacks forming
+crimean_khanate,existing_polity,Crimean Khanate,,2,ukraine,Crimean Khanate | Crimean Khanate (Ottoman vassal)
+cossack_hetmanate,existing_polity,Cossack Hetmanate (right bank,,3,ukraine,Cossack Hetmanate (right bank — brief) | Cossack Hetmanate — Bohdan Khmelnytsky uprising | Cossack Hetmanate (Left Bank)
+pereiaslav_agreement_left_bank_to_muscovy,event,Pereiaslav Agreement → Left Bank to Muscovy,,1,ukraine,Pereiaslav Agreement → Left Bank to Muscovy
+ottoman_cossack_buffer_raiding_zone,unclassified,Ottoman-Cossack buffer / raiding zone,,1,ukraine,Ottoman-Cossack buffer / raiding zone
+ukrainian_national_awakening,unclassified,Ukrainian national awakening,,1,ukraine,Ukrainian national awakening (Ruthenian movement)
+poland,event,Poland,,1,ukraine,Poland — Eastern Galicia (Treaty of Riga 1921)
+crimean_ssr_crimean_assr,polity,Crimean SSR (brief) → Crimean ASSR,Crimean SSR → Crimean ASSR,1,ukraine,Crimean SSR (brief) → Crimean ASSR
+ukrainian_ssr__holodomor_famine,polity,Ukrainian SSR — Holodomor famine,Holodomor famine,2,ukraine,Ukrainian SSR — Holodomor famine
+soviet_occupation_joins_ukrssr,polity,Soviet occupation (Molotov-Ribbentrop) → joins UkrSSR,Soviet occupation → joins UkrSSR,1,ukraine,Soviet occupation (Molotov-Ribbentrop) → joins UkrSSR
+ukrainian_ssr__galiciavolhynia_fully_absorbed,polity,Ukrainian SSR — Galicia/Volhynia fully absorbed,Galicia/Volhynia fully absorbed,1,ukraine,Ukrainian SSR — Galicia/Volhynia fully absorbed
+russian_occupation,event,Russian occupation,,1,ukraine,Russian occupation (DPR/LPR)
+ukraine,event,Ukraine,,1,ukraine,Ukraine — full-scale Russian invasion
+taino,unclassified,Taíno,,1,caribbean,Taíno (Arawak) — Cuba · Hispaniola · Jamaica · Puerto Rico
+carib_peoples,people,Carib peoples,,1,caribbean,Carib peoples — Lesser Antilles
+spanish_caribbean,existing_polity,Spanish Caribbean,,2,caribbean,Spanish Caribbean (Cuba · Hispaniola · Puerto Rico) | Spanish Cuba · Puerto Rico (Spanish until 1898)
+british_caribbean,existing_polity,British Jamaica,,3,caribbean,British Jamaica (1655–) | British Caribbean | British Caribbean (colonial)
+french_caribbean,existing_polity,French Caribbean,,2,caribbean,French Caribbean | French Caribbean (colonial)
+haiti,existing_polity,Haiti,,2,caribbean,Haiti (1804) — slave revolution | Haiti
+dominican_republic,existing_polity,Dominican Republic,,2,caribbean,Dominican Republic (1844) | Dominican Republic
+cuba,existing_polity,Cuba,,1,caribbean,Cuba (1902) — Revolution 1959
+jamaica_trinidad_bahamas,unclassified,Jamaica · Trinidad · Bahamas,,1,caribbean,Jamaica (1962) · Trinidad (1962) · Bahamas (1973)
+barbados_dominica_st_lucia,unclassified,Barbados · Dominica · St. Lucia,,1,caribbean,Barbados (1966) · Dominica (1978) · St. Lucia (1979)
+olmec,unclassified,Olmec,,1,mexico,Olmec (La Venta · San Lorenzo)
+early_maya_settlements,unclassified,Early Maya settlements,,1,mexico,Early Maya settlements
+zapotec,existing_polity,Zapotec,,2,mexico,Zapotec (early San José Mogote) | Zapotec (Monte Albán)
+teotihuacan,existing_polity,Teotihuacan,,1,mexico,Teotihuacan
+maya_city_states,polity,Maya City-States (Tikal · Calakmul · Palenque),Maya City-States,1,mexico,Maya City-States (Tikal · Calakmul · Palenque)
+toltec_empire,existing_polity,Toltec Empire,,1,mexico,Toltec Empire (Tula)
+aztec_empire,existing_polity,Aztec Empire,,1,mexico,Aztec Empire (Mexico-Tenochtitlan)
+postclassic_maya,unclassified,Postclassic Maya,,1,mexico,Postclassic Maya (Mayapan · K'iche' · Uxmal)
+mixtec_kingdoms,unclassified,Mixtec kingdoms,,1,mexico,Mixtec kingdoms
+new_spain,existing_polity,Viceroyalty of New Spain,,5,mexico|united_states|philippines,Viceroyalty of New Spain (1521–1821) | New Spain (Nueva España) | New Spain | New Spain → Mexico (1821) | Viceroyalty of New Spain (administrative oversight)
+first_mexican_empire,existing_polity,First Mexican Empire,,1,mexico,First Mexican Empire (Iturbide)
+first_mexican_republic,polity,First Mexican Republic,First Mexican Republic,1,mexico,First Mexican Republic
+second_mexican_empire,existing_polity,Second Mexican Empire,,1,mexico,Second Mexican Empire (Maximilian)
+mexico,existing_polity,Mexico,,1,mexico,Mexico — Revolution (1910) · PRI era · Democratic transition
+preceramic_coastal_settlements,unclassified,Preceramic coastal settlements,,1,peru,Preceramic coastal settlements
+lima_culture,culture,Lima Culture,,1,peru,Lima Culture (c. 200–700 CE)
+tiwanaku,existing_polity,Tiwanaku,,3,peru|south_america,Tiwanaku (c. 550–1000 CE) | Tiwanaku (continued) | Tiwanaku (550–1000)
+wari_influence_on_south_coast,unclassified,Wari influence on south coast,,1,peru,Wari influence on south coast
+wari_empire,existing_polity,Wari Empire,,2,peru|south_america,Wari Empire (c. 600–1000) | Wari Empire (600–1000)
+chimu_kingdom,existing_polity,Chimú Kingdom,,2,peru|south_america,Chimú Kingdom (c. 900–1470) | Chimú Kingdom (900–1470)
+inca_empire,existing_polity,Inca Empire / Tawantinsuyu,,2,peru|south_america,Inca Empire / Tawantinsuyu (1438–1533) | Inca Empire (1438–1533)
+viceroyalty_of_peru,existing_polity,Viceroyalty of Peru,,2,peru|south_america,Viceroyalty of Peru (1542–1824)
+tupac_amaru_ii_rebellion,event,Túpac Amaru II Rebellion,,1,peru,Túpac Amaru II Rebellion (1780–1783)
+bourbon_reforms,unclassified,Bourbon Reforms,,1,peru,Bourbon Reforms
+peru,existing_polity,Republic of Peru,,3,peru|south_america,Republic of Peru (1824–) | Peru (1824) | Peru · Bolivia · Ecuador
+war_of_the_pacific,event,War of the Pacific,,1,peru,War of the Pacific (1879–1884)
+guano_era_civilismo,event,Guano Era & Civilismo,,1,peru,Guano Era & Civilismo
+modern_peru,event,Modern Peru,,1,peru,Modern Peru
+muisca_confederation,existing_polity,Muisca Confederation,,1,south_america,Muisca Confederation
+tupi_guarani_peoples,people,Tupí-Guaraní peoples,,1,south_america,Tupí-Guaraní peoples
+mapuche_nation,existing_polity,Mapuche Nation,,1,south_america,Mapuche Nation
+viceroyalty_of_new_granada,existing_polity,Viceroyalty of New Granada,,1,south_america,Viceroyalty of New Granada (1717–1819)
+portuguese_brazil,existing_polity,Portuguese Brazil,,1,south_america,Portuguese Brazil (1500–1822)
+viceroyalty_of_rio_de_la_plata,existing_polity,Viceroyalty of Río de la Plata,,1,south_america,Viceroyalty of Río de la Plata (1776–1816)
+bolivia,existing_polity,Bolivia,,1,south_america,Bolivia (1825)
+gran_colombia,existing_polity,Gran Colombia,,1,south_america,Gran Colombia (1819–1831)
+colombia_venezuela_ecuador,unclassified,Colombia · Venezuela · Ecuador,,1,south_america,Colombia (1831) · Venezuela (1830) · Ecuador (1830)
+empire_of_brazil,existing_polity,Empire of Brazil,,1,south_america,Empire of Brazil (1822–1889)
+republic_of_brazil,existing_polity,Republic of Brazil,,2,south_america,Republic of Brazil (1889–) | Brazil
+argentina,existing_polity,Argentina,,2,south_america,Argentina (1816) | Argentina · Chile · Uruguay · Paraguay
+chile,existing_polity,Chile,,1,south_america,Chile (1818)
+uruguay,existing_polity,Uruguay,,1,south_america,Uruguay (1828)
+paraguay,existing_polity,Paraguay,,1,south_america,Paraguay (1811)
+colombia,existing_polity,Colombia · Venezuela,,1,south_america,Colombia · Venezuela
+neolithic_settlements_culture,culture,Neolithic settlements,,1,anatolia,Neolithic settlements
+indo_european_migrations_culture,culture,Indo-European migrations,,1,anatolia,Indo-European migrations
+mycenaean_culture,culture,Mycenaean culture,,1,anatolia,Mycenaean culture
+akkadian_empire,existing_polity,Akkadian Empire,,4,anatolia|arabia|iraq|iran,Akkadian Empire (campaigns) | Akkadian Empire
+hittite_empire,existing_polity,Hittite Empire,,3,anatolia|armenia|levant,Hittite Empire | Hittite Empire — suzerainty
+mitanni_empire,existing_polity,Mitanni Empire,,5,anatolia|armenia|iraq|levant,Mitanni Empire | Mitanni Empire — suzerainty | Mitanni Kingdom | Mitanni
+middle_assyrian_empire,existing_polity,Middle Assyrian Empire,,2,anatolia|iraq,Middle Assyrian Empire
+neo_assyrian_empire,existing_polity,Neo-Assyrian Empire,,7,anatolia|arabia|egypt|iraq|levant|iran,Neo-Assyrian Empire | Assyrian Empire | Neo-Assyrian conquest
+mongol_suzerainty_rum_sultanate,polity,Mongol suzerainty · Rum Sultanate,Mongol suzerainty · Rum Sultanate,1,anatolia,Mongol suzerainty · Rum Sultanate
+greek_occupation,event,Greek occupation,,1,anatolia,Greek occupation (Megali Idea)
+republic_of_turkey,existing_polity,Republic of Turkey,,1,anatolia,Republic of Turkey
+kingdom_of_saba,existing_polity,Kingdom of Saba,,3,arabia|yemen,Kingdom of Saba (Sheba) | Kingdom of Saba (Sheba — Ma'rib) | Saba (revived — Hamdan dynasty)
+neo_babylonian,existing_polity,Neo-Babylonian,,4,arabia|iraq|levant,Neo-Babylonian | Neo-Babylonian Empire
+nabataean_kingdom,existing_polity,Nabataean Kingdom,,4,arabia|levant,Nabataean Kingdom (partial) | Nabataean Kingdom
+himyarite_kingdom,existing_polity,Himyarite Kingdom,,3,arabia|yemen,Himyarite Kingdom | Himyarite Kingdom (absorbs Saba) | Himyarite Kingdom (unified Yemen)
+aksumite_occupation,event,Aksumite occupation,,1,arabia,Aksumite occupation
+lakhmid_kingdom,existing_polity,Lakhmid Kingdom,,2,arabia|iraq,"Lakhmid Kingdom (NE, Sassanid-aligned) | Lakhmid Kingdom (al-Hira)"
+ziyadid_dynasty,existing_polity,Ziyadid Dynasty,,2,arabia|yemen,Ziyadid Dynasty | Ziyadid dynasty (Tihama coast)
+sulayhid_dynasty,existing_polity,Sulayhid Dynasty,,2,arabia|yemen,Sulayhid Dynasty | Sulayhid dynasty (Ismaili Shia)
+ayyubid_sultanate,existing_polity,Ayyubid Sultanate,,10,arabia|egypt|iraq|levant|yemen|libya|sudan,Ayyubid Sultanate | Ayyubid suzerainty | Ayyubid Sultanate — Saladin; Crusader Wars | Ayyubid (Jazira) | Ayyubid | Ayyubid dynasty (Saladin's brother — conquers Yemen) | Ayyubid (partial) | Ayyubid → Mamluk dynasty (N. Sudan)
+fatimid_caliphate,existing_polity,Fatimid Caliphate,,13,arabia|egypt|levant|morocco|algeria|libya|tunisia,Fatimid Caliphate | Fatimid Caliphate — Cairo founded (969); Islamic Golden Age | Fatimid (nominal) | Fatimid suzerainty | Fatimid Caliphate (al-Mahdiyya)
+mamluk_sultanate,existing_polity,Mamluk suzerainty,,7,arabia|egypt|levant,Mamluk suzerainty | Bahri Mamluk Sultanate — defeat of Mongols (Ain Jalut 1260); peak power | Burji Mamluk Sultanate — Circassian; Timur invasion; decline | Mamluk Sultanate
+zaydi_imamate,polity,Zaydi Imamate (revolt),Zaydi Imamate,1,arabia,Zaydi Imamate (revolt)
+afsharid_invasion,unclassified,Afsharid invasion,,1,arabia,Afsharid invasion
+egyptian_occupation,event,Egyptian occupation,,1,arabia,Egyptian occupation
+republic_of_yemen,existing_polity,Republic of Yemen,,2,arabia|yemen,Republic of Yemen | Republic of Yemen (unified)
+saudi_arabia,existing_polity,Saudi Arabia,,3,arabia,Saudi Arabia
+shulaveri_shomu_culture,culture,Shulaveri-Shomu culture,,3,armenia|georgia,Shulaveri-Shomu culture
+kura_araxes_culture,culture,Kura-Araxes culture,,4,armenia|georgia|iran,Kura-Araxes culture
+trialeti_vanadzor_culture,culture,Trialeti-Vanadzor culture,,2,armenia|georgia,Trialeti-Vanadzor culture
+kingdom_of_urartu,existing_polity,Kingdom of Urartu,,3,armenia|georgia|iran,Kingdom of Urartu | Urartu suzerainty | Urartu
+median_kingdom,existing_polity,Median Empire,,3,armenia|azerbaijan|iran,Median Empire | Median Kingdom
+kingdom_of_armenia,existing_polity,Artaxiad Armenia,,2,armenia,Artaxiad (Artasiad) Armenia | Arsacid Armenia
+bagratid_armenia,existing_polity,Bagratid Armenia,,1,armenia,Bagratid Armenia (capital: Ani)
+chobanid_dynasty,existing_polity,Chobanid dynasty,,3,armenia|azerbaijan|iran,Chobanid dynasty | Chobanid / Jalayirid
+jalayirid_sultanate,existing_polity,Jalayirid Sultanate,,5,armenia|azerbaijan|iraq|iran,Jalayirid Sultanate
+karabakh_khanate,existing_polity,Karabakh Khanate,,2,armenia|azerbaijan,Karabakh Khanate
+transcaucasian_democratic_federative_republic,existing_polity,Transcaucasian Democratic Federative Republic,,3,armenia|azerbaijan|georgia,Transcaucasian Democratic Federative Republic
+cimmerian_scythian_nomads,people,Cimmerian · Scythian nomads,,2,azerbaijan|georgia,Cimmerian · Scythian nomads
+orontid_arsacid_suzerainty,unclassified,Orontid / Arsacid suzerainty,,1,azerbaijan,Orontid (Yervandid) / Arsacid suzerainty
+sajid_dynasty,existing_polity,Sajid dynasty,,2,azerbaijan|iran,Sajid dynasty (Arran) | Sajid Dynasty
+shirvanshah,event,Shirvanshah,,1,azerbaijan,Shirvanshah (Derbendids) — restored
+first_intermediate_period,event,First Intermediate Period,,1,egypt,First Intermediate Period
+second_intermediate_period,event,Second Intermediate Period,,1,egypt,Second Intermediate Period — Hyksos (Delta) · Theban 17th (Upper)
+new_kingdom_egypt,existing_polity,18th Dynasty,,3,egypt,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun | 19th Dynasty (Ramessid) — Seti I · Ramesses II · Battle of Kadesh | 20th Dynasty (Ramessid) — Ramesses III · Sea Peoples invasions · decline
+22nd_dynasty,unclassified,22nd Dynasty,,1,egypt,22nd Dynasty (nominal)
+meroitic_kingdom,existing_polity,25th Dynasty,,1,egypt,25th Dynasty (Kushite / Nubian) — unified Egypt from the south
+ptolemaic_egypt,existing_polity,Ptolemaic dynasty,,4,egypt|levant|libya,Ptolemaic dynasty — Alexandria; Cleopatra VII (last pharaoh) | Ptolemaic (Coele-Syria) | Ptolemaic Egypt
+palmyrene_empire,existing_polity,Palmyrene Empire,,2,egypt|levant,Palmyrene Empire (Zenobia)
+tulunid_dynasty,existing_polity,Tulunid dynasty,,3,egypt|levant|libya,Tulunid dynasty (semi-autonomous) | Tulunid dynasty
+ikhshidid_dynasty,existing_polity,Ikhshidid dynasty,,3,egypt|levant|libya,Ikhshidid dynasty
+ali_bey_al_kabir,unclassified,Ali Bey al-Kabir,,1,egypt,Ali Bey al-Kabir (brief independence)
+french_occupation,event,French occupation,,1,egypt,French occupation (Napoleon)
+muhammad_ali_dynasty,existing_polity,Muhammad Ali dynasty,,2,egypt|sudan,Muhammad Ali dynasty (Khedivate of Egypt) | Muhammad Ali dynasty — Turco-Egyptian Sudan
+khedivate_of_egypt,unclassified,Khedivate of Egypt,,1,egypt,Khedivate of Egypt (Ottoman nominal suzerainty)
+british_occupation,event,British occupation,,1,egypt,British occupation
+kingdom_of_egypt,existing_polity,Kingdom of Egypt,,1,egypt,Kingdom of Egypt (nominal independence; British influence)
+republic_of_egypt,existing_polity,Republic of Egypt,,2,egypt,Republic of Egypt | Arab Republic of Egypt
+united_arab_republic,existing_polity,United Arab Republic,,2,egypt|levant,United Arab Republic (union with Syria) | United Arab Republic (with Egypt)
+colchian_bronze_culture,culture,Colchian Bronze culture,,1,georgia,Colchian Bronze culture
+colchis_pontus_client_kingdom,unclassified,Colchis → Pontus client kingdom,,1,georgia,Colchis → Pontus client kingdom
+kingdom_of_georgia__golden_age,polity,Kingdom of Georgia — Golden Age,Golden Age,1,georgia,Kingdom of Georgia — Golden Age
+samtskhe_ottoman_suzerainty,event,Samtskhe → Ottoman suzerainty,,1,georgia,Samtskhe → Ottoman suzerainty
+kingdom_of_georgia,polity,Kingdom of Georgia (briefly unified),Kingdom of Georgia,1,georgia,Kingdom of Georgia (briefly unified)
+baradostian_culture,culture,Baradostian culture,,1,iraq,Baradostian culture
+zarzian_culture,culture,Zarzian culture,,1,iraq,Zarzian culture
+halaf_hassuna_cultures,unclassified,Halaf · Hassuna cultures,,1,iraq,Halaf · Hassuna cultures
+pre_pottery_neolithic_a_b_culture,culture,Pre-Pottery Neolithic A·B,,2,iraq|levant,Pre-Pottery Neolithic A·B
+halaf_culture,culture,Halaf culture,,1,iraq,Halaf culture
+samarra_culture,culture,Samarra culture,,1,iraq,Samarra culture
+ubaid_culture,culture,Ubaid culture,,2,iraq,Ubaid culture | Ubaid culture (origin)
+sumerian_city_states,polity,Sumerian city-states,Sumerian city-states,1,iraq,Sumerian city-states
+gutian_dynasty,existing_polity,Gutian dynasty,,2,iraq|iran,Gutian dynasty
+ur_iii,existing_polity,Third Dynasty of Ur,,2,iraq|iran,Third Dynasty of Ur (Ur III) | Ur III (Neo-Sumerian)
+amorite_migrations,event,Amorite migrations,,1,iraq,Amorite migrations
+old_babylonian,existing_polity,Old Babylonian,,4,iraq|iran,Old Babylonian (western frontier) | Old Babylonian Empire | Old Babylonian
+isin_larsa_period,event,Isin-Larsa period,,2,iraq,Isin-Larsa period
+hamdanid_emirate,existing_polity,Hamdanid Emirate,,2,iraq|levant,Hamdanid Emirate (Mosul) | Hamdanid Emirate (Aleppo)
+zangid_atabegate,existing_polity,Zangid Atabegate,,2,iraq|levant,Zangid Atabegate (Mosul) | Zangid Atabegate (Aleppo · Mosul)
+mongol_conquest_il_khanate,polity,Mongol conquest · Il-Khanate,Mongol conquest · Il-Khanate,1,iraq,Mongol conquest · Il-Khanate
+jalayirid_timurid_invasion,unclassified,Jalayirid · Timurid invasion,,1,iraq,Jalayirid · Timurid invasion
+buyid_dynasty,existing_polity,Buyid dynasty,,5,iraq|iran,Buyid dynasty | Buyid Dynasty
+timurid_invasion,unclassified,Timurid invasion,,1,iraq,Timurid invasion
+zand_dynasty,existing_polity,Zand dynasty,,3,iraq|iran,Zand dynasty (Basra) | Zand Dynasty
+kingdom_of_iraq,existing_polity,Kingdom of Iraq,,1,iraq,Kingdom of Iraq (Hashimite)
+republic_of_iraq,existing_polity,Republic of Iraq,,3,iraq,Republic of Iraq (1st) | Republic of Iraq
+isil_occupation,event,ISIL occupation,,2,iraq,ISIL occupation (partial) | ISIL occupation (Anbar)
+aurignacian_kebaran_cultures_culture,culture,Aurignacian · Kebaran cultures,,1,levant,Aurignacian · Kebaran cultures
+natufian_culture,culture,Natufian culture,,1,levant,Natufian culture
+halaf_yarmukian_ghassulian_cultures,unclassified,Halaf · Yarmukian · Ghassulian cultures,,1,levant,Halaf · Yarmukian · Ghassulian cultures
+egyptian_new_kingdom,existing_polity,Egyptian New Kingdom,,4,levant|sudan,Egyptian New Kingdom (coastal) | Egyptian New Kingdom | Egyptian New Kingdom — Nubia (Kush as vassal)
+late_bronze_age_collapse_sea_peoples_culture,culture,Late Bronze Age Collapse · Sea Peoples,,1,levant,Late Bronze Age Collapse · Sea Peoples
+phoenician_city_states,polity,Phoenician city-states (Byblos · Sidon · Tyre),Phoenician city-states,1,levant,Phoenician city-states (Byblos · Sidon · Tyre)
+kingdom_of_israel,existing_polity,United Kingdom · Israel / Judah,,1,levant,United Kingdom · Israel / Judah
+kingdom_of_judah,existing_polity,Kingdom of Judah,,1,levant,Kingdom of Judah
+babylonian_exile,event,Babylonian exile,,1,levant,Babylonian exile
+hasmonean_dynasty,existing_polity,Hasmonean dynasty,,1,levant,Hasmonean dynasty
+principality_of_antioch,polity,Principality of Antioch (Crusader),Principality of Antioch,1,levant,Principality of Antioch (Crusader)
+county_of_tripoli,polity,County of Tripoli (Crusader),County of Tripoli,1,levant,County of Tripoli (Crusader)
+kingdom_of_jerusalem,existing_polity,Kingdom of Jerusalem,,1,levant,Kingdom of Jerusalem (Crusader)
+syrian_republic,polity,Syrian Republic (independence 1946),Syrian Republic,1,levant,Syrian Republic (independence 1946)
+lebanese_republic,polity,Lebanese Republic (independence 1943),Lebanese Republic,1,levant,Lebanese Republic (independence 1943)
+kingdom_of_jordan,existing_polity,Hashemite Kingdom of Jordan,,3,levant,Hashemite Kingdom of Jordan (1946) | Hashemite Kingdom of Jordan
+state_of_israel,existing_polity,State of Israel,,1,levant,State of Israel (1948)
+capsian_culture_amazigh_berber_peoples_culture,culture,Capsian culture · Amazigh / Berber peoples,,1,morocco,Capsian culture · Amazigh / Berber peoples
+berber_mauretania,people,Berber / Mauretania,,2,morocco,Berber / Mauretania
+carthaginian_influence,polity,Carthaginian influence,Carthaginian influence,2,morocco|algeria,Carthaginian influence | Carthaginian influence (Ikosim)
+mauretania_kingdom,existing_polity,Mauretania Kingdom,,2,morocco|algeria,Mauretania Kingdom
+berber_saharan,people,Berber / Saharan,,1,morocco,Berber / Saharan
+idrisid_dynasty,existing_polity,Idrisid dynasty,,1,morocco,Idrisid dynasty
+zirid_dynasty,existing_polity,Zirid / Meknasa,,5,morocco|algeria|libya|tunisia,Zirid / Meknasa | Zirid (Ashir principality) | Zirid dynasty
+berber,people,Berber,,2,morocco,Berber (Zenata) | Berber (Atlas tribes)
+marinid_dynasty,existing_polity,Marinid dynasty,,3,morocco,Marinid dynasty
+hafsid_dynasty,existing_polity,Hafsid,,7,morocco|algeria|libya|tunisia,Hafsid (east fringe) | Hafsid (nominal suzerainty) | Hafsid dynasty (Constantine) | Hafsid dynasty (–1574) | Hafsid dynasty
+saadian_dynasty,existing_polity,Saadian dynasty,,3,morocco,"Saadian dynasty (rising) | Saadian dynasty — unified Morocco, capital Marrakesh (1549) | Saadian dynasty"
+sa_di_fragmentation,event,Sa'di fragmentation,,1,morocco,Sa'di fragmentation
+alawite_dynasty,existing_polity,Alawite dynasty,,4,morocco,"Alawite dynasty (Sharifs of Morocco) — unified Morocco, Marrakesh then Fes as capital | Alawite / Saharan tribal | Alawite dynasty | Alawite (Tafilalet — dynasty's origin)"
+french_protectorate_of_morocco,polity,French Protectorate of Morocco,French Protectorate of Morocco,1,morocco,French Protectorate of Morocco
+kingdom_of_morocco,polity,Kingdom of Morocco (independence 1956),Kingdom of Morocco,1,morocco,Kingdom of Morocco (independence 1956)
+qataban_declining,event,Qataban (declining,,1,yemen,Qataban (declining — absorbed by Himyar)
+rasulid_dynasty_sunni__golden_age_of_medieval_yemen,polity,Rasulid dynasty (Sunni — golden age of medieval Yemen),golden age of medieval Yemen),1,yemen,Rasulid dynasty (Sunni — golden age of medieval Yemen)
+north_yemen_civil_war,event,North Yemen Civil War,,1,yemen,North Yemen Civil War (royalists vs republicans)
+south_yemen_secession_attempt,event,South Yemen secession attempt,,1,yemen,South Yemen secession attempt (civil war)
+yemeni_revolution,event,Yemeni Revolution,,1,yemen,Yemeni Revolution (Arab Spring)
+yemeni_civil_war,event,Yemeni Civil War,,1,yemen,Yemeni Civil War (Houthi vs government · Saudi intervention)
+capsian_culture_berber_peoples_culture,culture,Capsian culture / Berber peoples,,1,algeria,Capsian culture / Berber peoples
+numidia,existing_polity,Numidia,,5,algeria|libya|tunisia,Numidia (Massinissa) | Roman Numidia (Africa Proconsularis) | Numidia (partial) | Berber / Numidian peoples | Numidian hinterland
+rustamid_dynasty,existing_polity,Rustamid dynasty,,1,algeria,"Rustamid dynasty (Tiaret, Ibadi)"
+aghlabid_dynasty,existing_polity,Aghlabid dynasty,,3,algeria|libya|tunisia,Aghlabid dynasty | Aghlabid dynasty (capital: Kairouan)
+zayyanid_suzerainty,unclassified,Zayyanid suzerainty,,1,algeria,Zayyanid suzerainty (coastal)
+banu_ghaniya,existing_polity,Banu Ghaniya,,3,algeria|libya|tunisia,Banu Ghaniya (Balearic Almoravid remnants) | Banu Ghaniya | Banu Ghaniya (Almoravid rebels)
+spanish_oran,event,Spanish Oran,,1,algeria,Spanish Oran (restored 1732–1792)
+french_algeria,event,French Algeria,,1,algeria,French Algeria — conquest
+ait_abbas_kabylie_resistance,unclassified,Aït Abbas / Kabylie resistance,,1,algeria,Aït Abbas / Kabylie resistance
+vichy_france,existing_polity,Vichy France / Free France,,1,algeria,Vichy France / Free France
+algerian_war_of_independence,event,Algerian War of Independence,,1,algeria,Algerian War of Independence
+algerian_civil_war,event,Algerian Civil War,,1,algeria,Algerian Civil War (Black Decade)
+berber_libu_peoples,people,Berber / Libu peoples,,1,libya,Berber / Libu peoples
+carthaginian_suzerainty,polity,Carthaginian suzerainty,Carthaginian suzerainty,1,libya,Carthaginian suzerainty
+berber_tuareg_tribes,people,Berber / Tuareg tribes,,1,libya,Berber / Tuareg tribes
+muhallabid_governors,existing_polity,Muhallabid governors,,2,libya|tunisia,Muhallabid governors
+berber_tuareg,people,Berber / Tuareg,,2,libya,Berber / Tuareg (Ibadi independent) | Berber / Tuareg
+british_military_administration,existing_polity,British Military Administration,,3,libya|malaysia_singapore_brunei,British Military Administration
+ntc_first_civil_war,event,NTC / First Civil War,,2,libya,NTC / First Civil War
+contested_lna_influenced,unclassified,Contested / LNA-influenced,,1,libya,Contested / LNA-influenced
+alwa,event,Alwa,,1,sudan,Alwa (forming)
+roman_client_nobatia_forming,unclassified,Roman client / Nobatia forming,,1,sudan,Roman client / Nobatia forming
+alwa_kingdom,polity,Alwa Kingdom (forming),Alwa Kingdom,1,sudan,Alwa Kingdom (forming)
+makuria_kingdom,existing_polity,Makuria / Dongola,,3,sudan,Makuria / Dongola (Christian) | Makuria (southern territory) | Makuria (Dongola) — Baqt Treaty
+beja,unclassified,Beja,,4,sudan,Beja (Christian / Islamicising) | Beja (Islamicising) | Beja (Hadendoa · Bisharin) | Beja (under Ottoman / Funj suzerainty)
+kanem_empire,existing_polity,Kanem Empire,,3,sudan|west_africa,Kanem Empire (eastern influence) | Kanem Empire · Daju | Kanem Empire (Lake Chad basin)
+makuria_banu_kanz,event,Makuria · Banu Kanz,,1,sudan,Makuria · Banu Kanz (forming)
+dongola_kingdom,polity,Dongola Kingdom (declining),Dongola Kingdom,1,sudan,Dongola Kingdom (declining)
+alwa_declining_funj_forming,event,Alwa declining → Funj forming,,1,sudan,Alwa declining → Funj forming
+funj_sultanate,existing_polity,Funj Sultanate,,1,sudan,Funj Sultanate (Sennar Sultanate)
+darfur_sultanate,existing_polity,Darfur Sultanate,,1,sudan,Darfur Sultanate (Keira dynasty)
+mahdist_state,existing_polity,Mahdist State,,1,sudan,Mahdist State (Muhammad Ahmad · Khalifa Abdallahi)
+republic_of_sudan,polity,Republic of Sudan (independence 1956),Republic of Sudan,1,sudan,Republic of Sudan (independence 1956)
+republic_of_sudan__sudan_civil_war,polity,Republic of Sudan — Sudan civil war,Sudan civil war,1,sudan,Republic of Sudan — Sudan civil war
+south_sudanese_civil_war,event,South Sudanese civil war,,1,sudan,South Sudanese civil war
+french_protectorate_of_tunisia,polity,French Protectorate of Tunisia,French Protectorate of Tunisia,1,tunisia,French Protectorate of Tunisia
+axis_occupation,event,Axis occupation,,1,tunisia,Axis occupation (Vichy → German)
+french_protectorate_restored,polity,French Protectorate restored,French Protectorate restored,1,tunisia,French Protectorate restored
+first_nations_inuit_metis,unclassified,First Nations · Inuit · Métis,,1,canada,First Nations · Inuit · Métis — Haida · Cree · Blackfoot · Dene
+iroquois_confederacy,existing_polity,First Nations,,2,canada|united_states,First Nations — Iroquois · Algonquin · Huron-Wendat | Iroquois Confederacy
+first_nations,unclassified,First Nations,,1,canada,First Nations — Miꞌkmaq · Beothuk
+rupert_land,existing_polity,Rupert's Land,,3,canada,"Rupert's Land (HBC, 1670–) | Rupert's Land (HBC)"
+new_france,existing_polity,New France,,3,canada|united_states,New France (Nouvelle-France) | Acadia (French) | New France — Louisiana
+thirteen_colonies,existing_polity,Newfoundland Colony,,7,canada|united_states,Newfoundland Colony (English) | Province of Quebec (1763–1791) | Upper Canada (Ontario) | Province of Quebec | Lower Canada (Québec) | Nova Scotia (1710–) | Thirteen Colonies (British)
+new_brunswick,unclassified,New Brunswick,,1,canada,New Brunswick (1784–)
+prince_edward_island,unclassified,Prince Edward Island,,1,canada,Prince Edward Island (1769–)
+british_columbia_colony,polity,British Columbia Colony,British Columbia Colony,1,canada,British Columbia Colony
+province_of_canada,unclassified,Province of Canada,,1,canada,"Province of Canada (United, 1841–1867)"
+maritime_colonies,unclassified,Maritime colonies,,1,canada,Maritime colonies
+dominion_of_canada,existing_polity,Manitoba · BC · Saskatchewan/Alberta,,4,canada,"Manitoba (1870) · BC (1871) · Saskatchewan/Alberta (1905) | Dominion of Canada (1867–) | Founding provinces (NS, NB, 1867) | Dominion of Canada — World Wars · Westminster Statute (1931)"
+pei_newfoundland,event,PEI · Newfoundland,,1,canada,PEI (1873) · Newfoundland (1949)
+canada,existing_polity,Canada,,1,canada,Canada — Constitution Act 1982 · Nunavut (1999) · 10 provinces + 3 territories
+mississippian_culture,culture,Mississippian Culture,,1,united_states,Mississippian Culture — Cahokia
+cherokee_nation,existing_polity,Cherokee · Creek · Seminole,,1,united_states,Cherokee · Creek · Seminole
+mississippian_siouan_peoples,people,Mississippian · Siouan peoples,,1,united_states,Mississippian · Siouan peoples
+ancestral_puebloans_navajo_apache,unclassified,Ancestral Puebloans · Navajo · Apache,,1,united_states,Ancestral Puebloans · Navajo · Apache
+yupik_inuit_aleut_peoples,people,Yupik · Inuit · Aleut peoples,,1,united_states,Yupik · Inuit · Aleut peoples
+hawaii_kingdom,existing_polity,Native Hawaiian,,6,united_states|oceania,Native Hawaiian (Polynesian settlement c. 1000) | Kingdom of Hawaiʻi (1795–) | Kingdom of Hawaiʻi | Kingdom of Hawaiʻi (overthrown 1893)
+jamestown_colony,existing_polity,Jamestown,,1,united_states,Jamestown (1607)
+plymouth_colony,existing_polity,Plymouth,,1,united_states,Plymouth (1620)
+new_amsterdam,existing_polity,New Amsterdam,,1,united_states,New Amsterdam (Dutch)
+spanish_florida,existing_polity,Spanish Florida,,1,united_states,Spanish Florida
+native_hawaiian_kingdoms,unclassified,Native Hawaiian kingdoms,,1,united_states,Native Hawaiian kingdoms
+louisiana_territory,existing_polity,Louisiana Territory,,2,united_states,Louisiana Territory (French) | Louisiana (French again)
+louisiana,unclassified,Louisiana,,1,united_states,Louisiana (Spanish)
+hawaiian_chiefdoms,unclassified,Hawaiian chiefdoms,,1,united_states,Hawaiian chiefdoms
+united_states,existing_polity,United States of America,,13,united_states,United States of America (1776–) | Louisiana Purchase (1803) → US territory | United States | Indian Removal · Trail of Tears · Sioux Wars | Mexican Cession → US territory | Union (United States) | Union territories | Alaska Purchase (1867) → US territory | Alaska Territory | Hawaii Territory (1898–) | United States of America (50 states)
+texas_republic,existing_polity,Republic of Texas,,1,united_states,Republic of Texas (1836–1846)
+california_republic,existing_polity,California Republic,,1,united_states,California Republic (1846)
+confederate_states,existing_polity,Confederate States of America,,1,united_states,Confederate States of America (1861–1865)
+hawaii_republic,existing_polity,Republic of Hawaiʻi,,2,united_states|oceania,Republic of Hawaiʻi (1894–1898) | Republic of Hawaiʻi
+dalma_culture,culture,Dalma culture,,1,iran,Dalma culture
+zayanderud_culture,culture,Zayanderud culture,,1,iran,Zayanderud culture
+oxus_bmac_culture,culture,Oxus / BMAC culture,,1,iran,Oxus / BMAC culture
+jiroft_culture,culture,Jiroft culture,,1,iran,Jiroft culture
+kura_araxes_urartu,unclassified,Kura-Araxes / Urartu,,1,iran,Kura-Araxes / Urartu
+lullubi_kingdom,existing_polity,Lullubi Kingdom,,1,iran,Lullubi Kingdom
+kassite_babylon,existing_polity,Kassite Babylon,,1,iran,Kassite Babylon
+proto_elamite,unclassified,Proto-Elamite,,1,iran,Proto-Elamite
+elam,existing_polity,Elam,,3,iran,Elam | Elam (continued) | Elam / coastal tribes
+marhashi_kingdom,existing_polity,Marhashi,,1,iran,Marhashi
+jiroft_helmand,unclassified,Jiroft / Helmand,,2,iran,Jiroft / Helmand
+mannai_kingdom,existing_polity,Mannai Kingdom,,1,iran,Mannai Kingdom
+anshan_kingdom,existing_polity,Anshan Kingdom,,1,iran,Anshan Kingdom
+scythian_saka,people,Scythian / Saka,,1,iran,Scythian / Saka
+dabuyid_dynasty,existing_polity,Dabuyid Dynasty,,1,iran,Dabuyid Dynasty
+bavandid_dynasty,existing_polity,Bavandid Dynasty,,3,iran,Bavandid Dynasty | Bavandid / Paduspanid | Bavandid / Maraashi
+rawwadid_dynasty,existing_polity,Rawwadid Dynasty,,1,iran,Rawwadid Dynasty
+dulafid_dynasty,existing_polity,Dulafid Dynasty,,1,iran,Dulafid Dynasty
+ziyarid_dynasty,existing_polity,Ziyarid Dynasty,,1,iran,Ziyarid Dynasty
+kakuyid_dynasty,existing_polity,Kakuyid Dynasty,,1,iran,Kakuyid Dynasty
+eldiguzid_dynasty,existing_polity,Ildeguzids,,1,iran,Ildeguzids (Eldiguzids)
+zengid_dynasty,existing_polity,Zengid Dynasty,,1,iran,Zengid Dynasty
+salgurid_dynasty,existing_polity,Salgurid Dynasty,,1,iran,Salgurid Dynasty (Kerman)
+khalji_dynasty,existing_polity,Khalji Dynasty,,1,iran,Khalji Dynasty
+karkiya_dynasty,existing_polity,Kar-Kiya Dynasty,,1,iran,Kar-Kiya Dynasty
+injuid_dynasty,existing_polity,Injuid / Muzaffarid,,2,iran,Injuid / Muzaffarid | Inju / Muzaffarid
+hormuz_kingdom,existing_polity,Hormuz Kingdom,,1,iran,Hormuz Kingdom
+kartid_dynasty,existing_polity,Kartid / Sarbadaran,,2,iran,Kartid / Sarbadaran | Kartid Dynasty
+kalat_khanate,existing_polity,Kalat Khanate,,1,iran,Kalat Khanate
+british_india_sphere,unclassified,British India sphere,,1,iran,British India sphere
+pahlavi_dynasty,existing_polity,Pahlavi Dynasty,,2,iran,Pahlavi Dynasty
+islamic_republic_iran,existing_polity,Islamic Republic of Iran,,1,iran,Islamic Republic of Iran
+late_vedic_period,event,Late Vedic period,,1,india,Late Vedic period
+prehistoric_culture,culture,Prehistoric,,1,india,Prehistoric (megalithic cultures)
+nanda_empire,existing_polity,Nanda Empire,,2,india|pakistan,Nanda Empire
+satavahana_empire,existing_polity,Satavahana Dynasty,,3,india,Satavahana Dynasty (emerging) | Satavahana Dynasty — Deccan overlords | Satavahana Dynasty (declining)
+sangam_period,unclassified,Sangam period,,3,india,Sangam period (c.300 BCE – 200 CE) — Chola · Pandya · Chera | Sangam period — Chola · Pandya · Chera | Sangam period (ending c.200 CE)
+shunga_dynasty,existing_polity,Shunga Dynasty,,2,india|pakistan,Shunga Dynasty | Shunga Dynasty (upper Sindh)
+kamarupa_kingdom,existing_polity,Kamarupa Kingdom,,2,india,Kamarupa Kingdom (Assam / NE India) | Kamarupa Kingdom (Bhaskaravarman — Harsha's ally)
+chola_empire,existing_polity,Chola (early,,5,india|sri_lanka,Chola (early — Sangam period) | Chola Empire (re-emerging under Vijayalaya) | Chola Empire — Rajaraja I · Rajendra I · maritime empire | Chola Empire (declining) | Chola Empire (conquest of Anuradhapura)
+pandya_dynasty,existing_polity,Pandya Dynasty,,3,india,Pandya Dynasty | Pandya Dynasty (Madurai) | Pandya Dynasty (resurgent)
+alchon_huns,existing_polity,Alchon Huns,,3,india|pakistan,Alchon Huns (Toramana · Mihirakula) | Alchon Huns | Alchon Huns (declining)
+gupta_empire,existing_polity,Gupta Empire,,2,india|pakistan,Gupta Empire — Golden Age of India | Gupta Empire (Punjab frontier)
+vakataka_dynasty,existing_polity,Vakataka Dynasty,,1,india,Vakataka Dynasty
+kadamba_dynasty,existing_polity,Kadamba Dynasty,,1,india,Kadamba Dynasty
+kalabhra_interregnum,event,Kalabhra interregnum,,1,india,Kalabhra interregnum
+harsha_empire,existing_polity,Vardhana dynasty,,2,india|pakistan,Vardhana dynasty — Harsha (Kannauj) | Vardhana (Harsha) dynasty
+chalukya_dynasty,existing_polity,Chalukya Dynasty,,1,india,Chalukya Dynasty (Badami) — Pulakeshin II defeated Harsha
+pallava_dynasty,existing_polity,Pallava Dynasty,,1,india,Pallava Dynasty (Kanchipuram)
+pratihara_dynasty,existing_polity,Gurjara-Pratihara Dynasty,,4,india|pakistan,Gurjara-Pratihara Dynasty (Gujarat · Rajasthan) | Gurjara-Pratihara Dynasty — Kannauj hegemon · Tripartite Struggle | Pratihara declining → Rajput fragmentation | Pratihara Dynasty — repelled Arab invasions
+pala_empire,existing_polity,Pala Empire,,2,india,Pala Empire (Bihar & Bengal) | Pala Empire (declining)
+rashtrakuta_dynasty,existing_polity,Rashtrakuta Dynasty,,1,india,Rashtrakuta Dynasty — Ellora · Kailasa temple
+sena_dynasty,existing_polity,Sena Dynasty,,1,india,Sena Dynasty
+western_chalukya,existing_polity,Western Chalukya Empire,,1,india,Western Chalukya Empire (Kalyani)
+yadava_dynasty,existing_polity,Yadava dynasty,,1,india,Yadava dynasty (Devagiri)
+kakatiya_dynasty,existing_polity,Kakatiya Dynasty,,1,india,Kakatiya Dynasty (Warangal)
+gajapati_dynasty,existing_polity,Gajapati dynasty,,1,india,Gajapati dynasty (Odisha)
+hoysala_dynasty,existing_polity,Hoysala Empire,,1,india,Hoysala Empire (Belur · Halebidu)
+madurai_sultanate,existing_polity,Madurai Sultanate,,1,india,Madurai Sultanate
+gujarat_sultanate,existing_polity,Malwa Sultanate · Gujarat Sultanate · Multan Emirate,,1,india,Malwa Sultanate · Gujarat Sultanate · Multan Emirate
+mewar_kingdom,polity,Mewar Kingdom (Rajput resistance),Mewar Kingdom,1,india,Mewar Kingdom (Rajput resistance)
+jaunpur_sultanate,existing_polity,Jaunpur Sultanate,,1,india,Jaunpur Sultanate
+bengal_sultanate,existing_polity,Bengal Sultanate,,2,india,Bengal Sultanate | Bengal Sultanate (to 1576)
+bahmani_sultanate,existing_polity,Bahmani Sultanate,,1,india,Bahmani Sultanate
+deccan_sultanates,event,→ Deccan Sultanates,,1,india,→ Deccan Sultanates (Bijapur · Golconda · Ahmadnagar · Bidar · Berar)
+vijayanagara_empire,existing_polity,Vijayanagara Empire,,2,india,Vijayanagara Empire — last great Hindu empire of South India | Vijayanagara (Aravidu dynasty — declining)
+babur_battle_of_panipat_humayun,event,Babur → Battle of Panipat → Humayun,,1,india,Babur → Battle of Panipat (1526) → Humayun
+sur_empire,existing_polity,Sur Empire,,1,india,Sur Empire (Sher Shah Suri)
+mysore_kingdom,existing_polity,Mysore Kingdom,,3,india,Mysore Kingdom (Wodeyar) | Mysore Kingdom | Mysore Kingdom — Hyder Ali · Tipu Sultan
+maratha_empire,existing_polity,Maratha Empire (rising,,5,india,Maratha Empire (rising — Shivaji) | Maratha Empire (Peshwa dominance) | Maratha Empire — controls Delhi (from 1771) | Maratha Empire (Deccan heartland) | Maratha Empire (southern campaigns)
+bengal_nawabs,event,Bengal Nawabs,,1,india,Bengal Nawabs (Murshid Quli Khan → Siraj ud-Daulah)
+hyderabad_state,existing_polity,Hyderabad (Nizam,,1,india,Hyderabad (Nizam — Asaf Jahi dynasty)
+carnatic,event,Carnatic,,1,india,Carnatic — Anglo-French wars
+pakistan,existing_polity,Pakistan,,4,india|pakistan,Pakistan (West Pakistan) | East Pakistan (1947–1971) | Dominion of Pakistan (West Pakistan) | Islamic Republic of Pakistan
+soanian_culture,culture,Soanian culture,,1,pakistan,Soanian culture (Lower Palaeolithic)
+chalcolithic_culture,culture,Chalcolithic,,1,pakistan,Chalcolithic (Copper-Stone Age)
+mehrgarh_culture,culture,Mehrgarh,,1,pakistan,Mehrgarh — earliest Neolithic farming in South Asia
+indus_valley_civilization_culture,culture,Indus Valley Civilization,,1,pakistan,Indus Valley Civilization (Harappa · Kot Diji · Amri-Nal · Mohenjo-daro · Ganeriwal)
+vedic_age_culture,culture,Vedic Age,,1,pakistan,Vedic Age (dawn) — Jhukar culture · Cemetery H culture
+vedic_age,event,Vedic Age,,1,pakistan,Vedic Age (early / late) — Aryan expansion
+kashmir,event,Kashmir,,1,pakistan,Kashmir (Karkota → Utpala → Lohara dynasties)
+kalhora_dynasty_sindh,unclassified,Kalhora dynasty (Sindh,,1,pakistan,Kalhora dynasty (Sindh — Mughal vassals → independent)
+sur_dynasty,unclassified,Sur dynasty,,1,pakistan,Sur dynasty (Afghan interregnum)
+south_indian_invasions,unclassified,South Indian invasions,,1,sri_lanka,South Indian invasions (Chola · Pandya · Pallava raids)
+ruhuna,unclassified,Ruhuna,,2,sri_lanka,Ruhuna (refuge for Sinhalese kings during invasions) | Ruhuna (declining as separate entity)
+parakramabahu_i_golden_age,event,Parakramabahu I (golden age,,1,sri_lanka,Parakramabahu I (golden age — unifier)
+jaffna_kingdom_tamil__declining_under_portuguese_pressure,polity,Jaffna kingdom (Tamil — declining under Portuguese pressure),declining under Portuguese pressure),1,sri_lanka,Jaffna kingdom (Tamil — declining under Portuguese pressure)
+kandy_kingdom_independent__resists_all_three_colonial_powers,polity,Kandy kingdom (independent — resists all three colonial powers),resists all three colonial powers),1,sri_lanka,Kandy kingdom (independent — resists all three colonial powers)
+sri_lankan_civil_war,event,Sri Lankan Civil War,,1,sri_lanka,Sri Lankan Civil War (Sinhalese vs Tamil LTTE)
+post_war_sri_lanka,event,Post-war Sri Lanka,,1,sri_lanka,Post-war Sri Lanka
+buni_culture,culture,Buni culture,,1,indonesia,Buni culture (West Java)
+kahuripan_kediri_kingdom,polity,Kahuripan → Kediri kingdom (East Java),Kahuripan → Kediri kingdom,1,indonesia,Kahuripan → Kediri kingdom (East Java)
+srivijaya,unclassified,Srivijaya,,1,indonesia,Srivijaya (declining after Chola raids)
+majapahit_empire,existing_polity,Majapahit Empire,,3,indonesia|malaysia_singapore_brunei,Majapahit Empire (greatest Indonesian state) | Majapahit Empire (declining) | Majapahit Empire (Javanese overlordship)
+bali__warmadiwa_dynasty_gelgel_kingdom,polity,Bali — Warmadiwa dynasty → Gelgel kingdom,Warmadiwa dynasty → Gelgel kingdom,1,indonesia,Bali — Warmadiwa dynasty → Gelgel kingdom
+brunei_sultanate,existing_polity,Brunei Sultanate,,6,indonesia|malaysia_singapore_brunei,Brunei Sultanate (NW Borneo) | Brunei Sultanate (emerging — Islamization) | Brunei Sultanate (peak — controls most of Borneo coast) | Brunei Sultanate (declining — cedes territory) | Brunei Sultanate (British protectorate) | Brunei (declines to join Malaysia)
+sulu_sultanate,existing_polity,Sulu Sultanate,,3,indonesia|malaysia_singapore_brunei,Sulu Sultanate (NE Borneo) | Sulu Sultanate (influence on NE Borneo)
+papuans,unclassified,Papuans,,1,indonesia,Papuans (nominal Tidore suzerainty)
+aceh_sultanate_resists_dutch__aceh_war_1873_1914,polity,Aceh Sultanate (resists Dutch — Aceh War 1873–1914),Aceh War 1873–1914),1,indonesia,Aceh Sultanate (resists Dutch — Aceh War 1873–1914)
+pagaruyung_kingdom_minangkabau__padri_war_1803_1837,polity,Pagaruyung kingdom (Minangkabau — Padri War 1803–1837),Padri War 1803–1837),1,indonesia,Pagaruyung kingdom (Minangkabau — Padri War 1803–1837)
+indonesian_national_revolution,event,Indonesian National Revolution,,1,indonesia,Indonesian National Revolution (independence war)
+reformasi,event,Reformasi,,1,indonesia,Reformasi (democratic reform era)
+melayu_kingdom_jambi__sumatra_influence,polity,Melayu kingdom (Jambi — Sumatra influence),Sumatra influence),1,malaysia_singapore_brunei,Melayu kingdom (Jambi — Sumatra influence)
+singhasari_majapahit_influence,polity,Singhasari / Majapahit influence,Singhasari / Majapahit influence,1,malaysia_singapore_brunei,Singhasari / Majapahit influence
+srivijaya_influence,polity,Srivijaya influence (Borneo coast),Srivijaya influence,2,malaysia_singapore_brunei,Srivijaya influence (Borneo coast) | Srivijaya influence
+islamization_of_malay_world,event,Islamization of Malay world,,1,malaysia_singapore_brunei,Islamization of Malay world
+sarawak_under_brunei_suzerainty,unclassified,Sarawak under Brunei suzerainty,,1,malaysia_singapore_brunei,Sarawak under Brunei suzerainty
+malayan_emergency,event,Malayan Emergency,,1,malaysia_singapore_brunei,Malayan Emergency (communist insurgency)
+malaysia,polity,Malaysia (Singapore joins federation),Malaysia,1,malaysia_singapore_brunei,Malaysia (Singapore joins federation)
+brunei_darussalam,event,Brunei Darussalam,,1,malaysia_singapore_brunei,Brunei Darussalam (full independence)
+dvaravati_influence,unclassified,Dvaravati influence,,1,myanmar,Dvaravati influence
+arakan,unclassified,Arakan,,1,myanmar,"Arakan (under Bagan influence, then independent)"
+mrauk_u_kingdom,polity,Mrauk U kingdom (Arakanese golden age),Mrauk U kingdom,1,myanmar,Mrauk U kingdom (Arakanese golden age)
+restored_toungoo_dynasty,unclassified,Restored Toungoo dynasty,,1,myanmar,Restored Toungoo dynasty (Nyaungyan)
+anglo_burmese_wars,event,Anglo-Burmese Wars,,1,myanmar,Anglo-Burmese Wars (1824 · 1852 · 1885)
+upper_burma_annexed,unclassified,Upper Burma (annexed,,1,myanmar,Upper Burma (annexed — British India)
+lower_burma_british,event,Lower Burma (British,,1,myanmar,Lower Burma (British — annexed after 1st & 2nd wars)
+arakan_british,event,Arakan (British,,1,myanmar,Arakan (British — annexed after 1st Anglo-Burmese War)
+japanese_occupation__state_of_burma,polity,Japanese occupation — State of Burma (Ba Maw),State of Burma (Ba Maw),1,myanmar,Japanese occupation — State of Burma (Ba Maw)
+british_burma,event,British Burma,,1,myanmar,British Burma (restored)
+union_of_burma_independence__aung_san,polity,Union of Burma (independence — Aung San),Aung San),1,myanmar,Union of Burma (independence — Aung San)
+military_coup_civil_war_national_unity_government,event,Military coup · Civil war · National Unity Government,,1,myanmar,Military coup · Civil war · National Unity Government (NUG)
+philippine_revolution,event,Philippine Revolution,,1,philippines,Philippine Revolution (Katipunan uprising)
+tai_migration_from_southern_china,event,Tai migration from southern China,,1,thailand_cambodia_laos,Tai migration from southern China
+funan,existing_polity,Funan (Óc Eo,,3,thailand_cambodia_laos|vietnam,Funan (Óc Eo — Indianized kingdom) | Funan (Óc Eo — Mekong delta) | Funan → Chenla (Khmer predecessor)
+khmer_empire,existing_polity,Khmer Empire,,6,thailand_cambodia_laos|vietnam,Khmer Empire (dominates central Thailand / Isan) | Khmer Empire (Angkor — Jayavarman II to Jayavarman VII) | Khmer Empire (overlordship of Lao territories) | Khmer Empire (declining under Thai pressure) | Khmer Empire (Angkor — dominates Mekong) | Khmer Empire (Angkor — declining)
+thonburi_kingdom_taksin__reunification,polity,Thonburi kingdom (Taksin — reunification),reunification),1,thailand_cambodia_laos,Thonburi kingdom (Taksin — reunification)
+siamese_suzerainty_over_cambodia_lao_states,unclassified,Siamese suzerainty over Cambodia · Lao states,,1,thailand_cambodia_laos,Siamese suzerainty over Cambodia · Lao states
+siam_avoids_colonization,event,Siam avoids colonization,,1,thailand_cambodia_laos,Siam avoids colonization (Rama IV · Rama V modernization)
+cambodia,unclassified,Cambodia,,1,thailand_cambodia_laos,Cambodia (Siamese-Vietnamese dual suzerainty)
+siamese_suzerainty_over_lao_kingdoms,unclassified,Siamese suzerainty over Lao kingdoms,,1,thailand_cambodia_laos,Siamese suzerainty over Lao kingdoms
+french_protectorate_of_cambodia,polity,French Protectorate of Cambodia,French Protectorate of Cambodia,1,thailand_cambodia_laos,French Protectorate of Cambodia
+japanese_alliance_occupation,event,Japanese alliance / occupation,,1,thailand_cambodia_laos,Japanese alliance / occupation
+japanese_occupied_cambodia,unclassified,Japanese-occupied Cambodia,,1,thailand_cambodia_laos,Japanese-occupied Cambodia (nominal Norodom rule)
+japanese_occupied_laos,unclassified,Japanese-occupied Laos,,1,thailand_cambodia_laos,Japanese-occupied Laos (nominal king)
+grunk_sihanouk,event,GRUNK (Sihanouk,,1,thailand_cambodia_laos,GRUNK (Sihanouk — royalist resistance in exile)
+asean_member_major_regional_economy,event,ASEAN member · major regional economy,,1,thailand_cambodia_laos,ASEAN member · major regional economy
+kingdom_of_cambodia_second_kingdom__sihanouk_restored,polity,Kingdom of Cambodia (Second Kingdom — Sihanouk restored),Sihanouk restored),1,thailand_cambodia_laos,Kingdom of Cambodia (Second Kingdom — Sihanouk restored)
+economic_reform,event,Economic reform,,1,thailand_cambodia_laos,Economic reform (New Economic Mechanism)
+asean_member,event,ASEAN member,,1,thailand_cambodia_laos,ASEAN member
+sa_huynh_culture,culture,Sa Huỳnh culture,,1,vietnam,Sa Huỳnh culture (proto-Cham)
+oc_eo_culture,culture,Óc Eo culture,,1,vietnam,Óc Eo culture (Funan influence)
+trung_sisters_revolt,event,Trưng Sisters revolt,,1,vietnam,Trưng Sisters revolt
+chinese_southern_dynasties,unclassified,Chinese Southern dynasties,,1,vietnam,Chinese Southern dynasties — Giao Châu
+five_dynasties,unclassified,Five Dynasties,,1,vietnam,Five Dynasties — Tĩnh Hải quân
+twelve_warlords_period,event,Twelve Warlords period,,1,vietnam,Twelve Warlords period (Thập nhị sứ quân)
+champa_vijaya_capital__wars_with_ai_viet,polity,Champa (Vijaya capital — wars with Đại Việt),wars with Đại Việt),1,vietnam,Champa (Vijaya capital — wars with Đại Việt)
+ai_viet__later_tran_dynasty,polity,Đại Việt — Later Trần dynasty (resistance),Later Trần dynasty (resistance),1,vietnam,Đại Việt — Later Trần dynasty (resistance)
+champa,polity,Champa (declining under Đại Việt pressure),Champa,1,vietnam,Champa (declining under Đại Việt pressure)
+khmer_post_angkor,event,Khmer post-Angkor,,1,vietnam,Khmer post-Angkor (Phnom Penh era)
+ai_viet__later_le_dynasty,polity,Đại Việt — Later Lê dynasty (restored),Later Lê dynasty (restored),1,vietnam,Đại Việt — Later Lê dynasty (restored)
+champa_rump_state__final_decline,polity,Champa (rump state — final decline),final decline),1,vietnam,Champa (rump state — final decline)
+nam_tien,polity,Nam tiến (southward expansion into Champa · Khmer lands),Nam tiến,1,vietnam,Nam tiến (southward expansion into Champa · Khmer lands)
+first_indochina_war,event,First Indochina War,,1,vietnam,First Indochina War (vs France)
+vietnam_war,event,Vietnam War,,1,vietnam,Vietnam War (Second Indochina War)
+oi_moi_economic_reform,event,Đổi Mới (economic reform,,1,vietnam,Đổi Mới (economic reform — market opening)
+tichitt_culture_mauritania__early_agropastoral,polity,Tichitt culture (Mauritania — early agropastoral),early agropastoral),1,west_africa,Tichitt culture (Mauritania — early agropastoral)
+bura_culture,culture,Bura culture,,1,west_africa,Bura culture (Niger River bend)
+nok_culture_central_nigeria_culture,culture,Nok culture (central Nigeria,,1,west_africa,Nok culture (central Nigeria — earliest sub-Saharan sculpture)
+mali_empire,polity,Mali Empire (western provinces declining),Mali Empire,1,west_africa,Mali Empire (western provinces declining)
+samori_ture__wassoulou_empire,polity,Samori Ture — Wassoulou Empire (resists French),Wassoulou Empire (resists French),1,west_africa,Samori Ture — Wassoulou Empire (resists French)
+benin_empire_declining__british_punitive_expedition_1897,polity,Benin Empire (declining — British punitive expedition 1897),British punitive expedition 1897),1,west_africa,Benin Empire (declining — British punitive expedition 1897)
+nigeria_british,unclassified,Nigeria (British,,1,west_africa,Nigeria (British — Northern + Southern protectorates merged 1914)
+togoland,polity,Togoland (German → French/British mandate),Togoland,1,west_africa,Togoland (German → French/British mandate)
+ghana_first_sub_saharan_independence,event,Ghana (first sub-Saharan independence,,1,west_africa,Ghana (first sub-Saharan independence — Nkrumah)
+nigeria_independent,event,Nigeria (independent,,1,west_africa,Nigeria (independent — civil war / Biafra 1967–70)

@@ -74,7 +74,9 @@ CREATE TABLE polity (
     government        TEXT,
     start_year        INTEGER NOT NULL,
     end_year          INTEGER,
-    note              TEXT
+    note              TEXT,
+    start_basis       TEXT,
+    end_basis         TEXT
 );
 
 
@@ -106,7 +108,6 @@ CREATE TABLE polity_succession (
     related_ethnicity     BOOLEAN,
     same_language         BOOLEAN,
     same_religion         BOOLEAN,
-    same_civilization            BOOLEAN,
     UNIQUE (from_polity_id, to_polity_id)
 );
 
@@ -129,6 +130,125 @@ CREATE TABLE figure (
     significance TEXT
 );
 
+
+-- ─── GOVERNMENT & DYNASTY ───────────────────────────────────
+
+CREATE TABLE government (
+    id               TEXT PRIMARY KEY,
+    name             TEXT NOT NULL,
+    finer_type       TEXT,
+    weber_legitimacy TEXT,
+    description      TEXT
+);
+
+CREATE TABLE dynasty (
+    id            TEXT PRIMARY KEY,
+    name          TEXT NOT NULL,
+    ethnicity     TEXT,
+    origin_region TEXT,
+    note          TEXT
+);
+
+CREATE TABLE polity_dynasty (
+    polity_id  TEXT NOT NULL,
+    dynasty_id TEXT NOT NULL,
+    start_year INTEGER,
+    end_year   INTEGER,
+    PRIMARY KEY (polity_id, dynasty_id, start_year)
+);
+
+-- ─── CITY ───────────────────────────────────────────────────
+
+CREATE TABLE city (
+    id               TEXT PRIMARY KEY,
+    name             TEXT NOT NULL,
+    lat              DOUBLE,
+    lon              DOUBLE,
+    founding_year    INTEGER,
+    abandonment_year INTEGER,
+    region           TEXT,
+    modern_country   TEXT,
+    note             TEXT
+);
+
+CREATE TABLE city_name (
+    city_id    TEXT NOT NULL,
+    name       TEXT NOT NULL,
+    language   TEXT,
+    start_year INTEGER,
+    end_year   INTEGER,
+    note       TEXT
+);
+
+CREATE TABLE city_succession (
+    from_city_id    TEXT NOT NULL,
+    to_city_id      TEXT NOT NULL,
+    succession_type TEXT,
+    year            INTEGER,
+    note            TEXT
+);
+
+-- ─── PROVENANCE (see source.md) ─────────────────────────────
+
+CREATE TABLE source (
+    id        TEXT NOT NULL,
+    name      TEXT NOT NULL,
+    url       TEXT NOT NULL,
+    licence   TEXT NOT NULL,
+    version   TEXT NOT NULL,
+    retrieved TEXT NOT NULL,
+    citation  TEXT NOT NULL,
+    note      TEXT
+);
+
+CREATE TABLE fact_source (
+    entity_table  TEXT NOT NULL,
+    entity_id     TEXT NOT NULL,
+    field         TEXT,
+    source_id     TEXT NOT NULL,
+    source_record TEXT,
+    note          TEXT
+);
+
+-- ─── INHERITANCE (see inheritance.md) ───────────────────────
+
+CREATE TABLE inheritance_claim (
+    id                     TEXT PRIMARY KEY,
+    heir_polity_id         TEXT NOT NULL,
+    source_id              TEXT NOT NULL,
+    source_type            TEXT NOT NULL,
+    source_temporal_status TEXT NOT NULL,
+    topology               TEXT NOT NULL,
+    mechanism              TEXT NOT NULL,
+    legitimacy_mode        TEXT NOT NULL,
+    exclusivity            TEXT NOT NULL,
+    temporal_gap_years     INTEGER,
+    provenance             TEXT NOT NULL,
+    note                   TEXT
+);
+
+CREATE TABLE inheritance_axis (
+    claim_id TEXT NOT NULL,
+    axis     TEXT NOT NULL,
+    stance   TEXT,
+    strength INTEGER,
+    note     TEXT
+);
+
+CREATE TABLE inheritance_recognition (
+    claim_id      TEXT NOT NULL,
+    observer_id   TEXT NOT NULL,
+    observer_type TEXT NOT NULL,
+    degree        TEXT NOT NULL,
+    note          TEXT
+);
+
+CREATE TABLE axis_terminus (
+    polity_id TEXT NOT NULL,
+    axis      TEXT NOT NULL,
+    year      INTEGER,
+    note      TEXT
+);
 
 -- ─── INDEXES ────────────────────────────────────────────────
 

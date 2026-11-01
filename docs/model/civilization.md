@@ -50,7 +50,7 @@ There is no single "true" civilization map — there are as many as there are le
 
 - **There is no `civilization.csv` and no `civilization` table.** The former 2 stub rows (`roman_civilization`, `ottoman_civilization`) encoded a now-rejected institutional-continuity reading and were removed (2026-07-11), along with the generator, the DB table, and the `polity.civilization_id` column (which was empty in all 527 rows).
 - `polity` no longer carries a `civilization_id`. Because civilization is not single-valued over polities (a polity can hold several at once), it will **never** return as a single FK column; when it is defined, it will be a computed projection, not an authored tag.
-- `polity_succession.same_civilization` still exists (uniformly `0`) and is intentionally left for the succession redesign to resolve with the rest of the similarity vector — see `docs/brainstorm/succession/`.
+- `same_civilization` is gone from the succession signal set, DDL and loader.
 
 ## When civilization may earn definition
 

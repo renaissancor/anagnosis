@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 // ============================================================
 // Extract & categorize all labels from history panel JSONs
-// Outputs: csvs/derived/panel_labels.csv
+// Outputs: derived/panel_labels.csv
 // Usage: node scripts/extract_labels.js
 // ============================================================
 
 const fs = require('fs');
 const path = require('path');
 
-const HISTORY_DIR = path.join(__dirname, '..', 'data', 'history');
-const OUT_FILE = path.join(__dirname, '..', 'csvs', 'derived', 'panel_labels.csv');
+const HISTORY_DIR = path.join(__dirname, '..', 'panels');
+const OUT_FILE = path.join(__dirname, '..', 'derived', 'panel_labels.csv');
 
 // Load existing polity IDs for matching
 const polityCSV = fs.readFileSync(path.join(__dirname, '..', 'csvs', 'polity.csv'), 'utf8');

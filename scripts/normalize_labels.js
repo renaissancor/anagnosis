@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // ============================================================
 // Normalize panel labels into entity IDs following naming.md
-// Input:  csvs/derived/panel_labels.csv
-// Output: csvs/derived/panel_entities.csv         (deduplicated entity list)
-//         csvs/derived/panel_labels_linked.csv    (labels → entity IDs)
+// Input:  derived/panel_labels.csv
+// Output: derived/panel_entities.csv         (deduplicated entity list)
+//         derived/panel_labels_linked.csv    (labels → entity IDs)
 // Usage:  node scripts/normalize_labels.js
 // ============================================================
 
@@ -11,20 +11,13 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = path.join(__dirname, '..');
-const LABELS_FILE = path.join(BASE, 'csvs', 'derived', 'panel_labels.csv');
-const ENTITIES_OUT = path.join(BASE, 'csvs', 'derived', 'panel_entities.csv');
-const LINKED_OUT = path.join(BASE, 'csvs', 'derived', 'panel_labels_linked.csv');
+const LABELS_FILE = path.join(BASE, 'derived', 'panel_labels.csv');
+const ENTITIES_OUT = path.join(BASE, 'derived', 'panel_entities.csv');
+const LINKED_OUT = path.join(BASE, 'derived', 'panel_labels_linked.csv');
 
 // Load existing polity IDs
-const polityCSV = fs.readFileSync(path.join(BASE, 'csvs', 'polity.csv'), 'utf8');
-const existingPolities = new Map();
-for (const line of polityCSV.split('\n').slice(1)) {
-  if (!line.trim()) continue;
-  const match = line.match(/^([^,]+),(".*?"|[^,]*)/);
-  if (match) {
-    existingPolities.set(match[1], match[2].replace(/^"|"$/g, ''));
-  }
-}
+const csv = require('../code/lib/csv');
+const existingPolities = new Map(csv.readFile(path.join(BASE, 'csvs', 'polity.csv')).map(r => [r.id, r.name]));
 
 // Synonym map: bare names / removed IDs → canonical polity IDs.
 // Mirrors dedup_and_link.js so both passes resolve the same way.
@@ -32,6 +25,17 @@ const SYNONYM_MAP = new Map([
   ['roman_empire_pagan', 'roman_empire'],
   ['roman_empire_christian', 'roman_empire'],
   ['il_khanate', 'ilkhanate'],
+  ['mongol_il_khanate', 'ilkhanate'],
+  ['western_liao', 'qara_khitai'],
+  ['jin_jurchen', 'jin_dynasty'],
+  ['hephthalite_empire', 'hephthalites'],
+  ['lysimachus', 'kingdom_of_lysimachus'],
+  ['kidarite', 'kidarites'],
+  ['kidarite_kingdom', 'kidarites'],
+  ['yamato_period', 'yamato_kingdom'],
+  ['nara_period', 'ritsuryo_japan'],
+  ['heian_period', 'ritsuryo_japan'],
+  ['northern_court', 'ashikaga_shogunate'],
   ['samanid_dynasty', 'samanid_empire'],
   ['samanid', 'samanid_empire'],
   ['ghaznavid_dynasty', 'ghaznavid_empire'],
@@ -71,51 +75,7 @@ function canonicalize(id) {
 
 // ─── PARSE CSV ────────────────────────────────────────────
 
-function parseCSV(text) {
-  const lines = text.split('\n');
-  const headers = parseCSVLine(lines[0]);
-  const rows = [];
-  for (let i = 1; i < lines.length; i++) {
-    if (!lines[i].trim()) continue;
-    const vals = parseCSVLine(lines[i]);
-    const row = {};
-    for (let j = 0; j < headers.length; j++) {
-      row[headers[j]] = vals[j] || '';
-    }
-    rows.push(row);
-  }
-  return rows;
-}
-
-function parseCSVLine(line) {
-  const result = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (inQuotes) {
-      if (ch === '"' && line[i + 1] === '"') {
-        current += '"';
-        i++;
-      } else if (ch === '"') {
-        inQuotes = false;
-      } else {
-        current += ch;
-      }
-    } else {
-      if (ch === '"') {
-        inQuotes = true;
-      } else if (ch === ',') {
-        result.push(current);
-        current = '';
-      } else {
-        current += ch;
-      }
-    }
-  }
-  result.push(current);
-  return result;
-}
+function parseCSV(text) { return csv.parse(text); }
 
 // ─── NORMALIZATION ─────────────────────────────────────────
 

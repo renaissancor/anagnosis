@@ -17,44 +17,12 @@
 const fs   = require('fs');
 const path = require('path');
 
-// ── CSV parsing (RFC-4180-ish: quoted fields, "" escapes, commas/newlines in quotes) ──
-
-function parseCSV(text) {
-  const rows = [];
-  let field = '', row = [], inQuotes = false;
-
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQuotes) {
-      if (c === '"') {
-        if (text[i + 1] === '"') { field += '"'; i++; }
-        else inQuotes = false;
-      } else {
-        field += c;
-      }
-    } else if (c === '"') {
-      inQuotes = true;
-    } else if (c === ',') {
-      row.push(field); field = '';
-    } else if (c === '\n') {
-      row.push(field); rows.push(row); row = []; field = '';
-    } else if (c !== '\r') {
-      field += c;
-    }
-  }
-  if (field !== '' || row.length) { row.push(field); rows.push(row); }
-  return rows;
-}
+const csv  = require('../lib/csv');
 
 function loadRows(csvPath) {
-  const cells = parseCSV(fs.readFileSync(csvPath, 'utf8'))
-    .filter(r => r.some(c => c !== ''));
-  const header = cells.shift().map(h => h.trim());
-  return cells.map(r => {
-    const o = {};
-    header.forEach((h, i) => { o[h] = (r[i] ?? '').trim(); });
-    return o;
-  });
+  return csv.readFile(csvPath)
+    .map(r => Object.fromEntries(Object.entries(r).map(([k, v]) => [k, v.trim()])))
+    .filter(r => Object.values(r).some(v => v !== ''));
 }
 
 // ── Tree assembly from parent_id ────────────────────────────────────────────────
@@ -155,4 +123,4 @@ function run({ label, csvPath, dataDir, branchNode, leafNode }) {
   }
 }
 
-module.exports = { buildTaxonomy, run, parseCSV, loadRows };
+module.exports = { buildTaxonomy, run, loadRows };

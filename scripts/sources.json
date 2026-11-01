@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cliopatria",
+    "licence": "CC-BY-4.0",
+    "version": "v0.2.1",
+    "url": "https://zenodo.org/records/23128623/files/Seshat-Global-History-Databank/cliopatria-v0.2.1.zip",
+    "file": "cliopatria-v0.2.1.zip"
+  },
+  {
+    "id": "glottolog",
+    "licence": "CC-BY-4.0",
+    "version": "v5.3",
+    "url": "https://github.com/glottolog/glottolog-cldf/archive/refs/tags/v5.3.zip",
+    "file": "glottolog-cldf-v5.3.zip"
+  },
+  {
+    "id": "wals",
+    "licence": "CC-BY-4.0",
+    "version": "v2020.6",
+    "url": "https://github.com/cldf-datasets/wals/archive/refs/tags/v2020.6.zip",
+    "file": "wals-v2020.6.zip"
+  },
+  {
+    "id": "periodo",
+    "licence": "public-domain",
+    "version": "2026-10-31",
+    "url": "https://data.perio.do/d.json",
+    "file": "periodo.json"
+  },
+  {
+    "id": "pleiades",
+    "licence": "CC-BY-3.0",
+    "version": "2026-10-31",
+    "url": "https://atlantides.org/downloads/pleiades/json/pleiades-places-latest.json.gz",
+    "file": "pleiades-places.json.gz"
+  }
+]

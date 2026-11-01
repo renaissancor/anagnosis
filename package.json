@@ -19,9 +19,11 @@
     "make:religions": "node code/makejson/religions.js",
     "make:dynasties": "node code/makejson/dynasties.js",
     "make:governments": "node code/makejson/governments.js",
-    "make:all": "node code/makejson/ethnicities.js && node code/makejson/languages.js && node code/makejson/religions.js && node code/makejson/territories.js && node code/makejson/polities.js && node code/makejson/successions.js && node code/makejson/dynasties.js && node code/makejson/governments.js && node code/makejson/inheritance.js",
+    "make:all": "node code/makejson/ethnicities.js && node code/makejson/languages.js && node code/makejson/religions.js && node code/makejson/territories.js && node code/makejson/polities.js && node code/generate-successions.js && node code/makejson/successions.js && node code/makejson/dynasties.js && node code/makejson/governments.js && node code/makejson/inheritance.js",
     "test": "node scripts/validate.js",
-    "make:inheritance": "node code/makejson/inheritance.js"
+    "make:succession-edges": "node code/generate-successions.js",
+    "make:inheritance": "node code/makejson/inheritance.js",
+    "make:db": "rm -f anagnosis.db anagnosis.db.wal && duckdb anagnosis.db \".read docs/model/erd_nofk.sql\" \".read scripts/load_csvs.sql\""
   },
   "keywords": [],
   "author": "",

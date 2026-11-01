@@ -2,7 +2,9 @@
 
 ## What Ethnicity Is (and Isn't)
 
-Ethnicity in this framework is primarily a **linguistic ancestry grouping** — defined by what language family a people descend from. This is the most objective and traceable definition available for historical analysis.
+Ethnicity in this framework is a **named people**, primarily a **linguistic ancestry grouping** — defined by what language family a people descend from. This is the most objective and traceable definition available for historical analysis. A people whose language is poorly known, such as the Donghu or the Dahae, still qualifies if the sources name it as a group.
+
+A stateless people belongs here, not in `polity.csv`. A panel cell points at it with the `ethnicity` key (`non_polity.md`). `ethnicity.csv` has no year columns, so any dates go in `description` as prose.
 
 It is **not**:
 - Race (biological)

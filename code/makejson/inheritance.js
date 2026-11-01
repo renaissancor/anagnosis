@@ -16,45 +16,12 @@
 
 const fs = require('fs');
 const path = require('path');
+const csv = require('../lib/csv');
 
 const CSV_DIR = path.join(__dirname, '../../csvs');
 const OUT_DIR = path.join(__dirname, '../../data/inheritance');
 
-function parseCSVLine(line) {
-  const result = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      inQuotes = !inQuotes;
-    } else if (ch === ',' && !inQuotes) {
-      result.push(current.trim());
-      current = '';
-    } else {
-      current += ch;
-    }
-  }
-  result.push(current.trim());
-  return result;
-}
-
-function readCSV(file) {
-  const content = fs.readFileSync(path.join(CSV_DIR, file), 'utf-8');
-  const lines = content.split('\n').filter(l => l.trim());
-  const headers = parseCSVLine(lines[0]);
-  return lines.slice(1).map(line => {
-    const values = parseCSVLine(line);
-    const row = {};
-    headers.forEach((h, i) => { row[h] = values[i] ?? ''; });
-    return row;
-  });
-}
-
-function parseInt2(value) {
-  const n = parseInt(value, 10);
-  return isNaN(n) ? null : n;
-}
+const readCSV = file => csv.readFile(path.join(CSV_DIR, file));
 
 function main() {
   const claims      = readCSV('inheritance_claim.csv');
@@ -72,13 +39,13 @@ function main() {
     mechanism:              c.mechanism,
     legitimacy_mode:        c.legitimacy_mode,
     exclusivity:            c.exclusivity,
-    temporal_gap_years:     parseInt2(c.temporal_gap_years),
+    temporal_gap_years:     csv.toInt(c.temporal_gap_years),
     provenance:             c.provenance || null,
     note:                   c.note || null,
     axes: axes.filter(a => a.claim_id === c.id).map(a => ({
       axis:     a.axis,
       stance:   a.stance || null,
-      strength: parseInt2(a.strength),
+      strength: csv.toInt(a.strength),
       note:     a.note || null,
     })),
     recognition: recognition.filter(r => r.claim_id === c.id).map(r => ({
@@ -92,7 +59,7 @@ function main() {
   const termOut = terminus.filter(t => t.polity_id).map(t => ({
     polity_id: t.polity_id,
     axis:      t.axis,
-    year:      parseInt2(t.year),
+    year:      csv.toInt(t.year),
     note:      t.note || null,
   }));
 

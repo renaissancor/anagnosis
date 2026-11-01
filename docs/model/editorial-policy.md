@@ -26,11 +26,11 @@ When sources disagree, higher wins. Pick once, stop deciding per-row:
 Divergence from Wikipedia is allowed but must be deliberate — carried by a
 `note` or a higher-ranked source, never silent.
 
-## 3. Provenance: every row carries its receipt
+## 3. Provenance: every claim carries its receipt
 
-Rows in claim-bearing CSVs carry a **`provenance`** column (live in `polity.csv`
-and `polity_succession.csv`; `figure`/`dynasty` pending). Named `provenance`,
-not `source`, because `inheritance_claim` already has `source_id`/`source_type`:
+`inheritance_claim` rows carry a **`provenance`** column. Other tables cite through
+`csvs/fact_source.csv` (`docs/model/source.md`). Named `provenance`, not `source`,
+because `inheritance_claim` already has `source_id`/`source_type`:
 
 | Tag | Meaning |
 |---|---|
@@ -38,8 +38,6 @@ not `source`, because `inheritance_claim` already has `source_id`/`source_type`:
 | `wd:<QID>` | cross-checked against Wikidata |
 | `panel:<region>/<name>` | extracted from a history panel |
 | `ref:<key>` | a real citation — required for anything contested |
-| `stub` | machine-generated, **not yet human-reviewed** |
-| `legacy` | predates this policy; coarse backfill |
 
 The point is not academic rigor — it is that "verify this row" becomes a
 bounded task. A row with no source is unverifiable by definition.
@@ -50,30 +48,28 @@ Represent disagreement, don't resolve it. A conventional value plus a
 `note: disputed — <one line>` beats an empty cell, and beats adjudicating
 historiography we are not qualified to settle.
 
-## 5. Stubs are second-class until promoted
+## 5. Machine output is second-class until a human decides
 
-Machine-generated rows (`generate_stubs.js`, panel extraction) enter as
-`stub`. They may carry FKs and pass validation, but they do not count as
-coverage. Promotion = a human checked the row against its source and
-replaced the tag. Only promoted rows are "done."
+Generated rows (`generate_stubs.js`, panel extraction, computed succession
+candidates) stay in `derived/`. They do not count as coverage. A person checks
+one against its source and writes the authored row; that is the only promotion.
 
 ## 6. Two passes, always — authoring is not verifying
 
 1. **Author pass** — add a bounded unit (one panel, one region's polities),
-   sources attached, `stub` where unsure.
+   sources attached; unsure rows stay out of the authored layer.
 2. **Verify pass, separate lane** — a different session/person/model samples
    rows against the cited sources and reviews the plausibility report
    (`data/plausibility.md`). AI-bulk adds are never verified by the model
    that generated them in the same context.
-3. **Promote** — `stub` → real tag.
+3. **Promote** — a human writes the authored row, with its citation.
 
 **The panel is the unit of review.** "Verify the Sahel panel" is a
 finishable afternoon; "verify the dataset" is not.
 
 ## 7. Plausibility metrics are the error map
 
-`npm test` computes ratcheted metrics (warning-baseline.json): `unpromoted_polities` /
-`unpromoted_edges` (rows still tagged stub/legacy), `d_shaped_edges`
+`npm test` computes ratcheted metrics (warning-baseline.json): `no_people_no_land_edges`
 (no shared people AND no shared land — the ahistorical jump this project
 exists to forbid), `gap_over_200` (revival claims need a note),
 `start_inversions` (edge likely reversed), `long_lived_polities` (probably a
@@ -82,6 +78,6 @@ from `data/plausibility.md` — that is where the errors concentrate.
 
 ## See also
 
-- `docs/model/succession.md` — what the A/A-/B/C/D types mean
+- `docs/model/inheritance.md` and `docs/model/graph.md` — how succession is decided
 - `docs/model/city.md` — FK-driven scope discipline (rows earn their place)
 - `docs/migration/csv_workflow.md` — the mechanical edit loop

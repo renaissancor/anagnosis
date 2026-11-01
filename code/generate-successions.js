@@ -12,48 +12,24 @@
  *   3. ETH_FAMILY: Related ethnicity (shared ancestor in tree)
  *   4. LANGUAGE:   Same ruling language
  *   5. RELIGION:   Same ruling religion
- *   6. STATE:      Same civilization_id (political continuity)
- *   7. TEMPORAL:   How close in time (gap years)
+ *   6. TEMPORAL:   How close in time (gap years)
  *
- * STATUS (2026-06-21 redesign): the A/A-/B/C/D letter classification is
- * RETIRED — no type column is emitted or stored. Per the redesign
- * (docs/brainstorm/succession/), this script is demoted to an EVIDENCE /
- * CANDIDATE SUGGESTER: it derives the evidence columns above; the curated
- * per-axis inheritance_claim layer is authored by humans, not this script.
+ * These columns are evidence, not a verdict: no type is emitted, and a candidate
+ * never asserts succession. Curated claims live in csvs/inheritance_*.csv.
  *
- * Output: csvs/derived/succession_candidates.csv (proposed edges + evidence
- * columns, for curation into csvs/polity_succession.csv — NEVER writes there)
+ * Output: derived/polity_succession.csv (computed — never hand-edit)
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// ── CSV parser ──────────────────────────────────────────────────────────────
-
-function parseCSV(content) {
-  const lines = content.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.trim());
-  return lines.slice(1).map(line => {
-    const values = [];
-    let current = '', inQ = false;
-    for (let i = 0; i < line.length; i++) {
-      const ch = line[i];
-      if (ch === '"') { if (inQ && line[i + 1] === '"') { current += '"'; i++; } else inQ = !inQ; }
-      else if (ch === ',' && !inQ) { values.push(current.trim()); current = ''; }
-      else current += ch;
-    }
-    values.push(current.trim());
-    const row = {};
-    headers.forEach((h, i) => { row[h] = values[i] || ''; });
-    return row;
-  });
-}
+const csv = require('./lib/csv');
 
 // ── Load all data ───────────────────────────────────────────────────────────
 
-const politiesRaw = parseCSV(fs.readFileSync(path.join(__dirname, '../csvs/polity.csv'), 'utf8'));
-const tpRaw      = parseCSV(fs.readFileSync(path.join(__dirname, '../csvs/polity_territory.csv'), 'utf8'));
-const ethRaw     = parseCSV(fs.readFileSync(path.join(__dirname, '../csvs/ethnicity.csv'), 'utf8'));
+const politiesRaw = csv.readFile(path.join(__dirname, '../csvs/polity.csv'));
+const tpRaw      = csv.readFile(path.join(__dirname, '../csvs/polity_territory.csv'));
+const ethRaw     = csv.readFile(path.join(__dirname, '../csvs/ethnicity.csv'));
 
 // Map string old_id → numeric id for ethnicities
 const ethOldToNum = {};
@@ -62,7 +38,6 @@ ethRaw.forEach(e => { if (e.old_id) ethOldToNum[e.old_id] = parseInt(e.id); });
 const polities = politiesRaw.map(r => ({
   id:       r.id,
   name:     r.name,
-  civilization_id: r.civilization_id || null,
   eth:      r.id_ruling_ethnicity ? (ethOldToNum[r.id_ruling_ethnicity] || null) : null,
   ethStr:   r.id_ruling_ethnicity || null,
   lang:     r.id_ruling_language  || null,
@@ -292,22 +267,6 @@ Object.values(politiesByRel).forEach(group => {
   }
 });
 
-// ── Strategy 5: Civilization-based ─────────────────────────────────────────────────
-
-const politiesByState = {};
-polities.forEach(r => {
-  if (!r.civilization_id) return;
-  if (!politiesByState[r.civilization_id]) politiesByState[r.civilization_id] = [];
-  politiesByState[r.civilization_id].push(r);
-});
-
-Object.values(politiesByState).forEach(group => {
-  group.sort((a, b) => a.start - b.start);
-  for (let i = 0; i < group.length - 1; i++) {
-    addEdge(group[i].id, group[i + 1].id, { same_civilization: true });
-  }
-});
-
 // ── Classify edges ──────────────────────────────────────────────────────────
 
 const edges = Object.values(edgeMap).map(e => {
@@ -320,7 +279,6 @@ const edges = Object.values(edgeMap).map(e => {
   const relatedEth   = !!s.related_ethnicity;
   const sameLang     = !!s.same_language;
   const sameRel      = !!s.same_religion;
-  const sameState    = !!s.same_civilization;
   const gap          = toR.start - (fromR.end || toR.start);
 
   // Territorial direction: compare territory counts
@@ -342,7 +300,6 @@ const edges = Object.values(edgeMap).map(e => {
   if (relatedEth)    strength += 1;
   if (sameLang)      strength += 2;
   if (sameRel)       strength += 1;
-  if (sameState)     strength += 4;
   if (Math.abs(gap) <= 10)  strength += 2;
   else if (Math.abs(gap) <= 50) strength += 1;
 
@@ -358,7 +315,6 @@ const edges = Object.values(edgeMap).map(e => {
     related_ethnicity:  relatedEth,
     same_language:      sameLang,
     same_religion:      sameRel,
-    same_civilization:         sameState,
     temporal_gap:       gap,
   };
 });
@@ -372,7 +328,7 @@ const headers = [
   'from_polity_id', 'from_name', 'to_polity_id', 'to_name',
   'territorial_direction', 'strength',
   'shared_territories', 'shared_territory_count',
-  'same_ethnicity', 'related_ethnicity', 'same_language', 'same_religion', 'same_civilization',
+  'same_ethnicity', 'related_ethnicity', 'same_language', 'same_religion',
   'temporal_gap_years',
 ];
 
@@ -397,13 +353,13 @@ edges.forEach(e => {
     e.related_ethnicity ? 1 : 0,
     e.same_language   ? 1 : 0,
     e.same_religion   ? 1 : 0,
-    e.same_civilization      ? 1 : 0,
     e.temporal_gap,
   ].join(','));
 });
 
-const csvPath = path.join(__dirname, '../csvs/derived/succession_candidates.csv');
-fs.writeFileSync(csvPath, csvLines.join('\n'), 'utf8');
+const csvPath = path.join(__dirname, '../derived/polity_succession.csv');
+fs.mkdirSync(path.dirname(csvPath), { recursive: true });
+fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
 
 // ── Stats ───────────────────────────────────────────────────────────────────
 
@@ -413,17 +369,16 @@ edges.forEach(e => counts[e.territorial_direction] = (counts[e.territorial_direc
 const connected = new Set();
 edges.forEach(e => { connected.add(e.from); connected.add(e.to); });
 
-const signalCounts = { territory: 0, ethnicity: 0, related_eth: 0, language: 0, religion: 0, state: 0 };
+const signalCounts = { territory: 0, ethnicity: 0, related_eth: 0, language: 0, religion: 0 };
 edges.forEach(e => {
   if (e.shared_territories.length) signalCounts.territory++;
   if (e.same_ethnicity)   signalCounts.ethnicity++;
   if (e.related_ethnicity) signalCounts.related_eth++;
   if (e.same_language)    signalCounts.language++;
   if (e.same_religion)    signalCounts.religion++;
-  if (e.same_civilization)       signalCounts.state++;
 });
 
-console.log(`✓ Generated successions.csv — ${edges.length} edges, ${connected.size}/${polities.length} polities connected`);
+console.log(`✓ Generated derived/polity_succession.csv — ${edges.length} edges, ${connected.size}/${polities.length} polities connected`);
 console.log(`  Same         : ${counts.same}`);
 console.log(`  Expansion    : ${counts.expansion}`);
 console.log(`  Contraction  : ${counts.contraction}`);
@@ -435,4 +390,3 @@ console.log(`  Edges with ethnicity signal : ${signalCounts.ethnicity}`);
 console.log(`  Edges with related eth      : ${signalCounts.related_eth}`);
 console.log(`  Edges with language signal  : ${signalCounts.language}`);
 console.log(`  Edges with religion signal  : ${signalCounts.religion}`);
-console.log(`  Edges with state signal     : ${signalCounts.state}`);

@@ -1,10 +1,19 @@
 -- ============================================================
 -- Load CSVs into Anagnosis DuckDB (v3 — singular table names)
--- Requires: duckdb anagnosis.db ".read docs/erd_nofk.sql" first
+-- Requires: duckdb anagnosis.db ".read docs/model/erd_nofk.sql" first (or run `npm run make:db`)
 -- Usage:    duckdb anagnosis.db ".read scripts/load_csvs.sql"
 -- ============================================================
 
 -- Clear existing data (children before parents)
+DELETE FROM axis_terminus;
+DELETE FROM inheritance_recognition;
+DELETE FROM inheritance_axis;
+DELETE FROM inheritance_claim;
+DELETE FROM fact_source;
+DELETE FROM source;
+DELETE FROM city_succession;
+DELETE FROM city_name;
+DELETE FROM city;
 DELETE FROM polity_succession_territory;
 DELETE FROM polity_succession;
 DELETE FROM polity_policy;
@@ -107,7 +116,8 @@ UPDATE religion SET depth = tree.depth FROM tree WHERE religion.id = tree.id;
 
 -- ─── POLITY (from polity.csv) ─────────────────────────────
 INSERT INTO polity (id, name, ruling_ethnicity, cultural_language,
-                    religion, government, start_year, end_year, note)
+                    religion, government, start_year, end_year, note,
+                    start_basis, end_basis)
 SELECT id, name,
        NULLIF(id_ruling_ethnicity, ''),
        NULLIF(id_ruling_language, ''),
@@ -115,8 +125,10 @@ SELECT id, name,
        NULLIF(government, ''),
        TRY_CAST(start_year AS INTEGER),
        TRY_CAST(end_year AS INTEGER),
-       NULLIF(note, '')
-FROM read_csv('csvs/polity.csv', auto_detect=true);
+       NULLIF(note, ''),
+       NULLIF(start_basis, ''),
+       NULLIF(end_basis, '')
+FROM read_csv('csvs/polity.csv', auto_detect=true, all_varchar=true);
 
 -- ─── POLITY_TERRITORY (from polity_territory.csv) ─────────
 INSERT INTO polity_territory (polity_id, territory_id, start_year, end_year)
@@ -130,23 +142,6 @@ FROM (
            ) AS rn
     FROM read_csv('csvs/polity_territory.csv', auto_detect=true)
 ) WHERE rn = 1;
-
--- Gap-fill from polity.csv territories column
-WITH polity_terr AS (
-    SELECT id AS polity_id,
-           unnest(string_split(territories, '|')) AS territory_id,
-           TRY_CAST(start_year AS INTEGER) AS start_year,
-           TRY_CAST(end_year AS INTEGER) AS end_year
-    FROM read_csv('csvs/polity.csv', auto_detect=true)
-    WHERE territories IS NOT NULL AND territories != ''
-)
-INSERT INTO polity_territory (polity_id, territory_id, start_year, end_year)
-SELECT pt.polity_id, pt.territory_id, pt.start_year, pt.end_year
-FROM polity_terr pt
-WHERE NOT EXISTS (
-    SELECT 1 FROM polity_territory existing
-    WHERE existing.polity_id = pt.polity_id AND existing.territory_id = pt.territory_id
-);
 
 -- ─── POLITY_POLICY ────────────────────────────────────────
 INSERT INTO polity_policy (polity_id, policy)
@@ -167,17 +162,16 @@ SELECT
     CAST(related_ethnicity AS BOOLEAN) AS related_ethnicity,
     CAST(same_language AS BOOLEAN)     AS same_language,
     CAST(same_religion AS BOOLEAN)     AS same_religion,
-    CAST(same_civilization AS BOOLEAN)        AS same_civilization,
     shared_territories
-FROM read_csv('csvs/polity_succession.csv', auto_detect=true);
+FROM read_csv('derived/polity_succession.csv', auto_detect=true);
 
 INSERT INTO polity_succession
     (id, from_polity_id, to_polity_id, territorial_direction, strength,
      temporal_gap_years, same_ethnicity, related_ethnicity,
-     same_language, same_religion, same_civilization)
+     same_language, same_religion)
 SELECT id, from_polity_id, to_polity_id, territorial_direction, strength,
        temporal_gap_years, same_ethnicity, related_ethnicity,
-       same_language, same_religion, same_civilization
+       same_language, same_religion
 FROM _succ;
 
 -- ─── POLITY_SUCCESSION_TERRITORY ──────────────────────────
@@ -222,3 +216,47 @@ FROM (
     SELECT *, ROW_NUMBER() OVER (PARTITION BY figure_id ORDER BY polity_id) AS rn
     FROM read_csv('csvs/figure.csv', auto_detect=true)
 ) WHERE rn = 1;
+
+-- ─── CITY (from city.csv, city_name.csv, city_succession.csv) ─
+INSERT INTO city (id, name, lat, lon, founding_year, abandonment_year, region, modern_country, note)
+SELECT id, name, TRY_CAST(lat AS DOUBLE), TRY_CAST(lon AS DOUBLE),
+       TRY_CAST(founding_year AS INTEGER), TRY_CAST(abandonment_year AS INTEGER),
+       NULLIF(region, ''), NULLIF(modern_country, ''), NULLIF(note, '')
+FROM read_csv('csvs/city.csv', auto_detect=true, all_varchar=true);
+
+INSERT INTO city_name (city_id, name, language, start_year, end_year, note)
+SELECT city_id, name, NULLIF(language, ''),
+       TRY_CAST(start_year AS INTEGER), TRY_CAST(end_year AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/city_name.csv', auto_detect=true, all_varchar=true);
+
+INSERT INTO city_succession (from_city_id, to_city_id, succession_type, year, note)
+SELECT from_city_id, to_city_id, NULLIF(succession_type, ''),
+       TRY_CAST(year AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/city_succession.csv', auto_detect=true, all_varchar=true);
+
+-- ─── PROVENANCE (from source.csv, fact_source.csv) ──────────
+INSERT INTO source (id, name, url, licence, version, retrieved, citation, note)
+SELECT id, name, url, licence, version, retrieved, citation, NULLIF(note, '')
+FROM read_csv('csvs/source.csv', header=true, all_varchar=true);
+
+INSERT INTO fact_source (entity_table, entity_id, field, source_id, source_record, note)
+SELECT entity_table, entity_id, NULLIF(field, ''), source_id, NULLIF(source_record, ''), NULLIF(note, '')
+FROM read_csv('csvs/fact_source.csv', header=true, all_varchar=true);
+
+-- ─── INHERITANCE (curated claims) ───────────────────────────
+INSERT INTO inheritance_claim
+SELECT id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism,
+       legitimacy_mode, exclusivity, TRY_CAST(temporal_gap_years AS INTEGER), provenance, NULLIF(note, '')
+FROM read_csv('csvs/inheritance_claim.csv', header=true, all_varchar=true);
+
+INSERT INTO inheritance_axis
+SELECT claim_id, axis, NULLIF(stance, ''), TRY_CAST(strength AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/inheritance_axis.csv', header=true, all_varchar=true);
+
+INSERT INTO inheritance_recognition
+SELECT claim_id, observer_id, observer_type, degree, NULLIF(note, '')
+FROM read_csv('csvs/inheritance_recognition.csv', header=true, all_varchar=true);
+
+INSERT INTO axis_terminus
+SELECT polity_id, axis, TRY_CAST(year AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/axis_terminus.csv', header=true, all_varchar=true);

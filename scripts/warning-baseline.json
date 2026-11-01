@@ -1,11 +1,9 @@
 {
-  "warnings": 89,
+  "warnings": 1773,
   "metrics": {
-    "d_shaped_edges": 1065,
-    "gap_over_200": 182,
-    "start_inversions": 17,
-    "long_lived_polities": 10,
-    "unpromoted_polities": 527,
-    "unpromoted_edges": 1987
+    "no_people_no_land_edges": 1145,
+    "gap_over_200": 315,
+    "start_inversions": 24,
+    "long_lived_polities": 7
   }
 }

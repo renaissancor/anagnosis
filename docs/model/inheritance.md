@@ -2,7 +2,7 @@
 
 > **Status: LIVE (step 1 of the migration).** Tables exist, are validated, and
 > are seeded with the Ottoman worked example. The legacy derived layer
-> (`csvs/polity_succession.csv`, documented in [`succession.md`](./succession.md))
+> (`derived/polity_succession.csv`, documented in [`succession.md`](./succession.md))
 > remains in place as **evidence** until this layer is populated enough to
 > replace it. Design rationale and stress tests live in
 > [`docs/brainstorm/succession/`](../brainstorm/succession/README.md) — this
@@ -74,7 +74,7 @@ axis, and that repudiation is itself historical data.
 **Material overlap is derived, not stored here:** territory ←
 `polity_territory`, dynasty ← `polity_dynasty`, ethnicity/language/religion ←
 `polity.id_ruling_*`, plus the legacy evidence vector in
-`polity_succession.csv`. This table stores curated *identity claims* — store
+`derived/polity_succession.csv`. This table stores curated *identity claims* — store
 an axis row only where there is a stance or a claim, not to restate overlap.
 
 ### `csvs/inheritance_recognition.csv` — perspectival legitimacy
@@ -115,7 +115,7 @@ csvs/inheritance_*.csv + csvs/axis_terminus.csv
 ```
 
 The old `code/generate-successions.js` is a **candidate suggester**: it writes
-proposed edges + evidence to `csvs/derived/succession_candidates.csv`; a
+proposed edges + evidence to `derived/polity_succession.csv`; a
 curator turns the real ones into claims here.
 
 ## Curation discipline
@@ -133,6 +133,6 @@ curator turns the real ones into claims here.
 
 1. ✅ Canonical doc + curated tables + generator + validation (this page)
 2. ✅ `generate-successions.js` demoted to candidate suggester
-3. ⬜ Curate claims from `succession_candidates.csv` + panels, region by region
+3. ⬜ Curate claims from `derived/polity_succession.csv` + panels, region by region
 4. ⬜ Frontend view over `data/inheritance/`
-5. ⬜ Retire `csvs/polity_succession.csv` **last**, when consumers are migrated
+5. ⬜ Stop serving candidates as `successors` / `predecessors` **last**, when consumers are migrated (candidates stay in `derived/` as evidence)

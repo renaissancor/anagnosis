@@ -37,7 +37,7 @@ yuan_dynasty,borjigin,1271,1368
 
 ## Current Coverage
 
-- **274 rows** mapping polities to dynasties
+- **275 rows** mapping polities to dynasties
 - **274 unique polities** (of 277 monarchical polities in polity.csv)
 - **185 unique dynasties** referenced (of 192 defined in dynasty.csv)
 - Non-monarchical polities (republics, communist states, confederations) have no rows
@@ -82,5 +82,5 @@ kingdom_of_england,tudor,1485,1603
 |---|---|
 | `csvs/polity.csv` | Parent entity (the polity being ruled) |
 | `csvs/dynasty.csv` | Parent entity (the ruling dynasty) |
-| `csvs/polity_succession.csv` | Succession edges — dynasties add a genealogical dimension |
+| `derived/polity_succession.csv` | Succession edges (computed) — dynasties add a genealogical dimension |
 | `csvs/polity_territory.csv` | Analogous junction: polity × territory × time |

@@ -20,7 +20,7 @@ A polity's ideology has three components in the data model:
 }
 ```
 
-- **religion**: The state religion that defines the polity's legitimacy and civilizational allegiance. Changing this ends the polity.
+- **religion**: The state religion that defines the polity's legitimacy and civilizational allegiance. Changing this alone does not end the polity (see `polity.md`, decision log).
 - **government**: The structural form of power (khaganate, caliphate, Chinese imperial bureaucracy, etc.).
 - **philosophy**: The intellectual/moral framework of governance (Legalism, Confucian statecraft, Zoroastrian statecraft, Sharia-based governance, etc.). Optional — not all polities have a distinct state philosophy separate from religion.
 
@@ -60,7 +60,7 @@ A policy is a time-bounded decision that does **not** redefine the polity's core
 - In 312 AD, Constantine issued the Edict of Milan tolerating Christianity. This was **policy**.
 - In 380 AD, Theodosius I made Christianity the only legal religion. This hardened into **ideology**.
 - The Byzantine Empire inherited Christianity as fixed **ideology** — not policy.
-- The Roman Empire that preceded it (pagan) is a different polity in ideological terms, despite physical continuity.
+- This changed the source of the emperor's legitimacy, but a change of religion alone never splits a polity. `roman_empire` and `byzantine_empire` are separate rows because of the 395 fission. The sacred-authority change is recorded on the inheritance link between them (see `polity.md`, decision log).
 
 **Akbar's Din-i-Ilahi (Mughal Empire)**
 - Akbar's syncretic experiment (1582–1605) was personal **policy**.

@@ -1,6 +1,6 @@
 # Missing Polities — To Be Added
 
-Polities referenced in `data/history/*/*.json` labels that do not yet exist in `csvs/polity.csv`. Grouped by region. Add one by one as needed.
+Polities referenced in `panels/*/*.json` labels that do not yet exist in `csvs/polity.csv`. Grouped by region. Add one by one as needed.
 
 > **Last updated:** 2026-04-01  
 > **Total CSV polities:** 268  

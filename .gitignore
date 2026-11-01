@@ -45,7 +45,8 @@ $RECYCLE.BIN/
 *.code-workspace
 
 # ── Claude Code ───────────────────────────────────────────────────────────────
-.claude/
+.claude/*
+!.claude/agents/
 .omc/
 .mcp.json
 
@@ -54,11 +55,15 @@ $RECYCLE.BIN/
 *.db.wal
 
 # ── Generated data outputs (regenerate with `npm run make:all`) ───────────────
-# data/ is generated from csvs/*.csv (the source of truth). Only the two
+# data/ is generated from csvs/*.csv (the source of truth). Hand-curated history
+# panels live in panels/ (tracked). Only the two
 # hand-authored files below are tracked.
 data/*
 !data/index.js
 !data/README.md
+
+# ── Third-party downloads (see docs/model/source.md) ─────────────────────────
+sources/
 
 # ── Misc ──────────────────────────────────────────────────────────────────────
 *.orig

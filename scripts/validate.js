@@ -1,434 +1,348 @@
+#!/usr/bin/env node
+
 /**
- * Anagnosis data validator.
- * Run: node scripts/validate.js
+ * Anagnosis data validator — runs against the AUTHORED layer (csvs/, panels/)
+ * plus the derived succession CSV. It does not read data/, so it needs no build.
  *
- * Checks:
- *   1. No duplicate IDs within any entity type
- *   2. All foreign key references resolve
- *   3. Required fields present on every polity
- *   4. Date validity (start < end where both exist)
- *   5. Succession integrity (both ends exist, no self-loops)
- *   6. (retired) letter-type check — edges carry evidence columns, not A/B/C/D types
- *   7. Region integrity (territory FK resolves, period polity FKs resolve)
+ * Run: node scripts/validate.js   (also `npm test`)
+ *
+ * Checks
+ *   1. Every CSV has exactly the expected header (schema drift)
+ *   2. No duplicate primary keys; no CRLF line endings; no list-commas in id-like fields
+ *   3. Required fields; start_year <= end_year
+ *   4. Every foreign key resolves (polity, junction tables, city tables, figures)
+ *   5. Taxonomy parent_id resolves and has no cycles
+ *   6. derived/polity_succession.csv: endpoints exist, no self-loops, no duplicate edges,
+ *      shared_territories resolve
+ *   7. panels/: every cell polity ref resolves (warning — stubs may not exist yet);
+ *      every cell ethnicity ref resolves, and no entry has both keys (errors)
+ *   8. source.csv: licence is allowlisted, required fields present;
+ *      fact_source.csv: table, row, field, and source all resolve
+ *   9. id format; year sanity
+ *  10. Inheritance layer: enums and references (docs/model/inheritance.md)
+ *  11. Plausibility metrics (detail in data/plausibility.md)
+ *
+ * Warnings and metrics are ratcheted in scripts/warning-baseline.json: they may
+ * shrink, never grow. Refresh with: node scripts/validate.js --update-baseline
+ *
+ * Errors fail the run (exit 1). Warnings are reported in aggregate.
  */
 
 const fs   = require('fs');
 const path = require('path');
-const db   = require('../data');
+const csv  = require('../code/lib/csv');
+const { ALLOWED_LICENCES } = require('../code/lib/licences');
 
-let errors   = 0;
-let warnings = 0;
+const ROOT    = path.join(__dirname, '..');
+const CSVS    = path.join(ROOT, 'csvs');
+const DERIVED = path.join(ROOT, 'derived');
+const PANELS  = path.join(ROOT, 'panels');
 
-function err(msg)  { console.error(`  ✗  ${msg}`); errors++; }
-function warn(msg) { console.warn( `  ⚠  ${msg}`); warnings++; }
-function ok(msg)   { console.log(  `  ✓  ${msg}`); }
+// ── Expected schemas (authored layer) ─────────────────────────────────────────
 
-// ── Build lookup sets ─────────────────────────────────────────────────────────
-
-const sets = {
-  polities:     new Set(db.polities.map(r => r.id)),
-  territories: new Set(db.territories.map(t => t.id)),
-  languages:   new Set(db.languages.map(l => l.id)),
-  religions:   new Set(db.religions.map(r => r.id)),
-  governments: new Set((db.governments || []).map(g => g.id)),
-  ethnicities: new Set(db.ethnicities.map(e => e.id)),
-  provinces:   new Set(db.provinces.map(r => r.id)),
+const SCHEMA = {
+  'polity':            ['id', 'name', 'id_ruling_ethnicity', 'id_ruling_language', 'id_ruling_religion', 'government', 'start_year', 'end_year', 'policies', 'note', 'start_basis', 'end_basis'],
+  'polity_territory':  ['territory_id', 'polity_id', 'start_year', 'end_year'],
+  'polity_dynasty':    ['polity_id', 'dynasty_id', 'start_year', 'end_year'],
+  'territory':         ['id', 'name'],
+  'dynasty':           ['id', 'name', 'ethnicity', 'origin_region', 'note'],
+  'figure':            ['polity_id', 'figure_id', 'name', 'role', 'years', 'significance'],
+  'government':        ['id', 'name', 'finer_type', 'weber_legitimacy', 'description'],
+  'ethnicity':         ['id', 'name', 'parent_id', 'description', 'founded'],
+  'language':          ['id', 'name', 'parent_id', 'description', 'founded'],
+  'religion':          ['id', 'name', 'parent_id', 'description', 'founded'],
+  'city':              ['id', 'name', 'lat', 'lon', 'founding_year', 'abandonment_year', 'region', 'modern_country', 'note'],
+  'city_name':         ['city_id', 'name', 'language', 'start_year', 'end_year', 'note'],
+  'city_succession':   ['from_city_id', 'to_city_id', 'succession_type', 'year', 'note'],
+  'source':            ['id', 'name', 'url', 'licence', 'version', 'retrieved', 'citation', 'note'],
+  'fact_source':       ['entity_table', 'entity_id', 'field', 'source_id', 'source_record', 'note'],
+  'inheritance_claim': ['id', 'heir_polity_id', 'source_id', 'source_type', 'source_temporal_status', 'topology', 'mechanism', 'legitimacy_mode', 'exclusivity', 'temporal_gap_years', 'provenance', 'note'],
+  'inheritance_axis':  ['claim_id', 'axis', 'stance', 'strength', 'note'],
+  'inheritance_recognition': ['claim_id', 'observer_id', 'observer_type', 'degree', 'note'],
+  'axis_terminus':     ['polity_id', 'axis', 'year', 'note'],
 };
 
-// ── 1. Duplicate ID check ─────────────────────────────────────────────────────
+// Free-text columns where commas are prose, not list separators.
+const PROSE_COLUMNS = new Set(['note', 'description', 'significance', 'name', 'citation']);
 
-function checkDuplicates(items, label) {
-  const seen = new Map();
-  for (const item of items) {
-    if (!item.id) { err(`${label}: entry missing "id" field`); continue; }
-    if (seen.has(item.id)) {
-      err(`${label}: duplicate id "${item.id}"`);
-    } else {
-      seen.set(item.id, true);
-    }
+// Empty means the date has not been assessed yet. See docs/model/polity.md.
+const DATE_BASIS = new Set(['', 'recorded', 'estimated', 'first_attested']);
+
+// ── Reporting ─────────────────────────────────────────────────────────────────
+
+const report = { errors: 0, warnings: 0 };
+const groups = new Map(); // category → { level, items[] }
+
+function add(level, category, msg) {
+  if (!groups.has(category)) groups.set(category, { level, items: [] });
+  groups.get(category).items.push(msg);
+  report[level === 'error' ? 'errors' : 'warnings']++;
+}
+const err  = (cat, msg) => add('error', cat, msg);
+const warn = (cat, msg) => add('warning', cat, msg);
+
+function section(title) { console.log(`\n── ${title} ${'─'.repeat(Math.max(0, 56 - title.length))}`); }
+function flush(maxExamples = 8) {
+  for (const [category, { level, items }] of groups) {
+    const mark = level === 'error' ? '✗' : '⚠';
+    console.log(`  ${mark}  ${category}: ${items.length}`);
+    items.slice(0, maxExamples).forEach(m => console.log(`       ${m}`));
+    if (items.length > maxExamples) console.log(`       … ${items.length - maxExamples} more`);
   }
+  groups.clear();
+}
+function ok(msg) { console.log(`  ✓  ${msg}`); }
+
+// ── Load ──────────────────────────────────────────────────────────────────────
+
+const T = {};   // table name → rows
+const RAW = {}; // table name → raw text
+for (const name of Object.keys(SCHEMA)) {
+  const file = path.join(CSVS, `${name}.csv`);
+  if (!fs.existsSync(file)) { err('missing CSV', `csvs/${name}.csv`); T[name] = []; continue; }
+  RAW[name] = fs.readFileSync(file, 'utf8');
+  T[name] = csv.parse(RAW[name]);
 }
 
-console.log('\n── Duplicate IDs ────────────────────────────────────────');
-checkDuplicates(db.polities,     'polities');
-checkDuplicates(db.territories, 'territories');
-checkDuplicates(db.provinces,   'provinces');
-checkDuplicates(db.languages,   'languages');
-checkDuplicates(db.religions,   'religions');
-checkDuplicates(db.governments || [],  'governments');
-checkDuplicates(db.ethnicities, 'ethnicities');
-if (!errors) ok('no duplicates');
+const ids = {
+  polity:     new Set(T.polity.map(r => r.id)),
+  territory:  new Set(T.territory.map(r => r.id)),
+  dynasty:    new Set(T.dynasty.map(r => r.id)),
+  government: new Set(T.government.map(r => r.id)),
+  ethnicity:  new Set(T.ethnicity.map(r => r.id)),
+  language:   new Set(T.language.map(r => r.id)),
+  religion:   new Set(T.religion.map(r => r.id)),
+  city:       new Set(T.city.map(r => r.id)),
+};
 
-// ── 2. Required fields on polities ─────────────────────────────────────────────
+// ── 1. Schema ─────────────────────────────────────────────────────────────────
 
-console.log('\n── Required polity fields ───────────────────────────────');
-const REQUIRED = ['id', 'name', 'ruling_ethnicity', 'start'];
-let missingFields = 0;
-
-for (const r of db.polities) {
-  for (const f of REQUIRED) {
-    if (r[f] == null || r[f] === '') {
-      err(`polity "${r.id || '?'}": missing required field "${f}"`);
-      missingFields++;
-    }
+section('CSV schema');
+for (const [name, expected] of Object.entries(SCHEMA)) {
+  if (!RAW[name]) continue;
+  const actual = csv.headersOf(RAW[name]);
+  if (actual.join(',') !== expected.join(',')) {
+    err('header mismatch', `${name}.csv has [${actual.join(',')}] expected [${expected.join(',')}]`);
   }
-  if (!r.ideology?.religion)   warn(`polity "${r.id}": missing ideology.religion`);
-  if (!r.ideology?.government) warn(`polity "${r.id}": missing ideology.government`);
+  const rows = csv.parseRows(RAW[name]).slice(1).filter(r => !(r.length === 1 && r[0] === ''));
+  const wide = rows.filter(r => r.length !== expected.length).length;
+  if (wide) err('ragged rows', `${name}.csv: ${wide} row(s) with a field count ≠ ${expected.length}`);
 }
-if (!missingFields) ok('all required fields present');
-
-// ── 3. Date validity ──────────────────────────────────────────────────────────
-
-console.log('\n── Date validity ────────────────────────────────────────');
-let badDates = 0;
-for (const r of db.polities) {
-  // Same-year polities (start == end) are valid: many ephemeral states (e.g.
-  // California Republic 1846) began and ended within one year. Only start > end is wrong.
-  if (r.start != null && r.end != null && r.start > r.end) {
-    err(`polity "${r.id}": start (${r.start}) > end (${r.end})`);
-    badDates++;
-  }
+for (const f of fs.readdirSync(CSVS)) {
+  if (f.endsWith('.csv') && !SCHEMA[f.slice(0, -4)]) err('CSV not in SCHEMA', f);
 }
-if (!badDates) ok('all date ranges valid');
+if (!groups.size) ok('all headers match, no ragged rows'); flush();
 
-// ── 4. Foreign key references ─────────────────────────────────────────────────
+// ── 2. Keys, line endings, list-commas ────────────────────────────────────────
 
-console.log('\n── Foreign key references ───────────────────────────────');
-let brokenFKs = 0;
-
-function checkFK(label, value, lookupSet) {
-  if (value && !lookupSet.has(value)) {
-    err(`${label}: "${value}" not found`);
-    brokenFKs++;
+section('Primary keys & file hygiene');
+const PK = { inheritance_claim: ['id'], inheritance_axis: ['claim_id', 'axis'], inheritance_recognition: ['claim_id', 'observer_id'], axis_terminus: ['polity_id', 'axis'], polity: ['id'], territory: ['id'], dynasty: ['id'], government: ['id'], ethnicity: ['id'], language: ['id'], religion: ['id'], city: ['id'], figure: ['figure_id'],
+  polity_territory: ['territory_id', 'polity_id', 'start_year'], polity_dynasty: ['polity_id', 'dynasty_id', 'start_year'], city_name: ['city_id', 'name', 'start_year'], city_succession: ['from_city_id', 'to_city_id'],
+  source: ['id'], fact_source: ['entity_table', 'entity_id', 'field', 'source_id'] };
+for (const [name, cols] of Object.entries(PK)) {
+  const seen = new Set();
+  for (const r of T[name]) {
+    const key = cols.map(c => r[c]).join('|');
+    if (cols.some(c => !r[c]) && cols.length === 1) { err('empty primary key', `${name}.csv row with empty ${cols[0]}`); continue; }
+    if (seen.has(key)) err('duplicate primary key', `${name}.csv: ${key}`); else seen.add(key);
   }
 }
-
-for (const r of db.polities) {
-  const ctx = `polity "${r.id}"`;
-  checkFK(`${ctx} ruling_ethnicity`, r.ruling_ethnicity, sets.ethnicities);
-  checkFK(`${ctx} cultural_language`, r.cultural_language, sets.languages);
-  checkFK(`${ctx} ideology.religion`, r.ideology?.religion, sets.religions);
-  checkFK(`${ctx} ideology.government`, r.ideology?.government, sets.governments);
-  for (const t of (r.territories || [])) {
-    checkFK(`${ctx} territory "${t}"`, t, sets.territories);
-  }
+for (const [name, text] of Object.entries(RAW)) {
+  if (text.includes('\r\n')) warn('CRLF line endings', `${name}.csv (normalise to LF: any write through code/lib/csv.js does this)`);
 }
-
-if (!brokenFKs) ok('all foreign keys resolve');
-
-// ── 5. Succession integrity ───────────────────────────────────────────────────
-
-console.log('\n── Succession integrity ─────────────────────────────────');
-let badSuccessions = 0;
-
-for (const s of db.successions) {
-  if (!s.from || !s.to) {
-    err(`succession missing "from" or "to": ${JSON.stringify(s)}`);
-    badSuccessions++;
-    continue;
-  }
-  if (s.from === s.to) {
-    err(`succession self-loop: "${s.from}"`);
-    badSuccessions++;
-  }
-  if (!sets.polities.has(s.from)) {
-    err(`succession from "${s.from}": polity not found`);
-    badSuccessions++;
-  }
-  if (!sets.polities.has(s.to)) {
-    err(`succession to "${s.to}": polity not found`);
-    badSuccessions++;
-  }
-  // Note: no `type` field check — the v1 A/A-/B/C/D letter model is retired.
-  // Edges carry evidence columns; see docs/brainstorm/succession/ for the
-  // per-axis inheritance redesign.
-}
-
-if (!badSuccessions) ok('all successions valid');
-
-// ── 6. Territory timeline integrity ──────────────────────────────────────────
-
-console.log('\n── Territory timeline integrity ─────────────────────────');
-
-for (const t of db.territories) {
-  const periods = [...(t.periods || [])].sort((a, b) => a.start - b.start);
-
-  for (let i = 0; i < periods.length; i++) {
-    const p = periods[i];
-    const ctx = `territory "${t.id}" period [${p.start}–${p.end ?? '?'}]`;
-
-    // Polity FK
-    if (p.polity === undefined) {
-      err(`${ctx}: missing "polity" field — use null for explicitly uncontrolled periods`);
-    } else if (p.polity !== null && !sets.polities.has(p.polity)) {
-      warn(`${ctx}: polity "${p.polity}" not found — may not be added yet`);
-    }
-
-    // Dominant ethnicity FK
-    if (p.dominant_ethnicity && !sets.ethnicities.has(p.dominant_ethnicity)) {
-      err(`${ctx}: unknown dominant_ethnicity "${p.dominant_ethnicity}"`);
-    }
-
-    // Ethnic composition FKs
-    for (const ec of (p.ethnic_composition || [])) {
-      if (ec.ethnicity && !sets.ethnicities.has(ec.ethnicity)) {
-        err(`${ctx}: unknown ethnicity in composition "${ec.ethnicity}"`);
+for (const [name, expected] of Object.entries(SCHEMA)) {
+  for (const r of T[name]) {
+    for (const col of expected) {
+      if (!PROSE_COLUMNS.has(col) && r[col] && r[col].includes(',')) {
+        warn('comma in list/id field', `${name}.csv ${r.id || r[expected[0]]}.${col} = "${r[col]}" (use | for lists, ; in prose)`);
       }
     }
-
   }
 }
+if (!groups.size) ok('keys unique, LF endings, no stray commas'); flush();
 
-ok('territory timeline checks complete');
+// ── 3. Required fields & dates ────────────────────────────────────────────────
 
-// ── 7. Province integrity ─────────────────────────────────────────────────────
-
-console.log('\n── Province integrity ───────────────────────────────────');
-let badProvinces = 0;
-
-for (const province of db.provinces) {
-  const id    = province.id;
-  const props = province.properties || {};
-  const ctx   = `province "${id}"`;
-
-  if (!id) {
-    err(`province missing top-level "id" field`);
-    badProvinces++;
-    continue;
+section('Required fields & dates');
+for (const r of T.polity) {
+  if (!r.name)                err('polity missing name', r.id);
+  if (!r.id_ruling_ethnicity) err('polity missing ruling ethnicity', r.id);
+  if (r.start_year === '')    err('polity missing start_year', r.id);
+  if (!r.id_ruling_religion)  warn('polity missing religion', r.id);
+  if (!r.government)          warn('polity missing government', r.id);
+  const s = csv.toInt(r.start_year), e = csv.toInt(r.end_year);
+  if (r.start_year !== '' && s === null) err('non-integer year', `polity ${r.id}.start_year = "${r.start_year}"`);
+  if (r.end_year !== '' && e === null)   err('non-integer year', `polity ${r.id}.end_year = "${r.end_year}"`);
+  if (s !== null && e !== null && s > e) err('start after end', `polity ${r.id}: ${s} > ${e}`);
+  for (const col of ['start_basis', 'end_basis']) if (!DATE_BASIS.has(r[col])) err('polity date basis invalid', `${r.id}.${col} = "${r[col]}"`);
+}
+for (const name of ['polity_territory', 'polity_dynasty']) {
+  for (const r of T[name]) {
+    const s = csv.toInt(r.start_year), e = csv.toInt(r.end_year);
+    if (r.start_year !== '' && s === null) err('non-integer year', `${name} ${r.polity_id}.start_year = "${r.start_year}"`);
+    if (s !== null && e !== null && s > e) err('start after end', `${name} ${r.territory_id || r.dynasty_id}/${r.polity_id}: ${s} > ${e}`);
   }
-  if (!props.territory) {
-    err(`${ctx}: missing "territory" field`);
-    badProvinces++;
-  } else if (!sets.territories.has(props.territory)) {
-    err(`${ctx}: territory "${props.territory}" not found`);
-    badProvinces++;
-  }
+}
+if (!groups.size) ok('all required fields present, dates ordered'); flush();
 
-  for (const p of (props.periods || [])) {
-    if (p.polity !== null && p.polity !== undefined && !sets.polities.has(p.polity)) {
-      warn(`${ctx} period [${p.start}]: polity "${p.polity}" not found — may not be added yet`);
+// ── 4. Foreign keys ───────────────────────────────────────────────────────────
+
+section('Foreign keys');
+function fk(level, table, row, col, target, label = row.id || row[Object.keys(row)[0]]) {
+  const v = row[col];
+  if (v && !ids[target].has(v)) add(level, `${table}.${col} → ${target}`, `${label}: "${v}"`);
+}
+for (const r of T.polity) {
+  fk('error', 'polity', r, 'id_ruling_ethnicity', 'ethnicity');
+  fk('error', 'polity', r, 'id_ruling_language',  'language');
+  fk('error', 'polity', r, 'id_ruling_religion',  'religion');
+  fk('error', 'polity', r, 'government',          'government');
+}
+for (const r of T.polity_territory) {
+  fk('error', 'polity_territory', r, 'territory_id', 'territory', `${r.territory_id}/${r.polity_id}`);
+  fk('error', 'polity_territory', r, 'polity_id',    'polity',    `${r.territory_id}/${r.polity_id}`);
+}
+for (const r of T.polity_dynasty) {
+  fk('error', 'polity_dynasty', r, 'polity_id',  'polity',  `${r.polity_id}/${r.dynasty_id}`);
+  fk('error', 'polity_dynasty', r, 'dynasty_id', 'dynasty', `${r.polity_id}/${r.dynasty_id}`);
+}
+for (const r of T.figure)          fk('error', 'figure', r, 'polity_id', 'polity', r.figure_id);
+for (const r of T.dynasty)         fk('warning', 'dynasty', r, 'ethnicity', 'ethnicity');
+for (const r of T.city_name)       fk('error', 'city_name', r, 'city_id', 'city', `${r.city_id}/${r.name}`);
+for (const r of T.city_succession) { fk('error', 'city_succession', r, 'from_city_id', 'city', `${r.from_city_id}→${r.to_city_id}`); fk('error', 'city_succession', r, 'to_city_id', 'city', `${r.from_city_id}→${r.to_city_id}`); }
+if (!groups.size) ok('all foreign keys resolve'); flush();
+
+// ── 5. Taxonomy trees ─────────────────────────────────────────────────────────
+
+section('Taxonomy trees (parent_id)');
+for (const name of ['ethnicity', 'language', 'religion']) {
+  const byId = new Map(T[name].map(r => [r.id, r]));
+  for (const r of T[name]) {
+    if (r.parent_id && !byId.has(r.parent_id)) err(`${name} parent_id unresolved`, `${r.id} → "${r.parent_id}"`);
+    const seen = new Set([r.id]);
+    let cur = byId.get(r.parent_id);
+    while (cur) {
+      if (seen.has(cur.id)) { err(`${name} parent cycle`, `involving ${cur.id}`); break; }
+      seen.add(cur.id); cur = byId.get(cur.parent_id);
     }
   }
 }
+if (!groups.size) ok('all parents resolve, no cycles'); flush();
 
-if (!badProvinces) ok('all provinces valid');
+// ── 6. Derived succession edges ───────────────────────────────────────────────
 
-// ── 8. Duplicate succession edges ────────────────────────────────────────────
-
-console.log('\n── Duplicate succession edges ───────────────────────────');
-let dupEdges = 0;
-const edgeSeen = new Set();
-for (const s of db.successions) {
-  const key = `${s.from}→${s.to}`;
-  if (edgeSeen.has(key)) {
-    err(`duplicate succession edge: ${key}`);
-    dupEdges++;
-  } else {
-    edgeSeen.add(key);
+section('derived/polity_succession.csv');
+const succFile = path.join(DERIVED, 'polity_succession.csv');
+let succ = [];
+if (!fs.existsSync(succFile)) {
+  warn('derived file missing', 'derived/polity_succession.csv — run `npm run make:succession-edges`');
+} else {
+  succ = csv.readFile(succFile);
+  const seen = new Set();
+  for (const s of succ) {
+    const key = `${s.from_polity_id}→${s.to_polity_id}`;
+    if (!s.from_polity_id || !s.to_polity_id) { err('succession missing endpoint', JSON.stringify(s)); continue; }
+    if (s.from_polity_id === s.to_polity_id)  err('succession self-loop', key);
+    if (!ids.polity.has(s.from_polity_id))    err('succession endpoint not a polity', `from ${s.from_polity_id}`);
+    if (!ids.polity.has(s.to_polity_id))      err('succession endpoint not a polity', `to ${s.to_polity_id}`);
+    if (seen.has(key)) err('duplicate succession edge', key); else seen.add(key);
+    for (const t of csv.splitPipe(s.shared_territories)) if (!ids.territory.has(t)) err('shared_territory unresolved', `${key}: ${t}`);
   }
+  if (!groups.size) ok(`${succ.length} edges valid`);
 }
-if (!dupEdges) ok('no duplicate succession edges');
+flush();
 
-// ── 9. Succession shared_territories ─────────────────────────────────────────
+// ── 7. Panels ─────────────────────────────────────────────────────────────────
 
-console.log('\n── Succession shared_territories ────────────────────────');
-let badSharedTerr = 0;
-for (const s of db.successions) {
-  for (const t of (s.shared_territories || [])) {
-    if (!sets.territories.has(t)) {
-      err(`succession "${s.from}" → "${s.to}": shared_territory "${t}" not found`);
-      badSharedTerr++;
-    }
-  }
-}
-if (!badSharedTerr) ok('all shared_territories resolve');
-
-// ── 10. History panel polity references ──────────────────────────────────────
-
-console.log('\n── History panel polity references ──────────────────────');
-let badPanelRefs = 0;
-let panelCount = 0;
-let cellCount = 0;
-
+section('panels/ polity references');
 function walkPanels(dir) {
   if (!fs.existsSync(dir)) return [];
-  const panels = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.isDirectory()) {
-      panels.push(...walkPanels(path.join(dir, entry.name)));
-    } else if (entry.name.endsWith('.json')) {
-      try {
-        const data = JSON.parse(fs.readFileSync(path.join(dir, entry.name), 'utf8'));
-        panels.push({ file: path.join(dir, entry.name), data });
-      } catch { /* skip malformed */ }
-    }
-  }
-  return panels;
-}
-
-const historyDir = path.join(__dirname, '..', 'data', 'history');
-const panels = walkPanels(historyDir);
-panelCount = panels.length;
-
-for (const { file, data } of panels) {
-  const panelId = data.id || path.basename(file, '.json');
-  for (const row of (data.rows || [])) {
-    for (const cell of (row.cells || [])) {
-      const entries = [...(cell.stack || []), ...(cell.split || [])];
-      for (const entry of entries) {
-        cellCount++;
-        if (entry.polity && !sets.polities.has(entry.polity)) {
-          warn(`panel "${panelId}": polity ref "${entry.polity}" not found in polity data`);
-          badPanelRefs++;
-        }
-      }
-    }
-  }
-}
-
-if (!badPanelRefs) ok(`${panelCount} panels, ${cellCount} cells — all polity refs valid`);
-else ok(`${panelCount} panels scanned, ${badPanelRefs} unresolved polity ref(s)`);
-
-// ── 11. Taxonomy tree integrity ──────────────────────────────────────────────
-
-console.log('\n── Taxonomy tree integrity ──────────────────────────────');
-let badTaxonomy = 0;
-
-function checkTree(items, label) {
-  const ids = new Set(items.map(n => n.id));
-  for (const node of items) {
-    if (node.parent && !ids.has(node.parent)) {
-      err(`${label} "${node.id}": parent "${node.parent}" not found`);
-      badTaxonomy++;
-    }
-  }
-  // Cycle detection via tortoise-and-hare on parent chain
-  const byId = new Map(items.map(n => [n.id, n]));
-  for (const node of items) {
-    const visited = new Set();
-    let cur = node;
-    while (cur && cur.parent) {
-      if (visited.has(cur.id)) {
-        err(`${label}: cycle detected involving "${cur.id}"`);
-        badTaxonomy++;
-        break;
-      }
-      visited.add(cur.id);
-      cur = byId.get(cur.parent);
-    }
-  }
-}
-
-checkTree(db.ethnicities, 'ethnicity');
-checkTree(db.languages, 'language');
-checkTree(db.religions, 'religion');
-if (!badTaxonomy) ok('all taxonomy trees valid');
-
-// ── 12. Government FK validation ────────────────────────────────────────────
-
-console.log('\n── Government FK validation ─────────────────────────────');
-let badGov = 0;
-const govSet = new Set((db.governments || []).map(g => g.id));
-
-for (const r of db.polities) {
-  const gov = r.ideology?.government;
-  if (gov && !govSet.has(gov)) {
-    err(`polity "${r.id}": government "${gov}" not found in government.csv`);
-    badGov++;
-  }
-}
-if (!badGov) ok(`all polity government refs resolve (${govSet.size} government types)`);
-
-// ── 13. CSV source lint ──────────────────────────────────────────────────────
-// Lints csvs/*.csv directly (pre-generation), so a bad row fails even if a
-// generator silently drops or rewrites it.
-
-console.log('\n── CSV source lint ──────────────────────────────────────');
-let badCsv = 0;
-
-// Minimal RFC-4180 parser: quoted fields, escaped quotes, no embedded newlines.
-function parseCsvLine(line) {
   const out = [];
-  let cur = '', inQ = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (inQ) {
-      if (c === '"') {
-        if (line[i + 1] === '"') { cur += '"'; i++; }
-        else inQ = false;
-      } else cur += c;
-    } else if (c === '"') inQ = true;
-    else if (c === ',') { out.push(cur); cur = ''; }
-    else cur += c;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...walkPanels(p));
+    else if (e.name.endsWith('.json')) {
+      try { out.push({ file: p, data: JSON.parse(fs.readFileSync(p, 'utf8')) }); }
+      catch (ex) { err('panel JSON unparsable', `${path.relative(ROOT, p)}: ${ex.message}`); }
+    }
   }
-  out.push(cur);
   return out;
 }
-
-// IDs must be lowercase and whitespace-free. Existing data legitimately uses
-// unicode letters and apostrophes (goktürk_khaganate, k'iche'), so we reject
-// only clear mistakes: whitespace, ASCII uppercase, quotes, commas, semicolons.
-const BAD_ID = /[\sA-Z",;]/;
-
-const YEAR_COLS = {
-  'polity.csv': ['start_year', 'end_year'],
-  'city.csv':   ['founding_year', 'abandonment_year'],
-};
-const CURRENT_YEAR = new Date().getFullYear();
-
-const csvDir = path.join(__dirname, '..', 'csvs');
-for (const file of fs.readdirSync(csvDir).filter(f => f.endsWith('.csv'))) {
-  const lines = fs.readFileSync(path.join(csvDir, file), 'utf8').trim().split(/\r?\n/);
-  const header = parseCsvLine(lines[0]);
-  const idIdx = header.indexOf('id');
-  const seen = new Set();
-
-  for (let n = 1; n < lines.length; n++) {
-    const row = parseCsvLine(lines[n]);
-    const ctx = `${file}:${n + 1}`;
-
-    if (row.length !== header.length) {
-      err(`${ctx}: ${row.length} fields, expected ${header.length} — unquoted comma or broken row`);
-      badCsv++;
-      continue;
-    }
-
-    // ID format + duplicates (entity tables only; junction tables have no id col)
-    if (idIdx !== -1) {
-      const id = row[idIdx];
-      if (!id)               { err(`${ctx}: empty id`); badCsv++; }
-      else if (BAD_ID.test(id)) { err(`${ctx}: malformed id "${id}" (whitespace/uppercase/quote)`); badCsv++; }
-      if (id && seen.has(id)) { err(`${ctx}: duplicate id "${id}" in source CSV`); badCsv++; }
-      seen.add(id);
-    }
-
-    // Year sanity
-    for (const col of (YEAR_COLS[file] || [])) {
-      const i = header.indexOf(col);
-      if (i === -1 || row[i] === '') continue;
-      const y = Number(row[i]);
-      if (!Number.isInteger(y) || y < -10000 || y > CURRENT_YEAR + 1) {
-        err(`${ctx}: ${col} "${row[i]}" is not a sane integer year`);
-        badCsv++;
-      }
-    }
-    const [sc, ec] = YEAR_COLS[file] || [];
-    if (sc) {
-      const s = row[header.indexOf(sc)], e = row[header.indexOf(ec)];
-      if (s !== '' && e !== '' && Number(s) > Number(e)) {
-        err(`${ctx}: ${sc} (${s}) > ${ec} (${e})`);
-        badCsv++;
+const panels = walkPanels(PANELS);
+let cellCount = 0;
+const unresolvedRefs = new Map();
+for (const { file, data } of panels) {
+  const panelId = data.id || path.basename(file, '.json');
+  for (const row of (data.rows || [])) for (const cell of (row.cells || [])) {
+    const entries = [cell, ...(cell.stack || []), ...(cell.split || [])];
+    for (const entry of entries) {
+      if (entry !== cell) cellCount++;
+      if (entry.polity && entry.ethnicity) err('panel entry has both polity and ethnicity', `${panelId}: ${entry.label}`);
+      if (entry.ethnicity && !ids.ethnicity.has(entry.ethnicity)) err('panel ethnicity ref not in ethnicity.csv', `${panelId}: "${entry.ethnicity}"`);
+      if (entry.polity && !ids.polity.has(entry.polity)) {
+        unresolvedRefs.set(entry.polity, (unresolvedRefs.get(entry.polity) || 0) + 1);
+        if (!unresolvedRefs.has(`${entry.polity}@${panelId}`)) unresolvedRefs.set(`${entry.polity}@${panelId}`, 0);
       }
     }
   }
 }
-if (!badCsv) ok('all source CSVs pass lint');
+const distinctUnresolved = [...unresolvedRefs.keys()].filter(k => !k.includes('@'));
+for (const id of distinctUnresolved) warn('panel polity ref not in polity.csv', `${id} (${unresolvedRefs.get(id)} cell(s))`);
+if (!panels.length) warn('no panels found', 'panels/ is empty or missing');
+else if (!distinctUnresolved.length) ok(`${panels.length} panels, ${cellCount} cells — all polity refs resolve`);
+else console.log(`  ·  ${panels.length} panels, ${cellCount} cells, ${distinctUnresolved.length} distinct unresolved polity ids`);
+flush(15);
 
-// ── 13a. Inheritance layer ───────────────────────────────────────────────────
-// The curated per-axis inheritance layer (docs/model/inheritance.md).
-// Enum vocabularies are canonical per docs/brainstorm/succession/02 & 09.
+// ── 8. Sources & provenance ───────────────────────────────────────────────────
 
-console.log('\n── Inheritance layer ────────────────────────────────────');
+section('Sources & provenance');
+for (const r of T.source) {
+  if (!ALLOWED_LICENCES.has(r.licence)) err('source licence not allowed', `${r.id}: "${r.licence}" (see docs/model/source.md)`);
+  for (const col of ['name', 'url', 'version', 'citation']) if (!r[col]) err('source missing field', `${r.id}.${col}`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(r.retrieved)) err('source retrieved not YYYY-MM-DD', `${r.id}: "${r.retrieved}"`);
+}
+const sourceIds = new Set(T.source.map(r => r.id));
+const usedSources = new Set();
+const rowKeys = {}; // table name → set of primary keys, built on first use
+for (const r of T.fact_source) {
+  const label = `${r.entity_table}/${r.entity_id}`;
+  usedSources.add(r.source_id);
+  if (!sourceIds.has(r.source_id)) err('fact_source.source_id → source', `${label}: "${r.source_id}"`);
+  if (!PK[r.entity_table] || r.entity_table === 'source' || r.entity_table === 'fact_source') { err('fact_source table unknown', label); continue; }
+  rowKeys[r.entity_table] ??= new Set(T[r.entity_table].map(row => PK[r.entity_table].map(c => row[c]).join('|')));
+  if (!rowKeys[r.entity_table].has(r.entity_id)) err('fact_source row not found', label);
+  if (r.field && !SCHEMA[r.entity_table].includes(r.field)) err('fact_source field unknown', `${label}.${r.field}`);
+}
+for (const r of T.source) if (!usedSources.has(r.id)) warn('source unused', `${r.id} (no fact_source row points to it)`);
+if (!groups.size) ok(`${T.source.length} sources, ${T.fact_source.length} provenance rows`); flush();
+
+// ── 9. id format & year sanity ────────────────────────────────────────────────
+
+section('id format & years');
+// Existing ids use unicode letters and apostrophes (goktürk_khaganate, k'iche'),
+// so reject only clear mistakes.
+const BAD_ID = /[\sA-Z",;]/;
+const YEAR_COLS = { polity: ['start_year', 'end_year'], city: ['founding_year', 'abandonment_year'] };
+const CURRENT_YEAR = new Date().getFullYear();
+for (const [name, expected] of Object.entries(SCHEMA)) {
+  if (!expected.includes('id')) continue;
+  for (const r of T[name]) if (r.id && BAD_ID.test(r.id)) err('malformed id', `${name}.csv "${r.id}"`);
+}
+for (const [name, cols] of Object.entries(YEAR_COLS)) {
+  for (const r of T[name]) for (const col of cols) {
+    if (r[col] === '') continue;
+    const y = Number(r[col]);
+    if (!Number.isInteger(y) || y < -10000 || y > CURRENT_YEAR + 1) err('insane year', `${name}.csv ${r.id}.${col} = "${r[col]}"`);
+  }
+}
+for (const r of T.city) {
+  if (r.founding_year !== '' && r.abandonment_year !== '' && +r.founding_year > +r.abandonment_year) err('start after end', `city.csv ${r.id}`);
+}
+if (!groups.size) ok('all ids and years well-formed'); flush();
+
+// ── 10. Inheritance layer ─────────────────────────────────────────────────────
+
+section('Inheritance layer');
 const INH = {
   source_type:            new Set(['polity', 'ethnicity', 'religion', 'civilization', 'stateless_people']),
   source_temporal_status: new Set(['prior', 'ongoing', 'abstract']),
@@ -445,174 +359,89 @@ const INH = {
   degree:                 new Set(['recognized', 'partial', 'rejected']),
   observer_type:          new Set(['polity', 'institution']),
 };
-const SOURCE_SETS = { polity: sets.polities, ethnicity: sets.ethnicities, religion: sets.religions };
-
-let badInh = 0;
-const inhFile = path.join(__dirname, '..', 'data', 'inheritance', 'claims.json');
-const termFile = path.join(__dirname, '..', 'data', 'inheritance', 'terminus.json');
-const inhClaims = fs.existsSync(inhFile) ? JSON.parse(fs.readFileSync(inhFile, 'utf8')) : [];
-const inhTerminus = fs.existsSync(termFile) ? JSON.parse(fs.readFileSync(termFile, 'utf8')) : [];
-
+const polityIds = new Set(T.polity.map(r => r.id));
+const SOURCE_SETS = { polity: polityIds, ethnicity: new Set(T.ethnicity.map(r => r.id)), religion: new Set(T.religion.map(r => r.id)) };
 const claimIds = new Set();
-function inhErr(msg) { err(msg); badInh++; }
-
-for (const c of inhClaims) {
-  const ctx = `inheritance_claim "${c.id}"`;
-  if (claimIds.has(c.id)) inhErr(`${ctx}: duplicate id`);
+for (const c of T.inheritance_claim) {
+  const ctx = c.id;
+  if (claimIds.has(c.id)) err('inheritance duplicate claim', ctx);
   claimIds.add(c.id);
-  if (!sets.polities.has(c.heir_polity_id)) inhErr(`${ctx}: heir_polity_id "${c.heir_polity_id}" not found`);
-  if (!INH.source_type.has(c.source_type))  inhErr(`${ctx}: bad source_type "${c.source_type}"`);
-  else if (SOURCE_SETS[c.source_type] && !SOURCE_SETS[c.source_type].has(c.source_id)) {
-    inhErr(`${ctx}: source_id "${c.source_id}" not found in ${c.source_type}`);
+  if (!polityIds.has(c.heir_polity_id)) err('inheritance heir → polity', `${ctx}: "${c.heir_polity_id}"`);
+  if (SOURCE_SETS[c.source_type] && !SOURCE_SETS[c.source_type].has(c.source_id)) err('inheritance source_id', `${ctx}: "${c.source_id}" not in ${c.source_type}`);
+  for (const f of ['source_type', 'source_temporal_status', 'topology', 'mechanism', 'legitimacy_mode', 'exclusivity']) {
+    if (!INH[f].has(c[f])) err('inheritance bad enum', `${ctx}.${f} = "${c[f]}"`);
   }
-  for (const [f, allowed] of [['source_temporal_status', INH.source_temporal_status],
-                              ['topology', INH.topology], ['mechanism', INH.mechanism],
-                              ['legitimacy_mode', INH.legitimacy_mode], ['exclusivity', INH.exclusivity]]) {
-    if (!allowed.has(c[f])) inhErr(`${ctx}: bad ${f} "${c[f]}"`);
-  }
-  if (!c.provenance) inhErr(`${ctx}: missing provenance — curated claims always carry a receipt`);
-  for (const a of (c.axes || [])) {
-    if (!INH.axis.has(a.axis))                inhErr(`${ctx} axis: unknown axis "${a.axis}"`);
-    if (a.stance && !INH.stance.has(a.stance)) inhErr(`${ctx} axis "${a.axis}": bad stance "${a.stance}"`);
-    if (a.strength != null && (a.strength < 1 || a.strength > 5)) inhErr(`${ctx} axis "${a.axis}": strength ${a.strength} out of 1–5`);
-  }
-  for (const r of (c.recognition || [])) {
-    if (!INH.degree.has(r.degree))               inhErr(`${ctx} recognition: bad degree "${r.degree}"`);
-    if (!INH.observer_type.has(r.observer_type)) inhErr(`${ctx} recognition: bad observer_type "${r.observer_type}"`);
-    else if (r.observer_type === 'polity' && !sets.polities.has(r.observer_id)) {
-      inhErr(`${ctx} recognition: observer polity "${r.observer_id}" not found`);
-    }
-  }
+  if (!c.id) err('inheritance empty claim id', c.heir_polity_id);
+  if (!/^(wp|wd|panel|ref):.+/.test(c.provenance)) err('inheritance bad provenance', `${ctx}: "${c.provenance}"`);
 }
-for (const t of inhTerminus) {
-  if (!sets.polities.has(t.polity_id)) inhErr(`axis_terminus: polity "${t.polity_id}" not found`);
-  if (!INH.axis.has(t.axis))           inhErr(`axis_terminus "${t.polity_id}": unknown axis "${t.axis}"`);
+for (const a of T.inheritance_axis) {
+  const ctx = `${a.claim_id}/${a.axis}`;
+  if (!claimIds.has(a.claim_id)) err('inheritance axis → claim', ctx);
+  if (!INH.axis.has(a.axis)) err('inheritance bad enum', `${ctx} axis`);
+  if (a.stance && !INH.stance.has(a.stance)) err('inheritance bad enum', `${ctx} stance "${a.stance}"`);
+  if (a.strength !== '' && !(+a.strength >= 1 && +a.strength <= 5)) err('inheritance strength out of 1-5', ctx);
 }
-if (!badInh) ok(`inheritance layer valid (${inhClaims.length} claims, ${inhTerminus.length} terminus records)`);
-
-// ── 13b. Provenance tags ─────────────────────────────────────────────────────
-// Every polity row and succession edge carries a provenance tag
-// (docs/model/editorial-policy.md §3). Malformed = error; stub/legacy counts
-// feed the plausibility ratchet — promotion shrinks them, they never grow.
-
-console.log('\n── Provenance tags ──────────────────────────────────────');
-const PROV_RE = /^(wp|wd|panel|ref):.+|^(stub|legacy)$/;
-let badProv = 0;
-let unpromotedPolities = 0, unpromotedEdges = 0;
-
-for (const r of db.polities) {
-  if (!r.provenance)               { err(`polity "${r.id}": missing provenance tag`); badProv++; }
-  else if (!PROV_RE.test(r.provenance)) { err(`polity "${r.id}": malformed provenance "${r.provenance}"`); badProv++; }
-  else if (r.provenance === 'stub' || r.provenance === 'legacy') unpromotedPolities++;
+for (const r of T.inheritance_recognition) {
+  const ctx = `${r.claim_id}/${r.observer_id}`;
+  if (!claimIds.has(r.claim_id)) err('inheritance recognition → claim', ctx);
+  if (!INH.degree.has(r.degree)) err('inheritance bad enum', `${ctx} degree "${r.degree}"`);
+  if (!INH.observer_type.has(r.observer_type)) err('inheritance bad enum', `${ctx} observer_type "${r.observer_type}"`);
+  else if (r.observer_type === 'polity' && !polityIds.has(r.observer_id)) err('inheritance observer → polity', ctx);
 }
-for (const s of db.successions) {
-  if (!s.provenance)               { err(`succession ${s.from}→${s.to}: missing provenance tag`); badProv++; }
-  else if (!PROV_RE.test(s.provenance)) { err(`succession ${s.from}→${s.to}: malformed provenance "${s.provenance}"`); badProv++; }
-  else if (s.provenance === 'stub' || s.provenance === 'legacy') unpromotedEdges++;
+for (const t of T.axis_terminus) {
+  if (!polityIds.has(t.polity_id)) err('axis_terminus → polity', t.polity_id);
+  if (!INH.axis.has(t.axis)) err('inheritance bad enum', `terminus ${t.polity_id} axis "${t.axis}"`);
 }
-if (!badProv) ok(`all provenance tags well-formed (unpromoted: ${unpromotedPolities} polities, ${unpromotedEdges} edges)`);
+if (!groups.size) ok(`${T.inheritance_claim.length} claims, ${T.axis_terminus.length} terminus records`); flush();
 
-// ── 14. Plausibility metrics ─────────────────────────────────────────────────
-// Machine checks prove coherence, not truth — but wrong history tends to be
-// INCOHERENT, so these flag where errors concentrate. Each metric is ratcheted
-// individually in warning-baseline.json (may shrink, never grow). Full detail
-// is written to data/plausibility.md (untracked, regenerated every run).
+// ── 11. Plausibility metrics ──────────────────────────────────────────────────
 
-console.log('\n── Plausibility metrics ─────────────────────────────────');
-
-const polityById = new Map(db.polities.map(p => [p.id, p]));
-const plaus = {
-  // An edge sharing neither people nor land is exactly the "ahistorical jump"
-  // (type D) this project exists to forbid. Either the edge is wrong, or its
-  // evidence columns are — both need curation.
-  d_shaped_edges:      [],
-  // Successor claimed >200y after the predecessor ended: revival claims need a note.
-  gap_over_200:        [],
-  // Successor starts before its predecessor even starts: edge likely reversed.
-  start_inversions:    [],
-  // Polities lasting >1200y are rare and famous; the rest are usually
-  // cultural continua mislabeled as polities.
-  long_lived_polities: [],
-};
-
-for (const e of db.successions) {
-  const key = `${e.from} → ${e.to}`;
-  if (e.same_ethnicity === false && e.related_ethnicity === false && e.shared_territory_count === 0) {
-    plaus.d_shaped_edges.push(key);
-  }
-  if ((e.temporal_gap_years ?? 0) > 200) {
-    plaus.gap_over_200.push(`${key} (gap ${e.temporal_gap_years}y)`);
-  }
-  const f = polityById.get(e.from), t = polityById.get(e.to);
-  if (f && t && f.start != null && t.start != null && t.start < f.start) {
-    plaus.start_inversions.push(`${key} (${t.start} < ${f.start})`);
-  }
+// Machine checks prove coherence, not truth, but wrong history tends to be
+// incoherent, so these flag where review should concentrate.
+section('Plausibility metrics');
+const polityById = new Map(T.polity.map(p => [p.id, p]));
+const plaus = { no_people_no_land_edges: [], gap_over_200: [], start_inversions: [], long_lived_polities: [] };
+for (const e of succ) {
+  const key = `${e.from_polity_id} → ${e.to_polity_id}`;
+  if (!csv.toBool(e.same_ethnicity) && !csv.toBool(e.related_ethnicity) && +e.shared_territory_count === 0) plaus.no_people_no_land_edges.push(key);
+  if (+e.temporal_gap_years > 200) plaus.gap_over_200.push(`${key} (gap ${e.temporal_gap_years}y)`);
+  const f = polityById.get(e.from_polity_id), t = polityById.get(e.to_polity_id);
+  if (f && t && +t.start_year < +f.start_year) plaus.start_inversions.push(`${key} (${t.start_year} < ${f.start_year})`);
 }
-for (const p of db.polities) {
-  if (p.start != null && p.end != null && p.end - p.start > 1200) {
-    plaus.long_lived_polities.push(`${p.id} (${p.start}..${p.end}, ${p.end - p.start}y)`);
-  }
+for (const p of T.polity) {
+  if (p.end_year !== '' && +p.end_year - +p.start_year > 1200) plaus.long_lived_polities.push(`${p.id} (${p.start_year}..${p.end_year})`);
 }
-
 const plausCounts = Object.fromEntries(Object.entries(plaus).map(([k, v]) => [k, v.length]));
-// Provenance promotion progress — count-only metrics (the CSVs are the detail list)
-plausCounts.unpromoted_polities = unpromotedPolities;
-plausCounts.unpromoted_edges    = unpromotedEdges;
-for (const [k, v] of Object.entries(plausCounts)) {
-  console.log(`  ·  ${k}: ${v}`);
-}
-
-// Detail report (untracked)
-const reportLines = ['# Plausibility report', '', `Generated by scripts/validate.js — do not edit.`, ''];
-for (const [k, list] of Object.entries(plaus)) {
-  reportLines.push(`## ${k} (${list.length})`, '');
-  for (const item of list) reportLines.push(`- ${item}`);
-  reportLines.push('');
-}
-fs.writeFileSync(path.join(__dirname, '..', 'data', 'plausibility.md'), reportLines.join('\n'));
-console.log('  ·  detail → data/plausibility.md');
+for (const [k, v] of Object.entries(plausCounts)) console.log(`  ·  ${k}: ${v}`);
+const reportLines = ['# Plausibility report', '', 'Generated by scripts/validate.js. Do not edit.', ''];
+for (const [k, list] of Object.entries(plaus)) reportLines.push(`## ${k} (${list.length})`, '', ...list.map(i => `- ${i}`), '');
+fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
+fs.writeFileSync(path.join(ROOT, 'data', 'plausibility.md'), reportLines.join('\n'));
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 
-console.log('\n─────────────────────────────────────────────────────────');
-console.log(`Polities: ${db.polities.length}  |  Successions: ${db.successions.length}  |  Territories: ${db.territories.length}  |  Provinces: ${db.provinces.length}`);
-console.log(`Languages: ${db.languages.length}  |  Religions: ${db.religions.length}  |  Ethnicities: ${db.ethnicities.length}`);
-console.log(`Dynasties: ${(db.dynasties||[]).length}  |  Governments: ${(db.governments||[]).length}`);
-console.log(`History panels: ${panelCount}  |  Panel cells: ${cellCount}`);
+console.log('\n' + '─'.repeat(59));
+console.log(`Polities: ${T.polity.length}  |  Territories: ${T.territory.length}  |  Junction rows: ${T.polity_territory.length}  |  Dynasties: ${T.dynasty.length}`);
+console.log(`Ethnicities: ${T.ethnicity.length}  |  Languages: ${T.language.length}  |  Religions: ${T.religion.length}  |  Governments: ${T.government.length}`);
+console.log(`Figures: ${T.figure.length}  |  Cities: ${T.city.length}  |  Succession edges: ${succ.length}  |  Panels: ${panels.length} (${cellCount} cells)`);
+console.log(`Sources: ${T.source.length}  |  Provenance rows: ${T.fact_source.length}`);
 console.log('');
 
 // ── Warning ratchet ───────────────────────────────────────────────────────────
-// Warnings are curation debt (e.g. missing ideology fields). They may shrink,
-// never grow. Baseline is checked in; refresh it with:
-//   node scripts/validate.js --update-baseline
 
 const baselineFile = path.join(__dirname, 'warning-baseline.json');
-const baselineData = fs.existsSync(baselineFile)
-  ? JSON.parse(fs.readFileSync(baselineFile, 'utf8'))
-  : null;
-const current = { warnings, metrics: plausCounts };
-
+const baseline = fs.existsSync(baselineFile) ? JSON.parse(fs.readFileSync(baselineFile, 'utf8')) : null;
 if (process.argv.includes('--update-baseline')) {
-  fs.writeFileSync(baselineFile, JSON.stringify(current, null, 2) + '\n');
-  console.log(`Baseline updated: ${JSON.stringify(current.metrics)}, warnings ${baselineData?.warnings ?? 'none'} → ${warnings}\n`);
-} else if (baselineData !== null) {
-  let below = false;
-  if (warnings > baselineData.warnings) {
-    err(`warning count grew: ${warnings} > baseline ${baselineData.warnings} — fix the new gaps (or, if deliberate: node scripts/validate.js --update-baseline)`);
-  } else if (warnings < baselineData.warnings) below = true;
-  for (const [k, v] of Object.entries(baselineData.metrics || {})) {
-    const cur = plausCounts[k] ?? 0;
-    if (cur > v) err(`plausibility metric "${k}" grew: ${cur} > baseline ${v} — see data/plausibility.md (or, if deliberate: node scripts/validate.js --update-baseline)`);
-    else if (cur < v) below = true;
+  fs.writeFileSync(baselineFile, JSON.stringify({ warnings: report.warnings, metrics: plausCounts }, null, 2) + '\n');
+  console.log(`Baseline updated: ${report.warnings} warnings\n`);
+} else if (baseline) {
+  if (report.warnings > baseline.warnings) err('ratchet', `warning count grew: ${report.warnings} > ${baseline.warnings}`);
+  for (const [k, v] of Object.entries(baseline.metrics)) {
+    if ((plausCounts[k] ?? 0) > v) err('ratchet', `metric ${k} grew: ${plausCounts[k]} > ${v}`);
   }
-  if (below && !errors) console.log(`Below baseline on at least one count — lock it in: node scripts/validate.js --update-baseline\n`);
+  flush();
 }
 
-if (errors > 0) {
-  console.error(`FAILED: ${errors} error(s), ${warnings} warning(s)\n`);
-  process.exit(1);
-} else if (warnings > 0) {
-  console.warn(`PASSED with ${warnings} warning(s)\n`);
-} else {
-  console.log('PASSED — data is clean\n');
-}
+if (report.errors > 0) { console.error(`FAILED: ${report.errors} error(s), ${report.warnings} warning(s)\n`); process.exit(1); }
+else if (report.warnings > 0) console.warn(`PASSED with ${report.warnings} warning(s)\n`);
+else console.log('PASSED — data is clean\n');

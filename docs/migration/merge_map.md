@@ -46,8 +46,8 @@ own cell elsewhere. Default to `X` unless `X` is clearly subordinate to `Y`.
 | Chobanid / Jalayirid | `chobanid_dynasty` | First in pair |
 | Injuid / Muzaffarid | `injuid_dynasty` | First in pair |
 | Kartid / Sarbadaran | `kartid_dynasty` | Primary political power |
-| Kidarite / Chionite | `kidarite_kingdom` | Primary name |
-| Kura-Araxes / Urartu | `kura_araxes_culture` | Pre-Urartu period |
+| Kidarite / Chionite | `kidarites` | Primary name |
+| Kura-Araxes / Urartu | Label only | Pre-Urartu period; a culture (§5) |
 
 ## 3. Cross-panel synonyms
 
@@ -82,8 +82,21 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 | `alexander`, `alexander_the_great` | `macedonian_empire` |
 | `prc` | `peoples_republic_of_china` |
 | `venice`, `venice_republic` | `republic_of_venice` |
-| `il_khanate` | `ilkhanate` |
+| `il_khanate`, `mongol_il_khanate` | `ilkhanate` |
+| `western_liao` | `qara_khitai` |
+| `jin_jurchen` | `jin_dynasty` |
+| `hephthalite_empire` | `hephthalites` |
+| `kidarite_kingdom` | `kidarites` |
+| `yamato_period` | `yamato_kingdom` |
+| `nara_period`, `heian_period` | `ritsuryo_japan` |
+| `northern_court` | `ashikaga_shogunate` |
+| `feudal_japan` (split by date, not in `SYNONYM_MAP`) | `kamakura_shogunate` 1185..1333; `kenmu_government` 1333..1336; `ashikaga_shogunate` 1336..1573; `oda_toyotomi_government` 1573..1603 |
+| `han_dynasty` (by date, not in `SYNONYM_MAP`) | `western_han` -202..9; `xin` 9..23; `xuan_han` 23..25; `eastern_han` 25..220 |
+| `goktürk_khaganate` (by date, not in `SYNONYM_MAP`) | `first_turkic_khaganate` 552..603; `second_turkic_khaganate` 682..744 |
+| `italy` (retired as a polity id; still the territory and panel id, so not in `SYNONYM_MAP`) | `kingdom_of_italy` |
+| `kidarites_alchon_huns` (split: Kidarite cells stay on `kidarites`, Alchon cells use `alchon_huns`; not in `SYNONYM_MAP` because the target depends on the cell) | `kidarites` / `alchon_huns` |
 | `first_turkic_empire` | `first_turkic_khaganate` |
+| `lysimachus` (retired, and now a `figure` id) | `kingdom_of_lysimachus` |
 | `roman_empire_pagan`, `roman_empire_christian` | `roman_empire` |
 | `inju`, `injuid` | `injuid_dynasty` |
 | `ildeguzids`, `eldiguzids` | `eldiguzid_dynasty` |
@@ -117,10 +130,16 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 
 ## 5. Culture entity IDs
 
-Prehistoric/archaeological entities get a `_culture` suffix and belong in the
-`cultures` table (P3.12), **not** `polity.csv`.
+Prehistoric/archaeological entities are panel labels, with no entity row and no `polity`
+field. They do not belong in `polity.csv`, and there is no `cultures` table: the owner
+dropped it on 2026-10-31 and P3.12 is closed (`../model/non_polity.md`). Revisit only
+when a query or an inheritance claim needs a culture as an endpoint.
 
-| Label | → ID |
+The pipeline still types these labels with a `_culture` suffix in
+`derived/canonical_entities.csv`, and `generate_stubs.js` skips them. The 128 panel
+cells that held such an id lost it in the same change.
+
+| Label | Pipeline id (not a panel field) |
 |---|---|
 | Kura-Araxes culture | `kura_araxes_culture` |
 | Dalma culture | `dalma_culture` |
@@ -158,20 +177,53 @@ city_communes   austrian_habsburg   qing_court
 chu_wu_yue   later_chu   republics_of_siena   british_india_sphere
 ```
 
+**Retired polity rows** (`../model/non_polity.md`). A cell with an `ethnicity` home carries
+that key in place of `polity`. The others are label-only.
+
+| Retired id | Home |
+|---|---|
+| `berber` | ethnicity `berber_amazigh_cluster` |
+| `beja` | ethnicity `beja` |
+| `histri`, `illyrians` | ethnicity `illyrians` |
+| `saka`, `cimmerian_scythian_nomads`, `scythian` | ethnicity `scythian` |
+| `dahae` | ethnicity `dahae` |
+| `donghu` | ethnicity `donghu` |
+| `celts`, `belgae` | ethnicity `celtic_peoples` |
+| `celtic_gauls` | ethnicity `gaulish` |
+| `tupi_guarani` | ethnicity `tupi` |
+| `germanic_tribes` | ethnicity `germanic_tribes` |
+| `free_dacians` | ethnicity `dacians` |
+| `shiwei` | ethnicity `shiwei` |
+| `pechenegs` | ethnicity `pechenegs` (Q181752 moved with it) |
+| `carib_peoples`, `taino` | ethnicity `caribbean_indigenous` |
+| `sioux_nations` | ethnicity `sioux_lakota` (no cells) |
+| `oscan_samnite_peoples`, `latin_sabine_samnite_peoples`, `italic_peoples` | ethnicity `italic_peoples` |
+| `ligurians_euganei_raeti` | ethnicity `ancient_european` |
+| `mississippian_culture` | ethnicity `mississippian` (Q1052095 moved with it) |
+| `olmec`, `ancestral_pueblo` | Label |
+| `proto_elamite` | Label; was Wikidata Q1196237 |
+| `southern_dynasties` | Label; was Wikidata Q9726365 |
+| `five_dynasties`, `ten_kingdoms`, `northern_dynasties`, `maya_city_states`, `postclassic_maya`, `lombard_principalities`, `magna_graecia`, `phoenician_colonies`, `punic_coastal_settlements`, `giudicati_of_sardinia` | Label |
+| `sumerian_city_states` | Label; figures moved to `uruk` and `ur_iii` |
+| `phoenician_states` | Label; figure moved to `tyre` |
+| `federalization` | Czech cell links to `czechoslovakia`; Belgian cell is a label |
+| `celtic_la_tene_migration` | Label |
+
+`STRIP_LIST` also holds ids these labels would otherwise generate: `phoenician_city_states`,
+`ancestral_puebloans`, `chinese_southern_dynasties`, `kura_araxes`, `jiroft`.
+
 ## 7. New polity stubs
 
-### Iran (26)
+### Iran (24 still in `polity.csv`)
 
 | ID | Name | Years | Government |
 |---|---|---|---|
-| `proto_elamite` | Proto-Elamite | c.3100–2700 BCE | — |
 | `lullubi_kingdom` | Lullubi Kingdom | c.2300–1200 BCE | kingdom |
 | `anshan_kingdom` | Anshan Kingdom | c.2400–550 BCE | kingdom |
 | `marhashi_kingdom` | Marhashi | c.2500–? BCE | kingdom |
 | `kassite_babylon` | Kassite Babylon | c.1600–1155 BCE | kingdom |
 | `mannai_kingdom` | Mannai Kingdom | c.850–616 BCE | kingdom |
 | `gutian_dynasty` | Gutian Dynasty | c.2154–2112 BCE | dynasty |
-| `kidarite_kingdom` | Kidarite Kingdom | c.320–467 CE | kingdom |
 | `dabuyid_dynasty` | Dabuyid Dynasty | 642–760 | dynasty |
 | `bavandid_dynasty` | Bavandid Dynasty | 651–1349 | dynasty |
 | `tahirid_dynasty` | Tahirid Dynasty | 821–873 | dynasty |
@@ -203,11 +255,11 @@ chu_wu_yue   later_chu   republics_of_siena   british_india_sphere
 ### Italy (47) — restored after the `1e6620b` refactor wiped them (from `de8e48b`)
 
 After restoration, italy.json's FK orphans drop to 14 culture/peoples entries
-(P3.12-deferred), as the original curation predicted.
+(since made label-only, §5), as the original curation predicted.
 
 > The Apr-23 refactor `1e6620b` also renamed six Iran bare-name stubs to add
 > `_kingdom`/`_dynasty` suffixes (`anshan`→`anshan_kingdom`, `lullubi`→`lullubi_kingdom`,
-> `mannai`→`mannai_kingdom`, `marhashi`→`marhashi_kingdom`, `kidarite`→`kidarite_kingdom`,
+> `mannai`→`mannai_kingdom`, `marhashi`→`marhashi_kingdom`, `kidarite`→`kidarites`,
 > `kar_kiya_dynasty`→`karkiya_dynasty`). Panel FKs were already remapped, so this is a
 > no-op at the panel level; the synonyms above cover any lingering old references.
 
@@ -229,7 +281,7 @@ After applying the merge map + Italy restoration:
 | iran.json | 138 | 9 | `*_culture` only |
 | china.json | 83 | 3 | `*_culture` only |
 
-All non-culture orphans resolved; the remainder is the P3.12 cultures backlog.
+All non-culture orphans resolved at the time. The remainder was the P3.12 cultures backlog, which is now closed (§5).
 
 ## 10. Resolution decisions to preserve (do not re-litigate)
 

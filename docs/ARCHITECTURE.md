@@ -1,215 +1,232 @@
-# Anagnosis Architecture
+# Anagnosis Architecture — the layer contract
 
-## Core Principle: CSV as Source of Truth
+This document is the **single source of truth for where data lives and who is
+allowed to write it.** Every other doc defers to it. If a path or rule elsewhere
+contradicts this file, this file wins and the other doc is stale.
 
-**CSV is the canonical format for all flat/relational data.** CSVs are human-readable, spreadsheet-editable, git-diffable, and directly loadable by DuckDB. As the dataset scales toward thousands of entities, CSV remains the most practical format for bulk authoring and review.
+## The rule
 
-**JSON is reserved for two roles:**
-1. **History panels** — inherently nested (rows → cells → stacks → splits), cannot be flattened to CSV
-2. **Frontend serving** — generated from CSV/DuckDB, not hand-edited
+A file's home is decided by **who writes it**, never by its format.
+
+| Layer | Directory | Writer | Tracked in git | Anyone else may… |
+|---|---|---|---|---|
+| **1 Authored** | `csvs/`, `panels/` | a human, by hand | yes | read only |
+| **2 Derived** | `derived/` | a script in `code/` or `scripts/` | yes (reviewed in diffs) | read only — never hand-edit |
+| **3 Built** | `data/`, `anagnosis.db` | `npm run make:all`, `npm run make:db` | **no** (regenerated) | read only |
+| **4 Served** | `server.js`, `public/` | the app, at runtime | yes (code) | reads layer 3 only |
+
+Two corollaries make the rule stick:
+
+1. **Every fact has exactly one authored home.** If two files could disagree
+   about the same fact, one of them is wrong by construction. Example: a polity's
+   territories live only in `csvs/polity_territory.csv`; `polity.csv` has no
+   territory column.
+2. **Every layer boundary is crossed by one shared reader.** All CSV reading and
+   writing goes through `code/lib/csv.js`. No script has its own parser.
+
+Anything hand-curated that is *nested* (the history panels) is still layer 1 —
+it lives in `panels/`, **not** inside `data/`. That is why `data/` can be
+gitignored wholesale without losing authored work.
+
+## Layer 1 — Authored (`csvs/`, `panels/`)
 
 ```
-CSV files (csvs/)              ← source of truth for flat data
-  ├── polity.csv                  527 polities
-  ├── polity_territory.csv        509 territory links
-  ├── polity_succession.csv       1,991 edges
-  ├── territory.csv               54 territories
-  ├── ethnicity.csv               269 nodes
-  ├── language.csv                695 nodes
-  ├── religion.csv                264 nodes
-  ├── (civilization.csv)          deferred — polity.civilization_id column exists; no civilization table yet
-  └── figure.csv                  285 figures
+csvs/
+  polity.csv              482  the entity tier: id, name, ruling ethnicity/language/religion, government, years, policies, note
+  polity_territory.csv    803  junction: which territory a polity held, when   ← sole source of territory
+  polity_dynasty.csv      275  junction: which dynasty ruled a polity, when
+  territory.csv            54  macro geographic zones
+  dynasty.csv             192  cross-cutting tag (not a tier)
+  figure.csv              286  key people, FK → polity
+  government.csv           29  government-form taxonomy (flat)
+  ethnicity.csv           276  taxonomy tree via parent_id
+  language.csv            695  taxonomy tree via parent_id
+  religion.csv            264  taxonomy tree via parent_id
+  city.csv / city_name.csv / city_succession.csv   place-not-polis identity (see model/city.md)
+  source.csv / fact_source.csv   external sources and which facts came from them (see model/source.md)
+  inheritance_claim.csv / inheritance_axis.csv / inheritance_recognition.csv / axis_terminus.csv   curated succession, one claim at a time (see model/inheritance.md)
 
-JSON files (data/history/)     ← source of truth for nested data
-  └── {region}/{country}.json     61 history panels, ~4,300 cells
-
-DuckDB (anagnosis.db)          ← query engine, loads from both
-  └── 24 tables (see docs/model/erd.sql)
-
-JSON files (data/)             ← generated output for frontend
-  ├── polity/*.json               generated from CSV
-  ├── succession/all.json         generated from CSV
-  ├── territory/*.json            generated from CSV
-  ├── ethnicity/                  generated from CSV (tree)
-  ├── language/                   generated from CSV (tree)
-  └── religion/                   generated from CSV (tree)
+panels/<region>/<country>.json   72 hand-curated regional history panels (nested: columns × rows → cells → stack/split)
 ```
 
-### Why CSV over JSON for flat data?
+Conventions: snake_case ids, never reused; integer years, BCE negative, empty
+`end_year` = ongoing; lists inside a field use `|`; prose fields use `;` rather
+than commas; LF line endings. `scripts/validate.js` enforces the header of every
+CSV, so adding a column means updating the schema table there as well as the
+model doc in `docs/model/`.
 
-| | CSV | JSON |
+Every CSV must have a model doc (`docs/model/<concept>.md`) and a consumer in
+layer 2 or 3. A CSV nothing reads is dead data.
+
+**Civilization** is deliberately not a table (see `model/civilization.md`).
+**Succession** has two parts. Each claim is authored and decided individually in
+the `inheritance_*` tables; the computed edges below are candidates, evidence
+only (`model/graph.md`).
+
+Taxonomy generators emit directories that mirror `parent_id`, because
+`data/index.js` re-derives `parent` from the on-disk path. `anagnosis.db` is a
+read-only convenience for analytical queries, never a source of truth. Scripts
+in `scripts/` other than `validate.js` are curation tools run deliberately, not
+part of the build.
+
+## Layer 2 — Derived (`derived/`)
+
+Script-written CSVs that downstream steps consume. Tracked so that changes show
+up in review, but **never edited by hand** — the next run overwrites them.
+
+| File | Written by | Consumed by |
 |---|---|---|
-| **Read 1,000 rows** | Open in spreadsheet, sort/filter | Scattered across 1,000 files |
-| **Bulk edit** | Find/replace in one file | Script across 1,000 files |
-| **DuckDB load** | `read_csv_auto()` — native | Requires custom loader |
-| **Git diff** | One changed row = one line | Entire object block changes |
-| **Validation** | Column constraints, FK checks | Schema must be defined separately |
+| `polity_succession.csv` | `code/generate-successions.js` (`npm run make:succession-edges`) | `code/makejson/successions.js`, `scripts/load_csvs.sql` |
+| `panel_labels.csv` | `scripts/extract_labels.js` | `normalize_labels.js` |
+| `panel_entities.csv`, `panel_labels_linked.csv` | `scripts/normalize_labels.js` | `dedup_and_link.js` |
+| `canonical_entities.csv` | `scripts/dedup_and_link.js` | `generate_stubs.js` |
+| `polity_stubs.csv` | `scripts/generate_stubs.js` | a human, who promotes rows into `csvs/polity.csv` |
+| `overlap_candidates.csv` | `scripts/find_overlaps.js` | a human |
+| `wikidata_candidates.csv` | `scripts/match_wikidata.js` | a reviewer, who confirms QIDs into `csvs/fact_source.csv` |
 
----
+`polity_succession.csv` is a **similarity computation** over polity attributes
+and territory adjacency (territorial direction, strength, same-ethnicity /
+language / religion, shared territories, temporal gap). It is regenerated on
+every `make:all`, so it can never be stale relative to layer 1. Its row count
+moves whenever `polity_territory.csv` does; that is expected.
 
-## Data Flow
+## Layer 3 — Built (`data/`, `anagnosis.db`)
 
-```
-┌─────────────────────────────────┐
-│  CSVs (csvs/)                   │
-│  Source of truth (flat data)    │
-│  Human-editable, git-diffable   │
-└─────────────┬───────────────────┘
-              │
-    ┌─────────┴─────────┐
-    ▼                   ▼
-┌────────────┐   ┌──────────────────┐
-│  DuckDB    │   │  code/makejson/  │
-│  Analytics │   │  CSV → JSON      │
-│  Queries   │   │  for frontend    │
-└────────────┘   └───────┬──────────┘
-                         ▼
-              ┌──────────────────────┐
-              │  JSON (data/)        │
-              │  Generated output    │
-              │  + history panels    │
-              └──────────┬───────────┘
-                         ▼ data/index.js
-              ┌──────────────────────┐
-              │  In-Memory DB        │
-              │  (server.js)         │
-              └──────────┬───────────┘
-                         ▼ Express API
-              ┌──────────────────────┐
-              │  Frontend (public/)  │
-              │  Vanilla JS + D3     │
-              └──────────────────────┘
-```
-
-### Data Loading (data/index.js)
-
-Three loading strategies for generated JSON:
-- **`loadDir(dir)`** — flat recursive load of all JSONs into array (polity, successions, territories)
-- **`loadTree(dir)`** — taxonomy loader that derives `parent` from directory structure (religions, languages, ethnicity)
-- **`loadJSON(file)`** — single file load (ideologies)
-
-### Generation Pipeline
+Both are gitignored and rebuilt from layers 1 and 2. Third-party downloads in
+`sources/` are gitignored too, and are refetched by `scripts/fetch_sources.js`
+(see `model/source.md`).
 
 ```bash
-npm run make:all    # regenerate all JSON from CSVs
-npm run validate    # check data integrity (npm test)
+npm run make:all     # csvs/ + derived/  →  data/**/*.json   (also regenerates derived/polity_succession.csv)
+npm run make:db      # csvs/ + derived/  →  anagnosis.db     (DuckDB; drops and recreates the file)
+npm run validate     # scripts/validate.js — validates layers 1 and 2 directly; no build needed
+npm test             # make:all, then the same validator
 ```
 
-Individual generators in `code/makejson/`:
-- `polities.js` — csvs/polity.csv → data/polity/*.json
-- `successions.js` — csvs/polity_succession.csv → data/succession/all.json
-- `territories.js` — csvs/territory.csv → data/territory/*.json
-- `ethnicities.js`, `languages.js`, `religions.js` — tree CSVs → directory trees
-
----
-
-## History Panels
-
-History panels are the exception to CSV-first — they remain as hand-curated JSON because their structure is inherently nested:
-
-- `columns[]` — geographic sub-regions (e.g., Northern France, Southern France)
-- `rows[]` — temporal rows with `era` labels
-- `cells[]` — each cell contains a `label`, optional `polity` FK, `note`, and `span`
-- `stack[]` — multiple entries per cell (sequential rulers)
-- `split[]` — concurrent entities (e.g., Free France / Vichy France)
-- `footnotes[]` — explanatory notes
-
-Phase 5 of the roadmap will normalize panels into DuckDB tables (`history_panels`, `history_columns`, `history_cells`), but the source JSON files remain authoritative until then.
-
----
-
-## Planned: DuckDB RDBMS
+`make:all` order: taxonomies → territories → polities → succession edges →
+succession JSON → dynasties → governments → inheritance. Run `make:db` after `make:all` so the
+database sees the freshly derived edges.
 
 ```
-┌─────────────────────────────────────────┐
-│  DuckDB (anagnosis.db)                  │
-│  24 tables (see docs/model/erd.sql)     │
-│  Loaded from CSVs + history JSONs       │
-│  ├── Taxonomy: ethnicities, languages,  │
-│  │   religions, ideologies              │
-│  ├── Geography: territories, provinces  │
-│  ├── Political: civilizations → polities       │
-│  │   (with dynasty as cross-cutting)    │
-│  ├── Successions: polity-to-polity      │
-│  ├── Panel: history_panels, columns,    │
-│  │   cells                              │
-│  └── People: figures                    │
-└─────────────────────────────────────────┘
+data/
+  polity/<id>.json         one per polity; territories derived from polity_territory, figures nested
+  succession/all.json      flat array of edges from derived/polity_succession.csv
+  territory/<id>.json      one per territory with its control periods
+  dynasty/<id>.json        one per dynasty with dated polity links
+  government/<id>.json
+  inheritance/             claims.json (axes and recognition nested), terminus.json
+  ethnicity/ language/ religion/    directory trees — nesting mirrors parent_id; the loader
+                                    re-derives `parent` from the path
+  index.js                 (tracked) in-memory loader used by server.js
+  README.md                (tracked) file formats
 ```
 
-### Two-Tier Political Hierarchy
+`anagnosis.db` is created by `docs/model/erd_nofk.sql` (DDL, no FK enforcement)
+and filled by `scripts/load_csvs.sql`. Twenty-two tables: one per authored CSV, plus
+`polity_policy`, `polity_succession`, `polity_succession_territory`. It is an
+analytical convenience, not in the serving path.
 
-| Tier | Table | Count | Example |
-|------|-------|-------|---------|
-| **Civilization** | `civilization` | 2 (provisional stubs; deferred) | Roman Civilization, French Civilization |
-| **Polity** | `polity` | 527 | Roman Republic, Kingdom of France |
+## Layer 4 — Served (`server.js`, `public/`)
 
-- **Civilization** = political continuity across polity changes (Roman Republic → Roman Empire (Pagan) → Roman Empire (Christian) → Byzantine Empire all share `roman_civilization`)
-- **Polity** = a political entity; splits into a new polity when religion/language/ethnicity flips
+`server.js` loads `data/` through `data/index.js`, serves `panels/` through
+`/api/panel`, and exposes read-only JSON routes (`/api/polity`, `/api/succession`,
+`/api/territory`, `/api/dynasty`, `/api/government`, `/api/taxonomy/:type`,
+`/api/figure`). `public/` is vanilla JS + D3. Nothing in layer 4 reads a CSV.
 
-Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty`, not as a third tier.
-
-### Succession
-
-```
-Roman Republic → Roman Empire (Pagan) → Roman Empire (Christian) → Byzantine Empire
-```
-
-Polity successions today: 1,991 edges in `csvs/polity_succession.csv`.
-
----
-
-## Foreign Key Reference Map
+## Data flow
 
 ```
-polity.id_ruling_ethnicity → ethnicity.id
-polity.id_ruling_language  → language.id
-polity.id_ruling_religion  → religion.id
-polity.government          → government.id
-polity.civilization_id     → civilization.id   (civilization table deferred)
-
-history_cell.polity_id     → polity.id
-history_cell.column_id     → history_columns.id
-
-polity_succession.from_polity_id / to_polity_id → polity.id
-
-figure.polity_id           → polity.id
-
-polity_territory.polity_id    → polity.id
-polity_territory.territory_id → territory.id
-
-polity_dynasty.polity_id   → polity.id
-polity_dynasty.dynasty_id  → dynasty.id
-
-city_name.city_id          → city.id
-city_succession.from_city_id / to_city_id → city.id
+ csvs/*.csv  panels/**.json          ← layer 1: humans
+      │            │
+      │  code/generate-successions.js
+      │  scripts/{extract_labels,normalize_labels,dedup_and_link,generate_stubs}.js
+      ▼            ▼
+ derived/*.csv                       ← layer 2: scripts (tracked, reviewed, never hand-edited)
+      │
+      │  code/makejson/*.js            scripts/load_csvs.sql
+      ▼                                ▼
+ data/**/*.json                     anagnosis.db      ← layer 3: build outputs (untracked)
+      │
+      │  data/index.js
+      ▼
+ server.js ──► public/              ← layer 4
 ```
 
----
+## Departments
 
-## Key Design Decisions
+The storage layers above say where a file lives and what kind of writer it has.
+Work is organised on top of them into three departments, each staffed by agents.
+Agents are replaceable and remember nothing between runs, so everything an agent
+needs must be written down. The folders stay as they are.
 
-### 1. CSV-first for flat data
-CSVs are the source of truth. JSON is generated output. At 400+ polities and growing, CSV is the only format that scales for human editing, bulk operations, and direct DuckDB ingestion.
+```
+Sources          →     Content           →     Presentation
+what evidence says     what we assert          how people read it
+```
 
-### 2. Text IDs (not numeric)
-All entities use human-readable text IDs (`ottoman_empire`, not `42`). Self-documenting, stable across imports, easy to reference in history panels and CSVs.
+| Department | Roles | Reads | Writes | Contract | Hands off |
+|---|---|---|---|---|---|
+| **Sources** | One librarian per source (`.claude/agents/source-*.md`) | `sources/` | Nothing; returns answers | `model/source.md` | Cited answers |
+| **Content** | One curator per contract; succession owner; build owner | Table contracts, librarian answers, `csvs/`, `derived/` | `csvs/`, `panels/`, `code/`, `data/` | `model/<table>.md`, `model/graph.md`, `model/api.md` | Validated CSVs, built into JSON |
+| **Presentation** | UI/UX designer | Routes in `model/api.md` only | `public/`, `server.js` routes | `model/api.md` | The app |
+| **Across all** | Auditor, always a fresh reviewer and never the author | Diffs and contracts | Findings only | This file | Findings at each handoff |
 
-### 3. Identity-drift via polity splits
-When religion, language, or ethnicity flips, a new polity is created with a succession edge to the predecessor. Capetian France, Valois France, Bourbon France, First Republic, Empire are all separate polities sharing the same `civilization_id` (`french_civilization`). Dynasty is tracked separately via `polity_dynasty` and can span polities (House of Bourbon → Old Regime + Bourbon Restoration).
+Only the librarians exist as agent files today. The other roles are defined here
+and are not yet set up.
 
-### 4. History Panels as First-Class Data
-Panels aren't just visualization — they're the richest source of polity data. The ~4,300 cells contain temporal, geographic, and succession information that the RDBMS will normalize.
+**Targets, not yet true:**
 
-### 5. DuckDB over SQLite
-DuckDB was chosen for analytical query power (column-oriented, complex JOINs, recursive CTEs for succession chains).
+- Sources: each librarian answers real questions with citations, and says when a source doesn't cover them.
+- Tables: every row passes its admission test, and warnings are triaged.
+- JSON: every route matches its contract, checked at build time.
+- Graph: built entirely from `csvs/`, and never authored by hand. Curated inheritance claims are CSV rows, and the graph is their result. Computed edges remain evidence only.
+- Frontend: pages pass a Playwright review at desktop and phone widths.
 
----
+**Rules:**
 
-## See Also
+1. **One owner per file.** Two agents never edit the same table at once.
+2. **Contracts come first.** Without a contract for its table, a curator is guessing.
+   A curator reads the contract at the start of every run, and hard cases are
+   logged there with the reason. Changing a contract is the project owner's decision.
+3. **Sources are cited, never imported.** Curators ask a librarian and write the
+   row themselves. If a source disagrees with `csvs/`, the CSV stands until
+   someone edits it.
+4. **Each handoff is one-way.** Sources → Content is a citation; Content →
+   Presentation is the JSON contract. A need from downstream becomes a contract
+   change, not a workaround.
+5. **Disputes become open questions.** Log them in the contract rather than
+   settling them in passing.
+6. **Authors don't audit their own work.**
 
-- `docs/model/erd.sql` — Full DDL schema
-- `docs/model/erd.md` — Visual ERD diagram
-- `docs/TODO.md` — Migration roadmap
-- `docs/migration/csv_workflow.md` — CSV editing guide
-- `data/README.md` — Data file formats and loading pipeline
+## How to change things
+
+| You want to… | Edit | Then run |
+|---|---|---|
+| add or fix a polity, territory link, dynasty, figure | the CSV in `csvs/` | `npm test && npm run make:all` |
+| change taxonomy hierarchy | `parent_id` in `csvs/{ethnicity,language,religion}.csv` | same |
+| add a history panel | new JSON under `panels/<region>/` | `npm test` |
+| change how succession edges are scored | `code/generate-successions.js` | `npm run make:all` and review the `derived/` diff |
+| add a CSV column | the CSV, `scripts/validate.js` SCHEMA, `docs/model/<concept>.md`, DDL, loader, generator | `npm test && npm run make:all && npm run make:db` |
+| anything under `data/` or `derived/` by hand | **don't** — find the layer-1 source or the script |
+
+## Key decisions (still current)
+
+- **CSV-first for flat data.** Spreadsheet-editable, one-row-one-line diffs,
+  native DuckDB ingest.
+- **Text ids, not numeric.** Self-documenting and stable across imports.
+- **Two-tier schema: Civilization (deferred, computed) → Polity.** Dynasty is a
+  junction tag. Identity drift is handled by splitting polities at major
+  transitions, with a succession edge between them.
+- **Panels are first-class authored data.** They are the richest source of
+  polity coverage, and the Phase 3 pipeline in `scripts/` mines them into
+  `derived/` for a human to promote.
+
+## See also
+
+- `docs/model/data-model.md` — the property-graph view of the same data
+- `docs/model/api.md` — the contract between the data layer and the frontend
+- `docs/model/graph.md` — the contract for succession edges and inheritance claims
+- `docs/model/erd.md`, `erd.sql`, `erd_nofk.sql` — DDL
+- `docs/migration/csv_workflow.md` — step-by-step editing guide
+- `docs/TODO.md` — roadmap
+- `data/README.md` — generated file formats

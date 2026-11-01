@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 const CSV_PATH = path.join(__dirname, '../csvs/polity.csv');
-const HISTORY_DIR = path.join(__dirname, '../data/history');
+const HISTORY_DIR = path.join(__dirname, '../panels');
 
 const args = process.argv.slice(2);
 const writeMode = args.includes('--write');
