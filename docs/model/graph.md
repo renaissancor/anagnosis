@@ -9,7 +9,7 @@ The contract for edges in the Anagnosis graph. Layers and writers are set by [`.
 | What it is | Computed similarity between two polities | A judged statement that an heir inherits from a source |
 | Layer | 2, `derived/polity_succession.csv` | 1, `csvs/inheritance_*.csv` |
 | Writer | `code/generate-successions.js` | `succession-curator`, with the owner deciding |
-| Status | Built | Built and seeded (9 claims, Ottoman neighbourhood); not yet served by the API |
+| Status | Built | Built and seeded (9 claims, Ottoman neighbourhood); served by `/api/claim` |
 | Authority | Evidence only | Authoritative once curated |
 
 **A candidate never asserts succession.** Succession is decided one claim at a time: the project owner decides each claim, and neither the generator nor a bulk rule ever makes that decision. Where no claim exists, the pair is uncurated.

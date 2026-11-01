@@ -2,115 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Anagnosis — Polity</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { display: flex; flex-direction: column; height: 100vh; background: #0f1117; color: #e2e8f0; font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; overflow: hidden; }
-
-    .topnav { display: flex; align-items: center; gap: 4px; background: #161b27; border-bottom: 1px solid #2d3748; padding: 0 16px; height: 44px; flex-shrink: 0; }
-    .nav-brand { font-weight: 700; font-size: 14px; color: #f6ad55; letter-spacing: 0.08em; text-transform: uppercase; margin-right: 8px; }
-    .nav-link { color: #a0aec0; text-decoration: none; font-size: 13px; padding: 6px 12px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
-    .nav-link:hover { background: #1e2535; color: #e2e8f0; }
-    .nav-link.active { color: #f6ad55; background: #1e2535; }
-
-    .main-row { display: flex; flex: 1; overflow: hidden; }
-
-    #sidebar { width: 260px; flex-shrink: 0; background: #161b27; border-right: 1px solid #2d3748; display: flex; flex-direction: column; overflow-y: auto; }
-    #sidebar-header { padding: 16px 16px 8px; }
-    #sidebar-header h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #718096; }
-    
-    #search-box { padding: 12px 16px; }
-    #search-box input { width: 100%; padding: 6px 8px; background: #0f1117; border: 1px solid #2d3748; color: #e2e8f0; border-radius: 4px; font-size: 12px; }
-    #search-box input::placeholder { color: #4a5568; }
-
-    .state-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: #4a5568; padding: 10px 16px 4px; margin-top: 8px; }
-    .state-label:first-of-type { margin-top: 0; }
-    .polity-item { padding: 6px 16px; cursor: pointer; color: #a0aec0; font-size: 12px; transition: background 0.1s, color 0.1s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .polity-item:hover { background: #1e2535; color: #e2e8f0; }
-    .polity-item.active { background: #252e42; color: #f6ad55; }
-
-    #main { flex: 1; display: flex; flex-direction: column; overflow: hidden; padding: 24px 32px; gap: 12px; }
-
-    #polity-header { flex-shrink: 0; }
-    #polity-title { font-size: 24px; font-weight: 600; color: #f6ad55; margin-bottom: 12px; }
-    
-    .polity-info-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 16px; }
-    .polity-info-block { display: flex; flex-direction: column; }
-    .polity-info-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #718096; margin-bottom: 4px; }
-    .polity-info-value { font-size: 14px; color: #e2e8f0; font-weight: 500; }
-    .polity-info-value.secondary { color: #a0aec0; font-size: 12px; }
-
-    .succession-section { margin-top: 20px; padding-top: 20px; border-top: 1px solid #2d3748; }
-    .succession-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #718096; margin-bottom: 12px; font-weight: 600; }
-    .succession-list { display: flex; gap: 8px; flex-wrap: wrap; }
-    .succession-badge {
-      padding: 5px 12px;
-      background: #1e2535;
-      border: 1px solid #2d3748;
-      border-left: 3px solid #2d3748;
-      border-radius: 4px;
-      font-size: 11px;
-      color: #cbd5e0;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s;
-      display: inline-flex; align-items: center; gap: 5px;
-    }
-    .succession-badge:hover { background: #252e42; border-color: #4a5568; }
-    .succession-badge.same         { border-left-color: #4ade80; }
-    .succession-badge.expansion    { border-left-color: #60a5fa; }
-    .succession-badge.contraction  { border-left-color: #facc15; }
-    .succession-badge.displacement { border-left-color: #fb923c; }
-    .succession-badge.unknown      { border-left-color: #718096; }
-    .succession-badge .continuity { font-size: 9px; opacity: 0.8; display: inline-flex; gap: 2px; }
-    .succession-badge .continuity span { padding: 1px 3px; border-radius: 2px; font-weight: 600; }
-    .succession-badge .gap { font-size: 9px; color: #718096; }
-
-    .territory-section { margin-top: 20px; padding-top: 20px; border-top: 1px solid #2d3748; }
-    .territory-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #718096; margin-bottom: 12px; font-weight: 600; }
-    .territory-list { display: flex; gap: 6px; flex-wrap: wrap; }
-    .territory-badge { 
-      padding: 3px 10px; 
-      background: #1e2535; 
-      border: 1px solid #2d3748; 
-      border-radius: 3px; 
-      font-size: 11px;
-      color: #a0aec0;
-    }
-
-    #empty-state { display: flex; align-items: center; justify-content: center; height: 300px; color: #4a5568; font-size: 14px; }
-
-    #tooltip { position: fixed; background: #1e2535; border: 1px solid #2d3748; border-radius: 4px; padding: 8px 10px; font-size: 11px; color: #e2e8f0; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; max-width: 250px; line-height: 1.6; }
-    #tooltip.visible { opacity: 1; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polities — Anagnosis</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/shared/reading-room.css" />
 </head>
 <body>
-<nav class="topnav">
-  <span class="nav-brand">Anagnosis</span>
-  <a href="/graph.html" class="nav-link">Graph</a>
-  <a href="/polity/" class="nav-link active">Polity</a>
-  <a href="/religion/" class="nav-link">Religion</a>
-  <a href="/language/" class="nav-link">Language</a>
-  <a href="/ethnicity/" class="nav-link">Ethnicity</a>
-  <a href="/territory/" class="nav-link">Territory</a>
-  <a href="/history/" class="nav-link">History</a>
-</nav>
-<div class="main-row">
-  <div id="sidebar">
-    <div id="sidebar-header"><h2>Polities</h2></div>
-    <div id="search-box">
-      <input type="text" id="polity-search" placeholder="Search polities...">
-    </div>
-    <div id="polity-list"></div>
-  </div>
-  <div id="main">
-    <div id="polity-header">
-      <div id="empty-state">← Choose a polity to view details</div>
-    </div>
-  </div>
-</div>
-<div id="tooltip"></div>
+<div id="site-header"></div>
+<main id="main" tabindex="-1"><div class="column" id="page"><p class="state">Loading polities…</p></div></main>
+<div id="site-footer"></div>
 <script src="/shared/cache.js"></script>
-<script src="/shared/errors.js"></script>
+<script src="/shared/site.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

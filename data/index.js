@@ -26,6 +26,15 @@ function loadDir(dir) {
 }
 
 /**
+ * Load one JSON array file. A missing file is an empty array, so the server
+ * still boots before a build, as loadDir does for a missing directory.
+ */
+function loadArray(filePath) {
+  if (!fs.existsSync(filePath)) return [];
+  return loadJSON(filePath);
+}
+
+/**
  * Load a taxonomy directory tree into a flat array.
  * Parent is derived from the directory path — not stored in files.
  *
@@ -85,6 +94,10 @@ const db = {
   dynasties: loadDir(path.join(DATA, 'dynasty')),
 
   governments: loadDir(path.join(DATA, 'government')),
+
+  // Separate files, not loadDir: that would merge both into one array
+  inheritanceClaims:  loadArray(path.join(DATA, 'inheritance', 'claims.json')),
+  inheritanceTermini: loadArray(path.join(DATA, 'inheritance', 'terminus.json')),
 
   provinces: [],
 };

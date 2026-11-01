@@ -20,6 +20,7 @@ Data fixes go to a curator. A need the routes do not meet becomes a change to `a
 2. Candidates and claims are never shown as the same thing (`graph.md`).
 3. The server binds to `127.0.0.1`, and any path built from a request stays inside its own folder.
 4. Breaking a route follows `api.md` section 5.
+5. Pages take colour, type and spacing from `public/shared/reading-room.css`. Ink is what a person decided; pencil is what a script computed. Computed data is never set in the ink style.
 
 ## How to validate
 
@@ -30,7 +31,7 @@ Run `npm start` and request each changed page and route. The main session runs b
 | Measure | Value (source) |
 |---|---|
 | Panels reachable from the UI | 66 of 72 (`public/history/index.html`) |
-| API routes serving claims | 0 (`server.js`) |
+| API routes serving claims | 2 (`server.js`) |
 
 ## Open questions
 

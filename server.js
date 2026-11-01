@@ -80,6 +80,35 @@ app.get('/api/polity/:id', (req, res) => {
   res.json({ ...r, successors, predecessors });
 });
 
+// ── API: Claims ──────────────────────────────────────────────
+
+// A name for any claim endpoint; non-polity sources keep their id.
+const withNames = c => ({
+  ...c,
+  heir_name: polityById[c.heir_polity_id]?.name || c.heir_polity_id,
+  source_name: polityById[c.source_id]?.name || c.source_id,
+  recognition: (c.recognition || []).map(r => ({
+    ...r,
+    observer_name: polityById[r.observer_id]?.name || r.observer_id,
+  })),
+});
+
+app.get('/api/claim', (req, res) => {
+  res.json((db.inheritanceClaims || []).map(withNames));
+});
+
+app.get('/api/polity/:id/claims', (req, res) => {
+  const r = polityById[req.params.id];
+  if (!r) return res.status(404).json({ error: 'Not found' });
+
+  const claims = (db.inheritanceClaims || []).map(withNames);
+  res.json({
+    as_heir: claims.filter(c => c.heir_polity_id === r.id),
+    as_source: claims.filter(c => c.source_type === 'polity' && c.source_id === r.id),
+    termini: (db.inheritanceTermini || []).filter(t => t.polity_id === r.id),
+  });
+});
+
 // ── API: Succession ──────────────────────────────────────────
 
 app.get('/api/succession', (req, res) => {

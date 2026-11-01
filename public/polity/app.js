@@ -1,262 +1,212 @@
 /**
- * Polity Viewer
- * Display polity details, succession chains, and controlled territories
+ * Polity pages.
+ * /polity/ is the index of polities; /polity/?id=<id> is one entry.
+ * An entry keeps decided claims (ink) apart from computed candidates (pencil).
  */
 
-let politiesData = [];
-let selectedRegimeId = null;
-let polityById = {};
+const page = document.getElementById('page');
+const polityId = new URLSearchParams(location.search).get('id');
 
-// Load lightweight polity list for sidebar
-cachedFetch('/api/polity').then(polities => {
-  politiesData = polities;
-  polityById = {};
-  politiesData.forEach(r => { polityById[r.id] = r; });
-
-  renderPolityList();
-  attachEventListeners();
-
-  // Deep-link: ?id=roman_empire
-  const params = new URLSearchParams(location.search);
-  if (params.get('id')) selectRegime(params.get('id'));
-}).catch(err => {
-  showError('Failed to load polity data');
-  document.getElementById('empty-state').textContent = 'Error loading data.';
-});
-
-function renderPolityList() {
-  const sidebar = document.getElementById('polity-list');
-
-  let html = '';
-  const polities = [...politiesData].sort((a, b) => (a.start || 0) - (b.start || 0));
-  polities.forEach(polity => {
-    const dateRange = formatDateRange(polity.start, polity.end);
-    html += `
-      <div class="polity-item" data-polity-id="${polity.id}" title="${polity.name}">
-        ${polity.name}
-        <span style="color: #4a5568; font-size: 10px; display: block;">${dateRange}</span>
-      </div>
-    `;
-  });
-
-  sidebar.innerHTML = html || '<div style="padding: 16px; color: #4a5568;">No polities loaded</div>';
-}
-
-function attachEventListeners() {
-  document.querySelectorAll('.polity-item').forEach(item => {
-    item.addEventListener('click', (e) => {
-      selectRegime(e.currentTarget.dataset.polityId);
-    });
-  });
-
-  document.getElementById('polity-search').addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    document.querySelectorAll('.polity-item').forEach(item => {
-      item.style.display = item.textContent.toLowerCase().includes(query) ? '' : 'none';
-    });
-  });
-}
-
-function selectRegime(polityId) {
-  selectedRegimeId = polityId;
-  document.querySelectorAll('.polity-item').forEach(item => {
-    item.classList.toggle('active', item.dataset.polityId === polityId);
-  });
-  renderRegimeDetails(polityId);
-}
-
-// ── Succession helpers ──────────────────────────────────────────────────────
-
-function continuityIcons(entry) {
-  const parts = [];
-  if (entry.same_ethnicity) parts.push('<span title="Same ethnicity" style="background:#4ade8033;color:#4ade80">E</span>');
-  if (entry.same_language)  parts.push('<span title="Same language" style="background:#60a5fa33;color:#60a5fa">L</span>');
-  if (entry.same_religion)  parts.push('<span title="Same religion" style="background:#c084fc33;color:#c084fc">R</span>');
-  return parts.length ? `<span class="continuity">${parts.join('')}</span>` : '';
-}
-
-function gapLabel(years) {
-  if (!years) return '';
-  const sign = years > 0 ? '+' : '';
-  return `<span class="gap">${sign}${years}y</span>`;
-}
-
-const DIR_META = {
-  same:         { color: '#4ade80', label: 'Same territory',  desc: 'Successor controls roughly the same core territory' },
-  expansion:    { color: '#60a5fa', label: 'Expansion',       desc: 'Successor controls more territory than predecessor' },
-  contraction:  { color: '#facc15', label: 'Contraction',     desc: 'Successor controls less territory (fragment state)' },
-  displacement: { color: '#fb923c', label: 'Displacement',    desc: 'Successor controls mostly different territory' },
-  unknown:      { color: '#718096', label: 'Unknown',         desc: 'Insufficient territory data to determine direction' },
+const CLAIM_TERMS = {
+  topology: { continuation: 'continuation', fission: 'fission', fusion: 'fusion', secession: 'secession', absorption: 'absorption' },
+  legitimacy_mode: { organic: 'organic', claimed: 'claimed', fictive: 'fictive' },
+  exclusivity: { exclusive: 'exclusive', shared: 'shared with other heirs' },
+};
+const DEGREE = { recognized: 'recognized this', partial: 'partly recognized this', rejected: 'rejected this' };
+const DIRECTION = {
+  same: 'about the same territory',
+  expansion: 'the later one held more territory',
+  contraction: 'the later one held less territory',
+  displacement: 'mostly different territory',
+  unknown: 'territory unclear',
 };
 
-function dirLabel(dir) { return (DIR_META[dir] || {}).label || dir; }
+if (polityId) renderEntry(polityId);
+else renderIndex();
 
-// ── Render polity detail ────────────────────────────────────────────────────
+// ── Index ───────────────────────────────────────────────────────────────────
 
-async function renderRegimeDetails(polityId) {
-  const header = document.getElementById('polity-header');
-  header.innerHTML = '<div id="empty-state" style="color:#718096">Loading...</div>';
-
-  let polity;
+async function renderIndex() {
+  let polities;
   try {
-    polity = await cachedFetch(`/api/polity/${polityId}`);
+    polities = await cachedFetch('/api/polity');
   } catch {
-    header.innerHTML = '<div id="empty-state">Polity not found</div>';
+    renderLoadError(page, 'The list of polities');
     return;
   }
 
-  const dateRange = formatDateRange(polity.start, polity.end);
+  const sorted = [...polities].sort((a, b) => (a.start ?? 0) - (b.start ?? 0));
+  page.innerHTML = `
+    <h1>Polities</h1>
+    <p class="lede">${sorted.length} political entities, earliest first. Each is a people, a territory, an ideology and a span of time.</p>
+    <label class="filter">Find a polity by name
+      <input type="search" id="polity-search" autocomplete="off" />
+    </label>
+    <p class="state" id="no-match" role="status" hidden></p>
+    <ul class="entry-list" id="polity-list">
+      ${sorted.map(p => `<li data-name="${esc(p.name.toLowerCase())}">
+        <a href="/polity/?id=${encodeURIComponent(p.id)}">${esc(p.name)}</a>
+        <span class="when">${esc(formatDateRange(p.start, p.end))}</span>
+      </li>`).join('')}
+    </ul>`;
 
-  let html = `
-    <div id="polity-title">${polity.name}</div>
-    <div class="polity-info-row">
-      <div class="polity-info-block">
-        <div class="polity-info-label">Duration</div>
-        <div class="polity-info-value">${dateRange}</div>
-      </div>
-  `;
-
-  if (polity.ruling_ethnicity) {
-    html += `
-      <div class="polity-info-block">
-        <div class="polity-info-label">Ruling Ethnicity</div>
-        <div class="polity-info-value">${polity.ruling_ethnicity}</div>
-      </div>
-    `;
-  }
-
-  if (polity.cultural_language) {
-    html += `
-      <div class="polity-info-block">
-        <div class="polity-info-label">Language</div>
-        <div class="polity-info-value">${polity.cultural_language}</div>
-      </div>
-    `;
-  }
-
-  if (polity.ideology?.religion) {
-    html += `
-      <div class="polity-info-block">
-        <div class="polity-info-label">Religion</div>
-        <div class="polity-info-value">${polity.ideology.religion}</div>
-      </div>
-    `;
-  }
-
-  if (polity.ideology?.government) {
-    html += `
-      <div class="polity-info-block">
-        <div class="polity-info-label">Government</div>
-        <div class="polity-info-value">${polity.ideology.government}</div>
-      </div>
-    `;
-  }
-
-  html += '</div>';
-
-  // Predecessors (from /api/polity/:id response)
-  const predecessors = polity.predecessors || [];
-  if (predecessors.length > 0) {
-    html += `
-      <div class="succession-section">
-        <div class="succession-title">Predecessors (${predecessors.length})</div>
-        <div class="succession-list">
-    `;
-    predecessors.forEach(pred => {
-      html += `
-        <div class="succession-badge ${pred.territorial_direction || 'unknown'}" data-polity-id="${pred.id}"
-             title="${pred.name} — ${dirLabel(pred.territorial_direction)}">
-          ${pred.name} ${continuityIcons(pred)}
-        </div>
-      `;
+  const items = [...page.querySelectorAll('#polity-list li')];
+  const noMatch = document.getElementById('no-match');
+  document.getElementById('polity-search').addEventListener('input', e => {
+    const query = e.target.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach(item => {
+      const match = item.dataset.name.includes(query);
+      item.hidden = !match;
+      if (match) shown++;
     });
-    html += '</div></div>';
-  }
-
-  // Successors (from /api/polity/:id response)
-  const successors = polity.successors || [];
-  if (successors.length > 0) {
-    html += `
-      <div class="succession-section">
-        <div class="succession-title">Successors (${successors.length})</div>
-        <div class="succession-list">
-    `;
-    successors.forEach(succ => {
-      html += `
-        <div class="succession-badge ${succ.territorial_direction || 'unknown'}" data-polity-id="${succ.id}"
-             title="${succ.name} — ${dirLabel(succ.territorial_direction)}">
-          ${succ.name} ${continuityIcons(succ)}
-        </div>
-      `;
-    });
-    html += '</div></div>';
-  }
-
-  // Territories
-  const territories = polity.territories || [];
-  if (territories.length > 0) {
-    html += `
-      <div class="territory-section">
-        <div class="territory-title">Territories (${territories.length})</div>
-        <div class="territory-list">
-    `;
-    territories.sort().forEach(t => {
-      html += `<div class="territory-badge">${t}</div>`;
-    });
-    html += '</div></div>';
-  }
-
-  // Note
-  if (polity.note) {
-    html += `
-      <div class="territory-section">
-        <div class="territory-title">Note</div>
-        <div style="font-size:12px;color:#a0aec0;line-height:1.6;margin-top:6px">${polity.note}</div>
-      </div>
-    `;
-  }
-
-  // Legend
-  html += `
-    <div class="territory-section">
-      <div class="territory-title">Succession Types</div>
-      <table style="font-size:11px;border-collapse:collapse;margin-top:8px;width:100%;max-width:520px">
-        <tr style="color:#718096;text-align:left">
-          <th style="padding:2px 8px 6px 0;font-weight:600">Territorial Direction</th>
-          <th style="padding:2px 0 6px;font-weight:600">Meaning</th>
-        </tr>
-        ${Object.entries(DIR_META).map(([k, v]) => `
-          <tr>
-            <td style="padding:3px 8px 3px 0;white-space:nowrap"><span style="color:${v.color}">■</span> ${v.label}</td>
-            <td style="padding:3px 0;color:#a0aec0">${v.desc}</td>
-          </tr>
-        `).join('')}
-      </table>
-      <div style="margin-top:12px;font-size:11px;color:#718096;font-weight:600">Continuity Indicators</div>
-      <div style="display:flex;gap:12px;margin-top:4px;font-size:11px;color:#a0aec0">
-        <span><span style="background:#4ade8033;color:#4ade80;padding:1px 3px;border-radius:2px;font-weight:600;font-size:9px">E</span> Same ethnicity</span>
-        <span><span style="background:#60a5fa33;color:#60a5fa;padding:1px 3px;border-radius:2px;font-weight:600;font-size:9px">L</span> Same language</span>
-        <span><span style="background:#c084fc33;color:#c084fc;padding:1px 3px;border-radius:2px;font-weight:600;font-size:9px">R</span> Same religion</span>
-      </div>
-    </div>
-  `;
-
-  header.innerHTML = html;
-
-  // Click handlers on badges to navigate
-  document.querySelectorAll('.succession-badge').forEach(badge => {
-    badge.style.cursor = 'pointer';
-    badge.addEventListener('click', () => {
-      const rid = badge.dataset.polityId;
-      if (rid) selectRegime(rid);
-    });
+    noMatch.hidden = shown > 0;
+    noMatch.textContent = shown ? '' : `No polity has “${e.target.value}” in its name.`;
   });
 }
 
-function formatDateRange(start, end) {
-  const fmt = (y) => {
-    if (y === null || y === undefined) return 'present';
-    return y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`;
+// ── Entry ───────────────────────────────────────────────────────────────────
+
+async function renderEntry(id) {
+  let polity, claims;
+  try {
+    [polity, claims] = await Promise.all([
+      cachedFetch(`/api/polity/${encodeURIComponent(id)}`),
+      cachedFetch(`/api/polity/${encodeURIComponent(id)}/claims`),
+    ]);
+  } catch (err) {
+    if (err.message.startsWith('404')) {
+      page.innerHTML = `<h1>Polity not found</h1>
+        <p>No polity has the id “${esc(id)}”. <a href="/polity/">Browse all polities</a></p>`;
+    } else {
+      renderLoadError(page, 'This polity');
+    }
+    return;
+  }
+
+  const names = await displayNames();
+  document.title = `${polity.name} — Anagnosis`;
+
+  page.innerHTML = `
+    <h1>${esc(polity.name)}</h1>
+    <p class="dates">${esc(formatDateRange(polity.start, polity.end))}</p>
+    ${factsHtml(polity, names)}
+    ${polity.note ? `<p style="margin-top:var(--space-3)">${esc(polity.note)}</p>` : ''}
+    ${decidedHtml(polity, claims)}
+    ${figuresHtml(polity)}
+    ${computedHtml(polity, claims)}`;
+}
+
+/** Display names for ids. A failed lookup falls back to the readable id. */
+async function displayNames() {
+  const table = async (url, key = 'id') => {
+    try { return new Map((await cachedFetch(url)).map(n => [n[key], n.name])); }
+    catch { return new Map(); }
   };
-  return `${fmt(start)} – ${fmt(end)}`;
+  const [ethnicity, language, religion, government] = await Promise.all([
+    table('/api/taxonomy/ethnicity'), table('/api/taxonomy/language'),
+    table('/api/taxonomy/religion'), table('/api/government'),
+  ]);
+  return { ethnicity, language, religion, government };
+}
+
+function factsHtml(polity, names) {
+  const named = (map, id) => esc(map.get(id) || humanize(id));
+  const rows = [];
+  if (polity.ruling_ethnicity) rows.push(['Ruling people', named(names.ethnicity, polity.ruling_ethnicity)]);
+  if (polity.cultural_language) rows.push(['Language of rule', named(names.language, polity.cultural_language)]);
+  if (polity.ideology?.religion) rows.push(['State religion', named(names.religion, polity.ideology.religion)]);
+  if (polity.ideology?.government) rows.push(['Government', named(names.government, polity.ideology.government)]);
+  const territories = [...(polity.territories || [])].sort();
+  rows.push(['Territories', territories.length
+    ? territories.map(t => `<a href="/territory/?id=${encodeURIComponent(t)}">${esc(placeName(t))}</a>`).join(', ')
+    : 'None curated yet']);
+  if (polity.policies?.length) rows.push(['Policies', polity.policies.map(p => esc(humanize(p))).join(', ')]);
+  return `<dl class="facts">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`;
+}
+
+function figuresHtml(polity) {
+  if (!polity.figures?.length) return '';
+  return `<h2>People</h2><ul class="people">${polity.figures.map(f => `<li>
+    <b>${esc(f.name || humanize(f.id))}</b>${f.role ? `, ${esc(humanize(f.role).toLowerCase())}` : ''}${f.years ? ` (${esc(f.years.replace('/', '–'))})` : ''}${f.significance ? `. ${esc(f.significance)}` : ''}
+  </li>`).join('')}</ul>`;
+}
+
+// ── Ink: decided claims ─────────────────────────────────────────────────────
+
+function polityLink(id, name) {
+  return `<a href="/polity/?id=${encodeURIComponent(id)}">${esc(name)}</a>`;
+}
+
+function claimHtml(claim, statement) {
+  const terms = [
+    CLAIM_TERMS.topology[claim.topology] || humanize(claim.topology),
+    `by ${humanize(claim.mechanism).toLowerCase()}`,
+    `${CLAIM_TERMS.legitimacy_mode[claim.legitimacy_mode] || claim.legitimacy_mode} legitimacy`,
+    CLAIM_TERMS.exclusivity[claim.exclusivity] || claim.exclusivity,
+  ];
+  if (claim.temporal_gap_years > 0) terms.push(`after a gap of ${claim.temporal_gap_years} years`);
+
+  const axes = (claim.axes || []).map(a => `<li>
+    <b>${esc(humanize(a.axis))}</b>: ${esc(a.stance || 'no stance')}, strength ${esc(a.strength)} of 5.${a.note ? ` ${esc(a.note)}` : ''}
+  </li>`).join('');
+  const recognition = (claim.recognition || []).map(r => `<p class="claim-recognition">
+    ${r.observer_type === 'polity' ? polityLink(r.observer_id, r.observer_name) : esc(humanize(r.observer_id))} ${DEGREE[r.degree] || esc(r.degree)}${r.note ? `: ${esc(r.note)}` : '.'}
+  </p>`).join('');
+
+  return `<article class="claim">
+    <h3 class="claim-statement" style="font-weight:400">${statement}</h3>
+    <p class="claim-terms">${esc(humanize(terms.join(', ')))}.</p>
+    ${claim.note ? `<p>${esc(claim.note)}</p>` : ''}
+    ${axes ? `<ul class="claim-axes">${axes}</ul>` : ''}
+    ${recognition}
+    <p class="claim-source">Source: ${provenanceHtml(claim.provenance)}</p>
+  </article>`;
+}
+
+function decidedHtml(polity, { as_heir, as_source, termini }) {
+  const inherited = as_heir.map(c =>
+    claimHtml(c, `Inherits from ${polityLink(c.source_id, c.source_name)}`)).join('');
+  const passedOn = as_source.map(c =>
+    claimHtml(c, `Passes to ${polityLink(c.heir_polity_id, c.heir_name)}`)).join('');
+  const ended = termini.map(t => `<p><b>${esc(humanize(t.axis))}</b> ended in ${esc(formatYear(t.year))}.${t.note ? ` ${esc(t.note)}` : ''}</p>`).join('');
+
+  const body = inherited + passedOn + ended ||
+    `<p>No succession has been decided for ${esc(polity.name)} yet. That means it is not curated, not that it had no successor.</p>`;
+  return `<section aria-labelledby="decided"><h2 id="decided">Decided succession</h2>${body}</section>`;
+}
+
+// ── Pencil: computed candidates ─────────────────────────────────────────────
+
+function candidateHtml(edge, decidedIds) {
+  const reasons = [];
+  if (edge.shared_territories?.length) reasons.push(`shares ${edge.shared_territories.map(placeName).join(', ')}`);
+  if (edge.same_ethnicity) reasons.push('same ruling people');
+  if (edge.same_language) reasons.push('same language');
+  if (edge.same_religion) reasons.push('same religion');
+  reasons.push(DIRECTION[edge.territorial_direction] || DIRECTION.unknown);
+  return `<li><a href="/polity/?id=${encodeURIComponent(edge.id)}">${esc(edge.name)}</a>${decidedIds.has(edge.id) ? ' (also decided above)' : ''}: ${esc(reasons.join('; '))}</li>`;
+}
+
+function computedHtml(polity, { as_heir, as_source }) {
+  const earlier = [...(polity.predecessors || [])].sort((a, b) => b.strength - a.strength);
+  const later = [...(polity.successors || [])].sort((a, b) => b.strength - a.strength);
+  const total = earlier.length + later.length;
+  const decidedIds = new Set([...as_heir.map(c => c.source_id), ...as_source.map(c => c.heir_polity_id)]);
+  const list = (title, edges) => edges.length
+    ? `<h3>${title} (${edges.length})</h3><ul>${edges.map(e => candidateHtml(e, decidedIds)).join('')}</ul>` : '';
+
+  const body = total
+    ? `<details>
+        <summary>Show ${total} computed overlaps, strongest first</summary>
+        ${list('Computed as earlier', earlier)}
+        ${list('Computed as later', later)}
+      </details>`
+    : '<p>A script found no overlaps for this polity.</p>';
+
+  return `<section class="pencil" aria-labelledby="computed">
+    <h2 id="computed">Computed evidence</h2>
+    <p>A script lists polities that overlap in territory, language or religion within a time window. Nobody has judged these. They include rivals and contemporaries, and none of them states that succession happened.</p>
+    ${body}
+  </section>`;
 }

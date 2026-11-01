@@ -9,7 +9,7 @@ Verified on 2026-10-31 by running `node server.js` (port 3000) against a fresh `
 Layer 4 reads **only** layer 3, and only through the routes in section 2.
 
 - `server.js` loads `data/index.js` once at start-up (`loadDir` / `loadTree`) and serves it from memory. It never reads `csvs/` or `derived/`.
-- `public/**` reaches data only via `fetch('/api/...')` (through `cachedFetch` in `public/shared/cache.js`). No page fetches a CSV, and none uses `/data/*` or `/api/db`.
+- `public/**` reaches data only via `fetch('/api/...')` (through `cachedFetch` in `public/shared/cache.js`). D3 and fonts are served from `public/shared/`, so no page needs a third-party host. No page fetches a CSV, and none uses `/data/*` or `/api/db`.
 - **One exception, by design:** history panels (`panels/**/*.json`, layer 1, authored) are read directly from disk by `server.js` (`/api/panel*`). They are nested and hand-curated, so they have no built form. Treat them as an authored file with its own contract (section 2.9).
 - `data/` is gitignored and rebuilt by `npm run make:all`. `server.js` crashes or serves empty arrays if it is missing (`loadDir` returns `[]` for a missing dir). `npm start` runs `make:all` first via `prestart`.
 
@@ -74,7 +74,7 @@ Example (trimmed): `GET /api/polity/roman_empire`
  "predecessors":[{"id":"roman_republic","name":"Roman Republic","territorial_direction":"expansion","strength":12,"…":"…"}]}
 ```
 
-Consumer: `public/polity/app.js` (`/polity/?id=<id>`).
+Consumer: `public/polity/app.js` (`/polity/?id=<id>`), which shows the edges in a section labelled computed evidence.
 
 ### 2.3 `GET /api/polity/colors`
 
@@ -101,6 +101,13 @@ Flat array of directed edges (3743, about 1.3 MB, the biggest payload). Source: 
 ```
 
 Consumers: `public/app.js`, `public/graph.html`, `public/territory/app.js`. **No A/B/C/D type is served** (section 6).
+
+### 2.4a Claims: decided succession
+
+Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTermini`. These routes are the only ones that state succession. `/api/succession` and the `successors` and `predecessors` of `/api/polity/:id` are computed candidates, despite their names (`graph.md`), and a page must label them as computed.
+
+- `GET /api/claim`: every claim, 9 today. Fields are those of `inheritance.md` as built by `inheritance.js` (`id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism, legitimacy_mode, exclusivity, temporal_gap_years, provenance, note, axes[], recognition[]`), plus `heir_name` and `source_name`, and `observer_name` on each `recognition` entry. A name falls back to the id. Consumer: `public/graph.html`.
+- `GET /api/polity/:id/claims`: `{as_heir: claim[], as_source: claim[], termini: {polity_id, axis, year, note}[]}`. All three arrays may be empty, which means not curated. 404 `{"error":"Not found"}` for an unknown id. Consumer: `public/polity/app.js`.
 
 ### 2.5 Territory
 
