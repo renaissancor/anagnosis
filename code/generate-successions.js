@@ -14,11 +14,8 @@
  *   5. RELIGION:   Same ruling religion
  *   6. TEMPORAL:   How close in time (gap years)
  *
- * Classification:
- *   A  — Strong continuity (territory + ethnicity + continuous)
- *   A- — Continuity with break (territory + ethnicity + gap, OR territory + language/religion)
- *   B  — Ethnic/cultural migration (same ethnicity/language, different territory)
- *   C  — Conquest / locus inheritance (same territory, different culture)
+ * These columns are evidence, not a verdict: no type is emitted, and a candidate
+ * never asserts succession. Curated claims live in csvs/inheritance_*.csv.
  *
  * Output: derived/polity_succession.csv (computed — never hand-edit)
  */

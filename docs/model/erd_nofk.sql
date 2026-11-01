@@ -210,6 +210,46 @@ CREATE TABLE fact_source (
     note          TEXT
 );
 
+-- ─── INHERITANCE (see inheritance.md) ───────────────────────
+
+CREATE TABLE inheritance_claim (
+    id                     TEXT PRIMARY KEY,
+    heir_polity_id         TEXT NOT NULL,
+    source_id              TEXT NOT NULL,
+    source_type            TEXT NOT NULL,
+    source_temporal_status TEXT NOT NULL,
+    topology               TEXT NOT NULL,
+    mechanism              TEXT NOT NULL,
+    legitimacy_mode        TEXT NOT NULL,
+    exclusivity            TEXT NOT NULL,
+    temporal_gap_years     INTEGER,
+    provenance             TEXT NOT NULL,
+    note                   TEXT
+);
+
+CREATE TABLE inheritance_axis (
+    claim_id TEXT NOT NULL,
+    axis     TEXT NOT NULL,
+    stance   TEXT,
+    strength INTEGER,
+    note     TEXT
+);
+
+CREATE TABLE inheritance_recognition (
+    claim_id      TEXT NOT NULL,
+    observer_id   TEXT NOT NULL,
+    observer_type TEXT NOT NULL,
+    degree        TEXT NOT NULL,
+    note          TEXT
+);
+
+CREATE TABLE axis_terminus (
+    polity_id TEXT NOT NULL,
+    axis      TEXT NOT NULL,
+    year      INTEGER,
+    note      TEXT
+);
+
 -- ─── INDEXES ────────────────────────────────────────────────
 
 CREATE INDEX idx_polity_years ON polity(start_year, end_year);

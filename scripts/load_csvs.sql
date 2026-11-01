@@ -5,6 +5,10 @@
 -- ============================================================
 
 -- Clear existing data (children before parents)
+DELETE FROM axis_terminus;
+DELETE FROM inheritance_recognition;
+DELETE FROM inheritance_axis;
+DELETE FROM inheritance_claim;
 DELETE FROM fact_source;
 DELETE FROM source;
 DELETE FROM city_succession;
@@ -238,3 +242,21 @@ FROM read_csv('csvs/source.csv', header=true, all_varchar=true);
 INSERT INTO fact_source (entity_table, entity_id, field, source_id, source_record, note)
 SELECT entity_table, entity_id, NULLIF(field, ''), source_id, NULLIF(source_record, ''), NULLIF(note, '')
 FROM read_csv('csvs/fact_source.csv', header=true, all_varchar=true);
+
+-- ─── INHERITANCE (curated claims) ───────────────────────────
+INSERT INTO inheritance_claim
+SELECT id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism,
+       legitimacy_mode, exclusivity, TRY_CAST(temporal_gap_years AS INTEGER), provenance, NULLIF(note, '')
+FROM read_csv('csvs/inheritance_claim.csv', header=true, all_varchar=true);
+
+INSERT INTO inheritance_axis
+SELECT claim_id, axis, NULLIF(stance, ''), TRY_CAST(strength AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/inheritance_axis.csv', header=true, all_varchar=true);
+
+INSERT INTO inheritance_recognition
+SELECT claim_id, observer_id, observer_type, degree, NULLIF(note, '')
+FROM read_csv('csvs/inheritance_recognition.csv', header=true, all_varchar=true);
+
+INSERT INTO axis_terminus
+SELECT polity_id, axis, TRY_CAST(year AS INTEGER), NULLIF(note, '')
+FROM read_csv('csvs/axis_terminus.csv', header=true, all_varchar=true);

@@ -44,6 +44,7 @@ csvs/
   religion.csv            264  taxonomy tree via parent_id
   city.csv / city_name.csv / city_succession.csv   place-not-polis identity (see model/city.md)
   source.csv / fact_source.csv   external sources and which facts came from them (see model/source.md)
+  inheritance_claim.csv / inheritance_axis.csv / inheritance_recognition.csv / axis_terminus.csv   curated succession, one claim at a time (see model/inheritance.md)
 
 panels/<region>/<country>.json   72 hand-curated regional history panels (nested: columns × rows → cells → stack/split)
 ```
@@ -58,9 +59,15 @@ Every CSV must have a model doc (`docs/model/<concept>.md`) and a consumer in
 layer 2 or 3. A CSV nothing reads is dead data.
 
 **Civilization** is deliberately not a table (see `model/civilization.md`).
-**Succession** as a curated inheritance layer is being designed in
-`docs/brainstorm/succession/`; when it lands, its tables are authored (layer 1)
-and the current computed edges below remain derived evidence.
+**Succession** has two parts. Each claim is authored and decided individually in
+the `inheritance_*` tables; the computed edges below are candidates, evidence
+only (`model/graph.md`).
+
+Taxonomy generators emit directories that mirror `parent_id`, because
+`data/index.js` re-derives `parent` from the on-disk path. `anagnosis.db` is a
+read-only convenience for analytical queries, never a source of truth. Scripts
+in `scripts/` other than `validate.js` are curation tools run deliberately, not
+part of the build.
 
 ## Layer 2 — Derived (`derived/`)
 
@@ -92,11 +99,12 @@ Both are gitignored and rebuilt from layers 1 and 2. Third-party downloads in
 ```bash
 npm run make:all     # csvs/ + derived/  →  data/**/*.json   (also regenerates derived/polity_succession.csv)
 npm run make:db      # csvs/ + derived/  →  anagnosis.db     (DuckDB; drops and recreates the file)
-npm test             # scripts/validate.js — validates layers 1 and 2 directly; no build needed
+npm run validate     # scripts/validate.js — validates layers 1 and 2 directly; no build needed
+npm test             # make:all, then the same validator
 ```
 
 `make:all` order: taxonomies → territories → polities → succession edges →
-succession JSON → dynasties → governments. Run `make:db` after `make:all` so the
+succession JSON → dynasties → governments → inheritance. Run `make:db` after `make:all` so the
 database sees the freshly derived edges.
 
 ```
@@ -106,6 +114,7 @@ data/
   territory/<id>.json      one per territory with its control periods
   dynasty/<id>.json        one per dynasty with dated polity links
   government/<id>.json
+  inheritance/             claims.json (axes and recognition nested), terminus.json
   ethnicity/ language/ religion/    directory trees — nesting mirrors parent_id; the loader
                                     re-derives `parent` from the path
   index.js                 (tracked) in-memory loader used by server.js
@@ -113,7 +122,7 @@ data/
 ```
 
 `anagnosis.db` is created by `docs/model/erd_nofk.sql` (DDL, no FK enforcement)
-and filled by `scripts/load_csvs.sql`. Eighteen tables: one per authored CSV, plus
+and filled by `scripts/load_csvs.sql`. Twenty-two tables: one per authored CSV, plus
 `polity_policy`, `polity_succession`, `polity_succession_territory`. It is an
 analytical convenience, not in the serving path.
 

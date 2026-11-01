@@ -9,10 +9,10 @@ The contract for edges in the Anagnosis graph. Layers and writers are set by [`.
 | What it is | Computed similarity between two polities | A judged statement that an heir inherits from a source |
 | Layer | 2, `derived/polity_succession.csv` | 1, `csvs/inheritance_*.csv` |
 | Writer | `code/generate-successions.js` | A human |
-| Status | Built | Designed, not built |
+| Status | Built | Built and seeded (9 claims, Ottoman neighbourhood); not yet served by the API |
 | Authority | Evidence only | Authoritative once curated |
 
-**A candidate never asserts succession.** Until claims exist, the project has no curated polity-to-polity succession data.
+**A candidate never asserts succession.** Succession is decided one claim at a time: a human writes each claim, and neither the generator nor a bulk rule ever makes that decision. Where no claim exists, the pair is uncurated.
 
 Figures below were measured on 2026-10-31 through `code/lib/csv.js`, after the non-polity migration unless marked. They will move as polity merges land. Running a scratch copy of the generator on that day's `csvs/` reproduced `derived/polity_succession.csv` byte for byte.
 
@@ -102,9 +102,6 @@ A scratch patch, run before the non-polity migration on the 4,107-edge file, res
 
 These docs describe the typing as live and are wrong on that point:
 
-- `README.md:26-34`, which adds a "4,229 edges" count at line 45
-- `docs/model/data-model.md:20,38-40,43-55`
-- `docs/model/succession.md:3`, which calls it "currently implemented"; its four categories, colour rules and worked queries are not implemented either, and line 13 still cites civilization membership
 - `docs/brainstorm/succession/README.md:3` and `01-why-redesign.md`, which also still locates the file in `csvs/` and reports an old edge count
 
 If the matrix were applied to the two nearest columns, 780 rows would have ethnicity and territory, 1,596 territory only, 222 ethnicity only and 1,145 neither. The last group is what the docs call "D, Ahistorical / Invalid". This projection is for scale only and is stored nowhere. `tang_dynasty → ottoman_empire`, the README's example, has no row, but that is absence rather than a type.

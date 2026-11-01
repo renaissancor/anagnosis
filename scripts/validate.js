@@ -18,6 +18,12 @@
  *      every cell ethnicity ref resolves, and no entry has both keys (errors)
  *   8. source.csv: licence is allowlisted, required fields present;
  *      fact_source.csv: table, row, field, and source all resolve
+ *   9. id format; year sanity
+ *  10. Inheritance layer: enums and references (docs/model/inheritance.md)
+ *  11. Plausibility metrics (detail in data/plausibility.md)
+ *
+ * Warnings and metrics are ratcheted in scripts/warning-baseline.json: they may
+ * shrink, never grow. Refresh with: node scripts/validate.js --update-baseline
  *
  * Errors fail the run (exit 1). Warnings are reported in aggregate.
  */
@@ -50,6 +56,10 @@ const SCHEMA = {
   'city_succession':   ['from_city_id', 'to_city_id', 'succession_type', 'year', 'note'],
   'source':            ['id', 'name', 'url', 'licence', 'version', 'retrieved', 'citation', 'note'],
   'fact_source':       ['entity_table', 'entity_id', 'field', 'source_id', 'source_record', 'note'],
+  'inheritance_claim': ['id', 'heir_polity_id', 'source_id', 'source_type', 'source_temporal_status', 'topology', 'mechanism', 'legitimacy_mode', 'exclusivity', 'temporal_gap_years', 'provenance', 'note'],
+  'inheritance_axis':  ['claim_id', 'axis', 'stance', 'strength', 'note'],
+  'inheritance_recognition': ['claim_id', 'observer_id', 'observer_type', 'degree', 'note'],
+  'axis_terminus':     ['polity_id', 'axis', 'year', 'note'],
 };
 
 // Free-text columns where commas are prose, not list separators.
@@ -118,12 +128,15 @@ for (const [name, expected] of Object.entries(SCHEMA)) {
   const wide = rows.filter(r => r.length !== expected.length).length;
   if (wide) err('ragged rows', `${name}.csv: ${wide} row(s) with a field count ≠ ${expected.length}`);
 }
+for (const f of fs.readdirSync(CSVS)) {
+  if (f.endsWith('.csv') && !SCHEMA[f.slice(0, -4)]) err('CSV not in SCHEMA', f);
+}
 if (!groups.size) ok('all headers match, no ragged rows'); flush();
 
 // ── 2. Keys, line endings, list-commas ────────────────────────────────────────
 
 section('Primary keys & file hygiene');
-const PK = { polity: ['id'], territory: ['id'], dynasty: ['id'], government: ['id'], ethnicity: ['id'], language: ['id'], religion: ['id'], city: ['id'], figure: ['figure_id'],
+const PK = { inheritance_claim: ['id'], inheritance_axis: ['claim_id', 'axis'], inheritance_recognition: ['claim_id', 'observer_id'], axis_terminus: ['polity_id', 'axis'], polity: ['id'], territory: ['id'], dynasty: ['id'], government: ['id'], ethnicity: ['id'], language: ['id'], religion: ['id'], city: ['id'], figure: ['figure_id'],
   polity_territory: ['territory_id', 'polity_id', 'start_year'], polity_dynasty: ['polity_id', 'dynasty_id', 'start_year'], city_name: ['city_id', 'name', 'start_year'], city_succession: ['from_city_id', 'to_city_id'],
   source: ['id'], fact_source: ['entity_table', 'entity_id', 'field', 'source_id'] };
 for (const [name, cols] of Object.entries(PK)) {
@@ -303,6 +316,108 @@ for (const r of T.fact_source) {
 for (const r of T.source) if (!usedSources.has(r.id)) warn('source unused', `${r.id} (no fact_source row points to it)`);
 if (!groups.size) ok(`${T.source.length} sources, ${T.fact_source.length} provenance rows`); flush();
 
+// ── 9. id format & year sanity ────────────────────────────────────────────────
+
+section('id format & years');
+// Existing ids use unicode letters and apostrophes (goktürk_khaganate, k'iche'),
+// so reject only clear mistakes.
+const BAD_ID = /[\sA-Z",;]/;
+const YEAR_COLS = { polity: ['start_year', 'end_year'], city: ['founding_year', 'abandonment_year'] };
+const CURRENT_YEAR = new Date().getFullYear();
+for (const [name, expected] of Object.entries(SCHEMA)) {
+  if (!expected.includes('id')) continue;
+  for (const r of T[name]) if (r.id && BAD_ID.test(r.id)) err('malformed id', `${name}.csv "${r.id}"`);
+}
+for (const [name, cols] of Object.entries(YEAR_COLS)) {
+  for (const r of T[name]) for (const col of cols) {
+    if (r[col] === '') continue;
+    const y = Number(r[col]);
+    if (!Number.isInteger(y) || y < -10000 || y > CURRENT_YEAR + 1) err('insane year', `${name}.csv ${r.id}.${col} = "${r[col]}"`);
+  }
+}
+for (const r of T.city) {
+  if (r.founding_year !== '' && r.abandonment_year !== '' && +r.founding_year > +r.abandonment_year) err('start after end', `city.csv ${r.id}`);
+}
+if (!groups.size) ok('all ids and years well-formed'); flush();
+
+// ── 10. Inheritance layer ─────────────────────────────────────────────────────
+
+section('Inheritance layer');
+const INH = {
+  source_type:            new Set(['polity', 'ethnicity', 'religion', 'civilization', 'stateless_people']),
+  source_temporal_status: new Set(['prior', 'ongoing', 'abstract']),
+  topology:               new Set(['continuation', 'fission', 'fusion', 'secession', 'absorption']),
+  mechanism:              new Set(['transformation', 'conquest', 'partition', 'collapse', 'unification',
+                                   'personal_union', 'secession', 'dissolution', 'revival', 'translatio',
+                                   'title_transfer', 'colonial_independence']),
+  legitimacy_mode:        new Set(['organic', 'claimed', 'fictive']),
+  exclusivity:            new Set(['exclusive', 'shared']),
+  axis:                   new Set(['territory', 'ruling_ethnicity', 'state_religion', 'court_language',
+                                   'dynasty', 'administrative_apparatus', 'legal_tradition', 'name_symbols',
+                                   'political_legitimacy', 'title', 'diplomatic_personality']),
+  stance:                 new Set(['affirmed', 'repudiated', 'transformed', 'neutral']),
+  degree:                 new Set(['recognized', 'partial', 'rejected']),
+  observer_type:          new Set(['polity', 'institution']),
+};
+const polityIds = new Set(T.polity.map(r => r.id));
+const SOURCE_SETS = { polity: polityIds, ethnicity: new Set(T.ethnicity.map(r => r.id)), religion: new Set(T.religion.map(r => r.id)) };
+const claimIds = new Set();
+for (const c of T.inheritance_claim) {
+  const ctx = c.id;
+  if (claimIds.has(c.id)) err('inheritance duplicate claim', ctx);
+  claimIds.add(c.id);
+  if (!polityIds.has(c.heir_polity_id)) err('inheritance heir → polity', `${ctx}: "${c.heir_polity_id}"`);
+  if (SOURCE_SETS[c.source_type] && !SOURCE_SETS[c.source_type].has(c.source_id)) err('inheritance source_id', `${ctx}: "${c.source_id}" not in ${c.source_type}`);
+  for (const f of ['source_type', 'source_temporal_status', 'topology', 'mechanism', 'legitimacy_mode', 'exclusivity']) {
+    if (!INH[f].has(c[f])) err('inheritance bad enum', `${ctx}.${f} = "${c[f]}"`);
+  }
+  if (!c.id) err('inheritance empty claim id', c.heir_polity_id);
+  if (!/^(wp|wd|panel|ref):.+/.test(c.provenance)) err('inheritance bad provenance', `${ctx}: "${c.provenance}"`);
+}
+for (const a of T.inheritance_axis) {
+  const ctx = `${a.claim_id}/${a.axis}`;
+  if (!claimIds.has(a.claim_id)) err('inheritance axis → claim', ctx);
+  if (!INH.axis.has(a.axis)) err('inheritance bad enum', `${ctx} axis`);
+  if (a.stance && !INH.stance.has(a.stance)) err('inheritance bad enum', `${ctx} stance "${a.stance}"`);
+  if (a.strength !== '' && !(+a.strength >= 1 && +a.strength <= 5)) err('inheritance strength out of 1-5', ctx);
+}
+for (const r of T.inheritance_recognition) {
+  const ctx = `${r.claim_id}/${r.observer_id}`;
+  if (!claimIds.has(r.claim_id)) err('inheritance recognition → claim', ctx);
+  if (!INH.degree.has(r.degree)) err('inheritance bad enum', `${ctx} degree "${r.degree}"`);
+  if (!INH.observer_type.has(r.observer_type)) err('inheritance bad enum', `${ctx} observer_type "${r.observer_type}"`);
+  else if (r.observer_type === 'polity' && !polityIds.has(r.observer_id)) err('inheritance observer → polity', ctx);
+}
+for (const t of T.axis_terminus) {
+  if (!polityIds.has(t.polity_id)) err('axis_terminus → polity', t.polity_id);
+  if (!INH.axis.has(t.axis)) err('inheritance bad enum', `terminus ${t.polity_id} axis "${t.axis}"`);
+}
+if (!groups.size) ok(`${T.inheritance_claim.length} claims, ${T.axis_terminus.length} terminus records`); flush();
+
+// ── 11. Plausibility metrics ──────────────────────────────────────────────────
+
+// Machine checks prove coherence, not truth, but wrong history tends to be
+// incoherent, so these flag where review should concentrate.
+section('Plausibility metrics');
+const polityById = new Map(T.polity.map(p => [p.id, p]));
+const plaus = { no_people_no_land_edges: [], gap_over_200: [], start_inversions: [], long_lived_polities: [] };
+for (const e of succ) {
+  const key = `${e.from_polity_id} → ${e.to_polity_id}`;
+  if (!csv.toBool(e.same_ethnicity) && !csv.toBool(e.related_ethnicity) && +e.shared_territory_count === 0) plaus.no_people_no_land_edges.push(key);
+  if (+e.temporal_gap_years > 200) plaus.gap_over_200.push(`${key} (gap ${e.temporal_gap_years}y)`);
+  const f = polityById.get(e.from_polity_id), t = polityById.get(e.to_polity_id);
+  if (f && t && +t.start_year < +f.start_year) plaus.start_inversions.push(`${key} (${t.start_year} < ${f.start_year})`);
+}
+for (const p of T.polity) {
+  if (p.end_year !== '' && +p.end_year - +p.start_year > 1200) plaus.long_lived_polities.push(`${p.id} (${p.start_year}..${p.end_year})`);
+}
+const plausCounts = Object.fromEntries(Object.entries(plaus).map(([k, v]) => [k, v.length]));
+for (const [k, v] of Object.entries(plausCounts)) console.log(`  ·  ${k}: ${v}`);
+const reportLines = ['# Plausibility report', '', 'Generated by scripts/validate.js. Do not edit.', ''];
+for (const [k, list] of Object.entries(plaus)) reportLines.push(`## ${k} (${list.length})`, '', ...list.map(i => `- ${i}`), '');
+fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
+fs.writeFileSync(path.join(ROOT, 'data', 'plausibility.md'), reportLines.join('\n'));
+
 // ── Summary ───────────────────────────────────────────────────────────────────
 
 console.log('\n' + '─'.repeat(59));
@@ -311,6 +426,21 @@ console.log(`Ethnicities: ${T.ethnicity.length}  |  Languages: ${T.language.leng
 console.log(`Figures: ${T.figure.length}  |  Cities: ${T.city.length}  |  Succession edges: ${succ.length}  |  Panels: ${panels.length} (${cellCount} cells)`);
 console.log(`Sources: ${T.source.length}  |  Provenance rows: ${T.fact_source.length}`);
 console.log('');
+
+// ── Warning ratchet ───────────────────────────────────────────────────────────
+
+const baselineFile = path.join(__dirname, 'warning-baseline.json');
+const baseline = fs.existsSync(baselineFile) ? JSON.parse(fs.readFileSync(baselineFile, 'utf8')) : null;
+if (process.argv.includes('--update-baseline')) {
+  fs.writeFileSync(baselineFile, JSON.stringify({ warnings: report.warnings, metrics: plausCounts }, null, 2) + '\n');
+  console.log(`Baseline updated: ${report.warnings} warnings\n`);
+} else if (baseline) {
+  if (report.warnings > baseline.warnings) err('ratchet', `warning count grew: ${report.warnings} > ${baseline.warnings}`);
+  for (const [k, v] of Object.entries(baseline.metrics)) {
+    if ((plausCounts[k] ?? 0) > v) err('ratchet', `metric ${k} grew: ${plausCounts[k]} > ${v}`);
+  }
+  flush();
+}
 
 if (report.errors > 0) { console.error(`FAILED: ${report.errors} error(s), ${report.warnings} warning(s)\n`); process.exit(1); }
 else if (report.warnings > 0) console.warn(`PASSED with ${report.warnings} warning(s)\n`);

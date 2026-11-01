@@ -119,7 +119,7 @@ mughal_empire,Mughal Empire,turkic_cluster,new_persian_farsi,sunni_hanafi,imperi
 | Territory | `polity_territory.csv` only (`polity_territory.md`) |
 | Ruling house | `polity_dynasty.csv` |
 | People | `figure.csv` |
-| Succession edges | `derived/polity_succession.csv`, computed, never hand-edited. The curated inheritance layer is still in `docs/brainstorm/succession/` |
+| Succession edges | `derived/polity_succession.csv`, computed, never hand-edited. Curated succession is in `csvs/inheritance_*.csv` (`inheritance.md`) |
 | External ids such as QIDs | `fact_source.csv` |
 | Civilization | Nowhere: it will never be a column (`civilization.md`) |
 | Capital, region | No column exists, though `city.md` mentions `polity.capital_id` and `polity.region` |

@@ -58,4 +58,4 @@ adjacency (consecutive control of the same territory) plus attribute matches
 (same or related ethnicity, same language, same religion) and temporal gap. It
 writes `derived/polity_succession.csv` with a `strength` score and
 `territorial_direction`. This is derived evidence, not curated judgment; the
-curated inheritance layer is specced in `docs/brainstorm/succession/`.
+curated inheritance layer is in `csvs/inheritance_*.csv` (`docs/model/inheritance.md`).

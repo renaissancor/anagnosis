@@ -37,20 +37,25 @@ Polity          --[controlled]-->      Territory[]       (with time bounds: star
 
 Succession      --[from]-->            Polity
 Succession      --[to]-->              Polity
-Succession      --[type]-->            A | B | C | D
+Succession      --[evidence]-->        territory · ethnicity · language · religion · gap
 ```
 
-## The Succession Matrix
+## The Succession Edge
 
-A succession edge is typed by what the two polities share:
+> **The v1 letter matrix (A/A-/B/C/D) is retired.** No `type` field is stored. The ratified redesign — per-axis, multi-parent **inheritance claims** with perspectival recognition — is specced in [`docs/brainstorm/succession/`](../brainstorm/succession/README.md); the legacy derived model is documented in [`succession.md`](./succession.md).
 
-| Type | Name | Same Ethnicity | Same Territory | Legitimacy |
-|---|---|:---:|:---:|---|
-| A | Direct Lineage | ✅ | ✅ | Orthodox — the gold standard |
-| A- | Direct (ideology gap) | ✅ | ✅ | Weakened — same people, same land, ideology changed |
-| B | Cultural Migration | ✅ | ❌ | Successor — same people moved |
-| C | Locus Inheritance | ❌ | ✅ | Claimant — conquered the land |
-| D | Arbitrary Jump | ❌ | ❌ | **Ahistorical / Invalid** |
+Today each edge in `derived/polity_succession.csv` carries a derived **evidence vector**:
+
+| Column | Meaning |
+|---|---|
+| `shared_territories` / `shared_territory_count` | land carried across the transition |
+| `same_ethnicity` / `related_ethnicity` | people carried across (direct / tree-related) |
+| `same_language` / `same_religion` | cultural continuity axes |
+| `temporal_gap_years` | continuity vs revival |
+| `territorial_direction` | same / expansion / contraction / displacement |
+| `strength` | blended continuity score |
+
+An edge sharing **neither people nor land** is the ahistorical jump the project exists to forbid (tracked as the `no_people_no_land_edges` plausibility metric).
 
 Succession describes the relationship between two **polities** spanning centuries.
 

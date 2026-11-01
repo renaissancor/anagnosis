@@ -26,7 +26,7 @@ A file's home is decided by **who writes it**, never by its format. Four layers,
 2. **One authored home per fact.** Territory lives only in `polity_territory.csv` (no inline column on `polity.csv`); taxonomy hierarchy lives only in `parent_id`; succession edges are computed into `derived/` from the CSVs.
 3. **One CSV reader.** All CSV I/O goes through `code/lib/csv.js`. Never add a parser.
 4. **Every CSV must have** a model doc in `docs/model/<concept>.md`, a header entry in `scripts/validate.js`, a generator or loader that consumes it, and DDL + load SQL.
-5. **Workflow:** edit → `npm test` (validates layers 1–2 directly, no build) → `npm run make:all` → review `csvs/` + `derived/` diffs.
+5. **Workflow:** edit → `npm run validate` (layers 1–2 directly, no build) → `npm run make:all` → review `csvs/` + `derived/` diffs.
 
 `docs/tree/*.md` are read-only dumps. `scripts/archive/` holds dead one-shot migrations — do not run them.
 
@@ -36,6 +36,7 @@ Work flows one way: **Sources** (what evidence says) → **Content** (what we as
 
 - **Sources:** one read-only librarian per source in `.claude/agents/source-*.md`. Sources are cited, never imported.
 - **Content:** `csvs/` is the source of truth. Read `docs/model/<table>.md` before touching a table. The graph is a result of the CSVs, not a separate source.
+- **Succession:** decided one claim at a time in `csvs/inheritance_*.csv`. `derived/polity_succession.csv` holds computed candidates, which are evidence and never decide. See `docs/model/graph.md`.
 - **Non-polities:** peoples use an `ethnicity` key on panel cells; cultures, collectives and events are plain labels. See `docs/model/non_polity.md`.
 - **Presentation:** `public/` reads only the routes in `docs/model/api.md`.
 - **Audit:** a fresh reviewer checks each change; authors don't audit their own work.
@@ -52,6 +53,7 @@ docs/
 ├── model/                   ← schema docs (one file per concept) — CANONICAL
 │   ├── data-model.md        ← read first for the graph model
 │   ├── civilization.md      ← top tier — deliberately DEFERRED; a perspective-projection over the graph, not a curated entity
+│   ├── editorial-policy.md  ← how content is added & verified (dates, sources, two-pass review)
 │   ├── erd.md               ← visual ERD with FK relationships
 │   ├── erd.sql              ← DDL with FKs
 │   ├── erd_nofk.sql         ← DDL without FKs (ingest variant)
@@ -59,7 +61,8 @@ docs/
 │   ├── ethnicity.md
 │   ├── religion.md
 │   ├── ideology.md
-│   ├── succession.md
+│   ├── inheritance.md       ← curated succession layer (per-axis claims) — LIVE
+│   ├── succession.md        ← computed candidates (evidence)
 │   ├── naming.md
 │   ├── polity_dynasty.md
 │   └── city.md              ← place-not-polis identity, FK-driven scoping
