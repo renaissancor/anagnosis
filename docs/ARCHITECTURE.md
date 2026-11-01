@@ -129,9 +129,8 @@ analytical convenience, not in the serving path.
 ## Layer 4 — Served (`server.js`, `public/`)
 
 `server.js` loads `data/` through `data/index.js`, serves `panels/` through
-`/api/panel`, and exposes read-only JSON routes (`/api/polity`, `/api/succession`,
-`/api/territory`, `/api/dynasty`, `/api/government`, `/api/taxonomy/:type`,
-`/api/figure`). `public/` is vanilla JS + D3. Nothing in layer 4 reads a CSV.
+`/api/panel`, and exposes the read-only JSON routes in `model/api.md`. `public/` is
+vanilla JS + D3. Nothing in layer 4 reads a CSV.
 
 ## Data flow
 
@@ -164,15 +163,47 @@ Sources          →     Content           →     Presentation
 what evidence says     what we assert          how people read it
 ```
 
-| Department | Roles | Reads | Writes | Contract | Hands off |
-|---|---|---|---|---|---|
-| **Sources** | One librarian per source (`.claude/agents/source-*.md`) | `sources/` | Nothing; returns answers | `model/source.md` | Cited answers |
-| **Content** | One curator per contract; succession owner; build owner | Table contracts, librarian answers, `csvs/`, `derived/` | `csvs/`, `panels/`, `code/`, `data/` | `model/<table>.md`, `model/graph.md`, `model/api.md` | Validated CSVs, built into JSON |
-| **Presentation** | UI/UX designer | Routes in `model/api.md` only | `public/`, `server.js` routes | `model/api.md` | The app |
-| **Across all** | Auditor, always a fresh reviewer and never the author | Diffs and contracts | Findings only | This file | Findings at each handoff |
+| Department | Roles | Reads | Contract | Hands off |
+|---|---|---|---|---|
+| **Sources** | One librarian per source (`source-*`) | `sources/` | `model/source.md` | Cited answers |
+| **Content** | `curator`, given one table per run; `succession-curator`; `build-owner` | Table contracts, librarian answers, `csvs/`, `derived/` | `model/<table>.md`, `model/inheritance.md`, `model/graph.md`, `model/build.md` | Validated CSVs, built into JSON |
+| **Presentation** | `ui-designer` | Routes in `model/api.md` only | `model/presentation.md`, `model/api.md` | The app |
+| **Across all** | `auditor`, always a fresh reviewer and never the author | Diffs and contracts | This file | Findings at each handoff |
 
-Only the librarians exist as agent files today. The other roles are defined here
-and are not yet set up.
+Role files are in `.claude/agents/`. A contract may cover one table, so one `curator` role serves every table.
+
+### Write sets
+
+This table is the only place write sets are stated. Each tracked path has one writer. Librarians and the auditor write nothing.
+
+| Path | Class | Writer |
+|---|---|---|
+| `csvs/` except the inheritance tables, `panels/` | role-owned | `curator`, one table per run |
+| `csvs/inheritance_*.csv`, `csvs/axis_terminus.csv` | role-owned; the project owner decides each claim | `succession-curator` |
+| `docs/model/`: `city`, `dynasty`, `ethnicity`, `figure`, `government`, `language`, `non_polity`, `polity`, `polity_dynasty`, `polity_territory`, `religion`, `source`, `territory` | role-owned | `curator` for that table |
+| `docs/model/graph.md`, `docs/model/inheritance.md` | role-owned | `succession-curator` |
+| `code/`, `scripts/`, `derived/`, `data/index.js`, `data/README.md`, `package.json`, `package-lock.json` | role-owned | `build-owner` |
+| `docs/model/build.md`, `docs/model/erd.md`, `docs/model/erd.sql`, `docs/model/erd_nofk.sql` | role-owned | `build-owner` |
+| `public/`, `server.js`, `docs/model/api.md`, `docs/model/presentation.md` | role-owned | `ui-designer` |
+| Everything else, including `CLAUDE.md`, `README.md`, licences, `.gitignore`, `.claude/agents/`, this file, `docs/README.md`, `docs/TODO.md` and the remaining docs | owner-maintained | the main session, for the project owner |
+| `data/` output, `anagnosis.db`, `sources/` | built, untracked | `build-owner`'s scripts; never by hand |
+
+`scripts/dedup_and_link.js` and `scripts/extract_missing_polities.js --write` write layer 1. `build-owner` owns the code; only a `curator` runs them, and only their `panels/` and `polity.csv` output is that curator's file.
+
+Agents that edit in parallel use separate worktrees. Everything tracked is public on GitHub, so no document holds private data.
+
+### Enforced and target
+
+A target is not a check. Do not "fix" one across the tree unasked.
+
+| Rule | State | Where measured |
+|---|---|---|
+| CSV headers, keys, foreign keys, dates, enums | enforced | `scripts/validate.js` |
+| Warnings and plausibility metrics do not grow | enforced | `scripts/warning-baseline.json` |
+| Every doc is indexed; every role is named here | enforced | `scripts/validate.js` |
+| All CSV I/O through `code/lib/csv.js` | target | `docs/TODO.md` |
+| One writer per path | not checked | this table |
+| Librarians and the auditor write nothing | not checked; a role rule, since Bash can write | role files |
 
 **Targets, not yet true:**
 
@@ -184,10 +215,11 @@ and are not yet set up.
 
 **Rules:**
 
-1. **One owner per file.** Two agents never edit the same table at once.
+1. **One owner per file.** Two agents never edit the same table at once. A change that crosses write sets follows the handoffs in `model/build.md`.
 2. **Contracts come first.** Without a contract for its table, a curator is guessing.
    A curator reads the contract at the start of every run, and hard cases are
-   logged there with the reason. Changing a contract is the project owner's decision.
+   logged there with the reason. Roles may update measured state and open questions.
+   Changing a rule in a contract is the project owner's decision.
 3. **Sources are cited, never imported.** Curators ask a librarian and write the
    row themselves. If a source disagrees with `csvs/`, the CSV stands until
    someone edits it.
@@ -228,5 +260,5 @@ and are not yet set up.
 - `docs/model/graph.md` — the contract for succession edges and inheritance claims
 - `docs/model/erd.md`, `erd.sql`, `erd_nofk.sql` — DDL
 - `docs/migration/csv_workflow.md` — step-by-step editing guide
-- `docs/TODO.md` — roadmap
+- `docs/TODO.md` — defect ledger and open work
 - `data/README.md` — generated file formats
