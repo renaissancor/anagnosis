@@ -159,7 +159,7 @@ function claimHtml(claim, statement) {
 
 const GLOSSARY = `<details class="claim-glossary">
   <summary>What these terms mean</summary>
-  <p>The first word says what kind of link this is. Legitimacy is organic when it grew through continuous practice, claimed when the heir asserted it, and fictive when it was constructed, as with Russia's Third Rome. Exclusive means the heir has no rival for this source.</p>
+  <p>The first word says what kind of link this is. Legitimacy is organic when it came with the inheritance itself, claimed when the heir asserted it, and fictive when it was constructed, as with Russia's Third Rome. Exclusive means the heir admits no co-heir, though rival heirs can each make that claim; shared means it accepts others.</p>
   <p>The bold lines are the parts of an identity that passed along. Affirmed means the heir kept it, transformed that it changed it, and repudiated that it rejected it. Strength is a curator's grade from 1 to 5; the rules for that grade are not settled yet.</p>
   <p>Recognition is what historical actors did at the time, not a modern verdict.</p>
 </details>`;
@@ -207,7 +207,7 @@ function computedHtml(polity, claims) {
   const earlier = [...(polity.predecessors || [])].sort((a, b) => b.strength - a.strength);
   const later = [...(polity.successors || [])].sort((a, b) => b.strength - a.strength);
   const total = earlier.length + later.length;
-  const decidedIds = new Set([...as_heir.map(c => c.source_id), ...as_source.map(c => c.heir_polity_id)]);
+  const decidedIds = new Set([...as_heir.filter(c => c.source_type === 'polity').map(c => c.source_id), ...as_source.map(c => c.heir_polity_id)]);
   const list = (title, edges, otherIsLater) => edges.length
     ? `<h3>${title} (${edges.length})</h3><ul>${edges.map(e => candidateHtml(e, decidedIds, otherIsLater)).join('')}</ul>` : '';
 

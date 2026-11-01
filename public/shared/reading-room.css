@@ -165,7 +165,8 @@ ul, ol { list-style: none; }
   .facts dd { margin-bottom: 0.5rem; }
 }
 @media (pointer: coarse) {
-  .site-nav a, .theme-toggle, .quiet-button, .retry, .graph-zoom button, .pencil summary { min-height: 2.75rem; display: inline-flex; align-items: center; }
+  .site-nav a, .theme-toggle, .quiet-button, .retry, .graph-zoom button { min-height: 2.75rem; display: inline-flex; align-items: center; }
+  .pencil summary, .claim-glossary summary { padding: 0.7rem 0; }
   .entry-list a { display: inline-block; padding: 0.4rem 0; }
   input[type="radio"], input[type="checkbox"] { width: 1.25rem; height: 1.25rem; }
 }

@@ -90,7 +90,7 @@ const withNames = c => ({
   source_name: (c.source_type === 'polity' && polityById[c.source_id]?.name) || c.source_id,
   recognition: (c.recognition || []).map(r => ({
     ...r,
-    observer_name: polityById[r.observer_id]?.name || r.observer_id,
+    observer_name: (r.observer_type === 'polity' && polityById[r.observer_id]?.name) || r.observer_id,
   })),
 });
 

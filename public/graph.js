@@ -16,7 +16,7 @@ let polities = [], polityById = new Map(), polityByName = new Map();
 let claims = [], candidates = [];
 const params = new URLSearchParams(location.search);
 let chosenId = params.get('id');
-let evidence = chosenId && params.get('evidence') === 'chosen' ? 'chosen' : 'none';
+let evidence = ['chosen', 'all'].includes(params.get('evidence')) ? params.get('evidence') : 'none';
 let notice = '';
 let focusAfterDraw = null;
 
@@ -50,12 +50,14 @@ async function load() {
 
   document.querySelectorAll('input[name="evidence"]').forEach(radio =>
     radio.addEventListener('change', e => setEvidence(e.target.value)));
+  // Clearing with the search box's own button fires `search`, not `change`.
+  choiceInput.addEventListener('search', () => { if (!choiceInput.value) choose(null); });
   choiceInput.addEventListener('change', () => {
     const typed = choiceInput.value.trim();
     const match = polityByName.get(typed.toLowerCase());
-    notice = typed && !match ? `No polity is named “${typed}”.` : '';
-    if (match || !typed) choose(match ? match.id : null);
-    else status.textContent = statusText(visibleCandidates());
+    if (match || !typed) return choose(match ? match.id : null);
+    notice = `No polity is named “${typed}”.`;
+    status.textContent = statusText(visibleCandidates());
   });
   document.getElementById('zoom-in').addEventListener('click', () => svg.call(zoom.scaleBy, 1.5));
   document.getElementById('zoom-out').addEventListener('click', () => svg.call(zoom.scaleBy, 1 / 1.5));
@@ -68,15 +70,24 @@ async function load() {
 
 function choose(id) {
   chosenId = id;
-  const url = new URL(location.href);
-  if (id) url.searchParams.set('id', id); else url.searchParams.delete('id');
-  history.replaceState(null, '', url);
+  notice = '';
+  syncUrl();
   draw();
 }
 
 function setEvidence(value) {
   evidence = value;
+  notice = '';
+  syncUrl();
   draw();
+}
+
+/** The address reproduces the view, so a shared link shows the same evidence. */
+function syncUrl() {
+  const url = new URL(location.href);
+  if (chosenId) url.searchParams.set('id', chosenId); else url.searchParams.delete('id');
+  if (evidence === 'none') url.searchParams.delete('evidence'); else url.searchParams.set('evidence', evidence);
+  history.replaceState(null, '', url);
 }
 
 async function ensureCandidates() {

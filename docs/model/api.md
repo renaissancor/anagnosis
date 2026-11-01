@@ -189,7 +189,7 @@ Joined in `server.js`, not in `data/`: claim `heir_name`, `source_name` and `obs
 ### Served, never read by any page
 
 - Whole routes: `/api/government/:id`, `/api/dynasty*`, `/api/figure`, `/api/territory/:id`, `/api/polity/colors`, `/api/db`.
-- Succession fields: `related_ethnicity`, `shared_territory_count`, `strength` (no page reads it from `/api/succession`), `temporal_gap_years`.
+- Succession fields on `/api/succession`: `territorial_direction`, `shared_territories`, `related_ethnicity`, `shared_territory_count`, `strength` (no page reads it from `/api/succession`), `temporal_gap_years`.
 - Polity: `ideology` + `government` duplication in the list.
 - Taxonomy leaf placeholders (section 2.6) and `founder`. `status` is shown when present and is null on every row today.
 
@@ -207,7 +207,7 @@ Joined in `server.js`, not in `data/`: claim `heir_name`, `source_name` and `obs
 
 **Breaking** (a frontend page stops working or silently shows wrong data):
 
-1. Removing or renaming any field or route listed in section 2 that a page reads: `polity.{id,name,start,end,ruling_ethnicity,cultural_language,ideology.religion,ideology.government,territories,policies,note,figures}`; succession `{from,to,same_ethnicity,same_language,same_religion}`; `/api/polity/:id` `successors[]`/`predecessors[]` (`id,name,territorial_direction,strength,shared_territories`, and the `same_*` flags); claim fields in 2.4a; taxonomy `{id,name,parent,description,founded}`; government `{id,name}`; territory `{id,polities[].{polity_id,start_year,end_year}}`.
+1. Removing or renaming any field or route listed in section 2 that a page reads: `polity.{id,name,start,end,ruling_ethnicity,cultural_language,ideology.religion,ideology.government,territories,policies,note,figures}`; succession `{from,to,same_ethnicity,same_language,same_religion}`; `/api/polity/:id` `successors[]`/`predecessors[]` (`id,name,territorial_direction,strength,shared_territories`, and the `same_*` flags); claim fields in 2.4a; taxonomy `{id,name,parent,description,founded,status}`; government `{id,name}`; territory `{id,polities[].{polity_id,start_year,end_year}}`.
 2. Changing a type: integer years to strings, boolean `same_*` to strings, `end: null` to `0`, `territories` from array to string, `parent` from id to object.
 3. Changing the **vocabulary** of `territorial_direction` (the five values `same|expansion|contraction|displacement|unknown`). The polity page words the five values, and a sixth falls back to the `unknown` wording. The territory page no longer colours or words them.
 4. Changing id semantics (renaming or retiring a polity, territory, ethnicity, language or religion id). Ids are cross-references across responses and into `panels/`. CLAUDE.md already says ids are never reused. Retiring one also breaks every panel `polity:` reference to it.
@@ -221,7 +221,7 @@ Joined in `server.js`, not in `data/`: claim `heir_name`, `source_name` and `obs
 ## 6. Current state and open questions
 
 - **Succession type.** The A/B/C/D classification is retired (`graph.md`). **No JSON edge carries it**: `derived/polity_succession.csv` has no such column, `successions.js` copies none, and no `public/` file reads `.type` on an edge. The only classification that reaches the frontend is `territorial_direction` (5 values).
-- **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `heir_polity_id, source_id, heir_name, source_name`. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
+- **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `heir_polity_id, source_id, source_type, heir_name, source_name`. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
 - **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: one default panel id and a few panel group names in `public/history/app.js`. A renamed panel loses only its group name, or the default if it was the default.
 - **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2077 of 4191 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Settled: label-only is the intended form for a non-polity cell (section 2.9), and an unresolved `polity` stays a warning until the remaining ids are triaged.
 - **Open:** whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
