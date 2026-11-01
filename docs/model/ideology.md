@@ -80,12 +80,13 @@ A policy is a time-bounded decision that does **not** redefine the polity's core
 
 ## Why This Matters for Succession
 
-When evaluating whether a succession is valid:
-- **Same ideology** → strong continuity, reinforces Type A
-- **Same ethnicity, different ideology** → weakened continuity; Sunni Timurid → Shia Safavid on the same Iranian territory is more disruptive than a simple Type C despite Persian ethnic continuity
-- **Religion split within same ethnicity** → creates entirely separate polities: Serb (Orthodox) vs Croat (Catholic) vs Bosniak (Muslim) are the same South Slavic people but three distinct civilizational identities with different valid successors
+Ideology is evidence for a succession claim. It does not decide one (`graph.md`).
 
-The Safavid/Timurid case is instructive: same territory (Iran), same broad ethnicity (Persian/Iranian), but the Shia vs Sunni divide means these are NOT a smooth Type A succession. The ideological discontinuity is a Type D in religious terms even where ethnic and territorial continuity exists.
+- **Shared ideology** supports continuity.
+- **Same ethnicity, different ideology** weakens it. Sunni Timurid to Shia Safavid on Iranian land is more disruptive than the shared territory and broad ethnicity suggest.
+- **A religious divide within a people** can shape separate identities: Serb (Orthodox), Croat (Catholic) and Bosniak (Muslim) are the same South Slavic people. A change of religion alone still never splits a polity (`polity.md` section 4).
+
+A claim records this on the `state_religion` axis, with a stance.
 
 ---
 

@@ -91,5 +91,4 @@ derived edge. **Warnings**: missing religion/government, CRLF, stray comma,
 
 - `data/` — generated; edits are lost on the next `make:all`
 - `derived/` — script output; edit the script or the layer-1 input instead
-- `docs/tree/*.md` — human-readable dumps, may lag the CSVs
 - `anagnosis.db` — rebuilt by `make:db`

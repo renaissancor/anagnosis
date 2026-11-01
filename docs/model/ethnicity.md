@@ -106,4 +106,4 @@ Hittite (Anatolian IE) → Achaemenid (Persian/Iranian IE)
   → Ottoman (Turkic)
 ```
 
-Every transition is either Type C (locus inheritance — same land, different ethnicity) or Type A (direct continuity). The modern Turkish identity on Anatolian land is a Type B successor (Turkic ethnic continuity from Seljuk/Ottoman) overlaid on a Type C territorial inheritance from Byzantine.
+Some transitions keep the land under a new ruling people, and others keep both. Modern Turkish identity on Anatolian land combines Turkic continuity from the Seljuks and Ottomans with an older territorial sequence. Whether any transition is a succession is decided claim by claim (`graph.md`).

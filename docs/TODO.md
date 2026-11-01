@@ -1,151 +1,60 @@
-# Anagnosis TODO — RDBMS Migration Roadmap
+# Anagnosis ledger
 
-## Phase 1: Schema & Foundation ✅ (done)
-- [x] Design two-tier ERD (Civilization → Polity), with Dynasty as cross-cutting tag
-- [x] Create DuckDB schema (`anagnosis.db`) — now 18 tables, rebuilt by `npm run make:db`
-- [x] Auto-link 637 panel labels to existing polity IDs
-- [x] Document ERD (`docs/model/erd.sql`, `docs/model/erd.md`)
+Every known defect and open job, with its owner role and whether it needs the project owner's approval. Roles and write sets are in [`ARCHITECTURE.md`](ARCHITECTURE.md). A role that finds a defect outside its task adds it here and leaves the code alone. Remove a row when the fix lands. Past work is in git history.
 
-## Phase 2: Migrate Existing Data → DuckDB ✅ (done)
-- [x] **P2.1** Migrate taxonomy trees (ethnicity → 256, languages → 691, religions → 256)
-- [x] **P2.2** ~~Migrate ideologies~~ — superseded — government forms now live in `csvs/government.csv` (29 rows) and load into DuckDB
-- [x] **P2.3** Migrate territories (39 loaded) — provinces/GeoJSON deferred
-- [x] **P2.4** Load 268 polity records into `polities` table (from `polity.csv`)
-- [x] **P2.5** Migrate successions (1,243 → `polity_succession`) + 1,099 shared territory links
-- [x] **P2.6** Migrate figures (285 records → `figures` table)
-- [x] **P2.7** Migrate civilizations (2 records loaded)
-- [x] **P2.8** Compute taxonomy tree depths (recursive CTE, max depth 3)
-- [x] **P2.9** Build `polity_territory` (939 records from `polity_territory.csv` + `polity.csv` gap-fill)
-- [x] **P2.10** Build `polity_policy` (26 records)
-- [x] **P2.11** Create idempotent load script: `scripts/load_csvs.sql`
+## Defects
 
-### Phase 2 Known Issues
-- [ ] Duplicate `old_id` values in taxonomy CSVs (7 in ethnicity, 7 in languages, 4 in religions) — currently deduped by taking first occurrence; should clean source CSVs
-- [ ] Provinces (53) and GeoJSON not yet loaded
-- [ ] Ideologies (30) not yet in DuckDB
+| # | Severity | Where | What | Owner role | Approval |
+|---|---|---|---|---|---|
+| 1 | High | `server.js`, `data/index.js`, `public/` | Curated claims are built to `data/inheritance/`, but no API route or page reads them (`model/inheritance.md`, migration step 4) | build-owner, ui-designer | Yes |
+| 2 | Medium | `scripts/dedup_and_link.js:468`, `scripts/extract_missing_polities.js:208` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
+| 3 | Medium | `scripts/{extract_labels,dedup_and_link,find_overlaps,extract_missing_polities,generate_stubs}.js` | Read CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
+| 4 | Medium | `scripts/{dedup_and_link,extract_labels,find_overlaps,generate_stubs,normalize_labels,extract_missing_polities}.js`, `code/generate-successions.js` | Write CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
+| 5 | Medium | `public/history/index.html` | 66 panel ids are hard-coded and 72 exist; 6 are unreachable (`model/api.md` M4) | ui-designer | Yes |
+| 6 | Medium | `public/app.js` | The index detail panel never shows figures, policies or note (`model/api.md` M1) | ui-designer | Yes |
+| 7 | Medium | `scripts/validate.js` | 1,773 warnings and 1,145 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
+| 8 | Medium | `scripts/validate.js:367` | (heir, source) uniqueness is decided but not checked | build-owner | Yes |
+| 9 | Low | `server.js:11` | `/data` serves all of `data/`, including `index.js` | ui-designer | Yes |
+| 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
+| 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | owner | Yes |
+| 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
 
-## Phase 3: Extract & Link Panel Entities ← CURRENT
-Extracted 4,572 labels from the history panels (now in `panels/`). Analysis complete. Now need manual curation before bulk-writing.
+## Open curation
 
-### Phase 3 Analysis (done)
-- [x] **P3.1** Extract all labels from 61 panel JSONs → `derived/panel_labels.csv` (`scripts/extract_labels.js`)
-- [x] **P3.2** Categorize labels: 1,451 linked, 1,064 polity, 475 dynasty, 355 people, 369 event, 126 culture, 732 unclassified
-- [x] **P3.3** Normalize & deduplicate labels → `derived/canonical_entities.csv` (`scripts/normalize_labels.js`)
-- [x] **P3.4** Identify temporal/spatial overlaps → `derived/overlap_candidates.csv` (`scripts/find_overlaps.js`)
-- [x] **P3.5** Document naming architecture → `docs/model/naming.md`
+**Polities named by panels and not in `csvs/polity.csv`.** Dates are suggestions, not checked facts. `node scripts/extract_missing_polities.js` prints the live list; run it without `--write`.
 
-### Phase 3 Curation (todo — manual + scripted)
-- [ ] **P3.6** Pick one panel (gold standard), manually curate all labels:
-  - Assign correct `polity` IDs to every cell
-  - Fix duplicates (e.g., `sassanid` → `sassanid_empire`)
-  - Verify category assignments (polity / dynasty / culture / people / event)
-  - Validate against `csvs/overlap_candidates.csv` for that panel
-- [ ] **P3.7** Build merge map from gold-standard experience:
-  - Bare names → existing polity IDs (`sassanid` → `sassanid_empire`, `qing` → `qing_dynasty`)
-  - Cross-panel synonyms (`il_khanate` = `ilkhanate`)
-  - Type-suffix normalization (`safavid_dynasty` = `safavid_empire` = `safavid`)
-- [ ] **P3.8** Apply merge map to `dedup_and_link.js`, re-run for all 61 panels
-- [ ] **P3.9** Write `polity` fields into history JSONs for confident matches
-- [ ] **P3.10** Create new polity stubs in DuckDB for genuinely new entities (~400–800 expected)
-- [ ] **P3.11** Populate `dynasties` table from dynasty-category labels (~400+ expected)
-- [x] **P3.12** Closed as won't do: no `cultures` table, and cultures stay panel labels (`docs/model/non_polity.md`)
-- [ ] **P3.13** Review remaining unclassified labels — reclassify or mark as label-only
+| id (suggested) | Name | Approx. dates | Panel |
+|---|---|---|---|
+| awadh_nawabate | Awadh Nawabate | 1722–1856 | india |
+| carnatic_sultanate | Carnatic Nawabate | 1690–1855 | india |
+| guge_kingdom | Guge Kingdom | c.842–1630 | tibet |
+| ladakh_kingdom | Ladakh Kingdom | c.842–1846 | tibet |
+| ganden_phodrang | Ganden Phodrang | 1642–1959 | tibet |
+| sikkim_kingdom | Sikkim Kingdom | 1642–1975 | tibet |
+| bhutan_kingdom | Kingdom of Bhutan | 1907–present | tibet |
+| hashimite_hejaz | Hashimite Kingdom of Hejaz | 1916–1925 | arabia |
+| syrian_arab_republic | Syrian Arab Republic | 1946–present | levant |
+| lebanese_republic | Lebanese Republic | 1943–present | levant |
+| wattasid_dynasty | Wattasid Dynasty | 1472–1554 | morocco |
+| azanian_coast | Azanian coast | | somalia, swahili_coast |
+| italian_somaliland | Italian Somaliland | | somalia, swahili_coast |
+| somali_republic | Somali Republic | | somalia, swahili_coast |
 
-### Phase 3 Overlap Issues (63 intra-panel, 75 cross-panel)
-Key patterns to resolve:
-- `sassanid` vs `sassanid_empire` (bare name vs existing ID)
-- `qing` vs `qing_dynasty` vs `qing_empire` (suffix variants)
-- `first_turkic_empire` vs `first_turkic_khaganate` (government-form synonym)
-- `roman_republic` vs `roman_empire` vs `roman_kingdom` (genuinely different — keep separate)
+`bantu_expansion` is also reported, but it is an event and fails the polity admission test.
 
-## Phase 4: Derive Successions
-- [ ] **P4.1** Derive polity_successions from panel stack order (~2,300 edges):
-  - Adjacent items in same stack = succession
-  - Infer type: same polity → `inheritance`; different polity → `conquest`/`revolution`
-  - Temporal gap > 0 → possible interregnum
-- [ ] **P4.2** Cross-validate panel-derived successions against existing polity_succession
-- [ ] **P4.3** Build civilization groupings: cluster polities into ~20–30 civilization records by succession chains
-  - Use connected component analysis on polity_succession with `same_civilization = true`
+**Panel entities.** Review remaining unclassified labels in `derived/panel_labels.csv`, and promote rows from `derived/polity_stubs.csv` only by hand.
 
-## Phase 5: Populate History Panel Tables
-- [ ] **P5.1** Create `history_panels` (61 records) and `history_columns` (~180 records)
-- [ ] **P5.2** Create `history_cells` (~4,600 records) with FK links to polity/polity/culture
-- [ ] **P5.3** Refactor frontend to render panels from DB queries instead of static JSON
-- [ ] **P5.4** Add API endpoints: `GET /api/panel/:id`, `GET /api/polity/:id`, `GET /api/dynasty/:id`
+**Taxonomies.** Compare `csvs/{ethnicity,language,religion}.csv` with the retired hierarchies in `docs/todo/` at commit `5439e84`, and with Glottolog and Wikidata through the librarians.
 
-## Phase 6: Enrich Polity Data
-- [ ] **P6.1** Fill in polity stubs (ruling_ethnicity, cultural_language, religion, government, territories)
-  - Priority: major civilizations first (Roman, Chinese, Ottoman, Mongol, etc.)
-  - Use history panel context to infer attributes
-- [ ] **P6.2** Expand figures table — key rulers for each polity
-- [ ] **P6.3** Add `polity_territory` temporal data (which territory, when)
-- [ ] **P6.4** Add `province_periods` for finer-grained geographic control
+**Succession.** Decide claims one at a time, starting from the open questions in `model/graph.md` section 6.
 
-## Phase 7: Frontend RDBMS Integration
-- [ ] **P7.1** Add DuckDB backend to `server.js`
-- [ ] **P7.2** Serve history panels from DB (deprecate JSON files)
-- [ ] **P7.3** Build polity detail page (succession graph + polity timeline + territories)
-- [ ] **P7.4** Cross-linking: click a polity in a panel → polity detail page
-- [ ] **P7.5** Search: find polities by name, time range, territory, ethnicity
+## Targets
 
-## Phase 8: Advanced Features
-- [ ] **P8.1** Interactive map: show polity territories at any given year
-- [ ] **P8.2** Timeline comparison: overlay multiple polities on a shared timeline
-- [ ] **P8.3** Succession graph visualization (full graph, not just per-panel)
-- [ ] **P8.4** "What existed in year X?" global query across all regions
-- [ ] **P8.5** Export: generate static panels from DB for offline use
-- [ ] **P8.6** Data validation: ensure all panel cells link to a polity/polity/culture
+These are ideas, not commitments. Each needs the owner's approval to start.
 
-## Phase 9: Geographic Expansion (History Panels)
-- [ ] **P9.1** Americas: Mesoamerica (Maya/Aztec), Andes (Inca), North America, Brazil
-- [ ] **P9.2** Sub-Saharan Africa: Southern Africa, East African coast (Swahili/Kilwa), Congo
-- [ ] **P9.3** Remaining gaps: Philippines, Bangladesh/Bengal, Oceania
-
-## Data Counts (Current → Target)
-
-| Entity | Current (in DB) | After Phase 3 | After Phase 6 |
-|--------|-----------------|---------------|---------------|
-| States | 2 | ~20 | ~30 |
-| Polities | 268 | ~700–1,100 | ~1,500 (enriched) |
-| Polities | 0 | ~400+ | ~2,500 |
-| Polity successions | 1,995 | ~3,000 | ~4,500 |
-| Figures | 286 | ~285 | ~1,000 |
-| History panels | 61 (JSON) | 61 (DB) | 70+ |
-| **Total entities** | **~270** | **~1,500+** | **~5,200+** |
-
-## Scripts Reference
-
-| Script | Layer | Purpose |
-|--------|-------|---------|
-| `scripts/validate.js` (`npm test`) | 1→ | Validate `csvs/`, `derived/`, `panels/` directly (schema, keys, FKs, dates, trees, edges) |
-| `code/generate-successions.js` (`make:succession-edges`) | 1→2 | Compute `derived/polity_succession.csv` |
-| `code/makejson/*.js` (`make:all`) | 1+2→3 | Generate `data/` |
-| `scripts/load_csvs.sql` (`make:db`) | 1+2→3 | Rebuild `anagnosis.db` |
-| `scripts/extract_labels.js` | 1→2 | Extract & categorize labels from `panels/` → `derived/panel_labels.csv` |
-| `scripts/normalize_labels.js` | 2→2 | Labels → entity ids (`derived/panel_entities.csv`, `panel_labels_linked.csv`) |
-| `scripts/dedup_and_link.js` | 2→1 | Deduplicate → `derived/canonical_entities.csv`; write resolved `polity` FKs back into `panels/` |
-| `scripts/find_overlaps.js` | 1→2 | Temporal/spatial overlap review list → `derived/overlap_candidates.csv` |
-| `scripts/generate_stubs.js` | 2→2 | Draft polity rows → `derived/polity_stubs.csv` (a human promotes them into `csvs/polity.csv`) |
-| `scripts/extract_missing_polities.js` | 1→ | List panel polity ids absent from `polity.csv` |
-| `scripts/archive/` | — | One-shot migrations from earlier architectures; not runnable against the current layout |
-
-## API Routes Reference
-
-| Route | Purpose |
-|-------|---------|
-| `GET /api/polity/:id` | Polity detail |
-| `GET /api/dynasty/:id` | Dynasty detail |
-| `GET /api/succession-chain/:from/:to` | Succession chain query |
-| `GET /api/territory/:id` | Territory detail |
-| `GET /api/taxonomy/ethnicity` | Ethnicity taxonomy |
-| `GET /api/panel/:id` | History panel |
-
-## Key Documents
-
-| Doc | Purpose |
-|-----|---------|
-| `docs/model/naming.md` | Entity ID naming conventions and collision resolution |
-| `docs/model/ideology.md` | Ideology vs policy distinction; government form = ideology |
-| `docs/model/data-model.md` | Property graph model, edge types |
-| `docs/model/erd.sql` | Full DDL schema (16 tables) |
-| `docs/model/erd.md` | Visual ERD and example queries |
+- Map of polity territories at any given year.
+- Timeline comparison of several polities.
+- "What existed in year X?" across all regions.
+- Search by name, time range, territory and ethnicity.
+- Panels for the remaining gaps: Philippines, Bengal, Oceania.
+- Province-level geography.

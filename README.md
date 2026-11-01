@@ -27,7 +27,7 @@ Each transition between polities carries an **evidence vector** — did the succ
 
 The floor of the model is the edge that shares **neither people nor land**: an *ahistorical jump* — the thing 4X games wrongly allow. This framework exists to make "Tang Dynasty → Ottoman Empire" *legibly wrong*.
 
-> **Model status:** the v1 letter grid (A/A-/B/C/D) is retired. Its ratified replacement — succession as **per-axis inheritance claims** (topology × mode, multi-parent, perspectival recognition) — is specced in [`docs/brainstorm/succession/`](docs/brainstorm/succession/README.md) and will land as curated tables. Until then, edges carry the derived evidence columns in `csvs/polity_succession.csv`.
+> **Model status:** the v1 letter grid (A/A-/B/C/D) is retired. Succession is decided one claim at a time as **per-axis inheritance claims** in `csvs/inheritance_*.csv` ([`docs/model/inheritance.md`](docs/model/inheritance.md)). The computed edges in `derived/polity_succession.csv` are evidence only.
 
 ---
 
@@ -53,7 +53,7 @@ npm install
 npm start        # → http://localhost:3000
 ```
 
-**Pages:** `/` polity browser · `/history/` regional timeline panels · `/succession-graph.html` D3 force-directed succession graph · `/territory/`, `/ethnicity/`, `/language/`, `/religion/` browsers.
+**Pages:** `/` polity browser · `/history/` regional timeline panels · `/graph.html` D3 force-directed succession graph · `/territory/`, `/ethnicity/`, `/language/`, `/religion/` browsers.
 
 **JSON API:** `/api/polity` · `/api/polity/:id` · `/api/succession` · `/api/panel` · `/api/territory` · `/api/dynasty` · `/api/taxonomy/:type`.
 

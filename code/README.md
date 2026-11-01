@@ -5,7 +5,7 @@ Node scripts that turn the authored CSVs into the derived and built layers. See
 
 ```
 code/
-  lib/csv.js                  the ONE CSV reader/writer — every script uses it (RFC 4180, LF out)
+  lib/csv.js                  the ONE CSV reader/writer (RFC 4180, LF out); known bypasses are in docs/TODO.md
   generate-successions.js     csvs/{polity,polity_territory,ethnicity}.csv → derived/polity_succession.csv
   makejson/
     _taxonomy_from_csv.js     shared: parent_id tree → directory tree of JSON
@@ -17,6 +17,7 @@ code/
     successions.js            derived/polity_succession.csv → data/succession/all.json
     dynasties.js              csvs/dynasty.csv + polity_dynasty.csv → data/dynasty/<id>.json
     governments.js            csvs/government.csv (+ polity.csv counts) → data/government/<id>.json
+    inheritance.js            csvs/inheritance_*.csv + axis_terminus.csv → data/inheritance/
 ```
 
 ## Run
@@ -29,7 +30,7 @@ npm run make:polities           # any single generator: make:<plural>
 
 Generators are idempotent: each clears its output directory and rewrites it.
 `make:all` runs them in order: taxonomies → territories → polities →
-succession edges → succession JSON → dynasties → governments.
+succession edges → succession JSON → dynasties → governments → inheritance.
 
 ## Writing a generator
 
@@ -48,8 +49,7 @@ succession edges → succession JSON → dynasties → governments.
 directory tree: a node with children becomes `<id>/index.json`, a leaf becomes
 `<parent-path>/<id>.json`. `data/index.js` re-derives `parent` from the path, so
 the on-disk nesting must match the CSV; the generator guarantees that. Hierarchy
-is **only** expressed by `parent_id` — the markdown trees in `docs/tree/` are
-read-only dumps.
+is **only** expressed by `parent_id`.
 
 ## Succession edges
 

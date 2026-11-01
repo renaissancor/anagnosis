@@ -16,7 +16,7 @@ A row exists only if all of these hold:
 2. The person is **central to that polity's story**: its founder, a defining or last ruler, or a reformer, general, thinker or cultural figure without whom the polity cannot be explained. The `significance` column must say why in one clause.
 3. The person is not already a row for the same polity.
 
-**What does not belong:** a ruler listed only because they reigned (rulers are tagged through `polity_dynasty`, not exhaustively here); a person with no polity in the dataset (add the polity first, per `docs/migration/missing_polities.md`); a person added for fame alone.
+**What does not belong:** a ruler listed only because they reigned (rulers are tagged through `polity_dynasty`, not exhaustively here); a person with no polity in the dataset (add the polity first); a person added for fame alone.
 
 **FK-driven scoping, applied honestly.** The rule says entities earn rows from inbound foreign keys. **Nothing points at `figure`**: no other table has a `figure_id` column today (`city.md` mentions `figure.seat_city_id` and `birth_city_id`, but those columns do not exist). So figure has **0 rows with an inbound reference**, and the only test that can be applied is the outbound one above plus the editorial test in item 2. This is an open question (section 7).
 

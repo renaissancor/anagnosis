@@ -2,33 +2,31 @@
 
 ## Role of Religion
 
-Religion in this framework is **not** a cultural descriptor — it is a **civilizational boundary**.
-
-The same ethnic group under different religions produces different polities with different valid successors. This is not a subtle distinction. It is the primary reason why:
+Religion is part of a polity's ideology and a strong signal of continuity or rupture. A change of religion alone never splits a polity (`polity.md` section 4). It does help explain why:
 - A Serb, a Croat, and a Bosniak are linguistically and genetically near-identical, yet belong to different civilizational spheres (Orthodox/Byzantine, Catholic/Habsburg, Muslim/Ottoman)
 - A Hindu Punjabi, a Muslim Punjabi, and a Sikh Punjabi are the same people with the same language, yet produced completely different political identities
 - Urdu and Hindi are the same spoken language — mutually intelligible — yet represent distinct civilizational identities purely through script and religious vocabulary
 
 ## Religion as Polity Identity
 
-Religion is part of a polity's fixed **ideology** (see `ideology.md`). It does not change mid-polity without marking the end of that polity.
+Religion is part of a polity's **ideology** (see `ideology.md`). A change of state religion is recorded in the data and on inheritance claims. It does not end the polity by itself.
 
 ### The Zoroastrian/Islamic Break in Persia
 
 This is the clearest example. The transition from Sassanid to Abbasid rule on the Iranian plateau is:
-- Type C in territorial terms (same land)
+- The same land under a new ruling people
 - But also an **ideological rupture** — Zoroastrianism to Sunni Islam
 
 Then the Safavid revolution (1501) introduced a *second* rupture on the same land:
-- Same Persian ethnicity as pre-Islamic Persia (Type A ethnic)
-- Same Iranian territory (Type A territorial)
+- Same Persian ethnicity as pre-Islamic Persia
+- Same Iranian territory
 - But Shia Islam vs Sunni Islam — a **civilizational wall** between Safavid Iran and its Sunni Timurid predecessors
 
 This is why modern Iran is not simply "Persian." It is specifically **Shia Persian** — and that distinction is the foundation of its entire geopolitical identity vis-à-vis Sunni Arab/Turkic neighbors.
 
 ## The Religion Tree
 
-Religions are organized as a tree (see `religions.json`), where:
+Religions are organized as a tree (see `parent_id` in `csvs/religion.csv`), where:
 - Distance between two religions on the tree = ideological distance
 - Same leaf node = strong continuity
 - Same branch (e.g., both Sunni) = moderate continuity
@@ -84,17 +82,4 @@ Constantine's conversion (312) began as policy; Theodosius I's edict (380) made 
 
 ## Religion and Succession Logic
 
-When evaluating succession type, religion acts as a modifier:
-
-| Scenario | Base Type | Religion Modifier |
-|---|---|---|
-| Same ethnicity, same territory, same religion | A | None — clean Orthodox succession |
-| Same ethnicity, same territory, different religion | Would be A | Degrades to near-C; the ideological rupture is significant |
-| Different ethnicity, same territory, same religion | C | Softened — shared religion creates civilizational continuity |
-| Different ethnicity, different territory, same religion | D | Possibly upgraded — religious kinship can justify succession claims |
-
-Example: The Crusader States (Catholic Latin rulers in the Levant) have:
-- Different ethnicity from Byzantium (Latin vs Greek)
-- Overlapping territory (Levant)
-- Different religion (Catholic vs Orthodox)
-→ They are **not** legitimate successors to Byzantine rule in the Levant, despite sharing Christian faith — the Orthodox/Catholic split is a civilizational boundary, not a mere doctrinal difference.
+Religion does not decide succession. It appears as one evidence signal (`same_religion`) on computed candidates and as one axis (`state_religion`) on curated claims, where an heir can affirm or repudiate it. Each claim is decided individually (`graph.md`).

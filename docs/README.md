@@ -42,7 +42,6 @@ Guides for editing the authored layer and regenerating everything downstream.
 |-----|---------|
 | [csv_workflow.md](migration/csv_workflow.md) | Editing CSVs / panels, running the validator, regenerating `derived/` and `data/` |
 | [merge_map.md](migration/merge_map.md) | Panel label → entity ID resolution (consolidated; iran/china/italy gold-standard) |
-| [missing_polities.md](migration/missing_polities.md) | Polities to be added |
 
 ## Frontend (`frontend/`)
 
@@ -54,5 +53,3 @@ Guides for editing the authored layer and regenerating everything downstream.
 
 | Directory | Purpose |
 |-----------|---------|
-| [tree/](tree/) | Taxonomy tree structure dumps (language, religion, ethnicity, territories) |
-| [todo/](todo/) | Per-entity work tracking |

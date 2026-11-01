@@ -54,7 +54,7 @@ old_chinese,Old Chinese,old_classical_group,,
 | `description` | text | no | Free-text note. Only 4 rows use it. Empty means nothing to add. No commas (use semicolons). |
 | `founded` | text | no | Intended as the date a language or stage emerged. **Empty on all 695 rows.** No format has ever been used or decided. Do not fill it until the owner decides (section 7). Empty means not recorded. |
 
-There is no ISO 639-3 or Glottocode column. The retired plan in `docs/todo/language.md` proposed JSON fields (`iso6393`, `glottocode`, `macro_area`, `status`) that were never adopted in the CSV. The DDL in `docs/model/erd_nofk.sql` has `depth` and `status` columns, but `depth` is computed in `scripts/load_csvs.sql` and `status` is never loaded.
+There is no ISO 639-3 or Glottocode column. A retired plan proposed JSON fields (`iso6393`, `glottocode`, `macro_area`, `status`) that were never adopted in the CSV. The DDL in `docs/model/erd_nofk.sql` has `depth` and `status` columns, but `depth` is computed in `scripts/load_csvs.sql` and `status` is never loaded.
 
 **The `()` name prefix.** 27 rows have a name that starts with `()`, for example `()Ainu`, `()Sumerian`, `()Esperanto`, `()Classical Arabic`. They are mostly isolates, extinct languages, constructed languages and creoles. Nothing documents the meaning, and no script reads it. Treat it as legacy markup; do not copy it onto new rows; its fate is an open question.
 
