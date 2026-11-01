@@ -75,3 +75,19 @@ Licences change. Seshat moved from CC BY-NC-SA to CC BY-SA, and its Equinox reco
 5. Run `npm test`.
 
 Citing a source does not grant permission. The licence does; the citation is a condition of it.
+
+## How to validate
+
+`npm run validate` checks the licence allowlist and that each `fact_source` row names a real table, row, field and source. Done means it passes.
+
+## Current state (measured 2026-11-01)
+
+`source.csv` has 1 row (`wikidata`) and `fact_source.csv` has 290.
+
+## Open questions
+
+- A monograph or article cannot be registered today (`graph.md` Q3).
+
+## Decision log
+
+None recorded yet.

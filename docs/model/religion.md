@@ -83,3 +83,19 @@ Constantine's conversion (312) began as policy; Theodosius I's edict (380) made 
 ## Religion and Succession Logic
 
 Religion does not decide succession. It appears as one evidence signal (`same_religion`) on computed candidates and as one axis (`state_religion`) on curated claims, where an heir can affirm or repudiate it. Each claim is decided individually (`graph.md`).
+
+## How to validate
+
+`npm run validate` checks headers, keys, and that every `parent_id` resolves with no cycles. Done means it passes. Hierarchy lives only in `parent_id`.
+
+## Current state (measured 2026-11-01)
+
+`religion.csv` has 264 rows. 38 polities have no `id_ruling_religion`.
+
+## Open questions
+
+None recorded yet.
+
+## Decision log
+
+- 2026-11-01: this file now follows `polity.md`: a change of religion alone never splits a polity.

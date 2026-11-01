@@ -1,12 +1,6 @@
 # Inheritance — the curated succession layer
 
-> **Status: LIVE (step 1 of the migration).** Tables exist, are validated, and
-> are seeded with the Ottoman worked example. The legacy derived layer
-> (`derived/polity_succession.csv`, documented in [`succession.md`](./succession.md))
-> remains in place as **evidence** until this layer is populated enough to
-> replace it. Design rationale and stress tests live in
-> [`docs/brainstorm/succession/`](../brainstorm/succession/README.md) — this
-> page is the operational contract.
+> **Status: live, not yet served.** This file is the table contract for the four inheritance tables. [`graph.md`](./graph.md) owns the boundary between claims and computed candidates, and the open questions. Design rationale is archived in [`docs/brainstorm/succession/`](../brainstorm/succession/README.md).
 
 ## The one-sentence model
 
@@ -73,7 +67,7 @@ axis, and that repudiation is itself historical data.
 
 **Material overlap is derived, not stored here:** territory ←
 `polity_territory`, dynasty ← `polity_dynasty`, ethnicity/language/religion ←
-`polity.id_ruling_*`, plus the legacy evidence vector in
+`polity.id_ruling_*`, plus the evidence columns in
 `derived/polity_succession.csv`. This table stores curated *identity claims* — store
 an axis row only where there is a stance or a claim, not to restate overlap.
 
@@ -114,7 +108,7 @@ csvs/inheritance_*.csv + csvs/axis_terminus.csv
   → scripts/validate.js                     (FKs + full enum vocabulary)
 ```
 
-The old `code/generate-successions.js` is a **candidate suggester**: it writes
+`code/generate-successions.js` is a **candidate suggester**: it writes
 proposed edges + evidence to `derived/polity_succession.csv`; a
 curator turns the real ones into claims here.
 
@@ -136,3 +130,36 @@ curator turns the real ones into claims here.
 3. ⬜ Curate claims from `derived/polity_succession.csv` + panels, region by region
 4. ⬜ Frontend view over `data/inheritance/`
 5. ⬜ Stop serving candidates as `successors` / `predecessors` **last**, when consumers are migrated (candidates stay in `derived/` as evidence)
+
+## How to validate
+
+`npm run validate` checks headers, enum values, foreign keys, and the `provenance` format (`wp:`, `wd:`, `panel:` or `ref:`). (heir, source) uniqueness is decided but not yet checked (`docs/TODO.md`). Done means the validator passes and the project owner has approved the claim.
+
+## Current state (measured 2026-11-01)
+
+| Table | Rows |
+|---|---:|
+| `inheritance_claim.csv` | 9 |
+| `inheritance_axis.csv` | 29 |
+| `inheritance_recognition.csv` | 6 |
+| `axis_terminus.csv` | 1 |
+
+## Open column questions
+
+Moved here from `graph.md`. `graph.md` section 6 holds the ranked questions.
+
+- `id`: format.
+- `source_type`: `civilization` and `stateless_people` have no table.
+- `source_temporal_status`: how it applies to a source that outlives the heir's founding.
+- `topology`: whether it belongs on the claim. `07-polity-split.md` also uses `fission`, `fusion` and `continuation` as mechanisms.
+- `temporal_gap_years`: authored or computed, and what a negative value means.
+- Mode (`continuity`, `conquest`, `compact`, `claim`): stored or implied.
+- `strength`: the scale.
+- `diplomatic_personality`: provisional.
+- `inheritance_axis`: identity axes only, or one uniform list; whether `territory` rows are allowed for contested claims.
+- `observer_type`: values, and which observers fill the set.
+
+## Decision log
+
+- 2026-11-01: this file owns the table definitions; `graph.md` keeps the candidate and claim boundary.
+- 2026-11-01: each succession is decided one claim at a time; computed candidates are evidence only.

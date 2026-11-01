@@ -162,67 +162,9 @@ Civilization is not a node (see `civilization.md`). `source.csv` and `fact_sourc
 
 The dynastic rule has an exception: a transition that was more than dynastic, meaning conquest, Mandate transfer or a different ruling people, may be an edge (`02-type-system.md`). 148 candidate rows connect polities sharing a `dynasty_id`, and 70 of those also share `government`. That is a review list, not a verdict.
 
-### `inheritance_claim.csv`
+### Tables
 
-One row per (heir, source): DECIDED (`03-data-model.md`, `08-naming.md`).
-
-| Column | Values | Status |
-|---|---|---|
-| `id` | | DECIDED that it exists (`03`). Format OPEN |
-| `heir_polity_id` | → `polity.id` | DECIDED (`08`) |
-| `source_id` | → the table named by `source_type` | DECIDED (`08`) |
-| `source_type` | `polity`, `ethnicity`, `religion`, `civilization`, `stateless_people` | DECIDED that sources cross entity types (`03`, `04`). OPEN for `civilization`, which has no table, and `stateless_people`, which has none either |
-| `source_temporal_status` | `prior`, `ongoing`, `abstract` | DECIDED (`06` A, `08`). OPEN: how it applies to a source outliving the heir's founding |
-| `topology` | `continuation`, `fission`, `fusion`, `secession`, `absorption` | DECIDED (`02`). Placement on the claim is OPEN (`03`, "current bet") |
-| `mechanism` | `transformation`, `conquest`, `partition`, `collapse`, `unification`, `personal_union`, `secession`, `dissolution`, `revival`, `translatio`, `title_transfer`, `colonial_independence` | DECIDED (`02`). OPEN: `07` uses `fission`, `fusion` and `continuation` as mechanisms; `02` has them as topologies |
-| `legitimacy_mode` | `organic`, `claimed`, `fictive` | DECIDED (`03`) |
-| `exclusivity` | `exclusive`, `shared` | DECIDED (`06` D) |
-| `temporal_gap_years` | Integer | Listed in `03`. OPEN whether authored or computed, and what a negative value means |
-| `note` | Prose | DECIDED (`03`) |
-
-`02` also defines Mode: `continuity`, `conquest`, `compact`, `claim`. `03` has no Mode column, and `02` says each mechanism is a Topology × Mode cell without giving the mapping. Whether Mode is stored or implied is OPEN.
-
-### `inheritance_axis.csv`
-
-| Column | Values | Status |
-|---|---|---|
-| `claim_id` | → `inheritance_claim.id` | DECIDED (`03`) |
-| `axis` | See below | DECIDED (`09`), with one provisional value |
-| `stance` | `affirmed`, `repudiated`, `transformed`, `neutral`; nullable | DECIDED (`04`, `09`) |
-| `strength` | Graded, not boolean | DECIDED that it is graded (`03`, `05` §4). Scale OPEN (deferred) |
-
-| Axis | Overlap evidence (computed) | Stance | Recognition | Status |
-|---|---|:---:|:---:|---|
-| `territory` | `polity_territory` | No | Yes | DECIDED (`09`) |
-| `ruling_ethnicity` | `polity.id_ruling_ethnicity` | Yes | Rare | DECIDED |
-| `state_religion` | `polity.id_ruling_religion` | Yes | Rare | DECIDED |
-| `court_language` | `polity.id_ruling_language` | Yes | No | DECIDED |
-| `dynasty` | `polity_dynasty` | Yes | No | DECIDED |
-| `administrative_apparatus` | Partial | Yes | Rare | DECIDED |
-| `legal_tradition` | Partial | Yes | Rare | DECIDED |
-| `name_symbols` | None | Yes | Rare | DECIDED |
-| `political_legitimacy` | None | Yes | Central | DECIDED |
-| `title` | None | Yes | Central | DECIDED |
-| `diplomatic_personality` | None | Yes | Yes | OPEN (provisional) |
-
-Cut: capital, currency, military, grievance (`09`). Overlap is computed, never authored: DECIDED. `population` is absent from the final list, although `06` left it parked.
-
-**Conflict, OPEN.** `03` and `06` say this table holds identity axes only and that material axes are never stored. `09` is later and says one uniform list, while marking that model provisional. It also folds irredentism into a `territory` claim, which needs somewhere to live. `03` further uses `affirmed` on territory, while `09` gives territory no stance.
-
-### `inheritance_recognition.csv`
-
-| Column | Values | Status |
-|---|---|---|
-| `claim_id` | → `inheritance_claim.id` | DECIDED (`03`) |
-| `observer_id` | A real polity or institution, never a model's opinion | DECIDED (`05` §5) |
-| `observer_type` | | DECIDED (`05` §5). Missing from the `03` sketch; values OPEN |
-| `degree` | `recognized`, `partial`, `rejected` | DECIDED (`03`) |
-
-Which observers fill the set is OPEN (deferred). Agents may research recognition, with a human curating the result. They may not act as observers. Any perspective panel is a separate, labelled derived layer (`05` §5).
-
-### `axis_terminus.csv`
-
-Columns `polity_id` and `axis`: DECIDED (`03`, `06` B, `08`). Example: Carthage's territory passes on while its identity axes terminate.
+[`inheritance.md`](./inheritance.md) owns the four table definitions and their open column questions. This file owns the boundary between candidates and claims.
 
 ### Ottoman worked example
 
@@ -421,9 +363,6 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q12. Should `source_id` be renamed?** `08` decided the name, but it collides with `fact_source.source_id`.
 *Recommendation:* keep the decision, and always qualify the name in docs and API. Reopen it only if joins become error-prone.
-
-**Q13. Is this file kept once `inheritance.md` exists?**
-*Recommendation:* keep this as the edge-layer contract, move table definitions to `inheritance.md`, and point `succession.md` at both when it is replaced.
 
 **Q14. Deferred or provisional items.** The strength scale and any decay along translatio chains (`05` §4); the observer set (`05` §5); `diplomatic_personality` and the uniform model's status (`09`).
 *Recommendation:* decide after the pilot gives data to calibrate against.

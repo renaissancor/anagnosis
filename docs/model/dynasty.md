@@ -157,3 +157,19 @@ Holy Roman Empire (1438–1806)
 ```
 
 These chains show how a single family's power network shaped political geography across centuries and continents.
+
+## How to validate
+
+`npm run validate` checks headers, keys and foreign keys. Done means it passes with no new warnings.
+
+## Current state (measured 2026-11-01)
+
+`dynasty.csv` has 192 rows. 15 `dynasty.ethnicity` values do not resolve to `ethnicity.id`, for example `berber` and `turkic`.
+
+## Open questions
+
+- Should the 15 unresolved values become valid ids, or point at existing ones?
+
+## Decision log
+
+None recorded yet.

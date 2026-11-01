@@ -229,3 +229,7 @@ A small, dependency-free check, `scripts/check-json.js`, appended to `make:all` 
 - Exit non-zero on any failure, with the file and field named, so a generator change that breaks section 5 fails the build rather than a page.
 
 A hand-rolled check keeps the "no new dependency" stance (the only runtime dependency today is `express`); a JSON Schema validator such as `ajv` would also work if a dependency is acceptable. Neither exists yet.
+
+## 8. How to validate
+
+`npm test` proves the build, not this contract; section 7 is PROPOSED. After a route change, request the route on the running server and compare it with section 2.

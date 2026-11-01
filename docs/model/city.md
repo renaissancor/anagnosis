@@ -199,3 +199,19 @@ When seeding, **start from the references and back-fill cities**, not the other 
 A historical atlas is a **map**, not a constitutional registry. Place-identity matches the artifact. It also keeps the schema honest about what is persistent (the site) versus what is time-bounded (the name, the rulers, the polity). Trying to encode "is this the same polis?" automatically is where over-engineering starts; trying to encode "is this the same dot on the map?" is achievable.
 
 The 5% of genuinely ambiguous cases (Carthage, drifting cities, contested mergers) live in the `note` field. That is by design.
+
+## How to validate
+
+`npm run validate` checks headers, keys and foreign keys for all three city tables. Done means it passes and each new row has an inbound reference (see Scope Discipline).
+
+## Current state (measured 2026-11-01)
+
+`city.csv` 20 rows, `city_name.csv` 26, `city_succession.csv` 7.
+
+## Open questions
+
+- `city_succession.csv` has no consumer beyond the database (`graph.md` Q11).
+
+## Decision log
+
+None recorded yet.

@@ -368,3 +368,7 @@ Q1052095 names a culture and now identifies a people row, which is close but not
 - `czech_slovakia`'s `federalization` cell now links to `czechoslovakia`.
 - `STRIP_LIST` also holds 5 ids that the labels of moved cells would otherwise generate: `phoenician_city_states`, `ancestral_puebloans`, `chinese_southern_dynasties`, `kura_araxes`, `jiroft`.
 - Until step 11, ethnicity-linked cells render as plain text with the `eth-indigenous` colour.
+
+## How to validate
+
+`npm run validate` checks `panels/` references. Done means it passes and the row meets the classes in section 3.

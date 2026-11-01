@@ -107,3 +107,19 @@ Hittite (Anatolian IE) → Achaemenid (Persian/Iranian IE)
 ```
 
 Some transitions keep the land under a new ruling people, and others keep both. Modern Turkish identity on Anatolian land combines Turkic continuity from the Seljuks and Ottomans with an older territorial sequence. Whether any transition is a succession is decided claim by claim (`graph.md`).
+
+## How to validate
+
+`npm run validate` checks headers, keys, and that every `parent_id` resolves with no cycles. Done means it passes. Hierarchy lives only in `parent_id`.
+
+## Current state (measured 2026-11-01)
+
+`ethnicity.csv` has 276 rows.
+
+## Open questions
+
+- `punt_people` has no inbound reference, and `punt` uses the placeholder `cushitic_cluster` (`docs/TODO.md`).
+
+## Decision log
+
+None recorded yet.

@@ -84,3 +84,11 @@ kingdom_of_england,tudor,1485,1603
 | `csvs/dynasty.csv` | Parent entity (the ruling dynasty) |
 | `derived/polity_succession.csv` | Succession edges (computed) — dynasties add a genealogical dimension |
 | `csvs/polity_territory.csv` | Analogous junction: polity × territory × time |
+
+## Open questions
+
+- `punt,aksumite,-2500,-1069` looks wrong (`non_polity.md` section 5).
+
+## Decision log
+
+None recorded yet.

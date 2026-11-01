@@ -97,3 +97,7 @@ The **government form** is also part of ideology, not policy.
 A caliphate is not merely a government style — it is a claim to be the legitimate ruler of all Muslims globally. An empire that claims the caliphate and then abandons it has ended. This is why the end of the Ottoman Caliphate in 1924 is considered the end of the Ottoman polity even though the sultanate had been abolished in 1922 — the two were the polity's twin ideological pillars.
 
 Similarly, the Chinese Imperial Bureaucracy (Son of Heaven, Confucian exam system, mandate of heaven) was not a governing choice — it was the definition of what it meant to rule China. Every non-Han dynasty that wanted to rule China (Jurchen Jin, Mongol Yuan, Manchu Qing) had to either adopt this system (thereby legitimizing themselves) or rule as a foreign occupier.
+
+## Status
+
+This is a reference page. Ideology has no table of its own: it is `government` plus `id_ruling_religion` on `polity.csv`, so `government.md`, `religion.md` and `polity.md` hold the contracts.
