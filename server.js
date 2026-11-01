@@ -186,8 +186,8 @@ app.get('/api/panel', (req, res) => {
 
 app.get('/api/panel/:region/:id', (req, res) => {
   const panelPath = `${req.params.region}/${req.params.id}`;
-  const filePath = path.join(HISTORY_DIR, panelPath + '.json');
-  if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'Panel not found' });
+  const filePath = path.resolve(HISTORY_DIR, panelPath + '.json');
+  if (!filePath.startsWith(HISTORY_DIR + path.sep) || !fs.existsSync(filePath)) return res.status(404).json({ error: 'Panel not found' });
   res.sendFile(filePath);
 });
 
@@ -209,7 +209,7 @@ app.get('/api/db', (req, res) => res.json(db));
 
 // ── Start ────────────────────────────────────────────────────
 
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1', () => {
   console.log(`Anagnosis → http://localhost:${PORT}`);
   console.log(`  Polities:    ${db.polities?.length || 0}`);
   console.log(`  Successions: ${db.successions?.length || 0}`);
