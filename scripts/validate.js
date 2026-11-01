@@ -418,6 +418,23 @@ for (const [k, list] of Object.entries(plaus)) reportLines.push(`## ${k} (${list
 fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'data', 'plausibility.md'), reportLines.join('\n'));
 
+// ── 12. Documents and roles ──────────────────────────────
+
+section('Documents and roles');
+const docIndex = fs.readFileSync(path.join(ROOT, 'docs', 'README.md'), 'utf8');
+const archDoc = fs.readFileSync(path.join(ROOT, 'docs', 'ARCHITECTURE.md'), 'utf8');
+for (const dir of ['', 'model', 'migration', 'frontend']) {
+  for (const f of fs.readdirSync(path.join(ROOT, 'docs', dir))) {
+    const rel = path.posix.join(dir, f);
+    if (f.endsWith('.md') && rel !== 'README.md' && !docIndex.includes(`(${rel})`)) err('docs', `docs/${rel} is not in docs/README.md`);
+  }
+}
+for (const f of fs.readdirSync(path.join(ROOT, '.claude', 'agents'))) {
+  const role = f.replace(/\.md$/, '');
+  if (!archDoc.includes(role.startsWith('source-') ? 'source-*' : `\`${role}\``)) err('docs', `role ${role} is not in docs/ARCHITECTURE.md`);
+}
+if (!groups.size) ok('every doc indexed, every role named'); flush();
+
 // ── Summary ───────────────────────────────────────────────────────────────────
 
 console.log('\n' + '─'.repeat(59));
