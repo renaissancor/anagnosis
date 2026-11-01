@@ -19,3 +19,6 @@
 .span:hover .span-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
 .span-name, .span-dates { background: var(--paper); width: fit-content; max-width: calc(100% - 12px); }
 .span-dates { display: block; max-width: 100%; color: var(--ink-soft); font: 400 0.75rem/1.25 var(--sans); }
+
+/* A span that only repeats the polity's lifespan claims less, so it is drawn empty. */
+.span.whole .span-bar { background: none; border: 1px solid var(--ink-soft); }

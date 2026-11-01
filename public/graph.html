@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Graph — Anagnosis</title>
+  <title>Polities over time — Anagnosis</title>
   <link rel="icon" href="data:," />
   <link rel="stylesheet" href="/shared/reading-room.css" />
   <link rel="stylesheet" href="/shared/graph.css" />
@@ -12,8 +12,8 @@
 <div id="site-header"></div>
 <main id="main" tabindex="-1">
   <div class="column graph-intro">
-    <h1>Graph of succession</h1>
-    <p class="lede">Polities placed by the year they began. Ink lines are decided claims. Pencil lines are computed overlaps, which you can add below; nobody has judged them.</p>
+    <h1>Polities over time</h1>
+    <p class="lede">Polities placed by the year they began, joined by the claims a person has decided. You can add computed overlaps below; nobody has judged those.</p>
     <div class="graph-controls">
       <label class="filter">Choose a polity
         <input type="search" id="polity-choice" list="polity-names" autocomplete="off" />
@@ -23,9 +23,15 @@
         <legend>Computed evidence</legend>
         <label><input type="radio" name="evidence" value="none" checked /> Hidden</label>
         <label><input type="radio" name="evidence" value="chosen" /> For the chosen polity</label>
-        <label><input type="radio" name="evidence" value="all" /> <span id="all-label">All overlaps</span></label>
+        <label><input type="radio" name="evidence" value="all" /> All computed overlaps</label>
       </fieldset>
     </div>
+    <ul class="graph-legend" aria-label="Key">
+      <li><svg width="30" height="10" aria-hidden="true"><line class="edge-decided" x1="0" y1="5" x2="30" y2="5" /></svg>Decided claim, pointing to the heir</li>
+      <li><svg width="30" height="10" aria-hidden="true"><line class="edge-computed" x1="0" y1="5" x2="30" y2="5" /></svg>Computed overlap, unjudged</li>
+      <li><span class="node decided"><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" /></svg></span>Polity in a decided claim</li>
+      <li><span class="node"><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" /></svg></span>Other polity</li>
+    </ul>
     <p class="state" id="graph-status" role="status"></p>
   </div>
   <div class="graph-frame">

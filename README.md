@@ -55,7 +55,7 @@ npm start        # → http://localhost:3000
 
 **Pages:** `/` home and how to read the data · `/polity/` entries · `/graph.html` decided claims on a time axis · `/history/` regional panels · `/territory/`, `/ethnicity/`, `/language/`, `/religion/` browsers.
 
-**JSON API:** `/api/polity` · `/api/polity/:id` · `/api/succession` · `/api/panel` · `/api/territory` · `/api/dynasty` · `/api/taxonomy/:type`.
+**JSON API:** `/api/polity` · `/api/polity/:id` · `/api/polity/:id/claims` · `/api/claim` · `/api/succession` (computed candidates) · `/api/panel` · `/api/territory` · `/api/dynasty` · `/api/taxonomy/:type`.
 
 ---
 
@@ -75,4 +75,4 @@ Add a row to the relevant CSV, run `npm test && npm run make:all`, and open a PR
 
 ## License
 
-Code: ISC ([`LICENSE`](LICENSE)). Data: CC BY-SA 4.0 ([`LICENSE-DATA.md`](LICENSE-DATA.md)).
+Code: ISC ([`LICENSE`](LICENSE)). Data: CC BY-SA 4.0 ([`LICENSE-DATA.md`](LICENSE-DATA.md)). Vendored fonts and D3 keep their own licenses in `public/shared/`.

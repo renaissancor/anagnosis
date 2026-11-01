@@ -33,7 +33,7 @@ async function init() {
     <label class="filter">Choose a region
       <select id="panel-picker">${pickerHtml(panels)}</select>
     </label>
-    <p class="panel-legend measure"><span class="swatch" aria-hidden="true"></span> Tinted cells link to a polity entry. Plain cells are labels: peoples, cultures, periods, events and names with no polity entry yet. The table scrolls in both directions.</p>
+    <p class="panel-legend measure">Underlined names link to a polity entry. Plain names are labels: peoples, cultures, periods, events and names with no polity entry yet. The table scrolls in both directions.</p>
     <div id="panel-body"><p class="state">Loading…</p></div>`;
 
   const picker = document.getElementById('panel-picker');
@@ -114,12 +114,15 @@ function itemHtml(item) {
   return `<div class="cell-text">${text}${item.note ? `<span class="cell-note">${esc(item.note)}</span>` : ''}</div>`;
 }
 
+/** Panels are hand-written; only a positive whole number reaches a style attribute. */
+const whole = value => (Number.isInteger(value) && value > 0 ? value : 1);
+
 const linkedClass = item => (item.polity && polityNames.has(item.polity) ? 'linked' : '');
 
 function panelHtml(panel) {
   const eraColumn = panel.columns.find(c => c.type === 'era');
   const columns = panel.columns.filter(c => c.type !== 'era');
-  const slots = columns.reduce((sum, c) => sum + c.slots, 0);
+  const slots = columns.reduce((sum, c) => sum + whole(c.slots), 0);
   const eraOffset = eraColumn ? 1 : 0;
 
   // A row starts a new era when its era label differs from the one before.
@@ -145,8 +148,8 @@ function panelHtml(panel) {
   if (eraColumn) html += `<div class="panel-head era-head" style="grid-column:1;grid-row:1"><span class="cell-text">${esc(eraColumn.name)}</span></div>`;
   let at = 1 + eraOffset;
   for (const column of columns) {
-    html += `<div class="panel-head" style="grid-column:${at}/span ${column.slots};grid-row:1"><span class="cell-text">${esc(column.name)}</span></div>`;
-    at += column.slots;
+    html += `<div class="panel-head" style="grid-column:${at}/span ${whole(column.slots)};grid-row:1"><span class="cell-text">${esc(column.name)}</span></div>`;
+    at += whole(column.slots);
   }
 
   panel.rows.forEach((row, rowIndex) => {
@@ -154,14 +157,14 @@ function panelHtml(panel) {
     const start = eraStarts.has(rowIndex) ? 'era-start' : '';
 
     if (eraColumn && row.era?.label) {
-      html += `<div class="era-cell ${start}" style="grid-column:1;grid-row:${gridRow}/span ${row.era.rowspan || 1}"><span class="cell-text">${esc(row.era.label)}</span></div>`;
+      html += `<div class="era-cell ${start}" style="grid-column:1;grid-row:${gridRow}/span ${whole(row.era.rowspan)}"><span class="cell-text">${esc(row.era.label)}</span></div>`;
     }
 
     let slot = 0;
     for (const cell of row.cells || []) {
       while (taken[rowIndex]?.[slot]) slot++;
-      const colSpan = cell.span || 1;
-      const rowSpan = cell.rowspan || 1;
+      const colSpan = whole(cell.span);
+      const rowSpan = whole(cell.rowspan);
       const position = `grid-column:${slot + 1 + eraOffset}/span ${colSpan};grid-row:${gridRow}/span ${rowSpan}`;
       take(rowIndex, slot, rowSpan, colSpan);
       slot += colSpan;

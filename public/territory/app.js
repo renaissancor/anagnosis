@@ -87,7 +87,11 @@ function holdings(territory, polityById) {
     }
   }
   return merged
-    .map(h => ({ ...h, name: polityById.get(h.id).name, to: h.end ?? now }))
+    .map(h => {
+      const polity = polityById.get(h.id);
+      const whole = h.start === polity.start && h.end === (polity.end ?? null);
+      return { ...h, name: polity.name, to: h.end ?? now, whole };
+    })
     .sort((a, b) => a.start - b.start || a.to - b.to);
 }
 
@@ -129,7 +133,7 @@ function renderEntry(territories, polities) {
 
 function timelineShellHtml(name) {
   return `
-    <p class="lede">Each bar runs for the years a polity held this territory, earliest at the top. Select a name to open its entry. Empty stretches mean nothing has been curated for those years. If the chart is wider than the screen, it scrolls sideways.</p>
+    <p class="lede">Polities recorded on this territory, earliest at the top. A solid bar gives years curated for this territory. A hollow bar only repeats the polity's whole lifespan: it was here at some point, not necessarily for all those years. Empty stretches mean nothing has been curated. Select a name to open its entry. If the chart is wider than the screen, it scrolls sideways.</p>
     <div class="timeline-controls">
       <div class="scale-buttons" role="group" aria-label="Time scale">
         <button type="button" class="quiet-button" id="scale-in">Stretch time</button>
@@ -142,7 +146,8 @@ function timelineShellHtml(name) {
     </section>
     <div class="timeline-scroll" id="timeline-scroll" tabindex="0" role="region" aria-label="Timeline of ${esc(name)}">
       <div class="timeline" id="timeline"></div>
-    </div>`;
+    </div>
+    <section class="pencil measure" id="computed-list" hidden></section>`;
 }
 
 // ── Timeline ────────────────────────────────────────────────────────────────
@@ -180,9 +185,9 @@ function startTimeline(spans) {
     timeline.style.width = '';
     timeline.innerHTML = axisHtml(from, to, y, scale) +
       '<svg class="timeline-lines" aria-hidden="true"></svg>' +
-      spans.map((s, i) => `<a class="span" data-i="${i}" href="/polity/?id=${encodeURIComponent(s.id)}"
+      spans.map((s, i) => `<a class="span${s.whole ? ' whole' : ''}" data-i="${i}" href="/polity/?id=${encodeURIComponent(s.id)}"
         style="top:${y(s.start)}px;width:${laneWidth}px"
-        title="${esc(s.name)}, ${esc(formatDateRange(s.start, s.end))}">
+        title="${esc(s.name)}, ${esc(formatDateRange(s.start, s.end))}${s.whole ? ', the polity\'s whole lifespan' : ''}">
         <span class="span-bar" style="height:${Math.max((s.to - s.start) * scale, MIN_BAR)}px"></span>
         <span class="span-name">${esc(s.name)}<span class="span-dates">${esc(formatDateRange(s.start, s.end))}</span></span>
       </a>`).join('');
@@ -239,9 +244,12 @@ function startTimeline(spans) {
 
   const status = document.getElementById('computed-status');
   const hiddenText = status.textContent;
+  const list = document.getElementById('computed-list');
+  const nameOf = id => spans.find(s => s.id === id).name;
   document.getElementById('show-computed').addEventListener('change', async e => {
     if (!e.target.checked) {
       overlaps = null;
+      list.hidden = true;
       draw();
       status.textContent = hiddenText;
       return;
@@ -256,7 +264,9 @@ function startTimeline(spans) {
       return;
     }
     draw();
-    status.textContent = `Showing ${overlaps.length} computed ${overlaps.length === 1 ? 'overlap' : 'overlaps'} as dotted pencil lines. A script drew them and nobody has judged them. They include rivals and contemporaries, the line order is not a direction, and none states that succession happened.`;
+    status.textContent = `Showing ${overlaps.length} computed ${overlaps.length === 1 ? 'overlap' : 'overlaps'} as dotted pencil lines. A script drew them and nobody has judged them. They include rivals and contemporaries, a line does not mean one led to the other, and none states that succession happened.`;
+    list.innerHTML = overlaps.length ? `<h2>Computed overlaps on this territory</h2><ul>${overlaps.map(o => `<li>${esc(nameOf(o.from))} and ${esc(nameOf(o.to))}</li>`).join('')}</ul>` : '';
+    list.hidden = !overlaps.length;
   });
 
   draw();

@@ -1,6 +1,6 @@
 # Inheritance — the curated succession layer
 
-> **Status: live, not yet served.** This file is the table contract for the four inheritance tables. [`graph.md`](./graph.md) owns the boundary between claims and computed candidates, and the open questions. Design rationale is archived in [`docs/brainstorm/succession/`](../brainstorm/succession/README.md).
+> **Status: live, served by `/api/claim` and `/api/polity/:id/claims`.** This file is the table contract for the four inheritance tables. [`graph.md`](./graph.md) owns the boundary between claims and computed candidates, and the open questions. Design rationale is archived in [`docs/brainstorm/succession/`](../brainstorm/succession/README.md).
 
 ## The one-sentence model
 
@@ -130,8 +130,8 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 3. ⬜ Owner answers the blocking questions in `graph.md` section 6
 4. ⬜ Clean the generator (`graph.md` Q8): fix or remove `related_ethnicity`, delete the redundant loop, drop `type` from both DDL files, and review the `derived/` diff
 5. ⬜ Pilot by hand: Ottoman, `ottoman_empire → republic_of_turkey`, Russian chain, British Raj to India, Mexico, ROC and PRC, Gran Colombia, Carthage, three caliphs, Han revival. Revise the schema if the pilot breaks it, before any bulk work
-6. ⬜ Add the claim route as an addition, updating `api.md` in the same commit
-7. ⬜ Frontend view over claims, with candidates as labelled evidence
+6. ✅ Add the claim route as an addition, updating `api.md` in the same commit
+7. ✅ Frontend view over claims, with candidates as labelled evidence
 8. ⬜ Curate further by query need, walking references first
 9. ⬜ Stop serving candidates as `successors` / `predecessors` **last**, following the `api.md` breaking-change rule (candidates stay in `derived/` as evidence)
 

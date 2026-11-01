@@ -5,7 +5,7 @@
  */
 const NAV = [
   ['/polity/', 'Polities'], ['/territory/', 'Territories'], ['/history/', 'History'],
-  ['/graph.html', 'Graph'], ['/religion/', 'Religion'], ['/language/', 'Language'],
+  ['/graph.html', 'Graph'], ['/religion/', 'Religions'], ['/language/', 'Languages'],
   ['/ethnicity/', 'Peoples'],
 ];
 
@@ -75,6 +75,15 @@ function formatYear(y) {
 function formatDateRange(start, end) {
   if (start === null || start === undefined) return 'Dates not recorded';
   return `${formatYear(start)} – ${end === null || end === undefined ? 'present' : formatYear(end)}`;
+}
+
+/** A claim's source links to an entry only when it is a polity. */
+function claimPartyHtml(id, name, type = 'polity') {
+  return type === 'polity' ? `<a href="/polity/?id=${encodeURIComponent(id)}">${esc(name)}</a>` : esc(humanize(name));
+}
+
+function claimSentenceHtml(claim) {
+  return `${claimPartyHtml(claim.heir_polity_id, claim.heir_name)} inherits from ${claimPartyHtml(claim.source_id, claim.source_name, claim.source_type)}`;
 }
 
 /** Turns a provenance receipt into a link where its prefix is known. */

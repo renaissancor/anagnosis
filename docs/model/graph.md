@@ -241,9 +241,9 @@ Two gaps:
 
 ### Frontend JSON
 
-[`api.md`](./api.md) is the contract for what is served today, and its section 5 governs changes. Nothing below alters that contract yet. The shape is PROPOSED.
+[`api.md`](./api.md) is the contract for what is served today, and its section 5 governs changes. Claims are now served as `/api/claim` and `/api/polity/:id/claims` (`api.md` 2.4a), without the `kind`, citation or evidence fields below. The rest of this section is PROPOSED.
 
-Candidates are served at `/api/succession` (`server.js:85`, `api.md` 2.4), and on `/api/polity/:id` as `successors` and `predecessors` (`server.js:58-79`, `api.md` 2.2). Those two names imply a judgment the data does not contain, but pages read them, so renaming or removing them is breaking.
+Candidates are served at `/api/succession` (`api.md` 2.4), and on `/api/polity/:id` as `successors` and `predecessors` (`api.md` 2.2). Those two names imply a judgment the data does not contain, but pages read them, so renaming or removing them is breaking.
 
 This section also answers the A/B/C/D question in `api.md` section 6: the matrix is not built, and `02-type-system.md` rules out extending it. It does not return in the redesign. The frontend must not rely on it.
 

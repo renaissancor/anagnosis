@@ -16,7 +16,7 @@ Hand-curated history panels are **not** here; they live in `../panels/`.
 | `territory/<id>.json` | Territory | `csvs/territory.csv` + `polity_territory.csv` | `loadDir` |
 | `dynasty/<id>.json` | Dynasty | `csvs/dynasty.csv` + `polity_dynasty.csv` | `loadDir` |
 | `government/<id>.json` | Government form | `csvs/government.csv` | `loadDir` |
-| `inheritance/claims.json`, `terminus.json` | Curated claims | `csvs/inheritance_*.csv` + `axis_terminus.csv` | not loaded yet |
+| `inheritance/claims.json`, `terminus.json` | Curated claims | `csvs/inheritance_*.csv` + `axis_terminus.csv` | `db.inheritanceClaims`, `db.inheritanceTermini` |
 | `plausibility.md` | Validator report | written by `scripts/validate.js` | not loaded |
 | `ethnicity/` (tree) | Ethnicity | `csvs/ethnicity.csv` | `loadTree` |
 | `language/` (tree) | Language | `csvs/language.csv` | `loadTree` |

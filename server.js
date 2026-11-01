@@ -11,7 +11,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/data', express.static(path.join(__dirname, 'data')));
 
 // ── Build indexes ────────────────────────────────────────────
-const polityById = {};
+// Null-prototype lookups, so an id like `constructor` is simply not found.
+const polityById = Object.create(null);
 (db.polities || []).forEach(r => { polityById[r.id] = r; });
 
 const succByFrom = {};
@@ -86,7 +87,7 @@ app.get('/api/polity/:id', (req, res) => {
 const withNames = c => ({
   ...c,
   heir_name: polityById[c.heir_polity_id]?.name || c.heir_polity_id,
-  source_name: polityById[c.source_id]?.name || c.source_id,
+  source_name: (c.source_type === 'polity' && polityById[c.source_id]?.name) || c.source_id,
   recognition: (c.recognition || []).map(r => ({
     ...r,
     observer_name: polityById[r.observer_id]?.name || r.observer_id,
@@ -135,14 +136,14 @@ app.get('/api/taxonomy/:type', (req, res) => {
     language: db.languages,
     religion: db.religions,
   };
-  const data = types[req.params.type];
+  const data = Object.hasOwn(types, req.params.type) ? types[req.params.type] : null;
   if (!data) return res.status(404).json({ error: 'Unknown taxonomy type' });
   res.json(data);
 });
 
 // ── API: Government ──────────────────────────────────────────
 
-const govById = {};
+const govById = Object.create(null);
 (db.governments || []).forEach(g => { govById[g.id] = g; });
 
 app.get('/api/government', (req, res) => {
@@ -163,7 +164,7 @@ app.get('/api/government/:id', (req, res) => {
 
 // ── API: Dynasty ─────────────────────────────────────────────
 
-const dynastyById = {};
+const dynastyById = Object.create(null);
 (db.dynasties || []).forEach(d => { dynastyById[d.id] = d; });
 
 app.get('/api/dynasty', (req, res) => {
@@ -235,6 +236,13 @@ app.get('/api/figure', (req, res) => {
 // ── API: Full DB (backward compat, will deprecate) ──────────
 
 app.get('/api/db', (req, res) => res.json(db));
+
+// ── Not found ────────────────────────────────────────────────
+
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api/')) return next();
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
 
 // ── Start ────────────────────────────────────────────────────
 

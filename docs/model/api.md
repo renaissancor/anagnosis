@@ -15,7 +15,7 @@ Layer 4 reads **only** layer 3, and only through the routes in section 2.
 
 ## 2. Routes
 
-All routes are `GET`, return `application/json`, and are read-only. Errors are always `{"error": "<message>"}`. There is no auth, pagination, or query-string handling. Unknown `/api/*` paths fall through to Express's default HTML 404 (not JSON).
+All routes are `GET`, return `application/json`, and are read-only. Errors are always `{"error": "<message>"}`. A non-API path that does not exist gets `public/404.html`. There is no auth, pagination, or query-string handling. Unknown `/api/*` paths fall through to Express's default HTML 404 (not JSON).
 
 Nullability convention used below: `?` means the key can be absent (generators only write the key when the CSV cell is non-empty); `| null` means the key is present with value `null`.
 
@@ -48,7 +48,7 @@ Note `government` duplicates `ideology.government`. The list **omits** `policies
 
 ### 2.2 `GET /api/polity/:id`: full detail
 
-Source: `data/polity/<id>.json` plus computed `successors` and `predecessors` from `succession/all.json`. 404 `{"error":"Not found"}` for an unknown id. About 7 KB for large polities.
+Source: `data/polity/<id>.json` plus computed `successors` and `predecessors` from `succession/all.json`. 404 `{"error":"Not found"}` for an unknown id. Up to about 15 KB.
 
 Fields of the list route, **except** that `government` is not hoisted (only `ideology.government`), plus:
 
@@ -82,12 +82,12 @@ Consumer: `public/polity/app.js` (`/polity/?id=<id>`), which shows the edges in 
 
 ### 2.4 `GET /api/succession`
 
-Flat array of directed edges (3743, about 1.3 MB, the biggest payload). Source: `data/succession/all.json`.
+Flat array of directed edges (3743, about 1 MB, the biggest payload). Source: `data/succession/all.json`.
 
 | field | type | notes |
 |---|---|---|
 | `from`, `to` | string | polity ids |
-| `territorial_direction` | `"same"\|"expansion"\|"contraction"\|"displacement"\|"unknown"` | counts: 1316 / 818 / 961 / 1046 / 4. Generator defaults empty to `"unknown"` |
+| `territorial_direction` | `"same"\|"expansion"\|"contraction"\|"displacement"\|"unknown"` | counts: 1113 / 738 / 869 / 1019 / 4. Generator defaults empty to `"unknown"` |
 | `strength` | integer | computed score; `null` possible if CSV cell empty (0 today) |
 | `shared_territories` | string[] | territory ids |
 | `shared_territory_count` | integer | |
@@ -111,7 +111,7 @@ Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTe
 
 ### 2.5 Territory
 
-- `GET /api/territory`: array of all 54 territories (about 59 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar.
+- `GET /api/territory`: array of all 54 territories (about 55 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar.
 - `GET /api/territory/:id`: one object; 404 `{"error":"Not found"}`. No frontend page calls it.
 
 ```json
@@ -140,7 +140,7 @@ Consumers: `public/shared/tree.js`, configured by `public/ethnicity|language|rel
 - `GET /api/government`: array of 29 `{id, name, finer_type|null, weber_legitimacy|null, description|null, polity_count}`.
 - `GET /api/government/:id`: same plus `polities: [{id, name, start, end}]`; 404 `{"error":"Not found"}`.
 
-No frontend page calls either route.
+Consumer: `public/polity/app.js` reads `id` and `name` of the list for display names. Nothing calls the single route.
 
 ### 2.8 Dynasty and figure
 
@@ -175,11 +175,12 @@ All generators are `code/makejson/*.js`, run by `npm run make:all` in the order:
 | `data/polity/<id>.json` | `polities.js` | `polity.csv`, `polity_territory.csv`, `figure.csv` | `id_ruling_ethnicity`→`ruling_ethnicity`; `id_ruling_language`→`cultural_language`; `id_ruling_religion`→`ideology.religion`; `government`→`ideology.government`; `start_year`→`start`; `end_year`→`end` (empty→`null`); `policies` split on `\|`; `note` verbatim. `territories` is **computed** from `polity_territory` (de-duplicated, ordered by first `start_year`). `figures` is **computed** by joining `figure.csv` on `polity_id` (`figure_id`→`id`). Empty cells omit the key. |
 | `data/succession/all.json` | `successions.js` | `derived/polity_succession.csv` (written by `code/generate-successions.js` from the polity and territory CSVs) | `from_polity_id`→`from`; `to_polity_id`→`to`; `from_name`/`to_name` dropped; `shared_territories` split on `\|`; `same_*` and `related_ethnicity` become booleans. |
 | `data/territory/<id>.json` | `territories.js` | `territory.csv`, `polity_territory.csv` | `polity_count` and `polities[]` **computed** from the junction. `end_year` omitted if empty. |
+| `data/inheritance/{claims,terminus}.json` | `inheritance.js` | `inheritance_*.csv`, `axis_terminus.csv` | Axes and recognition nested under each claim. |
 | `data/dynasty/<id>.json` | `dynasties.js` | `dynasty.csv`, `polity_dynasty.csv` | `polities[]` from the junction (`start_year`→`start`, `end_year`→`end`), sorted by start. |
 | `data/government/<id>.json` | `governments.js` | `government.csv`, `polity.csv` | `polity_count` **computed** by counting `polity.government`. Empty strings become `null`. |
 | `data/{ethnicity,language,religion}/…` (tree) | `ethnicities.js`, `languages.js`, `religions.js` via `_taxonomy_from_csv.js` | `ethnicity.csv`, `language.csv`, `religion.csv` (`id,name,parent_id,description,founded`) | `parent_id`→`parent`, re-derived from the directory path by `loadTree`. Branch = `<id>/index.json`, leaf = `<id>.json`. |
 
-Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynasty `polities[].name`, government `polities`, `/api/figure`, `/api/polity/colors`.
+Joined in `server.js`, not in `data/`: claim `heir_name`, `source_name` and `observer_name`, polity `successors`/`predecessors`, dynasty `polities[].name`, government `polities`, `/api/figure`, `/api/polity/colors`.
 
 **Not served at all:** the whole provenance layer (`source.csv`, `fact_source.csv`), the `city*` CSVs, `polity.csv` columns none of the generators read, `figure.csv` as its own entity, and the `derived/` panel and entity files. If the frontend wants citations or cities, that needs a new generator and route (breaking-rule 5.2 does not apply to purely additive changes).
 
@@ -187,11 +188,10 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 
 ### Served, never read by any page
 
-- Whole routes: `/api/government*`, `/api/dynasty*`, `/api/figure`, `/api/territory/:id`, `/api/polity/colors`, `/api/db`.
+- Whole routes: `/api/government/:id`, `/api/dynasty*`, `/api/figure`, `/api/territory/:id`, `/api/polity/colors`, `/api/db`.
 - Succession fields: `related_ethnicity`, `shared_territory_count`, `strength` (no page reads it from `/api/succession`), `temporal_gap_years`.
-- Polity: `figures[].years`, `figures[].significance` (`app.js` renders figures but only from absent data, see M1). `ideology` + `government` duplication in the list.
+- Polity: `ideology` + `government` duplication in the list.
 - Taxonomy leaf placeholders (section 2.6) and `founder`. `status` is shown when present and is null on every row today.
-- Polity edge `strength` and `shared_territories` on `/api/polity/:id` successors: the polity page reads only `name`, `territorial_direction` and the three `same_*` flags.
 
 ### Real mismatches (found by reading the code and running it)
 
@@ -207,12 +207,12 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 
 **Breaking** (a frontend page stops working or silently shows wrong data):
 
-1. Removing or renaming any field or route listed in section 2 that a page reads: `polity.{id,name,start,end,ruling_ethnicity,cultural_language,ideology.religion,ideology.government,government,territories}`; succession `{from,to,territorial_direction,shared_territories,same_ethnicity,same_language,same_religion}`; taxonomy `{id,name,parent,description,founded,status}`; territory `{id,name,polities[].{polity_id,start_year,end_year}}`; `/api/polity/:id` `successors[]`/`predecessors[]` (`id,name,territorial_direction`, and the `same_*` flags).
-2. Changing a type: integer years to strings, boolean `same_*` to strings, `end: null` to `0` or absent (the pages test `end || 2000`, `end == null`), `territories` from array to string, `parent` from id to object.
+1. Removing or renaming any field or route listed in section 2 that a page reads: `polity.{id,name,start,end,ruling_ethnicity,cultural_language,ideology.religion,ideology.government,territories,policies,note,figures}`; succession `{from,to,same_ethnicity,same_language,same_religion}`; `/api/polity/:id` `successors[]`/`predecessors[]` (`id,name,territorial_direction,strength,shared_territories`, and the `same_*` flags); claim fields in 2.4a; taxonomy `{id,name,parent,description,founded}`; government `{id,name}`; territory `{id,polities[].{polity_id,start_year,end_year}}`.
+2. Changing a type: integer years to strings, boolean `same_*` to strings, `end: null` to `0`, `territories` from array to string, `parent` from id to object.
 3. Changing the **vocabulary** of `territorial_direction` (the five values `same|expansion|contraction|displacement|unknown`). The polity page words the five values, and a sixth falls back to the `unknown` wording. The territory page no longer colours or words them.
 4. Changing id semantics (renaming or retiring a polity, territory, ethnicity, language or religion id). Ids are cross-references across responses and into `panels/`. CLAUDE.md already says ids are never reused. Retiring one also breaks every panel `polity:` reference to it.
 5. Changing the taxonomy tree encoding (the `parent` convention), or making ids non-unique.
-6. Changing the meaning of `null` vs absent for a field that pages test with `=== undefined` or `in`. No page does today, but `?` fields (`policies`, `note`, `figures`, `end_year`) are currently read with `|| []`/truthiness.
+6. Changing the meaning of `null` vs absent for a field that pages test with `=== undefined` or `in`. Pages treat `null` and absent alike, and `?` fields (`policies`, `note`, `figures`, `end_year`) are currently read with `|| []`/truthiness.
 
 **Not breaking:** adding a field, adding a route, adding a new enum value that no page switches on, adding polities, edges, territories or taxonomy nodes, reordering arrays (no page relies on order except that territory `polities` and polity `territories` are sorted by start, which the territory page re-sorts anyway).
 
@@ -224,7 +224,7 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 - **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `heir_polity_id, source_id, heir_name, source_name`. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
 - **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: one default panel id and a few panel group names in `public/history/app.js`. A renamed panel loses only its group name, or the default if it was the default.
 - **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2077 of 4191 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Settled: label-only is the intended form for a non-polity cell (section 2.9), and an unresolved `polity` stays a warning until the remaining ids are triaged.
-- **Open:** whether `/api/polity` should carry `policies`/`note`/`figures` (M1), or the index page should fetch the detail; whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
+- **Open:** whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
 
 ## 7. PROPOSED (not implemented): JSON shape check in the build
 

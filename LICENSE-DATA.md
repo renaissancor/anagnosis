@@ -11,4 +11,4 @@ Facts drawn from third-party sources are listed in `csvs/fact_source.csv`, and
 those sources, with their licenses and required citations, in `csvs/source.csv`.
 Keep those citations when you reuse that data.
 
-All other files are code under the ISC license in `LICENSE`.
+All other files are code under the ISC license in `LICENSE`, except third-party files that carry their own license: the Alegreya fonts in `public/shared/fonts/` (SIL Open Font License 1.1) and D3 in `public/shared/vendor/` (ISC).

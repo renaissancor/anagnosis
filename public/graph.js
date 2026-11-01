@@ -14,8 +14,11 @@ const choiceInput = document.getElementById('polity-choice');
 
 let polities = [], polityById = new Map(), polityByName = new Map();
 let claims = [], candidates = [];
-let chosenId = new URLSearchParams(location.search).get('id');
-let evidence = chosenId ? 'chosen' : 'none';
+const params = new URLSearchParams(location.search);
+let chosenId = params.get('id');
+let evidence = chosenId && params.get('evidence') === 'chosen' ? 'chosen' : 'none';
+let notice = '';
+let focusAfterDraw = null;
 
 const zoom = d3.zoom().scaleExtent([1, 8])
   // A plain wheel keeps scrolling the page; ctrl+wheel and pinch zoom the graph.
@@ -38,7 +41,7 @@ async function load() {
     polities.map(p => `<option value="${esc(p.name)}"></option>`).join('');
 
   if (chosenId && !polityById.has(chosenId)) {
-    status.textContent = `No polity has the id “${chosenId}”, so none is chosen.`;
+    notice = `No polity has the id “${chosenId}”, so none is chosen.`;
     chosenId = null;
     evidence = 'none';
   }
@@ -48,12 +51,11 @@ async function load() {
   document.querySelectorAll('input[name="evidence"]').forEach(radio =>
     radio.addEventListener('change', e => setEvidence(e.target.value)));
   choiceInput.addEventListener('change', () => {
-    const match = polityByName.get(choiceInput.value.trim().toLowerCase());
-    if (!match) {
-      status.textContent = choiceInput.value.trim() ? `No polity is named “${choiceInput.value}”.` : '';
-      return;
-    }
-    choose(match.id);
+    const typed = choiceInput.value.trim();
+    const match = polityByName.get(typed.toLowerCase());
+    notice = typed && !match ? `No polity is named “${typed}”.` : '';
+    if (match || !typed) choose(match ? match.id : null);
+    else status.textContent = statusText(visibleCandidates());
   });
   document.getElementById('zoom-in').addEventListener('click', () => svg.call(zoom.scaleBy, 1.5));
   document.getElementById('zoom-out').addEventListener('click', () => svg.call(zoom.scaleBy, 1 / 1.5));
@@ -66,10 +68,9 @@ async function load() {
 
 function choose(id) {
   chosenId = id;
-  if (evidence === 'none') {
-    evidence = 'chosen';
-    document.querySelector('input[name="evidence"][value="chosen"]').checked = true;
-  }
+  const url = new URL(location.href);
+  if (id) url.searchParams.set('id', id); else url.searchParams.delete('id');
+  history.replaceState(null, '', url);
   draw();
 }
 
@@ -80,7 +81,6 @@ function setEvidence(value) {
 
 async function ensureCandidates() {
   if (!candidates.length) candidates = await cachedFetch('/api/succession');
-  document.getElementById('all-label').textContent = `All ${candidates.length.toLocaleString('en')} overlaps`;
 }
 
 /** Candidates to draw now. Empty unless the reader asked for them. */
@@ -103,16 +103,18 @@ async function draw() {
   const shown = visibleCandidates();
   status.textContent = statusText(shown);
 
-  const decidedIds = new Set(claims.flatMap(c => [c.heir_polity_id, c.source_id]));
+  const polityClaims = claims.filter(c => c.source_type === 'polity');
+  const decidedIds = new Set(polityClaims.flatMap(c => [c.heir_polity_id, c.source_id]));
   const ids = new Set(decidedIds);
   shown.forEach(c => { ids.add(c.from); ids.add(c.to); });
   if (chosenId) ids.add(chosenId);
 
+  // Decided nodes last, so their labels sit on top of computed ones.
   const nodes = [...ids].filter(id => polityById.has(id)).map(id => ({
     id, name: polityById.get(id).name, start: polityById.get(id).start, decided: decidedIds.has(id),
-  }));
+  })).sort((a, b) => a.decided - b.decided);
   const nodeById = new Map(nodes.map(n => [n.id, n]));
-  const decidedEdges = claims.filter(c => nodeById.has(c.heir_polity_id) && nodeById.has(c.source_id))
+  const decidedEdges = polityClaims.filter(c => nodeById.has(c.heir_polity_id) && nodeById.has(c.source_id))
     .map(c => ({ source: nodeById.get(c.source_id), target: nodeById.get(c.heir_polity_id) }));
   const computedEdges = shown.filter(c => nodeById.has(c.from) && nodeById.has(c.to))
     .map(c => ({ source: nodeById.get(c.from), target: nodeById.get(c.to) }));
@@ -125,6 +127,10 @@ async function draw() {
   layout(nodes, width, height, portrait, computedEdges);
   render(nodes, decidedEdges, computedEdges, width, height, portrait);
   renderReading();
+  if (focusAfterDraw) {
+    svg.select(`a[data-id="${focusAfterDraw}"]`).node()?.focus();
+    focusAfterDraw = null;
+  }
 }
 
 /** Time fixes one axis; the simulation only separates nodes along the other. */
@@ -164,20 +170,24 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
 
   const many = computedEdges.length > 200;
   stage.append('g').selectAll('path').data(computedEdges).join('path')
-    .attr('class', many ? 'edge-computed faint' : 'edge-computed').attr('d', edgePath);
+    .attr('class', many ? 'edge-computed faint' : 'edge-computed').attr('d', e => edgePath(e, 0.08));
   stage.append('g').selectAll('path').data(decidedEdges).join('path')
-    .attr('class', 'edge-decided').attr('marker-end', 'url(#ink-arrow)').attr('d', edgePath);
+    .attr('class', 'edge-decided').attr('marker-end', 'url(#ink-arrow)')
+    .attr('d', e => edgePath(e, clearBend(e, many ? nodes.filter(n => n.decided) : nodes)));
 
   const showLabel = n => !many || n.decided || n.id === chosenId;
   const node = stage.append('g').selectAll('g').data(nodes, n => n.id).join('g')
     .attr('class', n => `node${n.decided ? ' decided' : ''}${n.id === chosenId ? ' chosen' : ''}`)
     .attr('transform', n => `translate(${n.x},${n.y})`);
   const link = node.append('a').attr('href', n => `/polity/?id=${encodeURIComponent(n.id)}`)
+    .attr('data-id', n => n.id)
     .attr('aria-label', n => `${n.name}, ${formatYear(n.start)}`)
     .attr('tabindex', n => (showLabel(n) ? 0 : -1))
     .on('click', (e, n) => {
       if (e.metaKey || e.ctrlKey) return;
       e.preventDefault();
+      focusAfterDraw = n.id;
+      choiceInput.value = n.name;
       choose(n.id);
     });
   link.append('circle').attr('r', n => (n.decided || n.id === chosenId ? 7 : many ? 3 : 5));
@@ -188,11 +198,35 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
   svg.call(zoom).call(zoom.transform, d3.zoomIdentity);
 }
 
-/** A shallow curve, so lines that share a direction stay apart. */
-function edgePath({ source: a, target: b }) {
-  const bend = Math.min(40, Math.hypot(b.x - a.x, b.y - a.y) * 0.12);
-  const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
-  return `M${a.x},${a.y}Q${mx},${my + bend} ${b.x},${b.y}`;
+function controlPoint({ source: a, target: b }, bend) {
+  return { x: (a.x + b.x) / 2 - (b.y - a.y) * bend, y: (a.y + b.y) / 2 + (b.x - a.x) * bend };
+}
+
+function edgePath(edge, bend) {
+  const { source: a, target: b } = edge;
+  const c = controlPoint(edge, bend);
+  return `M${a.x},${a.y}Q${c.x},${c.y} ${b.x},${b.y}`;
+}
+
+/**
+ * The smallest curve that misses every other node. An ink line through a
+ * polity it does not join would read as a lineage nobody decided.
+ */
+function clearBend(edge, nodes) {
+  const { source: a, target: b } = edge;
+  const others = nodes.filter(n => n !== a && n !== b);
+  const distanceToNearest = bend => {
+    const c = controlPoint(edge, bend);
+    let nearest = Infinity;
+    for (let t = 0.04; t < 1; t += 0.04) {
+      const x = (1 - t) ** 2 * a.x + 2 * t * (1 - t) * c.x + t ** 2 * b.x;
+      const y = (1 - t) ** 2 * a.y + 2 * t * (1 - t) * c.y + t ** 2 * b.y;
+      for (const n of others) nearest = Math.min(nearest, Math.hypot(n.x - x, n.y - y));
+    }
+    return nearest;
+  };
+  const bends = [0.08, -0.08, 0.16, -0.16, 0.26, -0.26, 0.38, -0.38, 0.5, -0.5];
+  return bends.find(bend => distanceToNearest(bend) >= 20) ?? d3.greatest(bends, distanceToNearest);
 }
 
 function drawAxis(stage, width, height, portrait) {
@@ -205,21 +239,23 @@ function drawAxis(stage, width, height, portrait) {
     .attr('x', t => (portrait ? width - 4 : layout.time(t) + 4))
     .attr('y', t => (portrait ? layout.time(t) - 4 : 16))
     .attr('text-anchor', portrait ? 'end' : 'start')
-    .text(formatYear);
+    // There is no year 0: the tick between 1 BCE and 1 CE reads as 1 CE.
+    .text(t => formatYear(t === 0 ? 1 : t));
 }
 
 function statusText(shown) {
   const claimCount = `${claims.length} decided claims`;
-  if (evidence === 'none') return `Showing ${claimCount}.`;
-  if (evidence === 'chosen' && !chosenId) return `Showing ${claimCount}. Choose a polity to add its computed overlaps.`;
-  return `Showing ${claimCount} and ${shown.length.toLocaleString('en')} computed overlaps.`;
+  const lead = notice ? `${notice} ` : '';
+  if (evidence === 'none') return `${lead}Showing ${claimCount}.`;
+  if (evidence === 'chosen' && !chosenId) return `${lead}Showing ${claimCount}. Choose a polity to add its computed overlaps.`;
+  return `${lead}Showing ${claimCount} and ${shown.length.toLocaleString('en')} computed overlaps.`;
 }
 
 /** The graph's content as text, which also serves keyboard and screen-reader use. */
 function renderReading() {
-  const sentence = c => `<li><a href="/polity/?id=${encodeURIComponent(c.heir_polity_id)}">${esc(c.heir_name)}</a> inherits from <a href="/polity/?id=${encodeURIComponent(c.source_id)}">${esc(c.source_name)}</a></li>`;
+  const sentence = c => `<li>${claimSentenceHtml(c)}</li>`;
   const chosen = chosenId && polityById.get(chosenId);
-  const own = chosen ? claims.filter(c => c.heir_polity_id === chosenId || c.source_id === chosenId) : [];
+  const own = chosen ? claims.filter(c => c.heir_polity_id === chosenId || (c.source_type === 'polity' && c.source_id === chosenId)) : [];
   const chosenHtml = chosen ? `
     <h2>${esc(chosen.name)}</h2>
     <p>${esc(formatDateRange(chosen.start, chosen.end))}. <a href="/polity/?id=${encodeURIComponent(chosen.id)}">Read the entry</a></p>

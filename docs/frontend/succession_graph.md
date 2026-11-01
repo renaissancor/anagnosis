@@ -1,3 +1,5 @@
+> **Historical.** This describes a graph page removed on 2026-11-02. Edge types here are retired. The current contract is [`../model/graph.md`](../model/graph.md) and the page is `public/graph.js`.
+
 # Succession Graph Visualization
 
 ## Overview

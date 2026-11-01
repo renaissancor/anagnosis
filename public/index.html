@@ -14,15 +14,15 @@
   <p class="lede">Anagnosis is a dataset of political entities and how they succeeded one another. It grows by curation, one judged claim at a time, so its coverage is uneven by design.</p>
 
   <h2 id="how-to-read">How to read it</h2>
-  <p>Everything on this site is one of two things, and the two never share a style.</p>
+  <p>A statement about succession here is one of two things, and the two never share a style.</p>
   <div class="claim">
     <p class="claim-statement">Ink is decided</p>
-    <p>A person judged this claim and cited a source for it. It looks like this, with a line down its side.</p>
+    <p>A person judged this claim and cited a source for it. A claim has a green line down its side and a source at its foot.</p>
   </div>
   <div class="pencil">
-    <p>Pencil is computed. A script found an overlap in territory, language or religion, and nobody has judged it. Rivals and contemporaries appear here too, so read it as a lead, never as history.</p>
+    <p>Pencil is computed. A script found an overlap in territory, language, ruling people or religion, and nobody has judged it. It is set in small grey sans type under the heading Computed evidence, or as dotted lines. Rivals and contemporaries appear too, so read it as a lead, never as history.</p>
   </div>
-  <p style="margin-top:var(--space-2)">A gap means not yet curated. It does not mean nothing happened.</p>
+  <p class="after-key">Other text, such as polity notes and the history tables, is curated description. Words like successor there are not decided claims. A gap means not yet curated; it does not mean nothing happened.</p>
 
   <h2>Decided so far</h2>
   <div id="claims"><p class="state">Loading claims…</p></div>
@@ -32,7 +32,8 @@
     <li><a href="/polity/">Polities</a>: every entry, earliest first</li>
     <li><a href="/territory/">Territories</a>: who held a place, over time</li>
     <li><a href="/history/">History</a>: regional tables of periods</li>
-    <li><a href="/graph.html">Graph</a>: decided claims along a time axis</li>
+    <li><a href="/graph.html">Graph</a>: polities over time, joined by decided claims</li>
+    <li><a href="/religion/">Religions</a>, <a href="/language/">Languages</a> and <a href="/ethnicity/">Peoples</a>: family trees</li>
   </ul>
 </div></main>
 <div id="site-footer"></div>
@@ -41,8 +42,7 @@
 <script>
   const claimsEl = document.getElementById('claims');
   cachedFetch('/api/claim').then(claims => {
-    const link = (id, name) => `<a href="/polity/?id=${encodeURIComponent(id)}">${esc(name)}</a>`;
-    claimsEl.innerHTML = `<ul>${claims.map(c => `<li>${link(c.heir_polity_id, c.heir_name)} inherits from ${link(c.source_id, c.source_name)}</li>`).join('')}</ul>`;
+    claimsEl.innerHTML = `<ul class="claim claim-list">${claims.map(c => `<li>${claimSentenceHtml(c)}</li>`).join('')}</ul>`;
   }).catch(() => renderLoadError(claimsEl, 'The decided claims'));
 </script>
 </body>
