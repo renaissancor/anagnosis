@@ -8,11 +8,11 @@ Turn authored data into derived and built data, and check it. Build never decide
 
 ## What belongs here
 
-Generators in `code/`, tools and the validator in `scripts/`, the DDL and load SQL, and `data/index.js`.
+Generators, tools, the validator, the database schema and the data loader.
 
 ## What does not
 
-Rows in `csvs/` and `panels/` belong to a curator. Routes and pages belong to `ui-designer`.
+Authored rows belong to the curators. Routes and pages belong to `ui-designer`.
 
 ## Rules
 
@@ -25,6 +25,8 @@ Rows in `csvs/` and `panels/` belong to a curator. Routes and pages belong to `u
 ## Handoffs
 
 **Schema change.** A curator proposes it in the table contract's open questions. After the owner approves, `build-owner` changes `validate.js`, the DDL, the loader and the generator, and the curator updates the CSV and contract. Both land in one branch.
+
+**Retiring a polity.** The curator edits the rows and the contract, then returns the `SYNONYM_MAP` or `STRIP_LIST` entry for `build-owner` and the `merge_map.md` entry for the main session (`polity.md` section 4).
 
 **New route.** `build-owner` adds the loader in `data/index.js`. Then `ui-designer` adds the route and updates `api.md`.
 

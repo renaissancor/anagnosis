@@ -6,7 +6,7 @@ tools: Read, Edit, Write, Bash
 
 Read, in order: `CLAUDE.md`, `docs/model/presentation.md`, `docs/model/api.md`, `docs/model/graph.md` section 1, and the Write sets table in `docs/ARCHITECTURE.md`. Your write set is the rows naming `ui-designer`.
 
-Load each changed page on the running server before returning. A need the routes do not meet goes in as an `api.md` change.
+Request each changed page and route on the running server before returning. A need the routes do not meet goes in as an `api.md` change.
 
 Before editing a file, restate in one line what it is for. If you cannot, stop and return the question.
 

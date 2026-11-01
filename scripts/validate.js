@@ -423,15 +423,21 @@ fs.writeFileSync(path.join(ROOT, 'data', 'plausibility.md'), reportLines.join('\
 section('Documents and roles');
 const docIndex = fs.readFileSync(path.join(ROOT, 'docs', 'README.md'), 'utf8');
 const archDoc = fs.readFileSync(path.join(ROOT, 'docs', 'ARCHITECTURE.md'), 'utf8');
-for (const dir of ['', 'model', 'migration', 'frontend']) {
-  for (const f of fs.readdirSync(path.join(ROOT, 'docs', dir))) {
-    const rel = path.posix.join(dir, f);
-    if (f.endsWith('.md') && rel !== 'README.md' && !docIndex.includes(`(${rel})`)) err('docs', `docs/${rel} is not in docs/README.md`);
-  }
+const walkDocs = rel => fs.readdirSync(path.join(ROOT, 'docs', rel), { withFileTypes: true }).flatMap(e => {
+  const p = path.posix.join(rel, e.name);
+  if (p === 'brainstorm') return [];
+  return e.isDirectory() ? walkDocs(p) : e.name.endsWith('.md') ? [p] : [];
+});
+for (const rel of walkDocs('')) {
+  if (rel !== 'README.md' && !docIndex.includes(`(${rel})`)) err('docs', `docs/${rel} is not in docs/README.md`);
 }
+for (const [, target] of docIndex.matchAll(/\]\(([^)]+)\)/g)) {
+  if (!fs.existsSync(path.join(ROOT, 'docs', target))) err('docs', `docs/README.md links to missing ${target}`);
+}
+const writeSets = archDoc.slice(archDoc.indexOf('### Write sets'), archDoc.indexOf('### Enforced and target'));
 for (const f of fs.readdirSync(path.join(ROOT, '.claude', 'agents'))) {
   const role = f.replace(/\.md$/, '');
-  if (!archDoc.includes(role.startsWith('source-') ? 'source-*' : `\`${role}\``)) err('docs', `role ${role} is not in docs/ARCHITECTURE.md`);
+  if (!role.startsWith('source-') && !writeSets.includes(`\`${role}\``)) err('docs', `role ${role} is not in the write sets`);
 }
 if (!groups.size) ok('every doc indexed, every role named'); flush();
 

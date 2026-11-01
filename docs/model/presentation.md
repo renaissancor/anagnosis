@@ -8,7 +8,7 @@ Let people read the dataset. Presentation shows what the data says and never add
 
 ## What belongs here
 
-Pages in `public/`, routes in `server.js`, and [`api.md`](./api.md).
+Pages, routes, and the JSON contract in [`api.md`](./api.md).
 
 ## What does not
 
@@ -23,14 +23,14 @@ Data fixes go to a curator. A need the routes do not meet becomes a change to `a
 
 ## How to validate
 
-Run `npm start` and load each changed page. Target, not yet true: a Playwright review at desktop and phone widths. Done means the page works and `api.md` matches the route.
+Run `npm start` and request each changed page and route. The main session runs browser reviews. Target, not yet true: a Playwright review at desktop and phone widths. Done means the page works and `api.md` matches the route.
 
 ## Current state (measured 2026-11-01)
 
 | Measure | Value (source) |
 |---|---|
 | Panels reachable from the UI | 66 of 72 (`public/history/index.html`) |
-| Claims served | 0 (`server.js`) |
+| API routes serving claims | 0 (`server.js`) |
 
 ## Open questions
 

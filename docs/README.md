@@ -1,6 +1,6 @@
 # Anagnosis documentation
 
-The index of every repository document. **Read [ARCHITECTURE.md](ARCHITECTURE.md) first**: it holds the layers and write sets, and every other doc defers to it. `scripts/validate.js` fails if a doc under `docs/` is missing here.
+The index of repository documents. **Read [ARCHITECTURE.md](ARCHITECTURE.md) first**: it holds the layers and write sets, and every other doc defers to it. `scripts/validate.js` fails if a doc is missing here or a link is dead. `brainstorm/succession/` is an archive, indexed by its own README.
 
 ## Start here
 

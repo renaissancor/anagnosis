@@ -10,7 +10,7 @@ A file's home is decided by **who writes it**, never by its format.
 
 | Layer | Directory | Writer | Tracked in git | Anyone else may… |
 |---|---|---|---|---|
-| **1 Authored** | `csvs/`, `panels/` | a human, by hand | yes | read only |
+| **1 Authored** | `csvs/`, `panels/` | a person or a curator role, never a script | yes | read only |
 | **2 Derived** | `derived/` | a script in `code/` or `scripts/` | yes (reviewed in diffs) | read only — never hand-edit |
 | **3 Built** | `data/`, `anagnosis.db` | `npm run make:all`, `npm run make:db` | **no** (regenerated) | read only |
 | **4 Served** | `server.js`, `public/` | the app, at runtime | yes (code) | reads layer 3 only |
@@ -174,11 +174,16 @@ Role files are in `.claude/agents/`. A contract may cover one table, so one `cur
 
 ### Write sets
 
-This table is the only place write sets are stated. Each tracked path has one writer. Librarians and the auditor write nothing.
+This table is the authority on write sets. Each tracked path has one writer. Librarians and the `auditor` write nothing.
+
+Running a generator is not writing its output. Any role may run `npm run make:all`, and generated `derived/` diffs go in that role's commit. Nobody edits generated files by hand, and the scripts belong to `build-owner`.
+
+The main session runs librarians, since role agents cannot start them, and passes the answers in. A role returns any defect it notices, and the main session adds it to `docs/TODO.md`.
 
 | Path | Class | Writer |
 |---|---|---|
-| `csvs/` except the inheritance tables, `panels/` | role-owned | `curator`, one table per run |
+| `csvs/` except the inheritance tables, `panels/` | role-owned | `curator`, one task per run: the named table plus the junction rows the task needs in `polity_territory`, `polity_dynasty` and `fact_source` |
+| `csvs/fact_source.csv` rows citing `inheritance_*` or `axis_terminus` | shared-by-block | `succession-curator` |
 | `csvs/inheritance_*.csv`, `csvs/axis_terminus.csv` | role-owned; the project owner decides each claim | `succession-curator` |
 | `docs/model/`: `city`, `dynasty`, `ethnicity`, `figure`, `government`, `language`, `non_polity`, `polity`, `polity_dynasty`, `polity_territory`, `religion`, `source`, `territory` | role-owned | `curator` for that table |
 | `docs/model/graph.md`, `docs/model/inheritance.md` | role-owned | `succession-curator` |
@@ -200,7 +205,7 @@ A target is not a check. Do not "fix" one across the tree unasked.
 |---|---|---|
 | CSV headers, keys, foreign keys, dates, enums | enforced | `scripts/validate.js` |
 | Warnings and plausibility metrics do not grow | enforced | `scripts/warning-baseline.json` |
-| Every doc is indexed; every role is named here | enforced | `scripts/validate.js` |
+| Every doc outside `docs/brainstorm/` is indexed, each index link resolves, and every non-librarian role is in Write sets | enforced | `scripts/validate.js` |
 | All CSV I/O through `code/lib/csv.js` | target | `docs/TODO.md` |
 | One writer per path | not checked | this table |
 | Librarians and the auditor write nothing | not checked; a role rule, since Bash can write | role files |
@@ -220,8 +225,8 @@ A target is not a check. Do not "fix" one across the tree unasked.
    A curator reads the contract at the start of every run, and hard cases are
    logged there with the reason. Roles may update measured state and open questions.
    Changing a rule in a contract is the project owner's decision.
-3. **Sources are cited, never imported.** Curators ask a librarian and write the
-   row themselves. If a source disagrees with `csvs/`, the CSV stands until
+3. **Sources are cited, never imported.** The main session asks a librarian, and
+   curators write the row themselves. If a source disagrees with `csvs/`, the CSV stands until
    someone edits it.
 4. **Each handoff is one-way.** Sources → Content is a citation; Content →
    Presentation is the JSON contract. A need from downstream becomes a contract
@@ -257,7 +262,8 @@ A target is not a check. Do not "fix" one across the tree unasked.
 
 - `docs/model/data-model.md` — the property-graph view of the same data
 - `docs/model/api.md` — the contract between the data layer and the frontend
-- `docs/model/graph.md` — the contract for succession edges and inheritance claims
+- `docs/model/graph.md` — the boundary between computed edges and inheritance claims
+- `docs/model/inheritance.md` — the claim tables
 - `docs/model/erd.md`, `erd.sql`, `erd_nofk.sql` — DDL
 - `docs/migration/csv_workflow.md` — step-by-step editing guide
 - `docs/TODO.md` — defect ledger and open work

@@ -164,11 +164,11 @@ These chains show how a single family's power network shaped political geography
 
 ## Current state (measured 2026-11-01)
 
-`dynasty.csv` has 192 rows. 15 `dynasty.ethnicity` values do not resolve to `ethnicity.id`, for example `berber` and `turkic`.
+`dynasty.csv` has 192 rows. 15 rows have a `dynasty.ethnicity` that does not resolve to `ethnicity.id`, using 4 values: `berber`, `turkic`, `germanic`, `indo_aryan`.
 
 ## Open questions
 
-- Should the 15 unresolved values become valid ids, or point at existing ones?
+- Should the 4 unresolved values become valid ids, or point at existing ones?
 
 ## Decision log
 

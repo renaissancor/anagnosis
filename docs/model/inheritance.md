@@ -109,8 +109,8 @@ csvs/inheritance_*.csv + csvs/axis_terminus.csv
 ```
 
 `code/generate-successions.js` is a **candidate suggester**: it writes
-proposed edges + evidence to `derived/polity_succession.csv`; a
-curator turns the real ones into claims here.
+proposed edges + evidence to `derived/polity_succession.csv`; the
+`succession-curator` drafts the real ones as claims here.
 
 ## Curation discipline
 
@@ -127,9 +127,13 @@ curator turns the real ones into claims here.
 
 1. ✅ Canonical doc + curated tables + generator + validation (this page)
 2. ✅ `generate-successions.js` demoted to candidate suggester
-3. ⬜ Curate claims from `derived/polity_succession.csv` + panels, region by region
-4. ⬜ Frontend view over `data/inheritance/`
-5. ⬜ Stop serving candidates as `successors` / `predecessors` **last**, when consumers are migrated (candidates stay in `derived/` as evidence)
+3. ⬜ Owner answers the blocking questions in `graph.md` section 6
+4. ⬜ Clean the generator: fix or remove `related_ethnicity`, delete the redundant loop and the A/B/C comment, drop `type` from both DDL files
+5. ⬜ Pilot by hand: Ottoman, `ottoman_empire → republic_of_turkey`, Russian chain, British Raj to India, Mexico, ROC and PRC, Gran Colombia, Carthage, three caliphs, Han revival. Revise the schema if the pilot breaks it, before any bulk work
+6. ⬜ Add the claim route as an addition, updating `api.md` in the same commit
+7. ⬜ Frontend view over claims, with candidates as labelled evidence
+8. ⬜ Curate further by query need, walking references first
+9. ⬜ Stop serving candidates as `successors` / `predecessors` **last**, following the `api.md` breaking-change rule (candidates stay in `derived/` as evidence)
 
 ## How to validate
 

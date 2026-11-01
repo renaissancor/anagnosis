@@ -8,11 +8,11 @@ The contract for edges in the Anagnosis graph. Layers and writers are set by [`.
 |---|---|---|
 | What it is | Computed similarity between two polities | A judged statement that an heir inherits from a source |
 | Layer | 2, `derived/polity_succession.csv` | 1, `csvs/inheritance_*.csv` |
-| Writer | `code/generate-successions.js` | A human |
+| Writer | `code/generate-successions.js` | `succession-curator`, with the owner deciding |
 | Status | Built | Built and seeded (9 claims, Ottoman neighbourhood); not yet served by the API |
 | Authority | Evidence only | Authoritative once curated |
 
-**A candidate never asserts succession.** Succession is decided one claim at a time: a human writes each claim, and neither the generator nor a bulk rule ever makes that decision. Where no claim exists, the pair is uncurated.
+**A candidate never asserts succession.** Succession is decided one claim at a time: the project owner decides each claim, and neither the generator nor a bulk rule ever makes that decision. Where no claim exists, the pair is uncurated.
 
 Figures below were measured on 2026-10-31 through `code/lib/csv.js`, after the non-polity migration unless marked. They will move as polity merges land. Running a scratch copy of the generator on that day's `csvs/` reproduced `derived/polity_succession.csv` byte for byte.
 
@@ -102,7 +102,7 @@ A scratch patch, run before the non-polity migration on the 4,107-edge file, res
 
 These docs describe the typing as live and are wrong on that point:
 
-- `docs/brainstorm/succession/README.md:3` and `01-why-redesign.md`, which also still locates the file in `csvs/` and reports an old edge count
+- `docs/brainstorm/succession/01-why-redesign.md`, an archive file, which also locates the file in `csvs/` and reports an old edge count
 
 If the matrix were applied to the two nearest columns, 780 rows would have ethnicity and territory, 1,596 territory only, 222 ethnicity only and 1,145 neither. The last group is what the docs call "D, Ahistorical / Invalid". This projection is for scale only and is stored nowhere. `tang_dynasty → ottoman_empire`, the README's example, has no row, but that is absence rather than a type.
 
@@ -145,7 +145,7 @@ Civilization is not a node (see `civilization.md`). `source.csv` and `fact_sourc
 
 ## 3. Target contract
 
-**Status terms.** DECIDED means a brainstorm file marks it decided, and that file is named. The brainstorm README still labels the whole directory non-canonical until ratified, so DECIDED means decided in design, not built. OPEN includes anything the brainstorm marks provisional or deferred, and anything where its files disagree.
+**Status terms.** DECIDED means a brainstorm file marks it decided, and that file is named. DECIDED means decided in design; `inheritance.md` says what is built. OPEN includes anything the brainstorm marks provisional or deferred, and anything where its files disagree.
 
 ### Principles
 
@@ -211,14 +211,14 @@ The example does not fit current data at four points, each of which needs the ow
 
 These follow from `ARCHITECTURE.md` and apply to whatever is built.
 
-1. **New claims are layer 1.** They live in `csvs/inheritance_*.csv`, are hand-written, and are read through `code/lib/csv.js`.
+1. **New claims are layer 1.** They live in `csvs/inheritance_*.csv`, are written one at a time, and are read through `code/lib/csv.js`.
 2. **Candidates stay in `derived/`.** No human edits them, and no script copies a candidate into `csvs/`. Promotion is a person writing a row.
 3. **Authored rows never reference derived rows.** Candidates regenerate, so a claim has no candidate id. The build joins them on the pair.
 4. **A claim needs no candidate.** Fictive and gapped claims can be real where the generator finds nothing; it cannot see beyond a 300-year gap.
 5. **A candidate needs no claim.** Most should never become one.
 6. **One home per fact.** Overlap evidence is never retyped into a claim.
 7. **Claims must not encode a dynastic change.** The validator rejects `dynastic_change`.
-8. **Every new CSV** meets `CLAUDE.md` rule 4: a model doc, a `scripts/validate.js` SCHEMA entry, a consumer, and DDL plus load SQL in `erd.sql`, `erd_nofk.sql` and `scripts/load_csvs.sql`.
+8. **Every new CSV** meets `CLAUDE.md` rule 8: a model doc, a `scripts/validate.js` SCHEMA entry, a consumer, and DDL plus load SQL in `erd.sql`, `erd_nofk.sql` and `scripts/load_csvs.sql`.
 
 ### Citing sources
 
@@ -231,11 +231,11 @@ Claims use `fact_source.csv` unchanged. `field` names the column supported, and 
 | A recognition | `inheritance_recognition` | `<claim id>\|<observer_type>\|<observer_id>` | `degree` |
 | An extinction | `axis_terminus` | `<polity id>\|<axis>` | empty |
 
-The validator already checks table, row, field and source (`scripts/validate.js:287-294`). Each new table needs a `PK` entry at `scripts/validate.js:124`.
+The validator already checks table, row, field and source. Each new table needs a `PK` entry in `scripts/validate.js`.
 
 Two gaps:
 
-- `source.csv` registers datasets and requires an allowlisted licence (`scripts/validate.js:280`). Its only row is `wikidata`, used for identity links. A monograph or article cannot be registered today, and those are what claims will cite.
+- `source.csv` registers datasets and requires an allowlisted licence. Its only row is `wikidata`, used for identity links. A monograph or article cannot be registered today, and those are what claims will cite.
 - `inheritance_claim.source_id` (the inherited-from entity) and `fact_source.source_id` (the citation) share a name for different things.
 
 ### Frontend JSON
@@ -295,24 +295,9 @@ The layer is done when all of these hold:
 
 Coverage is not a criterion. The dataset is sparse by design.
 
-### Migration order: PROPOSED
+### Migration order
 
-This updates `05-open-questions.md` §6, which predates the rename and the move to `derived/`.
-
-| Step | Work | Depends on |
-|---|---|---|
-| 0 | Owner answers blocking questions | |
-| 1 | Correct docs: `README.md`, `data-model.md`, `succession.md` banner | |
-| 2 | Clean the generator: fix or remove `related_ethnicity`, delete the redundant loop and the A/B/C comment, drop `type` from both DDL files, review the `derived/` diff | Q8 |
-| 3 | Write `docs/model/inheritance.md`; add empty CSVs, SCHEMA, `PK`, validators, DDL and loaders together | 0 |
-| 4 | Pilot by hand on the brainstorm's cases: Ottoman, `ottoman_empire → republic_of_turkey`, Russian chain, British Raj to India, Mexico, ROC and PRC, Gran Colombia, Carthage, three caliphs, Han revival | 3 |
-| 5 | Revise the schema if the pilot breaks it, before any bulk work | 4 |
-| 6 | Add `code/makejson/` output for claims and the new route as additions, and update `docs/model/api.md` in the same commit | 5 |
-| 7 | Move the frontend to claims first, with candidates as labelled evidence | 6 |
-| 8 | Curate further by query need, walking references first | 7 |
-| 9 | Stop presenting candidates as succession, following the `api.md` breaking-change rule. Keep the file as evidence (`ARCHITECTURE.md:61-63`) | 7 |
-
-`05` §6 says to retire the old file last, while `01` and `ARCHITECTURE.md` keep it as evidence. Step 9 follows the latter: only its use as succession is retired.
+`inheritance.md` holds the migration status.
 
 Polity merges in progress change endpoint ids. Claim curation should begin after they settle.
 

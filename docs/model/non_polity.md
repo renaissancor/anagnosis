@@ -144,7 +144,7 @@ A people's row needs an inbound reference like any other, so a people that no ce
 `label` is already the fallback. 620 of 5,015 panel entries are label-only and render as plain text. These rows give nothing beyond a name, a date range and a territory. The name is in the label and the date is in the panel row.
 
 - **Collectives.** Where members have rows, they already carry the territory and the succession edges. Where they do not, the collective is hiding real polities, which should be promoted individually under `polity.md` 2.2 when something references them. It should not stand in for them.
-- **Cultures.** `merge_map.md` §5 and `docs/TODO.md` P3.12 name a `cultures` table of about 100 rows. Panels hold 96 further `*_culture` ids in 128 cells that resolve to nothing, of which 12 ids appear in more than one panel. None has a consumer: no route, no figure, no dynasty, and no succession edge would use them. Recommend closing P3.12 as won't do. Revisit only when a query or an inheritance claim needs a culture as an endpoint.
+- **Cultures.** `merge_map.md` §5 names a `cultures` table of about 100 rows. Panels hold 96 further `*_culture` ids in 128 cells that resolve to nothing, of which 12 ids appear in more than one panel. None has a consumer: no route, no figure, no dynasty, and no succession edge would use them. Recommend closing P3.12 as won't do. Revisit only when a query or an inheritance claim needs a culture as an endpoint.
 
 ### 3.4 Periods need no table
 

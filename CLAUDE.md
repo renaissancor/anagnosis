@@ -2,7 +2,7 @@
 
 A CSV-first historical-political dataset whose core is curated polity succession. It is an **architecture for curation**, not a complete dataset: coverage is uneven, sparse panels are expected, and political-history queries drive decisions.
 
-Start here: [`docs/README.md`](docs/README.md) indexes every document. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) holds the layers and write sets, and it wins any conflict with another doc. For a data-model question, read `docs/model/<concept>.md` first.
+Start here: [`docs/README.md`](docs/README.md) indexes the documents. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) holds the layers and write sets, and it wins any conflict with another doc. For a data-model question, read `docs/model/<concept>.md` first.
 
 ## Model
 
@@ -21,7 +21,7 @@ Start here: [`docs/README.md`](docs/README.md) indexes every document. [`docs/AR
 4. Stay inside your write set. Log defects you notice in your return, not in your diff.
 5. Sources are cited, never imported.
 6. Authors don't audit their own work.
-7. Workflow: edit, `npm run validate`, `npm run make:all`, then review the `csvs/` and `derived/` diffs.
+7. Workflow: edit, `npm run make:all`, `npm run validate`, then review the `csvs/` and `derived/` diffs. Any role may run `make:all`; nobody hand-edits its output.
 8. Every CSV needs a model doc, a `scripts/validate.js` entry, a consumer, and DDL plus load SQL.
 
 `scripts/archive/` holds dead migrations. Do not run them.

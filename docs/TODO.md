@@ -1,6 +1,6 @@
 # Anagnosis ledger
 
-Every known defect and open job, with its owner role and whether it needs the project owner's approval. Roles and write sets are in [`ARCHITECTURE.md`](ARCHITECTURE.md). A role that finds a defect outside its task adds it here and leaves the code alone. Remove a row when the fix lands. Past work is in git history.
+Every known defect and open job, with its owner role and whether it needs the project owner's approval. Roles and write sets are in [`ARCHITECTURE.md`](ARCHITECTURE.md). A role that finds a defect outside its task returns it, and the main session adds it here. Remove a row when the fix lands. Past work is in git history.
 
 ## Defects
 
@@ -16,12 +16,12 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 8 | Medium | `scripts/validate.js:367` | (heir, source) uniqueness is decided but not checked | build-owner | Yes |
 | 9 | Low | `server.js:11` | `/data` serves all of `data/`, including `index.js` | ui-designer | Yes |
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
-| 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | owner | Yes |
+| 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | build-owner | Yes |
 | 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
 
 ## Open curation
 
-**Polities named by panels and not in `csvs/polity.csv`.** Dates are suggestions, not checked facts. `node scripts/extract_missing_polities.js` prints the live list; run it without `--write`.
+**Polities named by panels and not in `csvs/polity.csv`.** Dates are suggestions, not checked facts. `node scripts/extract_missing_polities.js --min-panels 1` prints a fuller live list, without the `--write` flag; the default shows only ids in 2+ panels.
 
 | id (suggested) | Name | Approx. dates | Panel |
 |---|---|---|---|
@@ -56,5 +56,5 @@ These are ideas, not commitments. Each needs the owner's approval to start.
 - Timeline comparison of several polities.
 - "What existed in year X?" across all regions.
 - Search by name, time range, territory and ethnicity.
-- Panels for the remaining gaps: Philippines, Bengal, Oceania.
+- A panel for Bengal.
 - Province-level geography.
