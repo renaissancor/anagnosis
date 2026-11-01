@@ -21,7 +21,7 @@ Start here: [`docs/README.md`](docs/README.md) indexes the documents. [`docs/ARC
 4. Stay inside your write set. Log defects you notice in your return, not in your diff.
 5. Sources are cited, never imported.
 6. Authors don't audit their own work.
-7. Workflow: edit, `npm run make:all`, `npm run validate`, then review the `csvs/` and `derived/` diffs. Any role may run `make:all`; nobody hand-edits its output.
+7. Workflow: edit, `npm run make:all`, `npm run validate`, then review the `csvs/` and `derived/` diffs. Any role with a write set may run `make:all`; nobody hand-edits its output.
 8. Every CSV needs a model doc, a `scripts/validate.js` entry, a consumer, and DDL plus load SQL.
 
 `scripts/archive/` holds dead migrations. Do not run them.

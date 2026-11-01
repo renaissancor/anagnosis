@@ -429,12 +429,12 @@ const walkDocs = rel => fs.readdirSync(path.join(ROOT, 'docs', rel), { withFileT
   return e.isDirectory() ? walkDocs(p) : e.name.endsWith('.md') ? [p] : [];
 });
 for (const rel of walkDocs('')) {
-  if (rel !== 'README.md' && !docIndex.includes(`(${rel})`)) err('docs', `docs/${rel} is not in docs/README.md`);
+  if (rel !== 'README.md' && !docIndex.includes(`](${rel})`)) err('docs', `docs/${rel} is not in docs/README.md`);
 }
-for (const [, target] of docIndex.matchAll(/\]\(([^)]+)\)/g)) {
-  if (!fs.existsSync(path.join(ROOT, 'docs', target))) err('docs', `docs/README.md links to missing ${target}`);
+for (const [, target] of docIndex.matchAll(/\]\(([^)#]+)[^)]*\)/g)) {
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(ROOT, 'docs', target))) err('docs', `docs/README.md links to missing ${target}`);
 }
-const writeSets = archDoc.slice(archDoc.indexOf('### Write sets'), archDoc.indexOf('### Enforced and target'));
+const writeSets = archDoc.slice(archDoc.indexOf('### Write sets'), archDoc.indexOf('### Enforced and target')).split('\n').filter(l => l.startsWith('|')).join('\n');
 for (const f of fs.readdirSync(path.join(ROOT, '.claude', 'agents'))) {
   const role = f.replace(/\.md$/, '');
   if (!role.startsWith('source-') && !writeSets.includes(`\`${role}\``)) err('docs', `role ${role} is not in the write sets`);

@@ -28,6 +28,10 @@ Authored rows belong to the curators. Routes and pages belong to `ui-designer`.
 
 **Retiring a polity.** The curator edits the rows and the contract, then returns the `SYNONYM_MAP` or `STRIP_LIST` entry for `build-owner` and the `merge_map.md` entry for the main session (`polity.md` section 4).
 
+A polity named in an inheritance table is not retired this way: the curator stops and returns it for `succession-curator` and the owner.
+
+**Warning ratchet.** A correct row can raise a metric. The curator returns the growth with the reason, and after the owner agrees, `build-owner` refreshes the baseline in a commit that explains it.
+
 **New route.** `build-owner` adds the loader in `data/index.js`. Then `ui-designer` adds the route and updates `api.md`.
 
 ## How to validate

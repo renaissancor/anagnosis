@@ -80,7 +80,7 @@ Today 23 ids break the plain ASCII snake_case form: diacritics (`guaraní`, `vol
 
 ## 5. Sources and citation
 
-- **Glottolog is the reference to compare `language.csv` against** (families, branches, ISO links). Ask the `source-glottolog` librarian (`.claude/agents/source-glottolog.md`); it reads `sources/glottolog/v5.3/`, is read-only, and reports disagreements without resolving them. Glottolog is CC BY 4.0.
+- **Glottolog is the reference to compare `language.csv` against** (families, branches, ISO links). The main session asks the `source-glottolog` librarian (`.claude/agents/source-glottolog.md`); it reads `sources/glottolog/v5.3/`, is read-only, and reports disagreements without resolving them. Glottolog is CC BY 4.0.
 - `source-wals` (WALS, structural features) may help with a typological question, not with classification.
 - `source-wikipedia` and `source-wikidata` can corroborate a historical stage, for example which language a court used.
 - **`csvs/` is the source of truth.** A source is cited, never imported. Write the row in your own words. If Glottolog disagrees with a row, the row stands until the owner edits it.

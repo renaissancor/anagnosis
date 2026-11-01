@@ -8,8 +8,8 @@ are in `../model/<concept>.md`.
 
 ```bash
 # 1. edit a CSV in csvs/ (spreadsheet or text editor)
-npm test              # 2. validate the authored layer — fails on any broken FK, duplicate key, ragged row
-npm run make:all      # 3. regenerate derived/ and data/
+npm test              # 2. regenerate derived/ and data/, then validate — fails on any broken FK, duplicate key, ragged row
+npm run make:all      # 3. rebuild again only if you edited more
 npm run make:db       # 4. (optional) rebuild anagnosis.db for DuckDB queries
 git diff csvs/ derived/   # 5. review: your CSV rows + the derived edges that moved because of them
 ```
@@ -32,9 +32,9 @@ overwritten on every run.
 
 1. Append a row to `csvs/polity.csv`:
    ```csv
-   northern_song,Northern Song Dynasty,han_chinese,middle_chinese,chinese_folk_religion,chinese_imperial,960,1127,,
+   northern_song,Northern Song Dynasty,han_chinese,middle_chinese,chinese_folk_religion,chinese_imperial,960,1127,,,,
    ```
-   Columns: `id,name,id_ruling_ethnicity,id_ruling_language,id_ruling_religion,government,start_year,end_year,policies,note`.
+   Columns: `id,name,id_ruling_ethnicity,id_ruling_language,id_ruling_religion,government,start_year,end_year,policies,note,start_basis,end_basis`.
    Ethnicity is required; the rest may be empty but the validator warns on missing religion/government.
 2. Give it territory in `csvs/polity_territory.csv` (this is the **only** place territory is recorded):
    ```csv
@@ -42,7 +42,7 @@ overwritten on every run.
    yangtze,northern_song,960,1127
    ```
 3. Optionally link a dynasty in `csvs/polity_dynasty.csv` and people in `csvs/figure.csv`.
-4. `npm test && npm run make:all`. New succession edges appear in `derived/polity_succession.csv` from the territory adjacency.
+4. `npm test`. New succession edges appear in `derived/polity_succession.csv` from the territory adjacency.
 
 ### Add a territory
 

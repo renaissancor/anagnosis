@@ -62,7 +62,7 @@ one against its source and writes the authored row; that is the only promotion.
    rows against the cited sources and reviews the plausibility report
    (`data/plausibility.md`). AI-bulk adds are never verified by the model
    that generated them in the same context.
-3. **Promote** — a human writes the authored row, with its citation.
+3. **Promote** — a person or curator role writes the authored row, with its citation, and the project owner accepts it on review.
 
 **The panel is the unit of review.** "Verify the Sahel panel" is a
 finishable afternoon; "verify the dataset" is not.

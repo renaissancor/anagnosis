@@ -6,7 +6,7 @@ Every known defect and open job, with its owner role and whether it needs the pr
 
 | # | Severity | Where | What | Owner role | Approval |
 |---|---|---|---|---|---|
-| 1 | High | `server.js`, `data/index.js`, `public/` | Curated claims are built to `data/inheritance/`, but no API route or page reads them (`model/inheritance.md`, migration step 4) | build-owner, ui-designer | Yes |
+| 1 | High | `server.js`, `data/index.js`, `public/` | Curated claims are built to `data/inheritance/`, but no API route or page reads them (`model/inheritance.md`, migration steps 6 and 7) | build-owner, ui-designer | Yes |
 | 2 | Medium | `scripts/dedup_and_link.js:468`, `scripts/extract_missing_polities.js:208` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
 | 3 | Medium | `scripts/{extract_labels,dedup_and_link,find_overlaps,extract_missing_polities,generate_stubs}.js` | Read CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
 | 4 | Medium | `scripts/{dedup_and_link,extract_labels,find_overlaps,generate_stubs,normalize_labels,extract_missing_polities}.js`, `code/generate-successions.js` | Write CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |

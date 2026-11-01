@@ -91,10 +91,10 @@ A scratch patch, run before the non-polity migration on the 4,107-edge file, res
 
 | Location | What is there |
 |---|---|
-| `code/generate-successions.js:17-21` | Header comment listing A, A-, B, C. D is not listed. No code implements it |
+| `code/generate-successions.js` | The header says no type is emitted. No code implements one |
 | `code/generate-successions.js:273-323` | The "Classify edges" section computes only direction and strength |
 | `code/generate-successions.js:330-336` | The output has no type column |
-| `docs/model/erd_nofk.sql:101`, `docs/model/erd.sql:99` | A `type TEXT` column on `polity_succession` |
+| `docs/model/erd_nofk.sql`, `docs/model/erd.sql` | A `type TEXT` column on `polity_succession` |
 | `scripts/load_csvs.sql:161-165` | The insert does not set `type`, so it is always NULL |
 | `code/makejson/successions.js:18-32` | The JSON has no type field |
 | `public/app.js:11,132`, `public/graph.html:860,1140`, `public/territory/app.js:322` | Colours and filters use `territorial_direction`. `btn.dataset.type` at `graph.html:1140` holds a direction, not a type |
@@ -102,6 +102,7 @@ A scratch patch, run before the non-polity migration on the 4,107-edge file, res
 
 These docs describe the typing as live and are wrong on that point:
 
+- `package.json` (`description`), which says the project types each succession
 - `docs/brainstorm/succession/01-why-redesign.md`, an archive file, which also locates the file in `csvs/` and reports an old edge count
 
 If the matrix were applied to the two nearest columns, 780 rows would have ethnicity and territory, 1,596 territory only, 222 ethnicity only and 1,145 neither. The last group is what the docs call "D, Ahistorical / Invalid". This projection is for scale only and is stored nowhere. `tang_dynasty → ottoman_empire`, the README's example, has no row, but that is absence rather than a type.
@@ -212,7 +213,7 @@ The example does not fit current data at four points, each of which needs the ow
 These follow from `ARCHITECTURE.md` and apply to whatever is built.
 
 1. **New claims are layer 1.** They live in `csvs/inheritance_*.csv`, are written one at a time, and are read through `code/lib/csv.js`.
-2. **Candidates stay in `derived/`.** No human edits them, and no script copies a candidate into `csvs/`. Promotion is a person writing a row.
+2. **Candidates stay in `derived/`.** No human edits them, and no script copies a candidate into `csvs/`. Promotion is a person or curator role writing a row, never a script.
 3. **Authored rows never reference derived rows.** Candidates regenerate, so a claim has no candidate id. The build joins them on the pair.
 4. **A claim needs no candidate.** Fictive and gapped claims can be real where the generator finds nothing; it cannot see beyond a 300-year gap.
 5. **A candidate needs no claim.** Most should never become one.
@@ -228,7 +229,7 @@ Claims use `fact_source.csv` unchanged. `field` names the column supported, and 
 |---|---|---|---|
 | A claim's mechanism | `inheritance_claim` | `<claim id>` | `mechanism` |
 | A stance | `inheritance_axis` | `<claim id>\|<axis>` | `stance` |
-| A recognition | `inheritance_recognition` | `<claim id>\|<observer_type>\|<observer_id>` | `degree` |
+| A recognition | `inheritance_recognition` | `<claim id>\|<observer_id>` | `degree` |
 | An extinction | `axis_terminus` | `<polity id>\|<axis>` | empty |
 
 The validator already checks table, row, field and source. Each new table needs a `PK` entry in `scripts/validate.js`.
@@ -307,7 +308,7 @@ Polity merges in progress change endpoint ids. Claim curation should begin after
 
 Ranked by how much they block. Recommendations are advice only and decide nothing.
 
-### Blocking step 3 or 4
+### Blocking claims
 
 **Q1. How is the dynastic rule applied to dynasty-named polities?** `polity.csv` holds many, including 49 rows with `han_chinese` rulers. `07` says dynasty never splits a polity alone, while `02` allows edges for conquest, Mandate transfer or a different ruling people. "Mandate transfer" could admit most of the chain or none of it. The answer determines where edges can land, and it overlaps the polity contract.
 *Recommendation:* keep the rows, drop "Mandate transfer" as sufficient alone, and test each boundary against the `07` clauses. Where a transition fails the test, treat it as a polity-merge candidate, not a claim.

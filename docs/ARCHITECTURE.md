@@ -10,7 +10,7 @@ A file's home is decided by **who writes it**, never by its format.
 
 | Layer | Directory | Writer | Tracked in git | Anyone else may… |
 |---|---|---|---|---|
-| **1 Authored** | `csvs/`, `panels/` | a person or a curator role, never a script | yes | read only |
+| **1 Authored** | `csvs/`, `panels/` | a person or a curator role; scripts only as listed under Write sets | yes | read only |
 | **2 Derived** | `derived/` | a script in `code/` or `scripts/` | yes (reviewed in diffs) | read only — never hand-edit |
 | **3 Built** | `data/`, `anagnosis.db` | `npm run make:all`, `npm run make:db` | **no** (regenerated) | read only |
 | **4 Served** | `server.js`, `public/` | the app, at runtime | yes (code) | reads layer 3 only |
@@ -80,8 +80,8 @@ up in review, but **never edited by hand** — the next run overwrites them.
 | `panel_labels.csv` | `scripts/extract_labels.js` | `normalize_labels.js` |
 | `panel_entities.csv`, `panel_labels_linked.csv` | `scripts/normalize_labels.js` | `dedup_and_link.js` |
 | `canonical_entities.csv` | `scripts/dedup_and_link.js` | `generate_stubs.js` |
-| `polity_stubs.csv` | `scripts/generate_stubs.js` | a human, who promotes rows into `csvs/polity.csv` |
-| `overlap_candidates.csv` | `scripts/find_overlaps.js` | a human |
+| `polity_stubs.csv` | `scripts/generate_stubs.js` | a curator, who promotes rows into `csvs/polity.csv` |
+| `overlap_candidates.csv` | `scripts/find_overlaps.js` | a curator |
 | `wikidata_candidates.csv` | `scripts/match_wikidata.js` | a reviewer, who confirms QIDs into `csvs/fact_source.csv` |
 
 `polity_succession.csv` is a **similarity computation** over polity attributes
@@ -135,7 +135,7 @@ vanilla JS + D3. Nothing in layer 4 reads a CSV.
 ## Data flow
 
 ```
- csvs/*.csv  panels/**.json          ← layer 1: humans
+ csvs/*.csv  panels/**.json          ← layer 1: people and curators
       │            │
       │  code/generate-successions.js
       │  scripts/{extract_labels,normalize_labels,dedup_and_link,generate_stubs}.js
@@ -166,24 +166,24 @@ what evidence says     what we assert          how people read it
 | Department | Roles | Reads | Contract | Hands off |
 |---|---|---|---|---|
 | **Sources** | One librarian per source (`source-*`) | `sources/` | `model/source.md` | Cited answers |
-| **Content** | `curator`, given one table per run; `succession-curator`; `build-owner` | Table contracts, librarian answers, `csvs/`, `derived/` | `model/<table>.md`, `model/inheritance.md`, `model/graph.md`, `model/build.md` | Validated CSVs, built into JSON |
+| **Content** | `curator`, given one task per run; `succession-curator`; `build-owner` | Table contracts, librarian answers, `csvs/`, `derived/` | `model/<table>.md`, `model/inheritance.md`, `model/graph.md`, `model/build.md` | Validated CSVs, built into JSON |
 | **Presentation** | `ui-designer` | Routes in `model/api.md` only | `model/presentation.md`, `model/api.md` | The app |
 | **Across all** | `auditor`, always a fresh reviewer and never the author | Diffs and contracts | This file | Findings at each handoff |
 
-Role files are in `.claude/agents/`. A contract may cover one table, so one `curator` role serves every table.
+Role files are in `.claude/agents/`. One `curator` role serves every table, one task at a time.
 
 ### Write sets
 
-This table is the authority on write sets. Each tracked path has one writer. Librarians and the `auditor` write nothing.
+This table is the authority on write sets. Each tracked path has one writer, except `csvs/fact_source.csv`, which is split by its `entity_table` column. Librarians and the `auditor` write nothing.
 
-Running a generator is not writing its output. Any role may run `npm run make:all`, and generated `derived/` diffs go in that role's commit. Nobody edits generated files by hand, and the scripts belong to `build-owner`.
+Running a generator is not writing its output. Any role with a write set may run `npm run make:all`, and generated `derived/` diffs go in that role's commit. Nobody edits generated files by hand, and the scripts belong to `build-owner`.
 
 The main session runs librarians, since role agents cannot start them, and passes the answers in. A role returns any defect it notices, and the main session adds it to `docs/TODO.md`.
 
 | Path | Class | Writer |
 |---|---|---|
-| `csvs/` except the inheritance tables, `panels/` | role-owned | `curator`, one task per run: the named table plus the junction rows the task needs in `polity_territory`, `polity_dynasty` and `fact_source` |
-| `csvs/fact_source.csv` rows citing `inheritance_*` or `axis_terminus` | shared-by-block | `succession-curator` |
+| `csvs/` except the inheritance tables, `panels/` | role-owned | `curator`, one task per run: the named table plus any other rows in this set that the task needs |
+| `csvs/fact_source.csv` rows whose `entity_table` is `inheritance_*` or `axis_terminus` | shared-by-block | `succession-curator` |
 | `csvs/inheritance_*.csv`, `csvs/axis_terminus.csv` | role-owned; the project owner decides each claim | `succession-curator` |
 | `docs/model/`: `city`, `dynasty`, `ethnicity`, `figure`, `government`, `language`, `non_polity`, `polity`, `polity_dynasty`, `polity_territory`, `religion`, `source`, `territory` | role-owned | `curator` for that table |
 | `docs/model/graph.md`, `docs/model/inheritance.md` | role-owned | `succession-curator` |
@@ -191,6 +191,7 @@ The main session runs librarians, since role agents cannot start them, and passe
 | `docs/model/build.md`, `docs/model/erd.md`, `docs/model/erd.sql`, `docs/model/erd_nofk.sql` | role-owned | `build-owner` |
 | `public/`, `server.js`, `docs/model/api.md`, `docs/model/presentation.md` | role-owned | `ui-designer` |
 | Everything else, including `CLAUDE.md`, `README.md`, licences, `.gitignore`, `.claude/agents/`, this file, `docs/README.md`, `docs/TODO.md` and the remaining docs | owner-maintained | the main session, for the project owner |
+| No path | read-only | `auditor`, `source-*` librarians |
 | `data/` output, `anagnosis.db`, `sources/` | built, untracked | `build-owner`'s scripts; never by hand |
 
 `scripts/dedup_and_link.js` and `scripts/extract_missing_polities.js --write` write layer 1. `build-owner` owns the code; only a `curator` runs them, and only their `panels/` and `polity.csv` output is that curator's file.
@@ -239,11 +240,11 @@ A target is not a check. Do not "fix" one across the tree unasked.
 
 | You want to… | Edit | Then run |
 |---|---|---|
-| add or fix a polity, territory link, dynasty, figure | the CSV in `csvs/` | `npm test && npm run make:all` |
+| add or fix a polity, territory link, dynasty, figure | the CSV in `csvs/` | `npm test` |
 | change taxonomy hierarchy | `parent_id` in `csvs/{ethnicity,language,religion}.csv` | same |
 | add a history panel | new JSON under `panels/<region>/` | `npm test` |
 | change how succession edges are scored | `code/generate-successions.js` | `npm run make:all` and review the `derived/` diff |
-| add a CSV column | the CSV, `scripts/validate.js` SCHEMA, `docs/model/<concept>.md`, DDL, loader, generator | `npm test && npm run make:all && npm run make:db` |
+| add a CSV column | the CSV, `scripts/validate.js` SCHEMA, `docs/model/<concept>.md`, DDL, loader, generator | `npm test && npm run make:db` |
 | anything under `data/` or `derived/` by hand | **don't** — find the layer-1 source or the script |
 
 ## Key decisions (still current)
@@ -256,7 +257,7 @@ A target is not a check. Do not "fix" one across the tree unasked.
   transitions, with a succession edge between them.
 - **Panels are first-class authored data.** They are the richest source of
   polity coverage, and the Phase 3 pipeline in `scripts/` mines them into
-  `derived/` for a human to promote.
+  `derived/` for a curator to promote.
 
 ## See also
 

@@ -128,7 +128,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 1. ✅ Canonical doc + curated tables + generator + validation (this page)
 2. ✅ `generate-successions.js` demoted to candidate suggester
 3. ⬜ Owner answers the blocking questions in `graph.md` section 6
-4. ⬜ Clean the generator: fix or remove `related_ethnicity`, delete the redundant loop and the A/B/C comment, drop `type` from both DDL files
+4. ⬜ Clean the generator (`graph.md` Q8): fix or remove `related_ethnicity`, delete the redundant loop, drop `type` from both DDL files, and review the `derived/` diff
 5. ⬜ Pilot by hand: Ottoman, `ottoman_empire → republic_of_turkey`, Russian chain, British Raj to India, Mexico, ROC and PRC, Gran Colombia, Carthage, three caliphs, Han revival. Revise the schema if the pilot breaks it, before any bulk work
 6. ⬜ Add the claim route as an addition, updating `api.md` in the same commit
 7. ⬜ Frontend view over claims, with candidates as labelled evidence
