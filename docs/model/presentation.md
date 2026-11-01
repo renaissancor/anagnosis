@@ -1,6 +1,6 @@
 # Contract: Presentation
 
-Owner role: `ui-designer`. Last re-measured: 2026-11-01. Write sets are in [`../ARCHITECTURE.md`](../ARCHITECTURE.md).
+Owner role: `ui-designer`. Last re-measured: 2026-11-02. Write sets are in [`../ARCHITECTURE.md`](../ARCHITECTURE.md).
 
 ## Purpose
 
@@ -26,11 +26,11 @@ Data fixes go to a curator. A need the routes do not meet becomes a change to `a
 
 Run `npm start` and request each changed page and route. The main session runs browser reviews. Target, not yet true: a Playwright review at desktop and phone widths. Done means the page works and `api.md` matches the route.
 
-## Current state (measured 2026-11-01)
+## Current state (measured 2026-11-02)
 
 | Measure | Value (source) |
 |---|---|
-| Panels reachable from the UI | 66 of 72 (`public/history/index.html`) |
+| Panels reachable from the UI | 72 of 72 (`/api/panel`, read by `public/history/app.js`) |
 | API routes serving claims | 2 (`server.js`) |
 
 ## Open questions
@@ -39,4 +39,5 @@ See `api.md` section 6.
 
 ## Decision log
 
+- 2026-11-02: every page is on Reading Room. Timeline bars and history cells no longer use ethnicity colour, which implied shared identity. Territory bars show periods held, and candidates there stay hidden until asked for.
 - 2026-11-01: contract created. The server binds to localhost, and panel paths stay inside `panels/`.

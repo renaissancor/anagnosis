@@ -44,7 +44,7 @@ Trimmed example:
  "territories":["anatolia","balkans","britannia","egypt","gaul","iberia","italy","levant","north_africa"]}
 ```
 
-Note `government` duplicates `ideology.government`. The list **omits** `policies`, `note`, `figures` (see mismatch M1). Consumers: `public/graph.js`, `public/polity/app.js` (index), `public/territory/app.js`, `public/ethnicity|language|religion/app.js`.
+Note `government` duplicates `ideology.government`. The list **omits** `policies`, `note`, `figures` (see mismatch M1). Consumers: `public/graph.js`, `public/polity/app.js` (index), `public/territory/app.js`, `public/shared/tree.js` (for `/ethnicity/`, `/language/`, `/religion/`), `public/history/app.js` (`id` and `name` only).
 
 ### 2.2 `GET /api/polity/:id`: full detail
 
@@ -78,7 +78,7 @@ Consumer: `public/polity/app.js` (`/polity/?id=<id>`), which shows the edges in 
 
 ### 2.3 `GET /api/polity/colors`
 
-`{ "<polity_id>": "<ruling_ethnicity id>" | null, … }`, one key per polity. About 16 KB. Consumer: `public/history/index.html` (colours panel cells). Route order matters: it is registered before `/api/polity/:id`, so a polity with id `colors` would be shadowed.
+`{ "<polity_id>": "<ruling_ethnicity id>" | null, … }`, one key per polity. About 16 KB. **No page reads it since 2026-11-02**: history cells no longer carry ethnicity colours. The route stays served. Route order matters: it is registered before `/api/polity/:id`, so a polity with id `colors` would be shadowed.
 
 ### 2.4 `GET /api/succession`
 
@@ -100,7 +100,7 @@ Flat array of directed edges (3743, about 1.3 MB, the biggest payload). Source: 
  "shared_territory_count":8,"same_ethnicity":true,"related_ethnicity":false,"same_language":true,"same_religion":false,"temporal_gap_years":0}
 ```
 
-Consumers: `public/graph.js`, `public/territory/app.js`. **No A/B/C/D type is served** (section 6).
+Consumers: `public/graph.js` and `public/territory/app.js`, both only when the reader asks for computed evidence. **No A/B/C/D type is served** (section 6).
 
 ### 2.4a Claims: decided succession
 
@@ -111,7 +111,7 @@ Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTe
 
 ### 2.5 Territory
 
-- `GET /api/territory`: array of all 54 territories (about 59 KB). Consumer: `public/territory/app.js`.
+- `GET /api/territory`: array of all 54 territories (about 59 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar.
 - `GET /api/territory/:id`: one object; 404 `{"error":"Not found"}`. No frontend page calls it.
 
 ```json
@@ -120,20 +120,20 @@ Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTe
              {"polity_id":"new_kingdom_egypt","start_year":-1550,"end_year":-1070}]}
 ```
 
-`polities[].end_year` is **absent** (not null) when the CSV is empty. `name` is currently the lowercase id (`territory.csv` has `name == id`), so it is not display-quality. The list is sorted by `start_year`.
+`polities[].end_year` is **absent** (not null) when the CSV is empty. `name` is currently the lowercase id (`territory.csv` has `name == id`), so it is not display-quality. The list is sorted by `start_year`. `polity_count` counts `polity_territory` rows, not polities, so it is higher than the distinct count on 9 territories (`scandinavia` 9 against 6). The page counts distinct `polity_id`s.
 
 ### 2.6 `GET /api/taxonomy/:type`, with `type` in `ethnicity | language | religion`
 
 Flat array of nodes (`parent` is the id of the parent node or `null` for roots; the tree is reconstructed client-side). Unknown type gives 404 `{"error":"Unknown taxonomy type"}`. Sizes: 276 / about 695 / 264 nodes.
 
 Branch node (has children): `{id, name, parent, description|null, founded|null, status|null}` (religion branches also have `founder|null`).
-Leaf node: the same, plus a block of placeholder fields that the generators hard-code to `null`/`[]` (ethnicity: `historical_depth, languages, origin_territory, ancestry, social_structure, population, major_regions`; language: `iso6393, glottocode, macro_area, coordinates, scripts, speaker_count`; religion: `founder, founded_region, scriptures, theology, adherent_count, major_regions, sub_sects`). **Leaf and branch shapes differ**, and the placeholder fields carry no data. Do not read them. `population.date` / `speaker_count.date` / `adherent_count.date` are the build year, not a data date.
+Leaf node: the same, plus a block of placeholder fields that the generators hard-code to `null`/`[]` (ethnicity: `historical_depth, languages, origin_territory, ancestry, social_structure, population, major_regions`; language: `iso6393, glottocode, macro_area, coordinates, scripts, speaker_count`; religion: `founder, founded_region, scriptures, theology, adherent_count, major_regions, sub_sects`). **Leaf and branch shapes differ**, and the placeholder fields carry no data. Do not read them. `population.date` / `speaker_count.date` / `adherent_count.date` are the build year, not a data date. `founded` is text, not a year: 4 ethnicity rows hold descriptive phrases and the other two taxonomies have none, so the page formats it as a year only when it is a whole number. Root names arrive in capitals; `public/shared/tree.js` shows them in title case.
 
 ```json
 {"id":"christianity","name":"Christianity","parent":"abrahamic_religions","description":null,"founder":null,"founded":null,"status":null}
 ```
 
-Consumers: `public/ethnicity|language|religion/app.js` (the matching type) and `public/polity/app.js` (display names).
+Consumers: `public/shared/tree.js`, configured by `public/ethnicity|language|religion/app.js` (the matching type), and `public/polity/app.js` (display names).
 
 ### 2.7 Government
 
@@ -152,10 +152,10 @@ No frontend page calls any of these.
 
 ### 2.9 History panels (authored, not built)
 
-- `GET /api/panel`: `[{id:"<region>/<name>", title, region}]`, 72 entries. **Unused**: `public/history/index.html` hard-codes its own `REGIONS` list.
-- `GET /api/panel/:region/:id`: the raw panel JSON (`{id, title, columns:[{id,name,slots,type?}], rows…}`) via `res.sendFile`; 404 `{"error":"Panel not found"}`. The client calls it as `/api/panel/${region}/${name}`.
-- Cells reference polities by `polity: "<polity_id>"`. 4191 such references exist; 2077 point at ids not in `data/polity/` (1697 unique). The client degrades to the default colour (`eth-default`), so this is not an error, but it is where retired or never-created ids surface (section 6).
-- A cell may instead hold `ethnicity: "<ethnicity_id>"`, an FK to `ethnicity.csv`, for a people that is not a polity. 57 cells do. An entry has at most one of `polity` and `ethnicity`, and `scripts/validate.js` fails on an unresolved `ethnicity` or on both keys. The client ignores this key today, so these cells render as plain text like a label (`non_polity.md`).
+- `GET /api/panel`: `[{id:"<region>/<name>", title, region}]`, 72 entries. Consumer: `public/history/app.js`, which builds its picker from this list, so a new panel file appears with no page change.
+- `GET /api/panel/:region/:id`: the raw panel JSON (`{id, title, columns:[{id,name,slots,type?}], rows…}`) via `res.sendFile`; 404 `{"error":"Panel not found"}`. The client calls it as `/api/panel/${region}/${name}` and keeps the choice in the URL as `/history/?panel=<region>/<name>`.
+- Cells reference polities by `polity: "<polity_id>"`. 4191 such references exist; 2077 point at ids not in `data/polity/` (1697 unique). The client checks each id against `/api/polity`: a known id gets a link and the tint for linked cells, and an unknown one reads as plain text with no link. This is not an error, but it is where retired or never-created ids surface (section 6).
+- A cell may instead hold `ethnicity: "<ethnicity_id>"`, an FK to `ethnicity.csv`, for a people that is not a polity. 57 cells do. An entry has at most one of `polity` and `ethnicity`, and `scripts/validate.js` fails on an unresolved `ethnicity` or on both keys. The client ignores this key today, so these cells render as plain text like a label (`non_polity.md`). A `note` shows on every cell form.
 - A cell with only `label` is the intended form for any other non-polity: a culture, collective, event or period. 767 entries are label-only.
 
 Panels are the layer-1 file shape, so a change to the panel JSON schema is a data-owner change that the history page must follow.
@@ -187,21 +187,21 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 
 ### Served, never read by any page
 
-- Whole routes: `/api/government*`, `/api/dynasty*`, `/api/figure`, `/api/territory/:id`, `/api/panel` (list), `/api/db`.
-- Succession fields: `related_ethnicity`, `shared_territory_count`, `strength` (no page reads it from `/api/succession`), `temporal_gap_years` (copied onto graph links in `graph.html`, never displayed or used).
+- Whole routes: `/api/government*`, `/api/dynasty*`, `/api/figure`, `/api/territory/:id`, `/api/polity/colors`, `/api/db`.
+- Succession fields: `related_ethnicity`, `shared_territory_count`, `strength` (no page reads it from `/api/succession`), `temporal_gap_years`.
 - Polity: `figures[].years`, `figures[].significance` (`app.js` renders figures but only from absent data, see M1). `ideology` + `government` duplication in the list.
-- Taxonomy leaf placeholders (section 2.6) and `status`, `founder`.
+- Taxonomy leaf placeholders (section 2.6) and `founder`. `status` is shown when present and is null on every row today.
 - Polity edge `strength` and `shared_territories` on `/api/polity/:id` successors: the polity page reads only `name`, `territorial_direction` and the three `same_*` flags.
 
 ### Real mismatches (found by reading the code and running it)
 
 - **M1. Fixed 2026-11-02.** The `/` detail panel that read fields absent from the list route is gone. The polity entry shows `figures`, `policies` and `note` from `/api/polity/:id`.
 - **M2. Fixed 2026-11-02.** The graph no longer reads territories.
-- **M3. Territory `name` equals the id** (`"egypt"`), so UI labels derived from `name` are unformatted. The frontend labels come from the id anyway.
-- **M4. `public/history` hard-codes 66 panel ids; 72 panel files exist.** Six panels are unreachable from the UI: `central_africa/congo`, `east_africa/swahili_coast`, `latin_america/peru`, `oceania/oceania`, `southeast_asia/philippines`, `southern_africa/southern_africa`. `/api/panel` would solve this, but nothing calls it. All 66 listed ids resolve to a file.
+- **M3. Territory `name` equals the id** (`"egypt"`), so no page shows it. Every label comes from the id through `placeName` in `public/shared/site.js`.
+- **M4. Fixed 2026-11-02.** `public/history/app.js` loads its panel list from `/api/panel`, so all 72 panels are reachable, including the six the old hard-coded list missed: `central_africa/congo`, `east_africa/swahili_coast`, `latin_america/peru`, `oceania/oceania`, `southeast_asia/philippines`, `southern_africa/southern_africa`.
 - **M5. Path traversal in `/api/panel/:region/:id`. Fixed 2026-11-01.** An encoded `..` or `/` in a route parameter could read any non-dot `.json` the process could reach, and the server listened on all interfaces. The route now requires the resolved path to stay inside `panels/`, and the server binds to `127.0.0.1`. `/data/*` still exposes all of `data/`, including `index.js`.
-- **M6. `/api/polity/colors` is not a function of colours.** It returns ethnicity ids, and the history page maps them through its own `ETH_CLASS` table, so any ethnicity id not in that table renders as default. The name `colors` is misleading, and the mapping is frontend-owned.
-- **M7. 404 behaviour is inconsistent.** Unknown ids give JSON 404s, but an unknown `/api/...` path gives Express's HTML 404. Pages handle `!res.ok` generically via `cachedFetch` (`throw new Error("404 Not Found")`) and `showError`, with no per-route messages.
+- **M6. `/api/polity/colors` is not a function of colours, and nothing reads it.** It returns ethnicity ids. The history page's `ETH_CLASS` table that used them was removed on 2026-11-02, because hashed or tabled colours implied shared identity. The route stays served until someone decides to remove it (section 5).
+- **M7. 404 behaviour is inconsistent.** Unknown ids give JSON 404s, but an unknown `/api/...` path gives Express's HTML 404. Pages handle `!res.ok` through `cachedFetch` (`throw new Error("404 Not Found")`) and `renderLoadError` in `public/shared/site.js`. `/polity/` turns a 404 into a not-found page; `/territory/` and `/history/` do the same by checking the id against their list route.
 
 ## 5. What is breaking
 
@@ -209,7 +209,7 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 
 1. Removing or renaming any field or route listed in section 2 that a page reads: `polity.{id,name,start,end,ruling_ethnicity,cultural_language,ideology.religion,ideology.government,government,territories}`; succession `{from,to,territorial_direction,shared_territories,same_ethnicity,same_language,same_religion}`; taxonomy `{id,name,parent,description,founded,status}`; territory `{id,name,polities[].{polity_id,start_year,end_year}}`; `/api/polity/:id` `successors[]`/`predecessors[]` (`id,name,territorial_direction`, and the `same_*` flags).
 2. Changing a type: integer years to strings, boolean `same_*` to strings, `end: null` to `0` or absent (the pages test `end || 2000`, `end == null`), `territories` from array to string, `parent` from id to object.
-3. Changing the **vocabulary** of `territorial_direction` (the pages key CSS classes, colours and filters on the five values `same|expansion|contraction|displacement|unknown`). Adding a sixth value silently falls back to `unknown` styling or disappears from `graph.html`'s filter (it hard-codes the five types).
+3. Changing the **vocabulary** of `territorial_direction` (the five values `same|expansion|contraction|displacement|unknown`). The polity page words the five values, and a sixth falls back to the `unknown` wording. The territory page no longer colours or words them.
 4. Changing id semantics (renaming or retiring a polity, territory, ethnicity, language or religion id). Ids are cross-references across responses and into `panels/`. CLAUDE.md already says ids are never reused. Retiring one also breaks every panel `polity:` reference to it.
 5. Changing the taxonomy tree encoding (the `parent` convention), or making ids non-unique.
 6. Changing the meaning of `null` vs absent for a field that pages test with `=== undefined` or `in`. No page does today, but `?` fields (`policies`, `note`, `figures`, `end_year`) are currently read with `|| []`/truthiness.
@@ -222,7 +222,7 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 
 - **Succession type.** The A/B/C/D classification is retired (`graph.md`). **No JSON edge carries it**: `derived/polity_succession.csv` has no such column, `successions.js` copies none, and no `public/` file reads `.type` on an edge. The only classification that reaches the frontend is `territorial_direction` (5 values).
 - **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `heir_polity_id, source_id, heir_name, source_name`. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
-- **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: territory ids (`graph.html`), ethnicity ids (`ETH_CLASS` in `history/index.html`), religion and government ids (colour tables in `graph.html`), panel ids (`history/index.html`). A renamed or retired id in those sets degrades silently to a default colour.
+- **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: one default panel id and a few panel group names in `public/history/app.js`. A renamed panel loses only its group name, or the default if it was the default.
 - **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2077 of 4191 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Settled: label-only is the intended form for a non-polity cell (section 2.9), and an unresolved `polity` stays a warning until the remaining ids are triaged.
 - **Open:** whether `/api/polity` should carry `policies`/`note`/`figures` (M1), or the index page should fetch the detail; whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
 

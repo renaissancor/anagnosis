@@ -1,0 +1,39 @@
+/* History panels. The scroll box keeps the column heads and the era column in
+   view, and .cell-text keeps a spanning cell's words on screen while it scrolls. */
+.panel-legend { font: 400 var(--step--1)/1.4 var(--sans); color: var(--ink-soft); }
+.swatch { display: inline-block; width: 1.1em; height: 0.9em; vertical-align: -0.05em; background: var(--paper-raised); border: 1px solid var(--rule); }
+
+.panel-scroll { overflow: auto; max-height: 85vh; border: 1px solid var(--rule); }
+.panel-grid { --era: 7.5rem; --slot: 8.5rem; --head: 2.25rem; display: grid; font: 400 0.9375rem/1.3 var(--serif); }
+
+.panel-head, .era-cell, .cell { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.panel-head { position: sticky; top: 0; z-index: 2; background: var(--paper); font: 500 var(--step--1)/1.25 var(--sans); padding: 0.4rem 0.5rem; }
+.era-cell { position: sticky; left: 0; z-index: 1; background: var(--paper); color: var(--ink-soft); font: 500 var(--step--1)/1.25 var(--sans); padding: 0.4rem 0.5rem; overflow-wrap: anywhere; }
+.panel-head.era-head { left: 0; z-index: 3; color: var(--ink-soft); }
+.era-start { border-top: 2px solid var(--ink-soft); }
+
+.cell { padding: 0.35rem 0.5rem; min-width: 0; }
+.cell-text { display: block; position: sticky; left: calc(var(--era) + 0.5rem); top: calc(var(--head) + 0.35rem); width: fit-content; max-width: min(20rem, 40vw); overflow-wrap: anywhere; }
+.panel-head .cell-text { top: 0; }
+.era-cell .cell-text, .era-head .cell-text { left: auto; }
+.cell-note { display: block; font: 400 0.8125rem/1.25 var(--sans); color: var(--ink-soft); margin-top: 0.1rem; }
+
+.cell.linked, .cell-stack .linked, .cell-split .linked { background: var(--paper-raised); }
+.panel-grid a { color: var(--binding); text-decoration: none; }
+.panel-grid a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+
+.cell-stack, .cell-split { padding: 0; display: flex; }
+.cell-stack { flex-direction: column; }
+.cell-split { flex-wrap: wrap; }
+.cell-stack > div, .cell-split > div { flex: 1 1 auto; padding: 0.35rem 0.5rem; }
+.cell-stack > div + div { border-top: 1px solid var(--rule); }
+.cell-split > div { flex-basis: 5.5rem; min-width: 0; }
+.cell-split > div + div { border-left: 1px solid var(--rule); }
+
+.panel-notes { font: 400 var(--step--1)/1.45 var(--sans); color: var(--ink-soft); }
+.panel-notes li { margin-bottom: 0.3rem; }
+
+@media (max-width: 30rem) {
+  .panel-grid { --era: 6.5rem; --slot: 7.5rem; }
+  .panel-head, .era-cell { padding: 0.4rem 0.35rem; }
+}

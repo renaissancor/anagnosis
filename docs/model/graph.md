@@ -97,7 +97,7 @@ A scratch patch, run before the non-polity migration on the 4,107-edge file, res
 | `docs/model/erd_nofk.sql`, `docs/model/erd.sql` | A `type TEXT` column on `polity_succession` |
 | `scripts/load_csvs.sql:161-165` | The insert does not set `type`, so it is always NULL |
 | `code/makejson/successions.js:18-32` | The JSON has no type field |
-| `public/app.js:11,132`, `public/graph.html:860,1140`, `public/territory/app.js:322` | Colours and filters use `territorial_direction`. `btn.dataset.type` at `graph.html:1140` holds a direction, not a type |
+| `public/polity/app.js` | The computed-evidence list words `territorial_direction` as plain text. No page colours or filters on it |
 | `csvs/city_succession.csv` | `succession_type` exists for cities only, with unrelated values: `capital_function`, `regional_center`, `merger` |
 
 These docs describe the typing as live and are wrong on that point:

@@ -53,7 +53,7 @@ npm install
 npm start        # → http://localhost:3000
 ```
 
-**Pages:** `/` polity browser · `/history/` regional timeline panels · `/graph.html` D3 force-directed succession graph · `/territory/`, `/ethnicity/`, `/language/`, `/religion/` browsers.
+**Pages:** `/` home and how to read the data · `/polity/` entries · `/graph.html` decided claims on a time axis · `/history/` regional panels · `/territory/`, `/ethnicity/`, `/language/`, `/religion/` browsers.
 
 **JSON API:** `/api/polity` · `/api/polity/:id` · `/api/succession` · `/api/panel` · `/api/territory` · `/api/dynasty` · `/api/taxonomy/:type`.
 

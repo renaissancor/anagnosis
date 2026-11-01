@@ -11,7 +11,6 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 3 | Medium | `scripts/{extract_labels,dedup_and_link,find_overlaps,extract_missing_polities,generate_stubs}.js` | Read CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
 | 4 | Medium | `scripts/{dedup_and_link,extract_labels,find_overlaps,generate_stubs,normalize_labels,extract_missing_polities}.js`, `code/generate-successions.js` | Write CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
 | 5 | Medium | `public/history/index.html` | 66 panel ids are hard-coded and 72 exist; 6 are unreachable (`model/api.md` M4) | ui-designer | Yes |
-| 6 | Medium | `public/app.js` | The index detail panel never shows figures, policies or note (`model/api.md` M1) | ui-designer | Yes |
 | 7 | Medium | `scripts/validate.js` | 1,773 warnings and 1,145 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
 | 8 | Medium | `scripts/validate.js:367` | (heir, source) uniqueness is decided but not checked | build-owner | Yes |
 | 9 | Low | `server.js:11` | `/data` serves all of `data/`, including `index.js` | ui-designer | Yes |

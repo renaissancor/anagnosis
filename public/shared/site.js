@@ -64,7 +64,7 @@ function humanize(id) {
 
 /** north_africa → North Africa. Territory rows have no display name yet (api.md M3). */
 function placeName(id) {
-  return String(id ?? '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  return String(id ?? '').split('_').map(w => (w === 'us' ? 'US' : w.charAt(0).toUpperCase() + w.slice(1))).join(' ');
 }
 
 function formatYear(y) {
