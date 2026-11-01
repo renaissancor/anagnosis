@@ -201,7 +201,8 @@ function computedHtml(polity, { as_heir, as_source }) {
         <summary>Show ${total} computed overlaps, strongest first</summary>
         ${list('Computed as earlier', earlier)}
         ${list('Computed as later', later)}
-      </details>`
+      </details>
+      <p><a href="/graph.html?id=${encodeURIComponent(polity.id)}">See these on the graph</a></p>`
     : '<p>A script found no overlaps for this polity.</p>';
 
   return `<section class="pencil" aria-labelledby="computed">

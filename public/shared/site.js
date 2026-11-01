@@ -6,7 +6,7 @@
 const NAV = [
   ['/polity/', 'Polities'], ['/territory/', 'Territories'], ['/history/', 'History'],
   ['/graph.html', 'Graph'], ['/religion/', 'Religion'], ['/language/', 'Language'],
-  ['/ethnicity/', 'Peoples'], ['/about/', 'About'],
+  ['/ethnicity/', 'Peoples'],
 ];
 
 function currentTheme() {
@@ -22,7 +22,7 @@ function renderFrame() {
     header.outerHTML = `
       <a class="skip-link" href="#main">Skip to content</a>
       <header class="site-header">
-        <a class="site-name" href="/polity/">Anagnosis</a>
+        <a class="site-name" href="/">Anagnosis</a>
         <nav class="site-nav" aria-label="Sections">
           ${NAV.map(([href, label]) => `<a href="${href}"${here === href ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
         </nav>
@@ -41,7 +41,7 @@ function renderFrame() {
   }
   const footer = document.getElementById('site-footer');
   if (footer) {
-    footer.outerHTML = `<footer class="site-footer"><p>Coverage is uneven by design: a gap here means not yet curated, not that nothing happened. <a href="/about/">How to read this dataset</a></p></footer>`;
+    footer.outerHTML = `<footer class="site-footer"><p>Coverage is uneven by design: a gap here means not yet curated, not that nothing happened. <a href="/#how-to-read">How to read this dataset</a></p></footer>`;
   }
 }
 

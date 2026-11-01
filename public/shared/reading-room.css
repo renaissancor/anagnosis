@@ -137,6 +137,8 @@ ul, ol { list-style: none; }
 .entry-list a:hover { text-decoration: underline; }
 .entry-list .when { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); white-space: nowrap; }
 
+.start-list li { margin-bottom: 0.3rem; }
+
 /* States */
 .state { color: var(--ink-soft); }
 .state-error { color: var(--seal); }

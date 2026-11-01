@@ -44,7 +44,7 @@ Trimmed example:
  "territories":["anatolia","balkans","britannia","egypt","gaul","iberia","italy","levant","north_africa"]}
 ```
 
-Note `government` duplicates `ideology.government`. The list **omits** `policies`, `note`, `figures` (see mismatch M1). Consumers: `public/app.js` (index graph), `public/graph.html`, `public/polity/app.js` (search box), `public/territory/app.js`, `public/ethnicity|language|religion/app.js`.
+Note `government` duplicates `ideology.government`. The list **omits** `policies`, `note`, `figures` (see mismatch M1). Consumers: `public/graph.js`, `public/polity/app.js` (index), `public/territory/app.js`, `public/ethnicity|language|religion/app.js`.
 
 ### 2.2 `GET /api/polity/:id`: full detail
 
@@ -100,18 +100,18 @@ Flat array of directed edges (3743, about 1.3 MB, the biggest payload). Source: 
  "shared_territory_count":8,"same_ethnicity":true,"related_ethnicity":false,"same_language":true,"same_religion":false,"temporal_gap_years":0}
 ```
 
-Consumers: `public/app.js`, `public/graph.html`, `public/territory/app.js`. **No A/B/C/D type is served** (section 6).
+Consumers: `public/graph.js`, `public/territory/app.js`. **No A/B/C/D type is served** (section 6).
 
 ### 2.4a Claims: decided succession
 
 Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTermini`. These routes are the only ones that state succession. `/api/succession` and the `successors` and `predecessors` of `/api/polity/:id` are computed candidates, despite their names (`graph.md`), and a page must label them as computed.
 
-- `GET /api/claim`: every claim, 9 today. Fields are those of `inheritance.md` as built by `inheritance.js` (`id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism, legitimacy_mode, exclusivity, temporal_gap_years, provenance, note, axes[], recognition[]`), plus `heir_name` and `source_name`, and `observer_name` on each `recognition` entry. A name falls back to the id. Consumer: `public/graph.html`.
+- `GET /api/claim`: every claim, 9 today. Fields are those of `inheritance.md` as built by `inheritance.js` (`id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism, legitimacy_mode, exclusivity, temporal_gap_years, provenance, note, axes[], recognition[]`), plus `heir_name` and `source_name`, and `observer_name` on each `recognition` entry. A name falls back to the id. Consumers: `public/graph.js`, `public/index.html`.
 - `GET /api/polity/:id/claims`: `{as_heir: claim[], as_source: claim[], termini: {polity_id, axis, year, note}[]}`. All three arrays may be empty, which means not curated. 404 `{"error":"Not found"}` for an unknown id. Consumer: `public/polity/app.js`.
 
 ### 2.5 Territory
 
-- `GET /api/territory`: array of all 54 territories (about 59 KB). Consumers: `public/app.js` (filter labels), `public/territory/app.js`.
+- `GET /api/territory`: array of all 54 territories (about 59 KB). Consumer: `public/territory/app.js`.
 - `GET /api/territory/:id`: one object; 404 `{"error":"Not found"}`. No frontend page calls it.
 
 ```json
@@ -133,7 +133,7 @@ Leaf node: the same, plus a block of placeholder fields that the generators hard
 {"id":"christianity","name":"Christianity","parent":"abrahamic_religions","description":null,"founder":null,"founded":null,"status":null}
 ```
 
-Consumers: `public/ethnicity|language|religion/app.js` (the matching type) and `public/app.js` (ethnicity only).
+Consumers: `public/ethnicity|language|religion/app.js` (the matching type) and `public/polity/app.js` (display names).
 
 ### 2.7 Government
 
@@ -164,7 +164,7 @@ Panels are the layer-1 file shape, so a change to the panel JSON schema is a dat
 
 - `GET /api/db`: the whole in-memory DB (about 1.8 MB), including the unused empty `provinces: []`. Marked "will deprecate" in `server.js`. No page uses it. Treat as unsupported.
 - `GET /data/*`: `server.js` also statically serves the whole `data/` directory (including `data/index.js`). No page uses it. See M5.
-- `GET /` and the static pages: `/` → `public/index.html` + `app.js` (succession graph), `/graph.html` (community graph), `/polity/?id=`, `/territory/?id=`, `/ethnicity/`, `/language/`, `/religion/`, `/history/`.
+- `GET /` and the static pages: `/` → `public/index.html` (home and how to read the data), `/graph.html` + `graph.js` (the one graph), `/polity/?id=`, `/territory/?id=`, `/ethnicity/`, `/language/`, `/religion/`, `/history/`.
 
 ## 3. Built files: generator and CSV provenance
 
@@ -195,8 +195,8 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 
 ### Real mismatches (found by reading the code and running it)
 
-- **M1. Detail panel on `/` never shows figures, policies or note.** `public/app.js` `showDetail(polity)` reads `polity.figures`, `polity.policies`, `polity.note`, but the object comes from `/api/polity` (the list), which omits all three. Those sections are always empty on the index page. Fix: either have `showDetail` fetch `/api/polity/:id`, or add the fields to the list (about +150 KB).
-- **M2. `graph.html` reads `p.territory || p.territories`.** `territory` (singular) and `capital_territory` do not exist in any response; they are dead fallbacks left over from an older schema. Harmless, since `territories` is served. 6 polities have no territory in `TERRITORY_REGION` and are placed in `Unknown`.
+- **M1. Fixed 2026-11-02.** The `/` detail panel that read fields absent from the list route is gone. The polity entry shows `figures`, `policies` and `note` from `/api/polity/:id`.
+- **M2. Fixed 2026-11-02.** The graph no longer reads territories.
 - **M3. Territory `name` equals the id** (`"egypt"`), so UI labels derived from `name` are unformatted. The frontend labels come from the id anyway.
 - **M4. `public/history` hard-codes 66 panel ids; 72 panel files exist.** Six panels are unreachable from the UI: `central_africa/congo`, `east_africa/swahili_coast`, `latin_america/peru`, `oceania/oceania`, `southeast_asia/philippines`, `southern_africa/southern_africa`. `/api/panel` would solve this, but nothing calls it. All 66 listed ids resolve to a file.
 - **M5. Path traversal in `/api/panel/:region/:id`. Fixed 2026-11-01.** An encoded `..` or `/` in a route parameter could read any non-dot `.json` the process could reach, and the server listened on all interfaces. The route now requires the resolved path to stay inside `panels/`, and the server binds to `127.0.0.1`. `/data/*` still exposes all of `data/`, including `index.js`.
@@ -221,7 +221,7 @@ Joined in `server.js`, not in `data/`: polity `successors`/`predecessors`, dynas
 ## 6. Current state and open questions
 
 - **Succession type.** The A/B/C/D classification is retired (`graph.md`). **No JSON edge carries it**: `derived/polity_succession.csv` has no such column, `successions.js` copies none, and no `public/` file reads `.type` on an edge. The only classification that reaches the frontend is `territorial_direction` (5 values).
-- **What `public/graph.html` actually uses.** From `/api/polity`: `id, name, start, end, ruling_ethnicity, government, ideology.religion, territories`. From `/api/succession`: `from, to, territorial_direction, shared_territories, temporal_gap_years` (the last is carried but unused). It derives the macro-region itself from a hard-coded 52-territory-id table (all 52 are valid territory ids today) and computes degree and Louvain communities client-side. It does **not** use `strength`, `same_*`, `related_ethnicity`, or `shared_territory_count`. It also hard-codes the five direction types in its filter, and colour tables keyed by religion and government ids.
+- **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `heir_polity_id, source_id, heir_name, source_name`. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
 - **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: territory ids (`graph.html`), ethnicity ids (`ETH_CLASS` in `history/index.html`), religion and government ids (colour tables in `graph.html`), panel ids (`history/index.html`). A renamed or retired id in those sets degrades silently to a default colour.
 - **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2077 of 4191 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Settled: label-only is the intended form for a non-polity cell (section 2.9), and an unresolved `polity` stays a warning until the remaining ids are triaged.
 - **Open:** whether `/api/polity` should carry `policies`/`note`/`figures` (M1), or the index page should fetch the detail; whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
