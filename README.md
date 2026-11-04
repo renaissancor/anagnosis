@@ -35,8 +35,8 @@ The floor of the model is the edge that shares **neither people nor land**: an *
 
 | | Count | | Count |
 |---|---:|---|---:|
-| Polities | **481** | History panels | **72** |
-| Succession edges | **3,736** (computed) | Territories | **54** |
+| Polities | **492** | History panels | **72** |
+| Succession edges | **3,787** (computed) | Territories | **56** |
 | Languages | **695** | Religions | **262** |
 | Ethnicities | **276** | Dynasties | **192** |
 

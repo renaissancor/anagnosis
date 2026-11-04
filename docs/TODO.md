@@ -7,8 +7,8 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | # | Severity | Where | What | Owner role | Approval |
 |---|---|---|---|---|---|
 | 2 | Medium | `scripts/dedup_and_link.js:464`, `scripts/extract_missing_polities.js:197` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
-| 13 | High | `csvs/polity_territory.csv` | 728 of 800 territory spans only repeat the polity's whole lifespan, so timelines cannot show tenure; the UI draws these hollow | curator | Yes |
-| 7 | Medium | `scripts/validate.js` | 1,773 warnings and 1,145 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
+| 13 | High | `csvs/polity_territory.csv` | 740 of 812 territory spans only repeat the polity's whole lifespan, so timelines cannot show tenure; the UI draws these hollow | curator | Yes |
+| 7 | Medium | `scripts/validate.js` | 1,775 warnings and 1,184 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
 | 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | build-owner | Yes |
 | 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
@@ -26,6 +26,9 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 29 | Low | `scripts/dedup_and_link.js:484` | `--dry-run` still writes `derived/canonical_entities.csv`; the usage header does not say so | build-owner | Yes |
 | 30 | Low | `derived/wikidata_candidates.csv:68` | Best match for `funan` is a 2023 journal article (Q125912311), not the polity | curator | Yes |
 | 31 | Low | `docs/model/figure.md:118`, `docs/model/graph.md:118`, `docs/model/api.md` §2.3 | Missed counts: 350 polities with no figure (now 349); polity 482 rows (now 481); `/api/polity/colors` about 15 KB, not 14 | curator, succession-curator, ui-designer | Yes |
+| 32 | Medium | `code/generate-successions.js:184-197` | `same_ethnicity` is set only when two polities also share a territory, so `no_people_no_land_edges` counts some same-people edges (about 30 Arab-to-Arab edges after 2026-11-05) | build-owner | Yes |
+| 33 | Low | `docs/model/source.md:32` | Does a `field=id` row exclude other rows from the same source or only the same QID? `new_kingdom_egypt` has an `id` row (Q180568) and a language row (Q1852329) | owner | Yes |
+| 34 | Low | `panels/east_asia/tibet.json:640,703` | `bhutan` duplicates `kingdom_of_bhutan`; the label says independent from 1949 against the 1907 start | curator | Yes |
 
 ## Open curation
 
@@ -35,19 +38,9 @@ Every known defect and open job, with its owner role and whether it needs the pr
 |---|---|---|---|
 | awadh_nawabate | Awadh Nawabate | 1722–1856 | india |
 | carnatic_sultanate | Carnatic Nawabate | 1690–1855 | india |
-| guge_kingdom | Guge Kingdom | c.842–1630 | tibet |
-| ladakh_kingdom | Ladakh Kingdom | c.842–1846 | tibet |
-| ganden_phodrang | Ganden Phodrang | 1642–1959 | tibet |
-| sikkim_kingdom | Sikkim Kingdom | 1642–1975 | tibet |
-| bhutan_kingdom | Kingdom of Bhutan | 1907–present | tibet |
-| hashimite_hejaz | Hashimite Kingdom of Hejaz | 1916–1925 | arabia |
 | syrian_1st_republic | Syrian Republic | 1946–1958; 1961–1963 | levant |
-| lebanese_republic | Lebanese Republic | 1943–present | levant |
-| wattasid_dynasty | Wattasid Dynasty | 1472–1554 | morocco |
-| italian_somaliland | Italian Somaliland | | somalia, swahili_coast |
-| somali_republic | Somali Republic | | somalia, swahili_coast |
 
-Branch `overnight-polities` (2026-11-05, not merged) adds `hashimite_kingdom_of_hejaz`, `lebanese_republic`, `baathist_syrian_arab_republic` and `wattasid_dynasty` from Wikidata; it raises the warning ratchet, so it waits for the owner. The Tibet and Himalaya rows and the two Somali rows are blocked because no territory zone fits (`territory.md` known gaps). Awadh appears only inside a combined `rajput_states` cell. Carnatic has no sourced ruling ethnicity. `azanian_coast` is a region and was dropped from this list.
+Added 2026-11-05 on `zones-and-new-kingdom`: the `tibetan_plateau` and `horn_of_africa` zones and 11 polities (Hejaz, Lebanon, Ba'athist Syria, Wattasid, Guge, Ladakh, Ganden Phodrang, Sikkim, Bhutan, Italian Somaliland, Somali Republic). Still open: Awadh appears only inside a combined `rajput_states` cell; Carnatic has no sourced ruling ethnicity; Syria 1946–1958 and 1961–1963 has no row; `punt` may belong on `horn_of_africa`; `yuan_dynasty`, `qing_dynasty` and `peoples_republic_of_china` lack a `tibetan_plateau` row pending `polity_territory.md` OPEN 1.
 
 `bantu_expansion` is also reported, but it is an event and fails the polity admission test.
 

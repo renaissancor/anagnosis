@@ -32,10 +32,10 @@ gitignored wholesale without losing authored work.
 
 ```
 csvs/
-  polity.csv              481  the entity tier: id, name, ruling ethnicity/language/religion, government, years, policies, note
-  polity_territory.csv    800  junction: which territory a polity held, when   ← sole source of territory
-  polity_dynasty.csv      274  junction: which dynasty ruled a polity, when
-  territory.csv            54  macro geographic zones
+  polity.csv              492  the entity tier: id, name, ruling ethnicity/language/religion, government, years, policies, note
+  polity_territory.csv    812  junction: which territory a polity held, when   ← sole source of territory
+  polity_dynasty.csv      276  junction: which dynasty ruled a polity, when
+  territory.csv            56  macro geographic zones
   dynasty.csv             192  cross-cutting tag (not a tier)
   figure.csv              286  key people, FK → polity
   government.csv           29  government-form taxonomy (flat)
