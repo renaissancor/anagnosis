@@ -90,7 +90,7 @@ PROPOSED: suffix the second and later rows with the polity's short name and keep
 - For lifespans and roles, ask `source-wikipedia` and `source-wikidata` (`.claude/agents/source-wikipedia.md`, `source-wikidata.md`). Wikidata (CC0) is safe for birth and death years. Wikipedia is CC BY-SA 4.0, so write `significance` in your own words, never paste a sentence.
 - `source-periodo` may help with period names; `source-pleiades` with ancient places; `source-cliopatria` and `source-glottolog` and `source-wals` do not cover people.
 - **`csvs/` is the source of truth.** Sources are cited, never imported, and disagreement between a source and a row is resolved by a human, not by overwriting.
-- **A `fact_source` row is needed** when a lifespan, role or the person's identity came from an external source, or when you link the person to a Wikidata QID. The entity key is `figure`/`<figure_id>`, and `field` is `id` for an identity-only link or `years` for the dates. Today there are **0** figure provenance rows (of the 310 `fact_source` rows, 290 are `id`/`wikidata` links, 288 on `polity` and 2 on `ethnicity`; the other 20 cite Wikidata for polity fields). Hand-written rows with no outside source need no row.
+- **A `fact_source` row is needed** when a lifespan, role or the person's identity came from an external source, or when you link the person to a Wikidata QID. The entity key is `figure`/`<figure_id>`, and `field` is `id` for an identity-only link or `years` for the dates. Today there are **0** figure provenance rows (of the 311 `fact_source` rows, 290 are `id`/`wikidata` links, 288 on `polity` and 2 on `ethnicity`; the other 21 cite Wikidata for polity fields). Hand-written rows with no outside source need no row.
 
 ---
 

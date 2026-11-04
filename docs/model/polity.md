@@ -292,7 +292,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 | Empty in both language and religion | 18 |
 | `end_year` empty (ongoing) | 42 |
 | `policies` filled | 20 rows, 27 slugs, each used once |
-| `note` filled | 364 |
+| `note` filled | 365 |
 | No `polity_territory` row | 6: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning` |
 | No `polity_dynasty` row | 215 (79 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
 | No `figure` row | 356 |

@@ -309,3 +309,4 @@ polity,italian_somaliland,end_year,wikidata,Q319984,P576 1936
 polity,italian_somaliland,government,wikidata,Q319984,instance of colony of the Kingdom of Italy
 polity,somali_republic,start_year,wikidata,Q7559152,1960-07-01
 polity,somali_republic,end_year,wikidata,Q7559152,1969-10-21
+polity,new_kingdom_egypt,id_ruling_language,wikidata,Q1852329,Late Egyptian -1400 to -700; inferred from stage dates (Old Egyptian Q447117 ends -2100); Wikidata does not state the polity's language
