@@ -92,7 +92,7 @@ Religion does not decide succession. It appears as one evidence signal (`same_re
 
 ## Current state (measured 2026-11-05)
 
-`religion.csv` has 262 rows. 38 polities have no `id_ruling_religion`.
+`religion.csv` has 262 rows. 49 of 492 polities have no `id_ruling_religion`.
 
 ## Open questions
 

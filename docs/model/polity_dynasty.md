@@ -37,9 +37,9 @@ yuan_dynasty,borjigin,1271,1368
 
 ## Current Coverage
 
-- **274 rows** mapping polities to dynasties (measured 2026-11-05)
-- **273 unique polities**; `tokugawa_shogunate` has two rows. 268 of them are among the 343 polities whose `government` is monarchical by the `polity.md` section 7 list, so 75 monarchical polities have no row
-- **185 unique dynasties** referenced (of 192 defined in dynasty.csv)
+- **276 rows** mapping polities to dynasties (measured 2026-11-05, after commit f305379)
+- **275 unique polities**; `tokugawa_shogunate` has two rows. 269 of them are among the 348 polities whose `government` is monarchical by the `polity.md` section 7 list, so 79 monarchical polities have no row
+- **186 unique dynasties** referenced (of 192 defined in dynasty.csv)
 - Non-monarchical polities (republics, communist states, confederations) have no rows
 
 ---

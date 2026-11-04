@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity.csv`. This doc decides what counts as a polity.
 
-**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table and the unresolved panel id count were re-measured on 2026-11-05, after the seven Tibet, Himalaya and Somali rows were added with the `tibetan_plateau` and `horn_of_africa` zones. Re-measure any duplicate list before acting on it.
+**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table, the section 7 religion and government counts, the `_dynasty` id counts in section 2, and the stub and unresolved panel id counts were re-measured on 2026-11-05, after commit f305379 added `hashimite_kingdom_of_hejaz`, `lebanese_republic`, `baathist_syrian_arab_republic` and `wattasid_dynasty` (492 rows). Re-measure any duplicate list before acting on it.
 
 **Labels used here:**
 
@@ -72,7 +72,7 @@ Which class a row is in is often a judgment. `hephthalites`, `xiongnu` and `kara
 
 A dynasty as such is never a row here. A family goes in `dynasty.csv`, and its rule goes in `polity_dynasty.csv`.
 
-A `_dynasty` id does not mean the row is a family. 68 polity ids end in `_dynasty`, because that is how those states are commonly named (`naming.md`: Chinese dynasties "are polity-level"). 40 of them share a stem with a `dynasty.csv` id, so one name in two tables is normal: `polity.csv` holds the state and `dynasty.csv` holds the house. 50 of the 68 have a `polity_dynasty` row and 18 do not (such as `qajar_dynasty`, `song_dynasty`).
+A `_dynasty` id does not mean the row is a family. 69 polity ids end in `_dynasty`, because that is how those states are commonly named (`naming.md`: Chinese dynasties "are polity-level"). 41 of them share a stem with a `dynasty.csv` id, so one name in two tables is normal: `polity.csv` holds the state and `dynasty.csv` holds the house. 51 of the 69 have a `polity_dynasty` row and 18 do not (such as `qajar_dynasty`, `song_dynasty`).
 
 Worked examples from the data:
 
@@ -85,7 +85,7 @@ Worked examples from the data:
 - **A city.** A place goes in `city.csv`. A polity with a city's name is fine when it was a sovereign body: `republic_of_venice`, `carthage`.
 - **A panel label qualifier.** `Safavid (collapse)` is `safavid_empire` (`merge_map.md` §1).
 - **`X / Y` labels.** Link to the first entity (§2). Do not make a combined row.
-- **A stub.** `derived/polity_stubs.csv` (1,704 rows) is raw extraction and includes items like `homo_sapiens_migration`. Being a stub earns nothing. A human promotes rows, using 2.2.
+- **A stub.** `derived/polity_stubs.csv` (1,693 rows) is raw extraction and includes items like `homo_sapiens_migration`. Being a stub earns nothing. A human promotes rows, using 2.2.
 
 ---
 
@@ -284,22 +284,22 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 | Measure | Value |
 |---|---|
-| Rows | 488 |
+| Rows | 492 |
 | Year range of `start_year` | -2900 to 1991 |
-| `id_ruling_language` empty | 40 |
-| `id_ruling_religion` empty | 45 |
-| `government` empty | 23 |
-| Empty in both language and religion | 18 |
-| `end_year` empty (ongoing) | 42 |
+| `id_ruling_language` empty | 41 |
+| `id_ruling_religion` empty | 49 |
+| `government` empty | 25 |
+| Empty in both language and religion | 19 |
+| `end_year` empty (ongoing) | 43 |
 | `policies` filled | 20 rows, 27 slugs, each used once |
-| `note` filled | 365 |
+| `note` filled | 369 |
 | No `polity_territory` row | 6: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning` |
-| No `polity_dynasty` row | 215 (79 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
-| No `figure` row | 356 |
-| Wikidata identity link | 288 `id` rows; 7 more cite Wikidata only on fields such as dates (193 have no Wikidata row) |
+| No `polity_dynasty` row | 217 (79 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
+| No `figure` row | 360 |
+| Wikidata identity link | 288 `id` rows; 11 more cite Wikidata only on fields such as dates (193 have no Wikidata row) |
 | No panel reference | 16 (such as `zhou_dynasty`, `song_dynasty`, `ecuador`, `uruk`, `tyre`) |
 | No panel cell, `figure` or `polity_dynasty` row (the step 4 test in 2.2) | 4: `creek_confederacy`, `ecuador`, `venezuela`, `grand_duchy_moscow` |
-| Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 142 |
+| Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 143 |
 
 **Coverage gaps.** There are no rows for Mali, Songhai, Ghana, Kongo, Benin or Great Zimbabwe, and Southeast Asia has only a handful (`funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`), although panels exist for those regions. Sparse coverage is expected in this project, but queries there return little or nothing.
 
@@ -316,8 +316,8 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 **Government ids that overlap.**
 
 - `chinese_imperial` (11) and `imperial_monarchy`: `western_han` is one and `eastern_han` the other.
-- `republic` (18) and `democratic_republic` (27): `cuba` and `haiti` versus `argentina`.
-- `monarchy` (77), `absolute_monarchy` (14), `feudal_monarchy` (54): `kingdom_of_france` is `absolute_monarchy` from 987, though its own note places absolutism under Louis XIV. `manchukuo` is `absolute_monarchy`, not `puppet_state`.
+- `republic` (19) and `democratic_republic` (28): `cuba` and `haiti` versus `argentina`.
+- `monarchy` (82), `absolute_monarchy` (14), `feudal_monarchy` (54): `kingdom_of_france` is `absolute_monarchy` from 987, though its own note places absolutism under Louis XIV. `manchukuo` is `absolute_monarchy`, not `puppet_state`.
 - `caliphate`, `imamate`, `theocracy`: `fatimid_caliphate` and `safavid_empire` are `imamate`, `sassanid_empire` is `theocracy`, and `ottoman_empire` is `caliphate` from 1299 although its note dates the claim to 1517.
 - `tribal_confederation` and `khanate`: `dzungar_khanate` and `khoshut_khanate` are the former.
 - `city_state`: `anshan_kingdom` and `zapotec` are the form, `republic_of_venice` is `republic`.
@@ -353,7 +353,7 @@ Questions marked DECIDED are settled in section 8, and the numbers are kept beca
 8. **Renaming.** 07 suggests considering `eastern_roman_empire` for `byzantine_empire`. `naming.md` says ids are never renamed.
 9. **An unknown ruling ethnicity.** The column is required and has no unknown value, which forces a guess or a broad cluster.
 10. **Where to record an interruption** (07's Byzantine marker), since no column exists and the inheritance layer has not landed.
-11. **Promotion from stubs.** 1,690 distinct panel ids do not resolve and 1,704 stubs exist. Who promotes them, by what test, and in what order?
+11. **Promotion from stubs.** 1,686 distinct panel ids do not resolve and 1,693 stubs exist. Who promotes them, by what test, and in what order?
 12. **Start of a dependent phase.** Nurhaci's Later Jin state, before 1636, has no row of its own, and `qing_dynasty` starts in 1636. Should the row start earlier, or should the earlier state get a row?
 
 ---

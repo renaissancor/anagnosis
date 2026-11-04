@@ -25,17 +25,17 @@ This is the FK-driven rule from `CLAUDE.md`: no inbound reference, no row. A fam
 - A people or religion (use `ethnicity.csv` or `religion.csv`).
 - A language added only because a source lists it.
 
-**Measured today (2026-11-05, after the `egyptian_new_kingdom` merge): the rule has not been applied.**
+**Measured 2026-11-05, after commit f305379 added four polity rows: the rule has not been applied.**
 
 | Measure | Count |
 |---|---|
 | Rows | 695 (36 roots, 146 internal nodes) |
-| Directly referenced by a polity or city_name | 105 by polity; city_name adds none (its 7 resolving values are also polity values, 3 more do not resolve); **105 rows in total** |
-| Rows with no direct polity or city_name reference | **590** |
-| Rows that are neither referenced nor an ancestor of a referenced row | **525** |
-| `polity.id_ruling_language` empty | 35 of 481 polities |
+| Directly referenced by a polity or city_name | 108 by polity; city_name adds none (its 7 resolving values are also polity values, 3 more do not resolve); **108 rows in total** |
+| Rows with no direct polity or city_name reference | **587** |
+| Rows that are neither referenced nor an ancestor of a referenced row | **522** |
+| `polity.id_ruling_language` empty | 41 of 492 polities |
 
-The table was seeded as a broad taxonomy, ahead of the references. Whether to prune the 525 is an open question (section 7); do not delete them on your own.
+The table was seeded as a broad taxonomy, ahead of the references. Whether to prune the 522 is an open question (section 7); do not delete them on your own.
 
 ---
 
@@ -112,11 +112,11 @@ Today 23 ids break the plain ASCII snake_case form: diacritics (`guaraní`, `vol
 
 Measured counts are in section 2. Open questions, none resolved here:
 
-1. **Prune or keep the 521 unreferenced rows?** The current table is a seeded taxonomy, contradicting FK-driven scoping. Options: prune to the referenced set plus ancestors; or declare language a reference taxonomy exempt from the rule.
+1. **Prune or keep the 522 unreferenced rows?** The current table is a seeded taxonomy, contradicting FK-driven scoping. Options: prune to the referenced set plus ancestors; or declare language a reference taxonomy exempt from the rule.
 2. **Fix the 3 broken `city_name.language` values** (`chinese`, `greek`, `phoenician`), and add the foreign-key check to the validator.
 3. **What does `founded` mean and what format?** Empty everywhere. A year integer with BCE negative would match the other tables, but nothing is decided.
 4. **What does the `()` name prefix mean**, and should it be removed or turned into a column?
 5. **Rename the 23 non-ASCII or punctuated ids?** It costs reference updates in `polity.csv`.
 6. **Should an ISO 639-3 or Glottocode column be added?** PROPOSED: a Glottocode column (Glottolog is CC BY 4.0), filled via `source-glottolog`, with a `fact_source` row per link. Not authorized.
-7. **57 polities have no ruling language.** Empty means unknown or not yet curated; there is no "not applicable" marker.
+7. **41 polities have no ruling language.** Empty means unknown or not yet curated; there is no "not applicable" marker.
 8. The language tree duplicates ethnicity ids (121 shared). Whether that overlap is intended coupling or accidental is undecided; see `ethnicity.md`.

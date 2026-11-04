@@ -2,7 +2,7 @@
 
 Table contract for `csvs/territory.csv`.
 
-**Snapshot:** every count below was measured on 2026-11-05 using `code/lib/csv.js`, after `tibetan_plateau` and `horn_of_africa` were added.
+**Snapshot:** every count below was measured on 2026-11-05 using `code/lib/csv.js`, after `tibetan_plateau` and `horn_of_africa` were added. Zone row counts and the nesting pairs were re-measured after commit f305379 added four polity rows.
 
 **Labels:** **Decided** is a recorded rule. **PROPOSED** is a suggestion in this doc and not a current rule. **OPEN** is undecided; section 7 numbers these.
 
@@ -120,8 +120,8 @@ Each entry gives the `polity_territory` row count and the earliest `start_year`.
 |---|---|
 | Mediterranean and Europe | `italy` 53 (-753); `balkans` 34 (-808); `hungary` 12 (350); `germany` 11 (486); `iberia` 11 (-509); `gaul` 9 (-509); `bohemia` 8 (833); `scandinavia` 9 (872); `britannia` 5 (-27); `poland` 5 (966); `prussia` 5 (1230); `lithuania` 4 (1236); `aquitaine` 3 (486); `scotland` 3 (843); `ireland` 1 (1801) |
 | Eastern Europe and steppe | `kievan_rus` 11 (882); `pontic_steppe` 9 (350); `central_asian_steppe` 26 (-300); `mongolian_plateau` 14 (-209) |
-| Near East and Iran | `iran_plateau` 47 (-2700); `levant` 34 (-2334); `mesopotamia` 33 (-2900); `caucasus` 19 (-860); `anatolia` 16 (-1600); `arabia` 11 (-1200); `khorasan` 34 (-550); `transoxiana` 28 (-550) |
-| Africa | `north_africa` 27 (-814); `egypt` 23 (-2686); `nubia` 11 (-2686); `horn_of_africa` 9 (100) |
+| Near East and Iran | `iran_plateau` 47 (-2700); `levant` 36 (-2334); `mesopotamia` 33 (-2900); `caucasus` 19 (-860); `anatolia` 16 (-1600); `arabia` 12 (-1200); `khorasan` 34 (-550); `transoxiana` 28 (-550) |
+| Africa | `north_africa` 28 (-814); `egypt` 23 (-2686); `nubia` 11 (-2686); `horn_of_africa` 9 (100) |
 | South Asia | `deccan` 23 (-322); `ganges_plain` 20 (-345); `indus_valley` 20 (-322); `punjab` 19 (-322) |
 | Tibet and the Himalaya | `tibetan_plateau` 7 (618) |
 | East Asia | `yellow_river` 38 (-2070); `yangtze` 35 (-1200); `manchuria` 14 (-37); `korean_peninsula` 11 (-57); `japanese_archipelago` 11 (250); `okinawa` 1 (1429) |
@@ -155,7 +155,7 @@ Each entry gives the `polity_territory` row count and the earliest `start_year`.
 | `iran_plateau` / `khorasan` | 18 |
 | `indus_valley` / `punjab` | 13 |
 | `central_asian_steppe` / `transoxiana` | 12 |
-| `balkans` / `hungary` | 6 |
+| `balkans` / `hungary` | 5 |
 | `north_africa` / `egypt` | 6 |
 | `germany` / `prussia` | 4 |
 | `kievan_rus` / `pontic_steppe` | 4 |

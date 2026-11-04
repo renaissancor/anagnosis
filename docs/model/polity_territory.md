@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity_territory.csv`. It is the sole authored home of a polity's territory; `polity.csv` has no territory column.
 
-**Snapshot:** every count below was measured on 2026-11-05 using `code/lib/csv.js`, after the `tibetan_plateau` and `horn_of_africa` zones were added. Merge passes are running and move these rows, so re-measure before acting on a list.
+**Snapshot:** every count below was measured on 2026-11-05 using `code/lib/csv.js`, after the `tibetan_plateau` and `horn_of_africa` zones were added and after commit f305379 added four polity rows (812 rows). Merge passes are running and move these rows, so re-measure before acting on a list.
 
 **Labels:** **Decided** is a recorded rule. **PROPOSED** is a suggestion in this doc and not a current rule. **OPEN** is undecided; section 7 numbers these.
 
@@ -60,7 +60,7 @@ arabia,ottoman_empire,1517,1918
 | `start_year` | integer, BCE negative | yes in practice; part of the key | Year this polity's hold on this zone began. It should fall within the polity's own dates (see section 6) | no row has it empty | `1517`, not the polity's 1299 |
 | `end_year` | integer, BCE negative | no | Year the hold ended | **ongoing**: the polity still holds the zone today. Never unknown. It must only appear on a polity that is itself ongoing (PROPOSED; no row breaks this now) | `1918`; `anatolia/republic_of_turkey` is empty |
 
-**How to fill the dates.** Most rows simply repeat the polity's dates: 736 of 808 do, and only 30 polities have a row that differs. Those rows assert the polity held the zone for its whole life, which is usually a default, not a researched claim. When you research a hold, record the real span as the 72 others do (`egypt/byzantine_empire` 395–641).
+**How to fill the dates.** Most rows simply repeat the polity's dates: 740 of 812 do, and only 30 polities have a row that differs. Those rows assert the polity held the zone for its whole life, which is usually a default, not a researched claim. When you research a hold, record the real span as the 72 others do (`egypt/byzantine_empire` 395–641).
 
 A zero-length span (`start_year = end_year`) is valid. Five rows have one, all for short-lived polities such as `shun`.
 
@@ -125,13 +125,13 @@ Run `node scripts/validate.js`. `npm test` runs `make:all` first.
 
 | Measure | Value |
 |---|---|
-| Rows | 808 |
-| Polities with at least one row | 482 of 488 |
+| Rows | 812 |
+| Polities with at least one row | 486 of 492 |
 | Territories used | 56 of 56 |
-| `end_year` empty | 59 |
-| Rows equal to the polity's exact dates | 736 |
+| `end_year` empty | 60 |
+| Rows equal to the polity's exact dates | 740 |
 | Polities with any row that differs from their dates | 30 |
-| Rows per polity | 1 row: 306 polities; 2: 111; 3: 32; 4: 17; 5 or more: 16 |
+| Rows per polity | 1 row: 310 polities; 2: 111; 3: 32; 4: 17; 5 or more: 16 |
 | Most zones | `roman_empire` has 17 rows; `ottoman_empire`, `umayyad_caliphate` and `mongol_empire` have 9 |
 
 The busiest zones are `italy` (53), `iran_plateau` (47) and `yellow_river` (38). `territory.md` has the full list.
