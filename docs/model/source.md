@@ -82,7 +82,7 @@ Citing a source does not grant permission. The licence does; the citation is a c
 
 ## Current state (measured 2026-11-05)
 
-`source.csv` has 1 row (`wikidata`) and `fact_source.csv` has 323: 290 identity links (`field = id`) and 33 field citations on 12 polities.
+`source.csv` has 1 row (`wikidata`) and `fact_source.csv` has 327: 290 identity links (`field = id`) and 37 field citations on 12 polities.
 
 ## Open questions
 

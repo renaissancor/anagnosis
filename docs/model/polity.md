@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity.csv`. This doc decides what counts as a polity.
 
-**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table, the section 7 religion and government counts, the `_dynasty` id counts in section 2, and the stub and unresolved panel id counts were re-measured on 2026-11-05, after commit f305379 added `hashimite_kingdom_of_hejaz`, `lebanese_republic`, `baathist_syrian_arab_republic` and `wattasid_dynasty` (492 rows). Re-measure any duplicate list before acting on it.
+**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table, the section 7 religion and government counts, the `_dynasty` id counts in section 2, and the stub and unresolved panel id counts were re-measured on 2026-11-05, after commit f305379 added `hashimite_kingdom_of_hejaz`, `lebanese_republic`, `baathist_syrian_arab_republic` and `wattasid_dynasty` (492 rows). The section 2.3 dependent-unit counts, the section 6 warning counts and the section 7 empty-column, `sunni`, `republic` and `democratic_republic` counts were re-measured again on 2026-11-05 after the `wattasid_dynasty` and `somali_republic` fixes. Re-measure any duplicate list before acting on it.
 
 **Labels used here:**
 
@@ -62,7 +62,7 @@ Peoples, cultures, periods, collectives, events and persons are not polities (se
 | **Events and migrations** | Not polities (§6). A panel label, no entity | 2 rows retired | `federalization`, `celtic_la_tene_migration` |
 | **A person** | `alexander` maps to `macedonian_empire` (§3), so a person is not a row. The person goes in `figure.csv` and the state gets a polity row | None remain | `lysimachus` became `kingdom_of_lysimachus` plus a figure |
 | **Lumped row beside its split rows** | 07 says remove `han_dynasty` | These rows and their children stay (section 8) | `zhou_dynasty` with `western_zhou` + `eastern_zhou`; `song_dynasty` with `northern_song` + `southern_song` |
-| **Dependent units** | Allowed | 8 `province`, 21 `colonial_administration`, 4 `puppet_state` | `byzantine_exarchate_of_ravenna`, `new_spain`, `vichy_france` |
+| **Dependent units** | Allowed | 8 `province`, 22 `colonial_administration`, 4 `puppet_state` | `byzantine_exarchate_of_ravenna`, `new_spain`, `vichy_france` |
 | **Influence zones** | Skip: `{Power} sphere` is not direct rule (§4) | None in `polity.csv` | Leave the panel cell without a polity |
 | **Unknown** | Skip `?` cells (§4) | None | Leave the panel cell without a polity |
 
@@ -259,11 +259,11 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 **Enforced as warnings:**
 
-- `id_ruling_religion` empty (45)
-- `government` empty (23)
+- `id_ruling_religion` empty (48)
+- `government` empty (24)
 - CRLF line endings
 - a comma in a non-prose column, including `policies`
-- a panel cell's `polity` not in `polity.csv` (1,690 distinct ids)
+- a panel cell's `polity` not in `polity.csv` (1,686 distinct ids)
 
 **Convention only, not checked:**
 
@@ -286,10 +286,10 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 |---|---|
 | Rows | 492 |
 | Year range of `start_year` | -2900 to 1991 |
-| `id_ruling_language` empty | 41 |
-| `id_ruling_religion` empty | 49 |
-| `government` empty | 25 |
-| Empty in both language and religion | 19 |
+| `id_ruling_language` empty | 40 |
+| `id_ruling_religion` empty | 48 |
+| `government` empty | 24 |
+| Empty in both language and religion | 18 |
 | `end_year` empty (ongoing) | 43 |
 | `policies` filled | 20 rows, 27 slugs, each used once |
 | `note` filled | 369 |
@@ -308,7 +308,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 **Religion ids used interchangeably.**
 
 - `catholic` (76) and its child `roman_catholicism` (23) have no written difference. `kingdom_of_france` is `catholic`; `hungary` is `roman_catholicism`.
-- `sunni` (80), `sunni_hanafi` (10) and `sunni_shafi` (2) mix levels. `sunni_maliki` and `sunni_hanbali` do not exist in `religion.csv`.
+- `sunni` (81), `sunni_hanafi` (10) and `sunni_shafi` (2) mix levels. `sunni_maliki` and `sunni_hanbali` do not exist in `religion.csv`.
 - `shia` (12) sits beside `twelver_shia` (1) and `ismaili_shia` (2).
 - `christianity` (3) is used at the root level.
 - `vandal_kingdom` and `ostrogothic_kingdom` are `catholic`, and `gepid_kingdom` is the only `arianism` row. Vandal and Ostrogothic rulers are generally described as Arian, so check them. `visigothic_kingdom` has the OPEN 4 problem, as it converted during its span.
@@ -316,7 +316,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 **Government ids that overlap.**
 
 - `chinese_imperial` (11) and `imperial_monarchy`: `western_han` is one and `eastern_han` the other.
-- `republic` (19) and `democratic_republic` (28): `cuba` and `haiti` versus `argentina`.
+- `republic` (18) and `democratic_republic` (29): `cuba` and `haiti` versus `argentina`.
 - `monarchy` (82), `absolute_monarchy` (14), `feudal_monarchy` (54): `kingdom_of_france` is `absolute_monarchy` from 987, though its own note places absolutism under Louis XIV. `manchukuo` is `absolute_monarchy`, not `puppet_state`.
 - `caliphate`, `imamate`, `theocracy`: `fatimid_caliphate` and `safavid_empire` are `imamate`, `sassanid_empire` is `theocracy`, and `ottoman_empire` is `caliphate` from 1299 although its note dates the claim to 1517.
 - `tribal_confederation` and `khanate`: `dzungar_khanate` and `khoshut_khanate` are the former.
