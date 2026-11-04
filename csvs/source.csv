@@ -1,2 +1,2 @@
 id,name,url,licence,version,retrieved,citation,note
-wikidata,Wikidata,https://www.wikidata.org/wiki/Wikidata:Licensing,CC0-1.0,2026-10-31,2026-10-31,Wikidata; https://www.wikidata.org,Used for identity links; polity dates were compared but not imported
+wikidata,Wikidata,https://www.wikidata.org/wiki/Wikidata:Licensing,CC0-1.0,2026-10-31,2026-10-31,Wikidata; https://www.wikidata.org,Used for identity links (field id) and for field citations in fact_source.csv such as dates; government; language and religion; values are mapped to local ids in our own words and never imported

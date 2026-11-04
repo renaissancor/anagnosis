@@ -101,6 +101,8 @@ idrisid_dynasty,Idrisid Dynasty,zirid_dynasty,Zirid Dynasty,same,9,north_africa,
 zirid_dynasty,Zirid Dynasty,banu_ghaniya,Banu Ghaniya,same,9,north_africa,1,1,0,1,1,0
 banu_ghaniya,Banu Ghaniya,hafsid_dynasty,Hafsid Dynasty,same,9,north_africa,1,1,0,1,1,-8
 banu_ghaniya,Banu Ghaniya,marinid_dynasty,Marinid Dynasty,same,9,north_africa,1,1,0,1,1,7
+marinid_dynasty,Marinid Dynasty,wattasid_dynasty,Wattasid Dynasty,same,9,north_africa,1,1,0,1,1,7
+wattasid_dynasty,Wattasid Dynasty,saadian_dynasty,Saadian Dynasty,same,9,north_africa,1,1,0,1,1,-5
 kingdom_of_denmark,Kingdom of Denmark,kingdom_of_sweden,Kingdom of Sweden,same,9,scandinavia,1,1,0,1,1,0
 zhou_dynasty,Zhou Dynasty,qin_dynasty,Qin Dynasty,same,9,yangtze|yellow_river,2,1,0,1,1,35
 eastern_zhou,Eastern Zhou (东周),qin_dynasty,Qin Dynasty,same,9,yangtze|yellow_river,2,1,0,1,1,35
@@ -390,8 +392,10 @@ zengid_dynasty,Zengid Dynasty,mamluk_sultanate,Mamluk Sultanate,same,7,levant,1,
 zirid_dynasty,Zirid Dynasty,hafsid_dynasty,Hafsid Dynasty,same,7,north_africa,1,1,0,1,1,81
 zirid_dynasty,Zirid Dynasty,marinid_dynasty,Marinid Dynasty,same,7,north_africa,1,1,0,1,1,96
 hafsid_dynasty,Hafsid Dynasty,marinid_dynasty,Marinid Dynasty,same,7,north_africa,1,1,0,1,1,-330
+hafsid_dynasty,Hafsid Dynasty,wattasid_dynasty,Wattasid Dynasty,same,7,north_africa,1,1,0,1,1,-102
 hafsid_dynasty,Hafsid Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,7,north_africa,1,1,0,1,1,57
 marinid_dynasty,Marinid Dynasty,saadian_dynasty,Saadian Dynasty,same,7,north_africa,1,1,0,1,1,84
+wattasid_dynasty,Wattasid Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,7,north_africa,1,1,0,1,1,77
 kingdom_of_denmark,Kingdom of Denmark,kalmar_union,Kalmar Union,same,7,scandinavia,1,1,0,0,1,0
 kingdom_of_sweden,Kingdom of Sweden,kalmar_union,Kalmar Union,same,7,scandinavia,1,1,0,0,1,0
 khanate_of_bukhara,Khanate of Bukhara,khanate_of_khiva,Khanate of Khiva,same,7,transoxiana,1,1,0,1,1,-274
@@ -578,8 +582,6 @@ unified_silla,Unified Silla,goryeo,Goryeo Dynasty,same,6,korean_peninsula,1,1,0,
 old_babylonian,Old Babylonian Empire,kassite_babylon,Kassite Babylon,same,6,mesopotamia,1,0,0,1,1,-5
 mauretania_kingdom,Mauretania Kingdom,numidia,Kingdom of Numidia,same,6,north_africa,1,1,0,1,0,-242
 muhallabid_governors,Muhallabid governors,idrisid_dynasty,Idrisid Dynasty,same,6,north_africa,1,0,0,1,1,-5
-marinid_dynasty,Marinid Dynasty,wattasid_dynasty,Wattasid Dynasty,same,6,north_africa,1,1,0,0,0,7
-wattasid_dynasty,Wattasid Dynasty,saadian_dynasty,Saadian Dynasty,same,6,north_africa,1,1,0,0,0,-5
 kingdom_of_norway,Kingdom of Norway,kingdom_of_denmark,Kingdom of Denmark,same,6,scandinavia,1,1,0,1,0,-444
 kingdom_of_norway,Kingdom of Norway,kingdom_of_sweden,Kingdom of Sweden,same,6,scandinavia,1,1,0,1,0,-410
 kingdom_of_denmark,Kingdom of Denmark,denmark_norway,Denmark-Norway,same,6,scandinavia,1,1,0,0,0,0
@@ -696,6 +698,7 @@ ming_dynasty,Ming Dynasty,chinese_soviet_republic,Chinese Soviet Republic (中�
 ming_dynasty,Ming Dynasty,wang_jingwei_regime,Wang Jingwei Regime (汪精卫政权),contraction,5,,0,1,0,1,0,296
 rashidun_caliphate,Rashidun Caliphate,fatimid_caliphate,Fatimid Caliphate,contraction,5,,0,1,0,1,0,248
 umayyad_caliphate,Umayyad Caliphate,fatimid_caliphate,Fatimid Caliphate,contraction,5,,0,1,0,1,0,159
+almohad_caliphate,Almohad Caliphate,wattasid_dynasty,Wattasid Dynasty,contraction,5,,0,1,0,1,0,203
 almohad_caliphate,Almohad Caliphate,saadian_dynasty,Saadian Dynasty,contraction,5,,0,1,0,1,0,280
 kara_khanid_khanate,Kara-Khanid Khanate,khanate_of_bukhara,Khanate of Bukhara,contraction,5,,0,1,0,1,0,288
 kara_khanid_khanate,Kara-Khanid Khanate,khanate_of_khiva,Khanate of Khiva,contraction,5,,0,1,0,1,0,299
@@ -899,6 +902,7 @@ chalukya_dynasty,Chalukya Dynasty (Badami),western_chalukya,Western Chalukya Emp
 chalukya_dynasty,Chalukya Dynasty (Badami),hoysala_dynasty,Hoysala Empire,same,5,,0,1,0,1,0,249
 idrisid_dynasty,Idrisid Dynasty,hafsid_dynasty,Hafsid Dynasty,same,5,,0,1,0,1,0,255
 idrisid_dynasty,Idrisid Dynasty,marinid_dynasty,Marinid Dynasty,same,5,,0,1,0,1,0,270
+banu_ghaniya,Banu Ghaniya,wattasid_dynasty,Wattasid Dynasty,same,5,,0,1,0,1,0,235
 tulunid_dynasty,Tulunid Dynasty,zangid_atabegate,Zangid Atabegate,same,5,,0,1,0,1,0,222
 tulunid_dynasty,Tulunid Dynasty,zengid_dynasty,Zengid Dynasty,same,5,,0,1,0,1,0,222
 ikhshidid_dynasty,Ikhshidid Dynasty,mamluk_sultanate,Mamluk Sultanate,same,5,,0,1,0,1,0,281
@@ -1377,8 +1381,6 @@ mongolian_peoples_republic,Mongolian People's Republic,mengjiang,Mengjiang,same,
 muhallabid_governors,Muhallabid governors,rustamid_dynasty,Rustamid Dynasty,same,4,north_africa,1,0,0,1,0,-17
 idrisid_dynasty,Idrisid Dynasty,aghlabid_dynasty,Aghlabid Dynasty,same,4,north_africa,1,0,0,1,1,-174
 aghlabid_dynasty,Aghlabid Dynasty,zirid_dynasty,Zirid Dynasty,same,4,north_africa,1,0,0,1,1,63
-hafsid_dynasty,Hafsid Dynasty,wattasid_dynasty,Wattasid Dynasty,same,4,north_africa,1,1,0,0,0,-102
-wattasid_dynasty,Wattasid Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,4,north_africa,1,1,0,0,0,77
 makuria_kingdom,Kingdom of Makuria,funj_sultanate,Funj Sultanate,same,4,nubia,1,1,0,0,0,140
 funj_sultanate,Funj Sultanate,darfur_sultanate,Darfur Sultanate,same,4,nubia,1,0,0,1,1,-218
 funj_sultanate,Funj Sultanate,mahdist_state,Mahdist State,same,4,nubia,1,0,0,1,1,64
@@ -1511,7 +1513,6 @@ ming_dynasty,Ming Dynasty,manchukuo,Manchukuo,contraction,3,,0,1,0,0,0,288
 gupta_empire,Gupta Empire,pala_empire,Pala Empire,contraction,3,,0,1,0,0,0,200
 kidarites,Kidarites,zunbil_dynasty,Zunbil dynasty,contraction,3,,0,1,0,0,0,213
 avar_khaganate,Avar Khaganate,western_xia,Western Xia (Tangut Empire),contraction,3,,0,1,0,0,0,234
-almohad_caliphate,Almohad Caliphate,wattasid_dynasty,Wattasid Dynasty,contraction,3,,0,1,0,0,0,203
 first_turkic_khaganate,First Türkic Empire,kara_khanid_khanate,Kara-Khanid Khanate,contraction,3,,0,1,0,0,0,237
 kara_khanid_khanate,Kara-Khanid Khanate,kazakh_khanate,Kazakh Khanate,contraction,3,,0,1,0,0,0,253
 seljuk_empire,Seljuk Empire,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),contraction,3,,0,1,0,0,0,180
@@ -1545,6 +1546,7 @@ chalukya_dynasty,Chalukya Dynasty (Badami),pratihara_dynasty,Pratihara Dynasty,d
 pratihara_dynasty,Pratihara Dynasty,hoysala_dynasty,Hoysala Empire,displacement,3,,0,0,0,1,0,-30
 first_turkic_khaganate,First Türkic Empire,khazar_khaganate,Khazar Khaganate,displacement,3,,0,0,0,1,0,47
 rashidun_caliphate,Rashidun Caliphate,al_andalus,Al-Andalus,displacement,3,,0,0,0,1,0,50
+al_andalus,Al-Andalus,wattasid_dynasty,Wattasid Dynasty,displacement,3,,0,0,0,1,0,-20
 al_andalus,Al-Andalus,funj_sultanate,Funj Sultanate,displacement,3,,0,0,0,1,0,12
 abbasid_caliphate,Abbasid Caliphate,ifat_sultanate,Ifat Sultanate,displacement,3,,0,0,0,1,0,27
 muhallabid_governors,Muhallabid governors,ziyadid_dynasty,Ziyadid Dynasty,displacement,3,,0,0,0,1,0,26
@@ -1596,12 +1598,15 @@ ayyubid_sultanate,Ayyubid Sultanate,ifat_sultanate,Ifat Sultanate,displacement,3
 hafsid_dynasty,Hafsid Dynasty,darfur_sultanate,Darfur Sultanate,displacement,3,,0,0,0,1,0,29
 marinid_dynasty,Marinid Dynasty,adal_sultanate,Adal Sultanate,displacement,3,,0,0,0,1,0,-50
 marinid_dynasty,Marinid Dynasty,funj_sultanate,Funj Sultanate,displacement,3,,0,0,0,1,0,39
+mamluk_sultanate,Mamluk Sultanate,wattasid_dynasty,Wattasid Dynasty,displacement,3,,0,0,0,1,0,-45
 mamluk_sultanate,Mamluk Sultanate,funj_sultanate,Funj Sultanate,displacement,3,,0,0,0,1,0,-13
 mamluk_sultanate,Mamluk Sultanate,saadian_dynasty,Saadian Dynasty,displacement,3,,0,0,0,1,0,32
 bahmani_sultanate,Bahmani Sultanate,funj_sultanate,Funj Sultanate,displacement,3,,0,0,0,1,0,-23
 bahmani_sultanate,Bahmani Sultanate,saadian_dynasty,Saadian Dynasty,displacement,3,,0,0,0,1,0,22
 adal_sultanate,Adal Sultanate,saadian_dynasty,Saadian Dynasty,displacement,3,,0,0,0,1,0,-28
 adal_sultanate,Adal Sultanate,darfur_sultanate,Darfur Sultanate,displacement,3,,0,0,0,1,0,26
+wattasid_dynasty,Wattasid Dynasty,funj_sultanate,Funj Sultanate,displacement,3,,0,0,0,1,0,-50
+wattasid_dynasty,Wattasid Dynasty,darfur_sultanate,Darfur Sultanate,displacement,3,,0,0,0,1,0,49
 funj_sultanate,Funj Sultanate,kingdom_of_egypt,Kingdom of Egypt,displacement,3,,0,0,0,1,0,-16
 darfur_sultanate,Darfur Sultanate,saudi_arabia,Kingdom of Saudi Arabia,displacement,3,,0,0,0,1,0,16
 darfur_sultanate,Darfur Sultanate,lebanese_republic,Lebanese Republic,displacement,3,,0,0,0,1,0,27
@@ -1966,7 +1971,6 @@ western_chalukya,Western Chalukya Empire,mysore_kingdom,Mysore Kingdom,same,3,,0
 kangju,Kangju,avar_khaganate,Avar Khaganate,same,3,,0,1,0,0,0,168
 xianbei,Xianbei,northern_wei,Northern Wei tributary,same,3,,0,1,0,0,0,152
 xianbei,Xianbei,hephthalites,Hephthalites,same,3,,0,1,0,0,0,206
-banu_ghaniya,Banu Ghaniya,wattasid_dynasty,Wattasid Dynasty,same,3,,0,1,0,0,0,235
 khazar_khaganate,Khazar Khaganate,eldiguzid_dynasty,Eldiguzid Dynasty (Ildeguzids),same,3,,0,1,0,0,0,167
 zengid_dynasty,Zengid Dynasty,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),same,3,,0,1,0,0,0,152
 khwarazmian_empire,Khwarazmian Empire,khanate_of_bukhara,Khanate of Bukhara,same,3,,0,1,0,0,0,280
@@ -2144,6 +2148,7 @@ umayyad_caliphate,Umayyad Caliphate,almoravid_dynasty,Almoravid Dynasty,contract
 umayyad_caliphate,Umayyad Caliphate,sulayhid_dynasty,Sulayhid Dynasty,contraction,2,,0,0,0,1,0,297
 abbasid_caliphate,Abbasid Caliphate,almohad_caliphate,Almohad Caliphate,contraction,2,,0,0,0,1,0,-137
 abbasid_caliphate,Abbasid Caliphate,banu_ghaniya,Banu Ghaniya,contraction,2,,0,0,0,1,0,-110
+abbasid_caliphate,Abbasid Caliphate,wattasid_dynasty,Wattasid Dynasty,contraction,2,,0,0,0,1,0,214
 abbasid_caliphate,Abbasid Caliphate,saadian_dynasty,Saadian Dynasty,contraction,2,,0,0,0,1,0,291
 mamluk_sultanate,Mamluk Sultanate,kingdom_of_egypt,Kingdom of Egypt,contraction,2,,0,0,0,1,0,288
 samanid_empire,Samanid Empire,khwarazmian_empire,Khwarazmian Empire,contraction,2,,0,0,0,1,0,201
@@ -2409,12 +2414,14 @@ almohad_caliphate,Almohad Caliphate,funj_sultanate,Funj Sultanate,displacement,2
 zangid_atabegate,Zangid Atabegate,banu_ghaniya,Banu Ghaniya,displacement,2,,0,0,0,1,0,-102
 zangid_atabegate,Zangid Atabegate,bahmani_sultanate,Bahmani Sultanate,displacement,2,,0,0,0,1,0,97
 zangid_atabegate,Zangid Atabegate,adal_sultanate,Adal Sultanate,displacement,2,,0,0,0,1,0,165
+zangid_atabegate,Zangid Atabegate,wattasid_dynasty,Wattasid Dynasty,displacement,2,,0,0,0,1,0,222
 zangid_atabegate,Zangid Atabegate,funj_sultanate,Funj Sultanate,displacement,2,,0,0,0,1,0,254
 zangid_atabegate,Zangid Atabegate,saadian_dynasty,Saadian Dynasty,displacement,2,,0,0,0,1,0,299
 zengid_dynasty,Zengid Dynasty,banu_ghaniya,Banu Ghaniya,displacement,2,,0,0,0,1,0,-74
 zengid_dynasty,Zengid Dynasty,ifat_sultanate,Ifat Sultanate,displacement,2,,0,0,0,1,0,63
 zengid_dynasty,Zengid Dynasty,bahmani_sultanate,Bahmani Sultanate,displacement,2,,0,0,0,1,0,125
 zengid_dynasty,Zengid Dynasty,adal_sultanate,Adal Sultanate,displacement,2,,0,0,0,1,0,193
+zengid_dynasty,Zengid Dynasty,wattasid_dynasty,Wattasid Dynasty,displacement,2,,0,0,0,1,0,250
 zengid_dynasty,Zengid Dynasty,funj_sultanate,Funj Sultanate,displacement,2,,0,0,0,1,0,282
 banu_ghaniya,Banu Ghaniya,ayyubid_sultanate,Ayyubid Sultanate,displacement,2,,0,0,0,1,0,-66
 banu_ghaniya,Banu Ghaniya,bahmani_sultanate,Bahmani Sultanate,displacement,2,,0,0,0,1,0,110
@@ -2422,6 +2429,7 @@ banu_ghaniya,Banu Ghaniya,adal_sultanate,Adal Sultanate,displacement,2,,0,0,0,1,
 banu_ghaniya,Banu Ghaniya,funj_sultanate,Funj Sultanate,displacement,2,,0,0,0,1,0,267
 ayyubid_sultanate,Ayyubid Sultanate,bahmani_sultanate,Bahmani Sultanate,displacement,2,,0,0,0,1,0,87
 ayyubid_sultanate,Ayyubid Sultanate,adal_sultanate,Adal Sultanate,displacement,2,,0,0,0,1,0,155
+ayyubid_sultanate,Ayyubid Sultanate,wattasid_dynasty,Wattasid Dynasty,displacement,2,,0,0,0,1,0,212
 ayyubid_sultanate,Ayyubid Sultanate,funj_sultanate,Funj Sultanate,displacement,2,,0,0,0,1,0,244
 ayyubid_sultanate,Ayyubid Sultanate,saadian_dynasty,Saadian Dynasty,displacement,2,,0,0,0,1,0,289
 hafsid_dynasty,Hafsid Dynasty,mamluk_sultanate,Mamluk Sultanate,displacement,2,,0,0,0,1,0,-324
@@ -2441,19 +2449,24 @@ mamluk_sultanate,Mamluk Sultanate,adal_sultanate,Adal Sultanate,displacement,2,,
 mamluk_sultanate,Mamluk Sultanate,darfur_sultanate,Darfur Sultanate,displacement,2,,0,0,0,1,0,86
 mamluk_sultanate,Mamluk Sultanate,alawite_dynasty,Alawite Dynasty (Morocco),displacement,2,,0,0,0,1,0,114
 ifat_sultanate,Ifat Sultanate,bahmani_sultanate,Bahmani Sultanate,displacement,2,,0,0,0,1,0,-68
+ifat_sultanate,Ifat Sultanate,wattasid_dynasty,Wattasid Dynasty,displacement,2,,0,0,0,1,0,57
 ifat_sultanate,Ifat Sultanate,funj_sultanate,Funj Sultanate,displacement,2,,0,0,0,1,0,89
 ifat_sultanate,Ifat Sultanate,saadian_dynasty,Saadian Dynasty,displacement,2,,0,0,0,1,0,134
 ifat_sultanate,Ifat Sultanate,darfur_sultanate,Darfur Sultanate,displacement,2,,0,0,0,1,0,188
 ifat_sultanate,Ifat Sultanate,alawite_dynasty,Alawite Dynasty (Morocco),displacement,2,,0,0,0,1,0,216
 bahmani_sultanate,Bahmani Sultanate,adal_sultanate,Adal Sultanate,displacement,2,,0,0,0,1,0,-112
+bahmani_sultanate,Bahmani Sultanate,wattasid_dynasty,Wattasid Dynasty,displacement,2,,0,0,0,1,0,-55
 bahmani_sultanate,Bahmani Sultanate,darfur_sultanate,Darfur Sultanate,displacement,2,,0,0,0,1,0,76
 bahmani_sultanate,Bahmani Sultanate,alawite_dynasty,Alawite Dynasty (Morocco),displacement,2,,0,0,0,1,0,104
 bahmani_sultanate,Bahmani Sultanate,kingdom_of_egypt,Kingdom of Egypt,displacement,2,,0,0,0,1,0,278
 bahmani_sultanate,Bahmani Sultanate,muhammad_ali_dynasty,Muhammad Ali dynasty,displacement,2,,0,0,0,1,0,278
+adal_sultanate,Adal Sultanate,wattasid_dynasty,Wattasid Dynasty,displacement,2,,0,0,0,1,0,-105
 adal_sultanate,Adal Sultanate,funj_sultanate,Funj Sultanate,displacement,2,,0,0,0,1,0,-73
 adal_sultanate,Adal Sultanate,alawite_dynasty,Alawite Dynasty (Morocco),displacement,2,,0,0,0,1,0,54
 adal_sultanate,Adal Sultanate,kingdom_of_egypt,Kingdom of Egypt,displacement,2,,0,0,0,1,0,228
 adal_sultanate,Adal Sultanate,muhammad_ali_dynasty,Muhammad Ali dynasty,displacement,2,,0,0,0,1,0,228
+wattasid_dynasty,Wattasid Dynasty,kingdom_of_egypt,Kingdom of Egypt,displacement,2,,0,0,0,1,0,251
+wattasid_dynasty,Wattasid Dynasty,muhammad_ali_dynasty,Muhammad Ali dynasty,displacement,2,,0,0,0,1,0,251
 funj_sultanate,Funj Sultanate,saadian_dynasty,Saadian Dynasty,displacement,2,,0,0,0,1,0,-272
 funj_sultanate,Funj Sultanate,alawite_dynasty,Alawite Dynasty (Morocco),displacement,2,,0,0,0,1,0,-190
 funj_sultanate,Funj Sultanate,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,2,,0,0,0,1,0,95

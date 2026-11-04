@@ -309,7 +309,8 @@ polity,italian_somaliland,end_year,wikidata,Q319984,P576 1936
 polity,italian_somaliland,government,wikidata,Q319984,instance of colony of the Kingdom of Italy
 polity,somali_republic,start_year,wikidata,Q7559152,1960-07-01
 polity,somali_republic,end_year,wikidata,Q7559152,1969-10-21
-polity,new_kingdom_egypt,id_ruling_language,wikidata,Q1852329,Late Egyptian -1400 to -700; inferred from stage dates (Old Egyptian Q447117 ends -2100); Wikidata does not state the polity's language
+polity,somali_republic,government,wikidata,Q7559152,P122 semi-presidential system; mapped to democratic_republic
+polity,new_kingdom_egypt,id_ruling_language,wikidata,Q1852329,Late Egyptian -1400 to -700; inferred from stage dates (Middle Egyptian Q657330 -2300 to -1400 covers -1550 to -1400; Old Egyptian Q447117 ends -2100); Wikidata does not state the polity's language
 polity,hashimite_kingdom_of_hejaz,start_year,wikidata,Q956357,P571 1916-06-10
 polity,hashimite_kingdom_of_hejaz,end_year,wikidata,Q956357,P576 1926-01-08
 polity,hashimite_kingdom_of_hejaz,government,wikidata,Q956357,monarchy
@@ -322,3 +323,6 @@ polity,baathist_syrian_arab_republic,end_year,wikidata,Q131404661,P576 2024
 polity,baathist_syrian_arab_republic,id_ruling_language,wikidata,Q858,Arabic is given on the Syria item; mapped to classical_arabic
 polity,wattasid_dynasty,start_year,wikidata,Q970799,P571 1472
 polity,wattasid_dynasty,end_year,wikidata,Q970799,P576 1554
+polity,wattasid_dynasty,id_ruling_religion,wikidata,Q970799,P140 Q483654 Sunni Islam; mapped to sunni
+polity,wattasid_dynasty,government,wikidata,Q970799,P122 monarchy and sultan; mapped to sultanate
+polity,wattasid_dynasty,id_ruling_language,wikidata,Q970799,P2936 Berber and Arabic; Arabic mapped to classical_arabic as the court prestige language
