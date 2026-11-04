@@ -163,7 +163,7 @@ Panels are the layer-1 file shape, so a change to the panel JSON schema is a dat
 ### 2.10 Other
 
 - `GET /api/db`: the whole in-memory DB (about 1.8 MB), including the unused empty `provinces: []`. Marked "will deprecate" in `server.js`. No page uses it. Treat as unsupported.
-- `GET /data/*`: `server.js` also statically serves the whole `data/` directory (including `data/index.js`). No page uses it. See M5.
+- `GET /data/*`: not served. `server.js` no longer mounts `data/` statically, so `/data/index.js` and the built JSON return 404. No page used it.
 - `GET /` and the static pages: `/` → `public/index.html` (home and how to read the data), `/graph.html` + `graph.js` (the one graph), `/polity/?id=`, `/territory/?id=`, `/ethnicity/`, `/language/`, `/religion/`, `/history/`.
 
 ## 3. Built files: generator and CSV provenance
@@ -199,7 +199,7 @@ Joined in `server.js`, not in `data/`: claim `heir_name`, `source_name` and `obs
 - **M2. Fixed 2026-11-02.** The graph no longer reads territories.
 - **M3. Territory `name` equals the id** (`"egypt"`), so no page shows it. Every label comes from the id through `placeName` in `public/shared/site.js`.
 - **M4. Fixed 2026-11-02.** `public/history/app.js` loads its panel list from `/api/panel`, so all 72 panels are reachable, including the six the old hard-coded list missed: `central_africa/congo`, `east_africa/swahili_coast`, `latin_america/peru`, `oceania/oceania`, `southeast_asia/philippines`, `southern_africa/southern_africa`.
-- **M5. Path traversal in `/api/panel/:region/:id`. Fixed 2026-11-01.** An encoded `..` or `/` in a route parameter could read any non-dot `.json` the process could reach, and the server listened on all interfaces. The route now requires the resolved path to stay inside `panels/`, and the server binds to `127.0.0.1`. `/data/*` still exposes all of `data/`, including `index.js`.
+- **M5. Path traversal in `/api/panel/:region/:id`. Fixed 2026-11-01.** An encoded `..` or `/` in a route parameter could read any non-dot `.json` the process could reach, and the server listened on all interfaces. The route now requires the resolved path to stay inside `panels/`, and the server binds to `127.0.0.1`. The `/data/*` static mount, which exposed all of `data/` including `index.js`, was removed 2026-11-05.
 - **M6. `/api/polity/colors` is not a function of colours, and nothing reads it.** It returns ethnicity ids. The history page's `ETH_CLASS` table that used them was removed on 2026-11-02, because hashed or tabled colours implied shared identity. The route stays served until someone decides to remove it (section 5).
 - **M7. 404 behaviour is inconsistent.** Unknown ids give JSON 404s, but an unknown `/api/...` path gives Express's HTML 404. Pages handle `!res.ok` through `cachedFetch` (`throw new Error("404 Not Found")`) and `renderLoadError` in `public/shared/site.js`. `/polity/` turns a 404 into a not-found page; `/territory/` and `/history/` do the same by checking the id against their list route.
 

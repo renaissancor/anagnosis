@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // ── Static assets ────────────────────────────────────────────
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/data', express.static(path.join(__dirname, 'data')));
+// data/ is not served statically: pages fetch /api/* only (docs/model/api.md section 1).
 
 // ── Build indexes ────────────────────────────────────────────
 // Null-prototype lookups, so an id like `constructor` is simply not found.
