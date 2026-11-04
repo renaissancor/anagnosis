@@ -121,15 +121,6 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 | `macedonian_kingdom` | `macedonian_empire` | Kingdom of Macedon vs Alexander's empire |
 | `roman_republic` / `roman_empire` / `roman_kingdom` | — | Distinct polities by design |
 
-### Retired taxonomy ids (`csvs/religion.csv`)
-
-Never reuse these ids.
-
-| Retired ID | → Canonical ID | Why |
-|---|---|---|
-| `hanafi_school` | `sunni_hanafi` | Same madhhab; the retired row had no inbound reference (retired 2026-11-05) |
-| `shafi'i_school` | `sunni_shafi` | Same madhhab; the retired row had no inbound reference (retired 2026-11-05) |
-
 ## 4. Skip categories — no polity ID
 
 | Pattern | Reason |
@@ -318,3 +309,14 @@ All non-culture orphans resolved at the time. The remainder was the P3.12 cultur
 - `de8e48b` — italy.json (44 stubs, 15 narrative-label strips, aragonese fix)
 - `2a28d09` — government taxonomy remap (27-type) — orthogonal to merge map
 - `7dc9a72` — linker fix to only write resolved polity FKs
+
+## 11. Retired taxonomy ids (`csvs/religion.csv`)
+
+Not panel-label synonyms: these record taxonomy rows retired as duplicates.
+
+Never reuse these ids.
+
+| Retired ID | → Canonical ID | Why |
+|---|---|---|
+| `hanafi_school` | `sunni_hanafi` | Same madhhab; the retired row had no inbound reference (retired 2026-11-05) |
+| `shafi'i_school` | `sunni_shafi` | Same madhhab; the retired row had no inbound reference (retired 2026-11-05) |

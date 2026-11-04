@@ -35,9 +35,9 @@ The floor of the model is the edge that shares **neither people nor land**: an *
 
 | | Count | | Count |
 |---|---:|---|---:|
-| Polities | **482** | History panels | **72** |
-| Succession edges | **3,743** (computed) | Territories | **54** |
-| Languages | **695** | Religions | **264** |
+| Polities | **481** | History panels | **72** |
+| Succession edges | **3,736** (computed) | Territories | **54** |
+| Languages | **695** | Religions | **262** |
 | Ethnicities | **276** | Dynasties | **192** |
 
 Regional history-panel coverage spans **Europe, East / South / Southeast / Central Asia, the Middle East & Persia, Africa, the Americas, and Oceania** (72 panels in `panels/`), unevenly.

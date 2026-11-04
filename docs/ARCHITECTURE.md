@@ -32,16 +32,16 @@ gitignored wholesale without losing authored work.
 
 ```
 csvs/
-  polity.csv              482  the entity tier: id, name, ruling ethnicity/language/religion, government, years, policies, note
-  polity_territory.csv    803  junction: which territory a polity held, when   ← sole source of territory
-  polity_dynasty.csv      275  junction: which dynasty ruled a polity, when
+  polity.csv              481  the entity tier: id, name, ruling ethnicity/language/religion, government, years, policies, note
+  polity_territory.csv    800  junction: which territory a polity held, when   ← sole source of territory
+  polity_dynasty.csv      274  junction: which dynasty ruled a polity, when
   territory.csv            54  macro geographic zones
   dynasty.csv             192  cross-cutting tag (not a tier)
   figure.csv              286  key people, FK → polity
   government.csv           29  government-form taxonomy (flat)
   ethnicity.csv           276  taxonomy tree via parent_id
   language.csv            695  taxonomy tree via parent_id
-  religion.csv            264  taxonomy tree via parent_id
+  religion.csv            262  taxonomy tree via parent_id
   city.csv / city_name.csv / city_succession.csv   place-not-polis identity (see model/city.md)
   source.csv / fact_source.csv   external sources and which facts came from them (see model/source.md)
   inheritance_claim.csv / inheritance_axis.csv / inheritance_recognition.csv / axis_terminus.csv   curated succession, one claim at a time (see model/inheritance.md)
