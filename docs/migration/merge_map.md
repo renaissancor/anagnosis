@@ -121,6 +121,15 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 | `macedonian_kingdom` | `macedonian_empire` | Kingdom of Macedon vs Alexander's empire |
 | `roman_republic` / `roman_empire` / `roman_kingdom` | — | Distinct polities by design |
 
+### Retired taxonomy ids (`csvs/religion.csv`)
+
+Never reuse these ids.
+
+| Retired ID | → Canonical ID | Why |
+|---|---|---|
+| `hanafi_school` | `sunni_hanafi` | Same madhhab; the retired row had no inbound reference (retired 2026-11-05) |
+| `shafi'i_school` | `sunni_shafi` | Same madhhab; the retired row had no inbound reference (retired 2026-11-05) |
+
 ## 4. Skip categories — no polity ID
 
 | Pattern | Reason |
