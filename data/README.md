@@ -82,7 +82,7 @@ from the path by the loader, so the tree shape equals the CSV's `parent_id` grap
 
 ## Loader — `index.js`
 
-- `loadDir(dir)` — flat recursive load into an array; strips `//` comments.
+- `loadDir(dir)` — flat recursive load into an array.
 - `loadTree(dir)` — taxonomy load; derives `parent` from directory structure and
   exposes `db.tree.<type>(id)` for descendant queries.
 

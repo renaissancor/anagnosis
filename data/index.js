@@ -3,9 +3,10 @@ const path = require('path');
 
 // ── File loaders ──────────────────────────────────────────────────────────────
 
+// Built JSON is written by code/makejson/ with JSON.stringify, so it never
+// contains comments; parse it as-is.
 function loadJSON(filePath) {
-  const text = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(text.replace(/\/\/[^\n]*/g, ''));
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 /**
