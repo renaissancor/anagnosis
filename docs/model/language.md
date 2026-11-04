@@ -49,7 +49,7 @@ old_chinese,Old Chinese,old_classical_group,,
 | Column | Type | Required | Meaning and how to fill it |
 |---|---|---|---|
 | `id` | snake_case id | yes | Stable key. See section 4. Example: `old_chinese`. |
-| `name` | text | yes | Display name in English. Roots are written in capitals (`INDO-EUROPEAN`, id `indo_european`); this is current practice, not a rule. Example: `Old Chinese`. |
+| `name` | text | yes | Display name in English. Roots are written in title case like any other row (`Indo-European`, id `indo_european`). Example: `Old Chinese`. |
 | `parent_id` | ref → `language.id` | no | The immediately enclosing node. **Empty means the row is a root (a top-level family).** It never means "unknown"; if you do not know the classification, put the language under `language_isolates` or the nearest sure family and say so in `description`. |
 | `description` | text | no | Free-text note. Only 4 rows use it. Empty means nothing to add. No commas (use semicolons). |
 | `founded` | text | no | Intended as the date a language or stage emerged. **Empty on all 695 rows.** No format has ever been used or decided. Do not fill it until the owner decides (section 7). Empty means not recorded. |

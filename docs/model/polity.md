@@ -326,7 +326,6 @@ See `government.md` section 7.
 
 **Likely duplicates, pending the merge passes.** These overlap in date with the same ruling ethnicity and a shared territory:
 
-- `egyptian_new_kingdom` / `new_kingdom_egypt`
 - `north_yuan` / `northern_yuan`
 - `zangid_atabegate` / `zengid_dynasty`
 - `hungary` (1000..1946) / `kingdom_of_hungary` (1000..1526)
