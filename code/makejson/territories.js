@@ -43,7 +43,9 @@ function main() {
   let created = 0;
   for (const t of territories) {
     const polities = periodsByTerritory.get(t.id) || [];
-    const territory = { id: t.id, name: t.name, polity_count: polities.length, polities };
+    // A polity can hold a territory in several periods; count it once.
+    const polityCount = new Set(polities.map(p => p.polity_id)).size;
+    const territory = { id: t.id, name: t.name, polity_count: polityCount, polities };
     fs.writeFileSync(path.join(OUTPUT_DIR, `${t.id}.json`), JSON.stringify(territory, null, 2) + '\n');
     created++;
   }
