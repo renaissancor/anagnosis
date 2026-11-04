@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity_territory.csv`. It is the sole authored home of a polity's territory; `polity.csv` has no territory column.
 
-**Snapshot:** every count below was measured on 2026-11-05 at commit `21a5309`, after the `egyptian_new_kingdom` merge, using `code/lib/csv.js`. Merge passes are running and move these rows, so re-measure before acting on a list.
+**Snapshot:** every count below was measured on 2026-11-05 using `code/lib/csv.js`, after the `tibetan_plateau` and `horn_of_africa` zones were added. Merge passes are running and move these rows, so re-measure before acting on a list.
 
 **Labels:** **Decided** is a recorded rule. **PROPOSED** is a suggestion in this doc and not a current rule. **OPEN** is undecided; section 7 numbers these.
 
@@ -60,7 +60,7 @@ arabia,ottoman_empire,1517,1918
 | `start_year` | integer, BCE negative | yes in practice; part of the key | Year this polity's hold on this zone began. It should fall within the polity's own dates (see section 6) | no row has it empty | `1517`, not the polity's 1299 |
 | `end_year` | integer, BCE negative | no | Year the hold ended | **ongoing**: the polity still holds the zone today. Never unknown. It must only appear on a polity that is itself ongoing (PROPOSED; no row breaks this now) | `1918`; `anatolia/republic_of_turkey` is empty |
 
-**How to fill the dates.** Most rows simply repeat the polity's dates: 728 of 800 do, and only 30 polities have a row that differs. Those rows assert the polity held the zone for its whole life, which is usually a default, not a researched claim. When you research a hold, record the real span as the 72 others do (`egypt/byzantine_empire` 395–641).
+**How to fill the dates.** Most rows simply repeat the polity's dates: 736 of 808 do, and only 30 polities have a row that differs. Those rows assert the polity held the zone for its whole life, which is usually a default, not a researched claim. When you research a hold, record the real span as the 72 others do (`egypt/byzantine_empire` 395–641).
 
 A zero-length span (`start_year = end_year`) is valid. Five rows have one, all for short-lived polities such as `shun`.
 
@@ -125,13 +125,13 @@ Run `node scripts/validate.js`. `npm test` runs `make:all` first.
 
 | Measure | Value |
 |---|---|
-| Rows | 800 |
-| Polities with at least one row | 475 of 481 |
-| Territories used | 54 of 54 |
-| `end_year` empty | 58 |
-| Rows equal to the polity's exact dates | 728 |
+| Rows | 808 |
+| Polities with at least one row | 482 of 488 |
+| Territories used | 56 of 56 |
+| `end_year` empty | 59 |
+| Rows equal to the polity's exact dates | 736 |
 | Polities with any row that differs from their dates | 30 |
-| Rows per polity | 1 row: 300 polities; 2: 110; 3: 32; 4: 17; 5 or more: 16 |
+| Rows per polity | 1 row: 306 polities; 2: 111; 3: 32; 4: 17; 5 or more: 16 |
 | Most zones | `roman_empire` has 17 rows; `ottoman_empire`, `umayyad_caliphate` and `mongol_empire` have 9 |
 
 The busiest zones are `italy` (53), `iran_plateau` (47) and `yellow_river` (38). `territory.md` has the full list.
@@ -150,7 +150,7 @@ The reverse case is fine: `manchuria/republic_of_china` ends in 1932 while its p
 
 - **Leftover boundary.** `roman_empire` has two rows on 8 zones (`-27–380` and `380–395`). These remain from the merge of `roman_empire_pagan` and `roman_empire_christian`, and mean nothing under the split rule. `britannia/roman_empire` has only `-27–380`.
 - **Personal unions.** `kingdom_of_denmark` and `kingdom_of_sweden` stop at 1397 and resume at 1523 on `scandinavia`, reflecting the Kalmar Union. Norway restarts in 1905 on `modern_norway`.
-- **Forced fits.** Zones are missing for parts of the world, so holders are placed in the nearest zone or none. `kanem_empire`, `aksumite_kingdom` and `italian_east_africa` are all on `nubia`, and `tibetan_empire` is on `central_asian_steppe`. Six polities have no row at all: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning`.
+- **Forced fits.** Zones are missing for parts of the world, so holders are placed in the nearest zone or none. `kanem_empire` and `punt` are on `nubia`, and `aksumite_kingdom` holds both `nubia` and `horn_of_africa`. `tibetan_plateau` and `horn_of_africa` were added on 2026-11-05; eight rows moved onto them and `aksumite_kingdom` gained one (`territory.md` section 7). Six polities have no row at all: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning`.
 - **Overlap from nested zones.** A polity often holds both a zone and one that looks nested in it, such as `iran_plateau` and `khorasan` (18 polities). See `territory.md`.
 
 ### Open questions for the owner

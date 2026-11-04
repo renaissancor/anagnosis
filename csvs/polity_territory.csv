@@ -350,9 +350,9 @@ yellow_river,qing_dynasty,1644,1912
 yellow_river,republic_of_china,1912,1949
 yellow_river,peoples_republic_of_china,1949,
 nubia,aksumite_kingdom,100,940
-arabia,adal_sultanate,1415,1577
-arabia,ajuran_sultanate,1300,1700
-arabia,ifat_sultanate,1285,1415
+horn_of_africa,adal_sultanate,1415,1577
+horn_of_africa,ajuran_sultanate,1300,1700
+horn_of_africa,ifat_sultanate,1285,1415
 north_africa,aghlabid_dynasty,800,909
 north_africa,alawite_dynasty,1631,
 north_africa,almohad_caliphate,1121,1269
@@ -423,7 +423,7 @@ pontic_steppe,kazan_khanate,1438,1552
 transoxiana,khanate_of_bukhara,1500,1785
 transoxiana,khanate_of_khiva,1511,1920
 transoxiana,khanate_of_kokand,1709,1876
-central_asian_steppe,khoshut_khanate,1642,1717
+tibetan_plateau,khoshut_khanate,1642,1717
 balkans,kingdom_of_greece,1832,1973
 levant,kingdom_of_jerusalem,1099,1291
 levant,kingdom_of_jordan,1946,
@@ -473,11 +473,11 @@ ganges_plain,sena_dynasty,1070,1230
 balkans,serbian_despotate,1402,1459
 yellow_river,shu_han,221,263
 ganges_plain,shunga_dynasty,-185,-73
-nubia,solomonic_dynasty,1270,1974
+horn_of_africa,solomonic_dynasty,1270,1974
 levant,state_of_israel,1948,
 ganges_plain,sur_empire,1540,1556
 punjab,sur_empire,1540,1556
-central_asian_steppe,tibetan_empire,618,842
+tibetan_plateau,tibetan_empire,618,842
 egypt,tulunid_dynasty,868,905
 levant,tulunid_dynasty,868,905
 deccan,vakataka_dynasty,250,500
@@ -485,7 +485,7 @@ deccan,western_chalukya,973,1189
 central_asian_steppe,western_xia,1038,1227
 deccan,yadava_dynasty,850,1317
 central_asian_steppe,yarkand_khanate,1514,1705
-nubia,zagwe_dynasty,900,1270
+horn_of_africa,zagwe_dynasty,900,1270
 iran_plateau,zand_dynasty,1751,1794
 mesopotamia,zangid_atabegate,1127,1250
 levant,zangid_atabegate,1127,1250
@@ -681,7 +681,7 @@ caucasus,transcaucasian_democratic_federative_republic,1918,1918
 central_asian_steppe,turkestan_assr,1918,1924
 transoxiana,turkestan_assr,1918,1924
 balkans,albanian_kingdom,1928,1939
-nubia,italian_east_africa,1936,1941
+horn_of_africa,italian_east_africa,1936,1941
 mongolian_plateau,mengjiang,1936,1945
 balkans,italian_albania,1939,1943
 gaul,vichy_france,1940,1944
@@ -799,3 +799,11 @@ japanese_archipelago,kenmu_government,1333,1336
 japanese_archipelago,ashikaga_shogunate,1336,1573
 japanese_archipelago,southern_court,1336,1392
 japanese_archipelago,oda_toyotomi_government,1573,1603
+horn_of_africa,aksumite_kingdom,100,940
+tibetan_plateau,guge_kingdom,912,1630
+tibetan_plateau,ladakh_kingdom,930,1842
+tibetan_plateau,ganden_phodrang,1642,1959
+tibetan_plateau,sikkim_kingdom,1642,1975
+tibetan_plateau,kingdom_of_bhutan,1907,
+horn_of_africa,italian_somaliland,1880,1936
+horn_of_africa,somali_republic,1960,1969
