@@ -2,7 +2,7 @@
 
 This is the contract between layer 3 (built JSON in `data/`) and layer 4 (`server.js` + `public/`). If the JSON shapes below hold, the frontend needs nothing else from the data layer. If a generator changes, section 3 says what it feeds and section 5 says whether the change breaks anyone.
 
-Verified on 2026-10-31 by running `node server.js` (port 3000) against a fresh `data/` (523 polities at the time, 4107 succession edges, 54 territories, 192 dynasties, 29 governments, 72 panels). Row counts below were updated after the non-polity migration (482 polities, 3743 edges). Counts will drift; shapes should not.
+Verified on 2026-10-31 by running `node server.js` (port 3000) against a fresh `data/` (523 polities at the time, 4107 succession edges, 54 territories, 192 dynasties, 29 governments, 72 panels). Counts below were re-measured on 2026-11-05 from the running server (481 polities, 3736 edges). Counts will drift; shapes should not.
 
 ## 1. Boundary rule
 
@@ -21,7 +21,7 @@ Nullability convention used below: `?` means the key can be absent (generators o
 
 ### 2.1 `GET /api/polity`: lightweight list
 
-Source: `db.polities`, projected in `server.js`. 482 rows, about 130 KB.
+Source: `db.polities`, projected in `server.js`. 481 rows, about 127 KB.
 
 | field | type | notes |
 |---|---|---|
@@ -78,16 +78,16 @@ Consumer: `public/polity/app.js` (`/polity/?id=<id>`), which shows the edges in 
 
 ### 2.3 `GET /api/polity/colors`
 
-`{ "<polity_id>": "<ruling_ethnicity id>" | null, … }`, one key per polity. About 16 KB. **No page reads it since 2026-11-02**: history cells no longer carry ethnicity colours. The route stays served. Route order matters: it is registered before `/api/polity/:id`, so a polity with id `colors` would be shadowed.
+`{ "<polity_id>": "<ruling_ethnicity id>" | null, … }`, one key per polity. About 14 KB. **No page reads it since 2026-11-02**: history cells no longer carry ethnicity colours. The route stays served. Route order matters: it is registered before `/api/polity/:id`, so a polity with id `colors` would be shadowed.
 
 ### 2.4 `GET /api/succession`
 
-Flat array of directed edges (3743, about 1 MB, the biggest payload). Source: `data/succession/all.json`.
+Flat array of directed edges (3736, about 1 MB, the biggest payload). Source: `data/succession/all.json`.
 
 | field | type | notes |
 |---|---|---|
 | `from`, `to` | string | polity ids |
-| `territorial_direction` | `"same"\|"expansion"\|"contraction"\|"displacement"\|"unknown"` | counts: 1113 / 738 / 869 / 1019 / 4. Generator defaults empty to `"unknown"` |
+| `territorial_direction` | `"same"\|"expansion"\|"contraction"\|"displacement"\|"unknown"` | counts: 1111 / 737 / 865 / 1019 / 4. Generator defaults empty to `"unknown"` |
 | `strength` | integer | computed score; `null` possible if CSV cell empty (0 today) |
 | `shared_territories` | string[] | territory ids |
 | `shared_territory_count` | integer | |
@@ -124,10 +124,10 @@ Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTe
 
 ### 2.6 `GET /api/taxonomy/:type`, with `type` in `ethnicity | language | religion`
 
-Flat array of nodes (`parent` is the id of the parent node or `null` for roots; the tree is reconstructed client-side). Unknown type gives 404 `{"error":"Unknown taxonomy type"}`. Sizes: 276 / about 695 / 264 nodes.
+Flat array of nodes (`parent` is the id of the parent node or `null` for roots; the tree is reconstructed client-side). Unknown type gives 404 `{"error":"Unknown taxonomy type"}`. Sizes: 276 / 695 / 262 nodes.
 
 Branch node (has children): `{id, name, parent, description|null, founded|null, status|null}` (religion branches also have `founder|null`).
-Leaf node: the same, plus a block of placeholder fields that the generators hard-code to `null`/`[]` (ethnicity: `historical_depth, languages, origin_territory, ancestry, social_structure, population, major_regions`; language: `iso6393, glottocode, macro_area, coordinates, scripts, speaker_count`; religion: `founder, founded_region, scriptures, theology, adherent_count, major_regions, sub_sects`). **Leaf and branch shapes differ**, and the placeholder fields carry no data. Do not read them. `population.date` / `speaker_count.date` / `adherent_count.date` are the build year, not a data date. `founded` is text, not a year: 4 ethnicity rows hold descriptive phrases and the other two taxonomies have none, so the page formats it as a year only when it is a whole number. Root names arrive in capitals; `public/shared/tree.js` shows them in title case.
+Leaf node: the same, plus a block of placeholder fields that the generators hard-code to `null`/`[]` (ethnicity: `historical_depth, languages, origin_territory, ancestry, social_structure, population, major_regions`; language: `iso6393, glottocode, macro_area, coordinates, scripts, speaker_count`; religion: `founder, founded_region, scriptures, theology, adherent_count, major_regions, sub_sects`). **Leaf and branch shapes differ**, and the placeholder fields carry no data. Do not read them. `population.date` / `speaker_count.date` / `adherent_count.date` are the build year, not a data date. `founded` is text, not a year, and is empty on every node of all three taxonomies today; the page formats it as a year only when it is a whole number. Names, roots included, arrive in display case; `public/shared/tree.js` title-cases a name only if it has no lowercase letter, and none does today.
 
 ```json
 {"id":"christianity","name":"Christianity","parent":"abrahamic_religions","description":null,"founder":null,"founded":null,"status":null}
@@ -162,7 +162,7 @@ Panels are the layer-1 file shape, so a change to the panel JSON schema is a dat
 
 ### 2.10 Other
 
-- `GET /api/db`: the whole in-memory DB (about 1.8 MB), including the unused empty `provinces: []`. Marked "will deprecate" in `server.js`. No page uses it. Treat as unsupported.
+- `GET /api/db`: the whole in-memory DB (about 1.6 MB), including the unused empty `provinces: []`. Marked "will deprecate" in `server.js`. No page uses it. Treat as unsupported.
 - `GET /data/*`: not served. `server.js` no longer mounts `data/` statically, so `/data/index.js` and the built JSON return 404. No page used it.
 - `GET /` and the static pages: `/` → `public/index.html` (home and how to read the data), `/graph.html` + `graph.js` (the one graph), `/polity/?id=`, `/territory/?id=`, `/ethnicity/`, `/language/`, `/religion/`, `/history/`.
 

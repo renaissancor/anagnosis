@@ -4,7 +4,7 @@
  * Reads from /api/taxonomy/:type only id, name, parent, description, founded
  * and status (api.md 2.6); the leaf placeholder fields carry no data.
  */
-/** Root names are stored in capitals; every other name is already mixed case. */
+/** Names arrive in display case; this title-cases only a name with no lowercase letter, and none has one today. */
 function readableName(name) {
   if (/\p{Ll}/u.test(name)) return name;
   return name.toLowerCase().replace(/(^|[\s\-/])(\p{L})/gu, (_, gap, letter) => gap + letter.toUpperCase());
