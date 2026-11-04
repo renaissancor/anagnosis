@@ -1,6 +1,6 @@
 # Contract: Build
 
-Owner role: `build-owner`. Last re-measured: 2026-11-01. Write sets are in [`../ARCHITECTURE.md`](../ARCHITECTURE.md).
+Owner role: `build-owner`. Last re-measured: 2026-11-05. Write sets are in [`../ARCHITECTURE.md`](../ARCHITECTURE.md).
 
 ## Purpose
 
@@ -44,12 +44,12 @@ npm run make:db    # needs DuckDB
 
 Done means `npm test` passes and the `derived/` diff is reviewed.
 
-## Current state (measured 2026-11-01)
+## Current state (measured 2026-11-05)
 
 | Measure | Value (command) |
 |---|---|
-| Validator warnings | 1,773 (`npm run validate`) |
-| Warning baseline | 1,773 (`scripts/warning-baseline.json`) |
+| Validator warnings | 1,775 (`npm run validate`) |
+| Warning baseline | 1,775 (`scripts/warning-baseline.json`) |
 | DDL tables | 22 (`grep -ci '^create table' docs/model/erd.sql`) |
 
 ## Open questions
@@ -59,3 +59,4 @@ None recorded yet.
 ## Decision log
 
 - 2026-11-01: contract created from `ARCHITECTURE.md`, `code/README.md` and `migration/csv_workflow.md`.
+- 2026-11-05: baseline refreshed with the owner's approval after the `tibetan_plateau` and `horn_of_africa` zones and 11 new polities. Warnings 1,773 → 1,775; `no_people_no_land_edges` 1,145 → 1,184; `gap_over_200` 315 → 318; `start_inversions` 24 → 23.

@@ -1,9 +1,9 @@
 {
-  "warnings": 1773,
+  "warnings": 1775,
   "metrics": {
-    "no_people_no_land_edges": 1145,
-    "gap_over_200": 315,
-    "start_inversions": 24,
+    "no_people_no_land_edges": 1184,
+    "gap_over_200": 318,
+    "start_inversions": 23,
     "long_lived_polities": 7
   }
 }
