@@ -207,7 +207,7 @@ A target is not a check. Do not "fix" one across the tree unasked.
 | CSV headers, keys, foreign keys, dates, enums | enforced | `scripts/validate.js` |
 | Warnings and plausibility metrics do not grow | enforced | `scripts/warning-baseline.json` |
 | Every doc outside `docs/brainstorm/` is indexed, each index link resolves, and every non-librarian role is in Write sets | enforced | `scripts/validate.js` |
-| All CSV I/O through `code/lib/csv.js` | target | `docs/TODO.md` |
+| All CSV I/O through `code/lib/csv.js` | met 2026-11-05; not checked automatically | `code/`, `scripts/` (archive excluded) |
 | One writer per path | not checked | this table |
 | Librarians and the auditor write nothing | not checked; a role rule, since Bash can write | role files |
 

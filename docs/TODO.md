@@ -7,18 +7,17 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | # | Severity | Where | What | Owner role | Approval |
 |---|---|---|---|---|---|
 | 2 | Medium | `scripts/dedup_and_link.js:468`, `scripts/extract_missing_polities.js:208` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
-| 3 | Medium | `scripts/{extract_labels,dedup_and_link,find_overlaps,extract_missing_polities,generate_stubs}.js` | Read CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
-| 4 | Medium | `scripts/{dedup_and_link,extract_labels,find_overlaps,generate_stubs,normalize_labels,extract_missing_polities}.js`, `code/generate-successions.js` | Write CSV by hand instead of through `code/lib/csv.js` | build-owner | Yes |
 | 13 | High | `csvs/polity_territory.csv` | 731 of 803 territory spans only repeat the polity's whole lifespan, so timelines cannot show tenure; the UI draws these hollow | curator | Yes |
-| 14 | Low | `csvs/polity.csv:69`, `csvs/ethnicity.csv`, `csvs/language.csv`, `csvs/religion.csv` | Unclosed names (`Funan (Óc Eo`, `German Confederation (Deutscher Bund`); near-duplicates (`Egyptian New Kingdom`, `Hanafi School`); 4 `founded` cells hold descriptions; 56 root names in capitals; Ataturk listed as an Ottoman ruler | curator | Yes |
-| 15 | Low | `code/makejson/territories.js` | `polity_count` counts rows, so it overstates on 9 territories | build-owner | Yes |
-| 16 | Low | `data/index.js:8` | `loadJSON` strips `//` inside strings, so a URL in built JSON would stop the server at boot | build-owner | Yes |
 | 7 | Medium | `scripts/validate.js` | 1,773 warnings and 1,145 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
-| 8 | Medium | `scripts/validate.js:367` | (heir, source) uniqueness is decided but not checked | build-owner | Yes |
-| 9 | Low | `server.js:11` | `/data` serves all of `data/`, including `index.js` | ui-designer | Yes |
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
 | 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | build-owner | Yes |
 | 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
+| 17 | Low | `scripts/find_overlaps.js:271` | Logs an undefined `timelineOut`, so the script exits 1 after writing its CSV | build-owner | Yes |
+| 18 | Low | `scripts/extract_missing_polities.js:197` | `--write` leaves a blank line before appended stubs and no final newline | build-owner | Yes |
+| 19 | Low | `scripts/generate_stubs.js:265` | `derived/polity_stubs.csv` header still has `civilization_id` and `territories` and lacks `start_basis`/`end_basis` | build-owner | Yes |
+| 20 | Low | `server.js:146` | `/api/dynasty` `polity_count` counts rows, the pattern fixed in territories; latent only | ui-designer | Yes |
+| 21 | Low | `csvs/polity.csv` | `north_yuan`/`northern_yuan` and `zangid_atabegate`/`zengid_dynasty` duplicate pairs need sourced end year, language and religion before a merge | curator | Yes |
+| 22 | Low | `csvs/language.csv`, `csvs/religion.csv`, `csvs/figure.csv` | 27 language names keep a legacy `()` prefix; madhhab ids mix `sunni_hanafi` with `hanbali_school`; a figure is named only "MBS" | curator | Yes |
 
 ## Open curation
 

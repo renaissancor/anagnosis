@@ -137,7 +137,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 
 ## How to validate
 
-`npm run validate` checks headers, enum values, foreign keys, and the `provenance` format (`wp:`, `wd:`, `panel:` or `ref:`). (heir, source) uniqueness is decided but not yet checked (`docs/TODO.md`). Done means the validator passes and the project owner has approved the claim.
+`npm run validate` checks headers, enum values, foreign keys, and the `provenance` format (`wp:`, `wd:`, `panel:` or `ref:`). (heir, source) uniqueness is checked on (`heir_polity_id`, `source_type`, `source_id`), because ethnicity and religion share some ids. Done means the validator passes and the project owner has approved the claim.
 
 ## Current state (measured 2026-11-01)
 

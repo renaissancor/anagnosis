@@ -115,12 +115,12 @@ Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTe
 - `GET /api/territory/:id`: one object; 404 `{"error":"Not found"}`. No frontend page calls it.
 
 ```json
-{"id":"egypt","name":"egypt","polity_count":24,
+{"id":"egypt","name":"egypt","polity_count":22,
  "polities":[{"polity_id":"old_kingdom_egypt","start_year":-2686,"end_year":-2181},
              {"polity_id":"new_kingdom_egypt","start_year":-1550,"end_year":-1070}]}
 ```
 
-`polities[].end_year` is **absent** (not null) when the CSV is empty. `name` is currently the lowercase id (`territory.csv` has `name == id`), so it is not display-quality. The list is sorted by `start_year`. `polity_count` counts `polity_territory` rows, not polities, so it is higher than the distinct count on 9 territories (`scandinavia` 9 against 6). The page counts distinct `polity_id`s.
+`polities[].end_year` is **absent** (not null) when the CSV is empty. `name` is currently the lowercase id (`territory.csv` has `name == id`), so it is not display-quality. The list is sorted by `start_year`. `polity_count` counts distinct `polity_id`s.
 
 ### 2.6 `GET /api/taxonomy/:type`, with `type` in `ethnicity | language | religion`
 
