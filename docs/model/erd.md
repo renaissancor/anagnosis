@@ -59,18 +59,18 @@ Dynasty (192 records) is modelled as a cross-cutting tag via `polity_dynasty` â€
 
 | Layer | Table | Records | Source |
 |-------|-------|---------|--------|
-| **Geography** | territory | 53 | csvs/territory.csv |
+| **Geography** | territory | 54 | csvs/territory.csv |
 | **Taxonomy** | ethnicity | 276 | csvs/ethnicity.csv |
-| | language | 691 | csvs/language.csv |
-| | religion | 255 | csvs/religion.csv |
-| | government | 26 | csvs/government.csv |
-| **Political** | polity | 482 | csvs/polity.csv |
-| | polity_territory | 803 | csvs/polity_territory.csv |
-| | polity_policy | 26 | from polity.csv |
-| | polity_succession | 3,743 (computed) | derived/polity_succession.csv |
-| | polity_succession_territory | ~5,000 | embedded |
+| | language | 695 | csvs/language.csv |
+| | religion | 262 | csvs/religion.csv |
+| | government | 29 | csvs/government.csv |
+| **Political** | polity | 481 | csvs/polity.csv |
+| | polity_territory | 800 | csvs/polity_territory.csv |
+| | polity_policy | 27 | from polity.csv |
+| | polity_succession | 3,736 (computed) | derived/polity_succession.csv |
+| | polity_succession_territory | 2,721 | embedded |
 | **Dynasty** | dynasty | 192 | csvs/dynasty.csv |
-| | polity_dynasty | 275 | csvs/polity_dynasty.csv |
+| | polity_dynasty | 274 | csvs/polity_dynasty.csv |
 | **People** | figure | 286 | csvs/figure.csv |
 
 ## Planned Tables (not yet active)
