@@ -11,6 +11,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const csv = require('../code/lib/csv');
 
 const CSV_PATH = path.join(__dirname, '../csvs/polity.csv');
 const HISTORY_DIR = path.join(__dirname, '../panels');
@@ -83,12 +84,7 @@ function isNonPolity(id) {
 // ── Load existing polity IDs ────────────────────────────────────────────────
 
 function loadCsvIds() {
-  const content = fs.readFileSync(CSV_PATH, 'utf8');
-  return new Set(
-    content.trim().split('\n').slice(1)
-      .map(l => l.split(',')[0].trim().replace(/^"|"$/g, ''))
-      .filter(Boolean)
-  );
+  return new Set(csv.readFile(CSV_PATH).map(r => r.id.trim()).filter(Boolean));
 }
 
 // ── Scan history panels ─────────────────────────────────────────────────────
@@ -142,15 +138,6 @@ function cleanName(label) {
     .trim();
 }
 
-function esc(val) {
-  if (!val) return '';
-  val = String(val);
-  if (val.includes(',') || val.includes('"') || val.includes('\n')) {
-    return '"' + val.replace(/"/g, '""') + '"';
-  }
-  return val;
-}
-
 // ── Main ────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -201,12 +188,14 @@ function main() {
 
   // Write mode
   if (writeMode && missing.length > 0) {
-    // header: id,name,civilization_id,id_ruling_ethnicity,id_ruling_language,id_ruling_religion,government,territories,start,end,policies,note
-    const stubs = missing.map(m => {
-      return [m.id, esc(m.name), '', '', '', '', '', '', '', '', '', ''].join(',');
-    });
-    fs.appendFileSync(CSV_PATH, '\n' + stubs.join('\n'));
-    console.log(`\n✓ Appended ${stubs.length} stub rows to polity.csv`);
+    // Stub rows carry only id and name; every other column of the file's
+    // header is left empty. csv.js serializes them; the header line and the
+    // final newline are dropped to keep the existing append behaviour.
+    const header = csv.headersOf(fs.readFileSync(CSV_PATH, 'utf8'));
+    const text = csv.stringify(missing.map(m => ({ id: m.id, name: m.name })), header);
+    const body = text.slice(text.indexOf('\n') + 1, -1);
+    fs.appendFileSync(CSV_PATH, '\n' + body);
+    console.log(`\n✓ Appended ${missing.length} stub rows to polity.csv`);
     console.log('  Fill in ethnicity/language/religion/government/dates before running make:all');
   } else if (!writeMode && missing.length > 0) {
     console.log(`\nRun with --write to append ${missing.length} stubs to polity.csv`);

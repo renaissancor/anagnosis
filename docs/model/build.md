@@ -16,7 +16,7 @@ Authored rows belong to the curators. Routes and pages belong to `ui-designer`.
 
 ## Rules
 
-1. All CSV reading and writing goes through `code/lib/csv.js`. Existing bypasses are in `docs/TODO.md`; add none.
+1. All CSV reading and writing goes through `code/lib/csv.js`. Add no bypass.
 2. Generators read `csvs/` and `derived/`, and write only `derived/` or `data/`.
 3. A script never writes layer 1. `dedup_and_link.js` and `extract_missing_polities.js --write` are known exceptions, and only a curator runs them.
 4. Never run `validate.js --update-baseline` to make a check pass. Refresh the baseline only after explaining the change in the commit.

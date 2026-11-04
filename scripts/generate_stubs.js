@@ -20,54 +20,23 @@ const POLITY_IN    = path.join(BASE, 'csvs', 'polity.csv');
 const TERRITORY_IN = path.join(BASE, 'csvs', 'territory.csv');
 const STUBS_OUT    = path.join(BASE, 'derived', 'polity_stubs.csv');
 
-// ─── CSV PARSING ──────────────────────────────────────────
-
 const csv = require('../code/lib/csv');
-function parseCSV(text) {
-  return csv.parseRows(text).filter(r => r.length > 1 || (r.length === 1 && r[0] !== ''));
-}
-
-function escapeCSV(val) {
-  const s = String(val == null ? '' : val);
-  if (s.includes(',') || s.includes('"') || s.includes('\n')) {
-    return `"${s.replace(/"/g, '""')}"`;
-  }
-  return s;
-}
 
 // ─── LOAD INPUTS ──────────────────────────────────────────
 
-const entityRows = parseCSV(fs.readFileSync(ENTITIES_IN, 'utf8'));
-const entityHeader = entityRows[0];
-const idxId = entityHeader.indexOf('entity_id');
-const idxType = entityHeader.indexOf('entity_type');
-const idxName = entityHeader.indexOf('canonical_name');
-const idxPanels = entityHeader.indexOf('panels');
-
 const candidates = [];
-for (let i = 1; i < entityRows.length; i++) {
-  const r = entityRows[i];
-  const type = r[idxType];
+for (const r of csv.readFile(ENTITIES_IN)) {
+  const type = r.entity_type;
   if (type === 'unresolved_polity' || type === 'polity') {
-    candidates.push({ id: r[idxId], type, name: r[idxName], panels: r[idxPanels] });
+    candidates.push({ id: r.entity_id, type, name: r.canonical_name, panels: r.panels });
   }
 }
 
 // Existing polity IDs (defensive skip).
-const existingPolityIds = new Set();
-for (const line of fs.readFileSync(POLITY_IN, 'utf8').split('\n').slice(1)) {
-  if (!line.trim()) continue;
-  const m = line.match(/^([^,]+),/);
-  if (m) existingPolityIds.add(m[1]);
-}
+const existingPolityIds = new Set(csv.readFile(POLITY_IN).map(r => r.id).filter(Boolean));
 
 // Territory IDs (only emit FKs that exist).
-const territoryIds = new Set();
-for (const line of fs.readFileSync(TERRITORY_IN, 'utf8').split('\n').slice(1)) {
-  if (!line.trim()) continue;
-  const m = line.match(/^([^,]+),/);
-  if (m) territoryIds.add(m[1]);
-}
+const territoryIds = new Set(csv.readFile(TERRITORY_IN).map(r => r.id).filter(Boolean));
 
 // ─── REGION → TERRITORY MAP ───────────────────────────────
 // Loose mapping from panel-directory name → candidate territory FKs.
@@ -265,8 +234,7 @@ const STUB_HEADERS = ['id','name','civilization_id','id_ruling_ethnicity','id_ru
 
 let total = 0, generated = 0, withDate = 0, withoutDate = 0, govInferred = 0;
 let skippedExisting = 0, skippedCulture = 0, skippedNoSignal = 0;
-const stubLines = [STUB_HEADERS.join(',')];
-const samples = [];
+const stubs = [];
 
 // Stable order: most-cross-panel-first.
 candidates.sort((a, b) => {
@@ -320,21 +288,19 @@ for (const c of candidates) {
   const name = titleCase(c.id);
   const note = `Stub generated from ${primaryPanel} panel; appears in ${panelSet.size} panel(s); needs P6.1 enrichment`;
 
-  const row = [
-    c.id, name, '', '', '', '',
+  stubs.push({
+    id: c.id,
+    name,
     government,
     territories,
-    start === '' ? '' : String(start),
-    end === '' ? '' : String(end),
-    '',
+    start_year: start === '' ? '' : String(start),
+    end_year: end === '' ? '' : String(end),
     note,
-  ].map(escapeCSV).join(',');
-  stubLines.push(row);
-  if (samples.length < 10) samples.push(row);
+  });
   generated++;
 }
 
-fs.writeFileSync(STUBS_OUT, stubLines.join('\n') + '\n');
+csv.writeFile(STUBS_OUT, stubs, STUB_HEADERS);
 
 // ─── REPORT ──────────────────────────────────────────────
 
@@ -349,5 +315,4 @@ console.log(`Skipped (*_culture):      ${skippedCulture}`);
 console.log(`Skipped (no panel signal):${skippedNoSignal}`);
 console.log(`\nFile written: ${path.relative(BASE, STUBS_OUT)}`);
 console.log(`\nFirst 10 stubs:`);
-console.log(STUB_HEADERS.join(','));
-for (const s of samples) console.log(s);
+process.stdout.write(csv.stringify(stubs.slice(0, 10), STUB_HEADERS));

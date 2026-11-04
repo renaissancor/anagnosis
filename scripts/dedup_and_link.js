@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const csv = require('../code/lib/csv');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const BASE = path.join(__dirname, '..');
@@ -20,15 +21,9 @@ const ENTITIES_OUT = path.join(BASE, 'derived', 'canonical_entities.csv');
 
 // ─── LOAD EXISTING POLITIES ──────────────────────────────
 
-const politiesCSV = fs.readFileSync(path.join(BASE, 'csvs', 'polity.csv'), 'utf8');
-const existingPolities = new Map(); // id → name
-for (const line of politiesCSV.split('\n').slice(1)) {
-  if (!line.trim()) continue;
-  const match = line.match(/^([^,]+),(".*?"|[^,]*)/);
-  if (match) {
-    existingPolities.set(match[1], match[2].replace(/^"|"$/g, ''));
-  }
-}
+const existingPolities = new Map( // id → name
+  csv.readFile(path.join(BASE, 'csvs', 'polity.csv')).filter(r => r.id).map(r => [r.id, r.name])
+);
 
 // ─── NORMALIZATION HELPERS ────────────────────────────────
 
@@ -475,29 +470,18 @@ for (const filePath of panelFiles) {
 
 // ─── WRITE CANONICAL ENTITIES CSV ─────────────────────────
 
-function escapeCSV(val) {
-  const s = String(val);
-  if (s.includes(',') || s.includes('"') || s.includes('\n')) {
-    return `"${s.replace(/"/g, '""')}"`;
-  }
-  return s;
-}
-
 {
   const headers = ['entity_id', 'entity_type', 'canonical_name', 'panel_count', 'panels', 'source_labels'];
-  const lines = [headers.join(',')];
   const sorted = [...canonicalEntities.values()].sort((a, b) => b.panels.size - a.panels.size);
-  for (const e of sorted) {
-    lines.push([
-      escapeCSV(e.id),
-      escapeCSV(e.type),
-      escapeCSV(e.name),
-      e.panels.size,
-      escapeCSV([...e.panels].join('|')),
-      escapeCSV([...e.labels].join(' | ')),
-    ].join(','));
-  }
-  fs.writeFileSync(ENTITIES_OUT, lines.join('\n') + '\n');
+  const rows = sorted.map(e => ({
+    entity_id:      e.id,
+    entity_type:    e.type,
+    canonical_name: e.name,
+    panel_count:    e.panels.size,
+    panels:         [...e.panels].join('|'),
+    source_labels:  [...e.labels].join(' | '),
+  }));
+  csv.writeFile(ENTITIES_OUT, rows, headers);
 }
 
 // ─── SUMMARY ──────────────────────────────────────────────

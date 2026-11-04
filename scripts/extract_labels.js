@@ -7,14 +7,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const csv = require('../code/lib/csv');
 
 const HISTORY_DIR = path.join(__dirname, '..', 'panels');
 const OUT_FILE = path.join(__dirname, '..', 'derived', 'panel_labels.csv');
 
 // Load existing polity IDs for matching
-const polityCSV = fs.readFileSync(path.join(__dirname, '..', 'csvs', 'polity.csv'), 'utf8');
 const existingPolityIds = new Set(
-  polityCSV.split('\n').slice(1).filter(Boolean).map(line => line.split(',')[0])
+  csv.readFile(path.join(__dirname, '..', 'csvs', 'polity.csv')).map(r => r.id).filter(Boolean)
 );
 
 // ─── CATEGORIZATION RULES ─────────────────────────────────
@@ -262,20 +262,7 @@ const headers = [
   'label', 'note', 'span', 'existing_polity_link', 'category', 'suggested_id'
 ];
 
-function escapeCSV(val) {
-  const s = String(val);
-  if (s.includes(',') || s.includes('"') || s.includes('\n')) {
-    return `"${s.replace(/"/g, '""')}"`;
-  }
-  return s;
-}
-
-const lines = [headers.join(',')];
-for (const entry of allLabels) {
-  lines.push(headers.map(h => escapeCSV(entry[h])).join(','));
-}
-
-fs.writeFileSync(OUT_FILE, lines.join('\n') + '\n');
+csv.writeFile(OUT_FILE, allLabels, headers);
 
 // ─── SUMMARY ──────────────────────────────────────────────
 

@@ -9,19 +9,16 @@
 
 const fs = require('fs');
 const path = require('path');
+const csv = require('../code/lib/csv');
 
 const BASE = path.join(__dirname, '..');
 const HISTORY_DIR = path.join(BASE, 'panels');
 const OUT_FILE = path.join(BASE, 'derived', 'overlap_candidates.csv');
 
 // Load existing polity IDs
-const polityCSV = fs.readFileSync(path.join(BASE, 'csvs', 'polity.csv'), 'utf8');
-const existingPolities = new Map();
-for (const line of polityCSV.split('\n').slice(1)) {
-  if (!line.trim()) continue;
-  const match = line.match(/^([^,]+),(".*?"|[^,]*)/);
-  if (match) existingPolities.set(match[1], match[2].replace(/^"|"$/g, ''));
-}
+const existingPolities = new Map(
+  csv.readFile(path.join(BASE, 'csvs', 'polity.csv')).filter(r => r.id).map(r => [r.id, r.name])
+);
 
 // ─── YEAR EXTRACTION ──────────────────────────────────────
 
@@ -247,14 +244,7 @@ const withYears = allCells.filter(c => c.start_year !== null);
 // Write overlap candidates
 {
   const headers = ['panel_id','stem','entity_a','label_a','start_a','end_a','column_a','entity_b','label_b','start_b','end_b','column_b','same_column','likely_duplicate'];
-  const lines = [headers.join(',')];
-  for (const o of overlaps) {
-    lines.push(headers.map(h => {
-      const v = String(o[h] ?? '');
-      return v.includes(',') || v.includes('"') ? `"${v.replace(/"/g,'""')}"` : v;
-    }).join(','));
-  }
-  fs.writeFileSync(OUT_FILE, lines.join('\n') + '\n');
+  csv.writeFile(OUT_FILE, overlaps, headers);
 }
 
 // ─── SUMMARY ──────────────────────────────────────────────

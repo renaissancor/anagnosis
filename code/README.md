@@ -5,7 +5,7 @@ Node scripts that turn the authored CSVs into the derived and built layers. See
 
 ```
 code/
-  lib/csv.js                  the ONE CSV reader/writer (RFC 4180, LF out); known bypasses are in docs/TODO.md
+  lib/csv.js                  the ONE CSV reader/writer (RFC 4180, LF out)
   generate-successions.js     csvs/{polity,polity_territory,ethnicity}.csv → derived/polity_succession.csv
   makejson/
     _taxonomy_from_csv.js     shared: parent_id tree → directory tree of JSON

@@ -7,7 +7,6 @@
 // Usage:  node scripts/normalize_labels.js
 // ============================================================
 
-const fs = require('fs');
 const path = require('path');
 
 const BASE = path.join(__dirname, '..');
@@ -73,10 +72,6 @@ function canonicalize(id) {
   return SYNONYM_MAP.get(id) || id;
 }
 
-// ─── PARSE CSV ────────────────────────────────────────────
-
-function parseCSV(text) { return csv.parse(text); }
-
 // ─── NORMALIZATION ─────────────────────────────────────────
 
 // Strip native script in parentheses: (清), (唐), (중국), etc.
@@ -125,7 +120,7 @@ function isDynastyQualifier(q) {
 
 // ─── ENTITY RESOLUTION ────────────────────────────────────
 
-const labels = parseCSV(fs.readFileSync(LABELS_FILE, 'utf8'));
+const labels = csv.readFile(LABELS_FILE);
 
 // Canonical entity map: normalized_key → entity record
 const entities = new Map();
@@ -255,30 +250,19 @@ for (const row of labels) {
 
 // ─── WRITE OUTPUTS ────────────────────────────────────────
 
-function escapeCSV(val) {
-  const s = String(val);
-  if (s.includes(',') || s.includes('"') || s.includes('\n')) {
-    return `"${s.replace(/"/g, '""')}"`;
-  }
-  return s;
-}
-
 // Panel entities (deduplicated)
 {
   const headers = ['entity_id', 'entity_type', 'canonical_name', 'dynasty', 'panel_count', 'panels', 'source_labels'];
-  const lines = [headers.join(',')];
-  for (const e of entities.values()) {
-    lines.push([
-      escapeCSV(e.entity_id),
-      escapeCSV(e.entity_type),
-      escapeCSV(e.canonical_name),
-      escapeCSV(e.dynasty),
-      e.panel_count,
-      escapeCSV([...e.panels].join('|')),
-      escapeCSV(e.source_labels.join(' | ')),
-    ].join(','));
-  }
-  fs.writeFileSync(ENTITIES_OUT, lines.join('\n') + '\n');
+  const rows = [...entities.values()].map(e => ({
+    entity_id:      e.entity_id,
+    entity_type:    e.entity_type,
+    canonical_name: e.canonical_name,
+    dynasty:        e.dynasty,
+    panel_count:    e.panel_count,
+    panels:         [...e.panels].join('|'),
+    source_labels:  e.source_labels.join(' | '),
+  }));
+  csv.writeFile(ENTITIES_OUT, rows, headers);
 }
 
 // Labels with entity links
@@ -288,11 +272,7 @@ function escapeCSV(val) {
     'label', 'note', 'span', 'existing_polity_link', 'category',
     'entity_id', 'entity_type'
   ];
-  const lines = [headers.join(',')];
-  for (const row of labelLinks) {
-    lines.push(headers.map(h => escapeCSV(row[h])).join(','));
-  }
-  fs.writeFileSync(LINKED_OUT, lines.join('\n') + '\n');
+  csv.writeFile(LINKED_OUT, labelLinks, headers);
 }
 
 // ─── SUMMARY ──────────────────────────────────────────────
