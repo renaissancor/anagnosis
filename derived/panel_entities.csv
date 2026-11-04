@@ -852,7 +852,7 @@ sajid_dynasty,existing_polity,Sajid dynasty,,2,azerbaijan|iran,Sajid dynasty (Ar
 shirvanshah,event,Shirvanshah,,1,azerbaijan,Shirvanshah (Derbendids) — restored
 first_intermediate_period,event,First Intermediate Period,,1,egypt,First Intermediate Period
 second_intermediate_period,event,Second Intermediate Period,,1,egypt,Second Intermediate Period — Hyksos (Delta) · Theban 17th (Upper)
-new_kingdom_egypt,existing_polity,18th Dynasty,,3,egypt,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun | 19th Dynasty (Ramessid) — Seti I · Ramesses II · Battle of Kadesh | 20th Dynasty (Ramessid) — Ramesses III · Sea Peoples invasions · decline
+new_kingdom_egypt,existing_polity,18th Dynasty,,7,egypt|levant|sudan,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun | 19th Dynasty (Ramessid) — Seti I · Ramesses II · Battle of Kadesh | 20th Dynasty (Ramessid) — Ramesses III · Sea Peoples invasions · decline | Egyptian New Kingdom (coastal) | Egyptian New Kingdom | Egyptian New Kingdom — Nubia (Kush as vassal)
 22nd_dynasty,unclassified,22nd Dynasty,,1,egypt,22nd Dynasty (nominal)
 meroitic_kingdom,existing_polity,25th Dynasty,,1,egypt,25th Dynasty (Kushite / Nubian) — unified Egypt from the south
 ptolemaic_egypt,existing_polity,Ptolemaic dynasty,,4,egypt|levant|libya,Ptolemaic dynasty — Alexandria; Cleopatra VII (last pharaoh) | Ptolemaic (Coele-Syria) | Ptolemaic Egypt
@@ -898,7 +898,6 @@ isil_occupation,event,ISIL occupation,,2,iraq,ISIL occupation (partial) | ISIL o
 aurignacian_kebaran_cultures_culture,culture,Aurignacian · Kebaran cultures,,1,levant,Aurignacian · Kebaran cultures
 natufian_culture,culture,Natufian culture,,1,levant,Natufian culture
 halaf_yarmukian_ghassulian_cultures,unclassified,Halaf · Yarmukian · Ghassulian cultures,,1,levant,Halaf · Yarmukian · Ghassulian cultures
-egyptian_new_kingdom,existing_polity,Egyptian New Kingdom,,4,levant|sudan,Egyptian New Kingdom (coastal) | Egyptian New Kingdom | Egyptian New Kingdom — Nubia (Kush as vassal)
 late_bronze_age_collapse_sea_peoples_culture,culture,Late Bronze Age Collapse · Sea Peoples,,1,levant,Late Bronze Age Collapse · Sea Peoples
 phoenician_city_states,polity,Phoenician city-states (Byblos · Sidon · Tyre),Phoenician city-states,1,levant,Phoenician city-states (Byblos · Sidon · Tyre)
 kingdom_of_israel,existing_polity,United Kingdom · Israel / Judah,,1,levant,United Kingdom · Israel / Judah

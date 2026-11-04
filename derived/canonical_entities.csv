@@ -122,6 +122,7 @@ kingdom_of_urartu,existing_polity,Kingdom of Urartu,3,armenia|georgia|iran,Kingd
 median_kingdom,existing_polity,Median Empire,3,armenia|azerbaijan|iran,Median Empire | Median Kingdom
 chobanid_dynasty,existing_polity,Chobanid dynasty,3,armenia|azerbaijan|iran,Chobanid dynasty | Chobanid / Jalayirid
 transcaucasian_democratic_federative_republic,existing_polity,Transcaucasian Democratic Federative Republic,3,armenia|azerbaijan|georgia,Transcaucasian Democratic Federative Republic
+new_kingdom_egypt,existing_polity,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun,3,egypt|levant|sudan,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun | 19th Dynasty (Ramessid) — Seti I · Ramesses II · Battle of Kadesh | 20th Dynasty (Ramessid) — Ramesses III · Sea Peoples invasions · decline | Egyptian New Kingdom (coastal) | Egyptian New Kingdom | Egyptian New Kingdom — Nubia (Kush as vassal)
 ptolemaic_egypt,existing_polity,Ptolemaic dynasty — Alexandria; Cleopatra VII (last pharaoh),3,egypt|levant|libya,Ptolemaic dynasty — Alexandria; Cleopatra VII (last pharaoh) | Ptolemaic (Coele-Syria) | Ptolemaic Egypt
 tulunid_dynasty,existing_polity,Tulunid dynasty (semi-autonomous),3,egypt|levant|libya,Tulunid dynasty (semi-autonomous) | Tulunid dynasty
 ikhshidid_dynasty,existing_polity,Ikhshidid dynasty,3,egypt|levant|libya,Ikhshidid dynasty
@@ -234,7 +235,6 @@ hamdanid_emirate,existing_polity,Hamdanid Emirate (Mosul),2,iraq|levant,Hamdanid
 zangid_atabegate,existing_polity,Zangid Atabegate (Mosul),2,iraq|levant,Zangid Atabegate (Mosul) | Zangid Atabegate (Aleppo · Mosul)
 buyid_dynasty,existing_polity,Buyid dynasty,2,iraq|iran,Buyid dynasty | Buyid Dynasty
 zand_dynasty,existing_polity,Zand dynasty (Basra),2,iraq|iran,Zand dynasty (Basra) | Zand Dynasty
-egyptian_new_kingdom,existing_polity,Egyptian New Kingdom (coastal),2,levant|sudan,Egyptian New Kingdom (coastal) | Egyptian New Kingdom | Egyptian New Kingdom — Nubia (Kush as vassal)
 capsian_culture,culture,Capsian culture,2,morocco|algeria,Capsian culture · Amazigh / Berber peoples | Capsian culture / Berber peoples
 mauretania_kingdom,existing_polity,Mauretania Kingdom,2,morocco|algeria,Mauretania Kingdom
 muhallabid_governors,existing_polity,Muhallabid governors,2,libya|tunisia,Muhallabid governors
@@ -1530,7 +1530,6 @@ republic_of_azerbaijan,unresolved_polity,Republic of Azerbaijan,1,azerbaijan,Rep
 artsakh_republic,unresolved_polity,Artsakh Republic (de facto Karabakh state — dissolved 2023),1,azerbaijan,Artsakh Republic (de facto Karabakh state — dissolved 2023)
 old_kingdom,unresolved_polity,Old Kingdom (3rd–6th Dynasty),1,egypt,Old Kingdom (3rd–6th Dynasty)
 middle_kingdom,unresolved_polity,Middle Kingdom (11th–13th Dynasty),1,egypt,Middle Kingdom (11th–13th Dynasty)
-new_kingdom_egypt,existing_polity,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun,1,egypt,18th Dynasty — Ahmose I · Thutmose III · Akhenaten · Tutankhamun | 19th Dynasty (Ramessid) — Seti I · Ramesses II · Battle of Kadesh | 20th Dynasty (Ramessid) — Ramesses III · Sea Peoples invasions · decline
 21st_dynasty,unresolved_polity,21st Dynasty (Tanis),1,egypt,21st Dynasty (Tanis)
 high_priests_of_amun,unresolved_polity,High Priests of Amun (Thebes),1,egypt,High Priests of Amun (Thebes)
 22nd_dynasty,unresolved_polity,22nd Dynasty (Bubastite / Libyan),1,egypt,22nd Dynasty (Bubastite / Libyan)

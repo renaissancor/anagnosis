@@ -3548,11 +3548,11 @@ levant,n_syria,2,0,,Yamhad (Aleppo),c.1800–1600 BCE,1,yamhad,linked,yamhad_ale
 levant,n_syria,2,1,,Mitanni Kingdom,c.1500–1300 BCE,1,mitanni_empire,linked,mitanni_kingdom
 levant,n_syria,2,2,,Hittite Empire,c.1350–1180 BCE,1,hittite_empire,linked,hittite_empire
 levant,coastal,2,0,,Ugarit,–1185 BCE,1,ugarit,linked,ugarit
-levant,coastal,2,1,,Egyptian New Kingdom (coastal),c.1550–1150 BCE,1,egyptian_new_kingdom,linked,egyptian_new_kingdom_coastal
+levant,coastal,2,1,,Egyptian New Kingdom (coastal),c.1550–1150 BCE,1,new_kingdom_egypt,linked,egyptian_new_kingdom_coastal
 levant,damascus,2,0,,Qatna / Amorite kingdoms,c.2000–1600 BCE,1,qatna,linked,qatna_amorite_kingdoms
-levant,damascus,2,1,,Egyptian New Kingdom,c.1550–1150 BCE,1,egyptian_new_kingdom,linked,egyptian_new_kingdom
+levant,damascus,2,1,,Egyptian New Kingdom,c.1550–1150 BCE,1,new_kingdom_egypt,linked,egyptian_new_kingdom
 levant,damascus,2,2,,Mitanni,c.1500–1300 BCE,1,mitanni_empire,linked,mitanni
-levant,palestine,2,0,,Egyptian New Kingdom,c.1550–1150 BCE,1,egyptian_new_kingdom,linked,egyptian_new_kingdom
+levant,palestine,2,0,,Egyptian New Kingdom,c.1550–1150 BCE,1,new_kingdom_egypt,linked,egyptian_new_kingdom
 levant,palestine,2,1,,Canaanite cities (Egyptian vassals),,1,canaanite_cities,linked,canaanite_cities_egyptian_vassals
 levant,n_syria,3,0,,Late Bronze Age Collapse · Sea Peoples,c.1200–1150 BCE,1,,culture,late_bronze_age_collapse_sea_peoples
 levant,n_syria,3,1,,Aramaean kingdoms (Bit Adini etc.),c.1100–732 BCE,1,aramaean_kingdoms,linked,aramaean_kingdoms_bit_adini_etc
@@ -3873,7 +3873,7 @@ libya,tripolitania,7,1,,GNU / Government of National Unity (Tripoli),2015–,1,g
 libya,cyrenaica,7,0,,NTC / First Civil War,2011,1,,event,ntc_first_civil_war
 libya,cyrenaica,7,1,,HoR / LNA — Benghazi–Tobruk,2014–,1,hor,linked,hor_lna
 libya,fezzan,7,0,,Contested / LNA-influenced,,1,,unclassified,contested_lna_influenced
-sudan,north,0,0,Very Ancient,Egyptian New Kingdom — Nubia (Kush as vassal),c.1550–1070 BCE,2,egyptian_new_kingdom,linked,egyptian_new_kingdom
+sudan,north,0,0,Very Ancient,Egyptian New Kingdom — Nubia (Kush as vassal),c.1550–1070 BCE,2,new_kingdom_egypt,linked,egyptian_new_kingdom
 sudan,alwa,0,0,Very Ancient,Nilotic peoples (proto-Nilo-Saharan),,1,nilotic_peoples,linked,nilotic_peoples_proto_nilo_saharan
 sudan,east,0,0,Very Ancient,Punt (Egyptian trading land),Red Sea coast,1,punt,linked,punt_egyptian_trading_land
 sudan,west,0,0,Very Ancient,Luo / Fur peoples,,1,luo,linked,luo_fur_peoples

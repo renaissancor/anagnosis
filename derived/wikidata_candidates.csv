@@ -9,7 +9,6 @@ ur_iii,Third Dynasty of Ur (Neo-Sumerian),Third Dynasty of Ur,-2112,-2004,Q72358
 old_babylonian,Old Babylonian Empire,Old Babylonian Empire,-1894,-1595,Q1471568,Old Babylonian Period,period of the Babylonian civilization in Mesopotamia (ca 1900–1600 BCE),-1900,-1595,-6,0,high,2
 hittite_empire,Hittite Empire,Hittite Empire,-1600,-1180,Q4496560,Hatti,Empire of the Hittites,-1650,-1178,-50,2,medium,2
 shang_dynasty,Shang Dynasty,Shang Dynasty,-1600,-1046,Q128938,Shang dynasty,the first ancient Chinese dynasty to leave historical records (1600-1046 BC); the empire ruled by this dynasty,-1600,-1046,0,0,high,6
-egyptian_new_kingdom,Egyptian New Kingdom,Egyptian New Kingdom,-1550,-1069,Q124098521,Egyptian New Kingdom Triumphs: A First Blush,sixth chapter in Rituals of Triumph in the Mediterranean World 2013,,,,,undated,1
 new_kingdom_egypt,New Kingdom Egypt,New Kingdom Egypt,-1550,-1070,Q180568,Egyptian Empire,period from 1570 to 1069 BC in Egypt,-1550,-1070,0,0,high,7
 mitanni_empire,Mitanni Empire,Mitanni Empire,-1500,-1300,Q20313815,Template:User Mitanni Empire,Wikimedia template,,,,,undated,2
 middle_assyrian_empire,Middle Assyrian Empire,Middle Assyrian Empire,-1392,-1056,Q12642600,Middle Assyrian Empire,period in the history of Assyria after the fall of the Old Assyrian Empire in the 1300s BC,-1363,-912,29,144,conflict,1
@@ -66,7 +65,7 @@ indo_parthian_kingdom,Indo-Parthian Kingdom,Indo-Parthian Kingdom,-19,226,Q12556
 baekje,Baekje,Baekje,-18,660,Q28428,Baekje,ancient kingdom in southwestern Korea (18 BCE – 660 CE),-18,660,0,0,high,7
 kushan_empire,Kushan Empire,Kushan Empire,30,375,Q25979,Kushan Empire,empire in Central and South Asia (30–375 AD),30,375,0,0,high,2
 goguryeo,Goguryeo,Goguryeo,-37,668,Q28370,Goguryeo,"one of the Three Kingdoms of Korea (37 BC–668 AD), along with Baekje and Silla",-37,668,0,0,high,7
-funan,Funan (Óc Eo,Funan (Óc Eo,50,550,Q125912311,Memory of Oc Eo ancient city and Funan Kingdom in light of recent archaeological discoveries,scientific article published in 2023,,,,,undated,1
+funan,Funan,Funan,50,550,Q125912311,Memory of Oc Eo ancient city and Funan Kingdom in light of recent archaeological discoveries,scientific article published in 2023,,,,,undated,1
 xianbei,Xianbei,Xianbei,93,234,Q4783395,Xianbei state,Nomadic North Asian state (c. 93-236),93,236,0,2,high,7
 aksumite_kingdom,Aksumite Kingdom,Aksumite Kingdom,100,940,Q139377,Kingdom of Aksum,trading nation in the area of Eritrea and Northern Ethiopia,-400,960,-500,20,medium,5
 cao_wei,Cao Wei,Cao Wei,220,265,Q320930,Cao Wei,"ancient Chinese state (220–265); one of the three major states in the Three Kingdoms period, with capital at Luoyang",220,265,0,0,high,7
@@ -324,7 +323,7 @@ haiti,Republic of Haiti,Republic of Haiti,1804,,Q790,Haiti,country in the Caribb
 kingdom_of_egypt,Kingdom of Egypt,Kingdom of Egypt,1805,1952,Q124943,Kingdom of Egypt,20th century North African kingdom,1922,1953,117,1,medium,1
 muhammad_ali_dynasty,Muhammad Ali dynasty,Muhammad Ali dynasty,1805,1953,Q142913,Muhammad Ali dynasty,ruling dynasty of Egypt and Sudan from the 19th to the mid-20th century,1805,,0,,medium,3
 paraguay,Republic of Paraguay,Republic of Paraguay,1811,,Q733,Paraguay,sovereign state in South America,1811,,0,,medium,1
-german_confederation,German Confederation (Deutscher Bund,German Confederation (Deutscher Bund,1815,1866,Q151624,German Confederation,Confederation of States in Germany from 1815 to 1866,1815,1866,0,0,high,7
+german_confederation,German Confederation (Deutscher Bund),German Confederation,1815,1866,Q151624,German Confederation,Confederation of States in Germany from 1815 to 1866,1815,1866,0,0,high,7
 argentina,Argentine Republic,Argentine Republic,1816,,Q414,Argentina,country in South America,1816,,0,,medium,7
 chile,Republic of Chile,Republic of Chile,1818,,Q298,Chile,country in South America,1810,,-8,,medium,1
 gran_colombia,Gran Colombia,Gran Colombia,1819,1831,Q199821,Gran Colombia,republic in South and Central America from 1819 to 1831,1819,1831,0,0,high,6
