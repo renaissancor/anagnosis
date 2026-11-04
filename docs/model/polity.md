@@ -335,7 +335,6 @@ See `government.md` section 7.
 - `elam` has ruling ethnicity `persian`. `muisca_confederation` is `mesoamerican_cluster`, though its note says Colombian highlands.
 - `carolingian_empire` starts in 486 and is named `Frankish Kingdom / Carolingian Empire`, so it folds in the Merovingian state.
 - `later_liang` is named `Later Liang / Northern Liang`.
-- `german_confederation`'s name has an unclosed bracket.
 - `kingdom_of_denmark` and `kingdom_of_sweden` are ongoing but still `feudal_monarchy`, `catholic` and (Denmark) `old_norse`.
 - `kingdom_of_norway` is `germanic_paganism` for all of 872..1380.
 - `cuba` is `republic`, ongoing since 1902.
