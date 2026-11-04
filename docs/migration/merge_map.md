@@ -97,6 +97,7 @@ Full synonym map implemented in `dedup_and_link.js`, applied to all panels.
 | `kidarites_alchon_huns` (split: Kidarite cells stay on `kidarites`, Alchon cells use `alchon_huns`; not in `SYNONYM_MAP` because the target depends on the cell) | `kidarites` / `alchon_huns` |
 | `first_turkic_empire` | `first_turkic_khaganate` |
 | `lysimachus` (retired, and now a `figure` id) | `kingdom_of_lysimachus` |
+| `egyptian_new_kingdom` (retired 2026-11-05: same state and span as the survivor, which holds the Wikidata link and the figures) | `new_kingdom_egypt` |
 | `roman_empire_pagan`, `roman_empire_christian` | `roman_empire` |
 | `inju`, `injuid` | `injuid_dynasty` |
 | `ildeguzids`, `eldiguzids` | `eldiguzid_dynasty` |

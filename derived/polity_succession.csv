@@ -332,7 +332,6 @@ chera_dynasty,Chera Dynasty,pallava_dynasty,Pallava Dynasty,same,7,deccan,1,1,0,
 western_chalukya,Western Chalukya Empire,hoysala_dynasty,Hoysala Empire,same,7,deccan,1,1,0,1,1,-183
 hoysala_dynasty,Hoysala Empire,vijayanagara_empire,Vijayanagara Empire,same,7,deccan,1,1,0,0,1,-10
 vijayanagara_empire,Vijayanagara Empire,mysore_kingdom,Mysore Kingdom,same,7,deccan,1,1,0,1,1,-247
-egyptian_new_kingdom,Egyptian New Kingdom,new_kingdom_egypt,New Kingdom Egypt,same,7,egypt|levant|nubia,3,1,0,0,1,-481
 ayyubid_sultanate,Ayyubid Sultanate,mamluk_sultanate,Mamluk Sultanate,same,7,egypt|levant,2,0,0,1,1,-10
 kamarupa_kingdom,Kamarupa Kingdom,sena_dynasty,Sena Dynasty,same,7,ganges_plain,1,1,0,1,1,-70
 kamarupa_kingdom,Kamarupa Kingdom,gajapati_dynasty,Gajapati Dynasty (Odisha),same,7,ganges_plain,1,1,0,1,1,-62
@@ -2041,7 +2040,6 @@ safavid_empire,Safavid Empire,durrani_empire,Durrani Empire,contraction,2,khoras
 durrani_empire,Durrani Empire,qajar_dynasty,Qajar Dynasty,contraction,2,khorasan,1,0,0,0,0,-30
 grand_duchy_of_lithuania,Grand Duchy of Lithuania,tsardom_russia,Tsardom of Russia,contraction,2,kievan_rus,1,0,0,0,0,-22
 golden_horde,Golden Horde,tsardom_russia,Tsardom of Russia,contraction,2,kievan_rus,1,0,0,0,0,45
-egyptian_new_kingdom,Egyptian New Kingdom,kingdom_of_israel,United Kingdom of Israel,contraction,2,levant,1,0,0,0,0,22
 new_kingdom_egypt,New Kingdom Egypt,kingdom_of_israel,United Kingdom of Israel,contraction,2,levant,1,0,0,0,0,23
 ottoman_empire,Ottoman Empire,kingdom_of_jordan,Hashemite Kingdom of Jordan,contraction,2,levant,1,0,0,0,0,24
 ottoman_empire,Ottoman Empire,state_of_israel,State of Israel,contraction,2,levant,1,0,0,0,0,26
@@ -3258,9 +3256,6 @@ mongol_empire,Mongol Empire,kartid_dynasty,Kartid Dynasty,contraction,1,khorasan
 durrani_empire,Durrani Empire,pahlavi_dynasty,Pahlavi Dynasty,contraction,1,khorasan,1,0,0,0,0,99
 grand_duchy_of_lithuania,Grand Duchy of Lithuania,grand_duchy_moscow,Grand Duchy of Moscow,contraction,1,kievan_rus,1,0,0,0,0,-286
 golden_horde,Golden Horde,grand_duchy_moscow,Grand Duchy of Moscow,contraction,1,kievan_rus,1,0,0,0,0,-219
-egyptian_new_kingdom,Egyptian New Kingdom,mitanni_empire,Mitanni Empire,contraction,1,levant,1,0,0,0,0,-431
-egyptian_new_kingdom,Egyptian New Kingdom,tyre,Tyre,contraction,1,levant,1,0,0,0,0,-131
-egyptian_new_kingdom,Egyptian New Kingdom,kingdom_of_judah,Kingdom of Judah,contraction,1,levant,1,0,0,0,0,139
 new_kingdom_egypt,New Kingdom Egypt,mitanni_empire,Mitanni Empire,contraction,1,levant,1,0,0,0,0,-430
 new_kingdom_egypt,New Kingdom Egypt,tyre,Tyre,contraction,1,levant,1,0,0,0,0,-130
 new_kingdom_egypt,New Kingdom Egypt,kingdom_of_judah,Kingdom of Judah,contraction,1,levant,1,0,0,0,0,140
@@ -3486,7 +3481,6 @@ vandal_kingdom,Vandal Kingdom of North Africa,byzantine_empire,Byzantine Empire,
 vandal_kingdom,Vandal Kingdom of North Africa,umayyad_caliphate,Umayyad Caliphate,expansion,1,north_africa,1,0,0,0,0,128
 hafsid_dynasty,Hafsid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-275
 marinid_dynasty,Marinid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-166
-punt,Punt (Egyptian trading land),egyptian_new_kingdom,Egyptian New Kingdom,expansion,1,nubia,1,0,0,0,0,-550
 punt,Punt (Egyptian trading land),new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-550
 solomonic_dynasty,Ethiopian Empire (Solomonic),muhammad_ali_dynasty,Muhammad Ali dynasty,expansion,1,nubia,1,0,0,0,0,-169
 kingdom_of_prussia,Kingdom of Prussia,russian_empire,Russian Empire,expansion,1,poland,1,0,0,0,0,-197
@@ -3670,7 +3664,6 @@ turk_shahis,Türk Shahis,tahirid_dynasty,Tahirid dynasty,same,1,khorasan,1,0,0,0
 samanid_empire,Samanid Empire,hindu_shahis,Hindu Shahis,same,1,khorasan,1,0,0,0,0,-149
 hindu_shahis,Hindu Shahis,saffarid_dynasty,Saffarid Dynasty,same,1,khorasan,1,0,0,0,0,-165
 golden_horde,Golden Horde,polish_lithuanian_commonwealth,Polish-Lithuanian Commonwealth,same,1,kievan_rus,1,0,0,0,0,67
-egyptian_new_kingdom,Egyptian New Kingdom,middle_assyrian_empire,Middle Assyrian Empire,same,1,levant,1,0,0,0,0,-323
 new_kingdom_egypt,New Kingdom Egypt,middle_assyrian_empire,Middle Assyrian Empire,same,1,levant,1,0,0,0,0,-322
 tyre,Tyre,kingdom_of_israel,United Kingdom of Israel,same,1,levant,1,0,0,0,0,-715
 tyre,Tyre,kingdom_of_judah,Kingdom of Judah,same,1,levant,1,0,0,0,0,-598

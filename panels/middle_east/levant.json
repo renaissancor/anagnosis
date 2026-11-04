@@ -140,7 +140,7 @@
             {
               "label": "Egyptian New Kingdom (coastal)",
               "note": "c.1550–1150 BCE",
-              "polity": "egyptian_new_kingdom"
+              "polity": "new_kingdom_egypt"
             }
           ],
           "span": 1
@@ -155,7 +155,7 @@
             {
               "label": "Egyptian New Kingdom",
               "note": "c.1550–1150 BCE",
-              "polity": "egyptian_new_kingdom"
+              "polity": "new_kingdom_egypt"
             },
             {
               "label": "Mitanni",
@@ -170,7 +170,7 @@
             {
               "label": "Egyptian New Kingdom",
               "note": "c.1550–1150 BCE",
-              "polity": "egyptian_new_kingdom"
+              "polity": "new_kingdom_egypt"
             },
             {
               "label": "Canaanite cities (Egyptian vassals)",

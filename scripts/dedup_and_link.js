@@ -130,6 +130,7 @@ const SYNONYM_MAP = new Map([
   ['jin_jurchen', 'jin_dynasty'],
   ['hephthalite_empire', 'hephthalites'],
   ['lysimachus', 'kingdom_of_lysimachus'],
+  ['egyptian_new_kingdom', 'new_kingdom_egypt'],
 
   // ── Roman Empire merge ──
   ['roman_empire_pagan', 'roman_empire'],
