@@ -25,17 +25,17 @@ This is the FK-driven rule from `CLAUDE.md`: no inbound reference, no row. A fam
 - A people or religion (use `ethnicity.csv` or `religion.csv`).
 - A language added only because a source lists it.
 
-**Measured today (2026-10-31): the rule has not been applied.**
+**Measured today (2026-11-05, after the `egyptian_new_kingdom` merge): the rule has not been applied.**
 
 | Measure | Count |
 |---|---|
 | Rows | 695 (36 roots, 146 internal nodes) |
-| Directly referenced by a polity or city_name | 106 by polity; city_name adds none (its 7 resolving values are also polity values, 3 more do not resolve); **106 rows in total** |
-| Rows with no direct polity or city_name reference | **589** |
-| Rows that are neither referenced nor an ancestor of a referenced row | **524** |
-| `polity.id_ruling_language` empty | 35 of 482 polities |
+| Directly referenced by a polity or city_name | 105 by polity; city_name adds none (its 7 resolving values are also polity values, 3 more do not resolve); **105 rows in total** |
+| Rows with no direct polity or city_name reference | **590** |
+| Rows that are neither referenced nor an ancestor of a referenced row | **525** |
+| `polity.id_ruling_language` empty | 35 of 481 polities |
 
-The table was seeded as a broad taxonomy, ahead of the references. Whether to prune the 524 is an open question (section 7); do not delete them on your own.
+The table was seeded as a broad taxonomy, ahead of the references. Whether to prune the 525 is an open question (section 7); do not delete them on your own.
 
 ---
 
@@ -74,7 +74,7 @@ Today 23 ids break the plain ASCII snake_case form: diacritics (`guaraní`, `vol
 - A language and its historical stages are siblings under a shared group (`old_chinese`, `middle_chinese` under `old_classical_group`), not parent and child.
 - Do not nest an ethnicity-style grouping here. A language row answers "what is spoken", never "who speaks it".
 
-**Retired ids.** None are recorded for language. (`docs/migration/merge_map.md` records polity retirements only.) There are no duplicate ids and no duplicate names today. If an id is ever retired, record the old-to-new mapping in `docs/migration/merge_map.md`; do not reuse the old id.
+**Retired ids.** None are recorded for language. (`docs/migration/merge_map.md` records polity retirements and, in its retired taxonomy ids section, religion retirements.) There are no duplicate ids and no duplicate names today. If an id is ever retired, record the old-to-new mapping in `docs/migration/merge_map.md`; do not reuse the old id.
 
 ---
 

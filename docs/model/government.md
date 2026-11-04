@@ -19,7 +19,7 @@ A row exists only if at least one `polity.government` points at it, and it names
 - A time-bounded regime change inside a polity (split the polity instead; `CLAUDE.md`).
 - A near-synonym of an existing row. Check section 7 first.
 
-**Measured today:** 29 rows, **1 with no inbound reference (`city_state_league`, 0 polities after the non-polity migration)** (every other id is used by at least one polity; usage ranges from 1 to 77 polities). Separately, **23 of 482 polities have an empty `government`** (for example `silla`, `baekje`, `cao_wei`, `shu_han`, `eastern_wu`, `western_jin`).
+**Measured today:** 29 rows, **1 with no inbound reference (`city_state_league`, 0 polities after the non-polity migration)** (every other id is used by at least one polity; usage ranges from 1 to 77 polities). Separately, **23 of 481 polities have an empty `government`** (for example `silla`, `baekje`, `cao_wei`, `shu_han`, `eastern_wu`, `western_jin`).
 
 ---
 

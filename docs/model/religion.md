@@ -66,6 +66,8 @@ proto_belief
     └── Legalism (extinct)       ← Qin Dynasty only
 ```
 
+**Retired ids.** `hanafi_school` and `shafi'i_school` were retired as duplicates of `sunni_hanafi` and `sunni_shafi`. Retirements are recorded, old id to kept id, in the retired taxonomy ids section of `docs/migration/merge_map.md`. A retired id is never reused.
+
 ## Unique / Anomalous Cases
 
 **Uyghur Khaganate — Manichaeism**
@@ -88,9 +90,9 @@ Religion does not decide succession. It appears as one evidence signal (`same_re
 
 `npm run validate` checks headers, keys, and that every `parent_id` resolves with no cycles. Done means it passes. Hierarchy lives only in `parent_id`.
 
-## Current state (measured 2026-11-01)
+## Current state (measured 2026-11-05)
 
-`religion.csv` has 264 rows. 38 polities have no `id_ruling_religion`.
+`religion.csv` has 262 rows. 38 polities have no `id_ruling_religion`.
 
 ## Open questions
 

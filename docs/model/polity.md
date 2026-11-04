@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity.csv`. This doc decides what counts as a polity.
 
-**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). Re-measure any duplicate list before acting on it.
+**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table was re-measured on 2026-11-05 at commit `21a5309`, after the `egyptian_new_kingdom` merge. Re-measure any duplicate list before acting on it.
 
 **Labels used here:**
 
@@ -284,7 +284,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 | Measure | Value |
 |---|---|
-| Rows | 482 |
+| Rows | 481 |
 | Year range of `start_year` | -2900 to 1991 |
 | `id_ruling_language` empty | 35 |
 | `id_ruling_religion` empty | 38 |
@@ -295,8 +295,8 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 | `note` filled | 357 |
 | No `polity_territory` row | 6: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning` |
 | No `polity_dynasty` row | 208 (75 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
-| No `figure` row | 350 |
-| Wikidata identity link | 288 (194 have none) |
+| No `figure` row | 349 |
+| Wikidata identity link | 288 (193 have none) |
 | No panel reference | 16 (such as `zhou_dynasty`, `song_dynasty`, `ecuador`, `uruk`, `tyre`) |
 | No panel cell, `figure` or `polity_dynasty` row (the step 4 test in 2.2) | 4: `creek_confederacy`, `ecuador`, `venezuela`, `grand_duchy_moscow` |
 | Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 139 |
