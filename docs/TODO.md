@@ -23,6 +23,9 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 25 | Low | `panels/east_africa/somalia.json:53`, `panels/east_africa/swahili_coast.json:44` | `azanian_coast` cells carry a `polity` key, but Azania is a region (Wikidata Q786942) and fails the admission test | curator | Yes |
 | 26 | Low | `csvs/polity_territory.csv`, `csvs/polity_dynasty.csv` | `ajuran_sultanate` sits on `arabia` though Somali; `brunei_sultanate` and `sulu_sultanate` are tagged `hashemite` | curator | Yes |
 | 27 | Low | `csvs/polity.csv:12` | The New Kingdom merge kept `old_egyptian` and end -1070 and dropped the retired row's `late_egyptian_demotic` and -1069; needs a source | curator | Yes |
+| 28 | Low | `docs/model/polity_dynasty.md:13-24,44` | Schema block says `start,end` but the CSV header is `start_year,end_year`; the rule that non-monarchical polities take no dynasty row is broken by 5 rows (`hasmonean_dynasty`, `almoravid_dynasty`, `teutonic_order`, `hephthalites`, `japanese_korea`) — rule or data | curator | Yes |
+| 29 | Low | `scripts/dedup_and_link.js:484` | `--dry-run` still writes `derived/canonical_entities.csv`; the usage header does not say so | build-owner | Yes |
+| 30 | Low | `derived/wikidata_candidates.csv:68` | Best match for `funan` is a 2023 journal article (Q125912311), not the polity | curator | Yes |
 
 ## Open curation
 
