@@ -145,6 +145,7 @@ empire_of_japan,Empire of Japan (Meiji),modern_japan,Modern Japan (Postwar),cont
 macedonian_empire,Macedonian Empire (Alexander),greco_bactrian_kingdom,Greco-Bactrian Kingdom,contraction,8,khorasan|transoxiana,2,1,0,1,1,67
 kushan_empire,Kushan Empire,hephthalites,Hephthalites,contraction,8,khorasan|transoxiana,2,1,0,1,1,65
 soviet_union,Soviet Union,russian_federation,Russian Federation,contraction,8,kievan_rus,1,1,0,1,0,0
+united_arab_republic,United Arab Republic,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),contraction,8,levant,1,1,0,1,0,2
 mongol_empire,Mongol Empire,yuan_dynasty,Yuan Dynasty,contraction,8,manchuria|yangtze|yellow_river,3,1,0,1,0,-97
 first_turkic_khaganate,First Türkic Empire,xueyantuo,Xueyantuo,contraction,8,mongolian_plateau,1,1,0,1,1,25
 almohad_caliphate,Almohad Caliphate,hafsid_dynasty,Hafsid Dynasty,contraction,8,north_africa,1,1,0,1,1,-40
@@ -159,6 +160,7 @@ hungarian_grand_principality,Hungarian Grand Principality,hungary,Hungary,expans
 grand_duchy_of_tuscany,Grand Duchy of Tuscany,kingdom_of_italy,Kingdom of Italy,expansion,8,italy,1,1,0,1,0,2
 silla,Silla,balhae,Balhae (Bohai),expansion,8,korean_peninsula,1,1,0,1,1,30
 baekje,Baekje,balhae,Balhae (Bohai),expansion,8,korean_peninsula,1,1,0,1,1,38
+lebanese_republic,Lebanese Republic,united_arab_republic,United Arab Republic,expansion,8,levant,1,1,0,1,0,0
 xueyantuo,Xueyantuo,second_turkic_khaganate,Second Türkic Khaganate,expansion,8,mongolian_plateau,1,1,0,1,1,36
 zirid_dynasty,Zirid Dynasty,almohad_caliphate,Almohad Caliphate,expansion,8,north_africa,1,1,0,1,1,-27
 pakistan,Pakistan,republic_of_india,Republic of India,expansion,8,punjab,1,1,0,1,0,0
@@ -168,6 +170,7 @@ wuhan_government,Wuhan Government (武汉政府),nationalist_government,National
 later_zhou,Later Zhou (后周),song_dynasty,Song Dynasty,expansion,8,yellow_river,1,1,0,1,0,0
 later_zhou,Later Zhou (后周),northern_song,Northern Song Dynasty,expansion,8,yellow_river,1,1,0,1,0,0
 odoacer_kingdom,Kingdom of Odoacer,carolingian_empire,Frankish Kingdom / Carolingian Empire,expansion,8,,0,1,0,1,1,-7
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),saudi_arabia,Kingdom of Saudi Arabia,same,8,arabia,1,1,0,1,0,6
 republic_of_venice,Venice,kingdom_of_italy,Kingdom of Italy,same,8,balkans|italy,2,1,0,1,1,64
 principality_of_wallachia,Principality of Wallachia,kingdom_of_romania,Kingdom of Romania,same,8,balkans,1,1,0,1,1,22
 principality_of_moldavia,Principality of Moldavia,kingdom_of_romania,Kingdom of Romania,same,8,balkans,1,1,0,1,1,22
@@ -189,6 +192,9 @@ oda_toyotomi_government,Oda-Toyotomi Government (織豊政権),tokugawa_shogunat
 goryeo,Goryeo Dynasty,joseon,Joseon Dynasty,same,8,korean_peninsula,1,1,0,1,0,0
 zangid_atabegate,Zangid Atabegate,zengid_dynasty,Zengid Dynasty,same,8,levant|mesopotamia,2,1,0,1,1,-123
 zangid_atabegate,Zangid Atabegate,mamluk_sultanate,Mamluk Sultanate,same,8,levant,1,1,0,1,0,0
+lebanese_republic,Lebanese Republic,kingdom_of_jordan,Hashemite Kingdom of Jordan,same,8,levant,1,1,0,1,0,0
+lebanese_republic,Lebanese Republic,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),same,8,levant,1,1,0,1,0,0
+kingdom_of_jordan,Hashemite Kingdom of Jordan,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),same,8,levant,1,1,0,1,0,0
 hafsid_dynasty,Hafsid Dynasty,saadian_dynasty,Saadian Dynasty,same,8,north_africa,1,1,0,1,1,-25
 saadian_dynasty,Saadian Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,8,north_africa,1,1,0,1,1,-28
 zhou_dynasty,Zhou Dynasty,eastern_zhou,Eastern Zhou (东周),same,8,yangtze|yellow_river,2,1,0,1,1,-514
@@ -522,6 +528,7 @@ southern_qi,Southern Qi (南齐),wu_zhou,Wu Zhou (武周),expansion,6,,0,1,0,1,1
 gupta_empire,Gupta Empire,pratihara_dynasty,Pratihara Dynasty,expansion,6,,0,1,0,1,1,180
 kingdom_of_egypt,Kingdom of Egypt,muhammad_ali_dynasty,Muhammad Ali dynasty,expansion,6,,0,1,0,1,1,-147
 jamestown_colony,Jamestown Colony,united_states,United States of America,expansion,6,,0,1,0,1,1,152
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),republic_of_yemen,Republic of Yemen,same,6,arabia,1,1,0,1,0,64
 holy_roman_empire,Holy Roman Empire,habsburg_monarchy,Habsburg Monarchy,same,6,bohemia|germany,2,1,0,0,1,-368
 karabakh_khanate,Karabakh Khanate,azerbaijan_peoples_government,Azerbaijan Peoples Government,same,6,caucasus,1,1,0,1,0,123
 uyghur_khaganate,Uyghur Khaganate,kara_khanid_khanate,Kara-Khanid Khanate,same,6,central_asian_steppe,1,1,0,0,0,0
@@ -571,6 +578,8 @@ unified_silla,Unified Silla,goryeo,Goryeo Dynasty,same,6,korean_peninsula,1,1,0,
 old_babylonian,Old Babylonian Empire,kassite_babylon,Kassite Babylon,same,6,mesopotamia,1,0,0,1,1,-5
 mauretania_kingdom,Mauretania Kingdom,numidia,Kingdom of Numidia,same,6,north_africa,1,1,0,1,0,-242
 muhallabid_governors,Muhallabid governors,idrisid_dynasty,Idrisid Dynasty,same,6,north_africa,1,0,0,1,1,-5
+marinid_dynasty,Marinid Dynasty,wattasid_dynasty,Wattasid Dynasty,same,6,north_africa,1,1,0,0,0,7
+wattasid_dynasty,Wattasid Dynasty,saadian_dynasty,Saadian Dynasty,same,6,north_africa,1,1,0,0,0,-5
 kingdom_of_norway,Kingdom of Norway,kingdom_of_denmark,Kingdom of Denmark,same,6,scandinavia,1,1,0,1,0,-444
 kingdom_of_norway,Kingdom of Norway,kingdom_of_sweden,Kingdom of Sweden,same,6,scandinavia,1,1,0,1,0,-410
 kingdom_of_denmark,Kingdom of Denmark,denmark_norway,Denmark-Norway,same,6,scandinavia,1,1,0,0,0,0
@@ -1011,33 +1020,49 @@ ikhshidid_dynasty,Ikhshidid Dynasty,zirid_dynasty,Zirid Dynasty,displacement,4,,
 sulayhid_dynasty,Sulayhid Dynasty,banu_ghaniya,Banu Ghaniya,displacement,4,,0,0,0,1,0,10
 zangid_atabegate,Zangid Atabegate,marinid_dynasty,Marinid Dynasty,displacement,4,,0,0,0,1,0,-6
 zengid_dynasty,Zengid Dynasty,hafsid_dynasty,Hafsid Dynasty,displacement,4,,0,0,0,1,0,7
+darfur_sultanate,Darfur Sultanate,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,4,,0,0,0,1,0,0
 darfur_sultanate,Darfur Sultanate,kingdom_of_iraq,Kingdom of Iraq,displacement,4,,0,0,0,1,0,5
 alawite_dynasty,Alawite Dynasty (Morocco),kingdom_of_egypt,Kingdom of Egypt,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),muhammad_ali_dynasty,Muhammad Ali dynasty,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),mahdist_state,Mahdist State,displacement,4,,0,0,0,1,0,0
+alawite_dynasty,Alawite Dynasty (Morocco),hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),kingdom_of_iraq,Kingdom of Iraq,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),saudi_arabia,Kingdom of Saudi Arabia,displacement,4,,0,0,0,1,0,0
+alawite_dynasty,Alawite Dynasty (Morocco),lebanese_republic,Lebanese Republic,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),republic_of_egypt,Republic of Egypt,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),united_arab_republic,United Arab Republic,displacement,4,,0,0,0,1,0,0
+alawite_dynasty,Alawite Dynasty (Morocco),baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,4,,0,0,0,1,0,0
 alawite_dynasty,Alawite Dynasty (Morocco),republic_of_yemen,Republic of Yemen,displacement,4,,0,0,0,1,0,0
+kingdom_of_egypt,Kingdom of Egypt,lebanese_republic,Lebanese Republic,displacement,4,,0,0,0,1,0,-9
 kingdom_of_egypt,Kingdom of Egypt,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,4,,0,0,0,1,0,-6
 kingdom_of_egypt,Kingdom of Egypt,republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,6
+muhammad_ali_dynasty,Muhammad Ali dynasty,lebanese_republic,Lebanese Republic,displacement,4,,0,0,0,1,0,-10
 muhammad_ali_dynasty,Muhammad Ali dynasty,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,4,,0,0,0,1,0,-7
 muhammad_ali_dynasty,Muhammad Ali dynasty,republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,5
+muhammad_ali_dynasty,Muhammad Ali dynasty,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,4,,0,0,0,1,0,10
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),kingdom_of_iraq,Kingdom of Iraq,displacement,4,,0,0,0,1,0,-5
 kingdom_of_iraq,Kingdom of Iraq,republic_of_egypt,Republic of Egypt,displacement,4,,0,0,0,1,0,-6
 kingdom_of_iraq,Kingdom of Iraq,united_arab_republic,United Arab Republic,displacement,4,,0,0,0,1,0,0
+kingdom_of_iraq,Kingdom of Iraq,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,4,,0,0,0,1,0,5
+saudi_arabia,Kingdom of Saudi Arabia,lebanese_republic,Lebanese Republic,displacement,4,,0,0,0,1,0,0
 saudi_arabia,Kingdom of Saudi Arabia,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,4,,0,0,0,1,0,0
 saudi_arabia,Kingdom of Saudi Arabia,republic_of_egypt,Republic of Egypt,displacement,4,,0,0,0,1,0,0
 saudi_arabia,Kingdom of Saudi Arabia,republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,0
 saudi_arabia,Kingdom of Saudi Arabia,united_arab_republic,United Arab Republic,displacement,4,,0,0,0,1,0,0
+saudi_arabia,Kingdom of Saudi Arabia,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,4,,0,0,0,1,0,0
+lebanese_republic,Lebanese Republic,republic_of_egypt,Republic of Egypt,displacement,4,,0,0,0,1,0,0
+lebanese_republic,Lebanese Republic,republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,0
+lebanese_republic,Lebanese Republic,republic_of_yemen,Republic of Yemen,displacement,4,,0,0,0,1,0,0
 kingdom_of_jordan,Hashemite Kingdom of Jordan,republic_of_egypt,Republic of Egypt,displacement,4,,0,0,0,1,0,0
 kingdom_of_jordan,Hashemite Kingdom of Jordan,republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,0
 kingdom_of_jordan,Hashemite Kingdom of Jordan,republic_of_yemen,Republic of Yemen,displacement,4,,0,0,0,1,0,0
 republic_of_egypt,Republic of Egypt,republic_of_iraq,Republic of Iraq,displacement,4,,0,0,0,1,0,0
+republic_of_egypt,Republic of Egypt,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,4,,0,0,0,1,0,0
 republic_of_egypt,Republic of Egypt,republic_of_yemen,Republic of Yemen,displacement,4,,0,0,0,1,0,0
 republic_of_iraq,Republic of Iraq,united_arab_republic,United Arab Republic,displacement,4,,0,0,0,1,0,0
+republic_of_iraq,Republic of Iraq,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,4,,0,0,0,1,0,0
 republic_of_iraq,Republic of Iraq,republic_of_yemen,Republic of Yemen,displacement,4,,0,0,0,1,0,0
 kingdom_of_italy,Kingdom of Italy,italian_east_africa,Italian East Africa,displacement,4,,0,0,0,1,0,-10
 fascist_italy,Fascist Italy,italian_east_africa,Italian East Africa,displacement,4,,0,0,0,1,0,-7
@@ -1352,6 +1377,8 @@ mongolian_peoples_republic,Mongolian People's Republic,mengjiang,Mengjiang,same,
 muhallabid_governors,Muhallabid governors,rustamid_dynasty,Rustamid Dynasty,same,4,north_africa,1,0,0,1,0,-17
 idrisid_dynasty,Idrisid Dynasty,aghlabid_dynasty,Aghlabid Dynasty,same,4,north_africa,1,0,0,1,1,-174
 aghlabid_dynasty,Aghlabid Dynasty,zirid_dynasty,Zirid Dynasty,same,4,north_africa,1,0,0,1,1,63
+hafsid_dynasty,Hafsid Dynasty,wattasid_dynasty,Wattasid Dynasty,same,4,north_africa,1,1,0,0,0,-102
+wattasid_dynasty,Wattasid Dynasty,alawite_dynasty,Alawite Dynasty (Morocco),same,4,north_africa,1,1,0,0,0,77
 makuria_kingdom,Kingdom of Makuria,funj_sultanate,Funj Sultanate,same,4,nubia,1,1,0,0,0,140
 funj_sultanate,Funj Sultanate,darfur_sultanate,Darfur Sultanate,same,4,nubia,1,0,0,1,1,-218
 funj_sultanate,Funj Sultanate,mahdist_state,Mahdist State,same,4,nubia,1,0,0,1,1,64
@@ -1389,6 +1416,7 @@ southern_ming,Southern Ming (南明),kingdom_of_tungning,Kingdom of Tungning (�
 carolingian_empire,Frankish Kingdom / Carolingian Empire,kingdom_of_france,Kingdom of France,contraction,3,aquitaine|gaul,2,0,0,0,1,144
 abbasid_caliphate,Abbasid Caliphate,ziyadid_dynasty,Ziyadid Dynasty,contraction,3,arabia,1,0,0,1,0,-439
 abbasid_caliphate,Abbasid Caliphate,sulayhid_dynasty,Sulayhid Dynasty,contraction,3,arabia,1,0,0,1,0,-211
+ottoman_empire,Ottoman Empire,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),contraction,3,arabia,1,0,0,0,0,-6
 ottoman_empire,Ottoman Empire,saudi_arabia,Kingdom of Saudi Arabia,contraction,3,arabia,1,0,0,0,0,10
 hungary,Hungary,sfr_yugoslavia,SFR Yugoslavia,contraction,3,balkans,1,0,0,0,0,-1
 ottoman_empire,Ottoman Empire,albanian_kingdom,Albanian Kingdom,contraction,3,balkans,1,0,0,0,0,6
@@ -1483,6 +1511,7 @@ ming_dynasty,Ming Dynasty,manchukuo,Manchukuo,contraction,3,,0,1,0,0,0,288
 gupta_empire,Gupta Empire,pala_empire,Pala Empire,contraction,3,,0,1,0,0,0,200
 kidarites,Kidarites,zunbil_dynasty,Zunbil dynasty,contraction,3,,0,1,0,0,0,213
 avar_khaganate,Avar Khaganate,western_xia,Western Xia (Tangut Empire),contraction,3,,0,1,0,0,0,234
+almohad_caliphate,Almohad Caliphate,wattasid_dynasty,Wattasid Dynasty,contraction,3,,0,1,0,0,0,203
 first_turkic_khaganate,First Türkic Empire,kara_khanid_khanate,Kara-Khanid Khanate,contraction,3,,0,1,0,0,0,237
 kara_khanid_khanate,Kara-Khanid Khanate,kazakh_khanate,Kazakh Khanate,contraction,3,,0,1,0,0,0,253
 seljuk_empire,Seljuk Empire,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),contraction,3,,0,1,0,0,0,180
@@ -1575,23 +1604,38 @@ adal_sultanate,Adal Sultanate,saadian_dynasty,Saadian Dynasty,displacement,3,,0,
 adal_sultanate,Adal Sultanate,darfur_sultanate,Darfur Sultanate,displacement,3,,0,0,0,1,0,26
 funj_sultanate,Funj Sultanate,kingdom_of_egypt,Kingdom of Egypt,displacement,3,,0,0,0,1,0,-16
 darfur_sultanate,Darfur Sultanate,saudi_arabia,Kingdom of Saudi Arabia,displacement,3,,0,0,0,1,0,16
+darfur_sultanate,Darfur Sultanate,lebanese_republic,Lebanese Republic,displacement,3,,0,0,0,1,0,27
 darfur_sultanate,Darfur Sultanate,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,3,,0,0,0,1,0,30
 darfur_sultanate,Darfur Sultanate,republic_of_egypt,Republic of Egypt,displacement,3,,0,0,0,1,0,36
 darfur_sultanate,Darfur Sultanate,republic_of_iraq,Republic of Iraq,displacement,3,,0,0,0,1,0,42
 darfur_sultanate,Darfur Sultanate,united_arab_republic,United Arab Republic,displacement,3,,0,0,0,1,0,42
+darfur_sultanate,Darfur Sultanate,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,3,,0,0,0,1,0,47
+kingdom_of_egypt,Kingdom of Egypt,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,3,,0,0,0,1,0,-36
 kingdom_of_egypt,Kingdom of Egypt,kingdom_of_iraq,Kingdom of Iraq,displacement,3,,0,0,0,1,0,-31
 kingdom_of_egypt,Kingdom of Egypt,saudi_arabia,Kingdom of Saudi Arabia,displacement,3,,0,0,0,1,0,-20
+kingdom_of_egypt,Kingdom of Egypt,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,3,,0,0,0,1,0,11
 kingdom_of_egypt,Kingdom of Egypt,republic_of_yemen,Republic of Yemen,displacement,3,,0,0,0,1,0,38
+muhammad_ali_dynasty,Muhammad Ali dynasty,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,3,,0,0,0,1,0,-37
 muhammad_ali_dynasty,Muhammad Ali dynasty,kingdom_of_iraq,Kingdom of Iraq,displacement,3,,0,0,0,1,0,-32
 muhammad_ali_dynasty,Muhammad Ali dynasty,saudi_arabia,Kingdom of Saudi Arabia,displacement,3,,0,0,0,1,0,-21
 muhammad_ali_dynasty,Muhammad Ali dynasty,republic_of_yemen,Republic of Yemen,displacement,3,,0,0,0,1,0,37
+mahdist_state,Mahdist State,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,3,,0,0,0,1,0,18
 mahdist_state,Mahdist State,kingdom_of_iraq,Kingdom of Iraq,displacement,3,,0,0,0,1,0,23
 mahdist_state,Mahdist State,saudi_arabia,Kingdom of Saudi Arabia,displacement,3,,0,0,0,1,0,34
+mahdist_state,Mahdist State,lebanese_republic,Lebanese Republic,displacement,3,,0,0,0,1,0,45
 mahdist_state,Mahdist State,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,3,,0,0,0,1,0,48
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),lebanese_republic,Lebanese Republic,displacement,3,,0,0,0,1,0,17
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,3,,0,0,0,1,0,20
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),republic_of_egypt,Republic of Egypt,displacement,3,,0,0,0,1,0,26
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),republic_of_iraq,Republic of Iraq,displacement,3,,0,0,0,1,0,32
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),united_arab_republic,United Arab Republic,displacement,3,,0,0,0,1,0,32
+hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,3,,0,0,0,1,0,37
 kingdom_of_iraq,Kingdom of Iraq,saudi_arabia,Kingdom of Saudi Arabia,displacement,3,,0,0,0,1,0,-26
+kingdom_of_iraq,Kingdom of Iraq,lebanese_republic,Lebanese Republic,displacement,3,,0,0,0,1,0,-15
 kingdom_of_iraq,Kingdom of Iraq,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,3,,0,0,0,1,0,-12
 kingdom_of_iraq,Kingdom of Iraq,republic_of_yemen,Republic of Yemen,displacement,3,,0,0,0,1,0,32
 united_arab_republic,United Arab Republic,republic_of_yemen,Republic of Yemen,displacement,3,,0,0,0,1,0,29
+baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),republic_of_yemen,Republic of Yemen,displacement,3,,0,0,0,1,0,-34
 great_moravia,Great Moravia,kievan_rus,Kievan Rus,displacement,3,,0,0,0,1,0,-25
 kievan_rus,Kievan Rus,serbian_empire,Serbian Empire (Nemanjić Dynasty),displacement,3,,0,0,0,1,0,-50
 samanid_empire,Samanid Empire,rawwadid_dynasty,Rawwadid Dynasty,displacement,3,,0,0,0,1,0,-44
@@ -1882,7 +1926,9 @@ south_korea,Republic of Korea (South Korea),north_korea,Democratic People's Repu
 hamdanid_emirate,Hamdanid Emirate,ikhshidid_dynasty,Ikhshidid Dynasty,same,3,levant,1,0,0,1,0,-69
 zangid_atabegate,Zangid Atabegate,ayyubid_sultanate,Ayyubid Sultanate,same,3,levant,1,0,0,1,0,-79
 zengid_dynasty,Zengid Dynasty,ayyubid_sultanate,Ayyubid Sultanate,same,3,levant,1,0,0,1,0,-51
+lebanese_republic,Lebanese Republic,state_of_israel,State of Israel,same,3,levant,1,0,0,0,0,0
 kingdom_of_jordan,Hashemite Kingdom of Jordan,state_of_israel,State of Israel,same,3,levant,1,0,0,0,0,0
+state_of_israel,State of Israel,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),same,3,levant,1,0,0,0,0,0
 balhae,Balhae (Bohai),liao_dynasty,Liao Dynasty (Khitan),same,3,manchuria,1,0,0,0,1,-19
 republic_of_china,Republic of China,empire_of_japan,Empire of Japan (Meiji),same,3,manchuria,1,0,0,0,0,0
 empire_of_japan,Empire of Japan (Meiji),peoples_republic_of_china,People's Republic of China,same,3,manchuria,1,0,0,0,0,2
@@ -1920,6 +1966,7 @@ western_chalukya,Western Chalukya Empire,mysore_kingdom,Mysore Kingdom,same,3,,0
 kangju,Kangju,avar_khaganate,Avar Khaganate,same,3,,0,1,0,0,0,168
 xianbei,Xianbei,northern_wei,Northern Wei tributary,same,3,,0,1,0,0,0,152
 xianbei,Xianbei,hephthalites,Hephthalites,same,3,,0,1,0,0,0,206
+banu_ghaniya,Banu Ghaniya,wattasid_dynasty,Wattasid Dynasty,same,3,,0,1,0,0,0,235
 khazar_khaganate,Khazar Khaganate,eldiguzid_dynasty,Eldiguzid Dynasty (Ildeguzids),same,3,,0,1,0,0,0,167
 zengid_dynasty,Zengid Dynasty,kara_koyunlu,Kara Koyunlu (Black Sheep Turkmen),same,3,,0,1,0,0,0,152
 khwarazmian_empire,Khwarazmian Empire,khanate_of_bukhara,Khanate of Bukhara,same,3,,0,1,0,0,0,280
@@ -2037,9 +2084,11 @@ durrani_empire,Durrani Empire,qajar_dynasty,Qajar Dynasty,contraction,2,khorasan
 grand_duchy_of_lithuania,Grand Duchy of Lithuania,tsardom_russia,Tsardom of Russia,contraction,2,kievan_rus,1,0,0,0,0,-22
 golden_horde,Golden Horde,tsardom_russia,Tsardom of Russia,contraction,2,kievan_rus,1,0,0,0,0,45
 new_kingdom_egypt,New Kingdom Egypt,kingdom_of_israel,United Kingdom of Israel,contraction,2,levant,1,0,0,0,0,23
+ottoman_empire,Ottoman Empire,lebanese_republic,Lebanese Republic,contraction,2,levant,1,0,0,0,0,21
 ottoman_empire,Ottoman Empire,kingdom_of_jordan,Hashemite Kingdom of Jordan,contraction,2,levant,1,0,0,0,0,24
 ottoman_empire,Ottoman Empire,state_of_israel,State of Israel,contraction,2,levant,1,0,0,0,0,26
 ottoman_empire,Ottoman Empire,united_arab_republic,United Arab Republic,contraction,2,levant,1,0,0,0,0,36
+ottoman_empire,Ottoman Empire,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),contraction,2,levant,1,0,0,0,0,41
 qing_dynasty,Qing Dynasty (Manchu),empire_of_japan,Empire of Japan (Meiji),contraction,2,manchuria,1,0,0,0,0,-44
 qing_dynasty,Qing Dynasty (Manchu),manchukuo,Manchukuo,contraction,2,manchuria,1,0,0,0,0,20
 empire_of_japan,Empire of Japan (Meiji),manchukuo,Manchukuo,contraction,2,manchuria,1,0,0,0,0,-15
@@ -2407,19 +2456,24 @@ adal_sultanate,Adal Sultanate,kingdom_of_egypt,Kingdom of Egypt,displacement,2,,
 adal_sultanate,Adal Sultanate,muhammad_ali_dynasty,Muhammad Ali dynasty,displacement,2,,0,0,0,1,0,228
 funj_sultanate,Funj Sultanate,saadian_dynasty,Saadian Dynasty,displacement,2,,0,0,0,1,0,-272
 funj_sultanate,Funj Sultanate,alawite_dynasty,Alawite Dynasty (Morocco),displacement,2,,0,0,0,1,0,-190
+funj_sultanate,Funj Sultanate,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,2,,0,0,0,1,0,95
 funj_sultanate,Funj Sultanate,kingdom_of_iraq,Kingdom of Iraq,displacement,2,,0,0,0,1,0,100
 funj_sultanate,Funj Sultanate,saudi_arabia,Kingdom of Saudi Arabia,displacement,2,,0,0,0,1,0,111
+funj_sultanate,Funj Sultanate,lebanese_republic,Lebanese Republic,displacement,2,,0,0,0,1,0,122
 funj_sultanate,Funj Sultanate,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,2,,0,0,0,1,0,125
 funj_sultanate,Funj Sultanate,republic_of_egypt,Republic of Egypt,displacement,2,,0,0,0,1,0,131
 funj_sultanate,Funj Sultanate,republic_of_iraq,Republic of Iraq,displacement,2,,0,0,0,1,0,137
 funj_sultanate,Funj Sultanate,united_arab_republic,United Arab Republic,displacement,2,,0,0,0,1,0,137
+funj_sultanate,Funj Sultanate,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,2,,0,0,0,1,0,142
 funj_sultanate,Funj Sultanate,republic_of_yemen,Republic of Yemen,displacement,2,,0,0,0,1,0,169
 saadian_dynasty,Saadian Dynasty,darfur_sultanate,Darfur Sultanate,displacement,2,,0,0,0,1,0,-56
 saadian_dynasty,Saadian Dynasty,kingdom_of_egypt,Kingdom of Egypt,displacement,2,,0,0,0,1,0,146
 saadian_dynasty,Saadian Dynasty,muhammad_ali_dynasty,Muhammad Ali dynasty,displacement,2,,0,0,0,1,0,146
 saadian_dynasty,Saadian Dynasty,mahdist_state,Mahdist State,displacement,2,,0,0,0,1,0,226
+saadian_dynasty,Saadian Dynasty,hashimite_kingdom_of_hejaz,Kingdom of Hejaz (Hashemite),displacement,2,,0,0,0,1,0,257
 saadian_dynasty,Saadian Dynasty,kingdom_of_iraq,Kingdom of Iraq,displacement,2,,0,0,0,1,0,262
 saadian_dynasty,Saadian Dynasty,saudi_arabia,Kingdom of Saudi Arabia,displacement,2,,0,0,0,1,0,273
+saadian_dynasty,Saadian Dynasty,lebanese_republic,Lebanese Republic,displacement,2,,0,0,0,1,0,284
 saadian_dynasty,Saadian Dynasty,kingdom_of_jordan,Hashemite Kingdom of Jordan,displacement,2,,0,0,0,1,0,287
 saadian_dynasty,Saadian Dynasty,republic_of_egypt,Republic of Egypt,displacement,2,,0,0,0,1,0,293
 saadian_dynasty,Saadian Dynasty,republic_of_iraq,Republic of Iraq,displacement,2,,0,0,0,1,0,299
@@ -2431,6 +2485,7 @@ kingdom_of_egypt,Kingdom of Egypt,mahdist_state,Mahdist State,displacement,2,,0,
 mahdist_state,Mahdist State,republic_of_egypt,Republic of Egypt,displacement,2,,0,0,0,1,0,54
 mahdist_state,Mahdist State,republic_of_iraq,Republic of Iraq,displacement,2,,0,0,0,1,0,60
 mahdist_state,Mahdist State,united_arab_republic,United Arab Republic,displacement,2,,0,0,0,1,0,60
+mahdist_state,Mahdist State,baathist_syrian_arab_republic,Ba'athist Syria (Syrian Arab Republic),displacement,2,,0,0,0,1,0,65
 mahdist_state,Mahdist State,republic_of_yemen,Republic of Yemen,displacement,2,,0,0,0,1,0,92
 first_bulgarian_empire,First Bulgarian Empire,great_moravia,Great Moravia,displacement,2,,0,0,0,1,0,-185
 first_bulgarian_empire,First Bulgarian Empire,kievan_rus,Kievan Rus,displacement,2,,0,0,0,1,0,-136
@@ -3477,6 +3532,7 @@ vandal_kingdom,Vandal Kingdom of North Africa,byzantine_empire,Byzantine Empire,
 vandal_kingdom,Vandal Kingdom of North Africa,umayyad_caliphate,Umayyad Caliphate,expansion,1,north_africa,1,0,0,0,0,128
 hafsid_dynasty,Hafsid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-275
 marinid_dynasty,Marinid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-166
+wattasid_dynasty,Wattasid Dynasty,ottoman_empire,Ottoman Empire,expansion,1,north_africa,1,0,0,0,0,-255
 punt,Punt (Egyptian trading land),new_kingdom_egypt,New Kingdom Egypt,expansion,1,nubia,1,0,0,0,0,-550
 kingdom_of_prussia,Kingdom of Prussia,russian_empire,Russian Empire,expansion,1,poland,1,0,0,0,0,-197
 crimean_khanate,Crimean Khanate,russian_empire,Russian Empire,expansion,1,pontic_steppe,1,0,0,0,0,-62

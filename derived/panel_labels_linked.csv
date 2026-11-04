@@ -3188,7 +3188,7 @@ arabia,gulf,5,0,Modern,British Protectorates (Trucial States · Qatar · Bahrain
 arabia,col_6,5,0,Modern,Ha'il Emirate (Rashidi),1836–1921,1,hail_emirate,linked,,unresolved_link
 arabia,col_6,5,1,Modern,Emirate of Riyadh (3rd Saudi),1902–1921,1,emirate_of_riyadh,linked,,unresolved_link
 arabia,col_6,5,2,Modern,Saudi Arabia,1932–,1,saudi_arabia,linked,saudi_arabia,existing_polity
-arabia,col_7,5,0,Modern,Hashimite Kingdom of Hejaz,1916–1925,1,hashimite_kingdom_of_hejaz,linked,,unresolved_link
+arabia,col_7,5,0,Modern,Hashimite Kingdom of Hejaz,1916–1925,1,hashimite_kingdom_of_hejaz,linked,hashimite_kingdom_of_hejaz,existing_polity
 arabia,col_7,5,1,Modern,Kingdom of Hejaz and Nejd,1925–1932,1,kingdom_of_hejaz_and_nejd,linked,,unresolved_link
 arabia,col_7,5,2,Modern,Saudi Arabia,1932–,1,saudi_arabia,linked,saudi_arabia,existing_polity
 arabia,oman,6,0,Contemporary,Sultanate of Oman,,1,sultanate_of_oman,linked,,unresolved_link
@@ -3631,15 +3631,15 @@ levant,damascus,11,1,Colonial,British Mandate Transjordan,1921–1946,1,british_
 levant,palestine,11,0,Colonial,OETA South (British),1918–1920,1,oeta_south,linked,,unresolved_link
 levant,palestine,11,1,Colonial,British Mandate Palestine,1920–1948,1,british_mandate_palestine,linked,,unresolved_link
 levant,n_syria,12,0,,Syrian Republic (independence 1946),,1,,polity,syrian_republic,polity
-levant,coastal,12,0,,Lebanese Republic (independence 1943),,1,,polity,lebanese_republic,polity
+levant,coastal,12,0,,Lebanese Republic (independence 1943),,1,,polity,lebanese_republic,existing_polity
 levant,damascus,12,0,,Hashemite Kingdom of Jordan (1946),,1,kingdom_of_jordan,linked,kingdom_of_jordan,existing_polity
 levant,palestine,12,0,,State of Israel (1948),Palestinian displacement (Nakba) (1948),1,state_of_israel,linked,state_of_israel,existing_polity
 levant,n_syria,13,0,Contemporary,Syrian 1st Republic · Ba'athist Syria,1946–1971,1,syrian_1st_republic,linked,,unresolved_link
 levant,n_syria,13,1,Contemporary,United Arab Republic (with Egypt),1958–1961,1,united_arab_republic,linked,united_arab_republic,existing_polity
-levant,n_syria,13,2,Contemporary,Ba'athist Syrian Arab Republic,1963–2011,1,baathist_syrian_arab_republic,linked,,unresolved_link
-levant,coastal,13,0,Contemporary,Lebanese Republic,,1,lebanese_republic,linked,,unresolved_link
+levant,n_syria,13,2,Contemporary,Ba'athist Syrian Arab Republic,1963–2011,1,baathist_syrian_arab_republic,linked,baathist_syrian_arab_republic,existing_polity
+levant,coastal,13,0,Contemporary,Lebanese Republic,,1,lebanese_republic,linked,lebanese_republic,existing_polity
 levant,damascus,13,0,Contemporary,Hashemite Kingdom of Jordan,,1,kingdom_of_jordan,linked,kingdom_of_jordan,existing_polity
-levant,coastal,14,0,,Lebanese Republic,,1,lebanese_republic,linked,,unresolved_link
+levant,coastal,14,0,,Lebanese Republic,,1,lebanese_republic,linked,lebanese_republic,existing_polity
 levant,damascus,14,0,,Hashemite Kingdom of Jordan,,1,kingdom_of_jordan,linked,kingdom_of_jordan,existing_polity
 morocco,tangier,0,0,Prehistoric,Capsian culture · Amazigh / Berber peoples,,8,,culture,capsian_culture_amazigh_berber_peoples_culture,culture
 morocco,tangier,1,0,Ancient,Phoenician Tingis,c.800 BCE,1,phoenician_tingis,linked,,unresolved_link
@@ -3684,9 +3684,9 @@ morocco,tafilalet,8,0,Marinid,Marinid dynasty,1244–1465,1,marinid_dynasty,link
 morocco,tafilalet,8,1,Marinid,Hafsid (east fringe),partial,1,hafsid_dynasty,linked,hafsid_dynasty,existing_polity
 morocco,wsahara,8,0,Marinid,Saharan Berber / peripheral,,1,saharan_berber,linked,,unresolved_link
 morocco,tangier,9,0,Late Medieval,Portuguese Ceuta,1415–1640,1,portuguese_ceuta,linked,,unresolved_link
-morocco,tangier,9,1,Late Medieval,Wattasid (inland),1472–1554,1,wattasid,linked,,unresolved_link
-morocco,rif,9,0,Late Medieval,Wattasid dynasty,1472–1554; Spanish take Melilla (1497),1,wattasid_dynasty,linked,,unresolved_link
-morocco,atlantic,9,0,Late Medieval,Wattasid dynasty,,2,wattasid_dynasty,linked,,unresolved_link
+morocco,tangier,9,1,Late Medieval,Wattasid (inland),1472–1554,1,wattasid,linked,wattasid_dynasty,existing_polity
+morocco,rif,9,0,Late Medieval,Wattasid dynasty,1472–1554; Spanish take Melilla (1497),1,wattasid_dynasty,linked,wattasid_dynasty,existing_polity
+morocco,atlantic,9,0,Late Medieval,Wattasid dynasty,,2,wattasid_dynasty,linked,wattasid_dynasty,existing_polity
 morocco,marrakesh,9,0,Late Medieval,Saadian dynasty (rising),1510–,3,saadian_dynasty,linked,saadian_dynasty,existing_polity
 morocco,wsahara,9,0,Late Medieval,Sanhaja / Saharan Berber,,1,sanhaja,linked,,unresolved_link
 morocco,tangier,10,0,,Portuguese / Spanish Ceuta,1415–1640,1,portuguese,linked,,unresolved_link

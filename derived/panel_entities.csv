@@ -841,6 +841,7 @@ afsharid_invasion,unclassified,Afsharid invasion,,1,arabia,Afsharid invasion
 egyptian_occupation,event,Egyptian occupation,,1,arabia,Egyptian occupation
 republic_of_yemen,existing_polity,Republic of Yemen,,2,arabia|yemen,Republic of Yemen | Republic of Yemen (unified)
 saudi_arabia,existing_polity,Saudi Arabia,,3,arabia,Saudi Arabia
+hashimite_kingdom_of_hejaz,existing_polity,Hashimite Kingdom of Hejaz,,1,arabia,Hashimite Kingdom of Hejaz
 shulaveri_shomu_culture,culture,Shulaveri-Shomu culture,,3,armenia|georgia,Shulaveri-Shomu culture
 kura_araxes_culture,culture,Kura-Araxes culture,,4,armenia|georgia|iran,Kura-Araxes culture
 trialeti_vanadzor_culture,culture,Trialeti-Vanadzor culture,,2,armenia|georgia,Trialeti-Vanadzor culture
@@ -914,9 +915,10 @@ principality_of_antioch,polity,Principality of Antioch (Crusader),Principality o
 county_of_tripoli,polity,County of Tripoli (Crusader),County of Tripoli,1,levant,County of Tripoli (Crusader)
 kingdom_of_jerusalem,existing_polity,Kingdom of Jerusalem,,1,levant,Kingdom of Jerusalem (Crusader)
 syrian_republic,polity,Syrian Republic (independence 1946),Syrian Republic,1,levant,Syrian Republic (independence 1946)
-lebanese_republic,polity,Lebanese Republic (independence 1943),Lebanese Republic,1,levant,Lebanese Republic (independence 1943)
+lebanese_republic,existing_polity,Lebanese Republic,,3,levant,Lebanese Republic (independence 1943) | Lebanese Republic
 kingdom_of_jordan,existing_polity,Hashemite Kingdom of Jordan,,3,levant,Hashemite Kingdom of Jordan (1946) | Hashemite Kingdom of Jordan
 state_of_israel,existing_polity,State of Israel,,1,levant,State of Israel (1948)
+baathist_syrian_arab_republic,existing_polity,Ba'athist Syrian Arab Republic,,1,levant,Ba'athist Syrian Arab Republic
 capsian_culture_amazigh_berber_peoples_culture,culture,Capsian culture · Amazigh / Berber peoples,,1,morocco,Capsian culture · Amazigh / Berber peoples
 berber_mauretania,people,Berber / Mauretania,,2,morocco,Berber / Mauretania
 carthaginian_influence,polity,Carthaginian influence,Carthaginian influence,2,morocco|algeria,Carthaginian influence | Carthaginian influence (Ikosim)
@@ -927,6 +929,7 @@ zirid_dynasty,existing_polity,Zirid / Meknasa,,5,morocco|algeria|libya|tunisia,Z
 berber,people,Berber,,2,morocco,Berber (Zenata) | Berber (Atlas tribes)
 marinid_dynasty,existing_polity,Marinid dynasty,,3,morocco,Marinid dynasty
 hafsid_dynasty,existing_polity,Hafsid,,7,morocco|algeria|libya|tunisia,Hafsid (east fringe) | Hafsid (nominal suzerainty) | Hafsid dynasty (Constantine) | Hafsid dynasty (–1574) | Hafsid dynasty
+wattasid_dynasty,existing_polity,Wattasid,,3,morocco,Wattasid (inland) | Wattasid dynasty
 saadian_dynasty,existing_polity,Saadian dynasty,,3,morocco,"Saadian dynasty (rising) | Saadian dynasty — unified Morocco, capital Marrakesh (1549) | Saadian dynasty"
 sa_di_fragmentation,event,Sa'di fragmentation,,1,morocco,Sa'di fragmentation
 alawite_dynasty,existing_polity,Alawite dynasty,,4,morocco,"Alawite dynasty (Sharifs of Morocco) — unified Morocco, Marrakesh then Fes as capital | Alawite / Saharan tribal | Alawite dynasty | Alawite (Tafilalet — dynasty's origin)"

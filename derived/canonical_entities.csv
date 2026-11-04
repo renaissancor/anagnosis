@@ -1483,7 +1483,7 @@ british_protectorates,unresolved_polity,British Protectorates (Trucial States ·
 hail_emirate,unresolved_polity,Ha'il Emirate (Rashidi),1,arabia,Ha'il Emirate (Rashidi)
 emirate_of_riyadh,unresolved_polity,Emirate of Riyadh (3rd Saudi),1,arabia,Emirate of Riyadh (3rd Saudi)
 saudi_arabia,existing_polity,Saudi Arabia,1,arabia,Saudi Arabia
-hashimite_kingdom_of_hejaz,unresolved_polity,Hashimite Kingdom of Hejaz,1,arabia,Hashimite Kingdom of Hejaz
+hashimite_kingdom_of_hejaz,existing_polity,Hashimite Kingdom of Hejaz,1,arabia,Hashimite Kingdom of Hejaz
 kingdom_of_hejaz_and_nejd,unresolved_polity,Kingdom of Hejaz and Nejd,1,arabia,Kingdom of Hejaz and Nejd
 houthi,unresolved_polity,Houthi (SPC),1,arabia,Houthi (SPC)
 plc,unresolved_polity,PLC,1,arabia,PLC
@@ -1631,11 +1631,11 @@ oeta_east,unresolved_polity,OETA East (British/Faisal),1,levant,OETA East (Briti
 british_mandate_transjordan,unresolved_polity,British Mandate Transjordan,1,levant,British Mandate Transjordan
 oeta_south,unresolved_polity,OETA South (British),1,levant,OETA South (British)
 british_mandate_palestine,unresolved_polity,British Mandate Palestine,1,levant,British Mandate Palestine
+lebanese_republic,existing_polity,Lebanese Republic,1,levant,Lebanese Republic (independence 1943) | Lebanese Republic
 kingdom_of_jordan,existing_polity,Hashemite Kingdom of Jordan (1946),1,levant,Hashemite Kingdom of Jordan (1946) | Hashemite Kingdom of Jordan
 state_of_israel,existing_polity,State of Israel (1948),1,levant,State of Israel (1948) | State of Israel
 syrian_1st_republic,unresolved_polity,Syrian 1st Republic · Ba'athist Syria,1,levant,Syrian 1st Republic · Ba'athist Syria
-baathist_syrian_arab_republic,unresolved_polity,Ba'athist Syrian Arab Republic,1,levant,Ba'athist Syrian Arab Republic
-lebanese_republic,unresolved_polity,Lebanese Republic,1,levant,Lebanese Republic
+baathist_syrian_arab_republic,existing_polity,Ba'athist Syrian Arab Republic,1,levant,Ba'athist Syrian Arab Republic
 palestinian_territories,unresolved_polity,Palestinian territories (PLO/PA),1,levant,Palestinian territories (PLO/PA)
 assad,unresolved_polity,Assad / SAR,1,levant,Assad / SAR
 rebels,unresolved_polity,Rebels / HTS,1,levant,Rebels / HTS
@@ -1665,7 +1665,7 @@ sanhaja,unresolved_polity,Sanhaja / Lamtuna (Sahara),1,morocco,Sanhaja / Lamtuna
 marinid_dynasty,existing_polity,Marinid dynasty,1,morocco,Marinid dynasty
 portuguese_ceuta,unresolved_polity,Portuguese Ceuta,1,morocco,Portuguese Ceuta
 wattasid,unresolved_polity,Wattasid (inland),1,morocco,Wattasid (inland)
-wattasid_dynasty,unresolved_polity,Wattasid dynasty,1,morocco,Wattasid dynasty
+wattasid_dynasty,existing_polity,Wattasid dynasty,1,morocco,Wattasid dynasty
 saadian_dynasty,existing_polity,Saadian dynasty (rising),1,morocco,"Saadian dynasty (rising) | Saadian dynasty — unified Morocco, capital Marrakesh (1549) | Saadian dynasty"
 portuguese,unresolved_polity,Portuguese / Spanish Ceuta,1,morocco,Portuguese / Spanish Ceuta
 spanish_ceuta,unresolved_polity,Spanish Ceuta,1,morocco,Spanish Ceuta | Spanish Ceuta / Melilla
