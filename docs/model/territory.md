@@ -2,7 +2,7 @@
 
 Table contract for `csvs/territory.csv`.
 
-**Snapshot:** every count below was measured on 2026-10-31 at commit `ac64f59` using `code/lib/csv.js`.
+**Snapshot:** every count below was measured on 2026-11-05 using `code/lib/csv.js`, after `tibetan_plateau` and `horn_of_africa` were added.
 
 **Labels:** **Decided** is a recorded rule. **PROPOSED** is a suggestion in this doc and not a current rule. **OPEN** is undecided; section 7 numbers these.
 
@@ -53,7 +53,7 @@ yellow_river,yellow_river
 | Column | Type | Required | Meaning and how to decide | Empty means | Example |
 |---|---|---|---|---|---|
 | `id` | snake_case text, primary key | yes | Stable id, referenced by `polity_territory.territory_id` | never empty | `iran_plateau` |
-| `name` | text | not enforced | Display name. In all 54 rows it is an exact copy of `id`, so the API and JSON show the snake_case string. Copy that form for a new row until OPEN 4 is settled | no row has it empty | `iran_plateau` |
+| `name` | text | not enforced | Display name. In all 56 rows it is an exact copy of `id`, so the API and JSON show the snake_case string. Copy that form for a new row until OPEN 4 is settled | no row has it empty | `iran_plateau` |
 
 The table has no description, parent, geometry, region or date column. The extent of each zone is written down nowhere. It is known only from the name and from the polities placed on it.
 
@@ -104,7 +104,7 @@ Run `node scripts/validate.js`. `npm test` runs `make:all` first.
 **Convention only, not checked:**
 
 - `name` is present
-- every territory has an inbound row (all 54 do)
+- every territory has an inbound row (all 56 do)
 - `dynasty.origin_region` is a territory id. It is free text with no foreign key
 - zones do not nest or overlap
 
@@ -112,28 +112,40 @@ Run `node scripts/validate.js`. `npm test` runs `make:all` first.
 
 ## 7. Current state and open questions
 
-### All 54 zones
+### All 56 zones
 
 Each entry gives the `polity_territory` row count and the earliest `start_year`. The grouping is for reading only; it is not in the data.
 
 | Group | Zones |
 |---|---|
 | Mediterranean and Europe | `italy` 53 (-753); `balkans` 34 (-808); `hungary` 12 (350); `germany` 11 (486); `iberia` 11 (-509); `gaul` 9 (-509); `bohemia` 8 (833); `scandinavia` 9 (872); `britannia` 5 (-27); `poland` 5 (966); `prussia` 5 (1230); `lithuania` 4 (1236); `aquitaine` 3 (486); `scotland` 3 (843); `ireland` 1 (1801) |
-| Eastern Europe and steppe | `kievan_rus` 11 (882); `pontic_steppe` 9 (350); `central_asian_steppe` 28 (-300); `mongolian_plateau` 14 (-209) |
-| Near East and Iran | `iran_plateau` 47 (-2700); `levant` 35 (-2334); `mesopotamia` 33 (-2900); `caucasus` 19 (-860); `anatolia` 16 (-1600); `arabia` 14 (-1200); `khorasan` 34 (-550); `transoxiana` 28 (-550) |
-| Africa | `north_africa` 27 (-814); `egypt` 24 (-2686); `nubia` 15 (-2686) |
+| Eastern Europe and steppe | `kievan_rus` 11 (882); `pontic_steppe` 9 (350); `central_asian_steppe` 26 (-300); `mongolian_plateau` 14 (-209) |
+| Near East and Iran | `iran_plateau` 47 (-2700); `levant` 34 (-2334); `mesopotamia` 33 (-2900); `caucasus` 19 (-860); `anatolia` 16 (-1600); `arabia` 11 (-1200); `khorasan` 34 (-550); `transoxiana` 28 (-550) |
+| Africa | `north_africa` 27 (-814); `egypt` 23 (-2686); `nubia` 11 (-2686); `horn_of_africa` 9 (100) |
 | South Asia | `deccan` 23 (-322); `ganges_plain` 20 (-345); `indus_valley` 20 (-322); `punjab` 19 (-322) |
+| Tibet and the Himalaya | `tibetan_plateau` 7 (618) |
 | East Asia | `yellow_river` 38 (-2070); `yangtze` 35 (-1200); `manchuria` 14 (-37); `korean_peninsula` 11 (-57); `japanese_archipelago` 11 (250); `okinawa` 1 (1429) |
 | Americas | `andes` 15 (550); `caribbean` 11 (1492); `mesoamerica` 8 (-500); `us_south` 9 (1513); `patagonia` 8 (1400); `us_east` 7 (1450); `amazonia` 5 (1500); `us_midwest` 4 (1534); `us_west` 3 (1521); `quebec` 3 (1534); `atlantic_canada` 3 (1534); `western_canada` 3 (1670); `alaska` 2 (1733) |
 | Pacific | `hawaii` 3 (1776) |
 
 ### Known problems
 
-**Gaps.** No zone exists for Southeast Asia, Africa south of `nubia` and `north_africa`, Tibet, Sri Lanka, Oceania beyond `hawaii`, or Australia. As a result:
+**Gaps.** No zone exists for Southeast Asia, Africa south of `nubia`, `north_africa` and `horn_of_africa`, Sri Lanka, Oceania beyond `hawaii`, or Australia. As a result:
 
 - `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate` and `sulu_sultanate` have no territory row and so no territorial edges. `kingdom_of_tungning` (Taiwan) has none either.
-- `nubia` is a catch-all. Its 15 rows include `aksumite_kingdom`, `solomonic_dynasty`, `kanem_empire`, `darfur_sultanate`, `punt` and `italian_east_africa`.
-- `tibetan_empire` sits on `central_asian_steppe`.
+- `nubia` is still a catch-all. Its 11 rows include `kanem_empire`, `darfur_sultanate` and `punt` (location disputed). `aksumite_kingdom` holds both `nubia` and `horn_of_africa`; whether it held Nubia is unchecked.
+
+**Zones added 2026-11-05 (owner-approved).** `tibetan_plateau` covers Tibet and its Himalayan rim, so Ladakh, Sikkim and Bhutan sit on it. `horn_of_africa` covers the Ethiopian highlands and the Somali coast. Existing rows moved onto them:
+
+| Polity | From | To |
+|---|---|---|
+| `tibetan_empire` | `central_asian_steppe` | `tibetan_plateau` |
+| `khoshut_khanate` | `central_asian_steppe` | `tibetan_plateau` |
+| `ajuran_sultanate`, `adal_sultanate`, `ifat_sultanate` | `arabia` | `horn_of_africa` |
+| `zagwe_dynasty`, `solomonic_dynasty`, `italian_east_africa` | `nubia` | `horn_of_africa` |
+| `aksumite_kingdom` | `nubia` kept | `horn_of_africa` added |
+
+`yuan_dynasty`, `qing_dynasty` and `peoples_republic_of_china` appear in the tibet panel but have no `tibetan_plateau` row; whether their hold counts is `polity_territory.md` OPEN 1.
 - In `scripts/generate_stubs.js`, the panel regions `southeast_asia`, `central_africa`, `southern_africa` and `west_africa` map to no territory, so stubs from them have none.
 
 **Nesting and overlap.** Zones are not a partition. Several look nested or overlapping, and many polities hold both sides:
@@ -159,9 +171,9 @@ Each shared zone feeds the computed succession edges, so a double-counted area m
 
 ### Open questions for the owner
 
-1. **Which zones to add first** for the gaps above. Southeast Asia and sub-Saharan Africa block whole panels. Should `nubia` be split at the same time?
+1. **Which zones to add next** for the gaps above. Tibet and the Horn of Africa are done (2026-11-05). Southeast Asia and the rest of sub-Saharan Africa block whole panels. Should what remains of `nubia` be split?
 2. **Is the table a flat list or a hierarchy?** Should overlap be removed, or should a `parent_id` be added to match the taxonomy tables? Until then, should a polity on `khorasan` also hold `iran_plateau`?
 3. **What is a zone's extent?** Nothing defines any border, so two curators can disagree on where `gaul` ends. Should the table gain a one-line description column? That would need the full change list in `ARCHITECTURE.md`.
-4. **What should `name` be?** All 54 rows copy the id. Should it become a display name, such as `Yellow River`?
+4. **What should `name` be?** All 56 rows copy the id. Should it become a display name, such as `Yellow River`?
 5. **What naming principle applies?** Should modern-country and polity-named ids such as `germany` and `kievan_rus` stay? Renaming conflicts with the rule that ids are permanent.
 6. **What scale counts as macro?** Is there a target number of zones, and may a zone be as small as `okinawa`?
