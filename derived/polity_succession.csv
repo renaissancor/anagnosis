@@ -48,7 +48,7 @@ united_states,United States of America,texas_republic,Republic of Texas,contract
 united_states,United States of America,confederate_states,Confederate States of America,contraction,9,us_south,1,1,0,1,1,0
 united_states,United States of America,california_republic,California Republic,contraction,9,us_west,1,1,0,1,1,0
 united_states,United States of America,hawaii_republic,Republic of Hawaiʻi,contraction,9,hawaii,1,1,0,1,1,0
-german_confederation,German Confederation (Deutscher Bund,austria_hungary,Austria-Hungary / Italian occupation zones,expansion,9,bohemia,1,1,0,1,1,1
+german_confederation,German Confederation (Deutscher Bund),austria_hungary,Austria-Hungary / Italian occupation zones,expansion,9,bohemia,1,1,0,1,1,1
 kingdom_of_egypt,Kingdom of Egypt,united_arab_republic,United Arab Republic,expansion,9,egypt,1,1,0,1,1,6
 republic_of_egypt,Republic of Egypt,united_arab_republic,United Arab Republic,expansion,9,egypt,1,1,0,1,1,0
 dulafid_dynasty,Dulafid Dynasty,sajid_dynasty,Sajid dynasty,expansion,9,iran_plateau,1,1,0,1,1,-8
@@ -173,7 +173,7 @@ principality_of_wallachia,Principality of Wallachia,kingdom_of_romania,Kingdom o
 principality_of_moldavia,Principality of Moldavia,kingdom_of_romania,Kingdom of Romania,same,8,balkans,1,1,0,1,1,22
 second_turkic_khaganate,Second Türkic Khaganate,turgesh_khaganate,Turgesh Khaganate,same,8,central_asian_steppe,1,1,0,1,1,-45
 rashtrakuta_dynasty,Rashtrakuta Dynasty,hoysala_dynasty,Hoysala Empire,same,8,deccan,1,1,0,1,1,24
-german_confederation,German Confederation (Deutscher Bund,german_empire,German Empire (Deutsches Reich),same,8,germany,1,1,0,1,0,5
+german_confederation,German Confederation (Deutscher Bund),german_empire,German Empire (Deutsches Reich),same,8,germany,1,1,0,1,0,5
 german_empire,German Empire (Deutsches Reich),nazi_germany,Nazi Germany (Third Reich),same,8,germany|prussia,2,1,0,1,0,15
 afsharid_dynasty,Afsharid Dynasty,qajar_dynasty,Qajar Dynasty,same,8,iran_plateau|khorasan,2,1,0,0,1,0
 qajar_dynasty,Qajar Dynasty,pahlavi_dynasty,Pahlavi Dynasty,same,8,iran_plateau|khorasan,2,1,0,0,1,0
@@ -213,9 +213,9 @@ texas_republic,Republic of Texas,confederate_states,Confederate States of Americ
 first_mexican_empire,First Mexican Empire,mexico,Mexico (United Mexican States),same,8,,0,1,0,1,1,-2
 roman_empire,Roman Empire,byzantine_empire,Byzantine Empire,contraction,7,anatolia|balkans|egypt|levant|north_africa,5,0,0,0,0,0
 republic_of_venice,Venice,italian_albania,Italian Albania,contraction,7,balkans,1,1,0,1,1,142
-holy_roman_empire,Holy Roman Empire,german_confederation,German Confederation (Deutscher Bund,contraction,7,bohemia|germany,2,1,0,0,0,9
-habsburg_monarchy,Habsburg Monarchy,german_confederation,German Confederation (Deutscher Bund,contraction,7,bohemia|germany,2,1,0,1,0,-103
-austrian_empire,Austrian Empire,german_confederation,German Confederation (Deutscher Bund,contraction,7,bohemia,1,1,0,1,1,-52
+holy_roman_empire,Holy Roman Empire,german_confederation,German Confederation (Deutscher Bund),contraction,7,bohemia|germany,2,1,0,0,0,9
+habsburg_monarchy,Habsburg Monarchy,german_confederation,German Confederation (Deutscher Bund),contraction,7,bohemia|germany,2,1,0,1,0,-103
+austrian_empire,Austrian Empire,german_confederation,German Confederation (Deutscher Bund),contraction,7,bohemia,1,1,0,1,1,-52
 ilkhanate,Ilkhanate,chobanid_dynasty,Chobanid dynasty,contraction,7,caucasus|iran_plateau,2,1,0,0,0,0
 macedonian_empire,Macedonian Empire (Alexander),ptolemaic_egypt,Ptolemaic Kingdom,contraction,7,egypt|levant,2,1,0,0,1,18
 gupta_empire,Gupta Empire,kamarupa_kingdom,Kamarupa Kingdom,contraction,7,ganges_plain,1,1,0,1,1,-200
@@ -423,9 +423,9 @@ gupta_empire,Gupta Empire,harsha_empire,Harsha Empire,contraction,6,ganges_plain
 delhi_sultanate,Delhi Sultanate,malwa_sultanate,Malwa Sultanate,contraction,6,ganges_plain,1,1,0,1,0,-134
 delhi_sultanate,Delhi Sultanate,jaunpur_sultanate,Jaunpur Sultanate,contraction,6,ganges_plain,1,1,0,1,0,-132
 western_roman_empire,Western Roman Empire,carolingian_empire,Frankish Kingdom / Carolingian Empire,contraction,6,gaul,1,0,0,1,1,10
-kingdom_of_prussia,Kingdom of Prussia,german_confederation,German Confederation (Deutscher Bund,contraction,6,germany,1,1,0,1,0,-103
-german_confederation,German Confederation (Deutscher Bund,federal_republic_germany,Federal Republic of Germany,contraction,6,germany,1,1,0,1,0,83
-german_confederation,German Confederation (Deutscher Bund,east_germany,German Democratic Republic (East Germany),contraction,6,germany,1,1,0,1,0,83
+kingdom_of_prussia,Kingdom of Prussia,german_confederation,German Confederation (Deutscher Bund),contraction,6,germany,1,1,0,1,0,-103
+german_confederation,German Confederation (Deutscher Bund),federal_republic_germany,Federal Republic of Germany,contraction,6,germany,1,1,0,1,0,83
+german_confederation,German Confederation (Deutscher Bund),east_germany,German Democratic Republic (East Germany),contraction,6,germany,1,1,0,1,0,83
 delhi_sultanate,Delhi Sultanate,khalji_dynasty,Khalji Dynasty,contraction,6,indus_valley,1,1,0,1,0,-236
 delhi_sultanate,Delhi Sultanate,gujarat_sultanate,Gujarat Sultanate,contraction,6,indus_valley,1,1,0,1,0,-119
 saffarid_dynasty,Saffarid Dynasty,ziyarid_dynasty,Ziyarid Dynasty,contraction,6,iran_plateau,1,1,0,1,0,-73
@@ -536,8 +536,8 @@ kamarupa_kingdom,Kamarupa Kingdom,harsha_empire,Harsha Empire,same,6,ganges_plai
 ghorid_dynasty,Ghorid Sultanate,delhi_sultanate,Delhi Sultanate,same,6,ganges_plain|punjab,2,0,0,1,0,-9
 kingdom_of_france,Kingdom of France,vichy_france,Vichy France,same,6,gaul,1,1,0,1,0,148
 habsburg_monarchy,Habsburg Monarchy,kingdom_of_prussia,Kingdom of Prussia,same,6,germany,1,1,0,1,0,-217
-german_confederation,German Confederation (Deutscher Bund,weimar_republic,Weimar Republic,same,6,germany,1,1,0,1,0,52
-german_confederation,German Confederation (Deutscher Bund,nazi_germany,Nazi Germany (Third Reich),same,6,germany,1,1,0,1,0,67
+german_confederation,German Confederation (Deutscher Bund),weimar_republic,Weimar Republic,same,6,germany,1,1,0,1,0,52
+german_confederation,German Confederation (Deutscher Bund),nazi_germany,Nazi Germany (Third Reich),same,6,germany,1,1,0,1,0,67
 hungarian_grand_principality,Hungarian Grand Principality,kingdom_of_hungary,Kingdom of Hungary,same,6,hungary,1,1,0,0,0,0
 marhashi_kingdom,Marhashi Kingdom,anshan_kingdom,Anshan Kingdom,same,6,iran_plateau,1,1,0,1,0,-400
 saffarid_dynasty,Saffarid Dynasty,buyid_dynasty,Buyid Dynasty,same,6,iran_plateau,1,1,0,1,0,-69
@@ -936,7 +936,7 @@ holy_roman_empire,Holy Roman Empire,weimar_republic,Weimar Republic,contraction,
 holy_roman_empire,Holy Roman Empire,nazi_germany,Nazi Germany (Third Reich),contraction,4,germany,1,1,0,0,0,127
 holy_roman_empire,Holy Roman Empire,federal_republic_germany,Federal Republic of Germany,contraction,4,germany,1,1,0,0,0,143
 holy_roman_empire,Holy Roman Empire,east_germany,German Democratic Republic (East Germany),contraction,4,germany,1,1,0,0,0,143
-french_first_empire,French First Empire,german_confederation,German Confederation (Deutscher Bund,contraction,4,germany,1,0,0,0,1,1
+french_first_empire,French First Empire,german_confederation,German Confederation (Deutscher Bund),contraction,4,germany,1,0,0,0,1,1
 hungary,Hungary,kingdom_of_hungary,Kingdom of Hungary,contraction,4,hungary,1,1,0,0,0,-946
 roman_empire,Roman Empire,visigothic_kingdom,Visigothic Kingdom,contraction,4,iberia,1,0,0,1,0,23
 western_roman_empire,Western Roman Empire,visigothic_kingdom,Visigothic Kingdom,contraction,4,iberia,1,0,0,1,1,-58
@@ -2645,11 +2645,11 @@ grand_duchy_of_lithuania,Grand Duchy of Lithuania,cossack_hetmanate,Cossack Hetm
 teutonic_order,Teutonic Order (Monastic State),kalmar_union,Kalmar Union,displacement,2,,0,0,0,1,0,-128
 teutonic_order,Teutonic Order (Monastic State),habsburg_monarchy,Habsburg Monarchy,displacement,2,,0,0,0,1,0,-87
 teutonic_order,Teutonic Order (Monastic State),austrian_empire,Austrian Empire,displacement,2,,0,0,0,1,0,279
-teutonic_order,Teutonic Order (Monastic State),german_confederation,German Confederation (Deutscher Bund,displacement,2,,0,0,0,1,0,290
+teutonic_order,Teutonic Order (Monastic State),german_confederation,German Confederation (Deutscher Bund),displacement,2,,0,0,0,1,0,290
 kalmar_union,Kalmar Union,habsburg_monarchy,Habsburg Monarchy,displacement,2,,0,0,0,1,0,-85
 kalmar_union,Kalmar Union,kingdom_of_prussia,Kingdom of Prussia,displacement,2,,0,0,0,1,0,178
 kalmar_union,Kalmar Union,austrian_empire,Austrian Empire,displacement,2,,0,0,0,1,0,281
-kalmar_union,Kalmar Union,german_confederation,German Confederation (Deutscher Bund,displacement,2,,0,0,0,1,0,292
+kalmar_union,Kalmar Union,german_confederation,German Confederation (Deutscher Bund),displacement,2,,0,0,0,1,0,292
 kingdom_of_prussia,Kingdom of Prussia,austrian_empire,Austrian Empire,displacement,2,,0,0,0,1,0,-114
 kingdom_of_prussia,Kingdom of Prussia,austria_hungary,Austria-Hungary / Italian occupation zones,displacement,2,,0,0,0,1,0,-51
 austrian_empire,Austrian Empire,weimar_republic,Weimar Republic,displacement,2,,0,0,0,1,0,51
@@ -3162,7 +3162,7 @@ austrian_empire,Austrian Empire,albanian_kingdom,Albanian Kingdom,contraction,1,
 austrian_empire,Austrian Empire,sfr_yugoslavia,SFR Yugoslavia,contraction,1,balkans,1,0,0,0,0,78
 kingdom_of_italy,Kingdom of Italy,kingdom_of_romania,Kingdom of Romania,contraction,1,balkans,1,0,0,0,0,-65
 austrian_empire,Austrian Empire,czechoslovakia,Czechoslovakia,contraction,1,bohemia,1,0,0,0,0,51
-german_confederation,German Confederation (Deutscher Bund,czechoslovakia,Czechoslovakia,contraction,1,bohemia,1,0,0,0,0,52
+german_confederation,German Confederation (Deutscher Bund),czechoslovakia,Czechoslovakia,contraction,1,bohemia,1,0,0,0,0,52
 khazar_khaganate,Khazar Khaganate,bagratid_armenia,Bagratid Armenia,contraction,1,caucasus,1,0,0,0,0,-84
 ottoman_empire,Ottoman Empire,chobanid_dynasty,Chobanid dynasty,contraction,1,caucasus,1,0,0,0,0,-587
 ottoman_empire,Ottoman Empire,safavid_empire,Safavid Empire,contraction,1,caucasus,1,0,0,0,0,-421
