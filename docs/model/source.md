@@ -80,9 +80,9 @@ Citing a source does not grant permission. The licence does; the citation is a c
 
 `npm run validate` checks the licence allowlist and that each `fact_source` row names a real table, row, field and source. Done means it passes.
 
-## Current state (measured 2026-11-01)
+## Current state (measured 2026-11-05)
 
-`source.csv` has 1 row (`wikidata`) and `fact_source.csv` has 290.
+`source.csv` has 1 row (`wikidata`) and `fact_source.csv` has 310: 290 identity links (`field = id`) and 20 field citations on 7 polities.
 
 ## Open questions
 

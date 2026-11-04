@@ -289,3 +289,23 @@ polity,yamato_kingdom,id,wikidata,Q2658252,
 polity,kamakura_shogunate,id,wikidata,Q736839,
 polity,ashikaga_shogunate,id,wikidata,Q1154406,
 polity,first_turkic_khaganate,id,wikidata,Q15146034,
+polity,guge_kingdom,start_year,wikidata,Q1193554,P571 912
+polity,guge_kingdom,end_year,wikidata,Q1193554,P576 1630
+polity,ladakh_kingdom,start_year,wikidata,Q6794098,P571 930
+polity,ladakh_kingdom,end_year,wikidata,Q6794098,P576 1842
+polity,ladakh_kingdom,government,wikidata,Q6794098,label Maryul Kingdom; instance of realm
+polity,ganden_phodrang,start_year,wikidata,Q17500081,P571 1642
+polity,ganden_phodrang,end_year,wikidata,Q17500081,P576 1959
+polity,ganden_phodrang,government,wikidata,Q17500081,instance of theocracy
+polity,sikkim_kingdom,start_year,wikidata,Q3960459,P571 1642
+polity,sikkim_kingdom,end_year,wikidata,Q3960459,P576 1975-05-16
+polity,sikkim_kingdom,government,wikidata,Q3960459,monarchy
+polity,sikkim_kingdom,id_ruling_language,wikidata,Q3960459,Sikkimese Bhutia and Tibetan; tibetan used
+polity,kingdom_of_bhutan,start_year,wikidata,Q917,inception 1907-12-17 (non-preferred); preferred 1949-08-08 is a treaty date
+polity,kingdom_of_bhutan,government,wikidata,Q917,constitutional monarchy generalised to monarchy for the whole span
+polity,kingdom_of_bhutan,id_ruling_language,wikidata,Q917,Dzongkha
+polity,italian_somaliland,start_year,wikidata,Q319984,P571 1880; panels give 1889
+polity,italian_somaliland,end_year,wikidata,Q319984,P576 1936
+polity,italian_somaliland,government,wikidata,Q319984,instance of colony of the Kingdom of Italy
+polity,somali_republic,start_year,wikidata,Q7559152,1960-07-01
+polity,somali_republic,end_year,wikidata,Q7559152,1969-10-21
