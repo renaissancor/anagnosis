@@ -362,10 +362,17 @@ const INH = {
 const polityIds = new Set(T.polity.map(r => r.id));
 const SOURCE_SETS = { polity: polityIds, ethnicity: new Set(T.ethnicity.map(r => r.id)), religion: new Set(T.religion.map(r => r.id)) };
 const claimIds = new Set();
+// One claim per (heir, source); a source is identified by its type and id,
+// since ethnicity and religion ids can coincide (model/inheritance.md).
+const claimByHeirSource = new Map();
 for (const c of T.inheritance_claim) {
   const ctx = c.id;
   if (claimIds.has(c.id)) err('inheritance duplicate claim', ctx);
   claimIds.add(c.id);
+  const heirSource = `${c.heir_polity_id}|${c.source_type}|${c.source_id}`;
+  if (claimByHeirSource.has(heirSource)) {
+    err('inheritance duplicate (heir, source)', `${ctx} repeats ${claimByHeirSource.get(heirSource)}: ${c.heir_polity_id} ← ${c.source_type}:${c.source_id}`);
+  } else claimByHeirSource.set(heirSource, ctx);
   if (!polityIds.has(c.heir_polity_id)) err('inheritance heir → polity', `${ctx}: "${c.heir_polity_id}"`);
   if (SOURCE_SETS[c.source_type] && !SOURCE_SETS[c.source_type].has(c.source_id)) err('inheritance source_id', `${ctx}: "${c.source_id}" not in ${c.source_type}`);
   for (const f of ['source_type', 'source_temporal_status', 'topology', 'mechanism', 'legitimacy_mode', 'exclusivity']) {
