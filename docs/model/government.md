@@ -19,7 +19,7 @@ A row exists only if at least one `polity.government` points at it, and it names
 - A time-bounded regime change inside a polity (split the polity instead; `CLAUDE.md`).
 - A near-synonym of an existing row. Check section 7 first.
 
-**Measured today:** 29 rows, **1 with no inbound reference (`city_state_league`, 0 polities after the non-polity migration)** (every other id is used by at least one polity; usage ranges from 1 to 77 polities). Separately, **23 of 481 polities have an empty `government`** (for example `silla`, `baekje`, `cao_wei`, `shu_han`, `eastern_wu`, `western_jin`).
+**Measured today:** 29 rows, **1 with no inbound reference (`city_state_league`, 0 polities after the non-polity migration)** (every other id is used by at least one polity; usage ranges from 1 to 81 polities). Separately, **23 of 488 polities have an empty `government`** (for example `silla`, `baekje`, `cao_wei`, `shu_han`, `eastern_wu`, `western_jin`).
 
 ---
 
@@ -87,7 +87,7 @@ Government form is an analytical judgement, so most rows will rest on the curato
 
 ## 7. Current state and open questions
 
-29 rows. Polity counts per row, highest first: `monarchy` 77, `imperial_monarchy` 61, `feudal_monarchy` 54, `democratic_republic` 27, `sultanate` 26 ... `shogunate` 3, `confederation` 1.
+29 rows. Polity counts per row, highest first: `monarchy` 81, `imperial_monarchy` 61, `feudal_monarchy` 54, `democratic_republic` 27, `sultanate` 26 ... `shogunate` 3, `confederation` 1.
 
 Open questions, none resolved here:
 

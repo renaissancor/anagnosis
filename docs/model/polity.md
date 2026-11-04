@@ -2,7 +2,7 @@
 
 Table contract for `csvs/polity.csv`. This doc decides what counts as a polity.
 
-**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table was re-measured on 2026-11-05 at commit `21a5309`, after the `egyptian_new_kingdom` merge. Re-measure any duplicate list before acting on it.
+**Snapshot:** every count below was measured on 2026-10-31 with `code/lib/csv.js`, after the non-polity migration (`non_polity.md`). The section 7 Counts table and the unresolved panel id count were re-measured on 2026-11-05, after the seven Tibet, Himalaya and Somali rows were added with the `tibetan_plateau` and `horn_of_africa` zones. Re-measure any duplicate list before acting on it.
 
 **Labels used here:**
 
@@ -259,11 +259,11 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 **Enforced as warnings:**
 
-- `id_ruling_religion` empty (38)
+- `id_ruling_religion` empty (45)
 - `government` empty (23)
 - CRLF line endings
 - a comma in a non-prose column, including `policies`
-- a panel cell's `polity` not in `polity.csv` (1,697 distinct ids)
+- a panel cell's `polity` not in `polity.csv` (1,690 distinct ids)
 
 **Convention only, not checked:**
 
@@ -284,22 +284,22 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 
 | Measure | Value |
 |---|---|
-| Rows | 481 |
+| Rows | 488 |
 | Year range of `start_year` | -2900 to 1991 |
-| `id_ruling_language` empty | 35 |
-| `id_ruling_religion` empty | 38 |
+| `id_ruling_language` empty | 40 |
+| `id_ruling_religion` empty | 45 |
 | `government` empty | 23 |
-| Empty in both language and religion | 13 |
-| `end_year` empty (ongoing) | 41 |
+| Empty in both language and religion | 18 |
+| `end_year` empty (ongoing) | 42 |
 | `policies` filled | 20 rows, 27 slugs, each used once |
-| `note` filled | 357 |
+| `note` filled | 364 |
 | No `polity_territory` row | 6: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning` |
-| No `polity_dynasty` row | 208 (75 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
-| No `figure` row | 349 |
-| Wikidata identity link | 288 (193 have none) |
+| No `polity_dynasty` row | 215 (79 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
+| No `figure` row | 356 |
+| Wikidata identity link | 288 `id` rows; 7 more cite Wikidata only on fields such as dates (193 have no Wikidata row) |
 | No panel reference | 16 (such as `zhou_dynasty`, `song_dynasty`, `ecuador`, `uruk`, `tyre`) |
 | No panel cell, `figure` or `polity_dynasty` row (the step 4 test in 2.2) | 4: `creek_confederacy`, `ecuador`, `venezuela`, `grand_duchy_moscow` |
-| Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 139 |
+| Ruling ethnicity is a broad cluster, bloc or `_peoples` node | 142 |
 
 **Coverage gaps.** There are no rows for Mali, Songhai, Ghana, Kongo, Benin or Great Zimbabwe, and Southeast Asia has only a handful (`funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`), although panels exist for those regions. Sparse coverage is expected in this project, but queries there return little or nothing.
 
@@ -353,7 +353,7 @@ Questions marked DECIDED are settled in section 8, and the numbers are kept beca
 8. **Renaming.** 07 suggests considering `eastern_roman_empire` for `byzantine_empire`. `naming.md` says ids are never renamed.
 9. **An unknown ruling ethnicity.** The column is required and has no unknown value, which forces a guess or a broad cluster.
 10. **Where to record an interruption** (07's Byzantine marker), since no column exists and the inheritance layer has not landed.
-11. **Promotion from stubs.** 1,697 distinct panel ids do not resolve and 1,704 stubs exist. Who promotes them, by what test, and in what order?
+11. **Promotion from stubs.** 1,690 distinct panel ids do not resolve and 1,704 stubs exist. Who promotes them, by what test, and in what order?
 12. **Start of a dependent phase.** Nurhaci's Later Jin state, before 1636, has no row of its own, and `qing_dynasty` starts in 1636. Should the row start earlier, or should the earlier state get a row?
 
 ---

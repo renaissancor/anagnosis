@@ -4,8 +4,6 @@ hunnic_raids,Hunnic Raids,,,,,,italy|iberia|gaul|germany|britannia|scandinavia|b
 neanderthals,Neanderthals,,,,,,gaul|anatolia|mesopotamia|italy|iberia|germany|britannia|scandinavia|balkans|hungary|poland|levant|arabia|caucasus|egypt,-400,-30,,Stub generated from france panel; appears in 3 panel(s); needs P6.1 enrichment
 bantu_expansion,Bantu Expansion,,,,,,,-1000,,,Stub generated from congo panel; appears in 2 panel(s); needs P6.1 enrichment
 azanian_coast,Azanian Coast,,,,,,nubia,,,,Stub generated from somalia panel; appears in 2 panel(s); needs P6.1 enrichment
-italian_somaliland,Italian Somaliland,,,,,,nubia,1889,,,Stub generated from somalia panel; appears in 2 panel(s); needs P6.1 enrichment
-somali_republic,Somali Republic,,,,,republic,nubia,1960,,,Stub generated from somalia panel; appears in 2 panel(s); needs P6.1 enrichment
 soviet_reconquest,Soviet Reconquest,,,,,,italy|iberia|gaul|germany|britannia|scandinavia|balkans|hungary|poland,1944,,,Stub generated from baltic panel; appears in 2 panel(s); needs P6.1 enrichment
 south_slavic_migration,South Slavic Migration,,,,,,italy|iberia|gaul|germany|britannia|scandinavia|balkans|hungary|poland,,,,Stub generated from bosnia panel; appears in 2 panel(s); needs P6.1 enrichment
 hundred_years_war,Hundred Years War,,,,,,britannia|ireland|scotland|gaul|italy|iberia|germany|scandinavia|balkans|hungary|poland,1337,1453,,Stub generated from britain_ireland panel; appears in 2 panel(s); needs P6.1 enrichment
@@ -308,12 +306,10 @@ qiang,Qiang,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsu
 di_peoples,Di Peoples,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 lepcha,Lepcha,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 mon_yul_kingdom,Mon Yul Kingdom,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
-ladakh_kingdom,Ladakh Kingdom,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,842,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 guge_purang_kingdom,Guge Purang Kingdom,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,842,1630,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 tangut_peoples,Tangut Peoples,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 tribal_communities,Tribal Communities,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 mon_yul,Mon Yul,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
-guge_kingdom,Guge Kingdom,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,842,1630,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 purang_kingdom,Purang Kingdom,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 tibet_under_yuan_rule,Tibet Under Yuan Rule,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 indigenous_chiefs,Indigenous Chiefs,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
@@ -322,15 +318,12 @@ indigenous_local_rulers,Indigenous Local Rulers,,,,,,yellow_river|yangtze|manchu
 phagmodrupa_dynasty,Phagmodrupa Dynasty,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1354,1435,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 rinpungpa_dynasty,Rinpungpa Dynasty,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1435,1565,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 tsangpa_dynasty,Tsangpa Dynasty,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1565,1642,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
-ganden_phodrang,Ganden Phodrang,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1642,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
-sikkim_kingdom,Sikkim Kingdom,,,,,monarchy,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1642,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 druk_desi_regime,Druk Desi Regime,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1634,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 modern_independent_tibet,Modern Independent Tibet,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 sikkim,Sikkim,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 bhutan,Bhutan,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 dominion_of_india,Dominion Of India,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,1947,1950,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 tibet_autonomous_region,Tibet Autonomous Region,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
-kingdom_of_bhutan,Kingdom Of Bhutan,,,,,,yellow_river|yangtze|manchuria|mongolian_plateau|korean_peninsula|japanese_archipelago,,,,Stub generated from tibet panel; appears in 1 panel(s); needs P6.1 enrichment
 illyrian_tribes,Illyrian Tribes,,,,,,italy|iberia|gaul|germany|britannia|scandinavia|balkans|hungary|poland,,,,Stub generated from albania panel; appears in 1 panel(s); needs P6.1 enrichment
 taulantii_greek_colony_epidamnosdyrrachium,Taulantii Greek Colony Epidamnosdyrrachium,,,,,,italy|iberia|gaul|germany|britannia|scandinavia|balkans|hungary|poland,-625,,,Stub generated from albania panel; appears in 1 panel(s); needs P6.1 enrichment
 illyrian_interior,Illyrian Interior,,,,,,italy|iberia|gaul|germany|britannia|scandinavia|balkans|hungary|poland,,,,Stub generated from albania panel; appears in 1 panel(s); needs P6.1 enrichment

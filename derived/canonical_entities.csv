@@ -153,8 +153,8 @@ aksumite_kingdom,existing_polity,Aksumite Kingdom — Adulis (main Red Sea port)
 italian_east_africa,existing_polity,Italian East Africa,2,ethiopia|somalia,Italian East Africa | Italian East Africa → Ethiopian Empire
 punt,existing_polity,Punt (Egyptian trading land — incense coast),2,somalia|sudan,Punt (Egyptian trading land — incense coast) | Punt (Egyptian trading land)
 azanian_coast,unresolved_polity,Azanian coast (Greek/Arab trade),2,somalia|swahili_coast,Azanian coast (Greek/Arab trade) | Bantu-speaking coastal peoples — early fishing & herding communities
-italian_somaliland,unresolved_polity,Italian Somaliland,2,somalia|swahili_coast,Italian Somaliland | Italian Somaliland — Mogadishu
-somali_republic,unresolved_polity,Somali Republic (union with south),2,somalia|swahili_coast,Somali Republic (union with south) | Somali Republic (1960) | Somalia (independent 1960) — Mogadishu capital
+italian_somaliland,existing_polity,Italian Somaliland,2,somalia|swahili_coast,Italian Somaliland | Italian Somaliland — Mogadishu
+somali_republic,existing_polity,Somali Republic (union with south),2,somalia|swahili_coast,Somali Republic (union with south) | Somali Republic (1960) | Somalia (independent 1960) — Mogadishu capital
 qin_dynasty,existing_polity,Qin Dynasty (秦),2,china|manchuria,Qin Dynasty (秦) | Qin
 eastern_han,existing_polity,Eastern Han (东汉/后汉),2,china|vietnam,Eastern Han (东汉/后汉) | Later Han — Giao Châu (Jiaozhou)
 western_jin,existing_polity,Western Jin (西晋),2,china|manchuria,Western Jin (西晋) | Western Jin — Liaodong & Xuantu
@@ -623,12 +623,12 @@ qiang,unresolved_polity,Qiang / Jie peoples,1,tibet,Qiang / Jie peoples
 di_peoples,unresolved_polity,Di peoples,1,tibet,Di peoples
 lepcha,unresolved_polity,Lepcha / Mon (continuing),1,tibet,Lepcha / Mon (continuing)
 mon_yul_kingdom,unresolved_polity,Mon-yul Kingdom,1,tibet,Mon-yul Kingdom
-ladakh_kingdom,unresolved_polity,Ladakh Kingdom (Maryul),1,tibet,Ladakh Kingdom (Maryul) | Ladakh Kingdom (continuing) | Ladakh Kingdom
+ladakh_kingdom,existing_polity,Ladakh Kingdom (Maryul),1,tibet,Ladakh Kingdom (Maryul) | Ladakh Kingdom (continuing) | Ladakh Kingdom | Ladakh Kingdom (declining)
 guge_purang_kingdom,unresolved_polity,Guge-Purang Kingdom,1,tibet,Guge-Purang Kingdom
 tangut_peoples,unresolved_polity,Tangut peoples,1,tibet,Tangut peoples
 tribal_communities,unresolved_polity,Tribal communities,1,tibet,Tribal communities
 mon_yul,unresolved_polity,Mon-yul / tribal communities,1,tibet,Mon-yul / tribal communities
-guge_kingdom,unresolved_polity,Guge Kingdom,1,tibet,Guge Kingdom | Guge Kingdom (falls c.1630)
+guge_kingdom,existing_polity,Guge Kingdom,1,tibet,Guge Kingdom | Guge Kingdom (falls c.1630)
 purang_kingdom,unresolved_polity,Purang Kingdom,1,tibet,Purang Kingdom
 tibet_under_yuan_rule,unresolved_polity,Tibet under Yuan rule,1,tibet,Tibet under Yuan rule
 indigenous_chiefs,unresolved_polity,Indigenous chiefs,1,tibet,Indigenous chiefs
@@ -637,15 +637,15 @@ indigenous_local_rulers,unresolved_polity,Indigenous local rulers,1,tibet,Indige
 phagmodrupa_dynasty,unresolved_polity,Phagmodrupa dynasty,1,tibet,Phagmodrupa dynasty
 rinpungpa_dynasty,unresolved_polity,Rinpungpa dynasty,1,tibet,Rinpungpa dynasty
 tsangpa_dynasty,unresolved_polity,Tsangpa dynasty,1,tibet,Tsangpa dynasty
-ganden_phodrang,unresolved_polity,Ganden Phodrang — Dalai Lama V ('Great Fifth'),1,tibet,Ganden Phodrang — Dalai Lama V ('Great Fifth') | Ganden Phodrang — Dalai Lama VII | Ganden Phodrang — Kashag (council) governance | Ganden Phodrang (continuing)
-sikkim_kingdom,unresolved_polity,Sikkim Kingdom (Namgyal dynasty),1,tibet,Sikkim Kingdom (Namgyal dynasty) | Sikkim Kingdom | Sikkim Kingdom (British protectorate) | Sikkim Kingdom (Indian protectorate)
+ganden_phodrang,existing_polity,Ganden Phodrang — Dalai Lama V ('Great Fifth'),1,tibet,Ganden Phodrang — Dalai Lama V ('Great Fifth') | Ganden Phodrang — Dalai Lama VII | Ganden Phodrang — Kashag (council) governance | Ganden Phodrang (continuing)
+sikkim_kingdom,existing_polity,Sikkim Kingdom (Namgyal dynasty),1,tibet,Sikkim Kingdom (Namgyal dynasty) | Sikkim Kingdom | Sikkim Kingdom (British protectorate) | Sikkim Kingdom (Indian protectorate)
 druk_desi_regime,unresolved_polity,Druk Desi regime (Zhabdrung Ngawang Namgyal),1,tibet,Druk Desi regime (Zhabdrung Ngawang Namgyal) | Druk Desi regime
 modern_independent_tibet,unresolved_polity,Modern independent Tibet — Dalai Lama XIII · XIV,1,tibet,Modern independent Tibet — Dalai Lama XIII · XIV
 sikkim,unresolved_polity,Sikkim (British protectorate),1,tibet,Sikkim (British protectorate)
 bhutan,unresolved_polity,Bhutan (British protectorate · Wangchuck dynasty from 1907),1,tibet,Bhutan (British protectorate · Wangchuck dynasty from 1907)
 dominion_of_india,unresolved_polity,Dominion of India,1,tibet,Dominion of India
 tibet_autonomous_region,unresolved_polity,Tibet Autonomous Region · Qinghai Province · Sichuan Province,1,tibet,Tibet Autonomous Region · Qinghai Province · Sichuan Province
-kingdom_of_bhutan,unresolved_polity,Kingdom of Bhutan (independent from 1949),1,tibet,Kingdom of Bhutan (independent from 1949) | Kingdom of Bhutan
+kingdom_of_bhutan,existing_polity,Kingdom of Bhutan (independent from 1949),1,tibet,Kingdom of Bhutan (independent from 1949) | Kingdom of Bhutan
 illyrian_tribes,unresolved_polity,Illyrian tribes (Labeates · Ardiaei),1,albania,Illyrian tribes (Labeates · Ardiaei) | Illyrian tribes · Greek colonies (Apollonia · Buthrotum)
 taulantii_greek_colony_epidamnosdyrrachium,unresolved_polity,Taulantii (Illyrian) · Greek colony Epidamnos/Dyrrachium,1,albania,Taulantii (Illyrian) · Greek colony Epidamnos/Dyrrachium
 illyrian_interior,unresolved_polity,Illyrian interior · Enchelei · Macedonian border,1,albania,Illyrian interior · Enchelei · Macedonian border

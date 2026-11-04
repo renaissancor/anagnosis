@@ -20,7 +20,7 @@ A row exists only if all of these hold:
 
 **FK-driven scoping, applied honestly.** The rule says entities earn rows from inbound foreign keys. **Nothing points at `figure`**: no other table has a `figure_id` column today (`city.md` mentions `figure.seat_city_id` and `birth_city_id`, but those columns do not exist). So figure has **0 rows with an inbound reference**, and the only test that can be applied is the outbound one above plus the editorial test in item 2. This is an open question (section 7).
 
-**Coverage today:** 286 rows over 132 of 481 polities; **349 polities (73%) have no figure**. Most polities have 1 to 2 figures; the maximum is 5 (`kingdom_of_england`, `kingdom_of_france`). Sparse coverage is expected (`CLAUDE.md`: the dataset is an architecture for curation).
+**Coverage today:** 286 rows over 132 of 488 polities; **356 polities (73%) have no figure**. Most polities have 1 to 2 figures; the maximum is 5 (`kingdom_of_england`, `kingdom_of_france`). Sparse coverage is expected (`CLAUDE.md`: the dataset is an architecture for curation).
 
 ---
 
@@ -90,7 +90,7 @@ PROPOSED: suffix the second and later rows with the polity's short name and keep
 - For lifespans and roles, ask `source-wikipedia` and `source-wikidata` (`.claude/agents/source-wikipedia.md`, `source-wikidata.md`). Wikidata (CC0) is safe for birth and death years. Wikipedia is CC BY-SA 4.0, so write `significance` in your own words, never paste a sentence.
 - `source-periodo` may help with period names; `source-pleiades` with ancient places; `source-cliopatria` and `source-glottolog` and `source-wals` do not cover people.
 - **`csvs/` is the source of truth.** Sources are cited, never imported, and disagreement between a source and a row is resolved by a human, not by overwriting.
-- **A `fact_source` row is needed** when a lifespan, role or the person's identity came from an external source, or when you link the person to a Wikidata QID. The entity key is `figure`/`<figure_id>`, and `field` is `id` for an identity-only link or `years` for the dates. Today there are **0** figure provenance rows (all 290 `fact_source` rows are `id`/`wikidata` links, 288 on `polity` and 2 on `ethnicity`). Hand-written rows with no outside source need no row.
+- **A `fact_source` row is needed** when a lifespan, role or the person's identity came from an external source, or when you link the person to a Wikidata QID. The entity key is `figure`/`<figure_id>`, and `field` is `id` for an identity-only link or `years` for the dates. Today there are **0** figure provenance rows (of the 310 `fact_source` rows, 290 are `id`/`wikidata` links, 288 on `polity` and 2 on `ethnicity`; the other 20 cite Wikidata for polity fields). Hand-written rows with no outside source need no row.
 
 ---
 

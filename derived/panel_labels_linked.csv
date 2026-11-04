@@ -616,16 +616,16 @@ somalia,south,3,1,Age of Exploration,Omani Sultanate (Zanzibar) coastal influenc
 somalia,dji,4,0,Colonial Era,French Somaliland (Djibouti),1883,1,french_somaliland,linked,,unresolved_link
 somalia,north,4,0,Colonial Era,British Somaliland,1884,1,british_somaliland,linked,,unresolved_link
 somalia,north,4,1,Colonial Era,Dervish State (Mohammed Abdullah Hassan),1895–1920,1,dervish_state,linked,,unresolved_link
-somalia,south,4,0,Colonial Era,Italian Somaliland,1889,1,italian_somaliland,linked,,unresolved_link
+somalia,south,4,0,Colonial Era,Italian Somaliland,1889,1,italian_somaliland,linked,italian_somaliland,existing_polity
 somalia,south,4,1,Colonial Era,Italian East Africa,1936–1941,1,italian_east_africa,linked,italian_east_africa,existing_polity
 somalia,dji,5,0,,French Somaliland (continuing),,1,french_somaliland,linked,,unresolved_link
 somalia,north,5,0,,British Somaliland (restored 1941),,1,,event,british_somaliland,event
 somalia,south,5,0,,UN Trust Territory of Somalia,1950–1960 (Italian admin),1,un_trust_territory_of_somalia,linked,,unresolved_link
 somalia,dji,6,0,Contemporary,French Somaliland → Republic of Djibouti,independence 1977,1,,polity,french_somaliland_republic_of_djibouti,polity
-somalia,north,6,0,Contemporary,Somali Republic (union with south),1960,1,somali_republic,linked,,unresolved_link
+somalia,north,6,0,Contemporary,Somali Republic (union with south),1960,1,somali_republic,linked,somali_republic,existing_polity
 somalia,north,6,1,Contemporary,Somali Democratic Republic (Barre),1969–1991,1,somali_democratic_republic,linked,,unresolved_link
 somalia,north,6,2,Contemporary,Republic of Somaliland (unrecognised),1991–,1,republic_of_somaliland,linked,,unresolved_link
-somalia,south,6,0,Contemporary,Somali Republic (1960),,1,somali_republic,linked,,unresolved_link
+somalia,south,6,0,Contemporary,Somali Republic (1960),,1,somali_republic,linked,somali_republic,existing_polity
 somalia,south,6,1,Contemporary,Somali Democratic Republic,1969–1991,1,somali_democratic_republic,linked,,unresolved_link
 somalia,south,6,2,Contemporary,Somali civil war,1991–,1,,event,somali_civil_war,event
 somalia,dji,7,0,,Republic of Djibouti — French military base · strategic port,,1,republic_of_djibouti,linked,,unresolved_link
@@ -663,14 +663,14 @@ swahili_coast,north,5,0,Zanzibar Sultanate (c. 1840–1890),Northern coast — n
 swahili_coast,central,5,0,Zanzibar Sultanate (c. 1840–1890),Mombasa under Zanzibar Sultanate,Mazrui defeated by Busaidi (1837); Mombasa incorporated,1,zanzibar_sultanate,linked,,unresolved_link
 swahili_coast,south,5,0,Zanzibar Sultanate (c. 1840–1890),Kilwa & Sofala under Zanzibar Sultanate,clove plantations; slave trade routes to interior,1,zanzibar_sultanate,linked,,unresolved_link
 swahili_coast,zanzibar,5,0,Zanzibar Sultanate (c. 1840–1890),Zanzibar Sultanate — capital (Seyyid Said moves court 1840),clove plantations peak; slave market at Stone Town,1,zanzibar_sultanate,linked,,unresolved_link
-swahili_coast,north,6,0,Colonial Scramble (c. 1884–1963),Italian Somaliland — Mogadishu,1889; Berlin Conference 1884–1885,1,italian_somaliland,linked,,unresolved_link
+swahili_coast,north,6,0,Colonial Scramble (c. 1884–1963),Italian Somaliland — Mogadishu,1889; Berlin Conference 1884–1885,1,italian_somaliland,linked,italian_somaliland,existing_polity
 swahili_coast,north,6,1,Colonial Scramble (c. 1884–1963),British Kenya coast — Lamu & Pate,,1,british_east_africa,linked,,unresolved_link
 swahili_coast,central,6,0,Colonial Scramble (c. 1884–1963),British East Africa (Kenya) — Mombasa as main port,Uganda Railway terminus; East Africa Protectorate 1895,1,british_east_africa,linked,,unresolved_link
 swahili_coast,south,6,0,Colonial Scramble (c. 1884–1963),German East Africa (Tanganyika) — Kilwa & Sofala coast,1885–1919; Maji Maji Rebellion 1905–1907,1,german_east_africa,linked,,unresolved_link
 swahili_coast,south,6,1,Colonial Scramble (c. 1884–1963),British Tanganyika (League of Nations mandate),1919–1961,1,british_tanganyika,linked,,unresolved_link
 swahili_coast,south,6,2,Colonial Scramble (c. 1884–1963),Comoros — French colony,1912,1,french_comoros,linked,,unresolved_link
 swahili_coast,zanzibar,6,0,Colonial Scramble (c. 1884–1963),British Protectorate of Zanzibar,1890–1963; Heligoland–Zanzibar Treaty 1890; slave trade abolished 1897,1,british_zanzibar,linked,,unresolved_link
-swahili_coast,north,7,0,Independence & Modern (1960s–),Somalia (independent 1960) — Mogadishu capital,,1,somali_republic,linked,,unresolved_link
+swahili_coast,north,7,0,Independence & Modern (1960s–),Somalia (independent 1960) — Mogadishu capital,,1,somali_republic,linked,somali_republic,existing_polity
 swahili_coast,north,7,1,Independence & Modern (1960s–),Kenya — Lamu & northern coast,independence 1963,1,republic_of_kenya,linked,,unresolved_link
 swahili_coast,central,7,0,Independence & Modern (1960s–),Republic of Kenya — Mombasa port,independence 1963,1,republic_of_kenya,linked,,unresolved_link
 swahili_coast,south,7,0,Independence & Modern (1960s–),Tanganyika independent (1961) → Tanzania (1964),,1,united_republic_of_tanzania,linked,,unresolved_link
@@ -1113,60 +1113,60 @@ tibet,bhutan,1,0,,Mon-yul Kingdom,,1,mon_yul_kingdom,linked,,unresolved_link
 tibet,ladakh,2,0,,Tibetan Empire — Songtsen Gampo · Trisong Detsen,c.618–842,5,tibetan_empire,linked,tibetan_empire,existing_polity
 tibet,sikkim,2,0,,Tibetan Empire (periphery),,1,tibetan_empire,linked,tibetan_empire,existing_polity
 tibet,bhutan,2,0,,Tibetan Empire (periphery),,1,tibetan_empire,linked,tibetan_empire,existing_polity
-tibet,ladakh,3,0,9th–13th c.,Ladakh Kingdom (Maryul),c.842 onward,1,ladakh_kingdom,linked,,unresolved_link
+tibet,ladakh,3,0,9th–13th c.,Ladakh Kingdom (Maryul),c.842 onward,1,ladakh_kingdom,linked,ladakh_kingdom,existing_polity
 tibet,ngari,3,0,9th–13th c.,Guge-Purang Kingdom,c.842–1630,1,guge_purang_kingdom,linked,,unresolved_link
 tibet,amdo,3,0,9th–13th c.,Tangut peoples,,1,tangut_peoples,linked,,unresolved_link
 tibet,amdo,3,1,9th–13th c.,Western Xia (Tangut Empire),1038–1227,1,western_xia,linked,western_xia,existing_polity
 tibet,kham,3,0,9th–13th c.,Tibetan fragmentation era,c.842–1253; Buddhist sectarian formation period; Mongol invasion (1240s),2,,event,tibetan_fragmentation_era,event
 tibet,sikkim,3,0,9th–13th c.,Tribal communities,,1,tribal_communities,linked,,unresolved_link
 tibet,bhutan,3,0,9th–13th c.,Mon-yul / tribal communities,,1,mon_yul,linked,,unresolved_link
-tibet,ladakh,4,0,,Ladakh Kingdom (continuing),,1,ladakh_kingdom,linked,,unresolved_link
-tibet,ngari,4,0,,Guge Kingdom,c.842–1630,1,guge_kingdom,linked,,unresolved_link
+tibet,ladakh,4,0,,Ladakh Kingdom (continuing),,1,ladakh_kingdom,linked,ladakh_kingdom,existing_polity
+tibet,ngari,4,0,,Guge Kingdom,c.842–1630,1,guge_kingdom,linked,guge_kingdom,existing_polity
 tibet,ngari,4,1,,Purang Kingdom,,1,purang_kingdom,linked,,unresolved_link
 tibet,amdo,4,0,,Yuan Empire — Xuanzheng Yuan (Bureau of Buddhist and Tibetan Affairs),1271–1368,3,yuan_dynasty,linked,yuan_dynasty,existing_polity
 tibet,amdo,4,1,,Tibet under Yuan rule,,3,tibet_under_yuan_rule,linked,,unresolved_link
 tibet,sikkim,4,0,,Indigenous chiefs,,1,indigenous_chiefs,linked,,unresolved_link
 tibet,bhutan,4,0,,Indigenous chiefs,,1,indigenous_chiefs,linked,,unresolved_link
-tibet,ladakh,5,0,14th–16th c.,Ladakh Kingdom,,1,ladakh_kingdom,linked,,unresolved_link
-tibet,ngari,5,0,14th–16th c.,Guge Kingdom,,1,guge_kingdom,linked,,unresolved_link
+tibet,ladakh,5,0,14th–16th c.,Ladakh Kingdom,,1,ladakh_kingdom,linked,ladakh_kingdom,existing_polity
+tibet,ngari,5,0,14th–16th c.,Guge Kingdom,,1,guge_kingdom,linked,guge_kingdom,existing_polity
 tibet,amdo,5,0,14th–16th c.,Sakya dynasty (Yuan appointees),1268–1354,3,sakya_dynasty,linked,,unresolved_link
 tibet,amdo,5,1,14th–16th c.,Indigenous local rulers,,3,indigenous_local_rulers,linked,,unresolved_link
 tibet,amdo,5,2,14th–16th c.,Phagmodrupa dynasty,1354–1435,3,phagmodrupa_dynasty,linked,,unresolved_link
 tibet,sikkim,5,0,14th–16th c.,Tribal communities,,1,tribal_communities,linked,,unresolved_link
 tibet,bhutan,5,0,14th–16th c.,Tribal communities,,1,tribal_communities,linked,,unresolved_link
-tibet,ladakh,6,0,,Ladakh Kingdom,,1,ladakh_kingdom,linked,,unresolved_link
-tibet,ngari,6,0,,Guge Kingdom,,1,guge_kingdom,linked,,unresolved_link
+tibet,ladakh,6,0,,Ladakh Kingdom,,1,ladakh_kingdom,linked,ladakh_kingdom,existing_polity
+tibet,ngari,6,0,,Guge Kingdom,,1,guge_kingdom,linked,guge_kingdom,existing_polity
 tibet,amdo,6,0,,Rinpungpa dynasty,1435–1565; Gelug school rise · Dalai Lama institution,3,rinpungpa_dynasty,linked,,unresolved_link
 tibet,amdo,6,1,,Tsangpa dynasty,1565–1642,3,tsangpa_dynasty,linked,,unresolved_link
 tibet,sikkim,6,0,,Tribal communities,,1,tribal_communities,linked,,unresolved_link
 tibet,bhutan,6,0,,Tribal communities,,1,tribal_communities,linked,,unresolved_link
-tibet,ladakh,7,0,17th c.,Ladakh Kingdom,,1,ladakh_kingdom,linked,,unresolved_link
-tibet,ngari,7,0,17th c.,Guge Kingdom (falls c.1630),,1,guge_kingdom,linked,,unresolved_link
+tibet,ladakh,7,0,17th c.,Ladakh Kingdom,,1,ladakh_kingdom,linked,ladakh_kingdom,existing_polity
+tibet,ngari,7,0,17th c.,Guge Kingdom (falls c.1630),,1,guge_kingdom,linked,guge_kingdom,existing_polity
 tibet,amdo,7,0,17th c.,Khoshut Khanate (Gushi Khan),1642–1717; Dalai Lama III / Altan Khan alliance; Namgyal dynasty (Ladakh-Ngari border),1,khoshut_khanate,linked,khoshut_khanate,existing_polity
-tibet,kham,7,0,17th c.,Ganden Phodrang — Dalai Lama V ('Great Fifth'),from 1642,2,ganden_phodrang,linked,,unresolved_link
-tibet,sikkim,7,0,17th c.,Sikkim Kingdom (Namgyal dynasty),from 1642,1,sikkim_kingdom,linked,,unresolved_link
+tibet,kham,7,0,17th c.,Ganden Phodrang — Dalai Lama V ('Great Fifth'),from 1642,2,ganden_phodrang,linked,ganden_phodrang,existing_polity
+tibet,sikkim,7,0,17th c.,Sikkim Kingdom (Namgyal dynasty),from 1642,1,sikkim_kingdom,linked,sikkim_kingdom,existing_polity
 tibet,bhutan,7,0,17th c.,Druk Desi regime (Zhabdrung Ngawang Namgyal),from 1634,1,druk_desi_regime,linked,,unresolved_link
-tibet,ladakh,8,0,18th c.,Ladakh Kingdom (declining),,1,,polity,ladakh_kingdom,polity
-tibet,ngari,8,0,18th c.,Ganden Phodrang — Dalai Lama VII,,1,ganden_phodrang,linked,,unresolved_link
+tibet,ladakh,8,0,18th c.,Ladakh Kingdom (declining),,1,,polity,ladakh_kingdom,existing_polity
+tibet,ngari,8,0,18th c.,Ganden Phodrang — Dalai Lama VII,,1,ganden_phodrang,linked,ganden_phodrang,existing_polity
 tibet,amdo,8,0,18th c.,Qing intervention — Amban system established,from 1720; Dzungar Khanate invasions (1717–1720); Dzungar-Qing/Tibet Wars,1,qing_dynasty,linked,qing_dynasty,existing_polity
 tibet,kham,8,0,18th c.,Tibet under Qing suzerainty,,2,qing_dynasty,linked,qing_dynasty,existing_polity
-tibet,kham,8,1,18th c.,Ganden Phodrang — Kashag (council) governance,,2,ganden_phodrang,linked,,unresolved_link
-tibet,sikkim,8,0,18th c.,Sikkim Kingdom,,1,sikkim_kingdom,linked,,unresolved_link
+tibet,kham,8,1,18th c.,Ganden Phodrang — Kashag (council) governance,,2,ganden_phodrang,linked,ganden_phodrang,existing_polity
+tibet,sikkim,8,0,18th c.,Sikkim Kingdom,,1,sikkim_kingdom,linked,sikkim_kingdom,existing_polity
 tibet,bhutan,8,0,18th c.,Druk Desi regime,,1,druk_desi_regime,linked,,unresolved_link
 tibet,ladakh,9,0,19th c.,Fragmentation era,,1,,event,fragmentation_era,event
 tibet,ladakh,9,1,19th c.,Sikh Empire (conquers Ladakh),1834–1846,1,sikh_empire,linked,sikh_empire,existing_polity
 tibet,ladakh,9,2,19th c.,Jammu & Kashmir (Dogra princely state),1846–1947,1,jammu_kashmir,linked,jammu_kashmir,existing_polity
 tibet,ngari,9,0,19th c.,Tibet under Qing — Amban governance,Gurkha-Qing/Tibet Wars (1788–1792),4,qing_dynasty,linked,qing_dynasty,existing_polity
-tibet,ngari,9,1,19th c.,Ganden Phodrang (continuing),,4,ganden_phodrang,linked,,unresolved_link
+tibet,ngari,9,1,19th c.,Ganden Phodrang (continuing),,4,ganden_phodrang,linked,ganden_phodrang,existing_polity
 tibet,sikkim,9,0,19th c.,Gurkha Kingdom (southern raids),,1,,polity,gurkha_kingdom,polity
 tibet,sikkim,9,1,19th c.,British East India Company / British Raj,,1,british_raj,linked,british_raj,existing_polity
-tibet,sikkim,9,2,19th c.,Sikkim Kingdom (British protectorate),,1,sikkim_kingdom,linked,,unresolved_link
+tibet,sikkim,9,2,19th c.,Sikkim Kingdom (British protectorate),,1,sikkim_kingdom,linked,sikkim_kingdom,existing_polity
 tibet,bhutan,9,0,19th c.,British Indian Empire (Bhutan — protectorate),,1,british_raj,linked,british_raj,existing_polity
 tibet,ladakh,10,0,1904–1948,British Indian Empire,,1,british_raj,linked,british_raj,existing_polity
 tibet,ladakh,10,1,1904–1948,Jammu & Kashmir (princely state),,1,jammu_kashmir,linked,jammu_kashmir,existing_polity
 tibet,ngari,10,0,1904–1948,Modern independent Tibet — Dalai Lama XIII · XIV,1913–1950; British Younghusband expedition (1904); Qing annexation of parts of Amdo & Kham; Dalai Lama XIII — Tibetan Great Uprising,4,modern_independent_tibet,linked,,unresolved_link
 tibet,sikkim,10,0,1904–1948,British Indian Empire,,1,british_raj,linked,british_raj,existing_polity
-tibet,sikkim,10,1,1904–1948,Sikkim (British protectorate),,1,sikkim,linked,,unresolved_link
+tibet,sikkim,10,1,1904–1948,Sikkim (British protectorate),,1,sikkim,linked,sikkim_kingdom,existing_polity
 tibet,bhutan,10,0,1904–1948,Bhutan (British protectorate · Wangchuck dynasty from 1907),,1,bhutan,linked,,unresolved_link
 tibet,ladakh,11,0,1949–present,Dominion of India,1947–1950,1,dominion_of_india,linked,,unresolved_link
 tibet,ladakh,11,1,1949–present,Jammu & Kashmir (princely state — accession dispute),,1,jammu_kashmir,linked,jammu_kashmir,existing_polity
@@ -1174,13 +1174,13 @@ tibet,ngari,11,0,1949–present,People's Republic of China,from 1950,4,peoples_r
 tibet,ngari,11,1,1949–present,Tibet Autonomous Region · Qinghai Province · Sichuan Province,,4,tibet_autonomous_region,linked,,unresolved_link
 tibet,ngari,11,2,1949–present,"Central Tibetan Administration (government-in-exile, Dharamsala)",from 1959,4,,polity,central_tibetan_administration,polity
 tibet,sikkim,11,0,1949–present,Dominion of India,1947–1950,1,dominion_of_india,linked,,unresolved_link
-tibet,sikkim,11,1,1949–present,Sikkim Kingdom (Indian protectorate),1950–1975,1,sikkim_kingdom,linked,,unresolved_link
-tibet,bhutan,11,0,1949–present,Kingdom of Bhutan (independent from 1949),,1,kingdom_of_bhutan,linked,,unresolved_link
+tibet,sikkim,11,1,1949–present,Sikkim Kingdom (Indian protectorate),1950–1975,1,sikkim_kingdom,linked,sikkim_kingdom,existing_polity
+tibet,bhutan,11,0,1949–present,Kingdom of Bhutan (independent from 1949),,1,kingdom_of_bhutan,linked,kingdom_of_bhutan,existing_polity
 tibet,ladakh,12,0,,Republic of India,,1,republic_of_india,linked,republic_of_india,existing_polity
 tibet,ladakh,12,1,,Jammu & Kashmir State → Ladakh Union Territory,,1,,polity,jammu_kashmir_state_ladakh_union_territory,polity
 tibet,ngari,12,0,,People's Republic of China (continuing),,4,peoples_republic_of_china,linked,peoples_republic_of_china,existing_polity
 tibet,sikkim,12,0,,Republic of India — Sikkim State (from 1975),,1,republic_of_india,linked,republic_of_india,existing_polity
-tibet,bhutan,12,0,,Kingdom of Bhutan,,1,kingdom_of_bhutan,linked,,unresolved_link
+tibet,bhutan,12,0,,Kingdom of Bhutan,,1,kingdom_of_bhutan,linked,kingdom_of_bhutan,existing_polity
 albania,north,0,0,Ancient,Illyrian tribes (Labeates · Ardiaei),,1,illyrian_tribes,linked,,unresolved_link
 albania,north,0,1,Ancient,Illyrian Kingdom (Shkodër capital),c.400–168 BCE,1,illyrian_kingdom,linked,illyrian_kingdom,existing_polity
 albania,cent,0,0,Ancient,Taulantii (Illyrian) · Greek colony Epidamnos/Dyrrachium,"Durrës, c.625 BCE",1,taulantii_greek_colony_epidamnosdyrrachium,linked,,unresolved_link

@@ -166,8 +166,10 @@ adal_sultanate,existing_polity,Adal Sultanate,,2,somalia,Adal Sultanate (capital
 ajuran_sultanate,existing_polity,Ajuran Sultanate,,2,somalia,Ajuran Sultanate (Somali) | Ajuran Sultanate declining
 ottoman_suzerainty,unclassified,Ottoman suzerainty,,1,somalia,Ottoman suzerainty (Zeila)
 omani_sultanate_coastal_influence,polity,Omani Sultanate (Zanzibar) coastal influence,Omani Sultanate coastal influence,1,somalia,Omani Sultanate (Zanzibar) coastal influence
+italian_somaliland,existing_polity,Italian Somaliland,,2,somalia|swahili_coast,Italian Somaliland | Italian Somaliland — Mogadishu
 british_somaliland,event,British Somaliland,,1,somalia,British Somaliland (restored 1941)
 french_somaliland_republic_of_djibouti,polity,French Somaliland → Republic of Djibouti,French Somaliland → Republic of Djibouti,1,somalia,French Somaliland → Republic of Djibouti
+somali_republic,existing_polity,Somali Republic,,3,somalia|swahili_coast,Somali Republic (union with south) | Somali Republic (1960) | Somalia (independent 1960) — Mogadishu capital
 somali_civil_war,event,Somali civil war,,1,somalia,Somali civil war
 al_shabaab_insurgency,event,Al-Shabaab insurgency,,1,somalia,Al-Shabaab insurgency (Al-Qaeda affiliate)
 yellow_river_civilization_culture,culture,Yellow River Civilization,,1,china,Yellow River Civilization (黄河文明)
@@ -288,14 +290,18 @@ bogd_khanate_restored,polity,Bogd Khanate restored,Bogd Khanate restored,1,mongo
 mongolian_peoples_republic,existing_polity,Mongolian People's Republic,,3,mongolia,Mongolian People's Republic | Inner Mongolian People's Republic
 teyurang_culture,culture,Teyurang culture,,1,tibet,Teyurang culture
 tuyuhun,unclassified,Tuyuhun,,1,tibet,Tuyuhun (frontier)
+ladakh_kingdom,existing_polity,Ladakh Kingdom,,6,tibet,Ladakh Kingdom (Maryul) | Ladakh Kingdom (continuing) | Ladakh Kingdom | Ladakh Kingdom (declining)
 tibetan_fragmentation_era,event,Tibetan fragmentation era,,1,tibet,Tibetan fragmentation era
-ladakh_kingdom,polity,Ladakh Kingdom (declining),Ladakh Kingdom,1,tibet,Ladakh Kingdom (declining)
+guge_kingdom,existing_polity,Guge Kingdom,,4,tibet,Guge Kingdom | Guge Kingdom (falls c.1630)
+ganden_phodrang,existing_polity,Ganden Phodrang,,4,tibet,Ganden Phodrang — Dalai Lama V ('Great Fifth') | Ganden Phodrang — Dalai Lama VII | Ganden Phodrang — Kashag (council) governance | Ganden Phodrang (continuing)
+sikkim_kingdom,existing_polity,Sikkim Kingdom,,5,tibet,Sikkim Kingdom (Namgyal dynasty) | Sikkim Kingdom | Sikkim Kingdom (British protectorate) | Sikkim (British protectorate) | Sikkim Kingdom (Indian protectorate)
 fragmentation_era,event,Fragmentation era,,1,tibet,Fragmentation era
 sikh_empire,existing_polity,Sikh Empire,,5,tibet|india|pakistan,Sikh Empire (conquers Ladakh) | Sikh Empire — Ranjit Singh (Punjab) | Sikh Empire (Sindh frontier raids) | Sikh Empire — Ranjit Singh (Lahore) | Sikh Empire — conquers Kashmir (1819)
 jammu_kashmir,existing_polity,Jammu & Kashmir,,4,tibet|pakistan,Jammu & Kashmir (Dogra princely state) | Jammu & Kashmir (princely state) | Jammu & Kashmir (princely state — accession dispute) | Jammu & Kashmir (Dogra dynasty — British princely state)
 gurkha_kingdom,polity,Gurkha Kingdom (southern raids),Gurkha Kingdom,1,tibet,Gurkha Kingdom (southern raids)
 british_raj,existing_polity,British East India Company / British Raj,,12,tibet|india|pakistan,British East India Company / British Raj | British Indian Empire (Bhutan — protectorate) | British Indian Empire | British Bengal (Company rule) | British East India Company — Company Raj | British Indian Empire (British Raj) | British Raj — World War I · Non-cooperation · Quit India · World War II | British East India Company — conquers Sindh (1843) | British East India Company — Anglo-Sikh Wars (1845–49) | British Indian Empire — Punjab Province
 central_tibetan_administration,polity,"Central Tibetan Administration (government-in-exile, Dharamsala)",Central Tibetan Administration,1,tibet,"Central Tibetan Administration (government-in-exile, Dharamsala)"
+kingdom_of_bhutan,existing_polity,Kingdom of Bhutan,,2,tibet,Kingdom of Bhutan (independent from 1949) | Kingdom of Bhutan
 republic_of_india,existing_polity,Republic of India,,3,tibet|india,Republic of India | Republic of India — Sikkim State (from 1975)
 jammu_kashmir_state_ladakh_union_territory,polity,Jammu & Kashmir State → Ladakh Union Territory,Jammu & Kashmir State → Ladakh Union Territory,1,tibet,Jammu & Kashmir State → Ladakh Union Territory
 illyrian_kingdom,existing_polity,Illyrian Kingdom,,6,albania|croatia|slovenia,Illyrian Kingdom (Shkodër capital) | Illyrian Kingdom — Queen Teuta | Illyrian Kingdom | Illyrian Kingdom · Pannonian tribes (Colapiani) | Illyrian Kingdom (Austrian)
