@@ -332,34 +332,25 @@ const headers = [
   'temporal_gap_years',
 ];
 
-function escapeCSV(val) {
-  const s = String(val);
-  return (s.includes(',') || s.includes('"') || s.includes('\n'))
-    ? `"${s.replace(/"/g, '""')}"` : s;
-}
-
-const csvLines = [headers.join(',')];
-edges.forEach(e => {
-  csvLines.push([
-    e.from,
-    escapeCSV(e.from_name),
-    e.to,
-    escapeCSV(e.to_name),
-    e.territorial_direction,
-    e.strength,
-    e.shared_territories.join('|'),
-    e.shared_territories.length,
-    e.same_ethnicity  ? 1 : 0,
-    e.related_ethnicity ? 1 : 0,
-    e.same_language   ? 1 : 0,
-    e.same_religion   ? 1 : 0,
-    e.temporal_gap,
-  ].join(','));
-});
+const rows = edges.map(e => ({
+  from_polity_id:         e.from,
+  from_name:              e.from_name,
+  to_polity_id:           e.to,
+  to_name:                e.to_name,
+  territorial_direction:  e.territorial_direction,
+  strength:               e.strength,
+  shared_territories:     e.shared_territories.join('|'),
+  shared_territory_count: e.shared_territories.length,
+  same_ethnicity:         e.same_ethnicity    ? 1 : 0,
+  related_ethnicity:      e.related_ethnicity ? 1 : 0,
+  same_language:          e.same_language     ? 1 : 0,
+  same_religion:          e.same_religion     ? 1 : 0,
+  temporal_gap_years:     e.temporal_gap,
+}));
 
 const csvPath = path.join(__dirname, '../derived/polity_succession.csv');
 fs.mkdirSync(path.dirname(csvPath), { recursive: true });
-fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+csv.writeFile(csvPath, rows, headers);
 
 // ── Stats ───────────────────────────────────────────────────────────────────
 
