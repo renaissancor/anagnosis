@@ -30,20 +30,20 @@ Figures below were measured on 2026-11-05 through `code/lib/csv.js`, after the n
 
 | Strategy | Lines | Condition, for A before B | Requires shared territory? |
 |---|---:|---|---|
-| Territory | 144-174 | On one territory, B's period starts no more than 150 years after A's period ends | It is the territory test |
-| Same ethnicity | 189-202 | Same `id_ruling_ethnicity`; gap at most 300 | Yes, anywhere in either lifetime |
-| Related ethnicity | 205-221 | Shared ancestor; absolute gap at most 200 | Yes. **Never fires, see below** |
-| Same language | 233-243 | Same `id_ruling_language`; gap at most 300 | **No** |
-| Same religion | 255-271 | Same `id_ruling_religion`; gap at most 200 | Yes, anywhere in either lifetime |
+| Territory | 141-171 | On one territory, B's period starts no more than 150 years after A's period ends | It is the territory test |
+| Same ethnicity | 186-199 | Same `id_ruling_ethnicity`; gap at most 300 | Yes, anywhere in either lifetime |
+| Related ethnicity | 202-218 | Shared ancestor; absolute gap at most 200 | Yes. **Never fires, see below** |
+| Same language | 230-240 | Same `id_ruling_language`; gap at most 300 | **No** |
+| Same religion | 252-268 | Same `id_ruling_religion`; gap at most 200 | Yes, anywhere in either lifetime |
 
 There is no minimum score. Any one test creates a row.
 
 ### Why almost any overlap yields an edge
 
-- **Negative gaps pass.** The territory test only bounds the gap from above (line 159), so full contemporaries qualify. Nothing requires A to have ended.
-- **An ongoing period never stops the loop.** With an empty `end_year`, the gap is forced to 0 (line 158), so that period links to every later period on the territory.
+- **Negative gaps pass.** The territory test only bounds the gap from above (line 156), so full contemporaries qualify. Nothing requires A to have ended.
+- **An ongoing period never stops the loop.** With an empty `end_year`, the gap is forced to 0 (line 155), so that period links to every later period on the territory.
 - **Territories are coarse.** There are 56 macro-zones shared by 486 polities, so a rival, a colonial occupier and a successor look alike.
-- **The overlap loop is redundant.** Lines 164-172 add nothing: a scratch copy without them produced an identical file. The first loop already covers every overlap.
+- **The overlap loop is redundant.** Lines 161-169 add nothing: a scratch copy without them produced an identical file. The first loop already covers every overlap.
 
 ### Columns
 
@@ -51,12 +51,12 @@ There is no minimum score. Any one test creates a row.
 |---|---|---|
 | `from_polity_id`, `to_polity_id` | Territory strategy: earlier period start on that territory. Other strategies: earlier polity start | Ordering, not flow. 28 pairs exist in both directions. 23 rows have `to` founded before `from` |
 | `from_name`, `to_name` | Copied from `polity.csv` | Labels |
-| `territorial_direction` | Counts distinct territories over each polity's whole life (lines 288-297). No shared territory is `displacement`; a larger `to` is `expansion`, smaller is `contraction`, equal is `same`; either side empty is `unknown` | A size comparison, not an event. `ottoman_empire → vichy_france` is a "contraction" |
-| `strength` | Number of `shared_territories` + 3 same ethnicity + 1 related + 2 language + 1 religion + 2 if the absolute gap is at most 10, or 1 if at most 50 (lines 300-307) | A weighted count, despite the comment on line 299 calling it a number of signals |
+| `territorial_direction` | Counts distinct territories over each polity's whole life (lines 285-294). No shared territory is `displacement`; a larger `to` is `expansion`, smaller is `contraction`, equal is `same`; either side empty is `unknown` | A size comparison, not an event. `ottoman_empire → vichy_france` is a "contraction" |
+| `strength` | Number of `shared_territories` + 3 same ethnicity + 1 related + 2 language + 1 religion + 2 if the absolute gap is at most 10, or 1 if at most 50 (lines 297-304) | A weighted count, despite the comment on line 296 calling it a number of signals |
 | `shared_territories`, `shared_territory_count` | Territories where the territory strategy fired | **Not** the intersection of two polities' territories. 340 rows have an empty list although the polities do share territory |
 | `same_ethnicity`, `same_language`, `same_religion` | Id equality, subject to the table above | Label match. Ids include clusters: `turkic_cluster` covers 42 polities, so `mamluk_sultanate → ottoman_empire` is "same ethnicity" |
 | `related_ethnicity` | Dead, see below | Ignore |
-| `temporal_gap_years` | `to.start - from.end`, over polity lifetimes. An ongoing `from` gives 0 (line 285) | Negative means overlap. Thresholds above use territory periods, so this column does not show why a territory edge qualified |
+| `temporal_gap_years` | `to.start - from.end`, over polity lifetimes. An ongoing `from` gives 0 (line 282) | Negative means overlap. Thresholds above use territory periods, so this column does not show why a territory edge qualified |
 
 ### Profile
 
@@ -81,7 +81,7 @@ A candidate says two polities co-occurred on a macro-zone within a time window, 
 
 ### Known defect: `related_ethnicity` is dead
 
-The generator maps polities through `old_id` (lines 38-39, 44), and `ethnicity.csv` no longer has that column. It also calls `parseInt` on ids that are now strings (lines 62, 69). `eth` is therefore always null, and lines 205-221 never add anything. Every value in the column is 0.
+The generator maps polities through `old_id` (lines 35-36, 41), and `ethnicity.csv` no longer has that column. It also calls `parseInt` on ids that are now strings (lines 59, 66). `eth` is therefore always null, and lines 202-218 never add anything. Every value in the column is 0.
 
 A scratch patch, run before the non-polity migration on the 4,107-edge file, resolved string ids, set the flag on 651 rows and raised the total to 4,174 edges. `csvs/` and `derived/` were not changed.
 
@@ -92,10 +92,10 @@ A scratch patch, run before the non-polity migration on the 4,107-edge file, res
 | Location | What is there |
 |---|---|
 | `code/generate-successions.js` | The header says no type is emitted. No code implements one |
-| `code/generate-successions.js:273-323` | The "Classify edges" section computes only direction and strength |
-| `code/generate-successions.js:330-336` | The output has no type column |
+| `code/generate-successions.js:270-320` | The "Classify edges" section computes only direction and strength |
+| `code/generate-successions.js:327-353` | The headers, rows and write have no type column |
 | `docs/model/erd_nofk.sql`, `docs/model/erd.sql` | A `type TEXT` column on `polity_succession` |
-| `scripts/load_csvs.sql:161-165` | The insert does not set `type`, so it is always NULL |
+| `scripts/load_csvs.sql:168-175` | The insert does not set `type`, so it is always NULL |
 | `code/makejson/successions.js:18-32` | The JSON has no type field |
 | `public/polity/app.js` | The computed-evidence list words `territorial_direction` as plain text. No page colours or filters on it |
 | `csvs/city_succession.csv` | `succession_type` exists for cities only, with unrelated values: `capital_function`, `regional_center`, `merger` |
@@ -140,7 +140,7 @@ Civilization is not a node (see `civilization.md`). `source.csv` and `fact_sourc
 | city succession, typed | City → City | `city_succession.csv` (7 rows) | 1 |
 | candidate | Polity → Polity | `derived/polity_succession.csv` | 2 |
 
-`data-model.md` also lists `speaksLanguage`, `originatesIn` and `courtLanguage`, along with an `Ideology` tree and `polity.ideology`. No such columns exist. `city_succession.csv` is the only authored succession data in the repo. It reaches the database only (`scripts/load_csvs.sql:225`), with no JSON or API consumer.
+`data-model.md` also lists `speaksLanguage`, `originatesIn` and `courtLanguage`, along with an `Ideology` tree and `polity.ideology`. No such columns exist. `city_succession.csv` is the only authored succession data in the repo. It reaches the database only (`scripts/load_csvs.sql:232-235`), with no JSON or API consumer.
 
 ---
 
@@ -236,7 +236,7 @@ The validator already checks table, row, field and source. Each new table needs 
 
 Two gaps:
 
-- `source.csv` registers datasets and requires an allowlisted licence. Its only row is `wikidata`, used for identity links. A monograph or article cannot be registered today, and those are what claims will cite.
+- `source.csv` registers datasets and requires an allowlisted licence. Its only row is `wikidata`. `fact_source.csv` cites it for identity links and, at field level, for `start_year`, `end_year`, `government` and `id_ruling_language` on 12 polities (33 rows on 2026-11-05). A monograph or article cannot be registered today, and those are what claims will cite.
 - `inheritance_claim.source_id` (the inherited-from entity) and `fact_source.source_id` (the citation) share a name for different things.
 
 ### Frontend JSON
