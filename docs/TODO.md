@@ -6,7 +6,7 @@ Every known defect and open job, with its owner role and whether it needs the pr
 
 | # | Severity | Where | What | Owner role | Approval |
 |---|---|---|---|---|---|
-| 2 | Medium | `scripts/dedup_and_link.js:468`, `scripts/extract_missing_polities.js:208` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
+| 2 | Medium | `scripts/dedup_and_link.js:464`, `scripts/extract_missing_polities.js:197` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
 | 13 | High | `csvs/polity_territory.csv` | 728 of 800 territory spans only repeat the polity's whole lifespan, so timelines cannot show tenure; the UI draws these hollow | curator | Yes |
 | 7 | Medium | `scripts/validate.js` | 1,773 warnings and 1,145 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
@@ -26,6 +26,7 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 28 | Low | `docs/model/polity_dynasty.md:13-24,44` | Schema block says `start,end` but the CSV header is `start_year,end_year`; the rule that non-monarchical polities take no dynasty row is broken by 5 rows (`hasmonean_dynasty`, `almoravid_dynasty`, `teutonic_order`, `hephthalites`, `japanese_korea`) — rule or data | curator | Yes |
 | 29 | Low | `scripts/dedup_and_link.js:484` | `--dry-run` still writes `derived/canonical_entities.csv`; the usage header does not say so | build-owner | Yes |
 | 30 | Low | `derived/wikidata_candidates.csv:68` | Best match for `funan` is a 2023 journal article (Q125912311), not the polity | curator | Yes |
+| 31 | Low | `docs/model/figure.md:118`, `docs/model/graph.md:118`, `docs/model/api.md` §2.3 | Missed counts: 350 polities with no figure (now 349); polity 482 rows (now 481); `/api/polity/colors` about 15 KB, not 14 | curator, succession-curator, ui-designer | Yes |
 
 ## Open curation
 
@@ -41,7 +42,7 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | sikkim_kingdom | Sikkim Kingdom | 1642–1975 | tibet |
 | bhutan_kingdom | Kingdom of Bhutan | 1907–present | tibet |
 | hashimite_hejaz | Hashimite Kingdom of Hejaz | 1916–1925 | arabia |
-| syrian_arab_republic | Syrian Arab Republic | 1946–present | levant |
+| syrian_1st_republic | Syrian Republic | 1946–1958; 1961–1963 | levant |
 | lebanese_republic | Lebanese Republic | 1943–present | levant |
 | wattasid_dynasty | Wattasid Dynasty | 1472–1554 | morocco |
 | italian_somaliland | Italian Somaliland | | somalia, swahili_coast |
