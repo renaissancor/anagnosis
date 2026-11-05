@@ -48,8 +48,8 @@ Done means `npm test` passes and the `derived/` diff is reviewed.
 
 | Measure | Value (command) |
 |---|---|
-| Validator warnings | 1,775 (`npm run validate`) |
-| Warning baseline | 1,775 (`scripts/warning-baseline.json`) |
+| Validator warnings | 1,773 (`npm run validate`) |
+| Warning baseline | 1,773 (`scripts/warning-baseline.json`) |
 | DDL tables | 22 (`grep -ci '^create table' docs/model/erd.sql`) |
 
 ## Open questions
@@ -60,3 +60,4 @@ None recorded yet.
 
 - 2026-11-01: contract created from `ARCHITECTURE.md`, `code/README.md` and `migration/csv_workflow.md`.
 - 2026-11-05: baseline refreshed with the owner's approval after the `tibetan_plateau` and `horn_of_africa` zones and 11 new polities. Warnings 1,773 → 1,775; `no_people_no_land_edges` 1,145 → 1,184; `gap_over_200` 315 → 318; `start_inversions` 24 → 23.
+- 2026-11-05: baseline refreshed with the owner's approval after the Wattasid religion became `sunni` (Wikidata Q970799 P140; commit 78800fd). Warnings 1,775 → 1,773; `no_people_no_land_edges` 1,184 → 1,197; `gap_over_200` 318 → 324. All 19 added items have `wattasid_dynasty` as an endpoint; none were removed.
