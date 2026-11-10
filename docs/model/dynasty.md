@@ -17,7 +17,7 @@ A dynasty is **not** a polity. The Borjigin clan (Genghis Khan's family) is one 
 The dynasty–polity relationship is **many-to-many**, stored in `polity_dynasty.csv`:
 
 ```
-polity_id,dynasty_id,start,end
+polity_id,dynasty_id,start_year,end_year
 byzantine_empire,roman_julio_claudian,395,518
 ottoman_empire,ottoman,1299,1922
 golden_horde,borjigin,1227,1502
@@ -53,7 +53,7 @@ ottoman,Ottoman,turkic_cluster,anatolia,House of Osman
 ### polity_dynasty.csv (Junction Table)
 
 ```csv
-polity_id,dynasty_id,start,end
+polity_id,dynasty_id,start_year,end_year
 habsburg_monarchy,habsburg,1526,1804
 austrian_empire,habsburg,1804,1867
 austria_hungary,habsburg,1867,1918
@@ -63,8 +63,8 @@ austria_hungary,habsburg,1867,1918
 |---|---|---|
 | `polity_id` | ref → polity | The polity being ruled |
 | `dynasty_id` | ref → dynasty | The ruling dynasty |
-| `start` | integer (year) | When this dynasty began ruling this polity |
-| `end` | integer (year) | When this dynasty stopped ruling (empty = ongoing) |
+| `start_year` | integer (year) | When this dynasty began ruling this polity |
+| `end_year` | integer (year) | When this dynasty stopped ruling (empty = ongoing) |
 
 ---
 
