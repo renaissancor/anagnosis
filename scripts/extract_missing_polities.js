@@ -189,12 +189,16 @@ function main() {
   // Write mode
   if (writeMode && missing.length > 0) {
     // Stub rows carry only id and name; every other column of the file's
-    // header is left empty. csv.js serializes them; the header line and the
-    // final newline are dropped to keep the existing append behaviour.
-    const header = csv.headersOf(fs.readFileSync(CSV_PATH, 'utf8'));
+    // header is left empty. csv.js serializes them; its header line is dropped
+    // and its trailing newline kept. Existing bytes are preserved except the
+    // run of line breaks at the end of the file, which is normalised to one so
+    // the stubs follow the last existing row directly and the file ends with
+    // exactly one newline.
+    const existing = fs.readFileSync(CSV_PATH, 'utf8');
+    const header = csv.headersOf(existing);
     const text = csv.stringify(missing.map(m => ({ id: m.id, name: m.name })), header);
-    const body = text.slice(text.indexOf('\n') + 1, -1);
-    fs.appendFileSync(CSV_PATH, '\n' + body);
+    const body = text.slice(text.indexOf('\n') + 1);
+    fs.writeFileSync(CSV_PATH, existing.replace(/[\r\n]+$/, '') + '\n' + body, 'utf8');
     console.log(`\n✓ Appended ${missing.length} stub rows to polity.csv`);
     console.log('  Fill in ethnicity/language/religion/government/dates before running make:all');
   } else if (!writeMode && missing.length > 0) {

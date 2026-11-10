@@ -6,13 +6,12 @@ Every known defect and open job, with its owner role and whether it needs the pr
 
 | # | Severity | Where | What | Owner role | Approval |
 |---|---|---|---|---|---|
-| 2 | Medium | `scripts/dedup_and_link.js:464`, `scripts/extract_missing_polities.js:197` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
+| 2 | Medium | `scripts/dedup_and_link.js:464`, `scripts/extract_missing_polities.js:201` | Scripts write layer 1. Only a curator may run them, and the diff must be reviewed like a hand edit | build-owner | Yes |
 | 13 | High | `csvs/polity_territory.csv` | 740 of 812 territory spans only repeat the polity's whole lifespan, so timelines cannot show tenure; the UI draws these hollow | curator | Yes |
 | 7 | Medium | `scripts/validate.js` | 1,775 warnings and 1,184 `no_people_no_land_edges` are untriaged | curator, succession-curator | Yes |
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
 | 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | build-owner | Yes |
 | 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
-| 18 | Low | `scripts/extract_missing_polities.js:197` | `--write` leaves a blank line before appended stubs and no final newline | build-owner | Yes |
 | 19 | Low | `scripts/generate_stubs.js:232` | `derived/polity_stubs.csv` header still has `civilization_id` and `territories` and lacks `start_basis`/`end_basis` | build-owner | Yes |
 | 20 | Low | `server.js:176` | `/api/dynasty` `polity_count` counts rows, the pattern fixed in territories; latent only | ui-designer | Yes |
 | 21 | Low | `csvs/polity.csv` | `north_yuan`/`northern_yuan` and `zangid_atabegate`/`zengid_dynasty` duplicate pairs need sourced end year, language and religion before a merge | curator | Yes |
