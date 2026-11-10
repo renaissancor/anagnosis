@@ -630,7 +630,7 @@
         {
           "label": "Bhutan (British protectorate · Wangchuck dynasty from 1907)",
           "span": 1,
-          "polity": "bhutan"
+          "polity": "kingdom_of_bhutan"
         }
       ]
     },
@@ -690,7 +690,7 @@
           "span": 1
         },
         {
-          "label": "Kingdom of Bhutan (independent from 1949)",
+          "label": "Kingdom of Bhutan (treaty of 1949)",
           "span": 1,
           "polity": "kingdom_of_bhutan"
         }

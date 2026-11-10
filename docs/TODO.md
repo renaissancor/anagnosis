@@ -24,7 +24,6 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 31 | Low | `docs/model/figure.md:118`, `docs/model/graph.md:118`, `docs/model/api.md` §2.3 | Missed counts: 350 polities with no figure (now 349); polity 482 rows (now 481); `/api/polity/colors` about 15 KB, not 14 | curator, succession-curator, ui-designer | Yes |
 | 32 | Medium | `code/generate-successions.js:184-197` | `same_ethnicity` is set only when two polities also share a territory, so `no_people_no_land_edges` counts some same-people edges (about 30 Arab-to-Arab edges after 2026-11-05) | build-owner | Yes |
 | 33 | Low | `docs/model/source.md:32` | Does a `field=id` row exclude other rows from the same source or only the same QID? `new_kingdom_egypt` has an `id` row (Q180568) and a language row (Q1852329) | owner | Yes |
-| 34 | Low | `panels/east_asia/tibet.json:640,703` | `bhutan` duplicates `kingdom_of_bhutan`; the label says independent from 1949 against the 1907 start | curator | Yes |
 
 ## Open curation
 
