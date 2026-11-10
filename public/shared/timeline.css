@@ -4,15 +4,41 @@
 .scale-buttons { display: flex; gap: 0.5rem; }
 .computed-toggle { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0; }
 
-.timeline-scroll { overflow-x: auto; margin-top: var(--space-2); border-top: 1px solid var(--rule); }
-.timeline { --axis: 5.5; position: relative; min-width: 100%; }
+/* The year cursor: a form, a readout in ink, and a rule across the diagram. */
+.year-form { display: grid; gap: 0.25rem; max-width: var(--measure); margin-bottom: var(--space-1); font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); }
+.year-fields { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: stretch; }
+.year-fields input { flex: 1 1 10rem; min-width: 0; padding: 0.45rem 0.65rem; font: 400 var(--step-0) var(--serif); color: var(--ink); background: var(--paper-raised); border: 1px solid var(--field-edge); border-radius: 2px; }
+.year-hint { font-size: 0.8125rem; }
+.year-readout { max-width: var(--measure); margin-bottom: var(--space-2); }
+.year-readout:empty { display: none; }
+.year-readout p { margin: 0 0 0.25rem; }
+.year-item { white-space: nowrap; }
+.year-key { font-family: var(--sans); font-size: 0.8125rem; color: var(--ink-soft); }
+.year-key li { padding: 0.1rem 0; }
+.key-bar { display: inline-block; width: 9px; height: 0.9em; margin-right: 0.35rem; background: var(--ink); vertical-align: -0.1em; }
+.key-bar.whole { background: none; border: 1.5px solid var(--ink); }
+.year-key .key-bar { background: var(--ink-soft); }
+.year-key .key-bar.whole { background: none; border-color: var(--ink-soft); }
+
+.timeline-frame { position: relative; margin-top: var(--space-2); }
+.lane-cue { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.35rem 0; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.lane-cue #lanes-right { margin-left: auto; }
+.lane-cue .quiet-button { color: var(--ink); background: var(--paper-raised); }
+.timeline-frame::before, .timeline-frame::after { content: ''; position: absolute; top: 0; bottom: 0; width: 2rem; z-index: 4; pointer-events: none; opacity: 0; }
+.timeline-frame::after { right: 0; background: linear-gradient(to right, transparent, var(--paper)); }
+.timeline-frame::before { left: calc(var(--axis, 5.5) * 1rem); background: linear-gradient(to left, transparent, var(--paper)); }
+.timeline-frame.more-right::after, .timeline-frame.more-left::before { opacity: 1; }
+
+.timeline-scroll { overflow-x: auto; border-top: 1px solid var(--rule); }
+.timeline { --axis: 5.5; --lane: 10.5; position: relative; min-width: 100%; cursor: crosshair; }
+.axis-mask { position: sticky; left: 0; top: 0; z-index: 3; width: calc(var(--axis) * 1rem - 0.25rem); height: 100%; background: var(--paper); pointer-events: none; }
 .tick { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid var(--rule); }
-.tick span { position: sticky; left: 0; display: inline-block; width: 5.25rem; padding: 0 0.4rem 0 0; background: var(--paper); color: var(--ink-soft); font: 400 0.8125rem/1.3 var(--sans); }
+.tick span { position: sticky; left: 0; display: inline-block; width: calc(var(--axis) * 1rem - 0.25rem); padding: 0 0.4rem 0 0; background: var(--paper); color: var(--ink-soft); font: 400 0.8125rem/1.3 var(--sans); z-index: 4; }
 
 .timeline-lines { position: absolute; left: 0; top: 0; z-index: 1; pointer-events: stroke; }
 .timeline-lines:empty { display: none; }
 
-.span { position: absolute; z-index: 2; display: block; color: var(--ink); text-decoration: none; }
+.span { position: absolute; z-index: 2; display: block; color: var(--ink); text-decoration: none; cursor: pointer; }
 .span-bar { position: absolute; left: 0; top: 0; width: 12px; background: var(--ink-soft); }
 .span:hover .span-bar, .span:focus-visible .span-bar { background: var(--binding); }
 .span-name { position: relative; display: block; margin-left: 12px; padding: 0 0.4rem 0 0.35rem; font: 400 0.9375rem/1.2 var(--serif); }
@@ -22,3 +48,16 @@
 
 /* A span that only repeats the polity's lifespan claims less, so it is drawn empty. */
 .span.whole .span-bar { background: none; border: 1px solid var(--ink-soft); }
+
+/* With a year set, bars that cross it stay in full; the rest step back. */
+.timeline.has-year .span:not(.at-year) { opacity: 0.38; }
+.span.at-year .span-bar { background: var(--ink); }
+.span.at-year.whole .span-bar { background: none; border: 2px solid var(--ink); }
+.span.at-year .span-name { font-weight: 700; }
+.year-cursor { position: absolute; left: 0; right: 0; height: 0; z-index: 5; border-top: 2px solid var(--ink); pointer-events: none; }
+.year-cursor span { position: sticky; left: 0; display: inline-block; transform: translateY(-50%); padding: 0 0.35rem; background: var(--ink); color: var(--paper); font: 500 0.8125rem/1.4 var(--sans); }
+
+@media (max-width: 30rem) {
+  .timeline { --axis: 4.25; --lane: 8.5; }
+  .timeline-frame::before { left: 4.25rem; }
+}
