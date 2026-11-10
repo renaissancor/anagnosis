@@ -168,6 +168,38 @@ function anchorDecided(polityClaims, decidedIds, width, portrait) {
   anchors = { key, across: new Map(nodes.map(n => [n.id, portrait ? n.x / width : n.y / height])) };
 }
 
+/**
+ * Room kept around a decided dot: two label heights. A computed dot inside it
+ * would sit at the tip of an ink arrow and read as the end of a decided claim.
+ */
+const CLEARANCE = 40;
+
+/** Pushes each computed or chosen dot out of every decided dot's clearance, along the free axis. */
+function keepClear(nodes, clamp, portrait) {
+  const pinned = nodes.filter(n => n.pinned);
+  const free = nodes.filter(n => !n.pinned);
+  const along = portrait ? 'x' : 'y', time = portrait ? 'y' : 'x';
+  for (let round = 0; round < 8; round++) {
+    let moved = false;
+    for (const n of free) {
+      for (const d of pinned) {
+        const dt = Math.abs(n[time] - d[time]);
+        if (dt >= CLEARANCE) continue;
+        const need = Math.sqrt(CLEARANCE ** 2 - dt ** 2);
+        const gap = n[along] - d[along];
+        if (Math.abs(gap) >= need) continue;
+        // Go to the nearer side unless the edge of the frame blocks it.
+        const side = gap === 0 ? 1 : Math.sign(gap);
+        let next = clamp(d[along] + side * need);
+        if (Math.abs(next - d[along]) < need - 0.5) next = clamp(d[along] - side * need);
+        n[along] = next;
+        moved = true;
+      }
+    }
+    if (!moved) break;
+  }
+}
+
 /** Time fixes one axis; the simulation only separates nodes along the other. */
 function layout(nodes, width, height, portrait, edges, pinDecided) {
   const margin = { start: portrait ? 64 : 48, end: portrait ? 40 : 170 };
@@ -192,7 +224,7 @@ function layout(nodes, width, height, portrait, edges, pinDecided) {
     .force('link', d3.forceLink(edges).strength(0.01))
     .force('spread', d3.forceManyBody().strength(nodes.length > 100 ? -22 : -500))
     .force('middle', d3[portrait ? 'forceX' : 'forceY'](across / 2).strength(0.04))
-    .force('collide', d3.forceCollide(nodes.length > 100 ? 7 : 24));
+    .force('collide', d3.forceCollide(n => (n.pinned ? CLEARANCE : nodes.length > 100 ? 7 : 24)));
   for (let i = 0; i < (nodes.length > 100 ? 160 : 260); i++) {
     sim.tick();
     nodes.forEach(n => {
@@ -202,6 +234,7 @@ function layout(nodes, width, height, portrait, edges, pinDecided) {
     });
   }
   nodes.forEach(n => { if (n.pinned) { n.x = n.fx; n.y = n.fy; } delete n.fx; delete n.fy; });
+  if (pinDecided) keepClear(nodes, clamp, portrait);
 }
 
 function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
@@ -218,7 +251,7 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
     .attr('class', many ? 'edge-computed faint' : 'edge-computed').attr('d', e => edgePath(e, 0.08));
   // A decided edge opens its claim below the graph, by pointer or keyboard.
   const claimEdge = stage.append('g').selectAll('g').data(decidedEdges).join('g')
-    .attr('class', e => `claim-edge${e.claim.id === selectedClaimId ? ' selected' : ''}`)
+    .attr('class', e => `claim-edge${e.claim.id === selectedClaimId ? ' selected' : ''}${chosenId && e.source.id !== chosenId && e.target.id !== chosenId ? ' distant' : ''}`)
     .attr('tabindex', 0).attr('role', 'button')
     .attr('aria-label', e => `Decided claim: ${e.claim.heir_name} inherits from ${e.claim.source_name}. Show its terms.`)
     .on('click', (ev, e) => openClaim(e.claim.id))
@@ -275,7 +308,7 @@ function placeLabels(node, width, height, portrait) {
     Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
   const axisLabels = svg.selectAll('.axis-label').classed('covered', false).nodes()
     .map(el => { const b = el.getBBox(); return { el, x: b.x - 2, y: b.y - 1, w: b.width + 4, h: b.height + 2 }; });
-  node.each(n => { const r = radius(n) + 2; boxes.push({ id: n.id, x: n.x - r, y: n.y - r, w: 2 * r, h: 2 * r }); });
+  node.each(n => { const r = radius(n) + (n.decided ? 9 : 2); boxes.push({ id: n.id, x: n.x - r, y: n.y - r, w: 2 * r, h: 2 * r }); });
 
   const spots = portrait
     ? [[11, 4, 'start'], [-11, 4, 'end'], [-6, -12, 'start'], [-6, 22, 'start'], [6, -12, 'end'], [6, 22, 'end'], [11, 18, 'start'], [11, -10, 'start'], [-11, 18, 'end'], [-11, -10, 'end']]

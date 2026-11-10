@@ -19,6 +19,8 @@
 .edge-hit { stroke: transparent; stroke-width: 14; fill: none; pointer-events: stroke; }
 .claim-edge:hover .edge-decided, .claim-edge:focus-visible .edge-decided, .claim-edge.selected .edge-decided { stroke-width: 4; }
 .claim-edge:focus-visible .edge-hit { stroke: var(--binding); stroke-opacity: 0.18; }
+.claim-edge.distant { opacity: 0.3; }
+.claim-edge.distant:hover, .claim-edge.distant:focus-visible, .claim-edge.distant.selected { opacity: 1; }
 .axis-label.covered { opacity: 0; }
 .node text.label-hidden { display: none; }
 .node.peek text { pointer-events: none; }
