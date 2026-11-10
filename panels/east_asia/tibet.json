@@ -259,8 +259,7 @@
         },
         {
           "label": "Tribal communities",
-          "span": 1,
-          "polity": "tribal_communities"
+          "span": 1
         },
         {
           "label": "Mon-yul / tribal communities",
@@ -309,13 +308,11 @@
         },
         {
           "label": "Indigenous chiefs",
-          "span": 1,
-          "polity": "indigenous_chiefs"
+          "span": 1
         },
         {
           "label": "Indigenous chiefs",
-          "span": 1,
-          "polity": "indigenous_chiefs"
+          "span": 1
         }
       ]
     },
@@ -344,8 +341,7 @@
             },
             {
               "label": "Indigenous local rulers",
-              "note": null,
-              "polity": "indigenous_local_rulers"
+              "note": null
             },
             {
               "label": "Phagmodrupa dynasty",
@@ -357,13 +353,11 @@
         },
         {
           "label": "Tribal communities",
-          "span": 1,
-          "polity": "tribal_communities"
+          "span": 1
         },
         {
           "label": "Tribal communities",
-          "span": 1,
-          "polity": "tribal_communities"
+          "span": 1
         }
       ]
     },
@@ -397,13 +391,11 @@
         },
         {
           "label": "Tribal communities",
-          "span": 1,
-          "polity": "tribal_communities"
+          "span": 1
         },
         {
           "label": "Tribal communities",
-          "span": 1,
-          "polity": "tribal_communities"
+          "span": 1
         }
       ]
     },
@@ -473,7 +465,8 @@
       "cells": [
         {
           "label": "Ladakh Kingdom (declining)",
-          "span": 1
+          "span": 1,
+          "polity": "ladakh_kingdom"
         },
         {
           "stack": [
@@ -629,7 +622,7 @@
             {
               "label": "Sikkim (British protectorate)",
               "note": null,
-              "polity": "sikkim"
+              "polity": "sikkim_kingdom"
             }
           ],
           "span": 1
