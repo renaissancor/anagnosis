@@ -56,7 +56,7 @@ old_chinese,Old Chinese,old_classical_group,,
 
 There is no ISO 639-3 or Glottocode column. A retired plan proposed JSON fields (`iso6393`, `glottocode`, `macro_area`, `status`) that were never adopted in the CSV. The DDL in `docs/model/erd_nofk.sql` has `depth` and `status` columns, but `depth` is computed in `scripts/load_csvs.sql` and `status` is never loaded.
 
-**The `()` name prefix.** 27 rows have a name that starts with `()`, for example `()Ainu`, `()Sumerian`, `()Esperanto`, `()Classical Arabic`. They are mostly isolates, extinct languages, constructed languages and creoles. Nothing documents the meaning, and no script reads it. Treat it as legacy markup; do not copy it onto new rows; its fate is an open question.
+**The `()` name prefix (removed 2026-11-10).** 27 rows, mostly isolates, extinct languages, constructed languages and creoles, once had a name starting with `()`, for example `()Ainu`. Nothing documented the meaning and no script read it, so the owner had the prefix stripped from `name`; ids were not touched. Do not write it on new rows.
 
 ---
 
@@ -115,7 +115,7 @@ Measured counts are in section 2. Open questions, none resolved here:
 1. **Prune or keep the 522 unreferenced rows?** The current table is a seeded taxonomy, contradicting FK-driven scoping. Options: prune to the referenced set plus ancestors; or declare language a reference taxonomy exempt from the rule.
 2. **Fix the 3 broken `city_name.language` values** (`chinese`, `greek`, `phoenician`), and add the foreign-key check to the validator.
 3. **What does `founded` mean and what format?** Empty everywhere. A year integer with BCE negative would match the other tables, but nothing is decided.
-4. **What does the `()` name prefix mean**, and should it be removed or turned into a column?
+4. ~~What does the `()` name prefix mean, and should it be removed or turned into a column?~~ Removed 2026-11-10 by owner decision (ledger item 22); the meaning was never recovered and no column replaced it. The 27 rows are listed in that commit's diff.
 5. **Rename the 23 non-ASCII or punctuated ids?** It costs reference updates in `polity.csv`.
 6. **Should an ISO 639-3 or Glottocode column be added?** PROPOSED: a Glottocode column (Glottolog is CC BY 4.0), filled via `source-glottolog`, with a `fact_source` row per link. Not authorized.
 7. **41 polities have no ruling language.** Empty means unknown or not yet curated; there is no "not applicable" marker.
