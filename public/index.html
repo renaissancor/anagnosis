@@ -42,8 +42,14 @@
 <script>
   const claimsEl = document.getElementById('claims');
   cachedFetch('/api/claim').then(claims => {
-    claimsEl.innerHTML = `<p class="claim-meta">Each claim reads from the source it inherits from to its heir. The arrow carries the mechanism; under it are the legitimacy, any gap in years, who at the time recognized or rejected it, and the cited source.</p>
-      <ul class="claim-rows">${claims.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>`;
+    // Totals come from the claims themselves, so they follow every curation.
+    const parties = new Set(claims.flatMap(c => [c.heir_polity_id, ...(c.source_type === 'polity' ? [c.source_id] : [])]));
+    const others = new Set(claims.filter(c => c.source_type !== 'polity').map(c => c.source_id)).size;
+    const total = `${claims.length} decided ${claims.length === 1 ? 'claim' : 'claims'} among ${parties.size} ${parties.size === 1 ? 'polity' : 'polities'}${others ? ` and ${others} ${others === 1 ? 'source that is not a polity' : 'sources that are not polities'}` : ''}.`;
+    claimsEl.innerHTML = `<p class="claim-total">${total}</p>
+      <p class="claim-meta">Each claim reads from the source it inherits from to its heir. The arrow carries the mechanism; under it are the legitimacy, any gap in years, who at the time recognized or rejected it, and the cited source.</p>
+      <ul class="claim-rows">${claims.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>
+      ${claimGlossaryHtml(['legitimacy', 'gap', 'recognition'])}`;
   }).catch(() => renderLoadError(claimsEl, 'The decided claims'));
 </script>
 </body>

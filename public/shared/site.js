@@ -126,6 +126,26 @@ function claimRowHtml(claim) {
   </div>`;
 }
 
+/**
+ * The one authored wording for claim terms. Each page asks for the parts it
+ * shows, so a term is explained wherever it appears and written only here.
+ */
+const CLAIM_GLOSSARY = {
+  topology: 'The first word says what kind of link this is.',
+  legitimacy: "Legitimacy is organic when it came with the inheritance itself, claimed when the heir asserted it, and fictive when it was constructed, as with Russia's Third Rome.",
+  exclusivity: 'Exclusive means the heir admits no co-heir, though rival heirs can each make that claim; shared means it accepts others.',
+  gap: 'No gap means the inheritance was immediate; a gap in years means the heir revived the source after that long.',
+  axes: "The bold lines are the parts of an identity that passed along. Affirmed means the heir kept it, transformed that it changed it, and repudiated that it rejected it. Strength is a curator's grade from 1 to 5; the rules for that grade are not settled yet.",
+  recognition: 'Recognition is what historical actors did at the time, not a modern verdict.',
+};
+
+function claimGlossaryHtml(parts) {
+  return `<details class="claim-glossary">
+  <summary>What these terms mean</summary>
+  ${parts.map(part => `<p>${esc(CLAIM_GLOSSARY[part])}</p>`).join('')}
+</details>`;
+}
+
 /** Turns a provenance receipt into a link where its prefix is known. */
 function provenanceHtml(provenance) {
   return String(provenance ?? '').split('|').map(part => {

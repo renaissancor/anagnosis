@@ -51,7 +51,7 @@ async function renderIndex() {
     <label class="filter">Find a polity by name
       <input type="search" id="polity-search" autocomplete="off" />
     </label>
-    ${claims ? `<label class="decided-filter"><input type="checkbox" id="decided-only" /> Only polities in a decided claim (${decidedCount})</label>
+    ${claims ? `<label class="decided-filter"><input type="checkbox" id="decided-only" /> Only the ${decidedCount} ${decidedCount === 1 ? 'polity' : 'polities'} in a decided claim</label>
       <p class="decided-key"><span class="decided-mark" aria-hidden="true"></span>marks a polity that is the heir or the source of a decided claim. The others have none decided yet, which means not curated.</p>`
       : '<p class="state" id="claims-error"></p>'}
     <p class="state" id="no-match" role="status" hidden></p>
@@ -184,12 +184,7 @@ function claimHtml(claim, statement) {
   </article>`;
 }
 
-const GLOSSARY = `<details class="claim-glossary">
-  <summary>What these terms mean</summary>
-  <p>The first word says what kind of link this is. Legitimacy is organic when it came with the inheritance itself, claimed when the heir asserted it, and fictive when it was constructed, as with Russia's Third Rome. Exclusive means the heir admits no co-heir, though rival heirs can each make that claim; shared means it accepts others.</p>
-  <p>The bold lines are the parts of an identity that passed along. Affirmed means the heir kept it, transformed that it changed it, and repudiated that it rejected it. Strength is a curator's grade from 1 to 5; the rules for that grade are not settled yet.</p>
-  <p>Recognition is what historical actors did at the time, not a modern verdict.</p>
-</details>`;
+const GLOSSARY = claimGlossaryHtml(['topology', 'legitimacy', 'exclusivity', 'axes', 'recognition']);
 
 function decidedHtml(polity, claims) {
   if (!claims) return '<section aria-labelledby="decided"><h2 id="decided">Decided claims</h2><div id="claims-error"></div></section>';
