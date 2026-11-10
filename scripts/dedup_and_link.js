@@ -5,9 +5,16 @@
 //
 // Usage: node scripts/dedup_and_link.js [--dry-run]
 //
-// Outputs:
-//   derived/canonical_entities.csv  — deduplicated entity list
-//   panels/**/*.json               — updated with polity fields
+// Without --dry-run it writes:
+//   derived/canonical_entities.csv  — deduplicated entity list (always rewritten)
+//   panels/**/*.json               — layer 1; each panel whose polity fields change
+//
+// With --dry-run it writes nothing. It prints the same summary, then
+// the panel files it would rewrite and whether canonical_entities.csv
+// would change.
+//
+// A real run writes layer 1, so only a curator runs it (docs/ARCHITECTURE.md,
+// Write sets).
 // ============================================================
 
 const fs = require('fs');
@@ -410,6 +417,7 @@ let bugFixed = 0;
 let stripped = 0;
 let unresolved = 0;
 let filesModified = 0;
+const modifiedFiles = [];
 
 for (const filePath of panelFiles) {
   const panel = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -460,15 +468,19 @@ for (const filePath of panelFiles) {
     }
   }
 
-  if (modified && !DRY_RUN) {
-    fs.writeFileSync(filePath, JSON.stringify(panel, null, 2) + '\n');
+  if (modified) {
+    if (!DRY_RUN) fs.writeFileSync(filePath, JSON.stringify(panel, null, 2) + '\n');
     filesModified++;
-  } else if (modified) {
-    filesModified++;
+    modifiedFiles.push(path.relative(BASE, filePath));
   }
 }
 
 // ─── WRITE CANONICAL ENTITIES CSV ─────────────────────────
+
+// Under --dry-run nothing is written; the would-be file is compared with the
+// one on disk so the summary can say whether it would change.
+let entitiesRowCount = 0;
+let entitiesChange = null; // dry run only: 'unchanged' | 'changed' | 'created'
 
 {
   const headers = ['entity_id', 'entity_type', 'canonical_name', 'panel_count', 'panels', 'source_labels'];
@@ -481,7 +493,17 @@ for (const filePath of panelFiles) {
     panels:         [...e.panels].join('|'),
     source_labels:  [...e.labels].join(' | '),
   }));
-  csv.writeFile(ENTITIES_OUT, rows, headers);
+  entitiesRowCount = rows.length;
+  if (DRY_RUN) {
+    if (!fs.existsSync(ENTITIES_OUT)) {
+      entitiesChange = 'created';
+    } else {
+      const current = csv.stringify(csv.readFile(ENTITIES_OUT), headers);
+      entitiesChange = current === csv.stringify(rows, headers) ? 'unchanged' : 'changed';
+    }
+  } else {
+    csv.writeFile(ENTITIES_OUT, rows, headers);
+  }
 }
 
 // ─── SUMMARY ──────────────────────────────────────────────
@@ -499,7 +521,7 @@ console.log(`  Newly linked:     ${newlyLinked}`);
 console.log(`  Bug fixes:        ${bugFixed}`);
 console.log(`  Stripped:         ${stripped} (non-polity polity fields deleted)`);
 console.log(`  Unresolved:       ${unresolved} (events, ?, ambiguous)`);
-console.log(`  Files modified:   ${filesModified}`);
+console.log(`  Files ${DRY_RUN ? 'to modify: ' : 'modified:  '} ${filesModified}`);
 console.log(`\nCanonical entities: ${canonicalEntities.size}`);
 for (const [type, count] of Object.entries(typeCounts).sort((a, b) => b[1] - a[1])) {
   console.log(`  ${type.padEnd(20)} ${count}`);
@@ -516,4 +538,12 @@ for (const e of multiLabel.sort((a, b) => b.labels.size - a.labels.size).slice(0
   if (e.labels.size > 4) console.log(`    ... +${e.labels.size - 4} more`);
 }
 
-console.log(`\nOutput: ${ENTITIES_OUT}`);
+if (DRY_RUN) {
+  const entitiesRel = path.relative(BASE, ENTITIES_OUT);
+  console.log('\n[DRY RUN] Nothing was written. A real run would write:');
+  console.log(`  ${entitiesRel} (${entitiesRowCount} rows; ${entitiesChange})`);
+  console.log(`  ${modifiedFiles.length} panel file(s)${modifiedFiles.length ? ':' : ''}`);
+  for (const f of modifiedFiles) console.log(`    ${f}`);
+} else {
+  console.log(`\nOutput: ${ENTITIES_OUT}`);
+}
