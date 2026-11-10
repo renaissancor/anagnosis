@@ -268,4 +268,3 @@ for (const d of crossPanelDups.sort((a,b) => b.entity_count - a.entity_count).sl
 
 console.log(`\nOutput:`);
 console.log(`  ${OUT_FILE}`);
-console.log(`  ${timelineOut}`);

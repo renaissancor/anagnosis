@@ -12,7 +12,6 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
 | 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | build-owner | Yes |
 | 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
-| 17 | Low | `scripts/find_overlaps.js:271` | Logs an undefined `timelineOut`, so the script exits 1 after writing its CSV | build-owner | Yes |
 | 18 | Low | `scripts/extract_missing_polities.js:197` | `--write` leaves a blank line before appended stubs and no final newline | build-owner | Yes |
 | 19 | Low | `scripts/generate_stubs.js:232` | `derived/polity_stubs.csv` header still has `civilization_id` and `territories` and lacks `start_basis`/`end_basis` | build-owner | Yes |
 | 20 | Low | `server.js:176` | `/api/dynasty` `polity_count` counts rows, the pattern fixed in territories; latent only | ui-designer | Yes |
