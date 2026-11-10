@@ -86,6 +86,46 @@ function claimSentenceHtml(claim) {
   return `${claimPartyHtml(claim.heir_polity_id, claim.heir_name)} inherits from ${claimPartyHtml(claim.source_id, claim.source_name, claim.source_type)}`;
 }
 
+const RECOGNITION_WORDS = { recognized: 'Recognized by', partial: 'Partly recognized by', rejected: 'Rejected by' };
+
+/** "A", "A and B", "A, B and C". */
+function andList(items) {
+  return items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
+
+/** Who at the time recognized or rejected a claim, grouped by degree; silence is said, not left blank. */
+function recognitionSummaryHtml(claim) {
+  const entries = claim.recognition || [];
+  if (!entries.length) return 'No recognition or rejection recorded.';
+  const byDegree = new Map();
+  for (const r of entries) {
+    if (!byDegree.has(r.degree)) byDegree.set(r.degree, []);
+    byDegree.get(r.degree).push(claimPartyHtml(r.observer_id, r.observer_name, r.observer_type));
+  }
+  return [...byDegree].map(([degree, names]) =>
+    `${RECOGNITION_WORDS[degree] || esc(humanize(degree))} ${andList(names)}.`).join(' ');
+}
+
+/**
+ * One decided claim as a small diagram: source, an arrow carrying the
+ * mechanism, heir; then legitimacy and gap, recognition, and the cited source.
+ * Ink only: this is for claims, never for computed candidates.
+ */
+function claimRowHtml(claim) {
+  const gap = claim.temporal_gap_years > 0 ? `${claim.temporal_gap_years}-year gap` : 'no gap';
+  const legitimacy = claim.legitimacy_mode ? `${claim.legitimacy_mode} legitimacy` : 'legitimacy not recorded';
+  return `<div class="claim-row">
+    <p class="claim-link">
+      <span class="claim-end">${claimPartyHtml(claim.source_id, claim.source_name, claim.source_type)}</span>
+      <span class="claim-arrow"><span class="claim-mechanism">${esc(humanize(claim.mechanism).toLowerCase())}</span><span class="sr-only">, passed to</span></span>
+      <span class="claim-end">${claimPartyHtml(claim.heir_polity_id, claim.heir_name)}</span>
+    </p>
+    <p class="claim-meta">${esc(humanize(legitimacy))}; ${esc(gap)}.</p>
+    <p class="claim-meta">${recognitionSummaryHtml(claim)}</p>
+    <p class="claim-meta claim-cited">Source: ${provenanceHtml(claim.provenance)}</p>
+  </div>`;
+}
+
 /** Turns a provenance receipt into a link where its prefix is known. */
 function provenanceHtml(provenance) {
   return String(provenance ?? '').split('|').map(part => {

@@ -127,6 +127,19 @@ ul, ol { list-style: none; }
 .claim-glossary { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); }
 .claim-glossary summary { cursor: pointer; padding: 0.35rem 0; }
 .claim-list li { margin-bottom: 0.3rem; }
+
+/* A decided claim drawn as source → heir, with its terms underneath. */
+.claim-rows { display: grid; gap: var(--space-2); }
+.claim-row { border-left: 3px solid var(--binding); padding-left: var(--space-2); }
+.claim-link { display: grid; grid-template-columns: minmax(0, 1fr) minmax(5.5rem, auto) minmax(0, 1fr); align-items: center; gap: 0.5rem; margin: 0 0 0.2rem; line-height: 1.3; }
+.claim-end { overflow-wrap: anywhere; }
+.claim-end + .claim-arrow + .claim-end { text-align: left; }
+.claim-arrow { position: relative; display: block; text-align: center; padding-bottom: 0.45rem; font: 400 0.8125rem/1.2 var(--sans); color: var(--ink-soft); }
+.claim-arrow::after { content: ''; position: absolute; left: 0; right: 7px; bottom: 0.2rem; border-top: 2px solid var(--binding); }
+.claim-arrow::before { content: ''; position: absolute; right: 0; bottom: calc(0.2rem - 4px); border: 5px solid transparent; border-left: 8px solid var(--binding); border-right: 0; }
+.claim-meta { margin: 0; font: 400 var(--step--1)/1.45 var(--sans); color: var(--ink-soft); }
+.claim-cited { color: var(--ink-soft); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .entry-note { margin-top: var(--space-3); }
 .after-key { margin-top: var(--space-2); }
 
@@ -145,6 +158,12 @@ ul, ol { list-style: none; }
 .entry-list a { text-decoration: none; color: var(--ink); }
 .entry-list a:hover { text-decoration: underline; }
 .entry-list .when { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); white-space: nowrap; }
+
+/* An entry that takes part in a decided claim carries the ink mark of the graph's decided node. */
+.decided-filter { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 0.25rem; font-family: var(--sans); font-size: var(--step--1); color: var(--ink); }
+.decided-key { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); }
+.decided-mark { display: inline-block; width: 0.6rem; height: 0.6rem; margin-right: 0.4rem; border-radius: 50%; background: var(--binding); vertical-align: 0.05em; }
+.decided-role { font-family: var(--sans); font-size: var(--step--1); color: var(--binding); white-space: nowrap; }
 
 .start-list li { margin-bottom: 0.3rem; }
 

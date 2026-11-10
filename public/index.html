@@ -17,7 +17,7 @@
   <p>A statement about succession here is one of two things, and the two never share a style.</p>
   <div class="claim">
     <p class="claim-statement">Ink is decided</p>
-    <p>A person judged this claim and cited a source for it. A claim has a green line down its side and a source at its foot.</p>
+    <p>A person judged this claim and cited a source for it. A claim has a green line down its side, an arrow from the source to the heir, and the cited source at its foot.</p>
   </div>
   <div class="pencil">
     <p>Pencil is computed. A script found an overlap in territory, language, ruling people or religion, and nobody has judged it. It is set in small grey sans type under the heading Computed evidence, or as dotted lines. Rivals and contemporaries appear too, so read it as a lead, never as history.</p>
@@ -42,7 +42,8 @@
 <script>
   const claimsEl = document.getElementById('claims');
   cachedFetch('/api/claim').then(claims => {
-    claimsEl.innerHTML = `<ul class="claim claim-list">${claims.map(c => `<li>${claimSentenceHtml(c)}</li>`).join('')}</ul>`;
+    claimsEl.innerHTML = `<p class="claim-meta">Each claim reads from the source it inherits from to its heir. The arrow carries the mechanism; under it are the legitimacy, any gap in years, who at the time recognized or rejected it, and the cited source.</p>
+      <ul class="claim-rows">${claims.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>`;
   }).catch(() => renderLoadError(claimsEl, 'The decided claims'));
 </script>
 </body>

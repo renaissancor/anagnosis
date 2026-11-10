@@ -27,6 +27,22 @@ async function renderIndex() {
     renderLoadError(page, 'The list of polities');
     return;
   }
+  // A failed claim load must not read as "no polity is in a decided claim".
+  const claims = await cachedFetch('/api/claim').catch(() => null);
+  const roles = new Map();
+  const addRole = (id, role) => {
+    if (!roles.has(id)) roles.set(id, new Set());
+    roles.get(id).add(role);
+  };
+  for (const c of claims || []) {
+    addRole(c.heir_polity_id, 'heir');
+    if (c.source_type === 'polity') addRole(c.source_id, 'source');
+  }
+  const roleText = id => {
+    const r = roles.get(id);
+    return r.has('heir') && r.has('source') ? 'heir and source' : r.has('heir') ? 'heir' : 'source';
+  };
+  const decidedCount = polities.filter(p => roles.has(p.id)).length;
 
   const sorted = [...polities].sort((a, b) => (a.start ?? 0) - (b.start ?? 0));
   page.innerHTML = `
@@ -35,27 +51,38 @@ async function renderIndex() {
     <label class="filter">Find a polity by name
       <input type="search" id="polity-search" autocomplete="off" />
     </label>
+    ${claims ? `<label class="decided-filter"><input type="checkbox" id="decided-only" /> Only polities in a decided claim (${decidedCount})</label>
+      <p class="decided-key"><span class="decided-mark" aria-hidden="true"></span>marks a polity that is the heir or the source of a decided claim. The others have none decided yet, which means not curated.</p>`
+      : '<p class="state" id="claims-error"></p>'}
     <p class="state" id="no-match" role="status" hidden></p>
     <ul class="entry-list" id="polity-list">
-      ${sorted.map(p => `<li data-name="${esc(p.name.toLowerCase())}">
-        <a href="/polity/?id=${encodeURIComponent(p.id)}">${esc(p.name)}</a>
+      ${sorted.map(p => `<li data-name="${esc(p.name.toLowerCase())}"${roles.has(p.id) ? ' data-decided' : ''}>
+        <span class="entry-name">${roles.has(p.id) ? `<span class="decided-mark" aria-hidden="true"></span>` : ''}<a href="/polity/?id=${encodeURIComponent(p.id)}">${esc(p.name)}</a>${roles.has(p.id) ? ` <span class="decided-role">decided ${roleText(p.id)}</span>` : ''}</span>
         <span class="when">${esc(formatDateRange(p.start, p.end))}</span>
       </li>`).join('')}
     </ul>`;
+  if (!claims) renderLoadError(document.getElementById('claims-error'), 'The decided claims');
 
   const items = [...page.querySelectorAll('#polity-list li')];
   const noMatch = document.getElementById('no-match');
-  document.getElementById('polity-search').addEventListener('input', e => {
-    const query = e.target.value.trim().toLowerCase();
+  const search = document.getElementById('polity-search');
+  const decidedOnly = document.getElementById('decided-only');
+  const filter = () => {
+    const query = search.value.trim().toLowerCase();
+    const onlyDecided = decidedOnly?.checked;
     let shown = 0;
     items.forEach(item => {
-      const match = item.dataset.name.includes(query);
+      const match = item.dataset.name.includes(query) && (!onlyDecided || 'decided' in item.dataset);
       item.hidden = !match;
       if (match) shown++;
     });
     noMatch.hidden = shown > 0;
-    noMatch.textContent = shown ? '' : `No polity has “${e.target.value}” in its name.`;
-  });
+    noMatch.textContent = shown ? '' : onlyDecided
+      ? `No polity in a decided claim has “${search.value}” in its name.`
+      : `No polity has “${search.value}” in its name.`;
+  };
+  search.addEventListener('input', filter);
+  decidedOnly?.addEventListener('change', filter);
 }
 
 // ── Entry ───────────────────────────────────────────────────────────────────
@@ -145,7 +172,7 @@ function claimHtml(claim, statement) {
   </li>`).join('');
   const recognition = (claim.recognition || []).map(r => `<p class="claim-recognition">
     ${claimPartyHtml(r.observer_id, r.observer_name, r.observer_type)} ${DEGREE[r.degree] || esc(r.degree)}${r.note ? `: ${esc(r.note)}` : '.'}
-  </p>`).join('');
+  </p>`).join('') || '<p class="claim-recognition">No recognition or rejection recorded.</p>';
 
   return `<article class="claim">
     <h3 class="claim-statement">${statement}</h3>
