@@ -19,6 +19,9 @@ let chosenId = params.get('id');
 let evidence = ['chosen', 'all'].includes(params.get('evidence')) ? params.get('evidence') : 'none';
 let notice = '';
 let focusAfterDraw = null;
+let selectedClaimId = null;   // a decided edge the reader opened
+let anchors = { key: '', across: new Map() };
+let relabel = null;           // places labels again once web fonts arrive
 
 const zoom = d3.zoom().scaleExtent([1, 8])
   // A plain wheel keeps scrolling the page; ctrl+wheel and pinch zoom the graph.
@@ -66,10 +69,12 @@ async function load() {
   addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(draw, 200); });
 
   await draw();
+  document.fonts?.ready.then(() => relabel?.());
 }
 
 function choose(id) {
   chosenId = id;
+  selectedClaimId = null;
   notice = '';
   syncUrl();
   draw();
@@ -126,7 +131,7 @@ async function draw() {
   })).sort((a, b) => a.decided - b.decided);
   const nodeById = new Map(nodes.map(n => [n.id, n]));
   const decidedEdges = polityClaims.filter(c => nodeById.has(c.heir_polity_id) && nodeById.has(c.source_id))
-    .map(c => ({ source: nodeById.get(c.source_id), target: nodeById.get(c.heir_polity_id) }));
+    .map(c => ({ claim: c, source: nodeById.get(c.source_id), target: nodeById.get(c.heir_polity_id) }));
   const computedEdges = shown.filter(c => nodeById.has(c.from) && nodeById.has(c.to))
     .map(c => ({ source: nodeById.get(c.from), target: nodeById.get(c.to) }));
 
@@ -135,7 +140,8 @@ async function draw() {
   const height = VIEW[evidence][portrait ? 'portrait' : 'height'];
   svg.attr('viewBox', `0 0 ${width} ${height}`).attr('height', height);
 
-  layout(nodes, width, height, portrait, computedEdges);
+  anchorDecided(polityClaims, decidedIds, width, portrait);
+  layout(nodes, width, height, portrait, computedEdges, true);
   render(nodes, decidedEdges, computedEdges, width, height, portrait);
   renderReading();
   if (focusAfterDraw) {
@@ -144,8 +150,26 @@ async function draw() {
   }
 }
 
+/**
+ * Decided nodes keep one place across every view. They are laid out once on
+ * their own, as on the view with no evidence, and that place is kept as a
+ * share of the cross axis. Computed nodes are then fitted around them.
+ */
+function anchorDecided(polityClaims, decidedIds, width, portrait) {
+  const key = `${width}|${portrait}|${[...decidedIds].sort().join(',')}`;
+  if (anchors.key === key) return;
+  const nodes = [...decidedIds].filter(id => polityById.has(id))
+    .map(id => ({ id, start: polityById.get(id).start, decided: true }));
+  const byId = new Map(nodes.map(n => [n.id, n]));
+  const edges = polityClaims.filter(c => byId.has(c.heir_polity_id) && byId.has(c.source_id))
+    .map(c => ({ source: byId.get(c.source_id), target: byId.get(c.heir_polity_id) }));
+  const height = VIEW.none[portrait ? 'portrait' : 'height'];
+  layout(nodes, width, height, portrait, edges, false);
+  anchors = { key, across: new Map(nodes.map(n => [n.id, portrait ? n.x / width : n.y / height])) };
+}
+
 /** Time fixes one axis; the simulation only separates nodes along the other. */
-function layout(nodes, width, height, portrait, edges) {
+function layout(nodes, width, height, portrait, edges, pinDecided) {
   const margin = { start: portrait ? 64 : 48, end: portrait ? 40 : 170 };
   const span = (portrait ? height : width) - margin.start - margin.end;
   const years = d3.extent(nodes, n => n.start);
@@ -153,21 +177,31 @@ function layout(nodes, width, height, portrait, edges) {
   layout.time = time;
   layout.portrait = portrait;
 
-  nodes.forEach(n => { n.fixed = time(n.start); });
   const across = portrait ? width : height;
+  const pad = portrait ? 12 : 44;
+  const clamp = v => (portrait ? Math.max(pad, Math.min(width * 0.55, v)) : Math.max(pad, Math.min(height - pad, v)));
+  nodes.forEach(n => {
+    n.fixed = time(n.start);
+    n.pinned = pinDecided && n.decided && anchors.across.has(n.id);
+    if (n.pinned) {
+      const place = clamp(anchors.across.get(n.id) * across);
+      if (portrait) { n.fx = place; n.fy = n.fixed; } else { n.fx = n.fixed; n.fy = place; }
+    }
+  });
   const sim = d3.forceSimulation(nodes).stop()
     .force('link', d3.forceLink(edges).strength(0.01))
     .force('spread', d3.forceManyBody().strength(nodes.length > 100 ? -22 : -500))
     .force('middle', d3[portrait ? 'forceX' : 'forceY'](across / 2).strength(0.04))
     .force('collide', d3.forceCollide(nodes.length > 100 ? 7 : 24));
-  const pad = portrait ? 12 : 44;
   for (let i = 0; i < (nodes.length > 100 ? 160 : 260); i++) {
     sim.tick();
     nodes.forEach(n => {
-      if (portrait) { n.y = n.fixed; n.x = Math.max(pad, Math.min(width * 0.55, n.x)); }
-      else { n.x = n.fixed; n.y = Math.max(pad, Math.min(height - pad, n.y)); }
+      if (n.pinned) return;
+      if (portrait) { n.y = n.fixed; n.x = clamp(n.x); }
+      else { n.x = n.fixed; n.y = clamp(n.y); }
     });
   }
+  nodes.forEach(n => { if (n.pinned) { n.x = n.fx; n.y = n.fy; } delete n.fx; delete n.fy; });
 }
 
 function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
@@ -182,9 +216,18 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
   const many = computedEdges.length > 200;
   stage.append('g').selectAll('path').data(computedEdges).join('path')
     .attr('class', many ? 'edge-computed faint' : 'edge-computed').attr('d', e => edgePath(e, 0.08));
-  stage.append('g').selectAll('path').data(decidedEdges).join('path')
-    .attr('class', 'edge-decided').attr('marker-end', 'url(#ink-arrow)')
-    .attr('d', e => edgePath(e, clearBend(e, many ? nodes.filter(n => n.decided) : nodes)));
+  // A decided edge opens its claim below the graph, by pointer or keyboard.
+  const claimEdge = stage.append('g').selectAll('g').data(decidedEdges).join('g')
+    .attr('class', e => `claim-edge${e.claim.id === selectedClaimId ? ' selected' : ''}`)
+    .attr('tabindex', 0).attr('role', 'button')
+    .attr('aria-label', e => `Decided claim: ${e.claim.heir_name} inherits from ${e.claim.source_name}. Show its terms.`)
+    .on('click', (ev, e) => openClaim(e.claim.id))
+    .on('focus', (ev, e) => openClaim(e.claim.id))
+    .on('keydown', (ev, e) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openClaim(e.claim.id, true); } });
+  claimEdge.each(e => { e.d = edgePath(e, clearBend(e, many ? nodes.filter(n => n.decided) : nodes)); });
+  claimEdge.append('path').attr('class', 'edge-hit').attr('d', e => e.d);
+  claimEdge.append('path').attr('class', 'edge-decided').attr('marker-end', 'url(#ink-arrow)').attr('d', e => e.d);
+  claimEdge.append('title').text(e => `${e.claim.heir_name} inherits from ${e.claim.source_name}`);
 
   const showLabel = n => !many || n.decided || n.id === chosenId;
   const node = stage.append('g').selectAll('g').data(nodes, n => n.id).join('g')
@@ -201,12 +244,80 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
       choiceInput.value = n.name;
       choose(n.id);
     });
-  link.append('circle').attr('r', n => (n.decided || n.id === chosenId ? 7 : many ? 3 : 5));
-  link.filter(showLabel).append('text').attr('x', portrait ? 11 : -6)
-    .attr('y', portrait ? 0 : -12).attr('dy', portrait ? '0.32em' : 0).text(n => n.name);
+  link.append('circle').attr('r', radius);
+  link.filter(showLabel).append('text').text(n => n.name);
   link.append('title').text(n => `${n.name}, ${formatYear(n.start)}`);
+  // A name hidden to avoid a collision still shows on hover and focus, drawn on top.
+  const peek = stage.append('g').attr('class', 'node peek').attr('aria-hidden', 'true');
+  link.on('mouseenter focus', function (e, n) {
+    if (!this.querySelector('text.label-hidden')) return;
+    const t = this.querySelector('text');
+    peek.attr('transform', `translate(${n.x},${n.y})`).classed('decided', n.decided).selectAll('text').data([n]).join('text')
+      .attr('x', t.getAttribute('x')).attr('y', t.getAttribute('y')).attr('text-anchor', t.getAttribute('text-anchor')).text(n.name);
+  }).on('mouseleave blur', () => peek.selectAll('text').remove());
 
+  relabel = () => placeLabels(node, width, height, portrait);
+  relabel();
   svg.call(zoom).call(zoom.transform, d3.zoomIdentity);
+}
+
+const radius = n => (n.decided || n.id === chosenId ? 7 : visibleCandidates().length > 200 ? 3 : 5);
+
+/**
+ * Puts each name where it hits no other name, dot or axis label. Chosen and
+ * decided names go first and always show; a computed name with no free place
+ * is hidden until its dot is pointed at or focused. An axis label that a
+ * decided name still covers steps aside.
+ */
+function placeLabels(node, width, height, portrait) {
+  const boxes = [];
+  const overlap = (a, b) => Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)) *
+    Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
+  const axisLabels = svg.selectAll('.axis-label').classed('covered', false).nodes()
+    .map(el => { const b = el.getBBox(); return { el, x: b.x - 2, y: b.y - 1, w: b.width + 4, h: b.height + 2 }; });
+  node.each(n => { const r = radius(n) + 2; boxes.push({ id: n.id, x: n.x - r, y: n.y - r, w: 2 * r, h: 2 * r }); });
+
+  const spots = portrait
+    ? [[11, 4, 'start'], [-11, 4, 'end'], [-6, -12, 'start'], [-6, 22, 'start'], [6, -12, 'end'], [6, 22, 'end'], [11, 18, 'start'], [11, -10, 'start'], [-11, 18, 'end'], [-11, -10, 'end']]
+    : [[-6, -12, 'start'], [10, 4, 'start'], [-6, 22, 'start'], [-10, 4, 'end'], [6, -12, 'end'], [6, 22, 'end'], [10, -24, 'start'], [10, 34, 'start'], [-10, -24, 'end'], [-10, 34, 'end']];
+  const rank = n => (n.id === chosenId ? 0 : n.decided ? 1 : 2);
+  const labelled = node.filter(function () { return this.querySelector('text'); }).nodes()
+    .map(g => ({ g, n: d3.select(g).datum(), text: g.querySelector('text') }))
+    .sort((a, b) => rank(a.n) - rank(b.n) || a.n.start - b.n.start);
+
+  let hidden = 0;
+  for (const { n, text } of labelled) {
+    text.classList.remove('label-hidden');
+    // Measure the real glyph box once, with the baseline at 0.
+    text.setAttribute('x', 0); text.setAttribute('y', 0); text.setAttribute('text-anchor', 'start'); text.removeAttribute('dy');
+    const glyph = text.getBBox();
+    const w = glyph.width;
+    const boxOf = ([dx, dy, anchor]) => ({
+      x: n.x + dx - (anchor === 'end' ? w : 0) - 1, y: n.y + dy + glyph.y, w: w + 2, h: glyph.height,
+    });
+    const cost = spot => {
+      const box = boxOf(spot);
+      let total = boxes.reduce((sum, b) => sum + (b.id === n.id ? 0 : overlap(box, b)), 0);
+      total += axisLabels.reduce((sum, b) => sum + overlap(box, b), 0) * (n.decided || n.id === chosenId ? 0.25 : 1);
+      if (box.x < 0 || box.x + box.w > width || box.y < 0 || box.y + box.h > height) total += 1e6;
+      return total;
+    };
+    const costs = spots.map(cost);
+    let best = costs.indexOf(0);
+    const mustShow = n.decided || n.id === chosenId;
+    if (best === -1 && mustShow) best = costs.indexOf(Math.min(...costs));
+    if (best === -1) { text.classList.add('label-hidden'); hidden++; best = 0; }
+    const [dx, dy, anchor] = spots[best];
+    text.setAttribute('x', dx); text.setAttribute('y', dy); text.setAttribute('text-anchor', anchor);
+    text.removeAttribute('dy');
+    if (!text.classList.contains('label-hidden')) {
+      const box = boxOf(spots[best]);
+      boxes.push(box);
+      axisLabels.forEach(a => { if (overlap(box, a) > 0) a.el.classList.add('covered'); });
+    }
+  }
+  placeLabels.hidden = hidden;
+  status.textContent = statusText(visibleCandidates());
 }
 
 function controlPoint({ source: a, target: b }, bend) {
@@ -257,22 +368,43 @@ function drawAxis(stage, width, height, portrait) {
 function statusText(shown) {
   const claimCount = `${claims.length} decided claims`;
   const lead = notice ? `${notice} ` : '';
-  if (evidence === 'none') return `${lead}Showing ${claimCount}.`;
-  if (evidence === 'chosen' && !chosenId) return `${lead}Showing ${claimCount}. Choose a polity to add its computed overlaps.`;
-  return `${lead}Showing ${claimCount} and ${shown.length.toLocaleString('en')} computed overlaps.`;
+  const hidden = placeLabels.hidden ? ` ${placeLabels.hidden} ${placeLabels.hidden === 1 ? 'name is' : 'names are'} hidden where ${placeLabels.hidden === 1 ? 'it' : 'they'} would overlap; point at a dot to read it.` : '';
+  if (evidence === 'none') return `${lead}Showing ${claimCount}. Select a claim's line for its terms.${hidden}`;
+  if (evidence === 'chosen' && !chosenId) return `${lead}Showing ${claimCount}. Choose a polity to add its computed overlaps.${hidden}`;
+  return `${lead}Showing ${claimCount} and ${shown.length.toLocaleString('en')} computed overlaps.${hidden}`;
+}
+
+/** Opens one decided claim below the graph; `move` takes the reader there. */
+function openClaim(id, move = false) {
+  if (selectedClaimId === id && !move) return;
+  selectedClaimId = id;
+  svg.selectAll('.claim-edge').classed('selected', e => e.claim.id === id);
+  renderReading();
+  if (move) reading.querySelector('h2')?.focus();
 }
 
 /** The graph's content as text, which also serves keyboard and screen-reader use. */
 function renderReading() {
-  const sentence = c => `<li>${claimSentenceHtml(c)}</li>`;
+  const rows = list => `<ul class="claim-rows">${list.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>`;
+  const opened = selectedClaimId && claims.find(c => c.id === selectedClaimId);
+  if (opened) {
+    reading.innerHTML = `
+      <h2 tabindex="-1">${esc(opened.heir_name)} inherits from ${esc(opened.source_name)}</h2>
+      ${rows([opened])}
+      <p><button type="button" class="quiet-button" id="close-claim">Show all decided claims</button></p>`;
+    document.getElementById('close-claim').addEventListener('click', () => {
+      selectedClaimId = null;
+      svg.selectAll('.claim-edge').classed('selected', false);
+      renderReading();
+    });
+    return;
+  }
   const chosen = chosenId && polityById.get(chosenId);
   const own = chosen ? claims.filter(c => c.heir_polity_id === chosenId || (c.source_type === 'polity' && c.source_id === chosenId)) : [];
-  const chosenHtml = chosen ? `
-    <h2>${esc(chosen.name)}</h2>
+  reading.innerHTML = chosen ? `
+    <h2 tabindex="-1">${esc(chosen.name)}</h2>
     <p>${esc(formatDateRange(chosen.start, chosen.end))}. <a href="/polity/?id=${encodeURIComponent(chosen.id)}">Read the entry</a></p>
-    ${own.length ? `<ul class="graph-reading-list">${own.map(sentence).join('')}</ul>`
-      : '<p>No succession has been decided for this polity yet.</p>'}` : '';
-  reading.innerHTML = chosen ? chosenHtml : `
-    <h2>All decided claims</h2>
-    <ul class="graph-reading-list">${claims.map(sentence).join('')}</ul>`;
+    ${own.length ? rows(own) : '<p>No succession has been decided for this polity yet.</p>'}` : `
+    <h2 tabindex="-1">All decided claims</h2>
+    ${rows(claims)}`;
 }

@@ -106,12 +106,12 @@ Consumers: `public/graph.js` and `public/territory/app.js`, both only when the r
 
 Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTermini`. These routes are the only ones that state succession. `/api/succession` and the `successors` and `predecessors` of `/api/polity/:id` are computed candidates, despite their names (`graph.md`), and a page must label them as computed.
 
-- `GET /api/claim`: every claim, 9 today. Fields are those of `inheritance.md` as built by `inheritance.js` (`id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism, legitimacy_mode, exclusivity, temporal_gap_years, provenance, note, axes[], recognition[]`), plus `heir_name` and `source_name`, and `observer_name` on each `recognition` entry. A name falls back to the id. Consumers: `public/graph.js`, `public/index.html`.
+- `GET /api/claim`: every claim, 9 today. Fields are those of `inheritance.md` as built by `inheritance.js` (`id, heir_polity_id, source_id, source_type, source_temporal_status, topology, mechanism, legitimacy_mode, exclusivity, temporal_gap_years, provenance, note, axes[], recognition[]`), plus `heir_name` and `source_name`, and `observer_name` on each `recognition` entry. A name falls back to the id. Consumers: `public/graph.js` and `public/index.html`, which draw each claim through `claimRowHtml` in `public/shared/site.js` (`mechanism`, `legitimacy_mode`, `temporal_gap_years`, `provenance`, `recognition[]`; empty recognition is shown as "No recognition or rejection recorded"), and `public/polity/app.js` (index), which marks and filters polities that are a claim's heir or polity source.
 - `GET /api/polity/:id/claims`: `{as_heir: claim[], as_source: claim[], termini: {polity_id, axis, year, note}[]}`. All three arrays may be empty, which means not curated. 404 `{"error":"Not found"}` for an unknown id. Consumer: `public/polity/app.js`.
 
 ### 2.5 Territory
 
-- `GET /api/territory`: array of all 54 territories (about 55 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar.
+- `GET /api/territory`: array of all 54 territories (about 55 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar. The page also takes `?year=<integer>` (BCE negative), a client-side year cursor: it lists the bars whose period includes that year, both ends inclusive, and keeps solid (period differs from the lifespan) apart from hollow (period equals the lifespan). No route reads the year.
 - `GET /api/territory/:id`: one object; 404 `{"error":"Not found"}`. No frontend page calls it.
 
 ```json
@@ -164,7 +164,7 @@ Panels are the layer-1 file shape, so a change to the panel JSON schema is a dat
 
 - `GET /api/db`: the whole in-memory DB (about 1.6 MB), including the unused empty `provinces: []`. Marked "will deprecate" in `server.js`. No page uses it. Treat as unsupported.
 - `GET /data/*`: not served. `server.js` no longer mounts `data/` statically, so `/data/index.js` and the built JSON return 404. No page used it.
-- `GET /` and the static pages: `/` → `public/index.html` (home and how to read the data), `/graph.html` + `graph.js` (the one graph), `/polity/?id=`, `/territory/?id=`, `/ethnicity/`, `/language/`, `/religion/`, `/history/`.
+- `GET /` and the static pages: `/` → `public/index.html` (home and how to read the data), `/graph.html` + `graph.js` (the one graph), `/polity/?id=`, `/territory/?id=` (and `&year=`), `/ethnicity/`, `/language/`, `/religion/`, `/history/`.
 
 ## 3. Built files: generator and CSV provenance
 
@@ -221,7 +221,7 @@ Joined in `server.js`, not in `data/`: claim `heir_name`, `source_name` and `obs
 ## 6. Current state and open questions
 
 - **Succession type.** The A/B/C/D classification is retired (`graph.md`). **No JSON edge carries it**: `derived/polity_succession.csv` has no such column, `successions.js` copies none, and no `public/` file reads `.type` on an edge. The only classification that reaches the frontend is `territorial_direction` (5 values).
-- **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `heir_polity_id, source_id, source_type, heir_name, source_name`. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
+- **What `public/graph.js` uses.** From `/api/polity`: `id, name, start, end`. From `/api/claim`: `id, heir_polity_id, source_id, source_type, heir_name, source_name`, plus the fields `claimRowHtml` reads when a claim's line is opened. From `/api/succession`, only when the reader asks for computed evidence: `from, to`.
 - **Hardcoded polity ids in `public/`.** None found: no polity id string appears in any `public/**/*.js` or `.html` (checked for polity-id literals and for the merged and retired ids, including `kidarites` and `alchon_huns`, which exist as polities today, and `kidarite_kingdom`, which is retired). Hard-coded vocabularies that do exist: one default panel id and a few panel group names in `public/history/app.js`. A renamed panel loses only its group name, or the default if it was the default.
 - **Retired polity ids in panels.** Panel cells still reference polity ids that are not in `data/polity/` (2077 of 4191 refs; most were never polities, since panels are sparse by design, but retired and merged ids would also land here). Several panels mention `kidarites` or `alchon` (`central_asia/*`, `south_asia/*`, `persia_central_asia/iran`); those currently resolve. Settled: label-only is the intended form for a non-polity cell (section 2.9), and an unresolved `polity` stays a warning until the remaining ids are triaged.
 - **Open:** whether unused routes (`dynasty`, `government`, `figure`, `db`) are kept as public contract or removed; whether territory `name` should become a display name.
