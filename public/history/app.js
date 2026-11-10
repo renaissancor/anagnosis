@@ -14,6 +14,8 @@ const GROUP_OF_PANEL = { 'middle_east/morocco': 'North Africa' };
 
 let polityNames = new Map();
 let shownPanel = null;
+let columnWatch = null;
+addEventListener('resize', () => columnWatch?.());
 
 init();
 
@@ -33,7 +35,7 @@ async function init() {
     <label class="filter">Choose a region
       <select id="panel-picker">${pickerHtml(panels)}</select>
     </label>
-    <p class="panel-legend measure">Underlined names link to a polity entry. Plain names are labels: peoples, cultures, periods, events and names with no polity entry yet. The table scrolls in both directions.</p>
+    <p class="panel-legend measure">Underlined names link to a polity entry. Plain names are labels: peoples, cultures, periods, events and names with no polity entry yet. A wide table scrolls sideways; the column heads say how many columns are off screen.</p>
     <div id="panel-body"><p class="state">Loading…</p></div>`;
 
   const picker = document.getElementById('panel-picker');
@@ -101,8 +103,70 @@ async function showPanel(id, panels) {
   title.textContent = panel.title;
   document.title = `${panel.title} — Anagnosis`;
   body.innerHTML = panelHtml(panel);
-  const grid = body.querySelector('.panel-grid');
-  grid.style.setProperty('--head', `${grid.querySelector('.panel-head').offsetHeight}px`);
+  watchColumns(body.querySelector('.panel-frame'), panel.title);
+}
+
+/**
+ * The table flows at full page height and scrolls only sideways. The head strip
+ * follows the sideways scroll, and a note in it counts the columns still off
+ * screen, so a narrow screen never reads as the whole table.
+ */
+function watchColumns(frame, title) {
+  const scroller = frame.querySelector('.panel-scroll');
+  const headScroll = frame.querySelector('.panel-head-scroll');
+  const more = frame.querySelector('.panel-more');
+  const heads = [...headScroll.querySelectorAll('.panel-head:not(.era-head)')];
+  const update = () => {
+    headScroll.scrollLeft = scroller.scrollLeft;
+    const box = scroller.getBoundingClientRect();
+    const eraWidth = headScroll.querySelector('.era-head')?.offsetWidth || 0;
+    frame.style.setProperty('--era-edge', `${eraWidth}px`);
+    const before = heads.filter(h => h.getBoundingClientRect().left < box.left + eraWidth - 2).length;
+    const after = heads.filter(h => h.getBoundingClientRect().right > box.right + 2).length;
+    frame.classList.toggle('more-right', after > 0);
+    frame.classList.toggle('more-left', before > 0);
+    more.hidden = !after && !before;
+    const parts = [];
+    if (before) parts.push(`← ${before} ${before === 1 ? 'column' : 'columns'}`);
+    if (after) parts.push(`${after} more ${after === 1 ? 'column' : 'columns'} →`);
+    more.textContent = parts.join(' · ');
+    scroller.setAttribute('aria-label', after || before
+      ? `${title}, ${heads.length} columns, scrolls sideways` : `${title}, ${heads.length} columns`);
+  };
+  scroller.addEventListener('scroll', update, { passive: true });
+  columnWatch = update;
+  update();
+  document.fonts?.ready.then(update);
+  watchEra(frame);
+}
+
+/** The era head names the era at the top of the window, since era cells can be taller than it. */
+let eraWatch = null;
+function watchEra(frame) {
+  const label = frame.querySelector('.era-head .cell-text');
+  if (eraWatch) removeEventListener('scroll', eraWatch);
+  if (!label) return;
+  const heading = label.textContent;
+  const strip = frame.querySelector('.panel-head-strip');
+  const eras = [...frame.querySelectorAll('.panel-scroll .era-cell')];
+  let queued = false;
+  eraWatch = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      const line = strip.getBoundingClientRect().bottom;
+      const era = eras.find(cell => {
+        const box = cell.getBoundingClientRect();
+        return box.top < line && box.bottom > line;
+      });
+      const hidden = era && era.getBoundingClientRect().top < line - 4;
+      label.textContent = hidden ? era.textContent : heading;
+      label.parentElement.classList.toggle('era-current', Boolean(hidden));
+    });
+  };
+  addEventListener('scroll', eraWatch, { passive: true });
+  eraWatch();
 }
 
 function itemHtml(item) {
@@ -144,16 +208,19 @@ function panelHtml(panel) {
     }
   };
 
-  let html = '';
-  if (eraColumn) html += `<div class="panel-head era-head" style="grid-column:1;grid-row:1"><span class="cell-text">${esc(eraColumn.name)}</span></div>`;
+  // The column heads are their own grid, so they can stay in view while the page scrolls.
+  let head = '';
+  if (eraColumn) head += `<div class="panel-head era-head" style="grid-column:1;grid-row:1"><span class="cell-text">${esc(eraColumn.name)}</span></div>`;
   let at = 1 + eraOffset;
   for (const column of columns) {
-    html += `<div class="panel-head" style="grid-column:${at}/span ${whole(column.slots)};grid-row:1"><span class="cell-text">${esc(column.name)}</span></div>`;
+    head += `<div class="panel-head" style="grid-column:${at}/span ${whole(column.slots)};grid-row:1"><span class="cell-text">${esc(column.name)}</span></div>`;
     at += whole(column.slots);
   }
 
+  let html = '';
+
   panel.rows.forEach((row, rowIndex) => {
-    const gridRow = rowIndex + 2;
+    const gridRow = rowIndex + 1;
     const start = eraStarts.has(rowIndex) ? 'era-start' : '';
 
     if (eraColumn && row.era?.label) {
@@ -184,7 +251,14 @@ function panelHtml(panel) {
   const notes = panel.footnotes?.length
     ? `<h2>Notes</h2><ul class="panel-notes measure">${panel.footnotes.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : '';
 
-  return `<div class="panel-scroll" tabindex="0" role="region" aria-label="${esc(panel.title)}, scrolls in both directions">
-      <div class="panel-grid" style="grid-template-columns:${eraTrack}repeat(${slots},minmax(var(--slot),1fr));min-width:${minWidth}">${html}</div>
+  const grid = `grid-template-columns:${eraTrack}repeat(${slots},minmax(var(--slot),1fr));min-width:${minWidth}`;
+  return `<div class="panel-frame">
+      <div class="panel-head-strip">
+        <div class="panel-head-scroll"><div class="panel-grid" style="${grid}">${head}</div></div>
+        <p class="panel-more" hidden></p>
+      </div>
+      <div class="panel-scroll" tabindex="0" role="region" aria-label="${esc(panel.title)}">
+        <div class="panel-grid" style="${grid}">${html}</div>
+      </div>
     </div>${notes}`;
 }
