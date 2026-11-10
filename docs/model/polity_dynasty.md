@@ -37,8 +37,8 @@ yuan_dynasty,borjigin,1271,1368
 
 ## Current Coverage
 
-- **276 rows** mapping polities to dynasties (measured 2026-11-05, after commit f305379)
-- **275 unique polities**; `tokugawa_shogunate` has two rows. 269 of them are among the 348 polities whose `government` is monarchical by the `polity.md` section 7 list, so 79 monarchical polities have no row
+- **274 rows** mapping polities to dynasties (measured 2026-11-10)
+- **273 unique polities**; `tokugawa_shogunate` has two rows. 268 of them are among the 349 polities whose `government` is monarchical by the `polity.md` section 7 list, so 81 monarchical polities have no row
 - **186 unique dynasties** referenced (of 192 defined in dynasty.csv)
 - Non-monarchical polities (republics, communist states, confederations) have no rows
 
@@ -88,7 +88,8 @@ kingdom_of_england,tudor,1485,1603
 ## Open questions
 
 - `punt,aksumite,-2500,-1069` looks wrong (`non_polity.md` section 5).
+- Which house ruled `sulu_sultanate` and `brunei_sultanate`, from when, and by what source? Both have no row since 2026-11-10. Wikidata Q7375069 "Royal House of Sulu" exists as a lead, but it gives no reign and no dates. The Wikipedia corpus has no Brunei article.
 
 ## Decision log
 
-None recorded yet.
+- 2026-11-10: `hashemite` removed from `brunei_sultanate` and `sulu_sultanate` (ledger item 26). Neither Wikidata item has a dynasty statement, and the Sulu article never uses the word; its founder's name, Sharif ul-Hashim, is the probable origin of the tag. No replacement was written, because no source confirms a reign.

@@ -294,7 +294,7 @@ Run `node scripts/validate.js`. `npm test` also runs `make:all` first through `p
 | `policies` filled | 20 rows, 27 slugs, each used once |
 | `note` filled | 369 |
 | No `polity_territory` row | 6: `funan`, `khmer_empire`, `majapahit_empire`, `brunei_sultanate`, `sulu_sultanate`, `kingdom_of_tungning` |
-| No `polity_dynasty` row | 217 (79 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
+| No `polity_dynasty` row | 219, measured 2026-11-10 (81 of them have a government of `*monarchy`, `chinese_imperial`, `sultanate`, `emirate`, `khanate`, `caliphate`, `khaganate`, `principality`, `shogunate` or `imamate`) |
 | No `figure` row | 360 |
 | Wikidata identity link | 288 `id` rows; 11 more cite Wikidata only on fields such as dates (193 have no Wikidata row) |
 | No panel reference | 16 (such as `zhou_dynasty`, `song_dynasty`, `ecuador`, `uruk`, `tyre`) |
