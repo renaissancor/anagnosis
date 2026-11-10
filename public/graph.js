@@ -245,11 +245,14 @@ function layout(nodes, width, height, portrait, edges, pinDecided) {
 
 function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
   svg.selectAll('*').remove();
+  // The head is sized in page units, 14 long, so it stays inside CLEARANCE when the line thickens.
   svg.append('defs').append('marker').attr('id', 'ink-arrow').attr('viewBox', '0 -5 10 10')
-    .attr('refX', 16).attr('markerWidth', 7).attr('markerHeight', 7).attr('orient', 'auto')
+    .attr('markerUnits', 'userSpaceOnUse')
+    .attr('refX', 16).attr('markerWidth', 14).attr('markerHeight', 14).attr('orient', 'auto')
     .append('path').attr('class', 'arrow-head').attr('d', 'M0,-5L10,0L0,5');
   svg.select('defs').append('marker').attr('id', 'ink-arrow-dim').attr('viewBox', '0 -5 10 10')
-    .attr('refX', 16).attr('markerWidth', 7).attr('markerHeight', 7).attr('orient', 'auto')
+    .attr('markerUnits', 'userSpaceOnUse')
+    .attr('refX', 16).attr('markerWidth', 14).attr('markerHeight', 14).attr('orient', 'auto')
     .append('path').attr('class', 'arrow-head dim').attr('d', 'M0,-5L10,0L0,5');
 
   const stage = svg.append('g').attr('class', 'stage');
