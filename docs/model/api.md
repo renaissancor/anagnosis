@@ -111,7 +111,7 @@ Source: `data/inheritance/` through `db.inheritanceClaims` and `db.inheritanceTe
 
 ### 2.5 Territory
 
-- `GET /api/territory`: array of all 54 territories (about 55 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar. The page also takes `?year=<integer>` (BCE negative), a client-side year cursor: it lists the bars whose period includes that year, both ends inclusive, and keeps solid (period differs from the lifespan) apart from hollow (period equals the lifespan). No route reads the year.
+- `GET /api/territory`: array of all 56 territories (measured 2026-11-10) (about 55 KB). Consumer: `public/territory/app.js`, which draws bars from `polities[]`, so a bar shows the period held on that territory and not the polity's whole life. Adjoining periods of one polity are drawn as one bar. The page also takes `?year=<integer>` (BCE negative), a client-side year cursor: it lists the bars whose period includes that year, both ends inclusive, and keeps solid (period differs from the lifespan) apart from hollow (period equals the lifespan). No route reads the year.
 - `GET /api/territory/:id`: one object; 404 `{"error":"Not found"}`. No frontend page calls it.
 
 ```json

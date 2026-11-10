@@ -178,8 +178,8 @@ function parseYear(text) {
   return year === 0 ? null : year;
 }
 
-/** A holding counts in a year when the year falls within it, both ends included. */
-const holdsIn = (span, year) => span.start <= year && year <= span.to;
+/** A holding counts in a year when the year falls within it, both ends included; an ongoing one has no end. */
+const holdsIn = (span, year) => span.start <= year && (span.end === null || year <= span.end);
 
 function readoutHtml(spans, year, place) {
   const at = spans.filter(s => holdsIn(s, year));
@@ -193,6 +193,9 @@ function readoutHtml(spans, year, place) {
   if (at.some(s => s.whole)) key.push(`<li><span class="key-bar whole" aria-hidden="true"></span>Hollow: lifespan only. The polity was here at some point, not necessarily in ${esc(when)}.</li>`);
   return `<p><b>In ${esc(when)}:</b> ${at.map(item).join(', ')}.</p><ul class="year-key">${key.join('')}</ul>`;
 }
+
+/** Year 0 is refused, not mapped: BCE-negative years go from -1 straight to 1. */
+const unreadable = (text, where = '') => `<p class="state-error" role="alert">“${esc(text)}”${where} is not a year this page can read. Try 1500, 300 BCE or -300; there is no year 0.</p>`;
 
 // ── Timeline ────────────────────────────────────────────────────────────────
 
@@ -222,6 +225,7 @@ function startTimeline(spans, place) {
   let scale = Math.min(2.5, Math.max(0.4, 1000 / Math.max(to - from, 1)));
   let overlaps = null;
   let year = parseYear(params.get('year'));
+  let yearError = '';   // an unreadable year stays said until the reader sets another
   let placed = [], laneWidth = 0, axisWidth = 0;
   const y = value => PAD_TOP + (value - from) * scale;
 
@@ -275,7 +279,7 @@ function startTimeline(spans, place) {
     clear.hidden = year === null;
     for (const p of placed) p.el.classList.toggle('at-year', year !== null && holdsIn(p.s, year));
     if (year === null) {
-      readout.innerHTML = '';
+      readout.innerHTML = yearError;
     } else {
       readout.innerHTML = readoutHtml(spans, year, place) +
         '<p><button type="button" class="quiet-button" id="year-jump">Show this year on the timeline ↓</button></p>';
@@ -285,13 +289,14 @@ function startTimeline(spans, place) {
         if (first) scroller.scrollLeft = Math.max(0, first.left - axisWidth);
       });
       timeline.insertAdjacentHTML('beforeend',
-        `<div class="year-cursor" style="top:${y(year)}px" aria-hidden="true"><span>${esc(formatYear(year))}</span></div>`);
+        `<div class="year-cursor" style="top:${y(Math.min(Math.max(year, from), to))}px" aria-hidden="true"><span>${esc(formatYear(year))}</span></div>`);
     }
     updateLaneCue();
   }
 
   function setYear(value, { fromUrl = false } = {}) {
     year = value;
+    yearError = '';
     if (year !== null) input.value = formatYear(year);
     if (!fromUrl) {
       const url = new URL(location.href);
@@ -307,7 +312,9 @@ function startTimeline(spans, place) {
     if (!typed) return setYear(null);
     const value = parseYear(typed);
     if (value === null) {
-      readout.innerHTML = `<p class="state-error">“${esc(typed)}” is not a year this page can read. Try 1500, 300 BCE or -300; there is no year 0.</p>`;
+      year = null;
+      yearError = unreadable(typed);
+      showYear();
       return;
     }
     setYear(value);
@@ -413,7 +420,7 @@ function startTimeline(spans, place) {
   });
 
   if (year !== null) input.value = formatYear(year);
-  else if (params.get('year')) readout.innerHTML = `<p class="state-error">“${esc(params.get('year'))}” in the address is not a year this page can read.</p>`;
+  else if (params.get('year')) yearError = unreadable(params.get('year'), ' in the address');
   draw();
   // Web fonts can change how names wrap, so lay out again once they arrive.
   document.fonts?.ready.then(draw);
