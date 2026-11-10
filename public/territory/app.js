@@ -195,7 +195,7 @@ function readoutHtml(spans, year, place) {
 }
 
 /** Year 0 is refused, not mapped: BCE-negative years go from -1 straight to 1. */
-const unreadable = (text, where = '') => `<p class="state-error" role="alert">“${esc(text)}”${where} is not a year this page can read. Try 1500, 300 BCE or -300; there is no year 0.</p>`;
+const unreadable = (text, where = '') => `<p class="state-error">“${esc(text)}”${where} is not a year this page can read. Try 1500, 300 BCE or -300; there is no year 0.</p>`;
 
 // ── Timeline ────────────────────────────────────────────────────────────────
 

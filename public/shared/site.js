@@ -139,6 +139,9 @@ const CLAIM_GLOSSARY = {
   recognition: 'Recognition is what historical actors did at the time, not a modern verdict.',
 };
 
+/** The terms a claim row (claimRowHtml) shows, so every page that draws rows explains the same ones. */
+const CLAIM_ROW_TERMS = ['legitimacy', 'gap', 'recognition'];
+
 function claimGlossaryHtml(parts) {
   return `<details class="claim-glossary">
   <summary>What these terms mean</summary>

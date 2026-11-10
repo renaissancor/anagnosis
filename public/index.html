@@ -49,7 +49,7 @@
     claimsEl.innerHTML = `<p class="claim-total">${total}</p>
       <p class="claim-meta">Each claim reads from the source it inherits from to its heir. The arrow carries the mechanism; under it are the legitimacy, any gap in years, who at the time recognized or rejected it, and the cited source.</p>
       <ul class="claim-rows">${claims.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>
-      ${claimGlossaryHtml(['legitimacy', 'gap', 'recognition'])}`;
+      ${claimGlossaryHtml(CLAIM_ROW_TERMS)}`;
   }).catch(() => renderLoadError(claimsEl, 'The decided claims'));
 </script>
 </body>

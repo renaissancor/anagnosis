@@ -23,6 +23,7 @@
   --rule: #c9bea6;
   --field-edge: #8a7f6b;  /* edges of controls, 3:1 on paper */
   --binding: #2a5a4c;     /* links and the mark of a decided claim */
+  --binding-dim: #658475; /* a decided claim stepped back: still ink, 3.3:1 on paper */
   --seal: #8c2f2b;        /* errors only */
 
   --serif: 'Alegreya', 'Noto Serif', Georgia, serif;
@@ -45,13 +46,13 @@
   :root:not([data-theme="light"]) {
     color-scheme: dark;
     --paper: #1d2128; --paper-raised: #272c35; --ink: #e8e0cf; --ink-soft: #c2b9a7;
-    --pencil: #a9a79f; --rule: #3e444f; --field-edge: #7d8594; --binding: #93c8b5; --seal: #e8a29c;
+    --pencil: #a9a79f; --rule: #3e444f; --field-edge: #7d8594; --binding: #93c8b5; --binding-dim: #5e7d76; --seal: #e8a29c;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
   --paper: #1d2128; --paper-raised: #272c35; --ink: #e8e0cf; --ink-soft: #c2b9a7;
-  --pencil: #a9a79f; --rule: #3e444f; --field-edge: #7d8594; --binding: #93c8b5; --seal: #e8a29c;
+  --pencil: #a9a79f; --rule: #3e444f; --field-edge: #7d8594; --binding: #93c8b5; --binding-dim: #5e7d76; --seal: #e8a29c;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

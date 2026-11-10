@@ -22,6 +22,7 @@ let focusAfterDraw = null;
 let selectedClaimId = null;   // a decided edge the reader opened
 let anchors = { key: '', across: new Map() };
 let relabel = null;           // places labels again once web fonts arrive
+let dropped = 0;              // computed dots left out for crowding a decided dot
 
 const zoom = d3.zoom().scaleExtent([1, 8])
   // A plain wheel keeps scrolling the page; ctrl+wheel and pinch zoom the graph.
@@ -142,7 +143,11 @@ async function draw() {
 
   anchorDecided(polityClaims, decidedIds, width, portrait);
   layout(nodes, width, height, portrait, computedEdges, true);
-  render(nodes, decidedEdges, computedEdges, width, height, portrait);
+  // A computed dot with no clear place is left out, with its lines, and counted.
+  dropped = nodes.filter(n => n.dropped).length;
+  const kept = nodes.filter(n => !n.dropped);
+  const keptEdges = computedEdges.filter(e => !e.source.dropped && !e.target.dropped);
+  render(kept, decidedEdges, keptEdges, width, height, portrait);
   renderReading();
   if (focusAfterDraw) {
     svg.select(`a[data-id="${focusAfterDraw}"]`).node()?.focus();
@@ -174,29 +179,30 @@ function anchorDecided(polityClaims, decidedIds, width, portrait) {
  */
 const CLEARANCE = 40;
 
-/** Pushes each computed or chosen dot out of every decided dot's clearance, along the free axis. */
-function keepClear(nodes, clamp, portrait) {
+/**
+ * Moves each computed or chosen dot, along the axis that is not time, to the
+ * nearest place outside every decided dot's clearance. It tries the usual band
+ * first, then the whole frame. A computed dot with no such place is left out
+ * (`dropped`) rather than drawn at an arrow's tip; the chosen dot is never left out.
+ */
+function keepClear(nodes, portrait, preferred, widest) {
   const pinned = nodes.filter(n => n.pinned);
-  const free = nodes.filter(n => !n.pinned);
   const along = portrait ? 'x' : 'y', time = portrait ? 'y' : 'x';
-  for (let round = 0; round < 8; round++) {
-    let moved = false;
-    for (const n of free) {
-      for (const d of pinned) {
-        const dt = Math.abs(n[time] - d[time]);
-        if (dt >= CLEARANCE) continue;
-        const need = Math.sqrt(CLEARANCE ** 2 - dt ** 2);
-        const gap = n[along] - d[along];
-        if (Math.abs(gap) >= need) continue;
-        // Go to the nearer side unless the edge of the frame blocks it.
-        const side = gap === 0 ? 1 : Math.sign(gap);
-        let next = clamp(d[along] + side * need);
-        if (Math.abs(next - d[along]) < need - 0.5) next = clamp(d[along] - side * need);
-        n[along] = next;
-        moved = true;
-      }
-    }
-    if (!moved) break;
+  for (const n of nodes.filter(m => !m.pinned)) {
+    const blocked = pinned.map(d => {
+      const dt = Math.abs(n[time] - d[time]);
+      if (dt >= CLEARANCE) return null;
+      const need = Math.sqrt(CLEARANCE ** 2 - dt ** 2) + 0.5;
+      return [d[along] - need, d[along] + need];
+    }).filter(Boolean);
+    const clear = v => !blocked.some(([lo, hi]) => v > lo && v < hi);
+    if (clear(n[along])) continue;
+    const nearest = ([lo, hi]) => [lo, hi, ...blocked.flat()]
+      .filter(v => v >= lo && v <= hi && clear(v))
+      .sort((p, q) => Math.abs(p - n[along]) - Math.abs(q - n[along]))[0];
+    const place = nearest(preferred) ?? nearest(widest);
+    if (place !== undefined) n[along] = place;
+    else if (n.id !== chosenId) n.dropped = true;
   }
 }
 
@@ -234,7 +240,7 @@ function layout(nodes, width, height, portrait, edges, pinDecided) {
     });
   }
   nodes.forEach(n => { if (n.pinned) { n.x = n.fx; n.y = n.fy; } delete n.fx; delete n.fy; });
-  if (pinDecided) keepClear(nodes, clamp, portrait);
+  if (pinDecided) keepClear(nodes, portrait, portrait ? [pad, width * 0.55] : [pad, height - pad], [pad, across - pad]);
 }
 
 function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
@@ -242,6 +248,9 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
   svg.append('defs').append('marker').attr('id', 'ink-arrow').attr('viewBox', '0 -5 10 10')
     .attr('refX', 16).attr('markerWidth', 7).attr('markerHeight', 7).attr('orient', 'auto')
     .append('path').attr('class', 'arrow-head').attr('d', 'M0,-5L10,0L0,5');
+  svg.select('defs').append('marker').attr('id', 'ink-arrow-dim').attr('viewBox', '0 -5 10 10')
+    .attr('refX', 16).attr('markerWidth', 7).attr('markerHeight', 7).attr('orient', 'auto')
+    .append('path').attr('class', 'arrow-head dim').attr('d', 'M0,-5L10,0L0,5');
 
   const stage = svg.append('g').attr('class', 'stage');
   drawAxis(stage, width, height, portrait);
@@ -259,7 +268,9 @@ function render(nodes, decidedEdges, computedEdges, width, height, portrait) {
     .on('keydown', (ev, e) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openClaim(e.claim.id, true); } });
   claimEdge.each(e => { e.d = edgePath(e, clearBend(e, many ? nodes.filter(n => n.decided) : nodes)); });
   claimEdge.append('path').attr('class', 'edge-hit').attr('d', e => e.d);
-  claimEdge.append('path').attr('class', 'edge-decided').attr('marker-end', 'url(#ink-arrow)').attr('d', e => e.d);
+  const distant = e => chosenId && e.source.id !== chosenId && e.target.id !== chosenId && e.claim.id !== selectedClaimId;
+  claimEdge.append('path').attr('class', 'edge-decided').attr('d', e => e.d)
+    .attr('marker-end', e => (distant(e) ? 'url(#ink-arrow-dim)' : 'url(#ink-arrow)'));
   claimEdge.append('title').text(e => `${e.claim.heir_name} inherits from ${e.claim.source_name}`);
 
   const showLabel = n => !many || n.decided || n.id === chosenId;
@@ -402,23 +413,31 @@ function statusText(shown) {
   const claimCount = `${claims.length} decided claims`;
   const lead = notice ? `${notice} ` : '';
   const hidden = placeLabels.hidden ? ` ${placeLabels.hidden} ${placeLabels.hidden === 1 ? 'name is' : 'names are'} hidden where ${placeLabels.hidden === 1 ? 'it' : 'they'} would overlap; point at a dot to read it.` : '';
+  const left = dropped ? ` ${dropped} computed ${dropped === 1 ? 'polity is' : 'polities are'} left out because no place clear of the decided ones was free.` : '';
   if (evidence === 'none') return `${lead}Showing ${claimCount}. Select a claim's line for its terms.${hidden}`;
   if (evidence === 'chosen' && !chosenId) return `${lead}Showing ${claimCount}. Choose a polity to add its computed overlaps.${hidden}`;
-  return `${lead}Showing ${claimCount} and ${shown.length.toLocaleString('en')} computed overlaps.${hidden}`;
+  return `${lead}Showing ${claimCount} and ${shown.length.toLocaleString('en')} computed overlaps.${hidden}${left}`;
+}
+
+/** The open claim's line is full ink even when it is away from the chosen polity. */
+function markSelected() {
+  svg.selectAll('.claim-edge').classed('selected', e => e.claim.id === selectedClaimId)
+    .select('.edge-decided').attr('marker-end', e => (e.claim.id !== selectedClaimId &&
+      chosenId && e.source.id !== chosenId && e.target.id !== chosenId ? 'url(#ink-arrow-dim)' : 'url(#ink-arrow)'));
 }
 
 /** Opens one decided claim below the graph; `move` takes the reader there. */
 function openClaim(id, move = false) {
   if (selectedClaimId === id && !move) return;
   selectedClaimId = id;
-  svg.selectAll('.claim-edge').classed('selected', e => e.claim.id === id);
+  markSelected();
   renderReading();
   if (move) reading.querySelector('h2')?.focus();
 }
 
 /** The graph's content as text, which also serves keyboard and screen-reader use. */
 function renderReading() {
-  const rows = list => `<ul class="claim-rows">${list.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>`;
+  const rows = list => `<ul class="claim-rows">${list.map(c => `<li>${claimRowHtml(c)}</li>`).join('')}</ul>${claimGlossaryHtml(CLAIM_ROW_TERMS)}`;
   const opened = selectedClaimId && claims.find(c => c.id === selectedClaimId);
   if (opened) {
     reading.innerHTML = `
@@ -427,7 +446,7 @@ function renderReading() {
       <p><button type="button" class="quiet-button" id="close-claim">Show all decided claims</button></p>`;
     document.getElementById('close-claim').addEventListener('click', () => {
       selectedClaimId = null;
-      svg.selectAll('.claim-edge').classed('selected', false);
+      markSelected();
       renderReading();
     });
     return;

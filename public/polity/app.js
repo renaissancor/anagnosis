@@ -184,7 +184,7 @@ function claimHtml(claim, statement) {
   </article>`;
 }
 
-const GLOSSARY = claimGlossaryHtml(['topology', 'legitimacy', 'exclusivity', 'axes', 'recognition']);
+const GLOSSARY = claimGlossaryHtml(['topology', 'legitimacy', 'exclusivity', 'gap', 'axes', 'recognition']);
 
 function decidedHtml(polity, claims) {
   if (!claims) return '<section aria-labelledby="decided"><h2 id="decided">Decided claims</h2><div id="claims-error"></div></section>';
