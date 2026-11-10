@@ -6,7 +6,13 @@
 // dates from notes, infers government from ID suffixes, and maps
 // panel directories to territory FKs.
 //
-// Usage:   node scripts/generate_stubs.js
+// The output header is read from csvs/polity.csv, so a stub row can be
+// promoted by hand without column surgery. Territory hints are counted in
+// the summary but not written: territory lives only in
+// csvs/polity_territory.csv. start_basis and end_basis stay empty (not
+// assessed); docs/model/polity.md allows a value only with a source.
+//
+// Usage:  node scripts/generate_stubs.js
 // Output:  derived/polity_stubs.csv  (review-only; DO NOT merge blindly)
 // ============================================================
 
@@ -229,10 +235,16 @@ function titleCase(id) {
 
 // ─── BUILD STUB ROWS ─────────────────────────────────────
 
-const STUB_HEADERS = ['id','name','civilization_id','id_ruling_ethnicity','id_ruling_language',
-  'id_ruling_religion','government','territories','start_year','end_year','policies','note'];
+// Same columns, in the same order, as the table a stub is promoted into.
+const STUB_HEADERS = csv.headersOf(fs.readFileSync(POLITY_IN, 'utf8'));
+const STUB_FILLED = ['id', 'name', 'government', 'start_year', 'end_year', 'note'];
+for (const col of STUB_FILLED) {
+  if (!STUB_HEADERS.includes(col)) {
+    throw new Error(`generate_stubs: csvs/polity.csv has no "${col}" column; update the stub builder`);
+  }
+}
 
-let total = 0, generated = 0, withDate = 0, withoutDate = 0, govInferred = 0;
+let total = 0, generated = 0, withDate = 0, withoutDate = 0, govInferred = 0, withTerritoryHint = 0;
 let skippedExisting = 0, skippedCulture = 0, skippedNoSignal = 0;
 const stubs = [];
 
@@ -268,7 +280,7 @@ for (const c of candidates) {
       if (territoryIds.has(t)) terrSet.add(t);
     }
   }
-  const territories = [...terrSet].join('|');
+  if (terrSet.size) withTerritoryHint++;
 
   // Date inference: pick first parseable note.
   let start = '', end = '';
@@ -292,7 +304,6 @@ for (const c of candidates) {
     id: c.id,
     name,
     government,
-    territories,
     start_year: start === '' ? '' : String(start),
     end_year: end === '' ? '' : String(end),
     note,
@@ -310,6 +321,7 @@ console.log(`Stubs generated:          ${generated}`);
 console.log(`  with date:              ${withDate}`);
 console.log(`  without date:           ${withoutDate}`);
 console.log(`  with government:        ${govInferred}`);
+console.log(`  with territory hint:    ${withTerritoryHint}  (not written; territory lives in csvs/polity_territory.csv)`);
 console.log(`Skipped (already polity): ${skippedExisting}`);
 console.log(`Skipped (*_culture):      ${skippedCulture}`);
 console.log(`Skipped (no panel signal):${skippedNoSignal}`);

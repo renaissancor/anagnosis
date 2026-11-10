@@ -12,7 +12,6 @@ Every known defect and open job, with its owner role and whether it needs the pr
 | 10 | Low | `csvs/polity.csv:5`, `csvs/ethnicity.csv:277` | Punt uses the placeholder `cushitic_cluster`, and `punt_people` exists with no inbound reference | curator | Yes |
 | 11 | Low | `package-lock.json` | An uncommitted local change has no recorded reason | build-owner | Yes |
 | 12 | Low | `.gemini/settings.json` (history) | A personal Windows path stays in public git history. Decided 2026-11-01: history is not rewritten | owner | No |
-| 19 | Low | `scripts/generate_stubs.js:232` | `derived/polity_stubs.csv` header still has `civilization_id` and `territories` and lacks `start_basis`/`end_basis` | build-owner | Yes |
 | 20 | Low | `server.js:176` | `/api/dynasty` `polity_count` counts rows, the pattern fixed in territories; latent only | ui-designer | Yes |
 | 21 | Low | `csvs/polity.csv` | `north_yuan`/`northern_yuan` and `zangid_atabegate`/`zengid_dynasty` duplicate pairs need sourced end year, language and religion before a merge | curator | Yes |
 | 22 | Low | `csvs/language.csv`, `csvs/religion.csv`, `csvs/figure.csv` | 27 language names keep a legacy `()` prefix; madhhab ids mix `sunni_hanafi` with `hanbali_school`; a figure is named only "MBS" | curator | Yes |
