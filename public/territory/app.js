@@ -339,14 +339,20 @@ function startTimeline(spans, place) {
     const right = scroller.scrollLeft + scroller.clientWidth;
     const centre = lane => axisWidth + (lane + 0.5) * laneWidth;
     const hiddenLanes = side => [...Array(lanes).keys()].filter(l => (side < 0 ? centre(l) < left : centre(l) > right));
-    const crossing = laneList => year === null ? 0
-      : new Set(placed.filter(p => laneList.includes(p.lane) && holdsIn(p.s, year)).map(p => p.s.id)).size;
+    // Name what the hidden lanes hold; with a year set, only those recorded then.
+    const namesIn = laneList => {
+      const seen = new Set();
+      return placed.filter(p => laneList.includes(p.lane) && (year === null || holdsIn(p.s, year)))
+        .filter(p => !seen.has(p.s.id) && seen.add(p.s.id)).map(p => p.s.name);
+    };
     const words = (list, arrow) => {
       const n = list.length;
-      const cross = crossing(list);
+      const names = namesIn(list);
+      // "+1" would save no room, so four names show in full.
+      const shown = names.length <= 4 ? names.join(', ') : `${names.slice(0, 3).join(', ')} +${names.length - 3}`;
       const lane = `${n}${arrow === '→' ? ' more' : ''} ${n === 1 ? 'lane' : 'lanes'}`;
-      const extra = year === null ? '' : `, ${cross} ${cross === 1 ? 'polity' : 'polities'} in ${formatYear(year)}`;
-      return arrow === '→' ? `${lane}${extra} →` : `← ${lane}${extra}`;
+      const what = year === null ? `: ${shown}` : names.length ? `, in ${formatYear(year)}: ${shown}` : `, none in ${formatYear(year)}`;
+      return arrow === '→' ? `${lane}${what} →` : `← ${lane}${what}`;
     };
     const before = hiddenLanes(-1), after = hiddenLanes(1);
     toLeft.hidden = !before.length;
