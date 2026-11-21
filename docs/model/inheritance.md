@@ -37,7 +37,7 @@ Each column is marked **authored** (a curator writes it), **computed** (the buil
 
 ### `csvs/inheritance_claim.csv` — one row per (heir, source)
 
-Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_temporal_status,transfer_year,end_year,topology,mechanism,transfer_mode,exclusivity,provenance,note`
+Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_temporal_status,transfer_year,topology,mechanism,transfer_mode,exclusivity,provenance,note`
 
 | column | kind | values |
 |---|---|---|
@@ -45,9 +45,9 @@ Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_tempor
 | `heir_polity_id` | authored | FK → `polity.id` |
 | `source_id` | authored | FK → table named by `source_type`; see [Source](#source_type-and-source_id) |
 | `source_type` | authored | `polity` \| `ethnicity` \| `religion` \| `civilization` \| `stateless_people` |
-| `source_temporal_status` | computed for a polity source; authored for any other source (PROPOSED) | polity source: empty in the CSV ([Time](#time)). Other source: `ongoing` \| `abstract` (PROPOSED) |
+| `source_temporal_status` | computed for a polity source; authored for any other source | polity source: empty in the CSV ([Time](#time)). Other source: `ongoing` \| `abstract`; `prior` is not allowed |
 | `transfer_year` | authored, **new**, required | integer; see [Time](#time). Required on every claim (decided 2026-11-21); the column name is PROPOSED with the target header |
-| `end_year` | authored, **new**, optional — PROPOSED | integer; the year the heir renounced or dropped the claim; empty means it held to the heir's end |
+| `end_year` | **deferred**, not in the target header | the year the heir renounced or dropped the claim; added when a real abandoned or renounced claim needs it (Decision log, 2026-11-21) |
 | `topology` | authored | `continuation` \| `fission` \| `fusion` \| `secession` \| `absorption` |
 | `mechanism` | authored | `transformation` \| `conquest` \| `partition` \| `collapse` \| `unification` \| `personal_union` \| `secession` \| `dissolution` \| `revival` \| `translatio` \| `title_transfer` \| `colonial_independence` |
 | `transfer_mode` | authored; replaces `legitimacy_mode` (decided 2026-11-21) | `handover` \| `seizure` \| `assertion`; see [The mode](#the-mode) |
@@ -66,8 +66,8 @@ Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_tempor
 
 | field | rule |
 |---|---|
-| `source_temporal_status` | polity source: `prior` when the source's `end_year` is on or before the transfer year, otherwise `ongoing`. PROPOSED: an empty `end_year` is `ongoing`. Non-polity source: the authored value (PROPOSED) |
-| `temporal_gap_years` | polity source: `max(0, transfer year - source end_year)`. PROPOSED: 0 when the source's `end_year` is empty |
+| `source_temporal_status` | polity source: `prior` when the source's `end_year` is on or before the transfer year, otherwise `ongoing`; an empty `end_year` is `ongoing`. Non-polity source: the authored value |
+| `temporal_gap_years` | polity source: `max(0, transfer year - source end_year)`; 0 when the source's `end_year` is empty |
 | `contested_with` | PROPOSED field: array of claim ids in contest with this claim ([Contests](#contests-computed)) |
 | `contested_with_source` | PROPOSED field: boolean ([Contests](#contests-computed)) |
 
@@ -101,7 +101,7 @@ Target header (PROPOSED): `claim_id,observer_id,observer_type,degree,year,note`
 | `observer_id` | authored | a **real historical entity** — FK → `polity.id` when `observer_type=polity` |
 | `observer_type` | authored | `polity` \| `institution` (papacy, UN, …) |
 | `degree` | authored | `recognized` \| `partial` \| `rejected` |
-| `year` | authored, **new**, optional — PROPOSED | integer; the year of the documented act |
+| `year` | authored, **new**, optional | empty or an integer; the year of the documented act |
 | `note` | authored | free text |
 
 "Is this succession legitimate?" has no single answer; it is indexed by
@@ -185,11 +185,11 @@ Precedents, classified by the questions above. A new claim with the same structu
 ### Time
 
 - **Transfer year** (authored). When the thing was handed over or taken by force, the year it changed hands. When the heir declared it, the year of the heir's earliest documented assertion.
-  - PROPOSED: it must fall inside the heir's lifetime; one year before the heir's `start_year` is tolerated.
-  - PROPOSED: an assertion made before the heir row began belongs to whichever polity row made it.
+  - It must fall inside the heir's lifetime; one year before the heir's `start_year` is tolerated.
+  - An assertion made before the heir row began belongs to whichever polity row made it.
   - It is required on every claim (decided 2026-11-21).
-- **`end_year`** (PROPOSED). The year the heir renounced or dropped the claim. Leave it empty when the claim held to the heir's end.
-- **`source_temporal_status`.** For a polity source, leave it empty; the build computes it ([computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source)). PROPOSED: for a non-polity source, write `ongoing` if the source still existed as a living community at the transfer year, `abstract` if it is an idea.
+- **`end_year`** is deferred: no claim carries one. It is added when a real abandoned or renounced claim appears (Decision log, 2026-11-21).
+- **`source_temporal_status`.** For a polity source, leave it empty; the build computes it ([computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source)). For a non-polity source, write `ongoing` if the source still existed as a living community at the transfer year, `abstract` if it is an idea; never `prior`.
 - **The gap** is never authored.
 
 ### `exclusivity` and `title_key`
@@ -213,14 +213,14 @@ Precedents, classified by the questions above. A new claim with the same structu
 
 ### Recognition rows
 
-- A row records a **documented act by a historical actor** about this claim (did the Safavids accept the Ottoman caliphate? no) — never a modern judgment, never an AI's opinion. PROPOSED: fill `year` when the act is dated.
+- A row records a **documented act by a historical actor** about this claim (did the Safavids accept the Ottoman caliphate? no) — never a modern judgment, never an AI's opinion. Fill `year` when the act is dated.
 - PROPOSED: a rival's own competing claim is not an act of rejection. Implied rejection of rivals is computed from [contests](#contests-computed) and is never written as a recognition row.
 
 ### Contests (computed)
 
 Contests are computed, never authored, and are keyed on the **title asserted**, not on the source. The mechanics below are PROPOSED.
 
-- A claim is **active** from the transfer year to its `end_year`, or to the heir's `end_year` when that is empty.
+- A claim is **active** from the transfer year to the heir's `end_year` (claim `end_year` is deferred).
 - Two claims are **in contest** when both are `exclusive`, both have an `affirmed` axis row with the same `title_key`, and their active periods overlap.
 - An `exclusive` claim with an `affirmed` `title_key` row on a polity source whose computed status is `ongoing` is also **in contest with the source itself** (`contested_with_source`).
 
@@ -242,7 +242,7 @@ csvs/inheritance_*.csv + csvs/axis_terminus.csv
   → scripts/validate.js                     (FKs + full enum vocabulary)
 ```
 
-PROPOSED target build: each claim in `claims.json` carries `transfer_year`, `end_year`, `transfer_mode`, the [computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source) under their existing names, `title_key` on axis entries and `year` on recognition entries. The rename of `legitimacy_mode` to `transfer_mode` is decided (2026-11-21) and is a breaking change under [`api.md`](./api.md) section 5: the old field name is emitted alongside the new one for one commit with the same value, and the pages move in the same change.
+PROPOSED target build: each claim in `claims.json` carries `transfer_year`, `transfer_mode`, the [computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source) under their existing names, `title_key` on axis entries and `year` on recognition entries. The rename of `legitimacy_mode` to `transfer_mode` is decided (2026-11-21) and is a breaking change under [`api.md`](./api.md) section 5: the old field name is emitted alongside the new one for one commit with the same value, and the pages move in the same change.
 
 `code/generate-successions.js` is a **candidate suggester**: it writes
 proposed edges + evidence to `derived/polity_succession.csv`; the
@@ -258,7 +258,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 
 1. ✅ Canonical doc + curated tables + generator + validation, in the 2026-11-01 shape
 2. ✅ `generate-successions.js` demoted to candidate suggester
-3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year; the collapse case; the non-polity `assertion` rule; mechanism-mode agreement; the gap tolerance of 1), the uniqueness item under Q6 was deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
+3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year; the collapse case; the non-polity `assertion` rule; mechanism-mode agreement; the gap tolerance of 1; the transfer year's lifetime bound; status `ongoing` and gap 0 for a polity source with an empty `end_year`), the non-polity `ongoing` or `abstract` status under Q6 and recognition `year` were decided, the uniqueness item under Q6 and claim `end_year` were deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
 4. ⬜ Owner confirms or rejects each item under [Proposed, awaiting the owner](#proposed-awaiting-the-owner)
 5. ✅ Approved rules and the PROPOSED target shape written in this file (2026-11-16)
 6. ⬜ Regrade the 9 seeded claims under [How to judge a claim](#how-to-judge-a-claim), one claim at a time with the owner's approval; `ottoman_from_abbasid` becomes the Mamluk and Ottoman pair
@@ -282,14 +282,14 @@ Not built yet (step 7). Each check fails the run. Checks marked PROPOSED wait fo
 
 1. PROPOSED: headers match the target headers above.
 2. Enums: `transfer_mode` is `handover`, `seizure` or `assertion`; `stance` is present and is `affirmed`, `repudiated` or `transformed`.
-3. `source_temporal_status` is empty for a polity source. PROPOSED: it is `ongoing` or `abstract` for any other source.
+3. `source_temporal_status` is empty for a polity source, and `ongoing` or `abstract` for any other source; `prior` is not allowed.
 4. Uniqueness on (`heir_polity_id`, `source_type`, `source_id`), as enforced today. Adding the transfer year is deferred (Decision log, 2026-11-21).
-5. The transfer year is present and an integer on every claim. PROPOSED: it is from the heir's `start_year` minus 1 to the heir's `end_year` (no upper bound when that is empty). PROPOSED: `end_year`, when present, is from the transfer year to the heir's `end_year`.
+5. The transfer year is present and an integer on every claim, from the heir's `start_year` minus 1 to the heir's `end_year` (no upper bound when that is empty). Claim `end_year` is deferred, so no clause checks it.
 6. **Mechanism and mode agree** — `conquest` requires `seizure`; `translatio` and `revival` require `assertion`.
 7. **Gap rule:** a claim handed over or taken by force from a polity source has a computed gap of 0. A gap of 1 is tolerated, because years are whole numbers and two events can fall in consecutive years.
 8. PROPOSED: an `exclusive` claim has at least one axis row with a non-empty `title_key`.
 9. PROPOSED: `title_key` is snake_case and appears only on `title` and `political_legitimacy` rows.
-10. PROPOSED: recognition `year` is empty or an integer.
+10. Recognition `year` is empty or an integer.
 11. `dynastic_change` is never a mechanism.
 
 ## Current state (measured 2026-11-01)
@@ -340,14 +340,16 @@ Moved here from `graph.md`. `graph.md` section 6 holds the ranked questions.
 - 2026-11-21: a non-polity source is always `assertion`, since it holds no government, territory or office-holder. Replaces silence.
 - 2026-11-21: mechanism and mode must agree (check 6): `conquest` requires `seizure`; `translatio` and `revival` require `assertion`. Replaces independent columns.
 - 2026-11-21: check 7 tolerates a gap of 1, because years are whole numbers and two events can fall in consecutive years. Replaces a strict gap of 0.
+- 2026-11-21: the transfer year falls inside the heir's lifetime, from the heir's `start_year` minus 1 to its `end_year`, with no upper bound when that is empty (check 5). An assertion made before the heir row began belongs to the row that made it. Replaces silence.
+- 2026-11-21: deferred, not adopted: claim `end_year`. It is added when a real abandoned or renounced claim appears. Reason: none of the 9 current claims needs it.
+- 2026-11-21: recognition `year`, empty or an integer (check 10). Replaces undated recognition. This unblocks `TODO.md` 36.
+- 2026-11-21: a polity source with an empty `end_year` has status `ongoing` and gap 0. Replaces silence.
+- 2026-11-21: for a non-polity source, `source_temporal_status` is authored as `ongoing` (a living community at the transfer year) or `abstract` (an idea); `prior` is not allowed (check 3). Replaces an authored status with `prior` allowed.
 
 ### Proposed, awaiting the owner
 
 Design choices drafted where the owner's decisions were silent. None is decided.
 
-- The transfer year must fall inside the heir's lifetime, with one year of tolerance (check 5); an earlier assertion belongs to the row that made it; would replace silence.
-- Claim `end_year`, bounded by the transfer year and the heir's `end_year`; would replace claims with no end.
-- Recognition `year`; would replace undated recognition.
 - Column `title_key`, only on `title` and `political_legitimacy` rows, format-checked only, with the in-use list as reference; would replace having no field to key contests on.
 - An `exclusive` claim must carry a `title_key` row, so zero-axis claims are allowed only when `shared`; would replace allowing every zero-axis claim.
 - Contest mechanics: active periods, overlap, contest with an ongoing source, and the fields `contested_with` and `contested_with_source`; would replace having no contest computation.
@@ -356,8 +358,6 @@ Design choices drafted where the owner's decisions were silent. None is decided.
 - Not claims: personal union alone, suzerainty and investiture by a surviving sovereign, drift with no datable event; would extend the dynastic-change rule.
 - A claim may be acquired in mid-life, and every polity boundary should end with a claim or an `axis_terminus` row; would replace the assumption that claims sit only on polity boundaries.
 - For a declared inheritance, the source is the entity the assertion names, the latest row that bore it before the transfer year; would replace silence.
-- For a non-polity source, `source_temporal_status` is authored as `ongoing` (a living community at the transfer year) or `abstract` (an idea); would replace an authored status with `prior` allowed.
-- For a polity source with an empty `end_year`, status `ongoing` and gap 0; would replace silence.
 - The target table headers and the `claims.json` fields, with `legitimacy_mode` emitted alongside for one commit; would replace the 2026-11-01 shape.
 - "Mandate transfer" alone does not admit an edge (`graph.md` Q1); would narrow the `02-type-system.md` exception to the dynastic rule.
 - `topology` and `mechanism` stay on the claim (`graph.md` Q4); would replace the open question whether topology belongs there.

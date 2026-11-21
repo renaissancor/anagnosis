@@ -268,7 +268,6 @@ The example uses the flat field names of the PROPOSED target build in `inheritan
   "source_temporal_status": "prior",
   "temporal_gap_years": 0,
   "transfer_year": 1517,
-  "end_year": null,
   "topology": null,
   "mechanism": null,
   "transfer_mode": "seizure",
@@ -334,11 +333,11 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q5. How does time work on a claim?** `byzantine_empire` overlaps the Ottomans for 154 years. Is that `prior`? Does `prior` mean ended before the heir's founding, or before the transfer? Should the gap be stored?
 *Recommendation:* `prior` means ended by the transfer, add an authored transfer year, and compute the gap from it. Storing a gap derivable from `polity.csv` otherwise breaks one-home-per-fact.
-*Answered 2026-11-16:* as recommended. The transfer year is authored; for a polity source, `prior` means the source's `end_year` is on or before the transfer year, and the gap is computed and leaves the CSV. See `inheritance.md`, "Time". Decided 2026-11-21: the transfer year is required on every claim, and the gap check tolerates a gap of 1. The column name and its lifetime bound are proposed, awaiting the owner.
+*Answered 2026-11-16:* as recommended. The transfer year is authored; for a polity source, `prior` means the source's `end_year` is on or before the transfer year, and the gap is computed and leaves the CSV. See `inheritance.md`, "Time". Decided 2026-11-21: the transfer year is required on every claim and falls from the heir's `start_year` minus 1 to its `end_year`; the gap check tolerates a gap of 1; a polity source with an empty `end_year` has status `ongoing` and gap 0. Deferred 2026-11-21: claim `end_year`. The column name is proposed, awaiting the owner.
 
 **Q6. What can a source be?** `civilization` has no table and is deferred, `stateless_people` has no table, and `abstract` sources have no home.
 *Recommendation:* start with `polity`, `ethnicity` and `religion`; a stateless people is an `ethnicity` with `source_temporal_status` set to `ongoing`. Enforce uniqueness on heir, source type and source id, and make claim ids readable and text-based.
-*Not answered.* Deferred 2026-11-21, not adopted: adding the transfer year to the uniqueness key; it stays heir, source type and source id until a real claim needs a second transfer year for the same heir and source, and none of the 9 current claims does. Proposed, awaiting the owner: a non-polity source carries an authored `source_temporal_status` of `ongoing` or `abstract`, so `abstract` sources have a status. See `inheritance.md`, "The four tables". Also open: which source types get a table (`civilization`, `stateless_people`, a `dynasty` type for descent claims), a source entity for a colonial unit, and the claim id format.
+*Not answered.* Deferred 2026-11-21, not adopted: adding the transfer year to the uniqueness key; it stays heir, source type and source id until a real claim needs a second transfer year for the same heir and source, and none of the 9 current claims does. Decided 2026-11-21: a non-polity source carries an authored `source_temporal_status` of `ongoing` or `abstract`, never `prior`, so `abstract` sources have a status. See `inheritance.md`, "The four tables". Also open: which source types get a table (`civilization`, `stateless_people`, a `dynasty` type for descent claims), a source entity for a colonial unit, and the claim id format.
 
 ### Needed before bulk curation
 
