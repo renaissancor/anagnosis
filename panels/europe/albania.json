@@ -248,7 +248,7 @@
             },
             {
               "label": "Nicaean Empire / Epirus",
-              "polity": "nicaean_empire"
+              "polity": "later_byzantine_empire"
             }
           ],
           "span": 1
@@ -298,7 +298,7 @@
             },
             {
               "label": "Byzantine",
-              "polity": "byzantine_empire"
+              "polity": "later_byzantine_empire"
             }
           ],
           "span": 1

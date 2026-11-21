@@ -80,9 +80,14 @@ Citing a source does not grant permission. The licence does; the citation is a c
 
 `npm run validate` checks the licence allowlist and that each `fact_source` row names a real table, row, field and source. Done means it passes.
 
-## Current state (measured 2026-11-05)
+## Citation rules (decided 2026-11-22)
 
-`source.csv` has 1 row (`wikidata`) and `fact_source.csv` has 327: 290 identity links (`field = id`) and 37 field citations on 12 polities.
+1. **Binned sources.** A field may be cited to a source that bins time when the chosen year falls in, or just before, the first bin that shows the change, and the `note` names the event that fixes the year. A binned source records a change only at the next bin edge. Example: `fact_source.csv:332-333`, the Cliopatria citations for `later_byzantine_empire` in `anatolia` (end 1337, the fall of Nicomedia, inside the 1333–1343 slice) and in `balkans` (start 1246, the absorption of Thessalonica, just before the 1250–1259 slice that first shows the European territory).
+2. **Spans split differently.** When our split rule divides a span differently from the source, the `id` link goes to the source item that shares the row's start. The `note` names any other items that cover the rest. Example: `later_byzantine_empire` links to Q181254 (Empire of Nicaea, from 1204), and the note names Q3053276 (1261–1453).
+
+## Current state (measured 2026-11-22)
+
+`source.csv` has 2 rows (`wikidata`, `cliopatria`) and `fact_source.csv` has 332: 291 identity links (`field = id`), 39 field citations on 13 polities and 2 field citations on `polity_territory` rows.
 
 ## Open questions
 
@@ -90,4 +95,6 @@ Citing a source does not grant permission. The licence does; the citation is a c
 
 ## Decision log
 
-None recorded yet.
+| Date | Decision | Reason |
+|---|---|---|
+| 2026-11-22 | The owner adopted the two citation rules above: binned sources (rule 1; a year in or just before the first bin that shows the change, reworded the same day) and spans split differently (rule 2). | A binned source records a change only at the next bin edge. Set while executing the Byzantine split (TODO 66), where Cliopatria bins time and Wikidata divides the span at 1261 |

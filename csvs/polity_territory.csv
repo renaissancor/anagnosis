@@ -6,7 +6,7 @@ anatolia,macedonian_empire,-336,-323
 anatolia,seleucid_empire,-312,-63
 anatolia,roman_empire,-27,380
 anatolia,roman_empire,380,395
-anatolia,byzantine_empire,395,1453
+anatolia,byzantine_empire,395,1204
 anatolia,seljuk_rum,1077,1307
 anatolia,ottoman_empire,1299,1922
 anatolia,republic_of_turkey,1923,
@@ -23,7 +23,7 @@ balkans,roman_republic,-509,-27
 balkans,roman_empire,-27,380
 balkans,roman_empire,380,395
 balkans,western_roman_empire,395,476
-balkans,byzantine_empire,395,1453
+balkans,byzantine_empire,395,1204
 balkans,first_bulgarian_empire,681,1018
 balkans,serbian_empire,1190,1389
 balkans,ottoman_empire,1299,1922
@@ -811,3 +811,5 @@ arabia,hashimite_kingdom_of_hejaz,1916,1926
 levant,lebanese_republic,1943,
 levant,baathist_syrian_arab_republic,1963,2024
 north_africa,wattasid_dynasty,1472,1554
+anatolia,later_byzantine_empire,1204,1337
+balkans,later_byzantine_empire,1246,1453

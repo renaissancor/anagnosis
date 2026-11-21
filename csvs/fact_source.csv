@@ -326,3 +326,8 @@ polity,wattasid_dynasty,end_year,wikidata,Q970799,P576 1554
 polity,wattasid_dynasty,id_ruling_religion,wikidata,Q970799,P140 Q483654 Sunni Islam; mapped to sunni
 polity,wattasid_dynasty,government,wikidata,Q970799,P122 monarchy and sultan; mapped to sultanate
 polity,wattasid_dynasty,id_ruling_language,wikidata,Q970799,P2936 Berber and Arabic; Arabic mapped to classical_arabic as the court prestige language
+polity,later_byzantine_empire,id,wikidata,Q181254,Q181254 is the Empire of Nicaea (inception 1204) and ends at 1261; the restored empire 1261–1453 is the separate period item Q3053276 (Byzantine Empire under the Palaiologos dynasty); this row covers both
+polity,later_byzantine_empire,id_ruling_language,wikidata,Q181254,official language medieval Greek; mapped to byzantine_greek
+polity,later_byzantine_empire,id_ruling_religion,wikidata,Q181254,religion Greek Orthodoxy; mapped to eastern_orthodox to match byzantine_empire (owner decision 2026-11-21)
+polity_territory,anatolia|later_byzantine_empire|1204,end_year,cliopatria,Nicaean Empire 1206–1278; Byzantine Empire 1279–1467,Anatolian area falls to roughly 7000–10000 km² (Bithynia remnant) in the 1333–1343 slice; about 1000 km² in 1344–1351 and under 100 km² from 1352; end set at 1337 (fall of Nicomedia) inside the last substantial bin
+polity_territory,balkans|later_byzantine_empire|1246,start_year,cliopatria,Nicaean Empire 1206–1278; Byzantine Empire 1279–1467,First European polygon (Thrace; Macedonia; Thessalonica; about 100000 km²) in the 1250–1259 slice and none in 1210–1249; Empire of Thessalonica runs to 1249; start set at 1246 for its absorption; no break at 1261

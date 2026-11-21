@@ -1,2 +1,3 @@
 id,name,url,licence,version,retrieved,citation,note
 wikidata,Wikidata,https://www.wikidata.org/wiki/Wikidata:Licensing,CC0-1.0,2026-10-31,2026-10-31,Wikidata; https://www.wikidata.org,Used for identity links (field id) and for field citations in fact_source.csv such as dates; government; language and religion; values are mapped to local ids in our own words and never imported
+cliopatria,Cliopatria,https://zenodo.org/records/23128623,CC-BY-4.0,v0.2.1,2026-10-31,Cliopatria (Scientific Data paper doi:10.1038/s41597-025-04516-9) v0.2.1; Zenodo 23128623; cliopatria_polities_only_v021.geojson,Used for polity_territory citations in fact_source.csv; polygon extents and time slices are compared to zones in our own words and never imported

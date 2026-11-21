@@ -93,7 +93,7 @@ There is no id. A row's key is `territory_id`, `polity_id`, `start_year`, in tha
 
 Rows written by hand need no provenance row. Add a `fact_source` row when a fact was taken from a source. `entity_table` is `polity_territory`, and `entity_id` is the composite key above.
 
-`wikidata` is the only entry in `source.csv` today, and no `fact_source` row points at this table. To cite Cliopatria, add it to `source.csv` first (`source.md`).
+`source.csv` has `wikidata` and `cliopatria` (registered 2026-11-22). Two `fact_source` rows point at this table, both Cliopatria citations for `later_byzantine_empire` (`fact_source.csv:332-333`). A citation to a source that bins time follows `source.md` citation rule 1. To cite any other source, add it to `source.csv` first (`source.md`).
 
 ---
 

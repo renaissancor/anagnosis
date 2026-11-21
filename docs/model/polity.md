@@ -243,7 +243,7 @@ Librarian agents in `.claude/agents/` are read-only and return evidence with a r
 polity,akkadian_empire,id,wikidata,Q4461035,
 ```
 
-For a polity, `entity_table` is `polity` and `entity_id` is the polity `id`. An empty `field` means the whole row. `source_id` must exist in `source.csv`, and `wikidata` is the only registered source today. To cite another source, add its `source.csv` row first, following `source.md`.
+For a polity, `entity_table` is `polity` and `entity_id` is the polity `id`. An empty `field` means the whole row. `source_id` must exist in `source.csv`, which registers `wikidata` and `cliopatria` today. To cite another source, add its `source.csv` row first, following `source.md`. When our split rule divides a span differently from the source, follow `source.md` citation rule 2.
 
 ---
 
