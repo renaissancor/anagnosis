@@ -195,7 +195,7 @@ Evidence, unchanged and separate (measured 2026-11-16):
 
 The `abbasid_caliphate → ottoman_empire` candidate stays as evidence; no claim is written on that pair.
 
-The 1204 split is executed: `byzantine_empire` runs 395–1204 and `later_byzantine_empire` 1204–1453, since under [`polity.md`](./polity.md) open question 13, answered 2026-11-21, the empire restored in 1261 is not a new row. The 1453 `seizure` claim was re-sourced to `later_byzantine_empire` on 2026-11-22. The 1547 Russian assertion takes the same row as its source, but its re-sourcing awaits the owner.
+The 1204 split is executed: `byzantine_empire` runs 395–1204 and `later_byzantine_empire` 1204–1453, since under [`polity.md`](./polity.md) open question 13, answered 2026-11-21, the empire restored in 1261 is not a new row. The 1453 `seizure` claim was re-sourced to `later_byzantine_empire` on 2026-11-22. The 1547 Russian assertion was re-sourced to the same row on 2026-11-22.
 
 The earlier `03` version of this example did not fit the data at four points. On 2026-11-16 the owner's rules settled each:
 
@@ -350,7 +350,7 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q9. Where does an interruption marker live?** `07` wants one on `byzantine_empire` for 1204-1261, and no table defines it.
 *Recommendation:* a small authored `polity_interruption.csv`, since it is a fact about a polity and not about an inheritance.
-*Answered in part.* Settled: under the owner's amendment of 2026-11-16 to the split rule in [`polity.md`](./polity.md) section 4, `byzantine_empire` ends at 1204 and Nicaea is a separate row, so the 1204-1261 case that raised this question needs no marker. This follows from the amendment confirmed 2026-11-21; it was not confirmed separately. That split is not yet executed in the data. Still proposed, awaiting the owner: the marker is a fact about a polity row, carried by a table of period labels on a polity row that will also hold conventional period names. It stays proposed because no real case needs it yet. Answered 2026-11-21 (`polity.md` open question 13): the post-1261 empire is not a new row, and the Nicaea row continues to 1453. Still open: the table's design and name.
+*Answered in part.* Settled: under the owner's amendment of 2026-11-16 to the split rule in [`polity.md`](./polity.md) section 4, `byzantine_empire` ends at 1204 and Nicaea is a separate row, so the 1204-1261 case that raised this question needs no marker. This follows from the amendment confirmed 2026-11-21; it was not confirmed separately. The split was executed in the data on 2026-11-21 (`later_byzantine_empire`, 1204–1453). Still proposed, awaiting the owner: the marker is a fact about a polity row, carried by a table of period labels on a polity row that will also hold conventional period names. It stays proposed because no real case needs it yet. Answered 2026-11-21 (`polity.md` open question 13): the post-1261 empire is not a new row, and the Nicaea row continues to 1453. Still open: the table's design and name.
 
 **Q10. Is the worked example still right?** See the four mismatches in section 3.
 *Recommendation:* drop `dynasty` from the Seljuk claim, and re-source the title claim once Q5 and the Cairo line are settled.
