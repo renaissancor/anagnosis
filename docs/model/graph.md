@@ -170,11 +170,11 @@ The dynastic rule has an exception: a transition that was more than dynastic, me
 
 ### Ottoman worked example
 
-The claims follow the rules of 2026-11-16 in [`inheritance.md`](./inheritance.md); column names and mode value names there are PROPOSED, awaiting the owner. Mode and transfer year are filled where the precedents give them; status and gap are computed from `transfer_year` and `polity.csv`. `?` marks a value the regrade sets. The Cairo Abbasid line is not a polity row, so the caliphate reaches the Ottomans through the Mamluks.
+The claims follow the rules of 2026-11-16 and 2026-11-21 in [`inheritance.md`](./inheritance.md). The mode column `transfer_mode` and its value names were decided on 2026-11-21; the other column names there are PROPOSED, awaiting the owner. Mode and transfer year are filled where the precedents give them; status and gap are computed from `transfer_year` and `polity.csv`. `?` marks a value the regrade sets. The Cairo Abbasid line is not a polity row, so the caliphate reaches the Ottomans through the Mamluks.
 
 `inheritance_claim`:
 
-| heir_polity_id | source_id | transfer year | mode (PROPOSED names) | mechanism | status (computed) | gap (computed) |
+| heir_polity_id | source_id | transfer year | mode | mechanism | status (computed) | gap (computed) |
 |---|---|---:|---|---|---|---:|
 | `ottoman_empire` | `byzantine_empire` | 1453 | `seizure` | `conquest` | `prior` | 0 |
 | `mamluk_sultanate` | `abbasid_caliphate` | 1261 | `assertion` | ? | `prior` | 3 |
@@ -195,7 +195,7 @@ Evidence, unchanged and separate (measured 2026-11-16):
 
 The `abbasid_caliphate → ottoman_empire` candidate stays as evidence; no claim is written on that pair.
 
-The 1453 Byzantine row stands on today's data. Once the decided 1204 split runs, `byzantine_empire` ends at 1204, so a `seizure` claim in 1453 would fail check 7 in `inheritance.md`, and its real source depends on [`polity.md`](./polity.md) open question 13. The same question decides which row the 1547 Russian assertion names.
+The 1453 Byzantine row stands on today's data. Once the decided 1204 split is executed, `byzantine_empire` ends at 1204, and the 1453 `seizure` claim takes the Nicaea row as its source: under [`polity.md`](./polity.md) open question 13, answered 2026-11-21, the empire restored in 1261 is not a new row and the Nicaea row continues to 1453. The 1547 Russian assertion takes the same row as its source. The split is not yet executed in the data.
 
 The earlier `03` version of this example did not fit the data at four points. On 2026-11-16 the owner's rules settled each:
 
@@ -330,15 +330,15 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q4. Where do topology, mechanism and Mode live?** Is the "edge-level" bet in `03` accepted? Is Mode stored? Which term owns `fission`, `fusion` and `continuation`? `07` also uses `continuation` for a suspended polity, which is not an edge at all.
 *Recommendation:* keep both on the claim, derive Mode from a published mechanism table, and keep those three words as topologies only.
-*Answered in part, 2026-11-16.* Settled: Mode is stored and authored, judged by three ordered questions (handed over, taken by force, declared), not derived from mechanism. See `inheritance.md`, "The mode". Proposed, awaiting the owner: the column name `transfer_mode` and its value names; that mechanism constrains mode (`conquest` requires `seizure`; `translatio` and `revival` require `assertion`); and that topology and mechanism stay on the claim. Still open: which term owns `fission`, `fusion` and `continuation`, and `07`'s use of `continuation` for a suspended polity.
+*Answered in part, 2026-11-16.* Settled: Mode is stored and authored, judged by three ordered questions (handed over, taken by force, declared), not derived from mechanism. See `inheritance.md`, "The mode". Decided 2026-11-21: the column is `transfer_mode`, with values `handover`, `seizure` and `assertion`. Proposed, awaiting the owner: that mechanism constrains mode (`conquest` requires `seizure`; `translatio` and `revival` require `assertion`); and that topology and mechanism stay on the claim. Still open: which term owns `fission`, `fusion` and `continuation`, and `07`'s use of `continuation` for a suspended polity.
 
 **Q5. How does time work on a claim?** `byzantine_empire` overlaps the Ottomans for 154 years. Is that `prior`? Does `prior` mean ended before the heir's founding, or before the transfer? Should the gap be stored?
 *Recommendation:* `prior` means ended by the transfer, add an authored transfer year, and compute the gap from it. Storing a gap derivable from `polity.csv` otherwise breaks one-home-per-fact.
-*Answered 2026-11-16:* as recommended. The transfer year is authored; for a polity source, `prior` means the source's `end_year` is on or before the transfer year, and the gap is computed and leaves the CSV. See `inheritance.md`, "Time". The column name and its lifetime bound are proposed, awaiting the owner.
+*Answered 2026-11-16:* as recommended. The transfer year is authored; for a polity source, `prior` means the source's `end_year` is on or before the transfer year, and the gap is computed and leaves the CSV. See `inheritance.md`, "Time". Decided 2026-11-21: the transfer year is required on every claim. The column name and its lifetime bound are proposed, awaiting the owner.
 
 **Q6. What can a source be?** `civilization` has no table and is deferred, `stateless_people` has no table, and `abstract` sources have no home.
 *Recommendation:* start with `polity`, `ethnicity` and `religion`; a stateless people is an `ethnicity` with `source_temporal_status` set to `ongoing`. Enforce uniqueness on heir, source type and source id, and make claim ids readable and text-based.
-*Not answered.* Proposed, awaiting the owner: uniqueness on heir, source type, source id and transfer year; a non-polity source carries an authored `source_temporal_status` of `ongoing` or `abstract`, so `abstract` sources have a status. See `inheritance.md`, "The four tables". Also open: which source types get a table (`civilization`, `stateless_people`, a `dynasty` type for descent claims), a source entity for a colonial unit, and the claim id format.
+*Not answered.* Deferred 2026-11-21, not adopted: adding the transfer year to the uniqueness key; it stays heir, source type and source id until a real claim needs a second transfer year for the same heir and source, and none of the 9 current claims does. Proposed, awaiting the owner: a non-polity source carries an authored `source_temporal_status` of `ongoing` or `abstract`, so `abstract` sources have a status. See `inheritance.md`, "The four tables". Also open: which source types get a table (`civilization`, `stateless_people`, a `dynasty` type for descent claims), a source entity for a colonial unit, and the claim id format.
 
 ### Needed before bulk curation
 
@@ -351,11 +351,11 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q9. Where does an interruption marker live?** `07` wants one on `byzantine_empire` for 1204-1261, and no table defines it.
 *Recommendation:* a small authored `polity_interruption.csv`, since it is a fact about a polity and not about an inheritance.
-*Answered in part.* Settled: under the owner's amendment of 2026-11-16 to the split rule in [`polity.md`](./polity.md) section 4, `byzantine_empire` ends at 1204 and Nicaea is a separate row, so the 1204-1261 case that raised this question needs no marker. This follows from the amendment confirmed 2026-11-21; it was not confirmed separately. That split is not yet executed in the data. Proposed, awaiting the owner: the marker is a fact about a polity row, carried by a table of period labels on a polity row that will also hold conventional period names. Still open: the table's design and name, and whether the post-1261 empire is a new row (`polity.md` open question 13).
+*Answered in part.* Settled: under the owner's amendment of 2026-11-16 to the split rule in [`polity.md`](./polity.md) section 4, `byzantine_empire` ends at 1204 and Nicaea is a separate row, so the 1204-1261 case that raised this question needs no marker. This follows from the amendment confirmed 2026-11-21; it was not confirmed separately. That split is not yet executed in the data. Proposed, awaiting the owner: the marker is a fact about a polity row, carried by a table of period labels on a polity row that will also hold conventional period names. Answered 2026-11-21 (`polity.md` open question 13): the post-1261 empire is not a new row, and the Nicaea row continues to 1453. Still open: the table's design and name.
 
 **Q10. Is the worked example still right?** See the four mismatches in section 3.
 *Recommendation:* drop `dynasty` from the Seljuk claim, and re-source the title claim once Q5 and the Cairo line are settled.
-*Answered 2026-11-16:* all four mismatches are settled by approved rules (the Mamluk chain, computed status, the axis-row rule, zero-axis claims); section 3 now shows the example, with the caliphate running through the Mamluks. Its column names and mode value names are proposed, awaiting the owner.
+*Answered 2026-11-16:* all four mismatches are settled by approved rules (the Mamluk chain, computed status, the axis-row rule, zero-axis claims); section 3 now shows the example, with the caliphate running through the Mamluks. Its mode column and value names were decided on 2026-11-21; its other column names are proposed, awaiting the owner.
 
 ### Can wait
 

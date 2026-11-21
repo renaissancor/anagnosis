@@ -2,7 +2,7 @@
 
 > **Status: live, served by `/api/claim` and `/api/polity/:id/claims`.** This file is the table contract for the four inheritance tables and the rules for judging a claim. [`graph.md`](./graph.md) owns the boundary between claims and computed candidates, and the ranked open questions. Design rationale is archived in [`docs/brainstorm/succession/`](../brainstorm/succession/README.md).
 >
-> **The contract and the files do not match yet.** On 2026-11-16 the owner approved part of a new rule set; see the [Decision log](#decision-log). The rest is marked **PROPOSED**: a design choice awaiting the owner's confirmation, listed under [Proposed, awaiting the owner](#proposed-awaiting-the-owner). A curator must not treat a PROPOSED item as decided. The CSVs, `scripts/validate.js`, `code/makejson/inheritance.js`, the DDL and the API still carry the earlier shape (`legitimacy_mode`, an authored `temporal_gap_years`, the `neutral` stance, no transfer year). See [Migration status](#migration-status).
+> **The contract and the files do not match yet.** On 2026-11-16 and 2026-11-21 the owner approved part of a new rule set; see the [Decision log](#decision-log). The rest is marked **PROPOSED**: a design choice awaiting the owner's confirmation, listed under [Proposed, awaiting the owner](#proposed-awaiting-the-owner). A curator must not treat a PROPOSED item as decided. The CSVs, `scripts/validate.js`, `code/makejson/inheritance.js`, the DDL and the API still carry the earlier shape (`legitimacy_mode`, an authored `temporal_gap_years`, the `neutral` stance, no transfer year). See [Migration status](#migration-status).
 
 ## The one-sentence model
 
@@ -18,9 +18,9 @@ not one blended similarity edge per polity-pair.
 
 ## Why multi-parent — the Ottoman example
 
-One successor inherits different things from *different* sources. The mode is classified by the [approved questions](#the-mode); the value names are PROPOSED. A `?` is left for the regrade.
+One successor inherits different things from *different* sources. The mode is classified by the [approved questions](#the-mode). A `?` is left for the regrade.
 
-| claim | transfer year | mode (PROPOSED names) | what the heir took up |
+| claim | transfer year | mode | what the heir took up |
 |---|---:|---|---|
 | ottoman_empire ← byzantine_empire | 1453 | seizure | the Roman imperial title (Kayser-i Rum) and Constantinople as imperial stage |
 | mamluk_sultanate ← abbasid_caliphate | 1261 | assertion | the caliphate; Baybars installed an Abbasid in Cairo three years after Baghdad fell |
@@ -28,14 +28,14 @@ One successor inherits different things from *different* sources. The mode is cl
 | ottoman_empire ← seljuk_rum | ? | ? | the Anatolian ruling people and Persianate administration |
 | republic_of_turkey ← ottoman_empire | ? | seizure | political legitimacy, title and legal tradition, all **repudiated** |
 
-The Ottoman caliphate runs through the Mamluks because the Cairo Abbasid line is not a polity row ([Source](#source_type-and-source_id)). The 1453 row stands on today's data: once the decided split runs, `byzantine_empire` ends at 1204, this `seizure` claim would fail check 7, and its real source depends on [`polity.md`](./polity.md) open question 13. The last row is why stance exists: an heir can deliberately *reject* an
+The Ottoman caliphate runs through the Mamluks because the Cairo Abbasid line is not a polity row ([Source](#source_type-and-source_id)). The 1453 row stands on today's data. Once the decided 1204 split is executed, `byzantine_empire` ends at 1204 and this `seizure` claim takes the Nicaea row as its source, since that row continues to 1453 ([`polity.md`](./polity.md) open question 13, answered 2026-11-21). The split is not yet executed in the data. The last row is why stance exists: an heir can deliberately *reject* an
 axis, and that repudiation is itself historical data.
 
 ## The four tables
 
 Each column is marked **authored** (a curator writes it), **computed** (the build derives it; never in the CSV) or **removed**. Every target header below is PROPOSED.
 
-### `csvs/inheritance_claim.csv` — one row per (heir, source, transfer)
+### `csvs/inheritance_claim.csv` — one row per (heir, source)
 
 Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_temporal_status,transfer_year,end_year,topology,mechanism,transfer_mode,exclusivity,provenance,note`
 
@@ -46,18 +46,18 @@ Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_tempor
 | `source_id` | authored | FK → table named by `source_type`; see [Source](#source_type-and-source_id) |
 | `source_type` | authored | `polity` \| `ethnicity` \| `religion` \| `civilization` \| `stateless_people` |
 | `source_temporal_status` | computed for a polity source; authored for any other source (PROPOSED) | polity source: empty in the CSV ([Time](#time)). Other source: `ongoing` \| `abstract` (PROPOSED) |
-| `transfer_year` | authored, **new** | integer; see [Time](#time). The column name and making it required are PROPOSED |
+| `transfer_year` | authored, **new**, required | integer; see [Time](#time). Required on every claim (decided 2026-11-21); the column name is PROPOSED with the target header |
 | `end_year` | authored, **new**, optional — PROPOSED | integer; the year the heir renounced or dropped the claim; empty means it held to the heir's end |
 | `topology` | authored | `continuation` \| `fission` \| `fusion` \| `secession` \| `absorption` |
 | `mechanism` | authored | `transformation` \| `conquest` \| `partition` \| `collapse` \| `unification` \| `personal_union` \| `secession` \| `dissolution` \| `revival` \| `translatio` \| `title_transfer` \| `colonial_independence` |
-| `transfer_mode` | authored; replaces `legitimacy_mode`. The column name and the value names are PROPOSED | `handover` \| `seizure` \| `assertion`; see [The mode](#the-mode) |
+| `transfer_mode` | authored; replaces `legitimacy_mode` (decided 2026-11-21) | `handover` \| `seizure` \| `assertion`; see [The mode](#the-mode) |
 | `exclusivity` | authored | `exclusive` \| `shared`; see [Exclusivity](#exclusivity-and-title_key) |
 | `provenance` | authored | **required** — curated claims always carry a receipt (editorial-policy §3) |
 | `note` | authored | free text (no commas — semicolons) |
 | `legitimacy_mode` | **removed** | `organic`, `claimed`, `fictive` are gone; replaced by the three-way mode |
 | `temporal_gap_years` | **removed** from the CSV | computed ([Time](#time)) |
 
-**Uniqueness (PROPOSED):** (`heir_polity_id`, `source_type`, `source_id`, transfer year), so that two events between the same pair can both be recorded (the three partitions of Poland). Until confirmed, the enforced key stays (`heir_polity_id`, `source_type`, `source_id`). `source_type` is in the key because ethnicity and religion share some ids.
+**Uniqueness:** (`heir_polity_id`, `source_type`, `source_id`). `source_type` is in the key because ethnicity and religion share some ids. Adding the transfer year to the key, so that two events between the same pair could both be recorded (the three partitions of Poland), is deferred until a real claim needs it (Decision log, 2026-11-21).
 
 **`dynastic_change` is not a mechanism.** A pure change of ruling house is a
 `polity_dynasty` row, never an inheritance claim.
@@ -149,7 +149,7 @@ Whether a transition ends a polity is not decided here; that is the split rule i
 
 ### The mode
 
-The mode records a fact about how the thing passed, not a verdict on legitimacy; disputes about legitimacy live in `inheritance_recognition`. The three modes are **handed over**, **taken by force** and **declared**. PROPOSED: the column is `transfer_mode` and the values are `handover`, `seizure` and `assertion`, used below. Ask in order; the first answer that applies decides.
+The mode records a fact about how the thing passed, not a verdict on legitimacy; disputes about legitimacy live in `inheritance_recognition`. The three modes are **handed over**, **taken by force** and **declared**. The column is `transfer_mode` and the values are `handover`, `seizure` and `assertion` (decided 2026-11-21). Ask in order; the first answer that applies decides.
 
 1. **Did anything pass from the source to the heir at a datable event?** That is: did the source itself hold the government, territory, or office-holder until the transfer? If no, the mode is `assertion`: the heir declares the inheritance on its own (doctrine, descent, marriage, a coronation by a third party, a name or symbol taken up, installing or hosting a member of the source's house after the source ended).
 2. **Did the heir obtain it by armed force against the source's government?** Conquest, revolution, coup, a war of independence. A cession, abdication or treaty signed while the heir's forces already held the source's seat also counts. If yes, `seizure`.
@@ -164,16 +164,16 @@ Consequences:
 - `handover` and `seizure` both mean the source held the thing until the transfer; check 7 in [Checks the validator will enforce](#checks-the-validator-will-enforce) tests it.
 - PROPOSED: mechanism and mode must agree (check 6).
 
-Precedents, classified by the questions above (value names PROPOSED). A new claim with the same structure takes the same mode.
+Precedents, classified by the questions above. A new claim with the same structure takes the same mode.
 
 | Claim | Mode | Why |
 |---|---|---|
 | Byzantine from Roman, 395 | handover | division by the empire's own arrangement |
-| Ottoman from Byzantine, 1453 | seizure | conquest. Stands on today's data only: once the 1204 split runs, `byzantine_empire` ends at 1204 and check 7 would fail; the real source depends on `polity.md` open question 13 |
+| Ottoman from Byzantine, 1453 | seizure | conquest. Stands on today's data only: once the 1204 split is executed, `byzantine_empire` ends at 1204 and the source is the Nicaea row, which continues to 1453 (`polity.md` open question 13, answered 2026-11-21) |
 | Latin Empire from Byzantine, 1204 | seizure | conquest |
 | Republic of Turkey from Ottoman | seizure | the Ankara assembly abolished the sultanate against the sultan |
 | Holy Roman Empire's Roman claim, 962 | assertion | nothing passed from a Roman government |
-| Russia's Byzantine claim | assertion | doctrine, marriage and a title. Stands on today's data only: once the 1204 split runs, `byzantine_empire` ends at 1204, and the row the 1547 assertion names depends on `polity.md` open question 13 |
+| Russia's Byzantine claim | assertion | doctrine, marriage and a title. Stands on today's data only: once the 1204 split is executed, `byzantine_empire` ends at 1204 and the 1547 assertion takes the Nicaea row as its source (`polity.md` open question 13, answered 2026-11-21) |
 | Cao Wei from Eastern Han, 220 | handover | abdication; no army took the seat |
 | Tang from Sui, 618 | seizure | the capital had already been taken by force |
 | Japan's annexation of Korea, 1910 | seizure | treaty signed under occupation. Cannot be encoded yet: `joseon` ends in 1897 and no Korean Empire row exists (`TODO.md` 61), so the gap check would fail |
@@ -187,9 +187,9 @@ Precedents, classified by the questions above (value names PROPOSED). A new clai
 - **Transfer year** (authored). When the thing was handed over or taken by force, the year it changed hands. When the heir declared it, the year of the heir's earliest documented assertion.
   - PROPOSED: it must fall inside the heir's lifetime; one year before the heir's `start_year` is tolerated.
   - PROPOSED: an assertion made before the heir row began belongs to whichever polity row made it.
-  - PROPOSED: it is required on every claim.
+  - It is required on every claim (decided 2026-11-21).
 - **`end_year`** (PROPOSED). The year the heir renounced or dropped the claim. Leave it empty when the claim held to the heir's end.
-- **`source_temporal_status`.** For a polity source, leave it empty; the build computes it ([computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source-transfer)). PROPOSED: for a non-polity source, write `ongoing` if the source still existed as a living community at the transfer year, `abstract` if it is an idea.
+- **`source_temporal_status`.** For a polity source, leave it empty; the build computes it ([computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source)). PROPOSED: for a non-polity source, write `ongoing` if the source still existed as a living community at the transfer year, `abstract` if it is an idea.
 - **The gap** is never authored.
 
 ### `exclusivity` and `title_key`
@@ -242,7 +242,7 @@ csvs/inheritance_*.csv + csvs/axis_terminus.csv
   → scripts/validate.js                     (FKs + full enum vocabulary)
 ```
 
-PROPOSED target build: each claim in `claims.json` carries `transfer_year`, `end_year`, `transfer_mode`, the [computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source-transfer) under their existing names, `title_key` on axis entries and `year` on recognition entries. Renaming `legitimacy_mode` is a breaking change under [`api.md`](./api.md) section 5: the old field name is emitted alongside the new one for one commit with the same value, and the pages move in the same change.
+PROPOSED target build: each claim in `claims.json` carries `transfer_year`, `end_year`, `transfer_mode`, the [computed fields](#csvsinheritance_claimcsv--one-row-per-heir-source) under their existing names, `title_key` on axis entries and `year` on recognition entries. The rename of `legitimacy_mode` to `transfer_mode` is decided (2026-11-21) and is a breaking change under [`api.md`](./api.md) section 5: the old field name is emitted alongside the new one for one commit with the same value, and the pages move in the same change.
 
 `code/generate-successions.js` is a **candidate suggester**: it writes
 proposed edges + evidence to `derived/polity_succession.csv`; the
@@ -258,7 +258,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 
 1. ✅ Canonical doc + curated tables + generator + validation, in the 2026-11-01 shape
 2. ✅ `generate-successions.js` demoted to candidate suggester
-3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part; the rest are open, and several answers leave PROPOSED items
+3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year), the uniqueness item under Q6 was deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
 4. ⬜ Owner confirms or rejects each item under [Proposed, awaiting the owner](#proposed-awaiting-the-owner)
 5. ✅ Approved rules and the PROPOSED target shape written in this file (2026-11-16)
 6. ⬜ Regrade the 9 seeded claims under [How to judge a claim](#how-to-judge-a-claim), one claim at a time with the owner's approval; `ottoman_from_abbasid` becomes the Mamluk and Ottoman pair
@@ -281,10 +281,10 @@ Done means the validator passes and the project owner has approved the claim.
 Not built yet (step 7). Each check fails the run. Checks marked PROPOSED wait for the owner.
 
 1. PROPOSED: headers match the target headers above.
-2. Enums: the mode takes one of three values (PROPOSED names `handover`, `seizure`, `assertion`); `stance` is present and is `affirmed`, `repudiated` or `transformed`.
+2. Enums: `transfer_mode` is `handover`, `seizure` or `assertion`; `stance` is present and is `affirmed`, `repudiated` or `transformed`.
 3. `source_temporal_status` is empty for a polity source. PROPOSED: it is `ongoing` or `abstract` for any other source.
-4. PROPOSED: uniqueness on (`heir_polity_id`, `source_type`, `source_id`, transfer year).
-5. PROPOSED: the transfer year is an integer from the heir's `start_year` minus 1 to the heir's `end_year` (no upper bound when that is empty). PROPOSED: `end_year`, when present, is from the transfer year to the heir's `end_year`.
+4. Uniqueness on (`heir_polity_id`, `source_type`, `source_id`), as enforced today. Adding the transfer year is deferred (Decision log, 2026-11-21).
+5. The transfer year is present and an integer on every claim. PROPOSED: it is from the heir's `start_year` minus 1 to the heir's `end_year` (no upper bound when that is empty). PROPOSED: `end_year`, when present, is from the transfer year to the heir's `end_year`.
 6. PROPOSED: **mechanism and mode agree** — `conquest` requires `seizure`; `translatio` and `revival` require `assertion`.
 7. **Gap rule:** a claim handed over or taken by force from a polity source has a computed gap of 0. PROPOSED: a gap of 1 is tolerated, because years are whole numbers and two events can fall in consecutive years.
 8. PROPOSED: an `exclusive` claim has at least one axis row with a non-empty `title_key`.
@@ -331,20 +331,21 @@ Moved here from `graph.md`. `graph.md` section 6 holds the ranked questions.
 - 2026-11-16: the Cairo Abbasid line is not a polity row; `ottoman_from_abbasid` is replaced by Mamluk from Abbasid (1261) and Ottoman from Mamluk (1517).
 - 2026-11-16: the owner amended the split rule for a polity that loses its seat to conquest; recorded in `polity.md`.
 - 2026-11-16: whether proclaiming a new state name or title alone creates a polity stays open, for a pilot on the Chinese dynastic chain.
-- 2026-11-21: the owner confirmed the split-rule amendment (`byzantine_empire` ends at 1204; Nicaea is a separate row). It follows that the Byzantine 1204–1261 case needs no interruption marker (`graph.md` Q9); this was not confirmed separately. The data split is not executed; whether the post-1261 empire is a new row stays open (`polity.md` open question 13).
+- 2026-11-21: the owner confirmed the split-rule amendment (`byzantine_empire` ends at 1204; Nicaea is a separate row). It follows that the Byzantine 1204–1261 case needs no interruption marker (`graph.md` Q9); this was not confirmed separately. The data split is not executed; whether the post-1261 empire is a new row stays open (`polity.md` open question 13; answered below, 2026-11-21).
+- 2026-11-21: the mode column is `transfer_mode`, with values `handover` (handed over), `seizure` (taken by force) and `assertion` (declared). Replaces the column name `legitimacy_mode`. This is a breaking API rename, so `legitimacy_mode` is emitted alongside `transfer_mode` with the same value for one commit ([Pipeline](#pipeline)).
+- 2026-11-21: a transfer year is required on every claim. Replaces silence. The column name `transfer_year` stays PROPOSED with the target header.
+- 2026-11-21: deferred, not adopted: widening uniqueness to (`heir_polity_id`, `source_type`, `source_id`, transfer year). The key stays (`heir_polity_id`, `source_type`, `source_id`) until a real claim needs a second transfer year for the same heir and source. Reason: none of the 9 current claims needs it.
+- 2026-11-21: `polity.md` open question 13 is answered (recorded in `polity.md`): the empire restored in 1261 is not a new row, and the Nicaea row continues to 1453, because recapturing the seat is not a split event. Consequence: once the 1204 split is executed, the 1453 Ottoman `seizure` claim and the 1547 Russian assertion take the Nicaea row as their source. The split is not yet executed in the data.
 
 ### Proposed, awaiting the owner
 
 Design choices drafted where the owner's decisions were silent. None is decided.
 
-- Column `transfer_mode` with values `handover`, `seizure`, `assertion`; would replace the column name `legitimacy_mode` (a breaking API rename).
 - The collapse case under `handover`; would add a case to question 3 that no rule covered.
 - A non-polity source is always `assertion`; would replace silence.
 - Mechanism and mode must agree (check 6); would replace independent columns.
 - Gap tolerance of 1 in check 7; would replace a strict gap of 0.
 - The transfer year must fall inside the heir's lifetime, with one year of tolerance (check 5); an earlier assertion belongs to the row that made it; would replace silence.
-- The transfer year is required on every claim; would replace silence.
-- Uniqueness on (`heir_polity_id`, `source_type`, `source_id`, transfer year); would replace (`heir_polity_id`, `source_type`, `source_id`).
 - Claim `end_year`, bounded by the transfer year and the heir's `end_year`; would replace claims with no end.
 - Recognition `year`; would replace undated recognition.
 - Column `title_key`, only on `title` and `political_legitimacy` rows, format-checked only, with the in-use list as reference; would replace having no field to key contests on.
