@@ -123,7 +123,7 @@ mughal_empire,Mughal Empire,turkic_cluster,new_persian_farsi,sunni_hanafi,imperi
 | External ids such as QIDs | `fact_source.csv` |
 | Civilization | Nowhere: it will never be a column (`civilization.md`) |
 | Capital, region | No column exists, though `city.md` mentions `polity.capital_id` and `polity.region` |
-| Interruption marker (07's Byzantine 1204–1261 case) | No column exists. Put it in `note` until one does (PROPOSED) |
+| Interruption marker | No column exists. 07's Byzantine 1204–1261 case no longer needs one: under the 2026-11-16 amendment to section 4 clause 3, `byzantine_empire` ends at 1204 (not yet executed). Whether any other case needs a marker is OPEN (section 7, question 10). Until a home exists, put one in `note` (PROPOSED) |
 
 Older docs describe `polity.ideology` as a nested object with `religion`, `government` and `philosophy`. In the CSV, ideology is the two columns `id_ruling_religion` and `government`. `philosophy` does not exist.
 
@@ -181,7 +181,7 @@ To retire an id, change these together, as `ac64f59` did:
 3. the `polity` field in `panels/**/*.json`
 4. `SYNONYM_MAP` and `merge_map.md` §3 for a row replaced by another polity; `STRIP_LIST` and `merge_map.md` §6 for a row with no polity replacement
 
-### When to split (Decided 2026-06-21, 07-polity-split.md)
+### When to split (Decided 2026-06-21, 07-polity-split.md; clause 3 amended 2026-11-16)
 
 A transition creates a new polity if and only if one of these holds:
 
@@ -190,8 +190,12 @@ A transition creates a new polity if and only if one of these holds:
    - If one branch clearly keeps the seat, the senior legitimacy and the continuity claim, it is **secession**: the parent continues and the other buds off.
    - If the division is symmetric or contested, it is **fission**: the parent ends and there are two children. Rome 395 is fission, giving `western_roman_empire` and `byzantine_empire`.
 3. **Interruption.** Ask whether the polity's own sovereign government kept functioning anywhere across the gap.
-   - Yes: it was suspended, so it stays one row. Byzantine 1204–1261 (Nicaea) stays one `byzantine_empire`.
+   - **Amended 2026-11-16 (owner), confirmed 2026-11-21.** A polity that loses its seat to conquest is extinguished, even if a government of it keeps functioning elsewhere. The government that carries on elsewhere is its own polity row. The "suspended" case below therefore applies only when the sovereign government kept its seat, or when no conquest took the seat.
+   - Yes: it was suspended, so it stays one row.
    - No: it was extinguished, so there is a new row even with the same ideology or dynasty. `eastern_han` after `xin`.
+   - Seat lost to conquest: extinguished, whatever carried on elsewhere. Byzantium 1204: `byzantine_empire` ends at 1204, and Nicaea is a separate row.
+
+   **Not yet executed in the data.** `csvs/polity.csv` still has one `byzantine_empire` row, 395–1453, and has no Nicaea row. OPEN for the owner: whether the empire restored in 1261 is a new row or not (section 7, question 13). This doc does not decide it.
 
 **Never a split on its own:** religion, language, dynasty, ruler, territorial extent, policy. Conquest by another people splits through clause 2.
 
@@ -352,9 +356,10 @@ Questions marked DECIDED are settled in section 8, and the numbers are kept beca
 7. ~~Lumped rows.~~ DECIDED.
 8. **Renaming.** 07 suggests considering `eastern_roman_empire` for `byzantine_empire`. `naming.md` says ids are never renamed.
 9. **An unknown ruling ethnicity.** The column is required and has no unknown value, which forces a guess or a broad cluster.
-10. **Where to record an interruption** (07's Byzantine marker), since no column exists and the inheritance layer has not landed.
+10. **Where to record an interruption**, since no column exists and the inheritance layer has not landed. 07's Byzantine 1204–1261 case no longer needs a marker: under the 2026-11-16 amendment to section 4 clause 3, `byzantine_empire` ends at 1204 and Nicaea is its own row (not yet executed). Still open: whether any other case needs a marker. `graph.md` Q9 holds the PROPOSED design, a table of period labels on a polity row.
 11. **Promotion from stubs.** 1,686 distinct panel ids do not resolve and 1,693 stubs exist. Who promotes them, by what test, and in what order?
 12. **Start of a dependent phase.** Nurhaci's Later Jin state, before 1636, has no row of its own, and `qing_dynasty` starts in 1636. Should the row start earlier, or should the earlier state get a row?
+13. **The empire restored in 1261.** Under the 2026-11-16 amendment, `byzantine_empire` ends at 1204 and Nicaea is a separate row. Is the empire Michael VIII restored at Constantinople in 1261 a new row, or does the Nicaea row continue to 1453? Undecided; the 1204 split waits on it.
 
 ---
 
@@ -377,3 +382,4 @@ Decisions by the project owner, newest last. These override the open questions a
 | 2026-10-31 | `kingdom_of_norway` ends in 1380. `modern_norway` starts in 1905 as a revival. | Sovereignty was extinguished in between, so one ongoing row would break section 4 |
 | 2026-10-31 | The non-polity migration is accepted (`non_polity.md`). No new table, and no `cultures` table. Peoples go to `ethnicity.csv` through a panel `ethnicity` key; cultures, collectives and events become panel labels; `lysimachus` becomes `kingdom_of_lysimachus` and a figure. `uruk` and `tyre` are promoted. `wusun`, `yuezhi`, `xianbei`, `mapuche_nation`, `cherokee_nation` and `lullubi_kingdom` stay. An id moving between tables for the same identity is not reuse. Territory gaps are accepted. | Rows earn their place through references, and most of these had none beyond a panel link |
 | 2026-10-31 | Deferred: feudal states (Japan's 701 boundary, feudal Germany, the Spring and Autumn period). Japan's rows stay as they are until this is taken up. | A separate topic for the owner |
+| 2026-11-16 | Split clause 3 amended (section 4), confirmed by the owner 2026-11-21: a polity that loses its seat to conquest is extinguished, even if a government of it keeps functioning elsewhere, and that government is its own row. Byzantium 1204: `byzantine_empire` ends at 1204 and Nicaea is a separate row. Not yet executed in `polity.csv`; the identity of the 1261 restoration is open (question 13). Replaces "Byzantine 1204–1261 (Nicaea) stays one `byzantine_empire`". | No reason recorded with the decision; also logged in `inheritance.md`'s decision log |

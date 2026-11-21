@@ -146,7 +146,7 @@ Civilization is not a node (see `civilization.md`). `source.csv` and `fact_sourc
 
 ## 3. Target contract
 
-**Status terms.** DECIDED means a brainstorm file marks it decided, and that file is named. DECIDED means decided in design; `inheritance.md` says what is built. OPEN includes anything the brainstorm marks provisional or deferred, and anything where its files disagree.
+**Status terms.** DECIDED means a brainstorm file marks it decided, or the owner decided it in an entry of the `inheritance.md` Decision log, and that source is named. DECIDED means decided in design; `inheritance.md` says what is built. PROPOSED means a design choice drafted where the owner's decisions were silent, awaiting the owner; `inheritance.md` lists each under "Proposed, awaiting the owner". OPEN includes anything the brainstorm marks provisional or deferred, and anything where its files disagree.
 
 ### Principles
 
@@ -157,54 +157,52 @@ Civilization is not a node (see `civilization.md`). `source.csv` and `fact_sourc
 | Inheritance is per-axis and multi-parent | DECIDED | `README.md` #2, `03-data-model.md` |
 | Type is Topology × Mode, not a growing alphabet | DECIDED | `README.md` #1, `02-type-system.md` |
 | **Dynastic change is not succession.** A change of house alone is a `polity_dynasty` row, and `dynastic_change` is excluded from mechanisms | DECIDED | `README.md` #3, `02-type-system.md` |
-| An edge lands where a polity splits: on a foundational government change, a sovereignty event, or extinction. Religion, language, dynasty, ruler, territory and policy never split alone | DECIDED | `07-polity-split.md` |
+| An edge lands where a polity splits: on a foundational government change, a sovereignty event, or extinction. Religion, language, dynasty, ruler, territory and policy never split alone. A polity that loses its seat to conquest is extinguished, even if a government of it keeps functioning elsewhere; that government is its own row | DECIDED | `07-polity-split.md`; the conquest clause is the owner's amendment of 2026-11-16, [`polity.md`](./polity.md) section 4 |
+| A claim may also be acquired inside a polity's life, so not every claim sits on a split | PROPOSED | `inheritance.md`, "Is it a claim at all?" |
 | Recognition is perspectival, not an edge boolean | DECIDED | `README.md` #5, `04-stress-tests.md` |
 | Extinction is recorded positively, per axis | DECIDED | `06-stress-tests-round2.md` B |
 
-The dynastic rule has an exception: a transition that was more than dynastic, meaning conquest, Mandate transfer or a different ruling people, may be an edge (`02-type-system.md`). 146 candidate rows connect polities sharing a `dynasty_id`, and 67 of those also share `government`. That is a review list, not a verdict.
+The dynastic rule has an exception: a transition that was more than dynastic, meaning conquest, Mandate transfer or a different ruling people, may be an edge (`02-type-system.md`). PROPOSED, awaiting the owner: Mandate transfer alone does not suffice (Q1). 146 candidate rows connect polities sharing a `dynasty_id`, and 67 of those also share `government`. That is a review list, not a verdict.
 
 ### Tables
 
-[`inheritance.md`](./inheritance.md) owns the four table definitions and their open column questions. This file owns the boundary between candidates and claims.
+[`inheritance.md`](./inheritance.md) owns the four table definitions, the rules for judging a claim, and their open column questions. This file owns the boundary between candidates and claims.
 
 ### Ottoman worked example
 
-The edges and carried axes come from `03-data-model.md`, translated into the `09` vocabulary. `?` marks a value the brainstorm does not give; none is decided here. Gaps come from `polity.csv`.
+The claims follow the rules of 2026-11-16 in [`inheritance.md`](./inheritance.md); column names and mode value names there are PROPOSED, awaiting the owner. Mode and transfer year are filled where the precedents give them; status and gap are computed from `transfer_year` and `polity.csv`. `?` marks a value the regrade sets. The Cairo Abbasid line is not a polity row, so the caliphate reaches the Ottomans through the Mamluks.
 
 `inheritance_claim`:
 
-| heir_polity_id | source_id | source_type | status | topology | mechanism | legitimacy_mode | exclusivity | gap |
-|---|---|---|---|---|---|---|---|---:|
-| `ottoman_empire` | `byzantine_empire` | `polity` | ? | `absorption` | `conquest` | ? | ? | -154 |
-| `ottoman_empire` | `abbasid_caliphate` | `polity` | ? | `continuation` | `title_transfer` | ? | ? | 41 |
-| `ottoman_empire` | `seljuk_rum` | `polity` | ? | `continuation` | `transformation` | ? | ? | -8 |
+| heir_polity_id | source_id | transfer year | mode (PROPOSED names) | mechanism | status (computed) | gap (computed) |
+|---|---|---:|---|---|---|---:|
+| `ottoman_empire` | `byzantine_empire` | 1453 | `seizure` | `conquest` | `prior` | 0 |
+| `mamluk_sultanate` | `abbasid_caliphate` | 1261 | `assertion` | ? | `prior` | 3 |
+| `ottoman_empire` | `mamluk_sultanate` | 1517 | `seizure` | ? | `prior` | 0 |
+| `ottoman_empire` | `seljuk_rum` | ? | ? | ? | ? | ? |
 
-`inheritance_axis`:
+Axis rows, `exclusivity` and the PROPOSED `title_key` are set by the regrade under `inheritance.md`, "How to judge a claim".
 
-| claim (source) | axis | stance | strength | Origin in `03` |
-|---|---|---|---|---|
-| `abbasid_caliphate` | `title` | ? | ? | title (caliphate) |
-| `abbasid_caliphate` | `political_legitimacy` | ? | ? | political_legitimacy |
-| `seljuk_rum` | `dynasty` | ? | ? | dynasty |
-| `seljuk_rum` | `ruling_ethnicity` | ? | ? | people |
-| `seljuk_rum` | `administrative_apparatus` | ? | ? | administrative_apparatus |
-
-The Byzantine claim stores no axis row under the `03` and `06` reading. Its territory comes from `polity_territory`, and `capital` was cut by `09`. The brainstorm supplies no recognition rows for this case.
-
-Evidence, unchanged and separate:
+Evidence, unchanged and separate (measured 2026-11-16):
 
 | Candidate | `strength` | `shared_territories` | Signals | `temporal_gap_years` |
 |---|---:|---|---|---:|
 | `byzantine_empire → ottoman_empire` | 2 | `anatolia\|balkans` | none | -154 |
 | `abbasid_caliphate → ottoman_empire` | 2 | none | same religion | 41 |
+| `abbasid_caliphate → mamluk_sultanate` | 5 | `levant` | same language | -8 |
+| `mamluk_sultanate → ottoman_empire` | 5 | `egypt\|levant` | same ethnicity | -218 |
 | `seljuk_rum → ottoman_empire` | 7 | `anatolia` | same ethnicity, same religion | -8 |
 
-The example does not fit current data at four points, each of which needs the owner's review:
+The `abbasid_caliphate → ottoman_empire` candidate stays as evidence; no claim is written on that pair.
 
-- `dynasty` from `seljuk_rum` has no support in `polity_dynasty`: the Ottomans are `ottoman` and Rum is `seljuk`.
-- `abbasid_caliphate` ends in 1258, but `polity.csv` dates the Ottoman title claim to 1517. No row covers the Cairo line in between.
-- `byzantine_empire` and `seljuk_rum` both outlive the Ottoman founding, so `prior` is unclear.
-- A Byzantine claim with no axis rows is only valid if zero-axis claims are allowed.
+The 1453 Byzantine row stands on today's data. Once the decided 1204 split runs, `byzantine_empire` ends at 1204, so a `seizure` claim in 1453 would fail check 7 in `inheritance.md`, and its real source depends on [`polity.md`](./polity.md) open question 13. The same question decides which row the 1547 Russian assertion names.
+
+The earlier `03` version of this example did not fit the data at four points. On 2026-11-16 the owner's rules settled each:
+
+- `dynasty` from `seljuk_rum`, with no support in `polity_dynasty`: the axis-row rule in `inheritance.md` decides whether any `dynasty` row is written. The seed carries none.
+- `abbasid_caliphate` ends in 1258 while the Ottoman title claim dates to 1517: the caliphate is now two claims, Mamluk from Abbasid (1261) and Ottoman from Mamluk (1517).
+- `byzantine_empire` and `seljuk_rum` outlive the Ottoman founding, so `prior` was unclear: status is now computed against `transfer_year`, not the heir's founding.
+- A Byzantine claim with no axis rows: allowed. The exception for an `exclusive` claim is PROPOSED, awaiting the owner.
 
 ---
 
@@ -215,7 +213,7 @@ These follow from `ARCHITECTURE.md` and apply to whatever is built.
 1. **New claims are layer 1.** They live in `csvs/inheritance_*.csv`, are written one at a time, and are read through `code/lib/csv.js`.
 2. **Candidates stay in `derived/`.** No human edits them, and no script copies a candidate into `csvs/`. Promotion is a person or curator role writing a row, never a script.
 3. **Authored rows never reference derived rows.** Candidates regenerate, so a claim has no candidate id. The build joins them on the pair.
-4. **A claim needs no candidate.** Fictive and gapped claims can be real where the generator finds nothing; it cannot see beyond a 300-year gap.
+4. **A claim needs no candidate.** Declared claims and gapped claims can be real where the generator finds nothing; it cannot see beyond a 300-year gap.
 5. **A candidate needs no claim.** Most should never become one.
 6. **One home per fact.** Overlap evidence is never retyped into a claim.
 7. **Claims must not encode a dynastic change.** The validator rejects `dynastic_change`.
@@ -258,22 +256,31 @@ Required:
 - Add the new output to the `api.md` shape check (section 7) when that check is built.
 - New enum values for the claim fields do not touch the five `territorial_direction` values that pages hard-code.
 
+The example uses the flat field names of the PROPOSED target build in `inheritance.md`, "Pipeline". It shows the shape after the one commit in which `legitimacy_mode` is emitted alongside `transfer_mode`, so that alias is absent.
+
 ```json
 {
   "kind": "claim",
   "id": "<claim id>",
-  "heir": "ottoman_empire",
-  "source": { "type": "polity", "id": "abbasid_caliphate", "temporal_status": null },
-  "topology": "continuation",
-  "mechanism": "title_transfer",
-  "legitimacy_mode": null,
+  "heir_polity_id": "ottoman_empire",
+  "source_type": "polity",
+  "source_id": "mamluk_sultanate",
+  "source_temporal_status": "prior",
+  "temporal_gap_years": 0,
+  "transfer_year": 1517,
+  "end_year": null,
+  "topology": null,
+  "mechanism": null,
+  "transfer_mode": "seizure",
   "exclusivity": null,
+  "contested_with": [],
+  "contested_with_source": false,
   "axes": [
-    { "axis": "title", "stance": null, "strength": null, "overlap": null,
+    { "axis": "title", "stance": "affirmed", "strength": null, "title_key": "caliph", "overlap": null,
       "recognition": [], "citations": [] }
   ],
   "citations": [],
-  "evidence": { "temporal_gap_years": 41, "candidate": { "strength": 2, "same_religion": true } }
+  "evidence": { "temporal_gap_years": -218, "candidate": { "strength": 5, "same_ethnicity": true } }
 }
 ```
 
@@ -287,7 +294,7 @@ The layer is done when all of these hold:
 
 1. Every open question marked blocking in section 6 is answered, and `docs/model/inheritance.md` is the canonical model doc (`08-naming.md`).
 2. All four tables have SCHEMA and `PK` entries, DDL, loaders and a consumer.
-3. `npm test` enforces enums, heir and source resolution by `source_type`, uniqueness, `dynastic_change` exclusion, and citation rules.
+3. `npm test` enforces enums, heir and source resolution by `source_type`, uniqueness, `dynastic_change` exclusion, citation rules, and the checks listed in `inheritance.md`, "Checks the validator will enforce".
 4. `make:all` builds claim JSON from `csvs/` plus evidence from `derived/`, and `make:db` loads both.
 5. The API serves claims and candidates as separate kinds, the UI labels them differently, and `api.md` documents both.
 6. The pilot cases encode without a schema change.
@@ -312,35 +319,43 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q1. How is the dynastic rule applied to dynasty-named polities?** `polity.csv` holds many, including 45 rows with `han_chinese` rulers. `07` says dynasty never splits a polity alone, while `02` allows edges for conquest, Mandate transfer or a different ruling people. "Mandate transfer" could admit most of the chain or none of it. The answer determines where edges can land, and it overlaps the polity contract.
 *Recommendation:* keep the rows, drop "Mandate transfer" as sufficient alone, and test each boundary against the `07` clauses. Where a transition fails the test, treat it as a polity-merge candidate, not a claim.
+*Answered in part, 2026-11-16.* Settled: a change of dynasty alone is still never a claim (`inheritance.md`, "Is it a claim at all?"), and the boundary where a polity loses its seat to conquest follows the owner's amendment to the split rule in [`polity.md`](./polity.md) section 4. Still open: whether proclaiming a new state name or title, with no other change, creates a new polity (to be settled in a pilot on the Chinese dynastic chain); whether split clause 1 is read de jure or de facto; and whether a government in exile that holds no territory counts as carrying on. Proposed, awaiting the owner: "Mandate transfer" alone does not admit an edge.
 
 **Q2. What does `inheritance_axis` store?** Identity axes only (`03`, `06`), or the uniform list (`09`)? Are `territory` rows permitted for contested claims? May a claim have no axis rows?
 *Recommendation:* adopt the uniform axis names, keep overlap computed, and allow a `territory` row only for a contested or irredentist claim. Allow zero-axis claims, since the Byzantine case needs one.
+*Answered 2026-11-16:* the uniform list stays, split into computable axes (including `territory`) that get a row only under stated conditions and non-computable axes that get a row for a deliberate act; zero-axis claims are allowed. See `inheritance.md`, "Axis rows". The exception for an `exclusive` claim is proposed, awaiting the owner.
 
 **Q3. What can a claim cite?** `source.csv` cannot hold scholarship, and `source.md` says hand-curated rows need no provenance.
 *Recommendation:* add a non-dataset source type that does not pass through the licence allowlist, since citing a work is not importing it. Require at least one citation for each claim and recognition row, starting as a warning.
 
 **Q4. Where do topology, mechanism and Mode live?** Is the "edge-level" bet in `03` accepted? Is Mode stored? Which term owns `fission`, `fusion` and `continuation`? `07` also uses `continuation` for a suspended polity, which is not an edge at all.
 *Recommendation:* keep both on the claim, derive Mode from a published mechanism table, and keep those three words as topologies only.
+*Answered in part, 2026-11-16.* Settled: Mode is stored and authored, judged by three ordered questions (handed over, taken by force, declared), not derived from mechanism. See `inheritance.md`, "The mode". Proposed, awaiting the owner: the column name `transfer_mode` and its value names; that mechanism constrains mode (`conquest` requires `seizure`; `translatio` and `revival` require `assertion`); and that topology and mechanism stay on the claim. Still open: which term owns `fission`, `fusion` and `continuation`, and `07`'s use of `continuation` for a suspended polity.
 
 **Q5. How does time work on a claim?** `byzantine_empire` overlaps the Ottomans for 154 years. Is that `prior`? Does `prior` mean ended before the heir's founding, or before the transfer? Should the gap be stored?
 *Recommendation:* `prior` means ended by the transfer, add an authored transfer year, and compute the gap from it. Storing a gap derivable from `polity.csv` otherwise breaks one-home-per-fact.
+*Answered 2026-11-16:* as recommended. The transfer year is authored; for a polity source, `prior` means the source's `end_year` is on or before the transfer year, and the gap is computed and leaves the CSV. See `inheritance.md`, "Time". The column name and its lifetime bound are proposed, awaiting the owner.
 
 **Q6. What can a source be?** `civilization` has no table and is deferred, `stateless_people` has no table, and `abstract` sources have no home.
 *Recommendation:* start with `polity`, `ethnicity` and `religion`; a stateless people is an `ethnicity` with `source_temporal_status` set to `ongoing`. Enforce uniqueness on heir, source type and source id, and make claim ids readable and text-based.
+*Not answered.* Proposed, awaiting the owner: uniqueness on heir, source type, source id and transfer year; a non-polity source carries an authored `source_temporal_status` of `ongoing` or `abstract`, so `abstract` sources have a status. See `inheritance.md`, "The four tables". Also open: which source types get a table (`civilization`, `stateless_people`, a `dynasty` type for descent claims), a source entity for a colonial unit, and the claim id format.
 
 ### Needed before bulk curation
 
 **Q7. How are contested sets represented?** Explicit group table, or inferred from source, title axis and exclusivity (`06`)? `06` also says recognizing one exclusive claimant implies rejecting rivals; decide whether that is computed.
 *Recommendation:* infer first, and compute implied rejection instead of authoring it.
+*Answered in part, 2026-11-16.* Settled: no group table; contests are computed and keyed on the title asserted rather than on the source. See `inheritance.md`, "Contests (computed)". Proposed, awaiting the owner: the `title_key` axis column that carries the title, the contest mechanics, and computing implied rejection from contests instead of writing it as recognition.
 
 **Q8. Fix or remove `related_ethnicity`, and rename the candidate file?** Before the non-polity migration, a scratch fix added 67 edges and 651 flags to an already loose set. Tighter thresholds are also available, and the current file name implies succession.
 *Recommendation:* remove the signal from the generator, and rename the file to `derived/inheritance_candidate.csv`. Keep `related_ethnicity` in the JSON as `false` until `api.md` allows its removal; no page reads it. Add a required overlap or end condition only after the pilot shows what curators need, and treat any change in row count as evidence to review.
 
 **Q9. Where does an interruption marker live?** `07` wants one on `byzantine_empire` for 1204-1261, and no table defines it.
 *Recommendation:* a small authored `polity_interruption.csv`, since it is a fact about a polity and not about an inheritance.
+*Answered in part.* Settled: under the owner's amendment of 2026-11-16 to the split rule in [`polity.md`](./polity.md) section 4, `byzantine_empire` ends at 1204 and Nicaea is a separate row, so the 1204-1261 case that raised this question needs no marker. This follows from the amendment confirmed 2026-11-21; it was not confirmed separately. That split is not yet executed in the data. Proposed, awaiting the owner: the marker is a fact about a polity row, carried by a table of period labels on a polity row that will also hold conventional period names. Still open: the table's design and name, and whether the post-1261 empire is a new row (`polity.md` open question 13).
 
 **Q10. Is the worked example still right?** See the four mismatches in section 3.
 *Recommendation:* drop `dynasty` from the Seljuk claim, and re-source the title claim once Q5 and the Cairo line are settled.
+*Answered 2026-11-16:* all four mismatches are settled by approved rules (the Mamluk chain, computed status, the axis-row rule, zero-axis claims); section 3 now shows the example, with the caliphate running through the Mamluks. Its column names and mode value names are proposed, awaiting the owner.
 
 ### Can wait
 
