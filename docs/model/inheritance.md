@@ -153,16 +153,16 @@ The mode records a fact about how the thing passed, not a verdict on legitimacy;
 
 1. **Did anything pass from the source to the heir at a datable event?** That is: did the source itself hold the government, territory, or office-holder until the transfer? If no, the mode is `assertion`: the heir declares the inheritance on its own (doctrine, descent, marriage, a coronation by a third party, a name or symbol taken up, installing or hosting a member of the source's house after the source ended).
 2. **Did the heir obtain it by armed force against the source's government?** Conquest, revolution, coup, a war of independence. A cession, abdication or treaty signed while the heir's forces already held the source's seat also counts. If yes, `seizure`.
-3. **Otherwise `handover`:** abdication, agreement, partition by compact, lawful constitutional procedure, negotiated independence. PROPOSED (the collapse case): also when the source's centre ceased to function and the heir, already a part of that government, carried on ruling its part.
+3. **Otherwise `handover`:** abdication, agreement, partition by compact, lawful constitutional procedure, negotiated independence. The collapse case (decided 2026-11-21; to be confirmed on real cases in the step 9 pilot): also when the source's centre ceased to function and the heir, already a part of that government, carried on ruling its part.
 
 Consequences:
 
 - Standing on the land or in the old capital of a long-dead source is not a transfer. Italy holding Rome, Mexico holding Tenochtitlan and Otto I holding Rome are all `assertion` toward the ancient source.
 - A restoration by the same house after the source was extinguished is `assertion`. It is told apart from a translatio by `mechanism = revival` and an `affirmed` `dynasty` axis row.
 - A revolution is `seizure` even when the ministries carry on.
-- PROPOSED: a non-polity source holds no government, territory or office-holder, so question 1 answers no and the mode is `assertion`.
+- A non-polity source holds no government, territory or office-holder, so question 1 answers no and the mode is `assertion`.
 - `handover` and `seizure` both mean the source held the thing until the transfer; check 7 in [Checks the validator will enforce](#checks-the-validator-will-enforce) tests it.
-- PROPOSED: mechanism and mode must agree (check 6).
+- Mechanism and mode must agree (check 6).
 
 Precedents, classified by the questions above. A new claim with the same structure takes the same mode.
 
@@ -258,7 +258,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 
 1. ✅ Canonical doc + curated tables + generator + validation, in the 2026-11-01 shape
 2. ✅ `generate-successions.js` demoted to candidate suggester
-3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year), the uniqueness item under Q6 was deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
+3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year; the collapse case; the non-polity `assertion` rule; mechanism-mode agreement; the gap tolerance of 1), the uniqueness item under Q6 was deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
 4. ⬜ Owner confirms or rejects each item under [Proposed, awaiting the owner](#proposed-awaiting-the-owner)
 5. ✅ Approved rules and the PROPOSED target shape written in this file (2026-11-16)
 6. ⬜ Regrade the 9 seeded claims under [How to judge a claim](#how-to-judge-a-claim), one claim at a time with the owner's approval; `ottoman_from_abbasid` becomes the Mamluk and Ottoman pair
@@ -285,8 +285,8 @@ Not built yet (step 7). Each check fails the run. Checks marked PROPOSED wait fo
 3. `source_temporal_status` is empty for a polity source. PROPOSED: it is `ongoing` or `abstract` for any other source.
 4. Uniqueness on (`heir_polity_id`, `source_type`, `source_id`), as enforced today. Adding the transfer year is deferred (Decision log, 2026-11-21).
 5. The transfer year is present and an integer on every claim. PROPOSED: it is from the heir's `start_year` minus 1 to the heir's `end_year` (no upper bound when that is empty). PROPOSED: `end_year`, when present, is from the transfer year to the heir's `end_year`.
-6. PROPOSED: **mechanism and mode agree** — `conquest` requires `seizure`; `translatio` and `revival` require `assertion`.
-7. **Gap rule:** a claim handed over or taken by force from a polity source has a computed gap of 0. PROPOSED: a gap of 1 is tolerated, because years are whole numbers and two events can fall in consecutive years.
+6. **Mechanism and mode agree** — `conquest` requires `seizure`; `translatio` and `revival` require `assertion`.
+7. **Gap rule:** a claim handed over or taken by force from a polity source has a computed gap of 0. A gap of 1 is tolerated, because years are whole numbers and two events can fall in consecutive years.
 8. PROPOSED: an `exclusive` claim has at least one axis row with a non-empty `title_key`.
 9. PROPOSED: `title_key` is snake_case and appears only on `title` and `political_legitimacy` rows.
 10. PROPOSED: recognition `year` is empty or an integer.
@@ -336,15 +336,15 @@ Moved here from `graph.md`. `graph.md` section 6 holds the ranked questions.
 - 2026-11-21: a transfer year is required on every claim. Replaces silence. The column name `transfer_year` stays PROPOSED with the target header.
 - 2026-11-21: deferred, not adopted: widening uniqueness to (`heir_polity_id`, `source_type`, `source_id`, transfer year). The key stays (`heir_polity_id`, `source_type`, `source_id`) until a real claim needs a second transfer year for the same heir and source. Reason: none of the 9 current claims needs it.
 - 2026-11-21: `polity.md` open question 13 is answered (recorded in `polity.md`): the empire restored in 1261 is not a new row, and the Nicaea row continues to 1453, because recapturing the seat is not a split event. Consequence: once the 1204 split is executed, the 1453 Ottoman `seizure` claim and the 1547 Russian assertion take the Nicaea row as their source. The split is not yet executed in the data.
+- 2026-11-21: the collapse case under `handover` (question 3): when the source's centre ceased to function and the heir, already a part of that government, carried on ruling its part. Replaces having no rule for that case. It is to be confirmed on real cases in the step 9 pilot.
+- 2026-11-21: a non-polity source is always `assertion`, since it holds no government, territory or office-holder. Replaces silence.
+- 2026-11-21: mechanism and mode must agree (check 6): `conquest` requires `seizure`; `translatio` and `revival` require `assertion`. Replaces independent columns.
+- 2026-11-21: check 7 tolerates a gap of 1, because years are whole numbers and two events can fall in consecutive years. Replaces a strict gap of 0.
 
 ### Proposed, awaiting the owner
 
 Design choices drafted where the owner's decisions were silent. None is decided.
 
-- The collapse case under `handover`; would add a case to question 3 that no rule covered.
-- A non-polity source is always `assertion`; would replace silence.
-- Mechanism and mode must agree (check 6); would replace independent columns.
-- Gap tolerance of 1 in check 7; would replace a strict gap of 0.
 - The transfer year must fall inside the heir's lifetime, with one year of tolerance (check 5); an earlier assertion belongs to the row that made it; would replace silence.
 - Claim `end_year`, bounded by the transfer year and the heir's `end_year`; would replace claims with no end.
 - Recognition `year`; would replace undated recognition.
