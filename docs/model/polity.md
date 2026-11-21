@@ -181,7 +181,7 @@ To retire an id, change these together, as `ac64f59` did:
 3. the `polity` field in `panels/**/*.json`
 4. `SYNONYM_MAP` and `merge_map.md` §3 for a row replaced by another polity; `STRIP_LIST` and `merge_map.md` §6 for a row with no polity replacement
 
-### When to split (Decided 2026-06-21, 07-polity-split.md; clause 3 amended 2026-11-16)
+### When to split (Decided 2026-06-21, 07-polity-split.md; clause 3 amended 2026-11-16, tightened 2026-11-22)
 
 A transition creates a new polity if and only if one of these holds:
 
@@ -190,10 +190,13 @@ A transition creates a new polity if and only if one of these holds:
    - If one branch clearly keeps the seat, the senior legitimacy and the continuity claim, it is **secession**: the parent continues and the other buds off.
    - If the division is symmetric or contested, it is **fission**: the parent ends and there are two children. Rome 395 is fission, giving `western_roman_empire` and `byzantine_empire`.
 3. **Interruption.** Ask whether the polity's own sovereign government kept functioning anywhere across the gap.
-   - **Amended 2026-11-16 (owner), confirmed 2026-11-21.** A polity that loses its seat to conquest is extinguished, even if a government of it keeps functioning elsewhere. The government that carries on elsewhere is its own polity row. The "suspended" case below therefore applies only when the sovereign government kept its seat, or when no conquest took the seat.
+   - **Amended 2026-11-16 (owner), confirmed 2026-11-21, tightened 2026-11-22.** A polity that loses its seat to conquest is extinguished, even if a government of it keeps functioning elsewhere. The government that carries on elsewhere is its own polity row.
+   - **What counts as losing the seat to conquest.** The conqueror sets up a sovereign polity that rules from that seat. It applies to the Latin Empire at Constantinople 1204, the Hotaki at Isfahan 1722, and Shun at Beijing 1644. It does not apply to a raid, a sack, or a military occupation that sets up no polity ruling from the seat. Washington 1814, Berlin 1806, Beijing 1860 and 1900, and The Hague 1940 (no Netherlands row yet) all fall under that rule, so the USA, Prussia, the Qing and the Netherlands do not end at those dates. Whether a coup by the polity's own army counts is OPEN (section 7, question 14).
+   - **How this relates to clause 2.** Clause 2 ends a polity at "conquest that sticks". This clause does not ask whether the conquest sticks: the Latin Empire fell in 1261, and `byzantine_empire` still ends at 1204. Instead it asks whether a sovereign polity ruled from the seat. A conquest that sticks and rules from the seat meets both clauses.
+   - The "suspended" case below therefore applies only when the sovereign government kept its seat, or when the seat was not lost to conquest in this sense.
    - Yes: it was suspended, so it stays one row.
    - No: it was extinguished, so there is a new row even with the same ideology or dynasty. `eastern_han` after `xin`.
-   - Seat lost to conquest: extinguished, whatever carried on elsewhere. Byzantium 1204: `byzantine_empire` ends at 1204, and Nicaea is a separate row.
+   - Seat lost to conquest (a sovereign polity of the conqueror rules from it): extinguished, whatever carried on elsewhere. Byzantium 1204: `byzantine_empire` ends at 1204, and Nicaea is a separate row.
 
    **Not yet executed in the data.** `csvs/polity.csv` still has one `byzantine_empire` row, 395–1453, and has no Nicaea row. The planned change: `byzantine_empire` runs 395–1204, and one Nicaea row runs 1204–1453. The empire restored in 1261 is not a new row. Retaking the seat is not a split event, because nothing broke in ideology or sovereignty (decided 2026-11-21, section 7 question 13). The curator who executes the change picks the Nicaea id under `naming.md`, for example `empire_of_nicaea`.
 
@@ -360,6 +363,9 @@ Questions marked DECIDED are settled in section 8, and the numbers are kept beca
 11. **Promotion from stubs.** 1,686 distinct panel ids do not resolve and 1,693 stubs exist. Who promotes them, by what test, and in what order?
 12. **Start of a dependent phase.** Nurhaci's Later Jin state, before 1636, has no row of its own, and `qing_dynasty` starts in 1636. Should the row start earlier, or should the earlier state get a row?
 13. ~~The empire restored in 1261.~~ DECIDED.
+14. **A coup by the polity's own army.** Section 4 clause 3, as tightened on 2026-11-22, counts the seat as lost to conquest only when the conqueror sets up a sovereign polity ruling from it. Does a seizure of the seat by the polity's own army count as conquest under that clause? The owner left this open on 2026-11-22.
+15. **Puppet states at the seat.** Under section 4 clause 3 as tightened on 2026-11-22, does a puppet state ruling from the seat count as "a sovereign polity of the conqueror"? Example: the Wang Jingwei government at Nanjing in 1940, which was the seat of the Republic of China. Raised by the 2026-11-22 audit; not decided.
+16. **Moved capitals.** When a polity has moved its capital, which seat counts under clause 3? Example: Shun lost Beijing in 1644, but a remnant held Xi'an until 1645. Raised by the 2026-11-22 audit; not decided.
 
 ---
 
@@ -384,3 +390,4 @@ Decisions by the project owner, newest last. These override the open questions a
 | 2026-10-31 | Deferred: feudal states (Japan's 701 boundary, feudal Germany, the Spring and Autumn period). Japan's rows stay as they are until this is taken up. | A separate topic for the owner |
 | 2026-11-16 | Split clause 3 amended (section 4), confirmed by the owner 2026-11-21: a polity that loses its seat to conquest is extinguished, even if a government of it keeps functioning elsewhere, and that government is its own row. Byzantium 1204: `byzantine_empire` ends at 1204 and Nicaea is a separate row. Not yet executed in `polity.csv`; the identity of the 1261 restoration is open (question 13) (answered 2026-11-21, below). Replaces "Byzantine 1204–1261 (Nicaea) stays one `byzantine_empire`". | No reason recorded with the decision; also logged in `inheritance.md`'s decision log |
 | 2026-11-21 | The empire restored at Constantinople in 1261 is not a new row: the Nicaea row continues to 1453. The planned data is `byzantine_empire` 395–1204 plus one Nicaea row 1204–1453, with the id left to the executing curator under `naming.md`. Not yet executed. Answers question 13. | Retaking the seat is not a split event under section 4: nothing broke in ideology or sovereignty, so no clause applies |
+| 2026-11-22 | Split clause 3 tightened (section 4). The seat counts as lost to conquest only when the conqueror sets up a sovereign polity that rules from that seat: the Latin Empire at Constantinople 1204, the Hotaki at Isfahan 1722, and Shun at Beijing 1644. A raid, a sack, or a military occupation that sets up no polity ruling from the seat does not count (Washington 1814, Berlin 1806, Beijing 1860 and 1900, The Hague 1940). Unlike clause 2's "conquest that sticks", the conquest need not last, but a polity must rule from the seat. Byzantium 1204 is unchanged. Whether a coup by the polity's own army counts is open (question 14). | A stress test on 2026-11-22 showed that the 2026-11-16 wording was too broad. Applied as written, it ended the USA in 1814, Prussia in 1806, the Qing in 1860 and 1900, and the Netherlands in 1940. It also had no permanence test and did not define conquest |
