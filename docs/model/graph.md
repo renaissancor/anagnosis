@@ -181,7 +181,7 @@ The claims follow the rules of 2026-11-16 and 2026-11-21 in [`inheritance.md`](.
 | `ottoman_empire` | `mamluk_sultanate` | 1517 | `seizure` | ? | `prior` | 0 |
 | `ottoman_empire` | `seljuk_rum` | ? | ? | ? | ? | ? |
 
-Axis rows, `exclusivity` and the PROPOSED `title_key` are set by the regrade under `inheritance.md`, "How to judge a claim".
+Axis rows, `exclusivity` and `title_key` are set by the regrade under `inheritance.md`, "How to judge a claim".
 
 Evidence, unchanged and separate (measured 2026-11-16):
 
@@ -202,7 +202,7 @@ The earlier `03` version of this example did not fit the data at four points. On
 - `dynasty` from `seljuk_rum`, with no support in `polity_dynasty`: the axis-row rule in `inheritance.md` decides whether any `dynasty` row is written. The seed carries none.
 - `abbasid_caliphate` ends in 1258 while the Ottoman title claim dates to 1517: the caliphate is now two claims, Mamluk from Abbasid (1261) and Ottoman from Mamluk (1517).
 - `byzantine_empire` and `seljuk_rum` outlive the Ottoman founding, so `prior` was unclear: status is now computed against `transfer_year`, not the heir's founding.
-- A Byzantine claim with no axis rows: allowed. The exception for an `exclusive` claim is PROPOSED, awaiting the owner.
+- A Byzantine claim with no axis rows: allowed only when `shared`. Decided 2026-11-21: an `exclusive` claim needs an axis row with a `title_key`.
 
 ---
 
@@ -322,7 +322,7 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q2. What does `inheritance_axis` store?** Identity axes only (`03`, `06`), or the uniform list (`09`)? Are `territory` rows permitted for contested claims? May a claim have no axis rows?
 *Recommendation:* adopt the uniform axis names, keep overlap computed, and allow a `territory` row only for a contested or irredentist claim. Allow zero-axis claims, since the Byzantine case needs one.
-*Answered 2026-11-16:* the uniform list stays, split into computable axes (including `territory`) that get a row only under stated conditions and non-computable axes that get a row for a deliberate act; zero-axis claims are allowed. See `inheritance.md`, "Axis rows". The exception for an `exclusive` claim is proposed, awaiting the owner.
+*Answered 2026-11-16:* the uniform list stays, split into computable axes (including `territory`) that get a row only under stated conditions and non-computable axes that get a row for a deliberate act; zero-axis claims are allowed. See `inheritance.md`, "Axis rows". Decided 2026-11-21: the exception, so a zero-axis claim must be `shared`, since an `exclusive` claim needs a `title_key` row.
 
 **Q3. What can a claim cite?** `source.csv` cannot hold scholarship, and `source.md` says hand-curated rows need no provenance.
 *Recommendation:* add a non-dataset source type that does not pass through the licence allowlist, since citing a work is not importing it. Require at least one citation for each claim and recognition row, starting as a warning.
@@ -343,7 +343,7 @@ Ranked by how much they block. Recommendations are advice only and decide nothin
 
 **Q7. How are contested sets represented?** Explicit group table, or inferred from source, title axis and exclusivity (`06`)? `06` also says recognizing one exclusive claimant implies rejecting rivals; decide whether that is computed.
 *Recommendation:* infer first, and compute implied rejection instead of authoring it.
-*Answered in part, 2026-11-16.* Settled: no group table; contests are computed and keyed on the title asserted rather than on the source. See `inheritance.md`, "Contests (computed)". Proposed, awaiting the owner: the `title_key` axis column that carries the title, the contest mechanics, and computing implied rejection from contests instead of writing it as recognition.
+*Answered 2026-11-16 and 2026-11-21.* Settled 2026-11-16: no group table; contests are computed and keyed on the title asserted rather than on the source. See `inheritance.md`, "Contests (computed)". Decided 2026-11-21: the `title_key` axis column that carries the title; the contest mechanics, implemented after the step 9 pilot, with periods that only touch not overlapping; and computing implied rejection from contests instead of writing it as recognition.
 
 **Q8. Fix or remove `related_ethnicity`, and rename the candidate file?** Before the non-polity migration, a scratch fix added 67 edges and 651 flags to an already loose set. Tighter thresholds are also available, and the current file name implies succession.
 *Recommendation:* remove the signal from the generator, and rename the file to `derived/inheritance_candidate.csv`. Keep `related_ethnicity` in the JSON as `false` until `api.md` allows its removal; no page reads it. Add a required overlap or end condition only after the pilot shows what curators need, and treat any change in row count as evidence to review.

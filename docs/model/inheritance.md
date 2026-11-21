@@ -68,8 +68,8 @@ Target header (PROPOSED): `id,heir_polity_id,source_id,source_type,source_tempor
 |---|---|
 | `source_temporal_status` | polity source: `prior` when the source's `end_year` is on or before the transfer year, otherwise `ongoing`; an empty `end_year` is `ongoing`. Non-polity source: the authored value |
 | `temporal_gap_years` | polity source: `max(0, transfer year - source end_year)`; 0 when the source's `end_year` is empty |
-| `contested_with` | PROPOSED field: array of claim ids in contest with this claim ([Contests](#contests-computed)) |
-| `contested_with_source` | PROPOSED field: boolean ([Contests](#contests-computed)) |
+| `contested_with` | array of claim ids in contest with this claim ([Contests](#contests-computed)) |
+| `contested_with_source` | boolean ([Contests](#contests-computed)) |
 
 ### `csvs/inheritance_axis.csv` — per-identity-axis payload
 
@@ -81,7 +81,7 @@ Target header (PROPOSED): `claim_id,axis,stance,strength,title_key,note`
 | `axis` | authored | see axis list below |
 | `stance` | authored, **required** | `affirmed` \| `repudiated` \| `transformed`; `neutral` is **removed** |
 | `strength` | authored, optional | 1–5; the scale is deferred, so existing numbers stay and nothing may chart them |
-| `title_key` | authored, **new**, optional — PROPOSED | snake_case name of a single-holder office; see [Exclusivity](#exclusivity-and-title_key) and [values in use](#title_key-values-in-use) |
+| `title_key` | authored, **new**, optional | snake_case name of a single-holder office; see [Exclusivity](#exclusivity-and-title_key) and [values in use](#title_key-values-in-use) |
 | `note` | authored | free text |
 
 **Axes**, in two groups that decide [when a row is written](#axis-rows):
@@ -194,10 +194,10 @@ Precedents, classified by the questions above. A new claim with the same structu
 
 ### `exclusivity` and `title_key`
 
-- **`exclusivity`** is a fact about the heir's own assertion. Ask: does the title or legitimacy the heir asserts admit one holder by its own terms (Emperor of the Romans, caliph, sole legitimate government of a country)? If yes, `exclusive`; otherwise `shared`. PROPOSED: whether rivals actually existed does not change the answer.
+- **`exclusivity`** is a fact about the heir's own assertion. Ask: does the title or legitimacy the heir asserts admit one holder by its own terms (Emperor of the Romans, caliph, sole legitimate government of a country)? If yes, `exclusive`; otherwise `shared`. Whether rivals actually existed does not change the answer.
 - Contests are keyed on the **title asserted**, not on the source ([Contests](#contests-computed)).
-- PROPOSED: **`title_key`** names the single-holder office in snake_case. Fill it on `title` and `political_legitimacy` axis rows that concern such an office. PROPOSED: on no other axis. PROPOSED: use a key from [the list in use](#title_key-values-in-use) when one fits, and add a new key to that list in the same change.
-- PROPOSED: an `exclusive` claim must carry at least one axis row with a `title_key`; otherwise its contests cannot be computed.
+- **`title_key`** names the single-holder office in snake_case. Fill it on `title` and `political_legitimacy` axis rows that concern such an office, and on no other axis. Use a key from [the list in use](#title_key-values-in-use) when one fits, and add a new key to that list in the same change.
+- An `exclusive` claim must carry at least one axis row with a `title_key`; otherwise its contests cannot be computed.
 
 ### Axis rows
 
@@ -208,25 +208,25 @@ Precedents, classified by the questions above. A new claim with the same structu
 - Never write an axis row to cancel labelling noise in `polity.csv`; fix the label.
 - **Non-computable axes** (`title`, `political_legitimacy`, `legal_tradition`, `administrative_apparatus`, `name_symbols`, `diplomatic_personality`) get a row when the heir did something deliberate about them.
 - Every axis row has a stance: `affirmed`, `repudiated` or `transformed`.
-- A claim with no axis rows is allowed. PROPOSED exception: not when it is `exclusive`.
+- A claim with no axis rows is allowed only when it is `shared`; an `exclusive` claim needs a `title_key` row.
 - `strength`: keep existing numbers; do not grade new ones against any scale until the scale is decided.
 
 ### Recognition rows
 
 - A row records a **documented act by a historical actor** about this claim (did the Safavids accept the Ottoman caliphate? no) — never a modern judgment, never an AI's opinion. Fill `year` when the act is dated.
-- PROPOSED: a rival's own competing claim is not an act of rejection. Implied rejection of rivals is computed from [contests](#contests-computed) and is never written as a recognition row.
+- A rival's own competing claim is not an act of rejection. Implied rejection of rivals is computed from [contests](#contests-computed) and is never written as a recognition row.
 
 ### Contests (computed)
 
-Contests are computed, never authored, and are keyed on the **title asserted**, not on the source. The mechanics below are PROPOSED.
+Contests are computed, never authored, and are keyed on the **title asserted**, not on the source. The mechanics below are decided (2026-11-21) and are implemented after the step 9 pilot.
 
 - A claim is **active** from the transfer year to the heir's `end_year` (claim `end_year` is deferred).
-- Two claims are **in contest** when both are `exclusive`, both have an `affirmed` axis row with the same `title_key`, and their active periods overlap.
+- Two claims are **in contest** when both are `exclusive`, both have an `affirmed` axis row with the same `title_key`, and their active periods overlap. Periods that only touch (one ends in year Y, the other begins in year Y) do not overlap, so an ordinary succession is not a contest.
 - An `exclusive` claim with an `affirmed` `title_key` row on a polity source whose computed status is `ongoing` is also **in contest with the source itself** (`contested_with_source`).
 
 ## `title_key` values in use
 
-PROPOSED, with the column. PROPOSED: the validator checks only the format. A vocabulary table is deferred until the keys in use show what it needs; until then this list is the reference. Add a key here when a claim first uses it.
+The validator checks only the format (check 9). A vocabulary table is deferred until the keys in use show what it needs; until then this list is the reference. Add a key here when a claim first uses it.
 
 | `title_key` | Office |
 |---|---|
@@ -258,7 +258,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 
 1. ✅ Canonical doc + curated tables + generator + validation, in the 2026-11-01 shape
 2. ✅ `generate-successions.js` demoted to candidate suggester
-3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year; the collapse case; the non-polity `assertion` rule; mechanism-mode agreement; the gap tolerance of 1; the transfer year's lifetime bound; status `ongoing` and gap 0 for a polity source with an empty `end_year`), the non-polity `ongoing` or `abstract` status under Q6 and recognition `year` were decided, the uniqueness item under Q6 and claim `end_year` were deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
+3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. Q7 was answered in full on 2026-11-21 (`title_key`, the contest mechanics, computed implied rejection), along with Q2's exception for an `exclusive` claim. On 2026-11-21 further parts of Q4 and Q5 were decided (the `transfer_mode` column and values; a required transfer year; the collapse case; the non-polity `assertion` rule; mechanism-mode agreement; the gap tolerance of 1; the transfer year's lifetime bound; status `ongoing` and gap 0 for a polity source with an empty `end_year`), the non-polity `ongoing` or `abstract` status under Q6 and recognition `year` were decided, the uniqueness item under Q6 and claim `end_year` were deferred, and `polity.md` question 13 was answered under Q9; the rest are open, and several answers leave PROPOSED items
 4. ⬜ Owner confirms or rejects each item under [Proposed, awaiting the owner](#proposed-awaiting-the-owner)
 5. ✅ Approved rules and the PROPOSED target shape written in this file (2026-11-16)
 6. ⬜ Regrade the 9 seeded claims under [How to judge a claim](#how-to-judge-a-claim), one claim at a time with the owner's approval; `ottoman_from_abbasid` becomes the Mamluk and Ottoman pair
@@ -287,8 +287,8 @@ Not built yet (step 7). Each check fails the run. Checks marked PROPOSED wait fo
 5. The transfer year is present and an integer on every claim, from the heir's `start_year` minus 1 to the heir's `end_year` (no upper bound when that is empty). Claim `end_year` is deferred, so no clause checks it.
 6. **Mechanism and mode agree** — `conquest` requires `seizure`; `translatio` and `revival` require `assertion`.
 7. **Gap rule:** a claim handed over or taken by force from a polity source has a computed gap of 0. A gap of 1 is tolerated, because years are whole numbers and two events can fall in consecutive years.
-8. PROPOSED: an `exclusive` claim has at least one axis row with a non-empty `title_key`.
-9. PROPOSED: `title_key` is snake_case and appears only on `title` and `political_legitimacy` rows.
+8. An `exclusive` claim has at least one axis row with a non-empty `title_key`.
+9. `title_key` is snake_case and appears only on `title` and `political_legitimacy` rows.
 10. Recognition `year` is empty or an integer.
 11. `dynastic_change` is never a mechanism.
 
@@ -316,7 +316,6 @@ Moved here from `graph.md`. `graph.md` section 6 holds the ranked questions.
 - `diplomatic_personality`: provisional.
 - `observer_type`: values, and which observers fill the set.
 - Recognition key: the key (`claim_id`, `observer_id`) allows one row per observer per claim, so an observer who first recognized and later rejected a claim cannot have both acts recorded.
-- Contests: whether two active periods that only touch (one ends in the year the other begins) overlap. Needed before contests are built.
 - Sources that kept a title and lost the government: `mughal_empire` runs to 1857 through the pensioner emperors, while `abbasid_caliphate` ends in 1258 although the caliphs continued in Cairo. One convention is needed; the end year decides the computed status and gap of every claim on these rows.
 
 ## Decision log
@@ -345,16 +344,17 @@ Moved here from `graph.md`. `graph.md` section 6 holds the ranked questions.
 - 2026-11-21: recognition `year`, empty or an integer (check 10). Replaces undated recognition. This unblocks `TODO.md` 36.
 - 2026-11-21: a polity source with an empty `end_year` has status `ongoing` and gap 0. Replaces silence.
 - 2026-11-21: for a non-polity source, `source_temporal_status` is authored as `ongoing` (a living community at the transfer year) or `abstract` (an idea); `prior` is not allowed (check 3). Replaces an authored status with `prior` allowed.
+- 2026-11-21: a `title_key` axis column, only on `title` and `political_legitimacy` rows. It is format-checked only (snake_case, check 9), and the [in-use list](#title_key-values-in-use) is a reference, not a vocabulary table. Replaces having no field to key contests on.
+- 2026-11-21: an `exclusive` claim must carry at least one axis row with a non-empty `title_key` (check 8), so zero-axis claims are allowed only when `shared`. Replaces allowing every zero-axis claim.
+- 2026-11-21: the contest mechanics as written in [Contests](#contests-computed): active periods, overlap, a contest with an ongoing source, and the fields `contested_with` and `contested_with_source`. They are implemented after the step 9 pilot. Replaces having no contest computation.
+- 2026-11-21: active periods that only touch (one ends in year Y, the other begins in year Y) do not overlap, so an ordinary succession is not a contest. Closes the open column question on touching periods.
+- 2026-11-21: implied rejection is computed from contests and never written as recognition. Replaces recognition rows that record a rival's own claim as a rejection.
+- 2026-11-21: whether rivals existed does not change `exclusivity`. Replaces silence.
 
 ### Proposed, awaiting the owner
 
 Design choices drafted where the owner's decisions were silent. None is decided.
 
-- Column `title_key`, only on `title` and `political_legitimacy` rows, format-checked only, with the in-use list as reference; would replace having no field to key contests on.
-- An `exclusive` claim must carry a `title_key` row, so zero-axis claims are allowed only when `shared`; would replace allowing every zero-axis claim.
-- Contest mechanics: active periods, overlap, contest with an ongoing source, and the fields `contested_with` and `contested_with_source`; would replace having no contest computation.
-- Implied rejection is computed from contests and never written as recognition; would replace recognition rows that record a rival's own claim as a rejection.
-- Whether rivals existed does not change `exclusivity`; would replace silence.
 - Not claims: personal union alone, suzerainty and investiture by a surviving sovereign, drift with no datable event; would extend the dynastic-change rule.
 - A claim may be acquired in mid-life, and every polity boundary should end with a claim or an `axis_terminus` row; would replace the assumption that claims sit only on polity boundaries.
 - For a declared inheritance, the source is the entity the assertion names, the latest row that bore it before the transfer year; would replace silence.
