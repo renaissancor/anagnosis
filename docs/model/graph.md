@@ -176,7 +176,7 @@ The claims follow the rules of 2026-11-16 and 2026-11-21 in [`inheritance.md`](.
 
 | heir_polity_id | source_id | transfer year | mode | mechanism | status (computed) | gap (computed) |
 |---|---|---:|---|---|---|---:|
-| `ottoman_empire` | `byzantine_empire` | 1453 | `seizure` | `conquest` | `prior` | 0 |
+| `ottoman_empire` | `later_byzantine_empire` | 1453 | `seizure` | `conquest` | `prior` | 0 |
 | `mamluk_sultanate` | `abbasid_caliphate` | 1261 | `assertion` | ? | `prior` | 3 |
 | `ottoman_empire` | `mamluk_sultanate` | 1517 | `seizure` | ? | `prior` | 0 |
 | `ottoman_empire` | `seljuk_rum` | ? | ? | ? | ? | ? |
@@ -187,7 +187,7 @@ Evidence, unchanged and separate (measured 2026-11-16):
 
 | Candidate | `strength` | `shared_territories` | Signals | `temporal_gap_years` |
 |---|---:|---|---|---:|
-| `byzantine_empire → ottoman_empire` | 2 | `anatolia\|balkans` | none | -154 |
+| `later_byzantine_empire → ottoman_empire` (measured 2026-11-22, after the split) | 2 | `anatolia\|balkans` | none | -154 |
 | `abbasid_caliphate → ottoman_empire` | 2 | none | same religion | 41 |
 | `abbasid_caliphate → mamluk_sultanate` | 5 | `levant` | same language | -8 |
 | `mamluk_sultanate → ottoman_empire` | 5 | `egypt\|levant` | same ethnicity | -218 |
@@ -195,7 +195,7 @@ Evidence, unchanged and separate (measured 2026-11-16):
 
 The `abbasid_caliphate → ottoman_empire` candidate stays as evidence; no claim is written on that pair.
 
-The 1453 Byzantine row stands on today's data. Once the decided 1204 split is executed, `byzantine_empire` ends at 1204, and the 1453 `seizure` claim takes the Nicaea row as its source: under [`polity.md`](./polity.md) open question 13, answered 2026-11-21, the empire restored in 1261 is not a new row and the Nicaea row continues to 1453. The 1547 Russian assertion takes the same row as its source. The split is not yet executed in the data.
+The 1204 split is executed: `byzantine_empire` runs 395–1204 and `later_byzantine_empire` 1204–1453, since under [`polity.md`](./polity.md) open question 13, answered 2026-11-21, the empire restored in 1261 is not a new row. The 1453 `seizure` claim was re-sourced to `later_byzantine_empire` on 2026-11-22. The 1547 Russian assertion takes the same row as its source, but its re-sourcing awaits the owner.
 
 The earlier `03` version of this example did not fit the data at four points. On 2026-11-16 the owner's rules settled each:
 

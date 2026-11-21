@@ -22,13 +22,13 @@ One successor inherits different things from *different* sources. The mode is cl
 
 | claim | transfer year | mode | what the heir took up |
 |---|---:|---|---|
-| ottoman_empire ← byzantine_empire | 1453 | seizure | the Roman imperial title (Kayser-i Rum) and Constantinople as imperial stage |
+| ottoman_empire ← later_byzantine_empire | 1453 | seizure | the Roman imperial title (Kayser-i Rum) and Constantinople as imperial stage |
 | mamluk_sultanate ← abbasid_caliphate | 1261 | assertion | the caliphate; Baybars installed an Abbasid in Cairo three years after Baghdad fell |
 | ottoman_empire ← mamluk_sultanate | 1517 | seizure | the caliphate; the Cairo caliph was taken with the conquest |
 | ottoman_empire ← seljuk_rum | ? | ? | the Anatolian ruling people and Persianate administration |
 | republic_of_turkey ← ottoman_empire | ? | seizure | political legitimacy, title and legal tradition, all **repudiated** |
 
-The Ottoman caliphate runs through the Mamluks because the Cairo Abbasid line is not a polity row ([Source](#source_type-and-source_id)). The 1453 row stands on today's data. Once the decided 1204 split is executed, `byzantine_empire` ends at 1204 and this `seizure` claim takes the Nicaea row as its source, since that row continues to 1453 ([`polity.md`](./polity.md) open question 13, answered 2026-11-21). The split is not yet executed in the data. The last row is why stance exists: an heir can deliberately *reject* an
+The Ottoman caliphate runs through the Mamluks because the Cairo Abbasid line is not a polity row ([Source](#source_type-and-source_id)). The 1453 row takes `later_byzantine_empire` (1204–1453), the row that held Constantinople until the conquest ([`polity.md`](./polity.md) open question 13, answered 2026-11-21); the claim was re-sourced on 2026-11-22, after the 1204 split was executed. The last row is why stance exists: an heir can deliberately *reject* an
 axis, and that repudiation is itself historical data.
 
 ## The four tables
@@ -169,11 +169,11 @@ Precedents, classified by the questions above. A new claim with the same structu
 | Claim | Mode | Why |
 |---|---|---|
 | Byzantine from Roman, 395 | handover | division by the empire's own arrangement |
-| Ottoman from Byzantine, 1453 | seizure | conquest. Stands on today's data only: once the 1204 split is executed, `byzantine_empire` ends at 1204 and the source is the Nicaea row, which continues to 1453 (`polity.md` open question 13, answered 2026-11-21) |
+| Ottoman from Byzantine, 1453 | seizure | conquest; the source is `later_byzantine_empire`, which held the seat until 1453 (re-sourced 2026-11-22) |
 | Latin Empire from Byzantine, 1204 | seizure | conquest |
 | Republic of Turkey from Ottoman | seizure | the Ankara assembly abolished the sultanate against the sultan |
 | Holy Roman Empire's Roman claim, 962 | assertion | nothing passed from a Roman government |
-| Russia's Byzantine claim | assertion | doctrine, marriage and a title. Stands on today's data only: once the 1204 split is executed, `byzantine_empire` ends at 1204 and the 1547 assertion takes the Nicaea row as its source (`polity.md` open question 13, answered 2026-11-21) |
+| Russia's Byzantine claim | assertion | doctrine, marriage and a title. The seed still names `byzantine_empire`, which now ends at 1204; the 1547 assertion takes `later_byzantine_empire` as its source (`polity.md` open question 13, answered 2026-11-21), and re-sourcing it awaits the owner |
 | Cao Wei from Eastern Han, 220 | handover | abdication; no army took the seat |
 | Tang from Sui, 618 | seizure | the capital had already been taken by force |
 | Japan's annexation of Korea, 1910 | seizure | treaty signed under occupation. Cannot be encoded yet: `joseon` ends in 1897 and no Korean Empire row exists (`TODO.md` 61), so the gap check would fail |
@@ -261,7 +261,7 @@ proposed edges + evidence to `derived/polity_succession.csv`; the
 3. ⬜ Owner answers the blocking questions in `graph.md` section 6. Q2, Q5 and Q10 were answered on 2026-11-16, and Q1, Q4, Q7 and Q9 in part. On 2026-11-21 Q7 was answered in full; every proposed part of Q1, Q2, Q4, Q5 and Q10 was decided; under Q6 the non-polity status was decided and the uniqueness widening deferred; claim `end_year` was deferred; and `polity.md` question 13 was answered under Q9 (see the [Decision log](#decision-log)). Still open: Q1's state-name, de jure and exile parts; Q3; Q4's ownership of `fission`, `fusion` and `continuation`; Q6's source tables, colonial source entity and claim id format; Q8; Q9's table design, with the period-label table still PROPOSED; and Q11, Q12, Q14 and Q15
 4. ✅ Owner confirms or rejects each item under [Proposed, awaiting the owner](#proposed-awaiting-the-owner) (2026-11-21), except the two items still on that list: the period-label table, which stays PROPOSED until a real case needs it, and the frontend claim-view shape
 5. ✅ Approved rules and the target shape written in this file (2026-11-16; the shape was decided 2026-11-21)
-6. ⬜ Regrade the 9 seeded claims under [How to judge a claim](#how-to-judge-a-claim), one claim at a time with the owner's approval; `ottoman_from_abbasid` becomes the Mamluk and Ottoman pair. `hre_from_western_roman` (`exclusive`) is re-sourced: under the declared-source rule the 962 claim takes `byzantine_empire`, not `western_roman_empire`. All five `exclusive` seeds (`ottoman_from_byzantine`, `ottoman_from_abbasid`, `turkey_from_ottoman`, `hre_from_western_roman`, `russia_from_byzantine`) fail check 8 until the `title_key` column exists and the regrade fills it
+6. ⬜ Regrade the 9 seeded claims under [How to judge a claim](#how-to-judge-a-claim), one claim at a time with the owner's approval; `ottoman_from_abbasid` becomes the Mamluk and Ottoman pair. `hre_from_western_roman` (`exclusive`) is re-sourced: under the declared-source rule the 962 claim takes `byzantine_empire`, not `western_roman_empire`. All five `exclusive` seeds (`ottoman_from_byzantine`, `ottoman_from_abbasid`, `turkey_from_ottoman`, `hre_from_western_roman`, `russia_from_byzantine`) fail check 8 until the `title_key` column exists and the regrade fills it. Done 2026-11-22: `ottoman_from_byzantine` re-sourced to `later_byzantine_empire`, and its `tsardom_russia` recognition row deleted, because it recorded Russia's own rival claim rather than an act of rejection
 7. ⬜ Build the target shape once confirmed: CSV headers, the [validator checks](#checks-the-validator-will-enforce), the computed fields in `inheritance.js`, DDL and load SQL, `api.md` with the `legitimacy_mode` alias for one commit, and the pages moved
 8. ⬜ Clean the generator (`graph.md` Q8): fix or remove `related_ethnicity`, delete the redundant loop, drop `type` from both DDL files, and review the `derived/` diff
 9. ⬜ Pilot by hand: Ottoman, `ottoman_empire → republic_of_turkey`, Russian chain, British Raj to India, Mexico, ROC and PRC, Gran Colombia, Carthage, three caliphs, Han revival. Revise the schema if the pilot breaks it, before any bulk work
